@@ -47,12 +47,42 @@
       "t": "2026-11-20T01:45:03+07:00"
     },
     "studio": {
-      "status": "kerja",
-      "aktivitas": "Render 5 video untuk 2026-11-20",
-      "t": "2026-11-20T02:03:52+07:00"
+      "status": "selesai",
+      "aktivitas": "5/5 video jadi, siap di Hasil",
+      "t": "2026-11-20T02:05:53+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-20T02:05:53+07:00",
+      "agen": "studio",
+      "pesan": "5/5 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-20T02:05:27+07:00",
+      "agen": "studio",
+      "pesan": "Render video 5/5: MLBB Patch 2.2.23: Popol and Kupa "
+    },
+    {
+      "t": "2026-11-20T02:05:07+07:00",
+      "agen": "studio",
+      "pesan": "Render video 4/5: PS Plus Extra November: Death Stra"
+    },
+    {
+      "t": "2026-11-20T02:04:41+07:00",
+      "agen": "studio",
+      "pesan": "Render video 3/5: WEC26 digelar di ICE BSD, hadiah 5"
+    },
+    {
+      "t": "2026-11-20T02:04:20+07:00",
+      "agen": "studio",
+      "pesan": "Render video 2/5: Ontel Simulator Indonesia tembus 1"
+    },
+    {
+      "t": "2026-11-20T02:03:56+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/5: MLBB juara Mobile Game of the Year"
+    },
     {
       "t": "2026-11-20T02:03:52+07:00",
       "agen": "studio",
@@ -79,6 +109,6 @@
       "pesan": "Kantor GlitchPlay HQ dibuka. Konten 20 Nov (5 item) dibuat sebelum tim multi-agent aktif."
     }
   ],
-  "updated_at": "2026-11-20T02:03:52+07:00",
+  "updated_at": "2026-11-20T02:05:53+07:00",
   "kesimpulan_t": "2026-11-20T01:45:03+07:00"
 }
