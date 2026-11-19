@@ -13,6 +13,7 @@ Instruksi untuk Claude yang jalan otomatis setiap pagi di cloud. Kamu adalah
 | `narator` | Narator (Penulis Naskah) | hook, `naskah_vo`, `teks_layar` per item |
 | `copywriter` | Copywriter (Caption) | `caption` + tepat 3 `hashtags` per item |
 | `qc` | QC (Editor) | cek semua aturan, validasi JSON, terbitkan ke menu Hasil |
+| `studio` | Studio (Render Video) | **dijalankan di Mac, bukan di cloud.** Jangan ubah status `studio`. |
 
 Kalau tool **Agent** (subagent) tersedia, jalankan Radar, Detektif, Narator,
 Copywriter, dan QC masing-masing sebagai subagent dengan instruksi tugasnya +
@@ -77,7 +78,9 @@ Buat **minimal 5 konten reel** berita game untuk hari ini (tanggal WIB:
 5. Kalau `data/<tanggal>.json` sudah ada, **tambahkan** item (jangan hapus
    item lama, jangan duplikat topik).
 6. Tambahkan tanggal ke `data/index.json` (`days`, tanpa duplikat).
-7. Jangan ubah `index.html`, `scene/`, `tools/`, `ROUTINE.md`, atau `voice.md`.
+7. Jangan ubah `index.html`, `scene/`, `tools/`, `assets/`, `video/`, `ROUTINE.md`,
+   atau `voice.md`. Jangan hapus/ubah field `video`, `poster`, `video_durasi`
+   pada item yang sudah ada (diisi oleh Studio di Mac yang merender video).
 
 ## Aturan naskah reel (Narator)
 
@@ -87,6 +90,10 @@ Buat **minimal 5 konten reel** berita game untuk hari ini (tanggal WIB:
 - Panjang 20–40 detik ≈ 60–110 kata (TTS 170 kata/menit). Tiap kalimat ≤ 12 kata.
 - `naskah_vo`: untuk dibacakan TTS. Angka ditulis seperti diucapkan
   ("satu koma dua juta", "PS lima"), tanpa emoji, tanpa simbol, tanpa "wkwk".
+- `subtitle`: kalimat yang **sama persis urutan & jumlahnya** dengan
+  `naskah_vo`, tapi ejaan normal untuk dibaca di layar (angka pakai digit,
+  singkatan asli): "em el bi bi" → "MLBB", "PS lima" → "PS5",
+  "satu koma dua juta" → "1,2 juta". Boleh tanpa emoji.
 - `teks_layar`: ≤ 6 kata per kartu, angka asli boleh, emoji boleh (maks 1).
   Kartu pertama di 0:00. Ganti kartu tiap 2–4 detik.
 - Hook pakai rumus yang berbeda-beda antar konten, misalnya: The Callout,
@@ -102,7 +109,8 @@ Buat **minimal 5 konten reel** berita game untuk hari ini (tanggal WIB:
 
 ## Cek QC
 
-Sebelum terbit, QC memastikan untuk tiap item: semua field ada; `naskah_vo`
+Sebelum terbit, QC memastikan untuk tiap item: semua field ada;
+`subtitle` sama jumlahnya dengan `naskah_vo`; `naskah_vo`
 tanpa emoji/simbol; tiap kalimat ≤ 12 kata; `teks_layar` ≤ 6 kata per kartu;
 tepat 3 hashtag; `sumber` ≥ 2 URL dari situs berbeda; tidak ada kata terlarang.
 Item yang gagal diperbaiki dulu, bukan diterbitkan apa adanya.
@@ -120,7 +128,8 @@ Item yang gagal diperbaiki dulu, bukan diterbitkan apa adanya.
       "status_fakta": "resmi | rumor",
       "hook_formula": "nama rumus hook",
       "durasi_detik": 30,
-      "naskah_vo": ["kalimat 1", "kalimat 2"],
+      "naskah_vo": ["kalimat 1 ejaan TTS", "kalimat 2"],
+      "subtitle": ["kalimat 1 ejaan normal", "kalimat 2"],
       "teks_layar": [{"t": "0:00", "teks": "TEKS KARTU", "visual": "saran visual/clip"}],
       "caption": "caption lengkap",
       "hashtags": ["#a", "#b", "#c"],

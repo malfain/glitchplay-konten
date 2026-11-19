@@ -8,7 +8,7 @@
   python3 tools/status.py bos "poin 1" "poin 2" ...   # Kesimpulan Bos
   python3 tools/status.py log <id> "pesan"
 
-Agent ids: bos, radar, detektif, narator, copywriter, qc
+Agent ids: bos, radar, detektif, narator, copywriter, qc, studio (render video di Mac)
 """
 import json
 import sys
@@ -17,7 +17,7 @@ from pathlib import Path
 
 WIB = timezone(timedelta(hours=7))
 PATH = Path(__file__).resolve().parent.parent / "data" / "status.json"
-AGENTS = ["bos", "radar", "detektif", "narator", "copywriter", "qc"]
+AGENTS = ["bos", "radar", "detektif", "narator", "copywriter", "qc", "studio"]
 STATES = {"idle", "kerja", "selesai", "error"}
 MAX_LOG = 60
 

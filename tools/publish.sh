@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Commit everything under data/ and push to main, retrying on a race.
+# Commit everything under data/ and video/ and push to main, retrying on a race.
 # Usage: tools/publish.sh "pesan commit"
 set -euo pipefail
 cd "$(dirname "$0")/.."
 for f in data/*.json; do python3 -m json.tool "$f" >/dev/null; done
-git add data
+git add data video 2>/dev/null || git add data
 git diff --cached --quiet && { echo "tidak ada perubahan"; exit 0; }
 git commit -q -m "$1"
 for i in 1 2 3; do
