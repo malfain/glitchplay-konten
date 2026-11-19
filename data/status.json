@@ -32,19 +32,19 @@
       "t": "2026-11-20T05:07:53+07:00"
     },
     "narator": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Tulis naskah lebah madu",
-      "t": "2026-11-20T05:07:53+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] Naskah lebah selesai",
+      "t": "2026-11-20T05:08:22+07:00"
     },
     "copywriter": {
-      "status": "idle",
-      "aktivitas": "Siaga, menunggu shift 06:00 WIB",
-      "t": "2026-11-20T01:45:03+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] Metadata YouTube selesai",
+      "t": "2026-11-20T05:08:22+07:00"
     },
     "qc": {
-      "status": "idle",
-      "aktivitas": "Siaga, menunggu shift 06:00 WIB",
-      "t": "2026-11-20T01:45:03+07:00"
+      "status": "kerja",
+      "aktivitas": "[Anak] Cek aturan, terbitkan",
+      "t": "2026-11-20T05:08:22+07:00"
     },
     "studio": {
       "status": "selesai",
@@ -53,6 +53,26 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-20T05:08:22+07:00",
+      "agen": "qc",
+      "pesan": "[Anak] Cek aturan, terbitkan"
+    },
+    {
+      "t": "2026-11-20T05:08:22+07:00",
+      "agen": "copywriter",
+      "pesan": "[Anak] Metadata YouTube selesai"
+    },
+    {
+      "t": "2026-11-20T05:08:22+07:00",
+      "agen": "copywriter",
+      "pesan": "[Anak] Judul, deskripsi, tags YouTube"
+    },
+    {
+      "t": "2026-11-20T05:08:22+07:00",
+      "agen": "narator",
+      "pesan": "[Anak] Naskah lebah selesai"
+    },
     {
       "t": "2026-11-20T05:07:53+07:00",
       "agen": "narator",
@@ -139,6 +159,6 @@
       "pesan": "Kantor GlitchPlay HQ dibuka. Konten 20 Nov (5 item) dibuat sebelum tim multi-agent aktif."
     }
   ],
-  "updated_at": "2026-11-20T05:07:53+07:00",
+  "updated_at": "2026-11-20T05:08:22+07:00",
   "kesimpulan_t": "2026-11-20T01:45:03+07:00"
 }

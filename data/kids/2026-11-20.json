@@ -245,6 +245,248 @@
       "poster": "video/kids/2026-11-20/01-7-fakta-seru-gurita-3-jantung-darah-biru.jpg",
       "video_durasi": 92.5,
       "video_suara": "gemini-3.8-flash-lite-tts/Leda"
+    },
+    {
+      "kategori": "Serangga",
+      "judul": "6 fakta seru lebah madu: 5 mata, tarian, sarang segi enam",
+      "ringkasan": "Lebah madu punya 5 mata (2 besar, 3 kecil), sayap mengepak sekitar 200 kali per detik, menari (waggle dance) untuk memberi tahu arah dan jarak bunga, membuat sarang segi enam dari lilin, hidup dalam sarang berisi puluhan ribu lebah, dan seekor pekerja menghasilkan sekitar 1/12 sendok teh madu seumur hidupnya.",
+      "status_fakta": "resmi",
+      "hook_formula": "Tahukah Kamu + daftar 6 fakta",
+      "durasi_detik": 125,
+      "naskah_vo": [
+        "Tahukah kamu, ada hewan yang punya lima mata?",
+        "Sayapnya juga bergetar sangat cepat sampai berbunyi dengung!",
+        "Hewan kecil itu namanya lebah madu!",
+        "Yuk, kita kenalan dengan enam fakta seru tentang lebah madu!",
+        "Fakta pertama. Lebah madu punya lima mata.",
+        "Dua mata besar di samping kepala, untuk melihat sekeliling.",
+        "Tiga mata kecil di atas kepala, untuk merasakan terang dan gelap.",
+        "Fakta kedua. Sayap lebah mengepak sekitar dua ratus kali dalam satu detik.",
+        "Getaran cepat itulah yang membuat suara dengung.",
+        "Fakta ketiga. Lebah bisa menari untuk memberi petunjuk!",
+        "Namanya tarian menggoyang pantat, atau waggle dance.",
+        "Dari gerakannya, teman-temannya tahu arah dan jarak bunga.",
+        "Fakta keempat. Sarang lebah penuh ruang berbentuk segi enam.",
+        "Lebah membuatnya dari lilin, untuk menyimpan madu dan telur.",
+        "Bentuk itu hemat tempat, jadi muat banyak sekali!",
+        "Fakta kelima. Satu sarang bisa dihuni puluhan ribu lebah.",
+        "Saat musim ramai, ada sekitar lima puluh ribu lebah dalam satu sarang.",
+        "Mereka bekerja sama, seperti satu keluarga besar!",
+        "Fakta keenam. Satu lebah pekerja hanya membuat sedikit madu.",
+        "Seumur hidupnya, ia hanya menghasilkan sekitar seperdua belas sendok teh.",
+        "Jadi, madu di rumahmu hasil kerja keras ribuan lebah!",
+        "Hebat, kan?",
+        "Sekarang kuis! Lebah madu punya berapa mata?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Subscribe GlitchPlayClips, sampai jumpa di fakta seru berikutnya!"
+      ],
+      "subtitle": [
+        "Tahukah kamu, ada hewan yang punya 5 mata?",
+        "Sayapnya juga bergetar sangat cepat sampai berbunyi dengung!",
+        "Hewan kecil itu namanya lebah madu!",
+        "Yuk, kita kenalan dengan 6 fakta seru tentang lebah madu!",
+        "Fakta pertama. Lebah madu punya 5 mata.",
+        "2 mata besar di samping kepala, untuk melihat sekeliling.",
+        "3 mata kecil di atas kepala, untuk merasakan terang dan gelap.",
+        "Fakta kedua. Sayap lebah mengepak sekitar 200 kali dalam 1 detik.",
+        "Getaran cepat itulah yang membuat suara dengung.",
+        "Fakta ketiga. Lebah bisa menari untuk memberi petunjuk!",
+        "Namanya tarian menggoyang pantat, atau waggle dance.",
+        "Dari gerakannya, teman-temannya tahu arah dan jarak bunga.",
+        "Fakta keempat. Sarang lebah penuh ruang berbentuk segi enam.",
+        "Lebah membuatnya dari lilin, untuk menyimpan madu dan telur.",
+        "Bentuk itu hemat tempat, jadi muat banyak sekali!",
+        "Fakta kelima. Satu sarang bisa dihuni puluhan ribu lebah.",
+        "Saat musim ramai, ada sekitar 50.000 lebah dalam satu sarang.",
+        "Mereka bekerja sama, seperti satu keluarga besar!",
+        "Fakta keenam. Satu lebah pekerja hanya membuat sedikit madu.",
+        "Seumur hidupnya, ia hanya menghasilkan sekitar 1/12 sendok teh.",
+        "Jadi, madu di rumahmu hasil kerja keras ribuan lebah!",
+        "Hebat, kan?",
+        "Sekarang kuis! Lebah madu punya berapa mata?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Subscribe GlitchPlayClips, sampai jumpa di fakta seru berikutnya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "HEWAN 5 MATA?",
+          "visual": "lebah close up"
+        },
+        {
+          "t": "0:04",
+          "teks": "SAYAPNYA BERGETAR CEPAT",
+          "visual": "sayap bergetar"
+        },
+        {
+          "t": "0:09",
+          "teks": "LEBAH MADU!",
+          "visual": "lebah terbang"
+        },
+        {
+          "t": "0:12",
+          "teks": "6 FAKTA SERU",
+          "visual": "angka 6"
+        },
+        {
+          "t": "0:18",
+          "teks": "#1 LEBAH PUNYA 5 MATA",
+          "visual": "5 mata"
+        },
+        {
+          "t": "0:23",
+          "teks": "2 MATA BESAR",
+          "visual": "mata besar"
+        },
+        {
+          "t": "0:29",
+          "teks": "3 MATA KECIL",
+          "visual": "mata kecil"
+        },
+        {
+          "t": "0:35",
+          "teks": "#2 SAYAP 200X PER DETIK",
+          "visual": "sayap"
+        },
+        {
+          "t": "0:43",
+          "teks": "BUNYI DENGUNG",
+          "visual": "dengung"
+        },
+        {
+          "t": "0:48",
+          "teks": "#3 LEBAH BISA MENARI",
+          "visual": "tarian lebah"
+        },
+        {
+          "t": "0:53",
+          "teks": "WAGGLE DANCE",
+          "visual": "tarian"
+        },
+        {
+          "t": "0:57",
+          "teks": "ARAH & JARAK BUNGA",
+          "visual": "peta bunga"
+        },
+        {
+          "t": "1:02",
+          "teks": "#4 SARANG SEGI ENAM",
+          "visual": "sarang"
+        },
+        {
+          "t": "1:08",
+          "teks": "DARI LILIN LEBAH",
+          "visual": "lilin"
+        },
+        {
+          "t": "1:13",
+          "teks": "HEMAT TEMPAT",
+          "visual": "sarang rapi"
+        },
+        {
+          "t": "1:18",
+          "teks": "#5 PULUHAN RIBU LEBAH",
+          "visual": "sarang ramai"
+        },
+        {
+          "t": "1:24",
+          "teks": "SEKITAR 50.000 LEBAH",
+          "visual": "kerumunan"
+        },
+        {
+          "t": "1:32",
+          "teks": "KELUARGA BESAR",
+          "visual": "kerja sama"
+        },
+        {
+          "t": "1:35",
+          "teks": "#6 MADU SEDIKIT SEKALI",
+          "visual": "lebah pekerja"
+        },
+        {
+          "t": "1:41",
+          "teks": "SEKITAR 1/12 SENDOK TEH",
+          "visual": "sendok teh"
+        },
+        {
+          "t": "1:47",
+          "teks": "KERJA KERAS RIBUAN LEBAH",
+          "visual": "toples madu"
+        },
+        {
+          "t": "1:52",
+          "teks": "HEBAT, KAN?",
+          "visual": "lebah senang"
+        },
+        {
+          "t": "1:55",
+          "teks": "KUIS: PUNYA BERAPA MATA?",
+          "visual": "tanda tanya"
+        },
+        {
+          "t": "1:58",
+          "teks": "JAWAB DALAM HATI",
+          "visual": "anak berpikir"
+        },
+        {
+          "t": "2:05",
+          "teks": "SUBSCRIBE!",
+          "visual": "tombol subscribe"
+        }
+      ],
+      "caption": "6 fakta seru lebah madu! 🐝",
+      "hashtags": [
+        "#faktaseru",
+        "#lebah",
+        "#belajarsains"
+      ],
+      "youtube": {
+        "judul": "6 Fakta Seru Lebah Madu! 5 Mata & Tarian Rahasia 🐝 #Shorts",
+        "deskripsi": "Tahukah kamu? Lebah madu punya 5 mata dan bisa menari untuk memberi petunjuk! Yuk kenalan dengan 6 fakta seru lebah madu di video ini.\n\n🐝 Fakta di video:\n1. Punya 5 mata\n2. Sayap mengepak sekitar 200 kali per detik\n3. Menari untuk menunjukkan arah bunga\n4. Sarang berbentuk segi enam\n5. Satu sarang dihuni puluhan ribu lebah\n6. Satu pekerja menghasilkan sekitar 1/12 sendok teh madu seumur hidup\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: NC State Extension, University of California, Ontario Honey, Kansas DOT Pollinator Partners, Indiana DNR Kids.",
+        "tags": [
+          "fakta seru",
+          "edukasi anak",
+          "shorts",
+          "lebah",
+          "lebah madu",
+          "fakta hewan",
+          "serangga",
+          "belajar sains",
+          "video anak",
+          "fakta unik"
+        ],
+        "made_for_kids": true
+      },
+      "sumber": [
+        {
+          "nama": "NC State Extension: Honey Bee Dance Language",
+          "url": "https://content.ces.ncsu.edu/honey-bee-dance-language"
+        },
+        {
+          "nama": "University of California: waggle dance",
+          "url": "https://www.universityofcalifornia.edu/news/bees-dont-just-wiggle-wiggle-they-learn-newly-discovered-complex-social-behavior-behind-waggle"
+        },
+        {
+          "nama": "Ontario Honey: Neat Facts About Bees",
+          "url": "https://www.ontariohoney.ca/kids-zone/bee-facts"
+        },
+        {
+          "nama": "Kansas DOT Pollinator Partners: Busy as a Bee",
+          "url": "https://pollinatorpartners.ksdot.gov/busyAsABee.html"
+        },
+        {
+          "nama": "Indiana DNR Kids: Honeybees",
+          "url": "https://www.in.gov/dnr/kids/animals/insects/honeybees/"
+        },
+        {
+          "nama": "Canadian Honey Council: Bee Facts",
+          "url": "https://honeycouncil.ca/industry-overview/bee-facts/"
+        },
+        {
+          "nama": "Swansons Nursery: Honey Bee Facts",
+          "url": "https://www.swansonsnursery.com/honey-bee-facts"
+        }
+      ]
     }
   ]
 }
