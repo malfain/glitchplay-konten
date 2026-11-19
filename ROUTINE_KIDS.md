@@ -6,7 +6,7 @@ narator, copywriter, qc), tapi untuk channel **anak 6–10 tahun**.
 
 ## Target
 
-**1 konten per hari** di `data/kids/<tanggal>.json` (tanggal WIB:
+**2 konten per hari** di `data/kids/<tanggal>.json` (kalau file hari ini sudah ada, tambah sampai total 2) (tanggal WIB:
 `TZ=Asia/Jakarta date +%Y-%m-%d`). Tambahkan tanggal ke
 `data/kids/index.json`. Jangan ubah file `data/*.json` milik Instagram.
 
