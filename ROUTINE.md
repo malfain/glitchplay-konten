@@ -84,6 +84,13 @@ Buat **minimal 5 konten reel** berita game untuk hari ini (tanggal WIB:
 
 ## Aturan naskah reel (Narator)
 
+- **Gaya: cepat, lucu, semangat.** Kalimat pendek yang nendang, tanda seru,
+  dan 2–3 celetukan lucu per naskah yang nyambung ke beritanya (contoh:
+  "Rame banget, kayak kondangan!", "Bisa buat top up seumur hidup!",
+  "Siapin cemilan!"). Lucu boleh, ngarang fakta tidak: angka, tanggal,
+  nama, dan harga tetap persis sesuai sumber. Jangan mengejek orang/tim,
+  jangan kata kasar.
+
 - Bentuk: HOOK (≤ 8 kata, ≤ 3 detik) → kenapa penting → isi (satu info per
   kalimat) → ajakan tunggal di akhir. Kalimat terakhir mengulang satu kata
   dari hook (loop).

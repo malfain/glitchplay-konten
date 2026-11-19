@@ -26,8 +26,7 @@ menerjemahkan istilah game ke bahasa baku.
 
 - **Three of my own reels or captions that sound most like me:**
   `{{tempel 2–3 caption/naskah asli di sini — bagian ini yang paling ngaruh}}`
-- **On camera I am:** cepat, energik, to the point, kayak temen yang ngasih
-  kabar "eh lo udah tau belum?" **(asumsi)**
+- **On camera I am:** cepat, lucu, semangat. Kayak temen yang heboh ngabarin "eh lo udah tau belum?!" plus celetukan lucu yang nyambung ke berita (tanpa ngarang fakta, tanpa ngejek orang).
 - **Words I actually use:** "guys", "gaes", "update", "info penting nih",
   "jangan sampe ketinggalan", "parah sih", "gokil", "auto", "wkwk",
   "fix", "spill" **(asumsi)**

@@ -28,7 +28,17 @@ W, H = 1080, 1920
 FPS = 30
 GAP = 0.18          # silence after each sentence (s)
 XF = 0.22           # crossfade between sentences (s)
-VOICE = os.environ.get("GP_VOICE", "Damayanti")
+TTS = os.environ.get("GP_TTS", "gemini")               # gemini = Google AI Studio TTS, edge = Microsoft Ardi, say = macOS
+GEMINI_MODEL = os.environ.get("GP_GEMINI_MODEL", "gemini-3.8-flash-tts")
+GEMINI_VOICE = os.environ.get("GP_GEMINI_VOICE", "Fenrir")
+GEMINI_STYLE = os.environ.get("GP_GEMINI_STYLE", "Bahasa Indonesia santai anak muda Jakarta, ceria, lucu dan semangat, "
+                              "gaya voiceover iklan lifestyle, tempo sedang agak cepat, jeda singkat antarkalimat, suara jernih dan terang")
+GEMINI_KEY_FILE = Path(os.environ.get("GP_GEMINI_KEY_FILE", str(Path.home() / ".glitchplay/gemini_key")))
+EDGE_VOICE = os.environ.get("GP_EDGE_VOICE", "id-ID-ArdiNeural")
+EDGE_RATE = os.environ.get("GP_EDGE_RATE", "+10%")   # cepat & semangat
+KEEP_PAUSE = float(os.environ.get("GP_KEEP_PAUSE", "0.28"))  # longest pause kept between phrases (s)
+EDGE_PITCH = os.environ.get("GP_EDGE_PITCH", "+4Hz")  # sedikit lebih ceria
+VOICE = os.environ.get("GP_VOICE", "Damayanti")         # macOS fallback voice
 RATE = os.environ.get("GP_RATE", "190")  # words per minute for `say`
 
 # brand (from the GlitchPlayClips watermark)
@@ -208,6 +218,17 @@ def brand_logo():
 
 # ------------------------------------------------------------------ audio
 def tts(text, out_aiff):
+    """Neural Indonesian voice (Ardi) via edge-tts; falls back to macOS `say` (Damayanti) when offline."""
+    if TTS == "edge":
+        mp3 = Path(str(out_aiff) + ".mp3")
+        edge = Path(sys.executable).with_name("edge-tts")
+        r = subprocess.run([str(edge), "--voice", EDGE_VOICE, f"--rate={EDGE_RATE}", f"--pitch={EDGE_PITCH}", "--text", text, "--write-media", str(mp3)],
+                           capture_output=True, text=True)
+        if r.returncode == 0 and mp3.exists() and mp3.stat().st_size > 1000:
+            run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(mp3), "-ar", "44100", str(out_aiff)])
+            mp3.unlink()
+            return
+        print(f"edge-tts gagal, pakai {VOICE}: {(r.stderr or '')[-200:]}", file=sys.stderr)
     run(["say", "-v", VOICE, "-r", RATE, "-o", str(out_aiff), text])
 
 
@@ -298,6 +319,396 @@ def render_item(item, idx, date, outdir, tmp):
     return mp4, poster, round(total, 1)
 
 
+# ------------------------------------------------------------------ "anim" style (HTML motion graphic, captured by Chrome)
+ACRONYM = re.compile(r"^[A-Z0-9][A-Z0-9.+&-]{0,4}$")
+NUM = re.compile(r"(?:(?<=Rp)|(?<![A-Za-z]))(\d+(?:[.,]\d+)*)(?![A-Za-z\d])")
+ALWAYS_CAPS = {"USD", "IDR", "PC", "WIB", "FPS", "MLBB", "PUBG", "GTA", "DLC", "MPL", "MDL", "FFWS", "PMGC", "PMPL", "ICE", "BSD",
+               "HP", "AI", "RRQ", "EVOS", "ONIC", "BTR", "NAVI", "VCT", "IGN", "PS", "VR", "RPG", "FPS", "MOBA", "TV"}
+BULAN = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"]
+
+
+def soft_case(text, ref=""):
+    """'ANAK PC, SABAR DULU' -> 'anak PC, sabar dulu'. A word stays upper-case only if it is written upper-case in the
+    natural-spelling subtitles too (MLBB, PC, WIB) or carries a digit (PS5, CS2)."""
+    caps = {w.strip("?!.,:·()") for w in ref.split() if w.strip("?!.,:·()").isupper()} | ALWAYS_CAPS
+    out = []
+    for w in clean(text).split():
+        core = w.strip("?!.,:·()")
+        keep = core in caps or (any(c.isdigit() for c in core) and any(c.isalpha() for c in core))
+        out.append(w if keep else w.lower())
+    return " ".join(out)
+
+
+def parse_number(text):
+    m = NUM.search(text)
+    if not m:
+        return None
+    raw = m.group(1)
+    if "," in raw:
+        whole, frac = raw.replace(".", "").split(",", 1)
+        value, dec = float(f"{whole}.{frac}"), len(frac)
+    elif raw.count(".") == 1 and len(raw.split(".")[1]) != 3:
+        value, dec = float(raw), len(raw.split(".")[1])
+    else:
+        value, dec = float(raw.replace(".", "")), 0
+    before, after = text[: m.start()].strip(" ·:-"), text[m.end():].strip(" ·:-")
+    return value, dec, before, after
+
+
+def chips_from(sub):
+    body = re.split(r"\b(?:ada|yaitu|antara lain|seperti)\b|:", sub, maxsplit=1, flags=re.I)[-1]
+    parts = [p.strip(" .") for p in re.split(r",|\bdan\b|\bsama\b", body) if p.strip(" .")]
+    return parts if 3 <= len(parts) <= 7 and all(len(p) <= 22 for p in parts) else None
+
+
+STOP = set("di ke dan yang ini itu ada sama buat untuk dari dengan juga udah sudah biar nggak tapi cuma jadi kamu kalian aja the of".split())
+
+
+def tokens(t):
+    return {w for w in re.findall(r"[a-z0-9]+", clean(t).lower().replace("rp", " ")) if w not in STOP and len(w) > 1}
+
+
+def match_cards(cards, subs, total, durs):
+    """Pair each spoken sentence with the on-screen card that shares the most words; fall back to planned timing."""
+    out, acc, used_last = [], 0.0, None
+    for i, sub in enumerate(subs):
+        st = tokens(sub)
+        best, score = None, 0
+        for c in cards:
+            sc_ = len(st & tokens(c.get("teks", "")))
+            if sc_ > score:
+                best, score = c.get("teks"), sc_
+        if not best:
+            best = pick_card(cards, acc / total)
+        out.append(best)
+        acc += durs[i]
+    return out
+
+
+def build_scene(item, date, sents, subs, durs, speaks):
+    cards = item.get("teks_layar", [])
+    total = sum(durs)
+    ref = " ".join(subs) + " " + item.get("judul", "")
+    sc = lambda t: soft_case(t, ref)
+    nat = [clean(subs[i] if i < len(subs) and subs[i] else sp) for i, sp in enumerate(sents)]
+    matched = match_cards(cards, nat, total, durs)
+    beats, acc = [], 0.0
+    y, m, d = date.split("-")
+    tanggal = f"{int(d)} {BULAN[int(m) - 1]} {y}"
+    for i, sp in enumerate(sents):
+        sub = clean(subs[i] if i < len(subs) and subs[i] else sp)
+        card = clean(matched[i] or item.get("judul", ""))
+        b = {"start": round(acc, 3), "end": round(acc + durs[i], 3), "speak": round(speaks[i], 3), "kicker": sub, "_card": card}
+        prev_card = beats[-1]["_card"] if beats else None
+        num = parse_number(card)
+        if num:
+            digits = re.sub(r"\D", "", NUM.search(card).group(1))
+            year_like = (num[1] == 0 and 1900 <= num[0] <= 2100) or (num[1] == 0 and num[0] < 10)
+            if year_like or digits not in re.sub(r"[^\d ]", "", sub).replace(" ", " ").split() and digits not in re.sub(r"\D", "", sub):
+                num = None  # only count up numbers the voice actually says, never years
+        if card == prev_card and len(sub.split()) <= 7:
+            card = sub.rstrip(".")  # same on-screen card again: let the spoken line be the headline
+            num = None
+        chips = chips_from(sub)
+        if i == 0:
+            b.update(type="hook", pill=f"berita game · {tanggal}", head=sc(card), sticker="update!")
+        elif i == len(sents) - 1:
+            b.update(type="cta", tag="biar nggak ketinggalan", head="follow", sticker="follow!")
+        elif chips:
+            b.update(type="chips", head=sc(card), chips=chips)
+        elif num:
+            value, dec, before, after = num
+            prefix = ""
+            if before.lower().endswith("rp"):
+                before, prefix = before[:-2].strip(), "Rp"
+            lead = before or " ".join(w for w in sub.split()[:2] if not any(c.isdigit() for c in w)).rstrip(",.?!")
+            b.update(type="number", head=sc(lead), tag="fakta", value=value, decimals=dec, prefix=prefix,
+                     suffix=sc(after)[:14], sticker="gokil!" if value >= 100 else None)
+        else:
+            b.update(type="text", head=sc(card))
+        beats.append(b)
+        acc += durs[i]
+    for b in beats:
+        b.pop("_card", None)
+    src = ", ".join(s.get("nama", "") for s in item.get("sumber", [])[:2])
+    avatar = next((ROOT / "assets" / n for n in ("profile.png", "profile.jpg") if (ROOT / "assets" / n).exists()), None)
+    return {"kategori": item.get("kategori", "Berita Game"), "handle": "@glitchplayclips", "sumber": src,
+            "avatar": avatar.as_uri() if avatar else None, "beats": beats, "total": round(total + 0.3, 3)}
+
+
+def render_item_anim(item, idx, date, outdir, tmp):
+    sents = [s.strip() for s in item.get("naskah_vo", []) if s.strip()]
+    if not sents:
+        raise RuntimeError("naskah_vo kosong")
+    tmp.mkdir(parents=True, exist_ok=True)
+    speaks, durs = [], []
+    for i, s in enumerate(sents):
+        a = tmp / f"s{i}.aiff"
+        tts(s, a)
+        speaks.append(duration(a))
+        durs.append(speaks[-1] + GAP + 0.15)  # a little air so each scene can land
+    scene = build_scene(item, date, sents, item.get("subtitle") or [], durs, speaks)
+    (tmp / "scene.json").write_text(json.dumps(scene, ensure_ascii=False), encoding="utf-8")
+
+    ain, af = [], []
+    for i in range(len(sents)):
+        ain += ["-i", str(tmp / f"s{i}.aiff")]
+        af.append(f"[{i}:a]aresample=44100,apad=pad_dur={durs[i] - speaks[i]:.3f}[a{i}]")
+    af.append("".join(f"[a{i}]" for i in range(len(sents))) + f"concat=n={len(sents)}:v=0:a=1[aout]")
+    audio = tmp / "voice.m4a"
+    run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", *ain, "-filter_complex", ";".join(af), "-map", "[aout]", "-c:a", "aac", "-b:a", "128k", str(audio)])
+
+    silent = tmp / "silent.mp4"
+    node = shutil.which("node") or "/usr/local/bin/node"
+    r = subprocess.run([node, str(ROOT / "tools/anim/render.mjs"), str(tmp / "scene.json"), str(silent), str(FPS)],
+                       capture_output=True, text=True, env={**os.environ, "FFMPEG": FFMPEG})
+    if r.returncode != 0:
+        raise RuntimeError("render anim gagal: " + (r.stderr or r.stdout)[-800:])
+
+    name = f"{idx + 1:02d}-{slug(item.get('judul', ''))}"
+    outdir.mkdir(parents=True, exist_ok=True)
+    mp4 = outdir / f"{name}.mp4"
+    run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(silent), "-i", str(audio), "-map", "0:v", "-map", "1:a",
+         "-c:v", "copy", "-c:a", "copy", "-shortest", "-movflags", "+faststart", str(mp4)])
+    poster = outdir / f"{name}.jpg"
+    run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-ss", "1.2", "-i", str(mp4), "-frames:v", "1", "-vf", "scale=540:-1", str(poster)])
+    return mp4, poster, round(sum(durs), 1)
+
+
+# ------------------------------------------------------------------ "remotion" style (default): tools/remotion GlitchReel composition
+REMOTION = ROOT / "tools/remotion"
+
+
+def tts_script(sents, out_mp3):
+    """Read the whole script in ONE pass (natural flow between sentences) and return per-sentence (start, speak_end)
+    from Ardi's word timings. Returns None if edge-tts is unavailable, so the caller falls back to per-sentence TTS."""
+    if TTS not in ("edge", "gemini"):
+        return None
+    try:
+        import asyncio
+        import edge_tts
+    except ImportError:
+        return None
+    joined = " ".join(sents)
+    words, audio = [], bytearray()
+
+    async def go():
+        c = edge_tts.Communicate(joined, EDGE_VOICE, rate=EDGE_RATE, pitch=EDGE_PITCH, boundary="WordBoundary")
+        async for ch in c.stream():
+            if ch["type"] == "audio":
+                audio.extend(ch["data"])
+            elif ch["type"] == "WordBoundary":
+                words.append((ch["offset"] / 1e7, ch["duration"] / 1e7, ch["text"]))
+
+    try:
+        asyncio.run(go())
+    except Exception as e:  # offline, rate-limited, ...
+        print(f"edge-tts gagal ({e}); pakai TTS per kalimat", file=sys.stderr)
+        return None
+    if not words or len(audio) < 1000:
+        return None
+    Path(out_mp3).write_bytes(bytes(audio))
+    # map every word to its character position in the joined script, then find each sentence's first/last word
+    starts_c, acc = [], 0
+    for s_ in sents:
+        starts_c.append(acc)
+        acc += len(s_) + 1
+    pos, wpos = 0, []
+    for _, _, t in words:
+        i = joined.find(t, pos)
+        wpos.append(i if i >= 0 else pos)
+        pos = (i + len(t)) if i >= 0 else pos
+    spans = []
+    for k, c0 in enumerate(starts_c):
+        c1 = starts_c[k + 1] if k + 1 < len(starts_c) else len(joined) + 1
+        idx = [j for j, p in enumerate(wpos) if c0 <= p < c1]
+        if not idx:
+            return None
+        spans.append((words[idx[0]][0], words[idx[-1]][0] + words[idx[-1]][1]))
+    return spans
+
+
+def gemini_tts(text, out_wav):
+    """Whole script in one call to Google AI Studio TTS. Returns True on success."""
+    if not GEMINI_KEY_FILE.exists():
+        return False
+    import base64
+    import urllib.request
+    body = {
+        "model": GEMINI_MODEL,
+        "input": [{"type": "user_input", "content": [{"type": "text", "text": text,
+                                                      "annotations": [{"type": "speech_metadata", "style": GEMINI_STYLE}]}]}],
+        "response_format": {"type": "audio"},
+        "generation_config": {"speech_config": [{"voice": GEMINI_VOICE}]},
+    }
+    req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/interactions", data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json", "x-goog-api-key": GEMINI_KEY_FILE.read_text().strip()})
+    try:
+        import ssl
+        try:
+            import certifi
+            ctx = ssl.create_default_context(cafile=certifi.where())
+        except ImportError:  # python.org builds on macOS ship without a CA bundle
+            ctx = ssl.create_default_context()
+        with urllib.request.urlopen(req, timeout=180, context=ctx) as r:
+            d = json.load(r)
+        data = next(c["data"] for st in d.get("steps", []) for c in st.get("content", []) if c.get("type") == "audio")
+    except Exception as e:  # quota, network, ...
+        print(f"gemini tts gagal ({str(e)[:160]}); pakai Ardi", file=sys.stderr)
+        return False
+    Path(out_wav).write_bytes(base64.b64decode(data))
+    return True
+
+
+def align_by_pauses(audio, sents):
+    """No word timings from Gemini: put each sentence boundary on the pause closest to where the character count says it
+    should be. Returns [(start, speak_end)] per sentence."""
+    r = subprocess.run([FFMPEG, "-hide_banner", "-i", str(audio), "-af", "silencedetect=noise=-38dB:d=0.12", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    s0 = [float(x) for x in re.findall(r"silence_start: ([\d.]+)", r.stderr)]
+    s1 = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", r.stderr)]
+    total = duration(audio)
+    pauses = list(zip(s0, s1))
+    lead = s1[0] if pauses and s0[0] < 0.05 else 0.0
+    tail = s0[-1] if pauses and s1[-1] > total - 0.05 else total
+    lens = [max(1, len(s)) for s in sents]
+    bounds, acc, used = [], 0, -1
+    for L in lens[:-1]:
+        acc += L
+        want = lead + (tail - lead) * acc / sum(lens)
+        cands = [(abs((a + b) / 2 - want), j) for j, (a, b) in enumerate(pauses) if j > used and lead < (a + b) / 2 < tail]
+        cands = [c for c in cands if c[0] < 1.6]
+        if cands:
+            _, j = min(cands)
+            used = j
+            bounds.append(pauses[j])
+        else:
+            bounds.append((want, want))
+    starts = [lead] + [b for _, b in bounds]
+    ends = [a for a, _ in bounds] + [tail]
+    return list(zip(starts, ends))
+
+
+def tighten(src, dst, keep=KEEP_PAUSE):
+    """Cut every pause longer than `keep` seconds down to `keep` (snappy reel delivery).
+    Returns a function mapping an original timestamp to the tightened one, so scene timings stay in sync."""
+    r = subprocess.run([FFMPEG, "-hide_banner", "-i", str(src), "-af", "silencedetect=noise=-38dB:d=0.2", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    starts = [float(x) for x in re.findall(r"silence_start: ([\d.]+)", r.stderr)]
+    ends = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", r.stderr)]
+    total = duration(src)
+    cuts = []  # (cut_from, cut_to) in original time; keep half the allowed pause on each side
+    for a, b in zip(starts, ends):
+        if b - a > keep:
+            cuts.append((a + keep / 2, b - keep / 2))
+    if not cuts:
+        shutil.copy(src, dst)
+        return lambda t: t
+    keepsegs, prev = [], 0.0
+    for a, b in cuts:
+        keepsegs.append((prev, a))
+        prev = b
+    keepsegs.append((prev, total))
+    parts = "".join(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS[p{i}];" for i, (a, b) in enumerate(keepsegs))
+    parts += "".join(f"[p{i}]" for i in range(len(keepsegs))) + f"concat=n={len(keepsegs)}:v=0:a=1[out]"
+    run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(src), "-filter_complex", parts, "-map", "[out]", "-b:a", "192k", str(dst)])
+
+    def remap(t):
+        removed = 0.0
+        for a, b in cuts:
+            if t >= b:
+                removed += b - a
+            elif t > a:
+                removed += t - a
+        return t - removed
+    return remap
+
+
+# bright "commercial/lifestyle" voice chain: cut boom & boxiness, lift presence and air, even it out, -14 LUFS like IG/TikTok
+VOICE_FX = os.environ.get("GP_VOICE_FX", ",".join([
+    "highpass=f=95",
+    "equalizer=f=280:t=q:w=1.1:g=-3",
+    "equalizer=f=3800:t=q:w=1.3:g=4.5",
+    "treble=g=4:f=9000",
+    "acompressor=threshold=-21dB:ratio=3.2:attack=4:release=70:makeup=2",
+    "loudnorm=I=-14:TP=-1.5:LRA=7",
+]))
+
+
+def polish(src, dst):
+    fx = VOICE_FX if TTS != "gemini" or os.environ.get("GP_VOICE_FX") else "highpass=f=70,acompressor=threshold=-20dB:ratio=2:attack=5:release=80,loudnorm=I=-14:TP=-1.5:LRA=7"
+    run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(src), "-af", fx, "-ar", "48000", "-b:a", "192k", str(dst)])
+
+
+def render_item_remotion(item, idx, date, outdir, tmp):
+    sents = [s.strip() for s in item.get("naskah_vo", []) if s.strip()]
+    if not sents:
+        raise RuntimeError("naskah_vo kosong")
+    tmp.mkdir(parents=True, exist_ok=True)
+    pub = REMOTION / "public" / "_render"
+    pub.mkdir(parents=True, exist_ok=True)
+    key = f"{date}-{idx + 1:02d}"
+    spans = None
+    if TTS == "gemini" and gemini_tts(" ".join(sents), tmp / "gemini.wav"):
+        run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(tmp / "gemini.wav"), "-b:a", "192k", str(tmp / "script.mp3")])
+        spans = align_by_pauses(tmp / "script.mp3", sents)
+    if spans is None:
+        spans = tts_script(sents, tmp / "script.mp3")
+    if spans:
+        remap = tighten(tmp / "script.mp3", tmp / "tight.mp3")
+        polish(tmp / "tight.mp3", tmp / "script.mp3")
+        spans = [(remap(a), remap(b)) for a, b in spans]
+        total_audio = duration(tmp / "script.mp3")
+        starts = [0.0] + [max(0.0, a - 0.08) for a, _ in spans[1:]]
+        ends = starts[1:] + [total_audio + 0.5]
+        durs = [e - s_ for s_, e in zip(starts, ends)]
+        speaks = [b - s_ for (_, b), s_ in zip(spans, starts)]
+        scene = build_scene(item, date, sents, item.get("subtitle") or [], durs, speaks)
+        audio = pub / f"{key}.mp3"
+        shutil.copy(tmp / "script.mp3", audio)
+        return finish_remotion(item, idx, outdir, tmp, scene, audio, key, sum(durs))
+
+    speaks, durs = [], []
+    for i, s in enumerate(sents):
+        a = tmp / f"s{i}.aiff"
+        tts(s, a)
+        speaks.append(duration(a))
+        durs.append(speaks[-1] + GAP + 0.15)
+    scene = build_scene(item, date, sents, item.get("subtitle") or [], durs, speaks)
+
+    # voiceover: every sentence padded to its beat length, so audio and scenes share one clock
+    ain, af = [], []
+    for i in range(len(sents)):
+        ain += ["-i", str(tmp / f"s{i}.aiff")]
+        af.append(f"[{i}:a]aresample=44100,apad=pad_dur={durs[i] - speaks[i]:.3f}[a{i}]")
+    af.append("".join(f"[a{i}]" for i in range(len(sents))) + f"concat=n={len(sents)}:v=0:a=1[aout]")
+    audio = pub / f"{key}.m4a"
+    run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", *ain, "-filter_complex", ";".join(af), "-map", "[aout]", "-c:a", "aac", "-b:a", "160k", str(audio)])
+    return finish_remotion(item, idx, outdir, tmp, scene, audio, key, sum(durs))
+
+
+def finish_remotion(item, idx, outdir, tmp, scene, audio, key, total):
+    shutil.copy(ROOT / "assets/profile.jpg", REMOTION / "public/profile.jpg")
+    scene.update(avatar="profile.jpg", audio=f"_render/{audio.name}", total=round(total + 0.2, 3))
+    props = tmp / "props.json"
+    props.write_text(json.dumps(scene, ensure_ascii=False), encoding="utf-8")
+
+    name = f"{idx + 1:02d}-{slug(item.get('judul', ''))}"
+    outdir.mkdir(parents=True, exist_ok=True)
+    mp4 = outdir / f"{name}.mp4"
+    npx = shutil.which("npx") or "npx"
+    try:
+        r = subprocess.run([npx, "remotion", "render", "GlitchReel", str(mp4), f"--props={props}", "--license-key=free-license",
+                            "--codec=h264", "--crf=20", "--log=error"], cwd=REMOTION, capture_output=True, text=True, stdin=subprocess.DEVNULL)
+        if r.returncode != 0:
+            raise RuntimeError("remotion render gagal: " + (r.stderr or r.stdout)[-800:])
+    finally:
+        audio.unlink(missing_ok=True)
+    poster = outdir / f"{name}.jpg"
+    run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-ss", "1.2", "-i", str(mp4), "-frames:v", "1", "-vf", "scale=540:-1", str(poster)])
+    return mp4, poster, round(total, 1)
+
+
 # ------------------------------------------------------------------ status board
 def status(*args):
     subprocess.run([sys.executable, str(ROOT / "tools/status.py"), *args], check=False)
@@ -329,6 +740,8 @@ def main():
     ap.add_argument("--force", action="store_true", help="render ulang walau video sudah ada")
     ap.add_argument("--prune", type=int, default=0, help="hapus video lebih tua dari N hari")
     ap.add_argument("--no-status", action="store_true")
+    ap.add_argument("--style", default=os.environ.get("GP_STYLE", "remotion"), choices=["remotion", "anim", "glitch"],
+                    help="remotion = komposisi GlitchReel di tools/remotion (default); anim/glitch = renderer lama")
     a = ap.parse_args()
 
     if a.prune:
@@ -361,7 +774,8 @@ def main():
         if not a.no_status:
             status("agent", "studio", "kerja", f"Render video {n}/{len(todo)}: {it.get('judul', '')[:34]}")
         try:
-            mp4, poster, dur = render_item(it, i, a.date, outdir, tmp_root / f"{a.date}-{i}")
+            fn = {"remotion": render_item_remotion, "anim": render_item_anim, "glitch": render_item}[a.style]
+            mp4, poster, dur = fn(it, i, a.date, outdir, tmp_root / f"{a.date}-{i}")
         except Exception as e:  # keep going with the other items
             print(f"[{i + 1}] gagal: {e}", file=sys.stderr)
             if not a.no_status:

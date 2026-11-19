@@ -2,3 +2,4 @@
 .venv/
 .render-tmp/
 __pycache__/
+node_modules/

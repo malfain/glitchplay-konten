@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>GlitchPlay anim</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Space+Mono:wght@400;700&display=block" rel="stylesheet">
+<style>
+  /* 1080x1920 reel, driven frame-by-frame through window.setTime(t). No CSS animations: every frame is deterministic. */
+  :root { --paper: #f2efe3; --grid: #e2ddcb; --ink: #1c1e17; --olive: #5d7820; --olive-2: #7d9a2e; --lime: #c6f02c; --pink: #ff3a6e; --cyan: #2ad4f0; --cream: #fbf8ec; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+  body { font-family: "Plus Jakarta Sans", sans-serif; color: var(--ink);
+         background-image: linear-gradient(var(--grid) 2px, transparent 2px), linear-gradient(90deg, var(--grid) 2px, transparent 2px);
+         background-size: 54px 54px; background-position: -2px -2px; }
+  .mono { font-family: "Space Mono", monospace; }
+
+  /* browser bar */
+  .bar { position: absolute; left: 60px; right: 60px; top: 250px; height: 92px; border: 4px solid var(--ink); border-radius: 22px; background: var(--cream);
+         display: flex; align-items: center; gap: 22px; padding: 0 26px; box-shadow: 0 8px 0 var(--ink); }
+  .dots { display: flex; gap: 12px; } .dots i { width: 22px; height: 22px; border-radius: 50%; border: 3px solid var(--ink); }
+  .dots i:nth-child(1) { background: var(--pink); } .dots i:nth-child(2) { background: #ffc94a; } .dots i:nth-child(3) { background: var(--lime); }
+  .nav { font: 700 34px "Space Mono", monospace; letter-spacing: -4px; }
+  .crumb { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 34px; white-space: nowrap; overflow: hidden; }
+  .crumb b { display: inline-block; width: 38px; height: 28px; border-radius: 5px; background: var(--olive); border: 3px solid var(--ink); }
+  .who { margin-left: auto; display: flex; align-items: center; gap: 12px; font: 700 26px "Space Mono", monospace; border: 3px solid var(--ink); border-radius: 999px; padding: 4px 16px 4px 5px; background: #fff; }
+  .who img { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--ink); }
+
+  .stage { position: absolute; inset: 0; }
+  .beat { position: absolute; left: 70px; right: 230px; top: 400px; opacity: 0; }
+  .kicker { font: 400 30px/1.35 "Space Mono", monospace; color: #3d4034; margin-bottom: 26px; max-width: 760px; }
+  .pill { display: inline-block; font: 700 28px "Space Mono", monospace; border: 3px solid var(--ink); border-radius: 999px; padding: 6px 22px; background: var(--cream); margin-bottom: 26px; }
+  .head { font-weight: 800; font-size: 118px; line-height: 1.04; letter-spacing: -4px; }
+  .w { display: inline-block; margin-right: 22px; }
+  .hl { position: relative; display: inline-block; color: var(--cream); padding: 0 18px 8px; margin: 6px 0; }
+  .hl::before { content: ""; position: absolute; inset: 0; background: var(--olive); border-radius: 10px; transform-origin: left; transform: scaleX(var(--wipe, 0)); z-index: -1; }
+  .hl span { position: relative; }
+
+  .card { margin-top: 48px; border: 4px solid var(--ink); border-radius: 26px; background: var(--cream); box-shadow: 0 10px 0 var(--ink); padding: 34px 38px; width: 780px; }
+  .tag { display: inline-block; background: var(--ink); color: var(--cream); font: 700 26px "Space Mono", monospace; border-radius: 8px; padding: 4px 14px; }
+  .num { font-weight: 800; font-size: 210px; line-height: 1; letter-spacing: -8px; color: var(--olive); margin-top: 18px; white-space: nowrap; }
+  .num small { font-size: 80px; letter-spacing: -2px; color: var(--ink); margin-left: 10px; }
+  .track { margin-top: 22px; height: 30px; border: 4px solid var(--ink); border-radius: 999px; overflow: hidden; background: #fff; }
+  .track i { display: block; height: 100%; background: var(--lime); border-right: 4px solid var(--ink); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 30px; width: 790px; }
+  .chip { font-weight: 800; font-size: 46px; border: 4px solid var(--ink); border-radius: 999px; padding: 10px 30px; background: #fff; box-shadow: 0 7px 0 var(--ink); }
+  .chip:nth-child(3n+1) { background: var(--lime); } .chip:nth-child(3n+2) { background: #fff; } .chip:nth-child(3n) { background: #ffd9e3; }
+
+  .note { margin-top: 44px; width: 790px; border: 4px solid var(--ink); border-radius: 22px; background: #fff; box-shadow: 0 10px 0 var(--ink); padding: 30px 34px 30px 92px; position: relative; }
+  .note::before { content: ""; position: absolute; left: 30px; top: 26px; bottom: 26px; width: 30px;
+                  background: radial-gradient(circle, transparent 7px, var(--ink) 8px, var(--ink) 11px, transparent 12px) 0 0 / 30px 62px repeat-y; }
+  .note .big { font-weight: 800; font-size: 86px; line-height: 1.05; letter-spacing: -3px; }
+  .note .big em { font-style: normal; background: linear-gradient(transparent 55%, var(--lime) 55%); }
+
+  .sticker { position: absolute; font-weight: 800; font-size: 50px; padding: 12px 34px; border: 4px solid var(--ink); border-radius: 999px; background: var(--lime);
+             box-shadow: 0 8px 0 var(--ink); transform-origin: center; white-space: nowrap; }
+
+  .mascot { position: absolute; left: 600px; top: 1150px; width: 270px; height: 290px; }
+  .shadow { position: absolute; left: 640px; top: 1420px; width: 190px; height: 34px; border-radius: 50%; background: rgba(28,30,23,.18); }
+  .src { position: absolute; left: 70px; top: 1452px; font: 400 24px "Space Mono", monospace; color: #6c6e60; }
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="dots"><i></i><i></i><i></i></div>
+  <div class="nav">&lt; &gt;</div>
+  <div class="crumb"><b></b><span id="crumb">Berita Game</span></div>
+  <div class="who"><img id="avatar" alt=""><span id="handle">@glitchplayclips</span></div>
+</div>
+<div class="stage" id="stage"></div>
+<div class="shadow" id="shadow"></div>
+<svg class="mascot" id="mascot" viewBox="0 0 270 290" aria-hidden="true">
+  <!-- "Gepeci": original GlitchPlay mascot, a little gamer with a backwards cap and headset -->
+  <g id="body">
+    <path d="M70 250 q65 -60 130 0 v40 h-130z" fill="#2b2f24" stroke="#1c1e17" stroke-width="6"/>
+    <path d="M118 236 h34 v22 h-34z" fill="#c6f02c" stroke="#1c1e17" stroke-width="5"/>
+  </g>
+  <g id="head">
+    <ellipse cx="135" cy="140" rx="98" ry="96" fill="#f3c9a4" stroke="#1c1e17" stroke-width="7"/>
+    <!-- cap (backwards) -->
+    <path d="M44 118 q8 -82 92 -84 q84 2 92 84 q-92 -26 -184 0z" fill="#ff3a6e" stroke="#1c1e17" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M200 92 q40 4 46 30 q-24 8 -40 -6z" fill="#ff3a6e" stroke="#1c1e17" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="112" y="58" width="46" height="26" rx="6" fill="#fbf8ec" stroke="#1c1e17" stroke-width="5"/>
+    <text x="135" y="78" text-anchor="middle" font-family="Space Mono" font-weight="700" font-size="17" fill="#1c1e17">GPC</text>
+    <!-- headset -->
+    <path d="M34 150 q0 -40 22 -50" fill="none" stroke="#1c1e17" stroke-width="10" stroke-linecap="round"/>
+    <rect x="22" y="132" width="30" height="48" rx="12" fill="#2ad4f0" stroke="#1c1e17" stroke-width="6"/>
+    <path d="M40 178 q10 40 58 44" fill="none" stroke="#1c1e17" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="100" cy="222" r="9" fill="#c6f02c" stroke="#1c1e17" stroke-width="5"/>
+    <!-- face -->
+    <g id="eyes">
+      <ellipse cx="104" cy="146" rx="11" ry="14" fill="#1c1e17"/>
+      <ellipse cx="170" cy="146" rx="11" ry="14" fill="#1c1e17"/>
+      <circle cx="108" cy="141" r="4" fill="#fff"/><circle cx="174" cy="141" r="4" fill="#fff"/>
+    </g>
+    <path d="M90 124 q14 -8 28 0 M156 124 q14 -8 28 0" fill="none" stroke="#1c1e17" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="86" cy="178" rx="13" ry="8" fill="#ff9aa9" opacity=".7"/><ellipse cx="190" cy="178" rx="13" ry="8" fill="#ff9aa9" opacity=".7"/>
+    <ellipse id="mouth" cx="137" cy="186" rx="20" ry="6" fill="#7a1f2b" stroke="#1c1e17" stroke-width="5"/>
+  </g>
+</svg>
+<div class="src mono" id="src"></div>
+
+<script>
+const S = window.SCENE;
+const $ = (s) => document.querySelector(s);
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const ease = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const back = (x) => { x = clamp(x); const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+$("#crumb").textContent = S.kategori || "Berita Game";
+$("#handle").textContent = S.handle || "@glitchplayclips";
+if (S.avatar) $("#avatar").src = S.avatar; else $("#avatar").remove();
+$("#src").textContent = S.sumber ? "sumber: " + S.sumber : "";
+
+// split a headline: last 1-2 words get the olive highlight box
+function headHTML(text) {
+  const words = text.split(/\s+/).filter(Boolean);
+  const n = words.length <= 2 ? 1 : words.length <= 5 ? 1 : 2;
+  const plain = words.slice(0, words.length - n), hl = words.slice(words.length - n);
+  return plain.map((w) => `<span class="w">${esc(w)}</span>`).join("") +
+    `<br><span class="hl w"><span>${esc(hl.join(" "))}</span></span>`;
+}
+
+const stage = $("#stage");
+const beats = S.beats.map((b, i) => {
+  const el = document.createElement("div");
+  el.className = "beat";
+  let html = "";
+  if (b.type === "hook") {
+    html = `<div class="pill">${esc(b.pill)}</div><div class="head">${headHTML(b.head)}</div>`;
+  } else if (b.type === "number") {
+    html = `<div class="kicker">${esc(b.kicker)}</div><div class="head" style="font-size:96px">${headHTML(b.head)}</div>
+      <div class="card"><span class="tag">${esc(b.tag)}</span><div class="num">${b.prefix ? `<small style="margin:0 8px 0 0">${esc(b.prefix)}</small>` : ""}<span class="n">0</span><small>${esc(b.suffix)}</small></div><div class="track"><i style="width:0"></i></div></div>`;
+  } else if (b.type === "chips") {
+    html = `<div class="kicker">${esc(b.kicker)}</div><div class="head" style="font-size:96px">${headHTML(b.head)}</div>
+      <div class="chips">${b.chips.map((c) => `<span class="chip">${esc(c)}</span>`).join("")}</div>`;
+  } else if (b.type === "cta") {
+    html = `<div class="kicker">${esc(b.kicker)}</div><div class="note"><span class="tag">${esc(b.tag)}</span><div class="big" style="margin-top:18px">${esc(b.head)}<br><em>${esc(S.handle)}</em></div></div>`;
+  } else {
+    html = `<div class="kicker">${esc(b.kicker)}</div><div class="head">${headHTML(b.head)}</div>`;
+  }
+  el.innerHTML = html;
+  stage.appendChild(el);
+  let st = null;
+  if (b.sticker) {
+    st = document.createElement("div");
+    st.className = "sticker";
+    st.textContent = b.sticker;
+    st.style.left = (i % 2 ? 380 : 90) + "px";
+    st.style.top = (b.type === "cta" ? 1080 : 1250) + "px";
+    stage.appendChild(st);
+  }
+  return { b, el, st, words: [...el.querySelectorAll(".w, .chip")], hl: el.querySelector(".hl"), n: el.querySelector(".n"), track: el.querySelector(".track i"), card: el.querySelector(".card, .note") };
+});
+
+function fmtNum(v, dec) { return dec ? v.toFixed(dec).replace(".", ",") : Math.round(v).toLocaleString("id-ID"); }
+
+window.setTime = (t) => {
+  for (const o of beats) {
+    const { b } = o;
+    const lt = t - b.start, dur = b.end - b.start;
+    const visible = lt >= 0 && lt < dur;
+    o.el.style.opacity = visible ? 1 : 0;
+    if (o.st) o.st.style.opacity = visible ? 1 : 0;
+    if (!visible) continue;
+    const out = clamp((lt - (dur - 0.22)) / 0.22);           // exit
+    o.el.style.transform = `translateY(${-40 * out}px)`;
+    o.el.style.opacity = 1 - out;
+    const kick = o.el.querySelector(".kicker, .pill");
+    if (kick) { const k = ease(lt / 0.3); kick.style.opacity = k; kick.style.transform = `translateX(${(1 - k) * -40}px)`; }
+    o.words.forEach((w, j) => {
+      const k = back((lt - 0.08 - j * 0.07) / 0.35);
+      w.style.opacity = clamp((lt - 0.08 - j * 0.07) / 0.12);
+      w.style.transform = `translateY(${(1 - k) * 60}px) scale(${0.9 + 0.1 * k})`;
+    });
+    if (o.hl) o.hl.style.setProperty("--wipe", ease((lt - 0.25 - o.words.length * 0.05) / 0.35));
+    if (o.card) { const k = back((lt - 0.3) / 0.45); o.card.style.opacity = clamp((lt - 0.3) / 0.15); o.card.style.transform = `translateY(${(1 - k) * 80}px) rotate(${(1 - k) * -2}deg)`; }
+    if (o.n) { const k = ease((lt - 0.45) / Math.max(0.6, dur * 0.55)); o.n.textContent = fmtNum(b.value * k, b.decimals); o.track.style.width = (k * 100) + "%"; }
+    if (o.st) { const k = back((lt - 0.55) / 0.35); o.st.style.opacity = (1 - out) * clamp((lt - 0.55) / 0.1); o.st.style.transform = `scale(${k}) rotate(${-8 + 3 * Math.sin(t * 3)}deg)`; }
+  }
+  // mascot: idle bob, talks while a sentence is being spoken, small hop on every new beat
+  const cur = beats.find((o) => t >= o.b.start && t < o.b.end);
+  const lt = cur ? t - cur.b.start : 0;
+  const hop = cur ? Math.max(0, Math.sin(clamp(lt / 0.35) * Math.PI)) * 26 : 0;
+  const bob = Math.sin(t * 2.4) * 6;
+  $("#mascot").style.transform = `translateY(${bob - hop}px) rotate(${Math.sin(t * 1.3) * 2.5}deg)`;
+  $("#shadow").style.transform = `scale(${1 - hop / 120})`;
+  const talking = cur && lt < cur.b.speak;
+  $("#mouth").setAttribute("ry", talking ? 6 + Math.abs(Math.sin(t * 17)) * 14 : 6);
+  const blink = (t % 3.1) < 0.12;
+  $("#eyes").setAttribute("transform", blink ? "translate(0 146) scale(1 .15) translate(0 -146)" : "");
+};
+window.setTime(0);
+</script>
+</body>
+</html>
