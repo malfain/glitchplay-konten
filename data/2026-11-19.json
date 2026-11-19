@@ -102,7 +102,8 @@
       ],
       "video": "video/2026-11-19/01-gta-vi-resmi-rilis-tapi-belum-ada-versi.mp4",
       "poster": "video/2026-11-19/01-gta-vi-resmi-rilis-tapi-belum-ada-versi.jpg",
-      "video_durasi": 35.3
+      "video_durasi": 33.5,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     }
   ]
 }

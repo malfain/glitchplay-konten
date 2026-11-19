@@ -79,7 +79,7 @@ Buat **minimal 5 konten reel** berita game untuk hari ini (tanggal WIB:
    item lama, jangan duplikat topik).
 6. Tambahkan tanggal ke `data/index.json` (`days`, tanpa duplikat).
 7. Jangan ubah `index.html`, `scene/`, `tools/`, `assets/`, `video/`, `ROUTINE.md`,
-   atau `voice.md`. Jangan hapus/ubah field `video`, `poster`, `video_durasi`
+   atau `voice.md`. Jangan hapus/ubah field `video`, `poster`, `video_durasi`, `video_suara`
    pada item yang sudah ada (diisi oleh Studio di Mac yang merender video).
 
 ## Aturan naskah reel (Narator)

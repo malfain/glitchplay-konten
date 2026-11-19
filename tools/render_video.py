@@ -33,6 +33,25 @@ GEMINI_MODEL = os.environ.get("GP_GEMINI_MODEL", "gemini-3.8-flash-tts")
 GEMINI_VOICE = os.environ.get("GP_GEMINI_VOICE", "Fenrir")
 GEMINI_STYLE = os.environ.get("GP_GEMINI_STYLE", "Bahasa Indonesia santai anak muda Jakarta, ceria, lucu dan semangat, "
                               "gaya voiceover iklan lifestyle, tempo sedang agak cepat, jeda singkat antarkalimat, suara jernih dan terang")
+# per-channel look, voice and wording; --channel picks one
+CHANNELS = {
+    "glitch": {
+        "data": "data", "video": "video", "theme": "glitch", "handle": "@glitchplayclips",
+        "voice": "Fenrir", "models": ["gemini-3.8-flash-tts", "gemini-3.8-flash-lite-tts"],
+        "style": None,  # GEMINI_STYLE
+        "pill": "berita game", "cta_head": "follow", "cta_tag": "biar nggak ketinggalan",
+        "stickers": {"hook": "update!", "number": "gokil!", "cta": "follow!"},
+    },
+    "kids": {
+        "data": "data/kids", "video": "video/kids", "theme": "kids", "handle": "GlitchPlayClips",
+        "voice": "Leda", "models": ["gemini-3.8-flash-lite-tts", "gemini-3.8-flash-tts"],
+        "style": "Kakak pencerita yang ramah untuk anak SD umur 6 sampai 10 tahun, bahasa Indonesia yang jelas dan sederhana, "
+                 "ceria, hangat, penuh rasa kagum, tempo sedang, artikulasi jelas, jeda singkat antarkalimat",
+        "pill": "fakta seru", "cta_head": "subscribe", "cta_tag": "biar tambah pintar",
+        "stickers": {"hook": "wow!", "number": "keren!", "cta": "subscribe!"},
+    },
+}
+CH = dict(CHANNELS["glitch"])
 GEMINI_KEY_FILE = Path(os.environ.get("GP_GEMINI_KEY_FILE", str(Path.home() / ".glitchplay/gemini_key")))
 EDGE_VOICE = os.environ.get("GP_EDGE_VOICE", "id-ID-ArdiNeural")
 EDGE_RATE = os.environ.get("GP_EDGE_RATE", "+10%")   # cepat & semangat
@@ -356,7 +375,10 @@ def parse_number(text):
 
 
 def chips_from(sub):
-    body = re.split(r"\b(?:ada|yaitu|antara lain|seperti)\b|:", sub, maxsplit=1, flags=re.I)[-1]
+    parts_ = re.split(r"\b(?:ada|yaitu|antara lain|seperti)\b|:", sub, maxsplit=1, flags=re.I)
+    if len(parts_) < 2:
+        return None  # only real lists ("ada A, B, dan C") become chips
+    body = parts_[-1]
     parts = [p.strip(" .") for p in re.split(r",|\bdan\b|\bsama\b", body) if p.strip(" .")]
     return parts if 3 <= len(parts) <= 7 and all(len(p) <= 22 for p in parts) else None
 
@@ -411,9 +433,9 @@ def build_scene(item, date, sents, subs, durs, speaks):
             num = None
         chips = chips_from(sub)
         if i == 0:
-            b.update(type="hook", pill=f"berita game · {tanggal}", head=sc(card), sticker="update!")
+            b.update(type="hook", pill=f"{CH['pill']} · {tanggal}", head=sc(card), sticker=CH["stickers"]["hook"])
         elif i == len(sents) - 1:
-            b.update(type="cta", tag="biar nggak ketinggalan", head="follow", sticker="follow!")
+            b.update(type="cta", tag=CH["cta_tag"], head=CH["cta_head"], sticker=CH["stickers"]["cta"])
         elif chips:
             b.update(type="chips", head=sc(card), chips=chips)
         elif num:
@@ -423,7 +445,7 @@ def build_scene(item, date, sents, subs, durs, speaks):
                 before, prefix = before[:-2].strip(), "Rp"
             lead = before or " ".join(w for w in sub.split()[:2] if not any(c.isdigit() for c in w)).rstrip(",.?!")
             b.update(type="number", head=sc(lead), tag="fakta", value=value, decimals=dec, prefix=prefix,
-                     suffix=sc(after)[:14], sticker="gokil!" if value >= 100 else None)
+                     suffix=sc(after)[:14], sticker=CH["stickers"]["number"] if value >= 100 else None)
         else:
             b.update(type="text", head=sc(card))
         beats.append(b)
@@ -432,7 +454,7 @@ def build_scene(item, date, sents, subs, durs, speaks):
         b.pop("_card", None)
     src = ", ".join(s.get("nama", "") for s in item.get("sumber", [])[:2])
     avatar = next((ROOT / "assets" / n for n in ("profile.png", "profile.jpg") if (ROOT / "assets" / n).exists()), None)
-    return {"kategori": item.get("kategori", "Berita Game"), "handle": "@glitchplayclips", "sumber": src,
+    return {"theme": CH["theme"], "kategori": item.get("kategori", "Berita Game"), "handle": CH["handle"], "sumber": src,
             "avatar": avatar.as_uri() if avatar else None, "beats": beats, "total": round(total + 0.3, 3)}
 
 
@@ -528,36 +550,61 @@ def tts_script(sents, out_mp3):
     return spans
 
 
+LAST_VOICE = {"engine": None}
+EXHAUSTED = set()  # models that kept answering 429 in this run: skip them for the remaining videos
+
+
 def gemini_tts(text, out_wav):
-    """Whole script in one call to Google AI Studio TTS. Returns True on success."""
+    """Whole script in one call to Google AI Studio TTS, retrying on 429 and trying the lite model (separate quota).
+    Returns True on success and records which model spoke in LAST_VOICE."""
     if not GEMINI_KEY_FILE.exists():
         return False
     import base64
+    import ssl
+    import time
+    import urllib.error
     import urllib.request
-    body = {
-        "model": GEMINI_MODEL,
-        "input": [{"type": "user_input", "content": [{"type": "text", "text": text,
-                                                      "annotations": [{"type": "speech_metadata", "style": GEMINI_STYLE}]}]}],
-        "response_format": {"type": "audio"},
-        "generation_config": {"speech_config": [{"voice": GEMINI_VOICE}]},
-    }
-    req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/interactions", data=json.dumps(body).encode(),
-                                 headers={"Content-Type": "application/json", "x-goog-api-key": GEMINI_KEY_FILE.read_text().strip()})
     try:
-        import ssl
-        try:
-            import certifi
-            ctx = ssl.create_default_context(cafile=certifi.where())
-        except ImportError:  # python.org builds on macOS ship without a CA bundle
-            ctx = ssl.create_default_context()
-        with urllib.request.urlopen(req, timeout=180, context=ctx) as r:
-            d = json.load(r)
-        data = next(c["data"] for st in d.get("steps", []) for c in st.get("content", []) if c.get("type") == "audio")
-    except Exception as e:  # quota, network, ...
-        print(f"gemini tts gagal ({str(e)[:160]}); pakai Ardi", file=sys.stderr)
-        return False
-    Path(out_wav).write_bytes(base64.b64decode(data))
-    return True
+        import certifi
+        ctx = ssl.create_default_context(cafile=certifi.where())
+    except ImportError:  # python.org builds on macOS ship without a CA bundle
+        ctx = ssl.create_default_context()
+    key = GEMINI_KEY_FILE.read_text().strip()
+    voice = os.environ.get("GP_GEMINI_VOICE") or CH["voice"]
+    style = CH["style"] or GEMINI_STYLE
+    for model in [m for m in dict.fromkeys(CH["models"]) if m not in EXHAUSTED]:
+        body = {
+            "model": model,
+            "input": [{"type": "user_input", "content": [{"type": "text", "text": text,
+                                                          "annotations": [{"type": "speech_metadata", "style": style}]}]}],
+            "response_format": {"type": "audio"},
+            "generation_config": {"speech_config": [{"voice": voice}]},
+        }
+        for attempt in range(3):
+            req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/interactions", data=json.dumps(body).encode(),
+                                         headers={"Content-Type": "application/json", "x-goog-api-key": key})
+            try:
+                with urllib.request.urlopen(req, timeout=180, context=ctx) as r:
+                    d = json.load(r)
+                data = next(c["data"] for st in d.get("steps", []) for c in st.get("content", []) if c.get("type") == "audio")
+                Path(out_wav).write_bytes(base64.b64decode(data))
+                LAST_VOICE["engine"] = f"{model}/{voice}"
+                return True
+            except urllib.error.HTTPError as e:
+                if e.code == 429 and attempt == 2:
+                    EXHAUSTED.add(model)
+                if e.code == 429 and attempt < 2:
+                    wait = 40 * (attempt + 1)
+                    print(f"gemini {model}: 429, tunggu {wait} dtk lalu coba lagi", file=sys.stderr)
+                    time.sleep(wait)
+                    continue
+                print(f"gemini {model} gagal: HTTP {e.code}", file=sys.stderr)
+                break
+            except Exception as e:  # network, bad response
+                print(f"gemini {model} gagal: {str(e)[:160]}", file=sys.stderr)
+                break
+    print("semua model Gemini gagal; pakai Ardi", file=sys.stderr)
+    return False
 
 
 def align_by_pauses(audio, sents):
@@ -647,13 +694,14 @@ def render_item_remotion(item, idx, date, outdir, tmp):
     tmp.mkdir(parents=True, exist_ok=True)
     pub = REMOTION / "public" / "_render"
     pub.mkdir(parents=True, exist_ok=True)
-    key = f"{date}-{idx + 1:02d}"
+    key = f"{CH['theme']}-{date}-{idx + 1:02d}"
     spans = None
     if TTS == "gemini" and gemini_tts(" ".join(sents), tmp / "gemini.wav"):
         run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(tmp / "gemini.wav"), "-b:a", "192k", str(tmp / "script.mp3")])
         spans = align_by_pauses(tmp / "script.mp3", sents)
     if spans is None:
         spans = tts_script(sents, tmp / "script.mp3")
+        LAST_VOICE["engine"] = f"edge/{EDGE_VOICE}" if spans else f"say/{VOICE}"
     if spans:
         remap = tighten(tmp / "script.mp3", tmp / "tight.mp3")
         polish(tmp / "tight.mp3", tmp / "script.mp3")
@@ -716,14 +764,14 @@ def status(*args):
 
 def prune(days):
     cutoff = (datetime.now(WIB) - timedelta(days=days)).strftime("%Y-%m-%d")
-    vdir = ROOT / "video"
+    vdir = ROOT / CH["video"]
     removed = 0
     if vdir.exists():
         for d in sorted(vdir.iterdir()):
-            if d.is_dir() and d.name < cutoff:
+            if d.is_dir() and re.match(r"\d{4}-\d{2}-\d{2}$", d.name) and d.name < cutoff:
                 shutil.rmtree(d)
                 removed += 1
-                f = ROOT / "data" / f"{d.name}.json"
+                f = ROOT / CH["data"] / f"{d.name}.json"
                 if f.exists():
                     data = json.loads(f.read_text(encoding="utf-8"))
                     for it in data.get("items", []):
@@ -740,16 +788,19 @@ def main():
     ap.add_argument("--force", action="store_true", help="render ulang walau video sudah ada")
     ap.add_argument("--prune", type=int, default=0, help="hapus video lebih tua dari N hari")
     ap.add_argument("--no-status", action="store_true")
+    ap.add_argument("--channel", default="glitch", choices=list(CHANNELS), help="glitch = IG GlitchPlay, kids = YouTube anak")
     ap.add_argument("--style", default=os.environ.get("GP_STYLE", "remotion"), choices=["remotion", "anim", "glitch"],
                     help="remotion = komposisi GlitchReel di tools/remotion (default); anim/glitch = renderer lama")
     a = ap.parse_args()
+    CH.clear()
+    CH.update(CHANNELS[a.channel])
 
     if a.prune:
         n = prune(a.prune)
         if n:
             print(f"prune: {n} folder video lama dihapus")
 
-    f = ROOT / "data" / f"{a.date}.json"
+    f = ROOT / CH["data"] / f"{a.date}.json"
     if not f.exists():
         print(f"tidak ada data {a.date}")
         return 0
@@ -762,7 +813,7 @@ def main():
         print("semua video sudah ada")
         return 0
 
-    outdir = ROOT / "video" / a.date
+    outdir = ROOT / CH["video"] / a.date
     tmp_root = ROOT / ".render-tmp"
     done = 0
     if not a.no_status:
@@ -771,6 +822,9 @@ def main():
             subprocess.run([str(ROOT / "tools/publish.sh"), f"status: studio render {a.date}"], check=False)
     for n, i in enumerate(todo, 1):
         it = items[i]
+        if n > 1 and a.style == "remotion" and TTS == "gemini":
+            import time
+            time.sleep(20)  # stay under the free tier's per-minute limit
         if not a.no_status:
             status("agent", "studio", "kerja", f"Render video {n}/{len(todo)}: {it.get('judul', '')[:34]}")
         try:
@@ -784,6 +838,8 @@ def main():
         it["video"] = str(mp4.relative_to(ROOT))
         it["poster"] = str(poster.relative_to(ROOT))
         it["video_durasi"] = dur
+        if LAST_VOICE["engine"]:
+            it["video_suara"] = LAST_VOICE["engine"]
         f.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         done += 1
         print(f"[{i + 1}] {mp4.name}  {dur}s  {mp4.stat().st_size // 1024} KB")

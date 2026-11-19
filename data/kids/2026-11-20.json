@@ -1,0 +1,250 @@
+{
+  "date": "2026-11-20",
+  "items": [
+    {
+      "kategori": "Hewan Laut",
+      "judul": "7 fakta seru gurita: 3 jantung, darah biru, tanpa tulang",
+      "ringkasan": "Gurita punya 3 jantung, darah biru karena tembaga, jantung utamanya berhenti saat berenang, 8 lengan berpenghisap, sekitar 500 juta sel saraf (2/3 di lengan), bisa berubah warna dan menyemburkan tinta, serta tidak punya tulang (hanya paruh) sehingga bisa menyelinap lewat celah sempit.",
+      "status_fakta": "resmi",
+      "hook_formula": "Tahukah Kamu + daftar 7 fakta",
+      "durasi_detik": 130,
+      "naskah_vo": [
+        "Tahukah kamu, ada hewan yang punya tiga jantung?",
+        "Darahnya biru, dan kulitnya bisa berubah warna dalam sekejap!",
+        "Hewan ajaib itu namanya gurita!",
+        "Yuk, kita kenalan dengan tujuh fakta seru tentang gurita!",
+        "Fakta pertama. Gurita punya tiga jantung.",
+        "Dua jantung kecil memompa darah ke insang, untuk bernapas di dalam air.",
+        "Satu jantung besar memompa darah ke seluruh tubuhnya.",
+        "Fakta kedua. Darah gurita berwarna biru!",
+        "Karena darahnya mengandung tembaga, bukan besi seperti darah kita.",
+        "Fakta ketiga. Kalau gurita berenang, jantung besarnya berhenti sebentar.",
+        "Makanya gurita lebih suka merayap di dasar laut.",
+        "Fakta keempat. Gurita punya delapan lengan, bukan tentakel.",
+        "Setiap lengannya penuh alat penghisap untuk memegang benda.",
+        "Fakta kelima. Gurita punya sekitar lima ratus juta sel saraf.",
+        "Hampir sebanyak sel saraf seekor anjing!",
+        "Dua pertiganya ada di lengan, jadi tiap lengan seperti punya otak kecil.",
+        "Fakta keenam. Gurita jago menyamar.",
+        "Kulitnya bisa berubah warna, supaya tidak terlihat oleh musuh.",
+        "Kalau ketahuan, gurita menyemburkan tinta hitam, lalu kabur!",
+        "Fakta ketujuh. Gurita tidak punya tulang.",
+        "Bagian keras di tubuhnya cuma paruh, mirip paruh burung beo.",
+        "Karena itu, gurita bisa menyelinap lewat celah batu yang sempit sekali.",
+        "Hebat, kan?",
+        "Sekarang kuis! Gurita punya tiga jantung. Kalau kamu, punya berapa jantung?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Subscribe GlitchPlayClips, sampai jumpa di fakta seru berikutnya!"
+      ],
+      "subtitle": [
+        "Tahukah kamu, ada hewan yang punya 3 jantung?",
+        "Darahnya biru, dan kulitnya bisa berubah warna dalam sekejap!",
+        "Hewan ajaib itu namanya gurita!",
+        "Yuk, kita kenalan dengan 7 fakta seru tentang gurita!",
+        "Fakta pertama. Gurita punya 3 jantung.",
+        "2 jantung kecil memompa darah ke insang, untuk bernapas di dalam air.",
+        "1 jantung besar memompa darah ke seluruh tubuhnya.",
+        "Fakta kedua. Darah gurita berwarna biru!",
+        "Karena darahnya mengandung tembaga, bukan besi seperti darah kita.",
+        "Fakta ketiga. Kalau gurita berenang, jantung besarnya berhenti sebentar.",
+        "Makanya gurita lebih suka merayap di dasar laut.",
+        "Fakta keempat. Gurita punya 8 lengan, bukan tentakel.",
+        "Setiap lengannya penuh alat penghisap untuk memegang benda.",
+        "Fakta kelima. Gurita punya sekitar 500 juta sel saraf.",
+        "Hampir sebanyak sel saraf seekor anjing!",
+        "2/3-nya ada di lengan, jadi tiap lengan seperti punya otak kecil.",
+        "Fakta keenam. Gurita jago menyamar.",
+        "Kulitnya bisa berubah warna, supaya tidak terlihat oleh musuh.",
+        "Kalau ketahuan, gurita menyemburkan tinta hitam, lalu kabur!",
+        "Fakta ketujuh. Gurita tidak punya tulang.",
+        "Bagian keras di tubuhnya cuma paruh, mirip paruh burung beo.",
+        "Karena itu, gurita bisa menyelinap lewat celah batu yang sempit sekali.",
+        "Hebat, kan?",
+        "Sekarang kuis! Gurita punya 3 jantung. Kalau kamu, punya berapa jantung?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Subscribe GlitchPlayClips, sampai jumpa di fakta seru berikutnya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "HEWAN 3 JANTUNG?",
+          "visual": "ilustrasi gurita"
+        },
+        {
+          "t": "0:04",
+          "teks": "DARAH BIRU, BISA GANTI WARNA",
+          "visual": "gurita berubah warna"
+        },
+        {
+          "t": "0:08",
+          "teks": "GURITA!",
+          "visual": "gurita melambai"
+        },
+        {
+          "t": "0:11",
+          "teks": "7 FAKTA SERU",
+          "visual": "angka 7"
+        },
+        {
+          "t": "0:15",
+          "teks": "#1 GURITA PUNYA 3 JANTUNG",
+          "visual": "3 jantung"
+        },
+        {
+          "t": "0:19",
+          "teks": "2 JANTUNG UNTUK INSANG",
+          "visual": "diagram insang"
+        },
+        {
+          "t": "0:24",
+          "teks": "1 JANTUNG UNTUK TUBUH",
+          "visual": "diagram tubuh"
+        },
+        {
+          "t": "0:28",
+          "teks": "#2 DARAHNYA BIRU",
+          "visual": "tetes biru"
+        },
+        {
+          "t": "0:32",
+          "teks": "TEMBAGA, BUKAN BESI",
+          "visual": "tembaga vs besi"
+        },
+        {
+          "t": "0:37",
+          "teks": "#3 BERENANG? JANTUNG BERHENTI",
+          "visual": "gurita berenang"
+        },
+        {
+          "t": "0:42",
+          "teks": "LEBIH SUKA MERAYAP",
+          "visual": "gurita merayap"
+        },
+        {
+          "t": "0:46",
+          "teks": "#4 PUNYA 8 LENGAN",
+          "visual": "8 lengan"
+        },
+        {
+          "t": "0:50",
+          "teks": "LENGAN PENUH PENGHISAP",
+          "visual": "close up penghisap"
+        },
+        {
+          "t": "0:55",
+          "teks": "#5 500 JUTA SEL SARAF",
+          "visual": "otak"
+        },
+        {
+          "t": "1:00",
+          "teks": "SEBANYAK ANJING!",
+          "visual": "anjing"
+        },
+        {
+          "t": "1:04",
+          "teks": "OTAK KECIL DI TIAP LENGAN",
+          "visual": "lengan bercahaya"
+        },
+        {
+          "t": "1:09",
+          "teks": "#6 JAGO MENYAMAR",
+          "visual": "kamuflase"
+        },
+        {
+          "t": "1:13",
+          "teks": "KULIT GANTI WARNA",
+          "visual": "warna berubah"
+        },
+        {
+          "t": "1:18",
+          "teks": "SEMBUR TINTA, KABUR!",
+          "visual": "tinta hitam"
+        },
+        {
+          "t": "1:23",
+          "teks": "#7 TIDAK PUNYA TULANG",
+          "visual": "tubuh lentur"
+        },
+        {
+          "t": "1:27",
+          "teks": "PARUH SEPERTI BEO",
+          "visual": "paruh"
+        },
+        {
+          "t": "1:32",
+          "teks": "MENYELINAP DI CELAH SEMPIT",
+          "visual": "celah batu"
+        },
+        {
+          "t": "1:37",
+          "teks": "HEBAT, KAN?",
+          "visual": "gurita senang"
+        },
+        {
+          "t": "1:40",
+          "teks": "KUIS: BERAPA JANTUNGMU?",
+          "visual": "tanda tanya"
+        },
+        {
+          "t": "1:46",
+          "teks": "JAWAB DALAM HATI",
+          "visual": "anak berpikir"
+        },
+        {
+          "t": "1:50",
+          "teks": "SUBSCRIBE!",
+          "visual": "tombol subscribe"
+        }
+      ],
+      "caption": "7 fakta seru gurita! 🐙",
+      "hashtags": [
+        "#faktaseru",
+        "#gurita",
+        "#belajarsains"
+      ],
+      "youtube": {
+        "judul": "7 Fakta Seru Gurita! 3 Jantung, Darah Biru & Tanpa Tulang 🐙 #Shorts",
+        "deskripsi": "Tahukah kamu? Gurita punya 3 jantung, darahnya biru, dan tidak punya tulang! Yuk kenalan dengan 7 fakta seru gurita di video ini.\n\n🐙 Fakta di video:\n1. Punya 3 jantung\n2. Darahnya biru (mengandung tembaga)\n3. Jantung utamanya berhenti saat berenang\n4. Punya 8 lengan berpenghisap\n5. Punya sekitar 500 juta sel saraf\n6. Jago menyamar dan menyemburkan tinta\n7. Tidak punya tulang, cuma paruh\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: Live Science, Smithsonian Magazine, South Carolina Aquarium, Countryfile, Bristol Aquarium",
+        "tags": [
+          "fakta seru",
+          "fakta unik anak",
+          "gurita",
+          "octopus",
+          "hewan laut",
+          "belajar sains",
+          "sains anak",
+          "tahukah kamu",
+          "edukasi anak",
+          "shorts"
+        ],
+        "made_for_kids": true
+      },
+      "sumber": [
+        {
+          "nama": "Live Science",
+          "url": "https://www.livescience.com/how-many-hearts-does-an-octopus-have"
+        },
+        {
+          "nama": "Smithsonian Magazine",
+          "url": "https://www.smithsonianmag.com/science-nature/ten-wild-facts-about-octopuses-they-have-three-hearts-big-brains-and-blue-blood-7625828/"
+        },
+        {
+          "nama": "South Carolina Aquarium",
+          "url": "https://scaquarium.org/?p=44927"
+        },
+        {
+          "nama": "Countryfile",
+          "url": "https://www.countryfile.com/wildlife/marine-life/common-octopus"
+        },
+        {
+          "nama": "Bristol Aquarium",
+          "url": "https://www.bristolaquarium.co.uk/blog/10-octopus-facts-you-wont-believe/"
+        }
+      ],
+      "video": "video/kids/2026-11-20/01-7-fakta-seru-gurita-3-jantung-darah-biru.mp4",
+      "poster": "video/kids/2026-11-20/01-7-fakta-seru-gurita-3-jantung-darah-biru.jpg",
+      "video_durasi": 92.5,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
+    }
+  ]
+}

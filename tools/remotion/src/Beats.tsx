@@ -1,6 +1,6 @@
 import { Easing, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import type { Beat } from "./schema";
-import { C, MONO, SANS, SAFE } from "./theme";
+import { C, F, SAFE } from "./theme";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
@@ -31,7 +31,7 @@ const Kicker: React.FC<{ text: string }> = ({ text }) => {
   return (
     <div
       style={{
-        font: `400 30px/1.35 ${MONO}`, color: C.kicker, marginBottom: 26, maxWidth: 760,
+        font: `400 30px/1.35 ${F.mono}`, color: C.kicker, marginBottom: 26, maxWidth: 760,
         opacity: interpolate(frame, [0, 0.3 * fps], [0, 1], clamp),
         translate: `${interpolate(frame, [0, 0.3 * fps], [-40, 0], { ...clamp, easing: Easing.out(Easing.cubic) })}px 0px`,
       }}
@@ -47,7 +47,7 @@ const Pill: React.FC<{ text: string }> = ({ text }) => {
   return (
     <div
       style={{
-        display: "inline-block", font: `700 28px ${MONO}`, border: `3px solid ${C.line}`, borderRadius: 999, padding: "6px 22px",
+        display: "inline-block", font: `700 28px ${F.mono}`, border: `3px solid ${C.line}`, borderRadius: 999, padding: "6px 22px",
         background: C.card, color: C.text, marginBottom: 26,
         opacity: interpolate(frame, [0, 0.25 * fps], [0, 1], clamp),
         scale: String(interpolate(frame, [0, 0.35 * fps], [0.8, 1], { ...clamp, easing: Easing.spring({ damping: 10 }) })),
@@ -74,7 +74,7 @@ const Headline: React.FC<{ text: string; size: number }> = ({ text, size }) => {
     translate: `0px ${(1 - pop(i)) * 60}px`,
   });
   return (
-    <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: size, lineHeight: 1.04, letterSpacing: -4, color: C.text }}>
+    <div style={{ fontFamily: F.sans, fontWeight: 800, fontSize: size, lineHeight: 1.04, letterSpacing: F.headTracking, color: C.text }}>
       {plain.map((w, i) => (
         <span key={i} style={wordStyle(i)}>{w}</span>
       ))}
@@ -98,7 +98,7 @@ const cardStyle = (frame: number, fps: number, delay: number): React.CSSProperti
 };
 
 const Tag: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <span style={{ display: "inline-block", background: C.lime, color: C.limeText, font: `700 26px ${MONO}`, borderRadius: 8, padding: "4px 14px" }}>{children}</span>
+  <span style={{ display: "inline-block", background: C.lime, color: C.limeText, font: `700 26px ${F.mono}`, borderRadius: 8, padding: "4px 14px" }}>{children}</span>
 );
 
 const NumberCard: React.FC<{ beat: Beat; dur: number }> = ({ beat, dur }) => {
@@ -111,7 +111,7 @@ const NumberCard: React.FC<{ beat: Beat; dur: number }> = ({ beat, dur }) => {
   return (
     <div style={cardStyle(frame, fps, 0.3)}>
       <Tag>{beat.tag}</Tag>
-      <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 210, lineHeight: 1, letterSpacing: -8, color: C.number, marginTop: 18, whiteSpace: "nowrap" }}>
+      <div style={{ fontFamily: F.sans, fontWeight: 800, fontSize: 210, lineHeight: 1, letterSpacing: -8, color: C.number, marginTop: 18, whiteSpace: "nowrap" }}>
         {beat.prefix ? <small style={{ fontSize: 80, letterSpacing: -2, color: C.text, marginRight: 8 }}>{beat.prefix}</small> : null}
         {shown}
         <small style={{ fontSize: 80, letterSpacing: -2, color: C.text, marginLeft: 10 }}>{beat.suffix}</small>
@@ -136,7 +136,7 @@ const Chips: React.FC<{ items: string[] }> = ({ items }) => {
           <span
             key={i}
             style={{
-              fontFamily: SANS, fontWeight: 800, fontSize: 46, border: `4px solid ${C.line}`, borderRadius: 999, padding: "10px 30px",
+              fontFamily: F.sans, fontWeight: 800, fontSize: 46, border: `4px solid ${C.line}`, borderRadius: 999, padding: "10px 30px",
               background: bg[i % 3], color: fg[i % 3], boxShadow: `0 7px 0 ${C.cyan}`, scale: String(k), opacity: k > 0.02 ? 1 : 0,
             }}
           >
@@ -161,7 +161,7 @@ const FollowNote: React.FC<{ tag: string; head: string; handle: string }> = ({ t
         }}
       />
       <Tag>{tag}</Tag>
-      <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 86, lineHeight: 1.05, letterSpacing: -3, marginTop: 18, color: C.text }}>
+      <div style={{ fontFamily: F.sans, fontWeight: 800, fontSize: 86, lineHeight: 1.05, letterSpacing: -3, marginTop: 18, color: C.text }}>
         {head}
         <br />
         <span style={{ color: C.hlText, background: `linear-gradient(90deg, ${C.hl} ${mark}%, transparent ${mark}%) 0 60% / 100% 70% no-repeat`, padding: "0 8px" }}>{handle}</span>
@@ -177,7 +177,7 @@ const Sticker: React.FC<{ text: string; left: number; top: number }> = ({ text, 
   return (
     <div
       style={{
-        position: "absolute", left, top, fontFamily: SANS, fontWeight: 800, fontSize: 50, padding: "12px 34px", border: `4px solid ${C.ink}`,
+        position: "absolute", left, top, fontFamily: F.sans, fontWeight: 800, fontSize: 50, padding: "12px 34px", border: `4px solid ${C.ink}`,
         borderRadius: 999, background: C.lime, boxShadow: `0 8px 0 ${C.pink}`, whiteSpace: "nowrap", color: C.ink,
         scale: String(k), opacity: k > 0.02 ? 1 : 0, rotate: `${-8 + 3 * Math.sin((frame / fps) * 3)}deg`,
       }}

@@ -16,4 +16,9 @@ for d in "$yday" "$today"; do
   [ -f "data/$d.json" ] || continue
   GP_PUBLISH=1 .venv/bin/python tools/render_video.py --date "$d" --prune 14
 done
+# YouTube kids channel (after Instagram so the reels are ready first)
+for d in "$yday" "$today"; do
+  [ -f "data/kids/$d.json" ] || continue
+  GP_PUBLISH=1 .venv/bin/python tools/render_video.py --channel kids --date "$d" --prune 14
+done
 tools/publish.sh "video: render $today"

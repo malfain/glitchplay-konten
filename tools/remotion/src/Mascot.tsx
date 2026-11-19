@@ -1,5 +1,5 @@
 import { Easing, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import { C, MONO } from "./theme";
+import { C, F } from "./theme";
 import type { Beat } from "./schema";
 
 // "Gepeci": original GlitchPlay mascot (backwards cap, headset). Bobs idly, hops on each new beat, talks while the voice speaks.
@@ -37,7 +37,7 @@ export const Mascot: React.FC<{ beats: Beat[] }> = ({ beats }) => {
         <path d="M44 118 q8 -82 92 -84 q84 2 92 84 q-92 -26 -184 0z" fill={C.pink} stroke={C.ink} strokeWidth={7} strokeLinejoin="round" />
         <path d="M200 92 q40 4 46 30 q-24 8 -40 -6z" fill={C.pink} stroke={C.ink} strokeWidth={6} strokeLinejoin="round" />
         <rect x={112} y={58} width={46} height={26} rx={6} fill={C.cream} stroke={C.ink} strokeWidth={5} />
-        <text x={135} y={78} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={17} fill={C.ink}>GPC</text>
+        <text x={135} y={78} textAnchor="middle" fontFamily={F.mono} fontWeight={700} fontSize={17} fill={C.ink}>GPC</text>
         <path d="M34 150 q0 -40 22 -50" fill="none" stroke={C.ink} strokeWidth={10} strokeLinecap="round" />
         <rect x={22} y={132} width={30} height={48} rx={12} fill={C.cyan} stroke={C.ink} strokeWidth={6} />
         <path d="M40 178 q10 40 58 44" fill="none" stroke={C.ink} strokeWidth={6} strokeLinecap="round" />

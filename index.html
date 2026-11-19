@@ -147,6 +147,17 @@
 
   /* hasil */
   .hasil-head { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; }
+  .chtabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 5px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); margin-bottom: 12px; }
+  .chtabs button { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 8px; border: 0; border-radius: 12px; background: none;
+                   color: var(--muted); font: 700 14px Inter; cursor: pointer; }
+  .chtabs button svg { width: 18px; height: 18px; }
+  .chtabs button.on[data-ch="glitch"] { background: linear-gradient(135deg, #f58529, #dd2a7b 50%, #8134af); color: #fff; }
+  .chtabs button.on[data-ch="kids"] { background: #ff0033; color: #fff; }
+  .chtabs small { font-weight: 500; opacity: .85; }
+  .platform { font: 700 10px Inter; text-transform: uppercase; letter-spacing: .05em; padding: 3px 8px; border-radius: 999px; color: #fff; }
+  .platform.ig { background: linear-gradient(135deg, #f58529, #dd2a7b 50%, #8134af); }
+  .platform.yt { background: #ff0033; }
+  .mfk { margin: 0 16px 12px; padding: 9px 12px; border-radius: 12px; font-size: 12px; background: rgba(255,0,51,.08); border: 1px solid rgba(255,0,51,.35); color: var(--text); }
   select { flex: 1; background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; font: inherit; }
   .item { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 14px; overflow: hidden; }
   .item-head { padding: 14px 16px; }
@@ -296,7 +307,11 @@
   <section class="page" id="p-hasil">
     <div class="eyebrow">Hasil Kerja Tim <span class="chip" id="hasilChip">…</span></div>
     <h2 class="title">Konten Siap Posting</h2>
-    <p class="sub">Video siap download & posting, plus naskah, teks layar, dan caption untuk di-copy.</p>
+    <p class="sub" id="hasilSub">Video siap download & posting, plus naskah, teks layar, dan caption untuk di-copy.</p>
+    <div class="chtabs" role="tablist">
+      <button data-ch="glitch" role="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram <small>· berita game</small></button>
+      <button data-ch="kids" role="tab"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.6 3.1z"/></svg>YouTube <small>· fakta anak</small></button>
+    </div>
     <div class="hasil-head"><select id="day" aria-label="Pilih tanggal"></select></div>
     <div id="list"><div class="empty">Memuat…</div></div>
   </section>
@@ -357,16 +372,22 @@ async function getJSON(path) {
   return r.json();
 }
 
-const state = { status: null, days: [], dayCache: {} };
-async function getDay(d) {
-  if (!state.dayCache[d]) state.dayCache[d] = getJSON(`data/${d}.json`).catch(() => null);
-  return state.dayCache[d];
+const CHDIR = { glitch: "data", kids: "data/kids" };
+let savedCh = "glitch";
+try { savedCh = localStorage.getItem("gp-ch") || "glitch"; } catch {}
+const state = { status: null, days: [], kidsDays: [], dayCache: {}, ch: CHDIR[savedCh] ? savedCh : "glitch" };
+async function getDay(d, ch = "glitch") {
+  const k = ch + ":" + d;
+  if (!state.dayCache[k]) state.dayCache[k] = getJSON(`${CHDIR[ch]}/${d}.json`).catch(() => null);
+  return state.dayCache[k];
 }
 
 async function load() {
-  const [status, idx] = await Promise.all([getJSON("data/status.json").catch(() => null), getJSON("data/index.json").catch(() => ({ days: [] }))]);
+  const [status, idx, kidx] = await Promise.all([getJSON("data/status.json").catch(() => null), getJSON("data/index.json").catch(() => ({ days: [] })),
+    getJSON("data/kids/index.json").catch(() => ({ days: [] }))]);
   state.status = status || { run: {}, tasks: {}, agents: {}, log: [], kesimpulan_bos: [] };
   state.days = (idx.days || []).slice().sort().reverse();
+  state.kidsDays = (kidx.days || []).slice().sort().reverse();
   state.dayCache = {};
   render();
 }
@@ -491,7 +512,7 @@ function renderItem(it, n) {
   const el = document.createElement("article");
   el.className = "item";
   const rumor = it.status_fakta === "rumor";
-  el.innerHTML = `<div class="item-head"><div class="tags"><span class="t2">#${n}</span><span class="t2 k">${esc(it.kategori)}</span><span class="t2 ${rumor ? "rumor" : "resmi"}">${rumor ? "Rumor / belum resmi" : "Resmi"}</span>${it.durasi_detik ? `<span class="t2">±${esc(it.durasi_detik)} dtk</span>` : ""}</div><h4>${esc(it.judul)}</h4><p>${esc(it.ringkasan)}</p></div>`;
+  el.innerHTML = `<div class="item-head"><div class="tags"><span class="platform ${it.youtube ? "yt" : "ig"}">${it.youtube ? "YouTube" : "Instagram"}</span><span class="t2">#${n}</span><span class="t2 k">${esc(it.kategori)}</span><span class="t2 ${rumor ? "rumor" : "resmi"}">${rumor ? "Rumor / belum resmi" : "Resmi"}</span>${it.durasi_detik ? `<span class="t2">±${esc(it.durasi_detik)} dtk</span>` : ""}</div><h4>${esc(it.judul)}</h4><p>${esc(it.ringkasan)}</p></div>`;
   if (it.video) {
     const v = document.createElement("div");
     const name = it.video.split("/").pop();
@@ -508,8 +529,22 @@ function renderItem(it, n) {
   el.appendChild(section("🎙️ Naskah VO (TTS)", it.hook_formula ? "hook: " + it.hook_formula : "", `<pre>${esc(vo)}</pre>`, vo, !it.video));
   const rows = (it.teks_layar || []).map((r) => `<tr><td class="t">${esc(r.t)}</td><td class="s">${esc(r.teks)}</td><td class="v">${esc(r.visual)}</td></tr>`).join("");
   el.appendChild(section("🖼️ Teks layar", (it.teks_layar || []).length + " kartu", `<table>${rows}</table>`, (it.teks_layar || []).map((r) => `${r.t}  ${r.teks}`).join("\n")));
-  const cap = [it.caption, (it.hashtags || []).join(" ")].filter(Boolean).join("\n\n");
-  el.appendChild(section("✍️ Caption + hashtag", "", `<pre>${esc(cap)}</pre>`, cap));
+  if (it.youtube) {
+    const y = it.youtube;
+    el.appendChild(section("▶️ Judul YouTube", (y.judul || "").length + "/100", `<pre>${esc(y.judul)}</pre>`, y.judul, true));
+    el.appendChild(section("📝 Deskripsi YouTube", "", `<pre>${esc(y.deskripsi)}</pre>`, y.deskripsi));
+    const tags = (y.tags || []).join(", ");
+    el.appendChild(section("🏷️ Tags YouTube", (y.tags || []).length + " tag", `<pre>${esc(tags)}</pre>`, tags));
+    if (y.made_for_kids) {
+      const m = document.createElement("div");
+      m.className = "mfk";
+      m.innerHTML = "👶 Saat upload di YouTube Studio, pilih <b>“Ya, ini dibuat untuk anak-anak”</b> (Made for Kids).";
+      el.appendChild(m);
+    }
+  } else {
+    const cap = [it.caption, (it.hashtags || []).join(" ")].filter(Boolean).join("\n\n");
+    el.appendChild(section("✍️ Caption Instagram + hashtag", "", `<pre>${esc(cap)}</pre>`, cap, !it.video));
+  }
   if ((it.sumber || []).length) {
     const s = document.createElement("div");
     s.className = "src";
@@ -519,12 +554,18 @@ function renderItem(it, n) {
   return el;
 }
 async function renderHasil(date) {
+  const ch = state.ch;
+  document.querySelectorAll(".chtabs button").forEach((b) => { b.classList.toggle("on", b.dataset.ch === ch); b.setAttribute("aria-selected", b.dataset.ch === ch); });
+  $("#hasilSub").textContent = ch === "kids"
+    ? "Video Shorts fakta seru anak (6–10 th), plus judul, deskripsi, dan tags YouTube untuk di-copy."
+    : "Video reel berita game, plus naskah, teks layar, dan caption Instagram untuk di-copy.";
+  const days = ch === "kids" ? state.kidsDays : state.days;
   const sel = $("#day");
-  if (!state.days.length) { $("#list").innerHTML = '<div class="empty">Belum ada hasil.</div>'; return; }
-  sel.innerHTML = state.days.map((d) => `<option value="${d}">${fmtDate(d)}</option>`).join("");
-  sel.value = date && state.days.includes(date) ? date : state.days[0];
-  const day = await getDay(sel.value);
   const list = $("#list");
+  if (!days.length) { sel.innerHTML = ""; $("#hasilChip").textContent = "0 konten"; list.innerHTML = '<div class="empty">Belum ada hasil.</div>'; return; }
+  sel.innerHTML = days.map((d) => `<option value="${d}">${fmtDate(d)}</option>`).join("");
+  sel.value = date && days.includes(date) ? date : days[0];
+  const day = await getDay(sel.value, ch);
   list.innerHTML = "";
   if (!day) { list.innerHTML = '<div class="empty">Hasil tanggal ini belum ada.</div>'; return; }
   $("#hasilChip").textContent = day.items.length + " konten";
@@ -576,7 +617,7 @@ document.addEventListener("click", (e) => {
   const ag = e.target.closest("[data-agent]");
   if (ag) return openAgent(ag.dataset.agent);
   const go = e.target.closest("[data-goto]");
-  if (go) return show("hasil", go.dataset.goto);
+  if (go) { state.ch = "glitch"; return show("hasil", go.dataset.goto); }
   const tab = e.target.closest("#tabs button");
   if (tab) return show(tab.dataset.p);
 });
@@ -584,6 +625,11 @@ $("#scrim").onclick = closeSheet;
 $("#bell").onclick = () => show("hasil");
 $("#refresh").onclick = async () => { $("#refresh").style.opacity = .5; await load(); $("#refresh").style.opacity = 1; };
 $("#day").onchange = () => show("hasil", $("#day").value);
+document.querySelectorAll(".chtabs button").forEach((b) => (b.onclick = () => {
+  state.ch = b.dataset.ch;
+  try { localStorage.setItem("gp-ch", state.ch); } catch {}
+  show("hasil");
+}));
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 window.addEventListener("hashchange", () => {
   const [pg, ar] = location.hash.slice(1).split("/");

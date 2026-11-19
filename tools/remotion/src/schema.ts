@@ -18,6 +18,7 @@ export const beatSchema = z.object({
 });
 
 export const reelSchema = z.object({
+  theme: z.enum(["glitch", "kids"]).optional(),
   kategori: z.string(),
   handle: z.string(),
   sumber: z.string(),

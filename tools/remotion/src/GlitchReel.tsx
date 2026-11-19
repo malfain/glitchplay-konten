@@ -3,19 +3,20 @@ import { AbsoluteFill, Img, Sequence, staticFile, useVideoConfig } from "remotio
 import { BeatScene } from "./Beats";
 import { Mascot } from "./Mascot";
 import type { ReelProps } from "./schema";
-import { C, MONO, SANS } from "./theme";
+import { C, F, applyTheme } from "./theme";
 
 // GlitchPlay news reel: dark brand grid background, account badge, one animated scene per spoken sentence, mascot, voiceover.
-export const GlitchReel: React.FC<ReelProps> = ({ handle, sumber, avatar, audio, beats }) => {
+export const GlitchReel: React.FC<ReelProps> = ({ theme, handle, sumber, avatar, audio, beats }) => {
+  applyTheme(theme ?? "glitch");
   const { fps } = useVideoConfig();
   return (
     <AbsoluteFill
       style={{
         backgroundColor: C.bg,
-        backgroundImage: `linear-gradient(${C.grid} 2px, transparent 2px), linear-gradient(90deg, ${C.grid} 2px, transparent 2px)`,
-        backgroundSize: "54px 54px",
+        backgroundImage: C.bgImage,
+        backgroundSize: C.bgSize,
         backgroundPosition: "-2px -2px",
-        fontFamily: SANS,
+        fontFamily: F.sans,
         color: C.text,
       }}
     >
@@ -32,7 +33,7 @@ export const GlitchReel: React.FC<ReelProps> = ({ handle, sumber, avatar, audio,
       ))}
       <Mascot beats={beats} />
       {sumber ? (
-        <div style={{ position: "absolute", left: 70, top: 1452, font: `400 24px ${MONO}`, color: C.muted }}>sumber: {sumber}</div>
+        <div style={{ position: "absolute", left: 70, top: 1452, font: `400 24px ${F.mono}`, color: C.muted }}>sumber: {sumber}</div>
       ) : null}
       {audio ? <Audio src={staticFile(audio)} /> : null}
       {/* light sound design: a soft whoosh on every scene change, a ding when a number card lands */}
@@ -50,7 +51,7 @@ export const GlitchReel: React.FC<ReelProps> = ({ handle, sumber, avatar, audio,
 const HandleBadge: React.FC<{ handle: string; avatar: string | null }> = ({ handle, avatar }) => (
   <div
     style={{
-      position: "absolute", left: 70, top: 250, display: "flex", alignItems: "center", gap: 14, font: `700 30px ${MONO}`, color: C.text,
+      position: "absolute", left: 70, top: 250, display: "flex", alignItems: "center", gap: 14, font: `700 30px ${F.mono}`, color: C.text,
       border: `3px solid ${C.line}`, borderRadius: 999, padding: "6px 22px 6px 6px", background: C.card,
     }}
   >

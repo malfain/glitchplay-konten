@@ -87,7 +87,8 @@
       ],
       "video": "video/2026-11-20/01-mlbb-juara-mobile-game-of-the-year-di-es.mp4",
       "poster": "video/2026-11-20/01-mlbb-juara-mobile-game-of-the-year-di-es.jpg",
-      "video_durasi": 31.8
+      "video_durasi": 29.4,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Game Lokal",
@@ -171,7 +172,8 @@
       ],
       "video": "video/2026-11-20/02-ontel-simulator-indonesia-tembus-1-juta.mp4",
       "poster": "video/2026-11-20/02-ontel-simulator-indonesia-tembus-1-juta.jpg",
-      "video_durasi": 22.8
+      "video_durasi": 21.2,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Esports",
@@ -266,7 +268,8 @@
       ],
       "video": "video/2026-11-20/03-wec26-digelar-di-ice-bsd-hadiah-500-ribu.mp4",
       "poster": "video/2026-11-20/03-wec26-digelar-di-ice-bsd-hadiah-500-ribu.jpg",
-      "video_durasi": 38.9
+      "video_durasi": 38.0,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Promo/Diskon",
@@ -354,7 +357,8 @@
       ],
       "video": "video/2026-11-20/04-ps-plus-extra-november-death-stranding-2.mp4",
       "poster": "video/2026-11-20/04-ps-plus-extra-november-death-stranding-2.jpg",
-      "video_durasi": 20.3
+      "video_durasi": 20.1,
+      "video_suara": "gemini-3.8-flash-lite-tts/Fenrir"
     },
     {
       "kategori": "Update",
@@ -451,7 +455,8 @@
       ],
       "video": "video/2026-11-20/05-mlbb-patch-2-2-23-popol-and-kupa-direvam.mp4",
       "poster": "video/2026-11-20/05-mlbb-patch-2-2-23-popol-and-kupa-direvam.jpg",
-      "video_durasi": 28.8
+      "video_durasi": 26.1,
+      "video_suara": "gemini-3.8-flash-lite-tts/Fenrir"
     }
   ]
 }
