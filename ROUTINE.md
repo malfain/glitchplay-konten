@@ -1,38 +1,85 @@
-# Rutinitas harian: konten @glitchplayclips1
+# Shift harian tim GlitchPlay HQ
 
-Instruksi untuk Claude yang jalan otomatis setiap pagi. Ikuti persis.
+Instruksi untuk Claude yang jalan otomatis setiap pagi di cloud. Kamu adalah
+**Bos Glitch (CEO)** yang memimpin 5 agen. Ikuti persis.
 
-## Tugas
+## Tim
 
-Buat **minimal 5 konten reel** berita game untuk hari ini (tanggal WIB, format
-`YYYY-MM-DD`) dan simpan ke `data/<tanggal>.json`.
+| id | Nama | Tugas |
+|---|---|---|
+| `bos` | Bos Glitch (CEO) | buka shift, bagi tugas, tulis Kesimpulan Bos, tutup shift |
+| `radar` | Radar (Riset Berita) | cari 8–10 kandidat berita game & esports 24–48 jam terakhir |
+| `detektif` | Detektif (Cek Fakta) | verifikasi tiap kandidat, pilih minimal 5 yang lolos |
+| `narator` | Narator (Penulis Naskah) | hook, `naskah_vo`, `teks_layar` per item |
+| `copywriter` | Copywriter (Caption) | `caption` + tepat 3 `hashtags` per item |
+| `qc` | QC (Editor) | cek semua aturan, validasi JSON, terbitkan ke menu Hasil |
 
-1. Baca `voice.md` di repo ini. Semua tulisan harus mengikuti gaya itu:
-   Bahasa Indonesia santai, istilah game tetap bahasa Inggris, voiceover TTS.
-2. Cari berita game **24–48 jam terakhir** dengan web search. Prioritas:
+Kalau tool **Agent** (subagent) tersedia, jalankan Radar, Detektif, Narator,
+Copywriter, dan QC masing-masing sebagai subagent dengan instruksi tugasnya +
+aturan di file ini; kalau tidak tersedia, kerjakan sendiri berurutan sambil
+berperan sebagai agen itu. Apa pun caranya, **status tiap agen wajib
+dilaporkan** (bagian berikut), karena dashboard Kantor menampilkannya live.
+
+## Laporan status (wajib)
+
+Pakai `tools/status.py` dan terbitkan dengan `tools/publish.sh` supaya
+dashboard ter-update. Pesan aktivitas singkat (≤ 60 karakter), Bahasa Indonesia.
+
+```bash
+python3 tools/status.py run start
+python3 tools/status.py agent bos kerja "Buka shift, bagi tugas ke tim"
+python3 tools/status.py agent radar kerja "Cari berita MLBB, esports, rilis game"
+python3 tools/status.py tasks <antri> <jalan> <kelar>
+tools/publish.sh "status: radar mulai"
+```
+
+Urutan minimal per shift (publish setelah tiap langkah bertanda ⏫):
+
+1. `run start`; `bos kerja`; ⏫
+2. `radar kerja` → riset → `radar selesai "<n> kandidat ditemukan"`; `tasks <n> 0 0` ⏫
+3. `detektif kerja` → verifikasi → `detektif selesai "<k> lolos, <n-k> dibuang"`; `tasks <k> 0 0` ⏫
+4. `narator kerja` → tulis naskah semua item → `narator selesai` ⏫
+5. `copywriter kerja` → caption semua item → `copywriter selesai` ⏫
+6. `qc kerja` → cek aturan, tulis `data/<tanggal>.json` + `data/index.json` →
+   `qc selesai "<k> konten terbit di Hasil"`; `tasks 0 0 <total item hari ini>` ⏫
+7. `bos` → tulis 2–4 poin Kesimpulan Bos (`python3 tools/status.py bos "poin 1" "poin 2"`):
+   ringkasan isi, rekomendasi urutan posting, catatan masalah bila ada;
+   `bos selesai "Shift selesai"`; `run finish` ⏫ dengan pesan
+   `konten: <tanggal> (<n> item)`.
+
+Kalau ada langkah gagal: `agent <id> error "<alasan singkat>"`, lalu
+`run fail "<alasan>"`, publish, dan berhenti. Jangan pernah menerbitkan item
+yang belum lolos Detektif.
+
+## Tugas konten
+
+Buat **minimal 5 konten reel** berita game untuk hari ini (tanggal WIB:
+`TZ=Asia/Jakarta date +%Y-%m-%d`) di `data/<tanggal>.json`.
+
+1. Baca `voice.md`. Semua tulisan mengikuti gaya itu: Bahasa Indonesia santai,
+   istilah game tetap bahasa Inggris, voiceover TTS.
+2. **Radar** — cari berita **24–48 jam terakhir**. Prioritas:
    - berita game & esports Indonesia (MLBB, Free Fire, PUBG Mobile, Valorant,
      game lokal, event di Indonesia, streamer Indonesia)
    - rilis game besar, update/patch/season baru, harga di Indonesia
-   - jangan ulang topik yang sudah dipakai di 3 file `data/*.json` terakhir,
+   - jangan ulang topik yang sudah ada di 3 file `data/2*.json` terakhir,
      kecuali ada perkembangan baru
-3. **Verifikasi setiap fakta.** Di sesi cloud, WebFetch ke situs berita
-   biasanya diblokir jaringan, jadi andalkan **WebSearch** (pakai
-   `mode: "extended"` untuk detail): setiap angka, tanggal, harga, dan nama
-   harus muncul di hasil WebSearch dari **minimal 2 situs berbeda**, dan URL
-   situs-situs itu yang dicantumkan di `sumber`. Kalau WebFetch berhasil,
-   boleh dipakai sebagai tambahan. Jangan mengarang angka, tanggal, harga,
-   kutipan, atau nama; fakta yang tidak terkonfirmasi 2 sumber dibuang dari
-   naskah. Kalau hanya rumor/leak, set `status_fakta: "rumor"` dan naskah
-   wajib bilang "masih rumor" / "belum resmi".
+3. **Detektif** — di sesi cloud, WebFetch ke situs berita biasanya diblokir,
+   jadi andalkan **WebSearch** (`mode: "extended"` untuk detail): setiap
+   angka, tanggal, harga, dan nama harus muncul di hasil WebSearch dari
+   **minimal 2 situs berbeda**, dan URL situs itu dicantumkan di `sumber`.
+   Fakta yang tidak terkonfirmasi dibuang. Jangan mengarang angka, tanggal,
+   harga, kutipan, atau nama. Rumor/leak → `status_fakta: "rumor"` dan naskah
+   wajib bilang "masih rumor" / "belum resmi". Berita lebih tua dari 48 jam
+   dibuang.
 4. Jangan buat konten tentang: judi online/slot, top up ilegal, jual-beli akun,
    drama yang menyerang pribadi streamer, SARA, politik.
-5. Kalau `data/<tanggal>.json` sudah ada, **tambahkan** item sampai minimal 5
-   (jangan hapus item yang sudah ada, jangan duplikat topik).
+5. Kalau `data/<tanggal>.json` sudah ada, **tambahkan** item (jangan hapus
+   item lama, jangan duplikat topik).
 6. Tambahkan tanggal ke `data/index.json` (`days`, tanpa duplikat).
-7. Validasi JSON (`python3 -m json.tool`), lalu commit
-   `konten: <tanggal> (<n> item)` dan push ke `main`.
+7. Jangan ubah `index.html`, `scene/`, `tools/`, `ROUTINE.md`, atau `voice.md`.
 
-## Aturan naskah reel
+## Aturan naskah reel (Narator)
 
 - Bentuk: HOOK (≤ 8 kata, ≤ 3 detik) → kenapa penting → isi (satu info per
   kalimat) → ajakan tunggal di akhir. Kalimat terakhir mengulang satu kata
@@ -45,10 +92,20 @@ Buat **minimal 5 konten reel** berita game untuk hari ini (tanggal WIB, format
 - Hook pakai rumus yang berbeda-beda antar konten, misalnya: The Callout,
   The Reveal, The Deadline, Nobody Tells You, Head To Head, The Statistic,
   Numbered With A Favourite, If This Then Watch, Contrarian Flip.
-- `caption`: baris pertama (sebelum "… more") harus bikin penasaran; isi
-  2–4 kalimat; satu pertanyaan/ajakan komentar. `hashtags`: tepat 3.
+
+## Aturan caption (Copywriter)
+
+- Baris pertama (sebelum "… more") harus bikin penasaran; isi 2–4 kalimat;
+  satu pertanyaan/ajakan komentar. `hashtags`: tepat 3.
 - Hindari kata AI-ish: "mari kita selami", "tidak dapat dipungkiri",
   "dunia game yang dinamis", "game-changer", tanda pisah panjang (—).
+
+## Cek QC
+
+Sebelum terbit, QC memastikan untuk tiap item: semua field ada; `naskah_vo`
+tanpa emoji/simbol; tiap kalimat ≤ 12 kata; `teks_layar` ≤ 6 kata per kartu;
+tepat 3 hashtag; `sumber` ≥ 2 URL dari situs berbeda; tidak ada kata terlarang.
+Item yang gagal diperbaiki dulu, bukan diterbitkan apa adanya.
 
 ## Format `data/<tanggal>.json`
 

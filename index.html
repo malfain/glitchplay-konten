@@ -2,77 +2,349 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GlitchPlay Konten</title>
-<meta name="description" content="Konten harian @glitchplayclips1: naskah reel, teks layar, dan caption berita game.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070a12">
+<title>GlitchPlay HQ</title>
+<meta name="description" content="Kantor multi-agent @glitchplayclips1: agen AI yang meriset, menulis, dan mengecek konten reel berita game setiap hari.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
+} }
+</script>
 <style>
   :root {
-    --bg: #0d0f17; --panel: #161925; --panel-2: #1d2131; --line: #2a2f45;
-    --text: #e8eaf2; --muted: #9096ad; --accent: #7cf29c; --accent-2: #b48cff;
-    --warn: #ffcc66; --radius: 14px;
+    --bg: #070a12; --bg-2: #0c1120; --card: #10172a; --card-2: #151e36; --line: #1f2b4a; --line-2: #2a3a63;
+    --text: #e9eefc; --muted: #8592b3; --dim: #56627f;
+    --cyan: #38d6ff; --blue: #4f7cff; --green: #3ee59a; --amber: #ffc24b; --red: #ff5c7a; --pink: #ff4fa3; --violet: #a98bff;
+    --radius: 18px;
   }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 Inter, system-ui, sans-serif; }
-  header { position: sticky; top: 0; z-index: 5; background: rgba(13,15,23,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-  .bar { max-width: 860px; margin: 0 auto; padding: 14px 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-  h1 { font: 700 20px/1 "Space Grotesk", sans-serif; margin: 0; letter-spacing: -.02em; }
-  h1 span { color: var(--accent); }
-  .handle { color: var(--muted); font-size: 13px; }
-  select { margin-left: auto; background: var(--panel-2); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font: inherit; }
-  main { max-width: 860px; margin: 0 auto; padding: 16px; }
-  .summary { color: var(--muted); font-size: 13px; margin: 4px 0 16px; }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 18px; overflow: hidden; }
-  .card-head { padding: 16px; border-bottom: 1px solid var(--line); }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 Inter, system-ui, sans-serif; }
+  body { background: radial-gradient(1200px 600px at 50% -200px, #12204a 0%, var(--bg) 60%) fixed; }
+  button { font: inherit; color: inherit; }
+  .app { max-width: 480px; margin: 0 auto; min-height: 100vh; padding: 0 16px calc(96px + env(safe-area-inset-bottom)); }
+
+  /* header */
+  .top { display: flex; align-items: flex-start; gap: 12px; padding: 22px 0 14px; position: sticky; top: 0; z-index: 10;
+         background: rgba(7,10,18,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+  .brand { font: 700 30px/0.95 "Space Grotesk", sans-serif; letter-spacing: -0.03em; margin: 0; }
+  .brand span { color: var(--cyan); }
+  .top-right { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+  .icons { display: flex; gap: 6px; }
+  .icon-btn { position: relative; width: 38px; height: 38px; border-radius: 12px; border: 1px solid var(--line); background: var(--card);
+              display: grid; place-items: center; cursor: pointer; }
+  .icon-btn svg { width: 18px; height: 18px; stroke: var(--muted); }
+  .badge { position: absolute; top: -5px; right: -5px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px;
+           background: var(--pink); color: #fff; font: 700 10px/18px Inter; text-align: center; }
+  .pills { display: flex; gap: 6px; font: 600 12px Inter; color: var(--muted); }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--dim); flex: none; }
+  .dot.on { background: var(--green); box-shadow: 0 0 8px var(--green); }
+  .dot.work { background: var(--cyan); box-shadow: 0 0 8px var(--cyan); animation: pulse 1.2s infinite; }
+  .dot.err { background: var(--red); box-shadow: 0 0 8px var(--red); }
+  @keyframes pulse { 50% { opacity: .35; } }
+
+  /* section headings */
+  .eyebrow { display: flex; align-items: center; gap: 8px; font: 700 11px Inter; letter-spacing: .08em; text-transform: uppercase; color: var(--cyan); margin: 6px 0 4px; }
+  .chip { font: 600 11px Inter; letter-spacing: 0; text-transform: none; color: var(--green); background: rgba(62,229,154,.1);
+          border: 1px solid rgba(62,229,154,.35); padding: 2px 8px; border-radius: 999px; display: inline-flex; align-items: center; gap: 5px; }
+  h2.title { font: 700 22px/1.2 "Space Grotesk", sans-serif; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+  .stats { display: flex; gap: 16px; font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+  .stats b { color: var(--text); font-weight: 700; }
+  .stats .s { display: inline-flex; align-items: center; gap: 6px; }
+
+  .card { background: linear-gradient(180deg, var(--card) 0%, var(--bg-2) 100%); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; margin-bottom: 14px; }
+  .card h3 { margin: 0 0 10px; font: 700 15px "Space Grotesk", sans-serif; display: flex; align-items: center; gap: 8px; }
+  .card h3 .r { margin-left: auto; }
+  .muted { color: var(--muted); }
+  .small { font-size: 12px; }
+  .mono { font-family: "JetBrains Mono", monospace; }
+
+  /* page switching */
+  .page { display: none; animation: fade .2s ease; }
+  .page.active { display: block; }
+  @keyframes fade { from { opacity: 0; transform: translateY(4px); } }
+
+  /* beranda */
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .kpi { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; }
+  .kpi .n { font: 700 24px "Space Grotesk", sans-serif; }
+  .kpi .l { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .bos { border-color: rgba(56,214,255,.35); background: linear-gradient(180deg, rgba(56,214,255,.08), var(--bg-2)); }
+  .bos ul { margin: 0; padding-left: 18px; }
+  .bos li { margin: 4px 0; }
+  .tag { font: 600 11px Inter; color: var(--cyan); border: 1px solid rgba(56,214,255,.4); padding: 2px 8px; border-radius: 999px; }
+  .team { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+  .mate { text-align: center; font-size: 10px; color: var(--muted); cursor: pointer; }
+  .ava { width: 42px; height: 42px; margin: 0 auto 4px; border-radius: 14px; display: grid; place-items: center; font-size: 20px; position: relative;
+         background: var(--card-2); border: 1px solid var(--line-2); }
+  .ava .dot { position: absolute; right: -2px; bottom: -2px; border: 2px solid var(--bg-2); width: 11px; height: 11px; }
+  .row-link { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); cursor: pointer; }
+  .row-link:first-of-type { border-top: 0; }
+  .row-link .t { flex: 1; font-weight: 600; font-size: 14px; }
+  .row-link .k { font: 600 10px Inter; color: var(--violet); text-transform: uppercase; letter-spacing: .05em; }
+  .chev { color: var(--dim); }
+
+  /* kantor map */
+  .office { position: relative; border: 1px solid var(--line); border-radius: 22px; padding: 14px; overflow: hidden;
+            background-color: #060914;
+            background-image: radial-gradient(rgba(79,124,255,.18) 1px, transparent 1px);
+            background-size: 14px 14px; }
+  .ceo-bar { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(16,23,42,.9);
+             border: 1px solid var(--line-2); font-size: 12px; margin-bottom: 12px; white-space: nowrap; overflow: hidden; cursor: pointer; }
+  .ceo-bar b { flex: none; }
+  .ceo-bar span { overflow: hidden; text-overflow: ellipsis; color: var(--muted); }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 11px; color: var(--muted); margin-top: 12px; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+
+  /* kantor 3d */
+  .hq3d { position: relative; height: 340px; margin: -4px -6px 12px; border-radius: 18px; overflow: hidden;
+          background: radial-gradient(120% 90% at 50% 35%, #1c2a52 0%, #0a1022 70%); }
+  .hq3d canvas { display: block; touch-action: manipulation; }
+  .hq3d .loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 13px; }
+  .hq-labels { position: absolute; inset: 0; pointer-events: none; }
+  .hq-label { position: absolute; left: 0; top: 0; pointer-events: auto; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;
+              padding: 3px 8px 3px 6px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(10,15,30,.82);
+              font: 600 10px Inter; color: var(--text); white-space: nowrap; backdrop-filter: blur(6px); }
+  .hq-label i { width: 6px; height: 6px; border-radius: 50%; background: var(--dim); }
+  .hq-label span { color: var(--muted); font-weight: 500; }
+  .hq-label[data-st="kerja"] { border-color: rgba(56,214,255,.7); } .hq-label[data-st="kerja"] i { background: var(--cyan); box-shadow: 0 0 6px var(--cyan); animation: pulse 1.2s infinite; }
+  .hq-label[data-st="selesai"] i { background: var(--green); } .hq-label[data-st="error"] { border-color: var(--red); } .hq-label[data-st="error"] i { background: var(--red); }
+  .hq-label.say span { color: var(--green); }
+  .hq-hint { position: absolute; left: 10px; bottom: 8px; font-size: 10px; color: var(--muted); pointer-events: none; }
+  @media (min-width: 440px) { .hq3d { height: 380px; } }
+
+  .alist { margin-top: 2px; }
+  .arow { display: flex; align-items: center; gap: 10px; padding: 9px 4px; border-top: 1px solid var(--line); cursor: pointer; }
+  .arow:first-child { border-top: 0; }
+  .arow .ava { width: 34px; height: 34px; font-size: 16px; border-radius: 11px; margin: 0; flex: none; }
+  .arow .nm { font-weight: 700; font-size: 13px; }
+  .arow .nm small { color: var(--muted); font-weight: 500; }
+  .arow .ac { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .arow .st { margin-left: auto; font: 700 10px Inter; text-transform: uppercase; letter-spacing: .05em; color: var(--dim); flex: none; }
+  .arow .st.work { color: var(--cyan); } .arow .st.on { color: var(--green); } .arow .st.err { color: var(--red); }
+
+  /* jadwal */
+  .count { font: 700 34px "Space Grotesk", sans-serif; letter-spacing: -0.02em; }
+  .timeline { position: relative; margin: 4px 0 0; padding: 0; list-style: none; }
+  .timeline li { position: relative; padding: 0 0 14px 34px; }
+  .timeline li::before { content: ""; position: absolute; left: 13px; top: 28px; bottom: 0; width: 2px; background: var(--line); }
+  .timeline li:last-child::before { display: none; }
+  .step { position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 9px; display: grid; place-items: center; font-size: 14px;
+          background: var(--card-2); border: 1px solid var(--line-2); }
+  .timeline .n { font-weight: 700; font-size: 14px; }
+  .timeline .d { font-size: 12px; color: var(--muted); }
+  .hist { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); cursor: pointer; }
+  .hist:first-of-type { border-top: 0; }
+  .hist .t { flex: 1; font-size: 14px; }
+  .bar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; width: 70px; }
+  .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--cyan)); }
+
+  /* hasil */
+  .hasil-head { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; }
+  select { flex: 1; background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; font: inherit; }
+  .item { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 14px; overflow: hidden; }
+  .item-head { padding: 14px 16px; }
   .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
-  .tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; padding: 3px 8px; border-radius: 999px; background: var(--panel-2); color: var(--muted); }
-  .tag.k { color: var(--accent-2); }
-  .tag.rumor { color: var(--bg); background: var(--warn); }
-  .tag.resmi { color: var(--bg); background: var(--accent); }
-  h2 { font: 700 18px/1.3 "Space Grotesk", sans-serif; margin: 0 0 6px; }
-  .ringkasan { color: var(--muted); margin: 0; }
+  .t2 { font: 700 10px Inter; text-transform: uppercase; letter-spacing: .05em; padding: 3px 8px; border-radius: 999px; background: var(--card-2); color: var(--muted); }
+  .t2.k { color: var(--violet); }
+  .t2.resmi { background: var(--green); color: #052016; }
+  .t2.rumor { background: var(--amber); color: #2a1c00; }
+  .item h4 { margin: 0 0 6px; font: 700 17px/1.3 "Space Grotesk", sans-serif; }
+  .item p { margin: 0; color: var(--muted); font-size: 13px; }
   details { border-top: 1px solid var(--line); }
-  details:first-of-type { border-top: 0; }
-  summary { cursor: pointer; padding: 12px 16px; font-weight: 600; list-style: none; display: flex; align-items: center; gap: 8px; }
+  summary { cursor: pointer; padding: 12px 16px; font-weight: 600; font-size: 14px; list-style: none; display: flex; align-items: center; gap: 8px; }
   summary::-webkit-details-marker { display: none; }
-  summary::before { content: "▸"; color: var(--accent); transition: transform .15s; }
+  summary::before { content: "▸"; color: var(--cyan); transition: transform .15s; }
   details[open] summary::before { transform: rotate(90deg); }
-  summary .meta { color: var(--muted); font-weight: 400; font-size: 13px; }
-  .body { padding: 0 16px 16px; }
-  pre { margin: 0; white-space: pre-wrap; word-break: break-word; background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 14px/1.6 Inter, sans-serif; }
-  .copy { margin-top: 8px; background: var(--accent); color: #0d0f17; border: 0; border-radius: 9px; padding: 8px 14px; font: 600 13px Inter, sans-serif; cursor: pointer; }
-  .copy.done { background: var(--accent-2); }
-  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  summary .meta { color: var(--muted); font-weight: 400; font-size: 12px; margin-left: auto; }
+  .body { padding: 0 16px 14px; }
+  pre { margin: 0; white-space: pre-wrap; word-break: break-word; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 12px; font: 14px/1.6 Inter, sans-serif; }
+  .copy { margin-top: 8px; background: var(--cyan); color: #04121a; border: 0; border-radius: 10px; padding: 8px 14px; font: 700 13px Inter; cursor: pointer; }
+  .copy.done { background: var(--green); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
   td { padding: 7px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  td.t { color: var(--muted); width: 48px; font-variant-numeric: tabular-nums; }
-  td.s { font-weight: 600; }
-  td.v { color: var(--muted); font-size: 13px; }
-  .sumber a { color: var(--accent-2); }
-  .sumber { font-size: 13px; padding: 10px 16px 14px; border-top: 1px solid var(--line); color: var(--muted); }
-  .empty { text-align: center; color: var(--muted); padding: 48px 16px; }
-  @media (max-width: 560px) { td.v { display: none; } select { margin-left: 0; width: 100%; } }
+  td.t { color: var(--muted); width: 44px; } td.s { font-weight: 700; } td.v { color: var(--muted); font-size: 12px; }
+  .src { font-size: 12px; padding: 10px 16px 14px; border-top: 1px solid var(--line); color: var(--muted); }
+  .src a { color: var(--cyan); }
+
+  /* log */
+  .feed { list-style: none; margin: 0; padding: 0; }
+  .feed li { display: flex; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
+  .feed li:first-child { border-top: 0; }
+  .feed .ava { width: 34px; height: 34px; font-size: 16px; border-radius: 11px; margin: 0; flex: none; }
+  .feed .who { font-weight: 700; font-size: 13px; }
+  .feed .when { color: var(--dim); font-size: 11px; margin-left: 6px; font-weight: 500; }
+  .feed .msg { font-size: 13px; color: var(--muted); }
+
+  .empty { text-align: center; color: var(--muted); padding: 40px 10px; font-size: 14px; }
+
+  /* sheet */
+  .scrim { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 40; display: none; }
+  .sheet { position: fixed; left: 50%; bottom: 0; transform: translate(-50%, 100%); width: 100%; max-width: 480px; z-index: 41;
+           background: var(--card); border: 1px solid var(--line-2); border-bottom: 0; border-radius: 22px 22px 0 0; padding: 10px 18px calc(24px + env(safe-area-inset-bottom));
+           transition: transform .25s ease; max-height: 80vh; overflow: auto; }
+  .sheet.open { transform: translate(-50%, 0); }
+  .grab { width: 40px; height: 4px; border-radius: 2px; background: var(--line-2); margin: 0 auto 14px; }
+  .sheet .ava { width: 54px; height: 54px; font-size: 26px; border-radius: 16px; margin: 0; }
+  .sheet-head { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+
+  /* bottom nav */
+  nav.tabs { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(12px + env(safe-area-inset-bottom)); width: calc(100% - 24px); max-width: 456px; z-index: 30;
+             display: grid; grid-template-columns: repeat(5, 1fr); padding: 6px; border-radius: 22px;
+             background: rgba(12,17,32,.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--line-2); }
+  nav.tabs button { background: none; border: 0; padding: 7px 0 5px; border-radius: 16px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px;
+                    font: 600 11px Inter; color: var(--muted); position: relative; }
+  nav.tabs svg { width: 20px; height: 20px; stroke: currentColor; }
+  nav.tabs button.active { color: var(--cyan); background: rgba(56,214,255,.1); }
+  nav.tabs .badge { top: 0; right: 18%; }
 </style>
 </head>
 <body>
-<header>
-  <div class="bar">
-    <div>
-      <h1>GlitchPlay <span>Konten</span></h1>
-      <div class="handle">@glitchplayclips1 · konten harian otomatis</div>
+<div class="app">
+  <header class="top">
+    <h1 class="brand">GlitchPlay<br><span>HQ</span></h1>
+    <div class="top-right">
+      <div class="icons">
+        <button class="icon-btn" id="bell" aria-label="Hasil hari ini">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          <span class="badge" id="bellBadge" hidden></span>
+        </button>
+        <button class="icon-btn" id="refresh" aria-label="Muat ulang">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+        </button>
+      </div>
+      <div class="pills">
+        <span class="pill"><span class="dot" id="runDot"></span><span id="runPill">…</span></span>
+        <span class="pill">⏰ 06:00</span>
+      </div>
     </div>
-    <select id="day" aria-label="Pilih tanggal"></select>
-  </div>
-</header>
-<main>
-  <p class="summary" id="summary"></p>
-  <div id="list"><div class="empty">Memuat…</div></div>
-</main>
+  </header>
+
+  <!-- BERANDA -->
+  <section class="page" id="p-beranda">
+    <div class="eyebrow">Ringkasan Shift <span class="chip" id="shiftChip">…</span></div>
+    <h2 class="title" id="hello">Halo, Bos</h2>
+    <p class="sub" id="helloSub"></p>
+
+    <div class="card">
+      <div class="grid3" id="kpis"></div>
+    </div>
+
+    <div class="card bos">
+      <h3>💡 Kesimpulan Bos <span class="r tag">Bos Glitch</span></h3>
+      <ul id="bosList"></ul>
+      <div class="small muted" id="bosTime" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+      <h3>👥 Tim Agen <span class="r small muted" id="teamSiaga"></span></h3>
+      <div class="team" id="team"></div>
+    </div>
+
+    <div class="card">
+      <h3>🎬 Hasil Terbaru <span class="r small muted" id="latestDate"></span></h3>
+      <div id="latest"></div>
+    </div>
+  </section>
+
+  <!-- KANTOR -->
+  <section class="page" id="p-kantor">
+    <div class="eyebrow">Kantor Virtual <span class="chip" id="siagaChip">…</span></div>
+    <h2 class="title">Ruang Kerja Multi-Agent</h2>
+    <div class="stats" id="taskStats"></div>
+    <div class="office">
+      <div class="ceo-bar" id="ceoBar"></div>
+      <div class="hq3d" id="hq3d"><div class="loading">Menyiapkan kantor 3D…</div><div class="hq-hint">Tap agen untuk detail</div></div>
+      <div class="alist" id="rooms"></div>
+      <div class="legend">
+        <span><i class="dot"></i>siaga</span><span><i class="dot work"></i>kerja</span><span><i class="dot on"></i>selesai</span><span><i class="dot err"></i>error</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- JADWAL -->
+  <section class="page" id="p-jadwal">
+    <div class="eyebrow">Jadwal Otomatis <span class="chip">⏰ Harian</span></div>
+    <h2 class="title">Shift Pagi Tim Konten</h2>
+    <p class="sub">Tim mulai kerja otomatis setiap hari jam 06:00 WIB di cloud. Mac kamu boleh mati.</p>
+    <div class="card">
+      <div class="small muted">Shift berikutnya mulai dalam</div>
+      <div class="count mono" id="countdown">--:--:--</div>
+      <div class="small muted" id="nextAt"></div>
+    </div>
+    <div class="card">
+      <h3>🔁 Alur Kerja</h3>
+      <ol class="timeline" id="pipeline"></ol>
+    </div>
+    <div class="card">
+      <h3>📅 Riwayat Shift</h3>
+      <div id="history"></div>
+    </div>
+  </section>
+
+  <!-- HASIL -->
+  <section class="page" id="p-hasil">
+    <div class="eyebrow">Hasil Kerja Tim <span class="chip" id="hasilChip">…</span></div>
+    <h2 class="title">Konten Siap Posting</h2>
+    <p class="sub">Naskah VO untuk TTS CapCut, teks layar, dan caption. Tinggal copy.</p>
+    <div class="hasil-head"><select id="day" aria-label="Pilih tanggal"></select></div>
+    <div id="list"><div class="empty">Memuat…</div></div>
+  </section>
+
+  <!-- LOG -->
+  <section class="page" id="p-log">
+    <div class="eyebrow">Aktivitas <span class="chip" id="logChip">…</span></div>
+    <h2 class="title">Log Kerja Agen</h2>
+    <p class="sub">Catatan apa yang dikerjakan tiap agen, terbaru di atas.</p>
+    <div class="card"><ul class="feed" id="feed"></ul></div>
+  </section>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true"><div class="grab"></div><div id="sheetBody"></div></div>
+
+<nav class="tabs" id="tabs">
+  <button data-p="beranda"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Beranda</button>
+  <button data-p="kantor"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg>Kantor</button>
+  <button data-p="jadwal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M5 3 2 6M22 6l-3-3"/></svg>Jadwal</button>
+  <button data-p="hasil"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 9 5 3-5 3z"/></svg>Hasil<span class="badge" id="tabBadge" hidden></span></button>
+  <button data-p="log"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Log</button>
+</nav>
+
 <script>
+const AGENTS = {
+  bos:        { nama: "Bos Glitch", peran: "CEO", emoji: "👑", tugas: "Membagi tugas ke tim, memantau jalannya shift, menulis Kesimpulan Bos." },
+  radar:      { nama: "Radar", peran: "Riset Berita", emoji: "📡", tugas: "Mencari 8–10 kandidat berita game & esports 24–48 jam terakhir." },
+  detektif:   { nama: "Detektif", peran: "Cek Fakta", emoji: "🔍", tugas: "Memastikan tiap fakta ada di minimal 2 situs berbeda; membuang yang lemah." },
+  narator:    { nama: "Narator", peran: "Penulis Naskah", emoji: "🎙️", tugas: "Menulis hook, naskah VO untuk TTS, dan teks layar per detik." },
+  copywriter: { nama: "Copywriter", peran: "Caption", emoji: "✍️", tugas: "Menulis caption yang bikin penasaran + tepat 3 hashtag." },
+  qc:         { nama: "QC", peran: "Editor", emoji: "✅", tugas: "Mengecek aturan, memvalidasi data, lalu menerbitkan ke menu Hasil." },
+};
+const ORDER = ["radar", "detektif", "narator", "copywriter", "qc"];
+
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const fmtDate = (d) => new Date(d + "T00:00:00").toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+const fmtShort = (d) => new Date(d + "T00:00:00").toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" });
+const fmtTime = (iso) => iso ? new Date(iso).toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Jakarta" }) : "";
+function ago(iso) {
+  if (!iso) return "";
+  const s = Math.max(0, (Date.now() - new Date(iso)) / 1000);
+  if (s < 60) return "baru saja";
+  if (s < 3600) return Math.floor(s / 60) + " mnt lalu";
+  if (s < 86400) return Math.floor(s / 3600) + " jam lalu";
+  return Math.floor(s / 86400) + " hari lalu";
+}
+const todayWIB = () => new Date(Date.now() + 7 * 3600e3).toISOString().slice(0, 10);
+const dotClass = (st) => ({ kerja: "work", selesai: "on", error: "err" }[st] || "");
+const roomClass = (st) => ({ kerja: "work", selesai: "done", error: "err" }[st] || "");
+const stLabel = (st) => ({ idle: "Siaga", kerja: "Sedang kerja", selesai: "Selesai", error: "Error" }[st] || "Siaga");
 
 async function getJSON(path) {
   const r = await fetch(path + "?v=" + Date.now());
@@ -80,85 +352,234 @@ async function getJSON(path) {
   return r.json();
 }
 
+const state = { status: null, days: [], dayCache: {} };
+async function getDay(d) {
+  if (!state.dayCache[d]) state.dayCache[d] = getJSON(`data/${d}.json`).catch(() => null);
+  return state.dayCache[d];
+}
+
+async function load() {
+  const [status, idx] = await Promise.all([getJSON("data/status.json").catch(() => null), getJSON("data/index.json").catch(() => ({ days: [] }))]);
+  state.status = status || { run: {}, tasks: {}, agents: {}, log: [], kesimpulan_bos: [] };
+  state.days = (idx.days || []).slice().sort().reverse();
+  state.dayCache = {};
+  render();
+}
+
+function agentState(id) { return (state.status.agents || {})[id] || { status: "idle", aktivitas: "Menunggu tugas" }; }
+
+/* ---------- header ---------- */
+function renderHeader(latestCount) {
+  const run = state.status.run || {};
+  const map = { berjalan: ["work", "Shift jalan"], selesai: ["on", "Online"], gagal: ["err", "Ada error"] };
+  const [cls, label] = map[run.status] || ["", "Menunggu"];
+  $("#runDot").className = "dot " + cls;
+  $("#runPill").textContent = label;
+  const isToday = state.days[0] === todayWIB();
+  [$("#bellBadge"), $("#tabBadge")].forEach((b) => { b.hidden = !(isToday && latestCount); b.textContent = latestCount; });
+}
+
+/* ---------- beranda ---------- */
+async function renderBeranda() {
+  const s = state.status, run = s.run || {}, t = s.tasks || {};
+  const h = new Date(Date.now() + 7 * 3600e3).getUTCHours();
+  $("#hello").textContent = (h < 11 ? "Selamat pagi" : h < 15 ? "Selamat siang" : h < 19 ? "Selamat sore" : "Selamat malam") + ", Bos";
+  const chip = { berjalan: "⚡ Sedang jalan", selesai: "✓ Selesai", gagal: "⚠ Gagal" }[run.status] || "Menunggu";
+  $("#shiftChip").textContent = chip;
+  $("#helloSub").textContent = run.date ? `Shift terakhir: ${fmtDate(run.date)}${run.finished_at ? ", selesai " + fmtTime(run.finished_at) + " WIB" : ""}.` : "Belum ada shift.";
+  $("#kpis").innerHTML = [["antri", "Antri", ""], ["jalan", "Jalan", "work"], ["kelar", "Kelar", "on"]]
+    .map(([k, l, c]) => `<div class="kpi"><div class="n">${esc(t[k] ?? 0)}</div><div class="l"><i class="dot ${c}"></i>${l}</div></div>`).join("");
+  const bos = s.kesimpulan_bos || [];
+  $("#bosList").innerHTML = bos.length ? bos.map((x) => `<li>${esc(x)}</li>`).join("") : '<li class="muted">Belum ada kesimpulan.</li>';
+  $("#bosTime").textContent = s.kesimpulan_t ? "Ditulis " + fmtTime(s.kesimpulan_t) + " WIB · " + ago(s.kesimpulan_t) : "";
+  const ids = ["bos", ...ORDER];
+  $("#team").innerHTML = ids.map((id) => {
+    const a = AGENTS[id], st = agentState(id).status;
+    return `<div class="mate" data-agent="${id}"><div class="ava">${a.emoji}<i class="dot ${dotClass(st)}"></i></div>${esc(a.nama)}</div>`;
+  }).join("");
+  $("#teamSiaga").textContent = ids.length + " agen";
+  const d = state.days[0];
+  if (!d) { $("#latest").innerHTML = '<div class="muted small">Belum ada hasil.</div>'; return; }
+  const day = await getDay(d);
+  const items = day ? day.items : [];
+  $("#latestDate").textContent = fmtShort(d);
+  renderHeader(items.length);
+  $("#latest").innerHTML = items.slice(0, 5).map((it, i) => `<div class="row-link" data-goto="${d}"><div style="flex:1"><div class="k">${esc(it.kategori)}</div><div class="t">${esc(it.judul)}</div></div><span class="chev">›</span></div>`).join("");
+}
+
+/* ---------- kantor ---------- */
+function renderKantor() {
+  const t = state.status.tasks || {};
+  const working = Object.values(state.status.agents || {}).filter((a) => a.status === "kerja").length;
+  const all = 1 + ORDER.length;
+  $("#siagaChip").innerHTML = `<i class="dot ${working ? "work" : "on"}"></i>${working ? working + " Agen Kerja" : all + " Agen Siaga"}`;
+  $("#taskStats").innerHTML = `<span class="s"><i class="dot" style="background:var(--amber)"></i><b>${t.antri ?? 0}</b> antri</span><span class="s"><i class="dot work"></i><b>${t.jalan ?? 0}</b> jalan</span><span class="s"><i class="dot on"></i><b>${t.kelar ?? 0}</b> kelar</span>`;
+  const bos = agentState("bos");
+  $("#ceoBar").innerHTML = `<b>👑 Bos Glitch (CEO):</b><span>${esc(bos.aktivitas)}</span>`;
+  $("#ceoBar").dataset.agent = "bos";
+  $("#rooms").innerHTML = ORDER.map((id) => {
+    const a = AGENTS[id], st = agentState(id);
+    return `<div class="arow" data-agent="${id}"><div class="ava">${a.emoji}<i class="dot ${dotClass(st.status)}"></i></div>
+      <div style="min-width:0;flex:1"><div class="nm">${esc(a.nama)} <small>· ${esc(a.peran)}</small></div><div class="ac">${esc(st.aktivitas)}</div></div>
+      <span class="st ${dotClass(st.status)}">${stLabel(st.status)}</span></div>`;
+  }).join("");
+}
+
+let hq = null, hqLoading = null;
+async function ensureHQ() {
+  if (hq || hqLoading) return hqLoading;
+  const host = $("#hq3d");
+  const colors = { bos: "#f5a524", radar: "#38d6ff", detektif: "#a98bff", narator: "#ff4fa3", copywriter: "#3ee59a", qc: "#4f7cff" };
+  hqLoading = import("./scene/hq.js").then(({ createHQ }) => {
+    host.querySelector(".loading")?.remove();
+    hq = createHQ(host, { agents: AGENTS, colors, onAgentClick: openAgent });
+    hq.setAgents(state.status.agents || {});
+    if (current === "kantor") hq.start();
+  }).catch((e) => {
+    console.error(e);
+    host.innerHTML = '<div class="loading">Kantor 3D tidak bisa dimuat di perangkat ini.</div>';
+  });
+  return hqLoading;
+}
+
+/* ---------- jadwal ---------- */
+function nextRun() {
+  const nowWIB = new Date(Date.now() + 7 * 3600e3);
+  const n = new Date(Date.UTC(nowWIB.getUTCFullYear(), nowWIB.getUTCMonth(), nowWIB.getUTCDate(), 6, 0, 0));
+  if (nowWIB >= n) n.setUTCDate(n.getUTCDate() + 1);
+  return new Date(n.getTime() - 7 * 3600e3);
+}
+function tick() {
+  const n = nextRun(), s = Math.max(0, Math.floor((n - Date.now()) / 1000));
+  const p = (x) => String(x).padStart(2, "0");
+  $("#countdown").textContent = `${p(Math.floor(s / 3600))}:${p(Math.floor(s / 60) % 60)}:${p(s % 60)}`;
+  $("#nextAt").textContent = n.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long", timeZone: "Asia/Jakarta" }) + ", 06:00 WIB";
+}
+async function renderJadwal() {
+  const steps = [["bos", "Buka shift, bagi tugas"], ...ORDER.map((id) => [id, AGENTS[id].tugas]), ["bos", "Tulis Kesimpulan Bos, tutup shift"]];
+  $("#pipeline").innerHTML = steps.map(([id, d], i) => `<li><span class="step">${AGENTS[id].emoji}</span><div class="n">${i + 1}. ${esc(AGENTS[id].nama)} <span class="muted small">· ${esc(AGENTS[id].peran)}</span></div><div class="d">${esc(i === 0 || i === steps.length - 1 ? d : AGENTS[id].tugas)}</div></li>`).join("");
+  const days = state.days.slice(0, 14);
+  const counts = await Promise.all(days.map(async (d) => ((await getDay(d)) || { items: [] }).items.length));
+  const max = Math.max(5, ...counts);
+  $("#history").innerHTML = days.length ? days.map((d, i) => `<div class="hist" data-goto="${d}"><span class="t">${fmtShort(d)}</span><span class="bar"><i style="width:${(counts[i] / max) * 100}%"></i></span><span class="small muted" style="width:56px;text-align:right">${counts[i]} konten</span></div>`).join("") : '<div class="muted small">Belum ada riwayat.</div>';
+}
+
+/* ---------- hasil ---------- */
 function copyBtn(text) {
   const b = document.createElement("button");
-  b.className = "copy";
-  b.textContent = "Copy";
+  b.className = "copy"; b.textContent = "Copy";
   b.onclick = async () => {
-    await navigator.clipboard.writeText(text);
+    try { await navigator.clipboard.writeText(text); } catch { const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
     b.textContent = "Tersalin ✓"; b.classList.add("done");
     setTimeout(() => { b.textContent = "Copy"; b.classList.remove("done"); }, 1500);
   };
   return b;
 }
-
-function section(title, meta, html, copyText, open = false) {
+function section(title, meta, html, copyText, open) {
   const d = document.createElement("details");
   if (open) d.open = true;
   d.innerHTML = `<summary>${esc(title)} <span class="meta">${esc(meta || "")}</span></summary><div class="body">${html}</div>`;
   if (copyText) d.querySelector(".body").appendChild(copyBtn(copyText));
   return d;
 }
-
 function renderItem(it, n) {
-  const card = document.createElement("article");
-  card.className = "card";
-  const status = it.status_fakta === "rumor" ? "rumor" : "resmi";
-  card.innerHTML = `<div class="card-head">
-      <div class="tags">
-        <span class="tag">#${n}</span>
-        <span class="tag k">${esc(it.kategori)}</span>
-        <span class="tag ${status}">${status === "rumor" ? "Rumor / belum resmi" : "Resmi"}</span>
-        ${it.durasi_detik ? `<span class="tag">±${esc(it.durasi_detik)} detik</span>` : ""}
-      </div>
-      <h2>${esc(it.judul)}</h2>
-      <p class="ringkasan">${esc(it.ringkasan)}</p>
-    </div>`;
-
+  const el = document.createElement("article");
+  el.className = "item";
+  const rumor = it.status_fakta === "rumor";
+  el.innerHTML = `<div class="item-head"><div class="tags"><span class="t2">#${n}</span><span class="t2 k">${esc(it.kategori)}</span><span class="t2 ${rumor ? "rumor" : "resmi"}">${rumor ? "Rumor / belum resmi" : "Resmi"}</span>${it.durasi_detik ? `<span class="t2">±${esc(it.durasi_detik)} dtk</span>` : ""}</div><h4>${esc(it.judul)}</h4><p>${esc(it.ringkasan)}</p></div>`;
   const vo = (it.naskah_vo || []).join("\n");
-  card.appendChild(section("Naskah VO (TTS)", it.hook_formula ? "hook: " + it.hook_formula : "", `<pre>${esc(vo)}</pre>`, vo, true));
-
+  el.appendChild(section("🎙️ Naskah VO (TTS)", it.hook_formula ? "hook: " + it.hook_formula : "", `<pre>${esc(vo)}</pre>`, vo, true));
   const rows = (it.teks_layar || []).map((r) => `<tr><td class="t">${esc(r.t)}</td><td class="s">${esc(r.teks)}</td><td class="v">${esc(r.visual)}</td></tr>`).join("");
-  const layarText = (it.teks_layar || []).map((r) => `${r.t}  ${r.teks}`).join("\n");
-  card.appendChild(section("Teks layar", (it.teks_layar || []).length + " kartu", `<table>${rows}</table>`, layarText));
-
+  el.appendChild(section("🖼️ Teks layar", (it.teks_layar || []).length + " kartu", `<table>${rows}</table>`, (it.teks_layar || []).map((r) => `${r.t}  ${r.teks}`).join("\n")));
   const cap = [it.caption, (it.hashtags || []).join(" ")].filter(Boolean).join("\n\n");
-  card.appendChild(section("Caption + hashtag", "", `<pre>${esc(cap)}</pre>`, cap));
-
+  el.appendChild(section("✍️ Caption + hashtag", "", `<pre>${esc(cap)}</pre>`, cap));
   if ((it.sumber || []).length) {
     const s = document.createElement("div");
-    s.className = "sumber";
-    s.innerHTML = "Sumber: " + it.sumber.map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nama)}</a>`).join(" · ");
-    card.appendChild(s);
+    s.className = "src";
+    s.innerHTML = "🔍 Sumber: " + it.sumber.map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nama)}</a>`).join(" · ");
+    el.appendChild(s);
   }
-  return card;
+  return el;
+}
+async function renderHasil(date) {
+  const sel = $("#day");
+  if (!state.days.length) { $("#list").innerHTML = '<div class="empty">Belum ada hasil.</div>'; return; }
+  sel.innerHTML = state.days.map((d) => `<option value="${d}">${fmtDate(d)}</option>`).join("");
+  sel.value = date && state.days.includes(date) ? date : state.days[0];
+  const day = await getDay(sel.value);
+  const list = $("#list");
+  list.innerHTML = "";
+  if (!day) { list.innerHTML = '<div class="empty">Hasil tanggal ini belum ada.</div>'; return; }
+  $("#hasilChip").textContent = day.items.length + " konten";
+  day.items.forEach((it, i) => list.appendChild(renderItem(it, i + 1)));
 }
 
-async function loadDay(date) {
-  const list = $("#list");
-  list.innerHTML = '<div class="empty">Memuat…</div>';
-  try {
-    const day = await getJSON(`data/${date}.json`);
-    list.innerHTML = "";
-    $("#summary").textContent = `${fmtDate(date)} · ${day.items.length} konten`;
-    day.items.forEach((it, i) => list.appendChild(renderItem(it, i + 1)));
-    history.replaceState(null, "", "#" + date);
-  } catch (e) {
-    list.innerHTML = `<div class="empty">Konten untuk tanggal ini belum ada.</div>`;
-  }
+/* ---------- log ---------- */
+function renderLog() {
+  const log = state.status.log || [];
+  $("#logChip").textContent = log.length + " catatan";
+  $("#feed").innerHTML = log.length ? log.map((l) => {
+    const a = AGENTS[l.agen] || { nama: l.agen, emoji: "🤖" };
+    return `<li><div class="ava">${a.emoji}</div><div><div class="who">${esc(a.nama)}<span class="when">${fmtTime(l.t)} · ${ago(l.t)}</span></div><div class="msg">${esc(l.pesan)}</div></div></li>`;
+  }).join("") : '<li class="muted">Belum ada aktivitas.</li>';
 }
+
+/* ---------- agent sheet ---------- */
+function openAgent(id) {
+  const a = AGENTS[id], s = agentState(id);
+  const logs = (state.status.log || []).filter((l) => l.agen === id).slice(0, 8);
+  $("#sheetBody").innerHTML = `<div class="sheet-head"><div class="ava">${a.emoji}</div><div><div style="font:700 18px 'Space Grotesk'">${esc(a.nama)}</div><div class="muted small">${esc(a.peran)} · <i class="dot ${dotClass(s.status)}" style="display:inline-block"></i> ${stLabel(s.status)}</div></div></div>
+    <div class="card" style="margin-bottom:10px"><div class="small muted">Tugas</div><div>${esc(a.tugas)}</div></div>
+    <div class="card" style="margin-bottom:10px"><div class="small muted">Sedang / terakhir</div><div>${esc(s.aktivitas)}</div><div class="small muted" style="margin-top:4px">${s.t ? ago(s.t) : ""}</div></div>
+    <div class="small muted" style="margin:6px 0">Log terakhir</div>
+    <ul class="feed">${logs.length ? logs.map((l) => `<li><div><div class="who"><span class="when" style="margin:0">${fmtTime(l.t)}</span></div><div class="msg">${esc(l.pesan)}</div></div></li>`).join("") : '<li class="muted small">Belum ada.</li>'}</ul>`;
+  $("#scrim").style.display = "block";
+  requestAnimationFrame(() => $("#sheet").classList.add("open"));
+}
+function closeSheet() { $("#sheet").classList.remove("open"); setTimeout(() => ($("#scrim").style.display = "none"), 250); }
+
+/* ---------- routing ---------- */
+let current = "beranda";
+function show(page, arg) {
+  current = page;
+  document.querySelectorAll(".page").forEach((p) => p.classList.toggle("active", p.id === "p-" + page));
+  document.querySelectorAll("#tabs button").forEach((b) => b.classList.toggle("active", b.dataset.p === page));
+  history.replaceState(null, "", "#" + page + (arg ? "/" + arg : ""));
+  window.scrollTo(0, 0);
+  if (page === "hasil") renderHasil(arg);
+  if (page === "kantor") { ensureHQ(); hq?.start(); } else hq?.stop();
+}
+function render() {
+  renderBeranda(); renderKantor(); renderJadwal(); renderLog();
+  hq?.setAgents(state.status.agents || {});
+  if (current === "hasil") renderHasil($("#day").value);
+}
+
+document.addEventListener("click", (e) => {
+  const ag = e.target.closest("[data-agent]");
+  if (ag) return openAgent(ag.dataset.agent);
+  const go = e.target.closest("[data-goto]");
+  if (go) return show("hasil", go.dataset.goto);
+  const tab = e.target.closest("#tabs button");
+  if (tab) return show(tab.dataset.p);
+});
+$("#scrim").onclick = closeSheet;
+$("#bell").onclick = () => show("hasil");
+$("#refresh").onclick = async () => { $("#refresh").style.opacity = .5; await load(); $("#refresh").style.opacity = 1; };
+$("#day").onchange = () => show("hasil", $("#day").value);
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+window.addEventListener("hashchange", () => {
+  const [pg, ar] = location.hash.slice(1).split("/");
+  if (["beranda", "kantor", "jadwal", "hasil", "log"].includes(pg) && pg !== current) show(pg, ar);
+});
 
 (async () => {
-  let days = [];
-  try { days = (await getJSON("data/index.json")).days || []; } catch {}
-  days.sort().reverse();
-  const sel = $("#day");
-  if (!days.length) { $("#list").innerHTML = '<div class="empty">Belum ada konten. Jadwal harian akan mengisinya.</div>'; return; }
-  sel.innerHTML = days.map((d) => `<option value="${d}">${fmtDate(d)}</option>`).join("");
-  const want = location.hash.slice(1);
-  sel.value = days.includes(want) ? want : days[0];
-  sel.onchange = () => loadDay(sel.value);
-  loadDay(sel.value);
+  const [page, arg] = location.hash.slice(1).split("/");
+  current = ["beranda", "kantor", "jadwal", "hasil", "log"].includes(page) ? page : /^\d{4}-/.test(page) ? "hasil" : "beranda";
+  await load();
+  show(current, /^\d{4}-/.test(page) ? page : arg);
+  tick(); setInterval(tick, 1000);
+  setInterval(() => { if (document.visibilityState === "visible" && state.status.run?.status === "berjalan") load(); }, 30000);
 })();
 </script>
 </body>
