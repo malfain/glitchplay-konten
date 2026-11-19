@@ -22,9 +22,9 @@
       "t": "2026-11-20T06:05:53+07:00"
     },
     "radar": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-20T06:05:53+07:00"
+      "status": "kerja",
+      "aktivitas": "Cari berita MLBB, esports, rilis game",
+      "t": "2026-11-20T06:05:58+07:00"
     },
     "detektif": {
       "status": "idle",
@@ -53,6 +53,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-20T06:05:58+07:00",
+      "agen": "radar",
+      "pesan": "Cari berita MLBB, esports, rilis game"
+    },
     {
       "t": "2026-11-20T06:05:53+07:00",
       "agen": "bos",
@@ -179,6 +184,6 @@
       "pesan": "Kantor GlitchPlay HQ dibuka. Konten 20 Nov (5 item) dibuat sebelum tim multi-agent aktif."
     }
   ],
-  "updated_at": "2026-11-20T06:05:53+07:00",
+  "updated_at": "2026-11-20T06:05:58+07:00",
   "kesimpulan_t": "2026-11-20T01:45:03+07:00"
 }
