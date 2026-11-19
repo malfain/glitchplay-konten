@@ -15,10 +15,15 @@ Buat **minimal 5 konten reel** berita game untuk hari ini (tanggal WIB, format
    - rilis game besar, update/patch/season baru, harga di Indonesia
    - jangan ulang topik yang sudah dipakai di 3 file `data/*.json` terakhir,
      kecuali ada perkembangan baru
-3. **Verifikasi setiap fakta** dari minimal satu sumber yang bisa dibuka
-   (situs berita / pengumuman resmi). Jangan mengarang angka, tanggal, harga,
-   kutipan, atau nama. Kalau hanya rumor/leak, set `status_fakta: "rumor"` dan
-   naskah wajib bilang "masih rumor" / "belum resmi".
+3. **Verifikasi setiap fakta.** Di sesi cloud, WebFetch ke situs berita
+   biasanya diblokir jaringan, jadi andalkan **WebSearch** (pakai
+   `mode: "extended"` untuk detail): setiap angka, tanggal, harga, dan nama
+   harus muncul di hasil WebSearch dari **minimal 2 situs berbeda**, dan URL
+   situs-situs itu yang dicantumkan di `sumber`. Kalau WebFetch berhasil,
+   boleh dipakai sebagai tambahan. Jangan mengarang angka, tanggal, harga,
+   kutipan, atau nama; fakta yang tidak terkonfirmasi 2 sumber dibuang dari
+   naskah. Kalau hanya rumor/leak, set `status_fakta: "rumor"` dan naskah
+   wajib bilang "masih rumor" / "belum resmi".
 4. Jangan buat konten tentang: judi online/slot, top up ilegal, jual-beli akun,
    drama yang menyerang pribadi streamer, SARA, politik.
 5. Kalau `data/<tanggal>.json` sudah ada, **tambahkan** item sampai minimal 5
