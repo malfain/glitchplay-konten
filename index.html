@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GlitchPlay Konten</title>
+<meta name="description" content="Konten harian @glitchplayclips1: naskah reel, teks layar, dan caption berita game.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f17; --panel: #161925; --panel-2: #1d2131; --line: #2a2f45;
+    --text: #e8eaf2; --muted: #9096ad; --accent: #7cf29c; --accent-2: #b48cff;
+    --warn: #ffcc66; --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 Inter, system-ui, sans-serif; }
+  header { position: sticky; top: 0; z-index: 5; background: rgba(13,15,23,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .bar { max-width: 860px; margin: 0 auto; padding: 14px 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  h1 { font: 700 20px/1 "Space Grotesk", sans-serif; margin: 0; letter-spacing: -.02em; }
+  h1 span { color: var(--accent); }
+  .handle { color: var(--muted); font-size: 13px; }
+  select { margin-left: auto; background: var(--panel-2); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font: inherit; }
+  main { max-width: 860px; margin: 0 auto; padding: 16px; }
+  .summary { color: var(--muted); font-size: 13px; margin: 4px 0 16px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 18px; overflow: hidden; }
+  .card-head { padding: 16px; border-bottom: 1px solid var(--line); }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+  .tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; padding: 3px 8px; border-radius: 999px; background: var(--panel-2); color: var(--muted); }
+  .tag.k { color: var(--accent-2); }
+  .tag.rumor { color: var(--bg); background: var(--warn); }
+  .tag.resmi { color: var(--bg); background: var(--accent); }
+  h2 { font: 700 18px/1.3 "Space Grotesk", sans-serif; margin: 0 0 6px; }
+  .ringkasan { color: var(--muted); margin: 0; }
+  details { border-top: 1px solid var(--line); }
+  details:first-of-type { border-top: 0; }
+  summary { cursor: pointer; padding: 12px 16px; font-weight: 600; list-style: none; display: flex; align-items: center; gap: 8px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▸"; color: var(--accent); transition: transform .15s; }
+  details[open] summary::before { transform: rotate(90deg); }
+  summary .meta { color: var(--muted); font-weight: 400; font-size: 13px; }
+  .body { padding: 0 16px 16px; }
+  pre { margin: 0; white-space: pre-wrap; word-break: break-word; background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 14px/1.6 Inter, sans-serif; }
+  .copy { margin-top: 8px; background: var(--accent); color: #0d0f17; border: 0; border-radius: 9px; padding: 8px 14px; font: 600 13px Inter, sans-serif; cursor: pointer; }
+  .copy.done { background: var(--accent-2); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  td { padding: 7px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td.t { color: var(--muted); width: 48px; font-variant-numeric: tabular-nums; }
+  td.s { font-weight: 600; }
+  td.v { color: var(--muted); font-size: 13px; }
+  .sumber a { color: var(--accent-2); }
+  .sumber { font-size: 13px; padding: 10px 16px 14px; border-top: 1px solid var(--line); color: var(--muted); }
+  .empty { text-align: center; color: var(--muted); padding: 48px 16px; }
+  @media (max-width: 560px) { td.v { display: none; } select { margin-left: 0; width: 100%; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div>
+      <h1>GlitchPlay <span>Konten</span></h1>
+      <div class="handle">@glitchplayclips1 · konten harian otomatis</div>
+    </div>
+    <select id="day" aria-label="Pilih tanggal"></select>
+  </div>
+</header>
+<main>
+  <p class="summary" id="summary"></p>
+  <div id="list"><div class="empty">Memuat…</div></div>
+</main>
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmtDate = (d) => new Date(d + "T00:00:00").toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+
+async function getJSON(path) {
+  const r = await fetch(path + "?v=" + Date.now());
+  if (!r.ok) throw new Error(path + " " + r.status);
+  return r.json();
+}
+
+function copyBtn(text) {
+  const b = document.createElement("button");
+  b.className = "copy";
+  b.textContent = "Copy";
+  b.onclick = async () => {
+    await navigator.clipboard.writeText(text);
+    b.textContent = "Tersalin ✓"; b.classList.add("done");
+    setTimeout(() => { b.textContent = "Copy"; b.classList.remove("done"); }, 1500);
+  };
+  return b;
+}
+
+function section(title, meta, html, copyText, open = false) {
+  const d = document.createElement("details");
+  if (open) d.open = true;
+  d.innerHTML = `<summary>${esc(title)} <span class="meta">${esc(meta || "")}</span></summary><div class="body">${html}</div>`;
+  if (copyText) d.querySelector(".body").appendChild(copyBtn(copyText));
+  return d;
+}
+
+function renderItem(it, n) {
+  const card = document.createElement("article");
+  card.className = "card";
+  const status = it.status_fakta === "rumor" ? "rumor" : "resmi";
+  card.innerHTML = `<div class="card-head">
+      <div class="tags">
+        <span class="tag">#${n}</span>
+        <span class="tag k">${esc(it.kategori)}</span>
+        <span class="tag ${status}">${status === "rumor" ? "Rumor / belum resmi" : "Resmi"}</span>
+        ${it.durasi_detik ? `<span class="tag">±${esc(it.durasi_detik)} detik</span>` : ""}
+      </div>
+      <h2>${esc(it.judul)}</h2>
+      <p class="ringkasan">${esc(it.ringkasan)}</p>
+    </div>`;
+
+  const vo = (it.naskah_vo || []).join("\n");
+  card.appendChild(section("Naskah VO (TTS)", it.hook_formula ? "hook: " + it.hook_formula : "", `<pre>${esc(vo)}</pre>`, vo, true));
+
+  const rows = (it.teks_layar || []).map((r) => `<tr><td class="t">${esc(r.t)}</td><td class="s">${esc(r.teks)}</td><td class="v">${esc(r.visual)}</td></tr>`).join("");
+  const layarText = (it.teks_layar || []).map((r) => `${r.t}  ${r.teks}`).join("\n");
+  card.appendChild(section("Teks layar", (it.teks_layar || []).length + " kartu", `<table>${rows}</table>`, layarText));
+
+  const cap = [it.caption, (it.hashtags || []).join(" ")].filter(Boolean).join("\n\n");
+  card.appendChild(section("Caption + hashtag", "", `<pre>${esc(cap)}</pre>`, cap));
+
+  if ((it.sumber || []).length) {
+    const s = document.createElement("div");
+    s.className = "sumber";
+    s.innerHTML = "Sumber: " + it.sumber.map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nama)}</a>`).join(" · ");
+    card.appendChild(s);
+  }
+  return card;
+}
+
+async function loadDay(date) {
+  const list = $("#list");
+  list.innerHTML = '<div class="empty">Memuat…</div>';
+  try {
+    const day = await getJSON(`data/${date}.json`);
+    list.innerHTML = "";
+    $("#summary").textContent = `${fmtDate(date)} · ${day.items.length} konten`;
+    day.items.forEach((it, i) => list.appendChild(renderItem(it, i + 1)));
+    history.replaceState(null, "", "#" + date);
+  } catch (e) {
+    list.innerHTML = `<div class="empty">Konten untuk tanggal ini belum ada.</div>`;
+  }
+}
+
+(async () => {
+  let days = [];
+  try { days = (await getJSON("data/index.json")).days || []; } catch {}
+  days.sort().reverse();
+  const sel = $("#day");
+  if (!days.length) { $("#list").innerHTML = '<div class="empty">Belum ada konten. Jadwal harian akan mengisinya.</div>'; return; }
+  sel.innerHTML = days.map((d) => `<option value="${d}">${fmtDate(d)}</option>`).join("");
+  const want = location.hash.slice(1);
+  sel.value = days.includes(want) ? want : days[0];
+  sel.onchange = () => loadDay(sel.value);
+  loadDay(sel.value);
+})();
+</script>
+</body>
+</html>

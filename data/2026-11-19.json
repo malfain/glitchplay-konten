@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-19",
+  "items": [
+    {
+      "kategori": "Rilis Game",
+      "judul": "GTA VI resmi rilis, tapi belum ada versi PC",
+      "ringkasan": "GTA VI rilis 19 November 2026 pukul 00.00 WIB hanya di PS5 dan Xbox Series X|S. Harga PS Store Indonesia Rp1,19 juta (Standard) dan Rp1,49 juta (Ultimate). Versi PC belum ada tanggal.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Callout",
+      "durasi_detik": 31,
+      "naskah_vo": [
+        "Anak PC, GTA enam rilis, tapi bukan buat kalian.",
+        "Rilisnya jam dua belas malam tadi, W I B.",
+        "Tapi cuma ada di PS lima sama Xbox Series.",
+        "Versi PC? Sampai sekarang belum ada tanggalnya.",
+        "Harga di PlayStation Store Indonesia, satu juta seratus sembilan puluh ribu.",
+        "Edisi Ultimate, satu juta empat ratus sembilan puluh ribu.",
+        "Di konsol, mainnya tiga puluh FPS.",
+        "Yang punya PS lima Pro, grafisnya dapet peningkatan.",
+        "Ukuran file belum diumumin resmi, jadi jangan percaya angka yang beredar.",
+        "Follow biar nggak ketinggalan kabar GTA enam buat anak PC."
+      ],
+      "teks_layar": [
+        {"t": "0:00", "teks": "ANAK PC, SABAR DULU 😭", "visual": "logo / trailer GTA VI"},
+        {"t": "0:03", "teks": "RILIS 19 NOV · 00.00 WIB", "visual": "gameplay"},
+        {"t": "0:06", "teks": "PS5 & XBOX SERIES AJA", "visual": "logo konsol"},
+        {"t": "0:10", "teks": "PC: BELUM ADA TANGGAL", "visual": "layar PC kosong"},
+        {"t": "0:12", "teks": "STANDARD Rp1,19 JT", "visual": "screenshot PS Store"},
+        {"t": "0:16", "teks": "ULTIMATE Rp1,49 JT", "visual": "screenshot PS Store"},
+        {"t": "0:19", "teks": "30 FPS DI KONSOL", "visual": "gameplay"},
+        {"t": "0:21", "teks": "PS5 PRO: GRAFIS LEBIH BAGUS", "visual": "gameplay"},
+        {"t": "0:24", "teks": "UKURAN FILE? BELUM RESMI", "visual": "loading bar"},
+        {"t": "0:28", "teks": "FOLLOW BUAT UPDATE PC 🎮", "visual": "trailer GTA VI"}
+      ],
+      "caption": "Anak PC, GTA VI udah rilis… tapi belum buat kita 😭\n\nRilis 19 November jam 00.00 WIB, cuma di PS5 & Xbox Series X|S. Harga di PS Store Indonesia Rp1,19 juta (Standard) dan Rp1,49 juta (Ultimate). Versi PC? Belum ada tanggal resmi.\n\nKamu main di konsol atau nunggu versi PC? Tulis di komentar 👇",
+      "hashtags": ["#GTA6", "#GTAVI", "#BeritaGame"],
+      "sumber": [
+        {"nama": "Bisnis.com", "url": "https://teknologi.bisnis.com/read/20261110/564/2020063/gta-6-siap-rilis-pekan-depan-cek-jadwal-hingga-harga-di-indonesia"},
+        {"nama": "Gimbot", "url": "https://www.gimbot.com/rangkuman-berita-game-indonesia-14-november-2026/"}
+      ]
+    }
+  ]
+}
