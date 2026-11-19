@@ -39,7 +39,10 @@ situs universitas. Angka ditulis apa adanya; kalau sumber berbeda, pakai
 
 ## Naskah (Narator)
 
-- **Durasi 1,5–2,5 menit** (YouTube Shorts maks 3 menit) ≈ 180–300 kata.
+- **Durasi 2–2,5 menit** (YouTube Shorts maks 3 menit). Suara anak membaca
+  ±140 kata/menit, jadi naskah **260–340 kata** (hitung dengan
+  `wc -w`); kurang dari 260 kata → tambah fakta/penjelasan, jangan dikirim.
+  `durasi_detik` = jumlah kata ÷ 140 × 60 (jangan dikarang).
 - Bahasa Indonesia baku-santai yang mudah dipahami anak SD; kalimat ≤ 12 kata;
   kata sulit dijelaskan langsung ("hemosianin" → "zat yang mengandung tembaga").
 - Struktur:
