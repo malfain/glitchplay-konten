@@ -723,12 +723,17 @@ function openTokenSheet(note = "") {
     if (!v) return;
     const old = getTok(); setTok(v);
     try {
-      const repo = await gh("");
-      if (!repo.permissions || !repo.permissions.push) throw Object.assign(new Error("no push"), { status: 403 });
+      await gh(""); // token valid + can see the repo
+      // Real write probe: create a tiny dangling git blob. Needs Contents: write, but makes no commit and changes no file.
+      await gh("git/blobs", { method: "POST", body: JSON.stringify({ content: "glitchplay-token-check", encoding: "utf-8" }) });
       refreshTokBtn(); closeSheet(); toast("Token tersimpan ✓ Tombol 🗑️ Hapus siap dipakai.");
     } catch (e) {
       setTok(old); refreshTokBtn();
-      toast(e.status === 401 ? "Token tidak valid." : "Token tidak punya izin tulis ke glitchplay-konten.", 6000);
+      const why = e.status === 401 ? "Token tidak valid atau sudah kedaluwarsa."
+        : e.status === 404 ? "Token tidak punya akses ke repo glitchplay-konten (cek Repository access)."
+        : e.status === 403 ? "Token belum punya izin Contents: Read and write."
+        : "Gagal cek token: " + (e.detail || e.message);
+      toast(why, 7000);
     }
   };
   if (has) $("#tokDel").onclick = () => { setTok(""); refreshTokBtn(); closeSheet(); toast("Token dihapus dari perangkat ini."); };
