@@ -628,10 +628,17 @@ function openSheet(html) { $("#sheetBody").innerHTML = html; $("#scrim").style.d
 function refreshTokBtn() { const b = $("#tokBtn"); b.classList.toggle("on", !!getTok()); b.textContent = getTok() ? "🔑 Token ✓" : "⚙️ Token"; }
 
 async function gh(path, opts = {}) {
-  const r = await fetch(`https://api.github.com/repos/${REPO}/${path}`, {
-    ...opts,
-    headers: { Accept: "application/vnd.github+json", Authorization: `Bearer ${getTok()}`, "X-GitHub-Api-Version": "2022-11-28", ...(opts.headers || {}) },
-  });
+  let r;
+  try {
+    r = await fetch(`https://api.github.com/repos/${REPO}/${path}`, {
+      ...opts,
+      headers: { Accept: "application/vnd.github+json", Authorization: `Bearer ${getTok()}`, "X-GitHub-Api-Version": "2022-11-28", ...(opts.headers || {}) },
+    });
+  } catch (err) {
+    // the request never reached GitHub: blocked by an extension/VPN/firewall, or offline
+    throw Object.assign(new Error("network"), { status: 0,
+      detail: "Koneksi ke GitHub diblokir atau terputus. Matikan ad-blocker/ekstensi/VPN, coba mode Incognito, atau pakai aplikasi GlitchPlay HQ di HP." });
+  }
   if (!r.ok) {
     const e = new Error(`GitHub ${r.status}`); e.status = r.status;
     try { e.detail = (await r.json()).message; } catch {}
@@ -732,6 +739,7 @@ function openTokenSheet(note = "") {
       const why = e.status === 401 ? "Token tidak valid atau sudah kedaluwarsa."
         : e.status === 404 ? "Token tidak punya akses ke repo glitchplay-konten (cek Repository access)."
         : e.status === 403 ? "Token belum punya izin Contents: Read and write."
+        : e.status === 0 ? e.detail
         : "Gagal cek token: " + (e.detail || e.message);
       toast(why, 7000);
     }
