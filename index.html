@@ -561,7 +561,8 @@ function renderItem(it, n, ctx) {
     if (y.made_for_kids) {
       const m = document.createElement("div");
       m.className = "mfk";
-      m.innerHTML = "👶 Saat upload di YouTube Studio, pilih <b>“Ya, ini dibuat untuk anak-anak”</b> (Made for Kids).";
+      m.innerHTML = "👶 Saat upload di YouTube Studio, pilih <b>“Ya, ini dibuat untuk anak-anak”</b> (Made for Kids)." +
+        (it.adegan ? "<br>🤖 Video ini pakai foto AI realistis: di bagian <b>“Konten yang diubah”</b> pilih <b>Ya</b>." : "");
       el.appendChild(m);
     }
   } else {
