@@ -1,0 +1,511 @@
+{
+  "date": "2026-11-21",
+  "items": [
+    {
+      "kategori": "Luar Angkasa",
+      "judul": "7 fakta seru Bulan: sisi sama, menjauh, tarik air laut",
+      "ringkasan": "Bulan sekitar 384.000 km dari Bumi, lebarnya sekitar seperempat Bumi, gravitasinya seperenam Bumi, selalu menghadapkan sisi yang sama (terkunci pasang surut), menjauh sekitar 3,8 cm per tahun, menarik air laut sehingga terjadi pasang surut, dan 12 orang pernah berjalan di sana.",
+      "status_fakta": "resmi",
+      "hook_formula": "Tahukah Kamu + daftar 7 fakta",
+      "durasi_detik": 126,
+      "naskah_vo": [
+        "Tahukah kamu, ada benda di langit yang selalu menunjukkan wajah yang sama?",
+        "Dari Bumi, kita tidak pernah melihat sisi belakangnya!",
+        "Benda itu adalah Bulan!",
+        "Yuk, kita kenalan dengan tujuh fakta seru tentang Bulan!",
+        "Fakta pertama. Bulan jauh sekali dari Bumi.",
+        "Jaraknya sekitar tiga ratus delapan puluh empat ribu kilometer.",
+        "Kalau naik mobil terus-menerus, butuh berbulan-bulan untuk sampai ke sana.",
+        "Fakta kedua. Lebar Bulan sekitar seperempat lebar Bumi.",
+        "Jadi, Bulan lebih kecil dari Bumi, tapi tetap besar!",
+        "Kalau Bumi sebesar bola basket, Bulan sebesar bola tenis.",
+        "Fakta ketiga. Gravitasi di Bulan hanya seperenam gravitasi Bumi.",
+        "Makanya astronaut terlihat melompat-lompat ringan di sana.",
+        "Kalau kamu di sana, lompatanmu bisa jauh lebih tinggi!",
+        "Fakta keempat. Bulan selalu menghadap Bumi dengan sisi yang sama.",
+        "Para ilmuwan menyebutnya terkunci pasang surut.",
+        "Putaran Bulan dan putaran Bumi saling serasi.",
+        "Karena itu, sisi belakang Bulan tidak terlihat dari Bumi.",
+        "Fakta kelima. Bulan pelan-pelan menjauh dari Bumi.",
+        "Setiap tahun, jaraknya bertambah sekitar tiga koma delapan senti.",
+        "Kira-kira secepat tumbuhnya kukumu!",
+        "Sedikit demi sedikit, tapi terus berlanjut selama jutaan tahun.",
+        "Pernahkah kamu melihat Bulan di malam hari? Sekarang kamu tahu rahasianya!",
+        "Fakta keenam. Tarikan Bulan membuat air laut pasang dan surut.",
+        "Gravitasi Bulan menarik air laut, jadi naik turun dengan teratur.",
+        "Itulah sebabnya pantai kadang tampak luas, kadang tampak sempit.",
+        "Fakta ketujuh. Dua belas orang pernah berjalan di Bulan.",
+        "Mereka astronaut dari misi Apollo, dulu sekali.",
+        "Mereka membawa pulang batu-batu Bulan untuk dipelajari.",
+        "Dari batu itu, ilmuwan belajar banyak tentang masa lalu Bulan.",
+        "Bulan benar-benar teman setia Bumi, selalu menemani kita setiap malam.",
+        "Hebat, kan?",
+        "Sekarang kuis! Kalau Bumi seperti bola besar, Bulan sebesar apa?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Tadi kita belajar bahwa lebar Bulan seperempat lebar Bumi.",
+        "Subscribe GlitchPlayClips, sampai jumpa di fakta seru berikutnya!"
+      ],
+      "subtitle": [
+        "Tahukah kamu, ada benda di langit yang selalu menunjukkan wajah yang sama?",
+        "Dari Bumi, kita tidak pernah melihat sisi belakangnya!",
+        "Benda itu adalah Bulan!",
+        "Yuk, kita kenalan dengan 7 fakta seru tentang Bulan!",
+        "Fakta pertama. Bulan jauh sekali dari Bumi.",
+        "Jaraknya sekitar 384.000 kilometer.",
+        "Kalau naik mobil terus-menerus, butuh berbulan-bulan untuk sampai ke sana.",
+        "Fakta kedua. Lebar Bulan sekitar seperempat lebar Bumi.",
+        "Jadi, Bulan lebih kecil dari Bumi, tapi tetap besar!",
+        "Kalau Bumi sebesar bola basket, Bulan sebesar bola tenis.",
+        "Fakta ketiga. Gravitasi di Bulan hanya seperenam gravitasi Bumi.",
+        "Makanya astronaut terlihat melompat-lompat ringan di sana.",
+        "Kalau kamu di sana, lompatanmu bisa jauh lebih tinggi!",
+        "Fakta keempat. Bulan selalu menghadap Bumi dengan sisi yang sama.",
+        "Para ilmuwan menyebutnya terkunci pasang surut.",
+        "Putaran Bulan dan putaran Bumi saling serasi.",
+        "Karena itu, sisi belakang Bulan tidak terlihat dari Bumi.",
+        "Fakta kelima. Bulan pelan-pelan menjauh dari Bumi.",
+        "Setiap tahun, jaraknya bertambah sekitar 3,8 senti.",
+        "Kira-kira secepat tumbuhnya kukumu!",
+        "Sedikit demi sedikit, tapi terus berlanjut selama jutaan tahun.",
+        "Pernahkah kamu melihat Bulan di malam hari? Sekarang kamu tahu rahasianya!",
+        "Fakta keenam. Tarikan Bulan membuat air laut pasang dan surut.",
+        "Gravitasi Bulan menarik air laut, jadi naik turun dengan teratur.",
+        "Itulah sebabnya pantai kadang tampak luas, kadang tampak sempit.",
+        "Fakta ketujuh. 12 orang pernah berjalan di Bulan.",
+        "Mereka astronaut dari misi Apollo, dulu sekali.",
+        "Mereka membawa pulang batu-batu Bulan untuk dipelajari.",
+        "Dari batu itu, ilmuwan belajar banyak tentang masa lalu Bulan.",
+        "Bulan benar-benar teman setia Bumi, selalu menemani kita setiap malam.",
+        "Hebat, kan?",
+        "Sekarang kuis! Kalau Bumi seperti bola besar, Bulan sebesar apa?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Tadi kita belajar bahwa lebar Bulan seperempat lebar Bumi.",
+        "Subscribe GlitchPlayClips, sampai jumpa di fakta seru berikutnya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "BENDA DI LANGIT, WAJAH SAMA?",
+          "visual": "bulan purnama"
+        },
+        {
+          "t": "0:05",
+          "teks": "SISI BELAKANGNYA MISTERI",
+          "visual": "sisi gelap bulan"
+        },
+        {
+          "t": "0:09",
+          "teks": "BULAN!",
+          "visual": "bulan bersinar"
+        },
+        {
+          "t": "0:10",
+          "teks": "7 FAKTA SERU BULAN",
+          "visual": "angka 7"
+        },
+        {
+          "t": "0:14",
+          "teks": "#1 BULAN JAUH DARI BUMI",
+          "visual": "Bumi dan Bulan"
+        },
+        {
+          "t": "0:17",
+          "teks": "SEKITAR 384.000 KM",
+          "visual": "penggaris jarak"
+        },
+        {
+          "t": "0:25",
+          "teks": "#2 LEBARNYA ¼ BUMI",
+          "visual": "perbandingan ukuran"
+        },
+        {
+          "t": "0:29",
+          "teks": "KECIL, TAPI BESAR!",
+          "visual": "bulan dan bumi"
+        },
+        {
+          "t": "0:36",
+          "teks": "#3 GRAVITASI 1/6",
+          "visual": "astronaut melayang"
+        },
+        {
+          "t": "0:40",
+          "teks": "MELOMPAT RINGAN",
+          "visual": "astronaut melompat"
+        },
+        {
+          "t": "0:47",
+          "teks": "#4 SISI SAMA SELALU",
+          "visual": "bulan berputar"
+        },
+        {
+          "t": "0:51",
+          "teks": "TERKUNCI PASANG SURUT",
+          "visual": "gembok"
+        },
+        {
+          "t": "0:54",
+          "teks": "PUTARAN SERASI",
+          "visual": "dua bola berputar"
+        },
+        {
+          "t": "1:01",
+          "teks": "#5 BULAN MENJAUH",
+          "visual": "bulan bergeser"
+        },
+        {
+          "t": "1:04",
+          "teks": "+3,8 CM TIAP TAHUN",
+          "visual": "penggaris"
+        },
+        {
+          "t": "1:08",
+          "teks": "SECEPAT KUKUMU TUMBUH",
+          "visual": "kuku"
+        },
+        {
+          "t": "1:18",
+          "teks": "#6 BULAN BUAT AIR PASANG",
+          "visual": "ombak"
+        },
+        {
+          "t": "1:22",
+          "teks": "AIR LAUT NAIK-TURUN",
+          "visual": "pantai pasang surut"
+        },
+        {
+          "t": "1:30",
+          "teks": "#7 12 ORANG DI BULAN",
+          "visual": "astronaut Apollo"
+        },
+        {
+          "t": "1:34",
+          "teks": "ASTRONAUT APOLLO",
+          "visual": "roket Apollo"
+        },
+        {
+          "t": "1:37",
+          "teks": "BAWA PULANG BATU BULAN",
+          "visual": "batu bulan"
+        },
+        {
+          "t": "1:49",
+          "teks": "HEBAT, KAN?",
+          "visual": "bulan tersenyum"
+        },
+        {
+          "t": "1:50",
+          "teks": "KUIS: BULAN SEBESAR APA?",
+          "visual": "tanda tanya"
+        },
+        {
+          "t": "1:54",
+          "teks": "JAWAB DALAM HATI",
+          "visual": "anak berpikir"
+        },
+        {
+          "t": "2:02",
+          "teks": "SUBSCRIBE!",
+          "visual": "tombol subscribe"
+        }
+      ],
+      "caption": "7 fakta seru tentang Bulan! 🌙",
+      "hashtags": [
+        "#faktaseru",
+        "#bulan",
+        "#luarangkasa"
+      ],
+      "youtube": {
+        "judul": "7 Fakta Seru Bulan! Menjauh, Gravitasi Kecil & Tarik Air Laut 🌙 #Shorts",
+        "deskripsi": "Tahukah kamu? Bulan selalu menunjukkan wajah yang sama ke Bumi dan pelan-pelan menjauh! Yuk kenalan dengan 7 fakta seru Bulan di video ini.\n\n🌙 Fakta di video:\n1. Jaraknya sekitar 384.000 km dari Bumi\n2. Lebarnya sekitar seperempat lebar Bumi\n3. Gravitasinya seperenam gravitasi Bumi\n4. Selalu menghadap Bumi dengan sisi yang sama\n5. Menjauh sekitar 3,8 cm per tahun\n6. Tarikannya membuat air laut pasang surut\n7. 12 orang pernah berjalan di Bulan\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: NASA Science, Britannica, Wikipedia (data jarak & ukuran), Space.com",
+        "tags": [
+          "fakta seru",
+          "fakta unik anak",
+          "bulan",
+          "luar angkasa",
+          "astronomi anak",
+          "belajar sains",
+          "sains anak",
+          "tahukah kamu",
+          "edukasi anak",
+          "shorts"
+        ],
+        "made_for_kids": true
+      },
+      "sumber": [
+        {
+          "nama": "NASA Science",
+          "url": "https://science.nasa.gov/moon/facts/"
+        },
+        {
+          "nama": "Britannica",
+          "url": "https://www.britannica.com/place/Moon"
+        },
+        {
+          "nama": "Britannica Kids",
+          "url": "https://kids.britannica.com/kids/article/Moon/353489"
+        },
+        {
+          "nama": "Space.com",
+          "url": "https://www.space.com/55-earths-moon-formation-composition-and-orbit.html"
+        },
+        {
+          "nama": "ScienceBlog",
+          "url": "https://scienceblog.com/k-the-moon-is-drifting-away-from-earth-at-3-8-centimetres-a-year-so-what-happens-to-us-as-it-goes/"
+        }
+      ]
+    },
+    {
+      "kategori": "Hewan Darat",
+      "judul": "6 fakta seru jerapah: lidah ungu, 7 tulang leher, bintik unik",
+      "ringkasan": "Jerapah jantan setinggi sekitar 5,5 m, leher 7 tulang seperti manusia, lidah sekitar 45 cm berwarna gelap, bayi jatuh sekitar 2 m saat lahir dan berdiri dalam sekitar 1 jam, tidur sangat sebentar, dan pola bintiknya unik seperti sidik jari.",
+      "status_fakta": "resmi",
+      "hook_formula": "Tahukah Kamu + daftar 6 fakta",
+      "durasi_detik": 118,
+      "naskah_vo": [
+        "Tahukah kamu, ada hewan yang lidahnya berwarna gelap dan panjang sekali?",
+        "Hewan itu juga hewan darat tertinggi di dunia!",
+        "Namanya jerapah!",
+        "Yuk, kita kenalan dengan enam fakta seru tentang jerapah!",
+        "Fakta pertama. Jerapah jantan bisa setinggi sekitar lima setengah meter.",
+        "Itu hampir sama dengan tiga orang dewasa yang berdiri bertumpuk!",
+        "Karena setinggi itu, jerapah bisa melihat jauh ke seluruh padang rumput.",
+        "Fakta kedua. Leher jerapah punya tujuh tulang.",
+        "Jumlahnya sama dengan tulang leher manusia!",
+        "Bedanya, setiap tulang jerapah panjang sekali.",
+        "Itu sebabnya lehernya bisa menjulang tinggi ke atas.",
+        "Fakta ketiga. Lidah jerapah panjangnya sekitar empat puluh lima senti.",
+        "Warnanya ungu kehitaman, mungkin untuk melindungi dari sengatan matahari.",
+        "Lidah itu dipakai untuk meraih daun di pucuk pohon.",
+        "Dengan lidah panjang, jerapah mudah mengambil daun yang lezat.",
+        "Fakta keempat. Bayi jerapah lahir dari tempat yang tinggi.",
+        "Ia jatuh ke tanah sekitar dua meter saat lahir.",
+        "Jerapah ibu melahirkan sambil berdiri.",
+        "Tapi dalam sekitar satu jam, ia sudah bisa berdiri!",
+        "Jadi, bayi jerapah cepat siap berjalan bersama ibunya.",
+        "Fakta kelima. Jerapah tidur sebentar-sebentar saja.",
+        "Di alam liar, sering kurang dari dua jam sehari.",
+        "Mereka tidur dalam tidur pendek, kadang sambil berdiri.",
+        "Hewan sebesar itu ternyata tidak butuh tidur lama.",
+        "Fakta keenam. Pola bintik jerapah tidak ada yang sama.",
+        "Seperti sidik jari kita, tiap jerapah punya pola sendiri.",
+        "Para peneliti mengenali jerapah dari foto bintiknya.",
+        "Bintik itu tidak berubah, jadi mudah dikenali.",
+        "Jerapah memang hewan yang luar biasa dan unik, ya.",
+        "Setiap bagian tubuhnya punya cerita yang menarik untuk dipelajari.",
+        "Hebat, kan?",
+        "Sekarang kuis! Berapa tulang leher jerapah dan tulang lehermu?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Subscribe GlitchPlayClips, sampai jumpa di fakta seru berikutnya!"
+      ],
+      "subtitle": [
+        "Tahukah kamu, ada hewan yang lidahnya berwarna gelap dan panjang sekali?",
+        "Hewan itu juga hewan darat tertinggi di dunia!",
+        "Namanya jerapah!",
+        "Yuk, kita kenalan dengan 6 fakta seru tentang jerapah!",
+        "Fakta pertama. Jerapah jantan bisa setinggi sekitar 5,5 meter.",
+        "Itu hampir sama dengan 3 orang dewasa yang berdiri bertumpuk!",
+        "Karena setinggi itu, jerapah bisa melihat jauh ke seluruh padang rumput.",
+        "Fakta kedua. Leher jerapah punya 7 tulang.",
+        "Jumlahnya sama dengan tulang leher manusia!",
+        "Bedanya, setiap tulang jerapah panjang sekali.",
+        "Itu sebabnya lehernya bisa menjulang tinggi ke atas.",
+        "Fakta ketiga. Lidah jerapah panjangnya sekitar 45 senti.",
+        "Warnanya ungu kehitaman, mungkin untuk melindungi dari sengatan matahari.",
+        "Lidah itu dipakai untuk meraih daun di pucuk pohon.",
+        "Dengan lidah panjang, jerapah mudah mengambil daun yang lezat.",
+        "Fakta keempat. Bayi jerapah lahir dari tempat yang tinggi.",
+        "Ia jatuh ke tanah sekitar 2 meter saat lahir.",
+        "Jerapah ibu melahirkan sambil berdiri.",
+        "Tapi dalam sekitar 1 jam, ia sudah bisa berdiri!",
+        "Jadi, bayi jerapah cepat siap berjalan bersama ibunya.",
+        "Fakta kelima. Jerapah tidur sebentar-sebentar saja.",
+        "Di alam liar, sering kurang dari 2 jam sehari.",
+        "Mereka tidur dalam tidur pendek, kadang sambil berdiri.",
+        "Hewan sebesar itu ternyata tidak butuh tidur lama.",
+        "Fakta keenam. Pola bintik jerapah tidak ada yang sama.",
+        "Seperti sidik jari kita, tiap jerapah punya pola sendiri.",
+        "Para peneliti mengenali jerapah dari foto bintiknya.",
+        "Bintik itu tidak berubah, jadi mudah dikenali.",
+        "Jerapah memang hewan yang luar biasa dan unik, ya.",
+        "Setiap bagian tubuhnya punya cerita yang menarik untuk dipelajari.",
+        "Hebat, kan?",
+        "Sekarang kuis! Berapa tulang leher jerapah dan tulang lehermu?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Subscribe GlitchPlayClips, sampai jumpa di fakta seru berikutnya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "LIDAH GELAP & PANJANG?",
+          "visual": "lidah jerapah"
+        },
+        {
+          "t": "0:05",
+          "teks": "HEWAN DARAT TERTINGGI",
+          "visual": "jerapah tinggi"
+        },
+        {
+          "t": "0:08",
+          "teks": "JERAPAH!",
+          "visual": "jerapah tersenyum"
+        },
+        {
+          "t": "0:09",
+          "teks": "6 FAKTA SERU JERAPAH",
+          "visual": "angka 6"
+        },
+        {
+          "t": "0:13",
+          "teks": "#1 TINGGI SEKITAR 5,5 M",
+          "visual": "jerapah dan rumah"
+        },
+        {
+          "t": "0:17",
+          "teks": "SEPERTI 3 ORANG BERTUMPUK",
+          "visual": "orang dan jerapah"
+        },
+        {
+          "t": "0:26",
+          "teks": "#2 LEHER: 7 TULANG",
+          "visual": "tulang leher"
+        },
+        {
+          "t": "0:29",
+          "teks": "SAMA SEPERTI MANUSIA",
+          "visual": "tulang manusia"
+        },
+        {
+          "t": "0:32",
+          "teks": "TULANGNYA PANJANG SEKALI",
+          "visual": "leher panjang"
+        },
+        {
+          "t": "0:38",
+          "teks": "#3 LIDAH ± 45 CM",
+          "visual": "lidah panjang"
+        },
+        {
+          "t": "0:42",
+          "teks": "UNGU KEHITAMAN",
+          "visual": "lidah gelap"
+        },
+        {
+          "t": "0:46",
+          "teks": "MERAIH DAUN TINGGI",
+          "visual": "jerapah makan daun"
+        },
+        {
+          "t": "0:54",
+          "teks": "#4 BAYI JERAPAH",
+          "visual": "bayi jerapah"
+        },
+        {
+          "t": "0:57",
+          "teks": "JATUH SEKITAR 2 METER",
+          "visual": "bayi jatuh lembut"
+        },
+        {
+          "t": "1:03",
+          "teks": "1 JAM, LANGSUNG BERDIRI!",
+          "visual": "bayi berdiri"
+        },
+        {
+          "t": "1:11",
+          "teks": "#5 TIDUR SEBENTAR",
+          "visual": "jerapah tidur"
+        },
+        {
+          "t": "1:13",
+          "teks": "KURANG DARI 2 JAM",
+          "visual": "jam"
+        },
+        {
+          "t": "1:17",
+          "teks": "KADANG SAMBIL BERDIRI",
+          "visual": "jerapah berdiri"
+        },
+        {
+          "t": "1:24",
+          "teks": "#6 BINTIK TIDAK SAMA",
+          "visual": "pola bintik"
+        },
+        {
+          "t": "1:28",
+          "teks": "SEPERTI SIDIK JARI",
+          "visual": "sidik jari"
+        },
+        {
+          "t": "1:32",
+          "teks": "PENELITI LIHAT BINTIK",
+          "visual": "kamera peneliti"
+        },
+        {
+          "t": "1:45",
+          "teks": "HEBAT, KAN?",
+          "visual": "jerapah senang"
+        },
+        {
+          "t": "1:46",
+          "teks": "KUIS: TULANG LEHER?",
+          "visual": "tanda tanya"
+        },
+        {
+          "t": "1:50",
+          "teks": "JAWAB DALAM HATI",
+          "visual": "anak berpikir"
+        },
+        {
+          "t": "1:54",
+          "teks": "SUBSCRIBE!",
+          "visual": "tombol subscribe"
+        }
+      ],
+      "caption": "6 fakta seru tentang jerapah! 🦒",
+      "hashtags": [
+        "#faktaseru",
+        "#jerapah",
+        "#hewanunik"
+      ],
+      "youtube": {
+        "judul": "6 Fakta Seru Jerapah! Lidah Ungu, Leher & Bintik Unik 🦒 #Shorts",
+        "deskripsi": "Tahukah kamu? Jerapah punya lidah gelap sepanjang sekitar 45 cm dan jumlah tulang lehernya sama dengan manusia! Yuk kenalan dengan 6 fakta seru jerapah.\n\n🦒 Fakta di video:\n1. Tingginya bisa sekitar 5,5 m\n2. Leher punya 7 tulang, sama seperti manusia\n3. Lidahnya sekitar 45 cm dan gelap\n4. Bayi jatuh sekitar 2 m saat lahir, berdiri dalam sekitar 1 jam\n5. Tidur sangat sebentar\n6. Pola bintiknya unik seperti sidik jari\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: San Diego Zoo, Giraffe Conservation Foundation, Discover Wildlife, Britannica Kids",
+        "tags": [
+          "fakta seru",
+          "fakta unik anak",
+          "jerapah",
+          "hewan darat",
+          "hewan unik",
+          "belajar sains",
+          "sains anak",
+          "tahukah kamu",
+          "edukasi anak",
+          "shorts"
+        ],
+        "made_for_kids": true
+      },
+      "sumber": [
+        {
+          "nama": "San Diego Zoo",
+          "url": "https://animals.sandiegozoo.org/animals/giraffe"
+        },
+        {
+          "nama": "Giraffe Conservation Foundation",
+          "url": "https://giraffeconservation.org/facts-about-giraffe/14-fascinating-facts-about-giraffe/"
+        },
+        {
+          "nama": "Discover Wildlife",
+          "url": "https://www.discoverwildlife.com/animal-facts/mammals/giraffes-facts"
+        },
+        {
+          "nama": "Britannica Kids",
+          "url": "https://kids.britannica.com/students/article/giraffe/274561"
+        },
+        {
+          "nama": "The Last Giraffe",
+          "url": "https://thelastgiraffe.org/articles/baby-giraffe/"
+        }
+      ]
+    }
+  ]
+}
