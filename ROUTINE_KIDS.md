@@ -61,7 +61,7 @@ situs universitas. Angka ditulis apa adanya; kalau sumber berbeda, pakai
 ## Adegan foto (Narator)
 
 Video anak memakai **foto AI fotorealistik** yang bergerak pelan + teks per kata.
-Isi field `adegan`: **8–12 adegan**, kira-kira satu per fakta, urut:
+Isi field `adegan`: **8–10 adegan** (kuota gambar gratis ±40 foto/hari untuk 2 video), kira-kira satu per fakta, urut:
 
 ```json
 "adegan": [

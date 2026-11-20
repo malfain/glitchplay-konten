@@ -786,8 +786,18 @@ def cf_image(prompt, out_jpg):
             f"https://api.cloudflare.com/client/v4/accounts/{acct}/ai/run/@cf/black-forest-labs/flux-1-schnell",
             data=json.dumps({"prompt": full[:2000], "steps": 8}).encode(),
             headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=180, context=ctx) as r:
-            d = json.load(r)
+        import time
+        import urllib.error
+        for attempt in range(5):
+            try:
+                with urllib.request.urlopen(req, timeout=180, context=ctx) as r:
+                    d = json.load(r)
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 429 and attempt < 4:  # per-minute rate limit: back off and retry
+                    time.sleep(20 * (attempt + 1))
+                    continue
+                raise
         img = (d.get("result") or {}).get("image")
         if not img:
             raise RuntimeError(f"cloudflare: tidak ada gambar ({str(d)[:200]})")

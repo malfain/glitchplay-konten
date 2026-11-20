@@ -253,7 +253,65 @@
           "nama": "ScienceBlog",
           "url": "https://scienceblog.com/k-the-moon-is-drifting-away-from-earth-at-3-8-centimetres-a-year-so-what-happens-to-us-as-it-goes/"
         }
-      ]
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A bright full moon glowing in a clear night sky above a quiet hill, stars visible"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "Close-up of the full moon surface with craters, sharp telescope view, black space background"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "The Earth and the Moon seen from space, far apart, blue planet and grey moon, cinematic"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "A basketball and a tennis ball side by side on a wooden table, simple size comparison, soft light"
+        },
+        {
+          "kalimat": 10,
+          "prompt": "An astronaut in a white spacesuit bouncing lightly on the grey dusty lunar surface, Earth in the black sky"
+        },
+        {
+          "kalimat": 13,
+          "prompt": "The near side of the Moon with its dark patches, as seen from Earth through a telescope, night sky"
+        },
+        {
+          "kalimat": 17,
+          "prompt": "The Moon slowly drifting away from Earth in space, wide cinematic space view, soft glow"
+        },
+        {
+          "kalimat": 19,
+          "prompt": "Close-up of a child's hand with fingernails next to a small ruler, soft natural light"
+        },
+        {
+          "kalimat": 22,
+          "prompt": "Ocean waves at high tide on a tropical beach under a bright moon at night"
+        },
+        {
+          "kalimat": 24,
+          "prompt": "A wide sandy beach at low tide with wet sand and tide pools, morning light"
+        },
+        {
+          "kalimat": 25,
+          "prompt": "Footprints of an astronaut boot on the grey dusty surface of the Moon, close-up"
+        },
+        {
+          "kalimat": 27,
+          "prompt": "Grey moon rock samples on a white table in a science laboratory, gloved hands, soft light"
+        },
+        {
+          "kalimat": 29,
+          "prompt": "A family looking up at a big bright moon from their backyard at night, silhouettes, cozy and peaceful"
+        }
+      ],
+      "video": "video/kids/2026-11-21/01-7-fakta-seru-bulan-sisi-sama-menjauh-tar.mp4",
+      "poster": "video/kids/2026-11-21/01-7-fakta-seru-bulan-sisi-sama-menjauh-tar.jpg",
+      "video_durasi": 131.3,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     },
     {
       "kategori": "Hewan Darat",
@@ -504,6 +562,56 @@
         {
           "nama": "The Last Giraffe",
           "url": "https://thelastgiraffe.org/articles/baby-giraffe/"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "Close-up of a giraffe sticking out its long dark purple tongue to grab green leaves from a tree"
+        },
+        {
+          "kalimat": 1,
+          "prompt": "A tall giraffe standing on the African savanna at golden hour, acacia trees, wide shot"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "Low angle photo looking up at a very tall male giraffe against a blue sky"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A giraffe looking across a wide grassland plain from above the treetops, golden light"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "Side view of a giraffe's long elegant neck and head, soft natural light, savanna background"
+        },
+        {
+          "kalimat": 11,
+          "prompt": "Macro photo of a giraffe's long purple-black tongue wrapping around acacia leaves"
+        },
+        {
+          "kalimat": 15,
+          "prompt": "A mother giraffe standing next to her newborn baby giraffe on the savanna, gentle morning light"
+        },
+        {
+          "kalimat": 18,
+          "prompt": "A baby giraffe standing on wobbly legs beside its mother, cute and heartwarming, savanna"
+        },
+        {
+          "kalimat": 20,
+          "prompt": "A giraffe resting with eyes half closed under an acacia tree at sunset, peaceful"
+        },
+        {
+          "kalimat": 24,
+          "prompt": "Close-up of giraffe skin showing its unique brown patch pattern, sharp detail"
+        },
+        {
+          "kalimat": 26,
+          "prompt": "A wildlife researcher with a camera photographing giraffes from a safari vehicle, savanna"
+        },
+        {
+          "kalimat": 28,
+          "prompt": "Three giraffes walking together across the savanna at sunset, silhouettes, beautiful golden sky"
         }
       ]
     }
