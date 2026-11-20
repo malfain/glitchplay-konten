@@ -637,6 +637,69 @@ def align_by_pauses(audio, sents):
     return list(zip(starts, ends))
 
 
+_WHISPER = {}
+
+
+def align_by_whisper(audio, sents):
+    """Exact sentence timings for TTS without word marks (Gemini): transcribe the final audio with faster-whisper,
+    match the recognised words to the script (difflib) and read each sentence's first/last word time.
+    Returns [(start, end)] per sentence, or None when whisper is unavailable or the match is too weak."""
+    try:
+        from faster_whisper import WhisperModel
+    except ImportError:
+        return None
+    import difflib
+    if "m" not in _WHISPER:
+        _WHISPER["m"] = WhisperModel("small", device="cpu", compute_type="int8")
+    import numpy as np
+    # decode with our ffmpeg (faster-whisper's bundled PyAV path breaks with some av versions)
+    pcm = subprocess.run([FFMPEG, "-hide_banner", "-loglevel", "error", "-i", str(audio), "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
+                         capture_output=True, check=True).stdout
+    segs, _ = _WHISPER["m"].transcribe(np.frombuffer(pcm, np.float32), language="id", word_timestamps=True, vad_filter=False, beam_size=1)
+    heard = [(w.word, w.start, w.end) for seg in segs for w in (seg.words or [])]
+    norm = lambda t: re.sub(r"[^0-9a-z]", "", t.lower())
+    hw = [norm(w) for w, _, _ in heard]
+    script, owner = [], []
+    for i, snt in enumerate(sents):
+        for tok in snt.split():
+            if norm(tok):
+                script.append(norm(tok))
+                owner.append(i)
+    if not hw or not script:
+        return None
+    sm = difflib.SequenceMatcher(None, script, hw, autojunk=False)
+    t_of = {}
+    for a_, b_, n in sm.get_matching_blocks():
+        for k in range(n):
+            t_of[a_ + k] = (heard[b_ + k][1], heard[b_ + k][2])
+    if len(t_of) < 0.5 * len(script):
+        return None
+    # fill unmatched script tokens by interpolating between their matched neighbours
+    known = sorted(t_of)
+    for k in range(len(script)):
+        if k in t_of:
+            continue
+        prev = max((j for j in known if j < k), default=None)
+        nxt = min((j for j in known if j > k), default=None)
+        if prev is not None and nxt is not None:
+            a0, b0 = t_of[prev][1], t_of[nxt][0]
+            f = (k - prev) / (nxt - prev)
+            t = a0 + (b0 - a0) * f
+            t_of[k] = (t, t)
+        elif prev is not None:
+            t_of[k] = (t_of[prev][1], t_of[prev][1])
+        elif nxt is not None:
+            t_of[k] = (t_of[nxt][0], t_of[nxt][0])
+    spans = []
+    for i in range(len(sents)):
+        ks = [k for k, o in enumerate(owner) if o == i]
+        if not ks:
+            spans.append(spans[-1] if spans else (0.0, 0.5))
+            continue
+        spans.append((t_of[ks[0]][0], t_of[ks[-1]][1]))
+    return spans
+
+
 def tighten(src, dst, keep=KEEP_PAUSE):
     """Cut every pause longer than `keep` seconds down to `keep` (snappy reel delivery).
     Returns a function mapping an original timestamp to the tightened one, so scene timings stay in sync."""
@@ -707,6 +770,8 @@ def render_item_remotion(item, idx, date, outdir, tmp):
         remap = tighten(tmp / "script.mp3", tmp / "tight.mp3")
         polish(tmp / "tight.mp3", tmp / "script.mp3")
         spans = [(remap(a), remap(b)) for a, b in spans]
+        if LAST_VOICE.get("engine", "") and LAST_VOICE["engine"].startswith("gemini"):
+            spans = align_by_whisper(tmp / "script.mp3", sents) or spans  # Gemini has no word marks
         total_audio = duration(tmp / "script.mp3")
         starts = [0.0] + [max(0.0, a - 0.08) for a, _ in spans[1:]]
         ends = starts[1:] + [total_audio + 0.5]
@@ -860,6 +925,9 @@ def render_item_photo(item, idx, date, outdir, tmp):
     remap = tighten(tmp / "script.mp3", tmp / "tight.mp3")
     polish(tmp / "tight.mp3", tmp / "script.mp3")
     spans = [(remap(a), remap(b)) for a, b in spans]
+    exact = align_by_whisper(tmp / "script.mp3", sents)  # word-accurate timings on the final audio
+    if exact:
+        spans = exact
     total = duration(tmp / "script.mp3") + 0.6
     audio = pub / f"{key}.mp3"
     shutil.copy(tmp / "script.mp3", audio)
