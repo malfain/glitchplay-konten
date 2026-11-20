@@ -794,6 +794,9 @@ def cf_image(prompt, out_jpg):
                     d = json.load(r)
                 break
             except urllib.error.HTTPError as e:
+                body = e.read().decode(errors="ignore")
+                if "daily free allocation" in body:  # resets 00:00 UTC (07:00 WIB); retrying now is pointless
+                    raise RuntimeError("kuota gambar gratis Cloudflare hari ini habis (reset 07:00 WIB)")
                 if e.code == 429 and attempt < 4:  # per-minute rate limit: back off and retry
                     time.sleep(20 * (attempt + 1))
                     continue
