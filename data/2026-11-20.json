@@ -2,95 +2,6 @@
   "date": "2026-11-20",
   "items": [
     {
-      "kategori": "Esports",
-      "judul": "MLBB juara Mobile Game of the Year di Esports Awards 2026",
-      "ringkasan": "Mobile Legends: Bang Bang menang kategori Esports Mobile Game of the Year di Esports Awards 2026 (Miami, 17 November), mengalahkan Free Fire, PUBG Mobile, Brawl Stars, Honor of Kings, dan Identity V. Counter-Strike 2 menang Esports Game of the Year.",
-      "status_fakta": "resmi",
-      "hook_formula": "The Reveal",
-      "durasi_detik": 25,
-      "naskah_vo": [
-        "Game mobile terbaik esports dunia, ternyata em el bi bi.",
-        "Itu hasil Esports Awards dua ribu dua puluh enam di Miami.",
-        "Mobile Legends menang kategori Mobile Game of the Year.",
-        "Nominasinya ada Free Fire, PUBG Mobile, Brawl Stars, Honor of Kings, sama Identity V.",
-        "Gelar ini sebelumnya dipegang PUBG Mobile.",
-        "Kalau game of the year secara keseluruhan, dipegang Counter-Strike dua.",
-        "Buat kamu yang push rank tiap hari, ini bukti game kalian gede banget.",
-        "Follow biar nggak ketinggalan kabar esports berikutnya."
-      ],
-      "teks_layar": [
-        {
-          "t": "0:00",
-          "teks": "MOBILE GAME TERBAIK? 👀",
-          "visual": "logo Esports Awards / MLBB"
-        },
-        {
-          "t": "0:03",
-          "teks": "ESPORTS AWARDS 2026 · MIAMI",
-          "visual": "panggung penghargaan"
-        },
-        {
-          "t": "0:06",
-          "teks": "MLBB MENANG MOBILE GOTY",
-          "visual": "clip pertandingan MLBB"
-        },
-        {
-          "t": "0:10",
-          "teks": "VS FREE FIRE, PUBG MOBILE, DLL",
-          "visual": "logo nominasi"
-        },
-        {
-          "t": "0:14",
-          "teks": "SEBELUMNYA: PUBG MOBILE",
-          "visual": "logo PUBG Mobile"
-        },
-        {
-          "t": "0:17",
-          "teks": "GAME OF THE YEAR: CS2",
-          "visual": "logo CS2"
-        },
-        {
-          "t": "0:21",
-          "teks": "FOLLOW BUAT UPDATE ESPORTS 🔥",
-          "visual": "clip MLBB"
-        }
-      ],
-      "caption": "Ternyata ini game mobile terbaik esports dunia versi Esports Awards 2026 👀\n\nMobile Legends: Bang Bang menang Esports Mobile Game of the Year di Miami, mengalahkan Free Fire, PUBG Mobile, Brawl Stars, Honor of Kings, dan Identity V. Esports Game of the Year secara keseluruhan jatuh ke Counter-Strike 2.\n\nSetuju nggak MLBB layak menang? Tulis di komentar 👇",
-      "hashtags": [
-        "#MLBB",
-        "#EsportsAwards",
-        "#BeritaGame"
-      ],
-      "sumber": [
-        {
-          "nama": "Dot Esports",
-          "url": "https://dotesports.com/general/news/esports-awards-2026-winners"
-        },
-        {
-          "nama": "Esports.gg",
-          "url": "https://esports.gg/guides/esports/esports-awards-2026-winners/"
-        },
-        {
-          "nama": "GamesBeat",
-          "url": "https://gamesbeat.com/the-2026-esports-awards-winners-revealed/"
-        }
-      ],
-      "subtitle": [
-        "Game mobile terbaik esports dunia, ternyata MLBB.",
-        "Itu hasil Esports Awards 2026 di Miami.",
-        "Mobile Legends menang kategori Mobile Game of the Year.",
-        "Nominasinya ada Free Fire, PUBG Mobile, Brawl Stars, Honor of Kings, sama Identity V.",
-        "Gelar ini sebelumnya dipegang PUBG Mobile.",
-        "Kalau Game of the Year secara keseluruhan, dipegang Counter-Strike 2.",
-        "Buat kamu yang push rank tiap hari, ini bukti game kalian gede banget.",
-        "Follow biar nggak ketinggalan kabar esports berikutnya."
-      ],
-      "video": "video/2026-11-20/01-mlbb-juara-mobile-game-of-the-year-di-es.mp4",
-      "poster": "video/2026-11-20/01-mlbb-juara-mobile-game-of-the-year-di-es.jpg",
-      "video_durasi": 29.4,
-      "video_suara": "gemini-3.8-flash-tts/Fenrir"
-    },
-    {
       "kategori": "Game Lokal",
       "judul": "Ontel Simulator Indonesia tembus 1 juta unduhan",
       "ringkasan": "Ontel Simulator Indonesia, game sepeda lokal buatan VerlyGameDev, tembus 1 juta unduhan di Google Play, sekitar 18 hari setelah rilis 17 Oktober 2026.",
@@ -268,7 +179,7 @@
       ],
       "video": "video/2026-11-20/03-wec26-digelar-di-ice-bsd-hadiah-500-ribu.mp4",
       "poster": "video/2026-11-20/03-wec26-digelar-di-ice-bsd-hadiah-500-ribu.jpg",
-      "video_durasi": 38.0,
+      "video_durasi": 38,
       "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
