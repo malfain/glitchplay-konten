@@ -58,6 +58,26 @@ situs universitas. Angka ditulis apa adanya; kalau sumber berbeda, pakai
 - `teks_layar`: ≤ 6 kata per kartu, nomor fakta di depan ("#1 …"), satu kartu
   per kalimat kurang lebih; waktu "m:ss" naik sesuai urutan.
 
+## Adegan foto (Narator)
+
+Video anak memakai **foto AI fotorealistik** yang bergerak pelan + teks per kata.
+Isi field `adegan`: **8–12 adegan**, kira-kira satu per fakta, urut:
+
+```json
+"adegan": [
+  {"kalimat": 0, "prompt": "A curious octopus resting on a colorful coral reef, close-up, sunlight rays through clear blue water"},
+  {"kalimat": 4, "prompt": "Macro photo of an octopus mantle and gills, soft light"}
+]
+```
+
+- `kalimat` = indeks (mulai 0) kalimat di `naskah_vo` tempat foto mulai tampil;
+  adegan pertama selalu `0`, angkanya naik.
+- `prompt` dalam **bahasa Inggris**, 1 kalimat, menggambarkan foto nyata yang
+  cocok dengan kalimat itu (subjek, tempat, sudut kamera, cahaya). Tanpa teks/
+  tulisan, tanpa merek, tanpa tokoh terkenal, tanpa kekerasan/hal menyeramkan.
+  Hewan/benda/alam lebih aman daripada wajah manusia; kalau ada orang, anak-anak
+  atau keluarga biasa yang sedang belajar/bermain.
+
 ## YouTube (Copywriter)
 
 Isi field `youtube`:
@@ -77,7 +97,7 @@ Juga isi `caption` (1 kalimat) dan `hashtags` (3) untuk cadangan.
 
 Semua aturan di atas + format sama dengan `ROUTINE.md` (`kategori`, `judul`,
 `ringkasan`, `status_fakta`, `hook_formula`, `durasi_detik`, `naskah_vo`,
-`subtitle`, `teks_layar`, `caption`, `hashtags`, `youtube`, `sumber`).
+`subtitle`, `teks_layar`, `adegan`, `caption`, `hashtags`, `youtube`, `sumber`).
 Validasi JSON, commit `konten anak: <tanggal> (<n> item)`, push ke `main`.
 Jangan ubah `index.html`, `scene/`, `tools/`, `assets/`, `video/`, file
 `ROUTINE*.md`, `voice.md`, dan field `video`/`poster`/`video_durasi`/`video_suara`.

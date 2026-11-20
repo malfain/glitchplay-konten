@@ -49,6 +49,7 @@ CHANNELS = {
                  "ceria, hangat, penuh rasa kagum, tempo sedang, artikulasi jelas, jeda singkat antarkalimat",
         "pill": "fakta seru", "cta_head": "subscribe", "cta_tag": "biar tambah pintar",
         "stickers": {"hook": "wow!", "number": "keren!", "cta": "subscribe!"},
+        "render": "photo",  # AI photos + word-by-word captions (falls back to animated style without 'adegan')
     },
 }
 CH = dict(CHANNELS["glitch"])
@@ -757,6 +758,142 @@ def finish_remotion(item, idx, outdir, tmp, scene, audio, key, total):
     return mp4, poster, round(total, 1)
 
 
+# ------------------------------------------------------------------ "photo" style: AI photos + word captions (PhotoReel)
+CF_DIR = Path.home() / ".glitchplay"
+IMG_CACHE = CF_DIR / "imgcache"
+IMG_STYLE = ("photorealistic cinematic photograph, natural light, vivid but realistic colors, sharp focus, high detail, "
+             "family friendly, vertical composition, no text, no letters, no watermark, no logo")
+
+
+def cf_image(prompt, out_jpg):
+    """FLUX.1 schnell on Cloudflare Workers AI (free daily allocation). Cached by prompt so re-renders cost nothing."""
+    import base64
+    import hashlib
+    import ssl
+    import urllib.request
+    IMG_CACHE.mkdir(parents=True, exist_ok=True)
+    full = f"{prompt.strip().rstrip('.')}. {IMG_STYLE}"
+    cached = IMG_CACHE / (hashlib.sha1(full.encode()).hexdigest()[:16] + ".jpg")
+    if not cached.exists():
+        acct = (CF_DIR / "cf_account").read_text().strip()
+        tok = (CF_DIR / "cf_token").read_text().strip()
+        try:
+            import certifi
+            ctx = ssl.create_default_context(cafile=certifi.where())
+        except ImportError:
+            ctx = ssl.create_default_context()
+        req = urllib.request.Request(
+            f"https://api.cloudflare.com/client/v4/accounts/{acct}/ai/run/@cf/black-forest-labs/flux-1-schnell",
+            data=json.dumps({"prompt": full[:2000], "steps": 8}).encode(),
+            headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=180, context=ctx) as r:
+            d = json.load(r)
+        img = (d.get("result") or {}).get("image")
+        if not img:
+            raise RuntimeError(f"cloudflare: tidak ada gambar ({str(d)[:200]})")
+        raw = tmp_raw = cached.with_suffix(".raw")
+        tmp_raw.write_bytes(base64.b64decode(img))
+        # normalise to a 1080x1920 cover crop so every photo fills the frame the same way
+        run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(raw),
+             "-vf", "scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920", "-q:v", "3", str(cached)])
+        tmp_raw.unlink()
+    shutil.copy(cached, out_jpg)
+
+
+def word_timings(subs, spans):
+    """Spread each sentence's words over its spoken span (weighted by length) and group them into 2-3 word chunks."""
+    words, chunk = [], 0
+    for sub, (a, b) in zip(subs, spans):
+        toks = [w for w in clean(sub).split() if w]
+        if not toks:
+            continue
+        weights = [len(w.strip(".,!?")) + 2 for w in toks]
+        total = sum(weights)
+        t, n_in_chunk = a, 0
+        for w, wt in zip(toks, weights):
+            d = (b - a) * wt / total
+            words.append({"text": w, "start": round(t, 3), "end": round(t + d, 3), "chunk": chunk})
+            t += d
+            n_in_chunk += 1
+            if n_in_chunk >= 3 or (n_in_chunk >= 2 and len(w) > 6) or w[-1] in ".,!?":
+                chunk += 1
+                n_in_chunk = 0
+        if n_in_chunk:
+            chunk += 1
+    return words
+
+
+def render_item_photo(item, idx, date, outdir, tmp):
+    sents = [s.strip() for s in item.get("naskah_vo", []) if s.strip()]
+    scenes_in = item.get("adegan") or []
+    if not sents:
+        raise RuntimeError("naskah_vo kosong")
+    if not scenes_in:
+        raise RuntimeError("item belum punya 'adegan' (prompt gambar)")
+    tmp.mkdir(parents=True, exist_ok=True)
+    pub = REMOTION / "public" / "_render"
+    pub.mkdir(parents=True, exist_ok=True)
+    key = f"photo-{date}-{idx + 1:02d}"
+
+    spans = None
+    if TTS == "gemini" and gemini_tts(" ".join(sents), tmp / "gemini.wav"):
+        run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(tmp / "gemini.wav"), "-b:a", "192k", str(tmp / "script.mp3")])
+        spans = align_by_pauses(tmp / "script.mp3", sents)
+    if spans is None:
+        spans = tts_script(sents, tmp / "script.mp3")
+        LAST_VOICE["engine"] = f"edge/{EDGE_VOICE}" if spans else None
+    if not spans:
+        raise RuntimeError("TTS gagal")
+    remap = tighten(tmp / "script.mp3", tmp / "tight.mp3")
+    polish(tmp / "tight.mp3", tmp / "script.mp3")
+    spans = [(remap(a), remap(b)) for a, b in spans]
+    total = duration(tmp / "script.mp3") + 0.6
+    audio = pub / f"{key}.mp3"
+    shutil.copy(tmp / "script.mp3", audio)
+
+    subs = item.get("subtitle") or sents
+    words = word_timings(subs, spans)
+
+    # one photo per scene; a scene starts at the first sentence it covers
+    starts = [0.0] + [spans[k][0] - 0.1 for k in range(1, len(spans))]
+    scenes = []
+    for n, sc in enumerate(scenes_in):
+        k = max(0, min(len(spans) - 1, int(sc.get("kalimat", 0))))
+        nxt = int(scenes_in[n + 1].get("kalimat", len(spans))) if n + 1 < len(scenes_in) else None
+        s0 = 0.0 if n == 0 else starts[k]
+        s1 = starts[nxt] if nxt is not None and nxt < len(starts) else total
+        img = pub / f"{key}-{n + 1:02d}.jpg"
+        cf_image(sc["prompt"], img)
+        scenes.append({"src": f"_render/{img.name}", "start": round(s0, 3), "end": round(max(s1, s0 + 1), 3)})
+
+    shutil.copy(ROOT / "assets/profile.jpg", REMOTION / "public/profile.jpg")
+    props = {"handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
+             "label": "Gambar dibuat dengan AI", "scenes": scenes, "words": words}
+    pfile = tmp / "props.json"
+    pfile.write_text(json.dumps(props, ensure_ascii=False), encoding="utf-8")
+
+    name = f"{idx + 1:02d}-{slug(item.get('judul', ''))}"
+    outdir.mkdir(parents=True, exist_ok=True)
+    mp4 = outdir / f"{name}.mp4"
+    npx = shutil.which("npx") or "npx"
+    try:
+        raw_mp4 = tmp / "photo_raw.mp4"
+        r = subprocess.run([npx, "remotion", "render", "PhotoReel", str(raw_mp4), f"--props={pfile}", "--license-key=free-license",
+                            "--codec=h264", "--crf=18", "--log=error"], cwd=REMOTION, capture_output=True, text=True, stdin=subprocess.DEVNULL)
+        if r.returncode != 0:
+            raise RuntimeError("remotion render gagal: " + (r.stderr or r.stdout)[-800:])
+        # moving photos are bitrate-hungry: re-encode once with a slower preset so a 2-min Short stays ~15-20 MB
+        run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(raw_mp4), "-c:v", "libx264", "-preset", "slow", "-crf", "26",
+             "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", str(mp4)])
+    finally:
+        audio.unlink(missing_ok=True)
+        for f in pub.glob(f"{key}-*.jpg"):
+            f.unlink()
+    poster = outdir / f"{name}.jpg"
+    run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-ss", "1.5", "-i", str(mp4), "-frames:v", "1", "-vf", "scale=540:-1", str(poster)])
+    return mp4, poster, round(total, 1)
+
+
 # ------------------------------------------------------------------ status board
 def status(*args):
     subprocess.run([sys.executable, str(ROOT / "tools/status.py"), *args], check=False)
@@ -789,11 +926,12 @@ def main():
     ap.add_argument("--prune", type=int, default=0, help="hapus video lebih tua dari N hari")
     ap.add_argument("--no-status", action="store_true")
     ap.add_argument("--channel", default="glitch", choices=list(CHANNELS), help="glitch = IG GlitchPlay, kids = YouTube anak")
-    ap.add_argument("--style", default=os.environ.get("GP_STYLE", "remotion"), choices=["remotion", "anim", "glitch"],
+    ap.add_argument("--style", default=None, choices=["remotion", "photo", "anim", "glitch"],
                     help="remotion = komposisi GlitchReel di tools/remotion (default); anim/glitch = renderer lama")
     a = ap.parse_args()
     CH.clear()
     CH.update(CHANNELS[a.channel])
+    a.style = a.style or CH.get("render") or os.environ.get("GP_STYLE", "remotion")
 
     if a.prune:
         n = prune(a.prune)
@@ -828,7 +966,9 @@ def main():
         if not a.no_status:
             status("agent", "studio", "kerja", f"Render video {n}/{len(todo)}: {it.get('judul', '')[:34]}")
         try:
-            fn = {"remotion": render_item_remotion, "anim": render_item_anim, "glitch": render_item}[a.style]
+            fn = {"remotion": render_item_remotion, "photo": render_item_photo, "anim": render_item_anim, "glitch": render_item}[a.style]
+            if a.style == "photo" and not it.get("adegan"):
+                fn = render_item_remotion  # older kids items without photo prompts keep the animated style
             mp4, poster, dur = fn(it, i, a.date, outdir, tmp_root / f"{a.date}-{i}")
         except Exception as e:  # keep going with the other items
             print(f"[{i + 1}] gagal: {e}", file=sys.stderr)

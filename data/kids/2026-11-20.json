@@ -243,8 +243,58 @@
       ],
       "video": "video/kids/2026-11-20/01-7-fakta-seru-gurita-3-jantung-darah-biru.mp4",
       "poster": "video/kids/2026-11-20/01-7-fakta-seru-gurita-3-jantung-darah-biru.jpg",
-      "video_durasi": 92.5,
-      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
+      "video_durasi": 99.8,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda",
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A curious octopus resting on a colorful coral reef, close-up, sunlight rays through clear blue ocean water"
+        },
+        {
+          "kalimat": 1,
+          "prompt": "An octopus changing skin color from orange to blue on a rocky sea floor, underwater close-up"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "A friendly octopus with eight curled arms floating in bright tropical blue water, wide shot"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "Macro underwater photo of an octopus mantle and gills, soft light, educational nature photography"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "Close-up of an octopus with bluish tint swimming in deep blue water, glowing light"
+        },
+        {
+          "kalimat": 9,
+          "prompt": "An octopus crawling slowly across sandy sea floor with its arms, seashells around"
+        },
+        {
+          "kalimat": 11,
+          "prompt": "Extreme close-up of octopus arm with rows of round suckers holding a small seashell"
+        },
+        {
+          "kalimat": 13,
+          "prompt": "An octopus solving a puzzle by opening a glass jar with a crab inside, aquarium, clever animal"
+        },
+        {
+          "kalimat": 16,
+          "prompt": "A camouflaged octopus blending perfectly into coral and rocks, hard to see, underwater"
+        },
+        {
+          "kalimat": 18,
+          "prompt": "An octopus squirting a dark cloud of ink while escaping, underwater action shot"
+        },
+        {
+          "kalimat": 19,
+          "prompt": "A flexible octopus squeezing through a narrow gap between rocks underwater"
+        },
+        {
+          "kalimat": 22,
+          "prompt": "Happy octopus waving an arm near a coral reef, bright cheerful underwater scene, sunbeams"
+        }
+      ]
     },
     {
       "kategori": "Serangga",
@@ -490,7 +540,53 @@
       "video": "video/kids/2026-11-20/02-6-fakta-seru-lebah-madu-5-mata-tarian-sa.mp4",
       "poster": "video/kids/2026-11-20/02-6-fakta-seru-lebah-madu-5-mata-tarian-sa.jpg",
       "video_durasi": 92.5,
-      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda",
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "Macro photograph of a honey bee face showing its large compound eyes, on a yellow flower"
+        },
+        {
+          "kalimat": 1,
+          "prompt": "A honey bee in flight with blurred fast-moving wings above a purple flower, macro"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "Many honey bees visiting colorful garden flowers on a sunny day"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "Extreme macro of a honey bee head showing compound eyes and three tiny simple eyes on top"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "Slow motion macro of a honey bee hovering, wings beating, pollen on legs, soft background"
+        },
+        {
+          "kalimat": 9,
+          "prompt": "Honey bees gathered on honeycomb watching one bee doing the waggle dance, beehive interior"
+        },
+        {
+          "kalimat": 12,
+          "prompt": "Close-up of golden hexagon honeycomb cells filled with honey, warm light"
+        },
+        {
+          "kalimat": 15,
+          "prompt": "Busy beehive frame covered with thousands of honey bees, beekeeper style photo"
+        },
+        {
+          "kalimat": 18,
+          "prompt": "A single honey bee collecting nectar from a flower, macro, drops of nectar"
+        },
+        {
+          "kalimat": 20,
+          "prompt": "A jar of golden honey with a honey dipper on a wooden kitchen table, flowers in background"
+        },
+        {
+          "kalimat": 21,
+          "prompt": "Cheerful sunny flower meadow with honey bees flying, bright happy scene"
+        }
+      ]
     }
   ]
 }
