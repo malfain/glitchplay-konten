@@ -12,7 +12,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="GlitchPlay"><text y='.9em' font-size='90'>🎮</text></svg>">
+<meta name="apple-mobile-web-app-title" content="GlitchPlay">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <script type="importmap">
@@ -153,6 +153,17 @@
 
   /* hasil */
   .hasil-head { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; }
+  .tokbtn { flex: none; background: var(--card); border: 1px solid var(--line); color: var(--muted); border-radius: 12px; padding: 10px 12px; font: 600 13px Inter; cursor: pointer; }
+  .tokbtn.on { color: var(--green); border-color: rgba(62,229,154,.45); }
+  .del { margin-left: auto; background: none; border: 1px solid rgba(255,92,122,.45); color: var(--red); border-radius: 10px; padding: 6px 10px; font: 700 12px Inter; cursor: pointer; }
+  .del:disabled { opacity: .5; }
+  .field { width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line-2); border-radius: 12px; padding: 12px; font: 14px "JetBrains Mono", monospace; }
+  .btnrow { display: flex; gap: 8px; margin-top: 12px; }
+  .btn { flex: 1; border: 0; border-radius: 12px; padding: 12px; font: 700 14px Inter; cursor: pointer; background: var(--card-2); color: var(--text); }
+  .btn.ok { background: var(--cyan); color: #04121a; } .btn.bad { background: var(--red); color: #fff; }
+  .steps { margin: 8px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); } .steps li { margin: 4px 0; }
+  .toast { position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom)); translate: -50% 0; z-index: 50; background: var(--card-2); border: 1px solid var(--line-2);
+           color: var(--text); padding: 10px 16px; border-radius: 12px; font-size: 13px; max-width: 90vw; box-shadow: 0 8px 30px rgba(0,0,0,.4); }
   .chtabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 5px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); margin-bottom: 12px; }
   .chtabs button { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 8px; border: 0; border-radius: 12px; background: none;
                    color: var(--muted); font: 700 14px Inter; cursor: pointer; }
@@ -324,7 +335,7 @@
       <button data-ch="glitch" role="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram <small>· berita game</small></button>
       <button data-ch="kids" role="tab"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.6 3.1z"/></svg>YouTube <small>· fakta anak</small></button>
     </div>
-    <div class="hasil-head"><select id="day" aria-label="Pilih tanggal"></select></div>
+    <div class="hasil-head"><select id="day" aria-label="Pilih tanggal"></select><button class="tokbtn" id="tokBtn" type="button">⚙️ Token</button></div>
     <div id="list"><div class="empty">Memuat…</div></div>
   </section>
 
@@ -520,11 +531,11 @@ function section(title, meta, html, copyText, open) {
   if (copyText) d.querySelector(".body").appendChild(copyBtn(copyText));
   return d;
 }
-function renderItem(it, n) {
+function renderItem(it, n, ctx) {
   const el = document.createElement("article");
   el.className = "item";
   const rumor = it.status_fakta === "rumor";
-  el.innerHTML = `<div class="item-head"><div class="tags"><span class="platform ${it.youtube ? "yt" : "ig"}">${it.youtube ? "YouTube" : "Instagram"}</span><span class="t2">#${n}</span><span class="t2 k">${esc(it.kategori)}</span><span class="t2 ${rumor ? "rumor" : "resmi"}">${rumor ? "Rumor / belum resmi" : "Resmi"}</span>${it.durasi_detik ? `<span class="t2">±${esc(it.durasi_detik)} dtk</span>` : ""}</div><h4>${esc(it.judul)}</h4><p>${esc(it.ringkasan)}</p></div>`;
+  el.innerHTML = `<div class="item-head"><div class="tags"><span class="platform ${it.youtube ? "yt" : "ig"}">${it.youtube ? "YouTube" : "Instagram"}</span><span class="t2">#${n}</span><span class="t2 k">${esc(it.kategori)}</span><span class="t2 ${rumor ? "rumor" : "resmi"}">${rumor ? "Rumor / belum resmi" : "Resmi"}</span>${it.durasi_detik ? `<span class="t2">±${esc(it.durasi_detik)} dtk</span>` : ""}${ctx ? `<button class="del" type="button">🗑️ Hapus</button>` : ""}</div><h4>${esc(it.judul)}</h4><p>${esc(it.ringkasan)}</p></div>`;
   if (it.video) {
     const v = document.createElement("div");
     const name = it.video.split("/").pop();
@@ -580,8 +591,15 @@ async function renderHasil(date) {
   const day = await getDay(sel.value, ch);
   list.innerHTML = "";
   if (!day) { list.innerHTML = '<div class="empty">Hasil tanggal ini belum ada.</div>'; return; }
-  $("#hasilChip").textContent = day.items.length + " konten";
-  day.items.forEach((it, i) => list.appendChild(renderItem(it, i + 1)));
+  const gone = deletedSet();
+  const shown = day.items.filter((it) => !gone.has(itemKey(ch, sel.value, it)));
+  $("#hasilChip").textContent = shown.length + " konten";
+  if (!shown.length) list.innerHTML = '<div class="empty">Semua konten tanggal ini sudah dihapus.</div>';
+  shown.forEach((it, i) => {
+    const el = renderItem(it, i + 1, { ch, date: sel.value });
+    el.querySelector(".del").onclick = () => confirmDelete(it, { ch, date: sel.value }, el);
+    list.appendChild(el);
+  });
 }
 
 /* ---------- log ---------- */
@@ -595,6 +613,127 @@ function renderLog() {
 }
 
 /* ---------- agent sheet ---------- */
+/* ---------- hapus permanen (GitHub Contents API) ---------- */
+const REPO = "malfain/glitchplay-konten";
+const getTok = () => { try { return localStorage.getItem("gp-gh-token") || ""; } catch { return ""; } };
+const setTok = (t) => { try { t ? localStorage.setItem("gp-gh-token", t) : localStorage.removeItem("gp-gh-token"); } catch {} };
+const itemKey = (ch, date, it) => `${ch}|${date}|${it.video || it.judul}`;
+function deletedSet() { try { return new Set(JSON.parse(sessionStorage.getItem("gp-deleted") || "[]")); } catch { return new Set(); } }
+function markDeleted(k) { const s = deletedSet(); s.add(k); try { sessionStorage.setItem("gp-deleted", JSON.stringify([...s])); } catch {} }
+function toast(msg, ms = 3500) {
+  const t = document.createElement("div"); t.className = "toast"; t.textContent = msg; document.body.appendChild(t);
+  setTimeout(() => t.remove(), ms);
+}
+function openSheet(html) { $("#sheetBody").innerHTML = html; $("#scrim").style.display = "block"; requestAnimationFrame(() => $("#sheet").classList.add("open")); }
+function refreshTokBtn() { const b = $("#tokBtn"); b.classList.toggle("on", !!getTok()); b.textContent = getTok() ? "🔑 Token ✓" : "⚙️ Token"; }
+
+async function gh(path, opts = {}) {
+  const r = await fetch(`https://api.github.com/repos/${REPO}/${path}`, {
+    ...opts,
+    headers: { Accept: "application/vnd.github+json", Authorization: `Bearer ${getTok()}`, "X-GitHub-Api-Version": "2022-11-28", ...(opts.headers || {}) },
+  });
+  if (!r.ok) {
+    const e = new Error(`GitHub ${r.status}`); e.status = r.status;
+    try { e.detail = (await r.json()).message; } catch {}
+    throw e;
+  }
+  return r.status === 204 ? null : r.json();
+}
+const b64ToText = (b) => new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\n/g, "")), (c) => c.charCodeAt(0)));
+const textToB64 = (t) => { const u = new TextEncoder().encode(t); let s = ""; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode(...u.subarray(i, i + 0x8000)); return btoa(s); };
+async function deleteFile(path, msg) {
+  try {
+    const f = await gh(`contents/${encodeURI(path)}?ref=main`);
+    await gh(`contents/${encodeURI(path)}`, { method: "DELETE", body: JSON.stringify({ message: msg, sha: f.sha, branch: "main" }) });
+  } catch (e) { if (e.status !== 404) throw e; } // already gone is fine
+}
+async function putJSON(path, obj, sha, msg) {
+  return gh(`contents/${encodeURI(path)}`, { method: "PUT", body: JSON.stringify({ message: msg, sha, branch: "main", content: textToB64(JSON.stringify(obj, null, 2) + "\n") }) });
+}
+
+// Remove one item from its day file (and the day from index.json when it was the last one), then its video + poster.
+async function deleteItem(it, { ch, date }) {
+  const dir = CHDIR[ch];
+  const msg = `hapus: ${it.judul}`.slice(0, 120);
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const f = await gh(`contents/${dir}/${date}.json?ref=main`);
+    const day = JSON.parse(b64ToText(f.content));
+    const keep = day.items.filter((x) => !(x.judul === it.judul && (x.video || "") === (it.video || "")));
+    if (keep.length === day.items.length) break; // already removed elsewhere
+    try {
+      if (keep.length) {
+        day.items = keep;
+        await putJSON(`${dir}/${date}.json`, day, f.sha, msg);
+      } else {
+        await gh(`contents/${dir}/${date}.json`, { method: "DELETE", body: JSON.stringify({ message: msg, sha: f.sha, branch: "main" }) });
+        const ix = await gh(`contents/${dir}/index.json?ref=main`);
+        const idx = JSON.parse(b64ToText(ix.content));
+        idx.days = (idx.days || []).filter((d) => d !== date);
+        await putJSON(`${dir}/index.json`, idx, ix.sha, `${msg} (index)`);
+      }
+      break;
+    } catch (e) {
+      if (e.status !== 409 || attempt === 2) throw e; // 409 = someone else just changed the file: re-read and retry
+    }
+  }
+  if (it.video) await deleteFile(it.video, `${msg} (video)`);
+  if (it.poster) await deleteFile(it.poster, `${msg} (poster)`);
+}
+
+function confirmDelete(it, ctx, el) {
+  if (!getTok()) { openTokenSheet("Untuk menghapus, pasang token GitHub dulu."); return; }
+  openSheet(`<div style="font:700 18px 'Space Grotesk'">Hapus konten ini?</div>
+    <p class="muted small" style="margin:8px 0 0">“${esc(it.judul)}”</p>
+    <p class="small" style="margin:10px 0 0">Video, gambar sampul, naskah, dan caption-nya akan <b>dihapus permanen</b> dari server dan hilang di semua perangkat. Tidak bisa dibatalkan.</p>
+    <div class="btnrow"><button class="btn" id="cancelDel">Batal</button><button class="btn bad" id="doDel">🗑️ Hapus permanen</button></div>`);
+  $("#cancelDel").onclick = closeSheet;
+  $("#doDel").onclick = async () => {
+    const btn = $("#doDel"); btn.disabled = true; btn.textContent = "Menghapus…";
+    try {
+      await deleteItem(it, ctx);
+      markDeleted(itemKey(ctx.ch, ctx.date, it));
+      state.dayCache = {};
+      closeSheet();
+      el.remove();
+      toast("Terhapus ✓ Website diperbarui dalam 1–2 menit.");
+    } catch (e) {
+      btn.disabled = false; btn.textContent = "🗑️ Hapus permanen";
+      const why = e.status === 401 || e.status === 403 ? "token salah atau tidak punya izin tulis" : e.status === 404 ? "file/token tidak ditemukan" : (e.detail || e.message);
+      toast("Gagal menghapus: " + why, 6000);
+    }
+  };
+}
+
+function openTokenSheet(note = "") {
+  const has = !!getTok();
+  openSheet(`<div style="font:700 18px 'Space Grotesk'">🔑 Token GitHub</div>
+    ${note ? `<p class="small" style="margin:8px 0 0;color:var(--amber)">${esc(note)}</p>` : ""}
+    <p class="small muted" style="margin:8px 0 0">Dipakai hanya untuk menghapus konten. Disimpan di perangkat ini saja.</p>
+    <ol class="steps">
+      <li>Buka <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener" style="color:var(--cyan)">github.com/settings/personal-access-tokens/new</a></li>
+      <li>Repository access: <b>Only select repositories</b> → <b>glitchplay-konten</b></li>
+      <li>Permissions → Repository → <b>Contents: Read and write</b></li>
+      <li>Generate token → copy → tempel di bawah</li>
+    </ol>
+    <input class="field" id="tokIn" type="password" autocomplete="off" placeholder="${has ? "Token tersimpan ✓ (tempel untuk mengganti)" : "github_pat_…"}" style="margin-top:12px">
+    <div class="btnrow">${has ? `<button class="btn bad" id="tokDel">Hapus token</button>` : ""}<button class="btn ok" id="tokSave">Simpan & cek</button></div>`);
+  $("#tokSave").onclick = async () => {
+    const v = $("#tokIn").value.trim();
+    if (!v && has) { closeSheet(); return; }
+    if (!v) return;
+    const old = getTok(); setTok(v);
+    try {
+      const repo = await gh("");
+      if (!repo.permissions || !repo.permissions.push) throw Object.assign(new Error("no push"), { status: 403 });
+      refreshTokBtn(); closeSheet(); toast("Token tersimpan ✓ Tombol 🗑️ Hapus siap dipakai.");
+    } catch (e) {
+      setTok(old); refreshTokBtn();
+      toast(e.status === 401 ? "Token tidak valid." : "Token tidak punya izin tulis ke glitchplay-konten.", 6000);
+    }
+  };
+  if (has) $("#tokDel").onclick = () => { setTok(""); refreshTokBtn(); closeSheet(); toast("Token dihapus dari perangkat ini."); };
+}
+
 function openAgent(id) {
   const a = AGENTS[id], s = agentState(id);
   const logs = (state.status.log || []).filter((l) => l.agen === id).slice(0, 8);
@@ -637,6 +776,8 @@ $("#scrim").onclick = closeSheet;
 $("#bell").onclick = () => show("hasil");
 $("#refresh").onclick = async () => { $("#refresh").style.opacity = .5; await load(); $("#refresh").style.opacity = 1; };
 $("#day").onchange = () => show("hasil", $("#day").value);
+$("#tokBtn").onclick = () => openTokenSheet();
+refreshTokBtn();
 document.querySelectorAll(".chtabs button").forEach((b) => (b.onclick = () => {
   state.ch = b.dataset.ch;
   try { localStorage.setItem("gp-ch", state.ch); } catch {}
