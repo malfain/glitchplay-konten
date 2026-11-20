@@ -486,7 +486,11 @@
           "nama": "Swansons Nursery: Honey Bee Facts",
           "url": "https://www.swansonsnursery.com/honey-bee-facts"
         }
-      ]
+      ],
+      "video": "video/kids/2026-11-20/02-6-fakta-seru-lebah-madu-5-mata-tarian-sa.mp4",
+      "poster": "video/kids/2026-11-20/02-6-fakta-seru-lebah-madu-5-mata-tarian-sa.jpg",
+      "video_durasi": 92.5,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     }
   ]
 }
