@@ -631,6 +631,7 @@ async function gh(path, opts = {}) {
   let r;
   try {
     r = await fetch(`https://api.github.com/repos/${REPO}/${path}`, {
+      cache: "no-store", // the API answers with max-age=60; a stale sha makes every write fail with 409
       ...opts,
       headers: { Accept: "application/vnd.github+json", Authorization: `Bearer ${getTok()}`, "X-GitHub-Api-Version": "2022-11-28", ...(opts.headers || {}) },
     });
