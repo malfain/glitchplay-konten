@@ -543,7 +543,11 @@
         "Belum ada penjelasan resmi dari Rockstar soal alasannya.",
         "Dompet gamer lagi diuji nih, siapin napas panjang!",
         "Follow biar nggak ketinggalan kabar harga GTA 6 berikutnya."
-      ]
+      ],
+      "video": "video/2026-11-20/06-harga-gta-vi-di-indonesia-naik-sehari-se.mp4",
+      "poster": "video/2026-11-20/06-harga-gta-vi-di-indonesia-naik-sehari-se.jpg",
+      "video_durasi": 32.5,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Rilis Game",
@@ -636,7 +640,11 @@
         "Take-Two sendiri belum umumin angka resminya.",
         "Kalau benar, kantong Rockstar lagi tebal banget!",
         "Follow biar nggak ketinggalan angka resmi berikutnya."
-      ]
+      ],
+      "video": "video/2026-11-20/07-estimasi-gta-vi-terjual-19-juta-kopi-di.mp4",
+      "poster": "video/2026-11-20/07-estimasi-gta-vi-terjual-19-juta-kopi-di.jpg",
+      "video_durasi": 31.3,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Rilis Game",
@@ -723,7 +731,11 @@
         "Satu dunia nonton, anak PC cuma bisa ngintip.",
         "Rame banget, kayak konser tapi isinya Los Santos!",
         "Follow biar nggak ketinggalan rekor GTA 6 berikutnya."
-      ]
+      ],
+      "video": "video/2026-11-20/08-peluncuran-gta-vi-pecahkan-rekor-penonto.mp4",
+      "poster": "video/2026-11-20/08-peluncuran-gta-vi-pecahkan-rekor-penonto.jpg",
+      "video_durasi": 27.5,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Update",
@@ -812,7 +824,11 @@
         "Fokusnya AI untuk inovasi gameplay.",
         "Semoga yang terdampak cepat dapat kerjaan baru.",
         "Follow biar nggak ketinggalan kabar Ubisoft berikutnya."
-      ]
+      ],
+      "video": "video/2026-11-20/09-ubisoft-kurangi-166-posisi-di-montreal-d.mp4",
+      "poster": "video/2026-11-20/09-ubisoft-kurangi-166-posisi-di-montreal-d.jpg",
+      "video_durasi": 28.3,
+      "video_suara": "gemini-3.8-flash-lite-tts/Fenrir"
     },
     {
       "kategori": "Update",
@@ -901,7 +917,11 @@
         "Setelah server mati, semua data pemain ikut hilang.",
         "Serial Ratchet & Clank lainnya aman, tenang aja.",
         "Follow, dan jangan telat download game incaran kamu."
-      ]
+      ],
+      "video": "video/2026-11-20/10-ratchet-clank-ranger-rumble-hilang-dari.mp4",
+      "poster": "video/2026-11-20/10-ratchet-clank-ranger-rumble-hilang-dari.jpg",
+      "video_durasi": 29.9,
+      "video_suara": "gemini-3.8-flash-lite-tts/Fenrir"
     },
     {
       "kategori": "Rilis Game",
@@ -988,7 +1008,11 @@
         "Yang pakai Premium, cek dulu game kamu masuk atau nggak.",
         "Dompet aman, waktu tidur yang jadi korban!",
         "Follow biar nggak ketinggalan daftar Game Pass berikutnya."
-      ]
+      ],
+      "video": "video/2026-11-20/11-game-pass-arkheron-the-outlast-trials-da.mp4",
+      "poster": "video/2026-11-20/11-game-pass-arkheron-the-outlast-trials-da.jpg",
+      "video_durasi": 27.7,
+      "video_suara": "gemini-3.8-flash-lite-tts/Fenrir"
     }
   ]
 }
