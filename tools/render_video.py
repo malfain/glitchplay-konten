@@ -1374,6 +1374,13 @@ def main():
             and (a.force or not (it.get("video") and (ROOT / it["video"]).exists()))]
     if not todo:
         print("semua video sudah ada")
+        if not a.no_status:  # clear a stale "error" left by an earlier failed attempt that has since been fixed
+            try:
+                st = json.loads((ROOT / "data/status.json").read_text(encoding="utf-8"))
+                if st.get("agents", {}).get("studio", {}).get("status") == "error":
+                    status("agent", "studio", "selesai", "Semua video sudah jadi, siap di Hasil")
+            except (OSError, ValueError):
+                pass
         return 0
 
     outdir = ROOT / CH["video"] / a.date
