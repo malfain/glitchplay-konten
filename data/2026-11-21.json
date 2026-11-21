@@ -91,7 +91,11 @@
           "nama": "TVOne News",
           "url": "https://www.tvonenews.com/sport/arena/475688-timnas-esports-indonesia-umumkan-roster-untuk-iesf-wec26-ini-7-nomor-yang-diikuti"
         }
-      ]
+      ],
+      "video": "video/2026-11-21/01-indonesia-tuan-rumah-iesf-world-esports.mp4",
+      "poster": "video/2026-11-21/01-indonesia-tuan-rumah-iesf-world-esports.jpg",
+      "video_durasi": 28.9,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Esports",
@@ -178,7 +182,11 @@
           "nama": "Sportskeeda",
           "url": "https://www.sportskeeda.com/esports/news-mlbb-wins-esports-mobile-game-year-award-esports-awards-2026"
         }
-      ]
+      ],
+      "video": "video/2026-11-21/02-mlbb-juara-esports-mobile-game-of-the-ye.mp4",
+      "poster": "video/2026-11-21/02-mlbb-juara-esports-mobile-game-of-the-ye.jpg",
+      "video_durasi": 28.1,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Esports",
@@ -265,7 +273,11 @@
           "nama": "Kontan",
           "url": "https://lifestyle.kontan.co.id/news/hasil-ffws-global-finals-2026-rrq-kazu-dan-onic-12-besar-cek-jadwal-selanjutnya"
         }
-      ]
+      ],
+      "video": "video/2026-11-21/03-tiga-wakil-indonesia-di-ffws-global-fina.mp4",
+      "poster": "video/2026-11-21/03-tiga-wakil-indonesia-di-ffws-global-fina.jpg",
+      "video_durasi": 28.8,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Rilis Game",
@@ -352,7 +364,11 @@
           "nama": "Gematsu",
           "url": "https://www.gematsu.com/2026/11/the-game-awards-2026-nominees-announced"
         }
-      ]
+      ],
+      "video": "video/2026-11-21/04-gta-vi-masuk-nominasi-game-of-the-year-t.mp4",
+      "poster": "video/2026-11-21/04-gta-vi-masuk-nominasi-game-of-the-year-t.jpg",
+      "video_durasi": 26.8,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Update",
@@ -439,7 +455,11 @@
           "nama": "The Floridian",
           "url": "https://floridianpress.com/2026/11/maxwell-alejandro-frost-announces-legislation-to-protect-digital-ownership-for-gamers/"
         }
-      ]
+      ],
+      "video": "video/2026-11-21/05-protect-our-games-act-usul-aturan-agar-g.mp4",
+      "poster": "video/2026-11-21/05-protect-our-games-act-usul-aturan-agar-g.jpg",
+      "video_durasi": 26.0,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     }
   ]
 }

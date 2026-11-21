@@ -48,11 +48,46 @@
     },
     "studio": {
       "status": "kerja",
-      "aktivitas": "Render 5 video untuk 2026-11-21",
-      "t": "2026-11-21T07:10:04+07:00"
+      "aktivitas": "Render 1 video untuk 2026-11-21",
+      "t": "2026-11-21T07:25:37+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-21T07:25:37+07:00",
+      "agen": "studio",
+      "pesan": "Render 1 video untuk 2026-11-21"
+    },
+    {
+      "t": "2026-11-21T07:25:36+07:00",
+      "agen": "studio",
+      "pesan": "5/5 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-21T07:23:36+07:00",
+      "agen": "studio",
+      "pesan": "Render video 5/5: Protect Our Games Act: usul aturan"
+    },
+    {
+      "t": "2026-11-21T07:21:06+07:00",
+      "agen": "studio",
+      "pesan": "Render video 4/5: GTA VI masuk nominasi Game of the "
+    },
+    {
+      "t": "2026-11-21T07:17:33+07:00",
+      "agen": "studio",
+      "pesan": "Render video 3/5: Tiga wakil Indonesia di FFWS Globa"
+    },
+    {
+      "t": "2026-11-21T07:13:17+07:00",
+      "agen": "studio",
+      "pesan": "Render video 2/5: MLBB juara Esports Mobile Game of "
+    },
+    {
+      "t": "2026-11-21T07:10:08+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/5: Indonesia tuan rumah IESF World Es"
+    },
     {
       "t": "2026-11-21T07:10:04+07:00",
       "agen": "studio",
@@ -317,43 +352,8 @@
       "t": "2026-11-20T05:08:22+07:00",
       "agen": "qc",
       "pesan": "[Anak] Cek aturan, terbitkan"
-    },
-    {
-      "t": "2026-11-20T05:08:22+07:00",
-      "agen": "copywriter",
-      "pesan": "[Anak] Metadata YouTube selesai"
-    },
-    {
-      "t": "2026-11-20T05:08:22+07:00",
-      "agen": "copywriter",
-      "pesan": "[Anak] Judul, deskripsi, tags YouTube"
-    },
-    {
-      "t": "2026-11-20T05:08:22+07:00",
-      "agen": "narator",
-      "pesan": "[Anak] Naskah lebah selesai"
-    },
-    {
-      "t": "2026-11-20T05:07:53+07:00",
-      "agen": "narator",
-      "pesan": "[Anak] Tulis naskah lebah madu"
-    },
-    {
-      "t": "2026-11-20T05:07:53+07:00",
-      "agen": "detektif",
-      "pesan": "[Anak] 6 fakta lolos, 0 dibuang"
-    },
-    {
-      "t": "2026-11-20T05:07:51+07:00",
-      "agen": "detektif",
-      "pesan": "[Anak] Cek 6 fakta lebah, min 2 sumber"
-    },
-    {
-      "t": "2026-11-20T05:07:51+07:00",
-      "agen": "radar",
-      "pesan": "[Anak] 1 tema: lebah madu, 6 fakta"
     }
   ],
-  "updated_at": "2026-11-21T07:10:04+07:00",
+  "updated_at": "2026-11-21T07:25:37+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
