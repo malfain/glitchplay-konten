@@ -32,9 +32,9 @@
       "t": "2026-11-22T06:08:17+07:00"
     },
     "narator": {
-      "status": "kerja",
-      "aktivitas": "Tulis naskah dan adegan 5 item",
-      "t": "2026-11-22T06:08:19+07:00"
+      "status": "selesai",
+      "aktivitas": "Naskah 5 item selesai",
+      "t": "2026-11-22T06:09:19+07:00"
     },
     "copywriter": {
       "status": "idle",
@@ -53,6 +53,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-22T06:09:19+07:00",
+      "agen": "narator",
+      "pesan": "Naskah 5 item selesai"
+    },
     {
       "t": "2026-11-22T06:08:19+07:00",
       "agen": "narator",
@@ -347,13 +352,8 @@
       "t": "2026-11-21T06:08:36+07:00",
       "agen": "copywriter",
       "pesan": "Caption siap"
-    },
-    {
-      "t": "2026-11-21T06:08:36+07:00",
-      "agen": "narator",
-      "pesan": "Naskah 5 item siap"
     }
   ],
-  "updated_at": "2026-11-22T06:08:19+07:00",
+  "updated_at": "2026-11-22T06:09:19+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }

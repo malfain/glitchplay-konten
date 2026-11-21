@@ -1,0 +1,583 @@
+{
+  "date": "2026-11-22",
+  "items": [
+    {
+      "kategori": "Rilis Game",
+      "judul": "GTA VI cetak penjualan hari pertama 3,79 miliar dolar",
+      "ringkasan": "Take-Two melaporkan GTA VI meraih 3,79 miliar dolar penjualan retail dan 32,5 juta kopi terjual sampai akhir hari rilis, 19 November. Angka ini penjualan retail, bukan pendapatan Take-Two.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Statistic",
+      "durasi_detik": 33,
+      "naskah_vo": [
+        "Tiga koma tujuh sembilan miliar dolar, dalam sehari!",
+        "Itu penjualan hari pertama GTA enam.",
+        "Take Two melaporkan angka ini sampai akhir tanggal sembilan belas November.",
+        "Disebut peluncuran hiburan terbesar sepanjang masa.",
+        "Film blockbuster aja minder!",
+        "Tercatat terjual tiga puluh dua koma lima juta kopi.",
+        "Tapi ingat, itu penjualan retail, bukan pendapatan Take Two.",
+        "Jadi belum semuanya masuk kantong mereka.",
+        "Dompet kita mah cuma bisa bengong.",
+        "Follow buat kabar game berikutnya, sebelum dolar mereka makin numpuk!"
+      ],
+      "subtitle": [
+        "3,79 miliar dolar, dalam sehari!",
+        "Itu penjualan hari pertama GTA VI.",
+        "Take-Two melaporkan angka ini sampai akhir tanggal 19 November.",
+        "Disebut peluncuran hiburan terbesar sepanjang masa.",
+        "Film blockbuster aja minder!",
+        "Tercatat terjual 32,5 juta kopi.",
+        "Tapi ingat, itu penjualan retail, bukan pendapatan Take-Two.",
+        "Jadi belum semuanya masuk kantong mereka.",
+        "Dompet kita mah cuma bisa bengong.",
+        "Follow buat kabar game berikutnya, sebelum dolar mereka makin numpuk!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "$3,79 MILIAR 💰",
+          "visual": "angka besar animasi"
+        },
+        {
+          "t": "0:04",
+          "teks": "PENJUALAN HARI PERTAMA",
+          "visual": "logo GTA VI"
+        },
+        {
+          "t": "0:09",
+          "teks": "TERBESAR SEPANJANG MASA",
+          "visual": "teks"
+        },
+        {
+          "t": "0:14",
+          "teks": "32,5 JUTA KOPI",
+          "visual": "angka"
+        },
+        {
+          "t": "0:19",
+          "teks": "BUKAN PENDAPATAN",
+          "visual": "catatan"
+        },
+        {
+          "t": "0:25",
+          "teks": "RETAIL ≠ REVENUE",
+          "visual": "grafik"
+        },
+        {
+          "t": "0:30",
+          "teks": "FOLLOW BUAT UPDATE",
+          "visual": "clip"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A glowing stack of gold coins and cash piling up in front of a dark neon-lit gaming console, cinematic close-up"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A crowded electronics store at night with people lining up to buy a new video game, warm lights"
+        },
+        {
+          "kalimat": 5,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A close-up of a game console and controller on a table in a dark room lit by blue neon light"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A businessman in a suit seen from behind looking at a huge glowing chart screen in a skyscraper office"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "A young gamer seen from behind staring at an empty wallet on a desk next to a gaming PC"
+        }
+      ],
+      "caption": "Angkanya bikin geleng-geleng 💰🔥\n\nTake-Two melaporkan GTA VI meraih 3,79 miliar dolar penjualan retail sampai akhir hari rilis, 19 November, dengan 32,5 juta kopi terjual. Catatan penting: ini penjualan retail, bukan pendapatan Take-Two.\n\nMenurut kamu, kapan rekor ini bakal kepecahkan? Tulis di komentar 👇",
+      "hashtags": [
+        "#GTAVI",
+        "#BeritaGame",
+        "#GameIndonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "Forbes",
+          "url": "https://www.forbes.com/sites/antoniopequenoiv/2026/11/20/gta-6-raked-in-38-billion-sales-on-first-day-the-largest-entertainment-launch-ever/"
+        },
+        {
+          "nama": "TweakTown",
+          "url": "https://www.tweaktown.com/news/114806/gta-6-makes-dollars3-79-billion-with-32-5-million-copies-sold/index.html"
+        },
+        {
+          "nama": "Deadline",
+          "url": "https://deadline.com/2026/11/gta6-first-day-sales-4-billion-1237230465/"
+        }
+      ]
+    },
+    {
+      "kategori": "Update",
+      "judul": "GTA VI versi Jepang punya perbedaan, Rockstar belum konfirmasi",
+      "ringkasan": "Pemain menemukan GTA VI di Jepang memuat adegan mandi Jason yang ditutup, darah lebih sedikit, dan tanpa slider intensitas darah. Rating CERO Z, subtitle hanya Inggris dan Jepang, Rockstar belum mengumumkan perubahan.",
+      "status_fakta": "rumor",
+      "hook_formula": "Nobody Tells You",
+      "durasi_detik": 30,
+      "naskah_vo": [
+        "Main GTA enam versi Jepang? Beda lho!",
+        "Pemain di sana nemu beberapa perbedaan.",
+        "Adegan mandi Jason ketutup, dia pakai celana dalam.",
+        "Darahnya juga lebih sedikit dan cepat hilang.",
+        "Pengaturan intensitas darah juga nggak ada.",
+        "Ratingnya CERO Z, khusus delapan belas tahun ke atas.",
+        "Subtitle cuma ada Inggris dan Jepang.",
+        "Tapi Rockstar belum umumkan resmi soal perubahan ini.",
+        "Jadi statusnya masih laporan pemain dan media, belum resmi.",
+        "Menurut kamu wajar nggak? Komen ya, beda banget kan!"
+      ],
+      "subtitle": [
+        "Main GTA VI versi Jepang? Beda lho!",
+        "Pemain di sana nemu beberapa perbedaan.",
+        "Adegan mandi Jason ketutup, dia pakai celana dalam.",
+        "Darahnya juga lebih sedikit dan cepat hilang.",
+        "Pengaturan intensitas darah juga nggak ada.",
+        "Ratingnya CERO Z, khusus 18 tahun ke atas.",
+        "Subtitle cuma ada Inggris dan Jepang.",
+        "Tapi Rockstar belum umumkan resmi soal perubahan ini.",
+        "Jadi statusnya masih laporan pemain dan media, belum resmi.",
+        "Menurut kamu wajar nggak? Komen ya, beda banget kan!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "GTA VI VERSI JEPANG 🇯🇵",
+          "visual": "teks"
+        },
+        {
+          "t": "0:04",
+          "teks": "ADA PERBEDAAN",
+          "visual": "teks"
+        },
+        {
+          "t": "0:08",
+          "teks": "ADEGAN MANDI DITUTUP",
+          "visual": "teks"
+        },
+        {
+          "t": "0:12",
+          "teks": "DARAH LEBIH SEDIKIT",
+          "visual": "teks"
+        },
+        {
+          "t": "0:16",
+          "teks": "RATING CERO Z",
+          "visual": "teks"
+        },
+        {
+          "t": "0:20",
+          "teks": "SUBTITLE: INGGRIS + JEPANG",
+          "visual": "teks"
+        },
+        {
+          "t": "0:24",
+          "teks": "BELUM ADA KONFIRMASI ROCKSTAR",
+          "visual": "teks"
+        },
+        {
+          "t": "0:28",
+          "teks": "KOMEN PENDAPATMU",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A gamer seen from behind in a dark room in Tokyo at night, playing on a TV lit with neon colors, cinematic"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A Tokyo street at night with glowing signs and a crowd walking, shallow depth of field"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "A hand holding a game controller close-up, blue neon light, blurred console in background"
+        },
+        {
+          "kalimat": 5,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A game store shelf with rows of console game boxes and an age rating sticker, warm lighting"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "Two friends seen from behind sitting on a sofa discussing, a TV glowing in a dark living room"
+        }
+      ],
+      "caption": "Beda region, beda isi? 👀\n\nPemain Jepang dilaporkan menemukan GTA VI di sana punya adegan mandi Jason yang ditutup, darah lebih sedikit, dan tanpa slider intensitas darah. Ratingnya CERO Z dan subtitle hanya Inggris dan Jepang. Rockstar belum mengumumkan resmi soal perubahan ini.\n\nMenurut kamu sensor kayak gini wajar atau nggak? Komen di bawah 👇",
+      "hashtags": [
+        "#GTAVI",
+        "#BeritaGame",
+        "#GameIndonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "Kotaku",
+          "url": "https://kotaku.com/gta-6-japan-censored-showers-nudity-blood-violence-rockstar-2000758211"
+        },
+        {
+          "nama": "ComicBook.com",
+          "url": "https://comicbook.com/gaming/news/how-the-censored-version-of-gta-6-compares-to-the-standard-version/"
+        },
+        {
+          "nama": "Cybernews",
+          "url": "https://cybernews.com/news/gta6-japan-censorship/"
+        }
+      ]
+    },
+    {
+      "kategori": "Update",
+      "judul": "Valve tutup antrean Steam Machine, harga bisa naik",
+      "ringkasan": "Pada 19 November Valve membuka penjualan langsung Steam Machine 512GB tanpa waitlist dan menutup waitlist model 2TB. Valve menyebut kenaikan harga memori dan penyimpanan, belum tahu berapa unit atau harga ke depan, dan menjanjikan update Januari 2027.",
+      "status_fakta": "resmi",
+      "hook_formula": "Nobody Tells You",
+      "durasi_detik": 33,
+      "naskah_vo": [
+        "Antrean Steam Machine resmi ditutup!",
+        "Valve umumin ini tanggal sembilan belas November.",
+        "Model lima ratus dua belas giga sekarang bisa dibeli langsung.",
+        "Nggak perlu antre lagi, selama stok masih ada.",
+        "Tapi model dua terabyte, antreannya ditutup untuk pendaftar baru.",
+        "Alasannya, harga memori dan penyimpanan naik gila-gilaan.",
+        "Valve bilang belum tahu bisa bikin berapa unit lagi.",
+        "Harganya juga belum pasti, bisa naik.",
+        "Update berikutnya dijanjikan bulan Januari dua ribu dua puluh tujuh.",
+        "Follow biar tahu kelanjutan antrean ini, gaes!"
+      ],
+      "subtitle": [
+        "Antrean Steam Machine resmi ditutup!",
+        "Valve umumin ini tanggal 19 November.",
+        "Model 512GB sekarang bisa dibeli langsung.",
+        "Nggak perlu antre lagi, selama stok masih ada.",
+        "Tapi model 2TB, antreannya ditutup untuk pendaftar baru.",
+        "Alasannya, harga memori dan penyimpanan naik gila-gilaan.",
+        "Valve bilang belum tahu bisa bikin berapa unit lagi.",
+        "Harganya juga belum pasti, bisa naik.",
+        "Update berikutnya dijanjikan bulan Januari 2027.",
+        "Follow biar tahu kelanjutan antrean ini, gaes!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "WAITLIST STEAM MACHINE DITUTUP",
+          "visual": "teks"
+        },
+        {
+          "t": "0:04",
+          "teks": "UMUMAN VALVE, 19 NOV",
+          "visual": "teks"
+        },
+        {
+          "t": "0:08",
+          "teks": "512GB: BELI LANGSUNG",
+          "visual": "teks"
+        },
+        {
+          "t": "0:13",
+          "teks": "2TB: WAITLIST DITUTUP",
+          "visual": "teks"
+        },
+        {
+          "t": "0:18",
+          "teks": "BIANG KEROK: HARGA MEMORI",
+          "visual": "teks"
+        },
+        {
+          "t": "0:23",
+          "teks": "HARGA BISA NAIK 📈",
+          "visual": "teks"
+        },
+        {
+          "t": "0:27",
+          "teks": "UPDATE: JANUARI 2027",
+          "visual": "teks"
+        },
+        {
+          "t": "0:31",
+          "teks": "FOLLOW BUAT UPDATE",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A small black gaming PC console box on a wooden desk next to a controller, dramatic neon lighting, close-up"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A person seen from behind clicking buy on a laptop with a shopping cart, dark room, soft glow"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "A long queue of people waiting in line outside a tech store at night"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "Close-up of computer RAM sticks and an SSD on a table with blue lighting"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "A calendar on a wall with a circled date and a glowing monitor in a dark room"
+        }
+      ],
+      "caption": "Yang antre Steam Machine, ini kabar buat kamu 👀\n\nPada 19 November Valve membuka penjualan langsung Steam Machine 512GB tanpa waitlist dan menutup waitlist model 2TB. Alasannya kenaikan harga memori dan penyimpanan. Valve belum tahu berapa unit yang bisa dibuat atau harganya nanti, dan menjanjikan update Januari 2027.\n\nKamu tertarik beli atau nunggu dulu? Komen ya 👇",
+      "hashtags": [
+        "#SteamMachine",
+        "#BeritaGame",
+        "#GamingPC"
+      ],
+      "sumber": [
+        {
+          "nama": "GamesRadar",
+          "url": "https://www.gamesradar.com/games/valve-says-memory-and-storage-costs-are-so-bad-it-wont-do-steam-machine-waitlists-anymore-as-it-doesnt-know-how-many-it-can-make-or-what-theyll-cost/"
+        },
+        {
+          "nama": "gHacks",
+          "url": "https://www.ghacks.net/2026/11/20/valve-says-rising-memory-costs-leave-steam-machine-prices-uncertain-and-closes-the-2tb-waitlist/"
+        },
+        {
+          "nama": "Digital Trends",
+          "url": "https://www.digitaltrends.com/computing/valve-ends-waitlist-for-steam-machine-and-signals-imminent-price-hike-in-2027/"
+        }
+      ]
+    },
+    {
+      "kategori": "Promo/Diskon",
+      "judul": "Steam tidak bikin sale Black Friday, tapi ada hub diskon",
+      "ringkasan": "Valve tidak menggelar sale Black Friday seluruh toko. Sebagai gantinya ada hub Black Friday di halaman Discounts & Events pada 26 sampai 30 November, diskon ditentukan publisher. Winter Sale jalan 17 Desember sampai 4 Januari.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Deadline",
+      "durasi_detik": 33,
+      "naskah_vo": [
+        "Black Friday Steam mulai tanggal dua puluh enam!",
+        "Tapi jangan ngarep diskon satu toko, gaes.",
+        "Valve nggak bikin sale besar di seluruh Steam tahun ini.",
+        "Yang ada cuma hub Black Friday.",
+        "Jalan dua puluh enam sampai tiga puluh November, waktu Amerika.",
+        "Diskonnya ditentukan masing-masing publisher.",
+        "Valve cuma menyorot game yang lagi diskon.",
+        "Mau yang lebih gede? Winter Sale mulai tujuh belas Desember.",
+        "Jalannya sampai empat Januari.",
+        "Dompet aman dulu, tahan jajan!",
+        "Follow biar nggak ketinggalan Black Friday berikutnya!"
+      ],
+      "subtitle": [
+        "Black Friday Steam mulai tanggal 26!",
+        "Tapi jangan ngarep diskon satu toko, gaes.",
+        "Valve nggak bikin sale besar di seluruh Steam tahun ini.",
+        "Yang ada cuma hub Black Friday.",
+        "Jalan 26 sampai 30 November, waktu Amerika.",
+        "Diskonnya ditentukan masing-masing publisher.",
+        "Valve cuma menyorot game yang lagi diskon.",
+        "Mau yang lebih gede? Winter Sale mulai 17 Desember.",
+        "Jalannya sampai 4 Januari.",
+        "Dompet aman dulu, tahan jajan!",
+        "Follow biar nggak ketinggalan Black Friday berikutnya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "BLACK FRIDAY STEAM 26 NOV",
+          "visual": "teks"
+        },
+        {
+          "t": "0:04",
+          "teks": "BUKAN SALE SATU TOKO",
+          "visual": "teks"
+        },
+        {
+          "t": "0:09",
+          "teks": "HUB DISKON 26-30 NOV",
+          "visual": "teks"
+        },
+        {
+          "t": "0:14",
+          "teks": "DISKON DARI PUBLISHER",
+          "visual": "teks"
+        },
+        {
+          "t": "0:19",
+          "teks": "WINTER SALE 17 DES",
+          "visual": "teks"
+        },
+        {
+          "t": "0:23",
+          "teks": "SAMPAI 4 JANUARI",
+          "visual": "teks"
+        },
+        {
+          "t": "0:27",
+          "teks": "TAHAN JAJAN DULU 💸",
+          "visual": "teks"
+        },
+        {
+          "t": "0:31",
+          "teks": "FOLLOW BUAT UPDATE",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A glowing PC monitor in a dark room showing a colorful abstract store page with red sale tags, neon lights"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A shopper seen from behind in front of a store window with big red sale signs, night street"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "A calendar with dates circled in red marker on a desk next to a gaming keyboard"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "Snowy window outside a cozy gamer room with a PC glowing, winter holiday lights"
+        },
+        {
+          "kalimat": 9,
+          "prompt": "A young gamer seen from behind holding an empty wallet next to a gaming PC"
+        }
+      ],
+      "caption": "Jangan salah paham soal Black Friday Steam 💸\n\nValve tidak bikin sale seluruh toko tahun ini. Yang ada hub Black Friday di halaman Discounts & Events, 26 sampai 30 November (waktu Pasifik), dengan diskon yang ditentukan publisher. Winter Sale jalan 17 Desember sampai 4 Januari.\n\nGame apa yang kamu incar? Tulis di komentar 👇",
+      "hashtags": [
+        "#Steam",
+        "#BlackFriday",
+        "#DiskonGame"
+      ],
+      "sumber": [
+        {
+          "nama": "gg.deals",
+          "url": "https://gg.deals/gaming-news/waiting-for-steam-black-friday-sale-2026-theres-some-bad-news/"
+        },
+        {
+          "nama": "Gaming Route",
+          "url": "https://gamingroute.com/steam-black-friday-sale/"
+        },
+        {
+          "nama": "PlayingTux",
+          "url": "https://playingtux.com/en/articles/2026/11/steam-black-friday-2026-dates-announced/"
+        }
+      ]
+    },
+    {
+      "kategori": "Promo/Diskon",
+      "judul": "Mark of the Deep gratis di Epic Games Store",
+      "ringkasan": "Game bajak laut Mark of the Deep gratis di Epic Games Store sampai 26 November 2026. Siapa yang klaim sebelum batas waktu bisa menyimpannya permanen.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Reveal",
+      "durasi_detik": 28,
+      "naskah_vo": [
+        "Game bajak laut gratis, tinggal klaim!",
+        "Namanya Mark of the Deep, di Epic Games Store.",
+        "Ini game Metroidvania bertema dunia bajak laut.",
+        "Temanya bajak laut, tarungnya ala soulslike.",
+        "Klaim sebelum tanggal dua puluh enam November.",
+        "Sekali klaim, game-nya jadi punya kamu selamanya.",
+        "Nggak perlu bayar, cuma perlu login.",
+        "Mantap buat akhir pekan, siapin cemilan!",
+        "Tag temen yang suka bajak laut, biar klaim bareng!"
+      ],
+      "subtitle": [
+        "Game bajak laut gratis, tinggal klaim!",
+        "Namanya Mark of the Deep, di Epic Games Store.",
+        "Ini game Metroidvania bertema dunia bajak laut.",
+        "Temanya bajak laut, tarungnya ala soulslike.",
+        "Klaim sebelum tanggal 26 November.",
+        "Sekali klaim, game-nya jadi punya kamu selamanya.",
+        "Nggak perlu bayar, cuma perlu login.",
+        "Mantap buat akhir pekan, siapin cemilan!",
+        "Tag temen yang suka bajak laut, biar klaim bareng!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "GRATIS DI EPIC 🏴‍☠️",
+          "visual": "teks"
+        },
+        {
+          "t": "0:04",
+          "teks": "MARK OF THE DEEP",
+          "visual": "teks"
+        },
+        {
+          "t": "0:08",
+          "teks": "METROIDVANIA SOULSLIKE",
+          "visual": "teks"
+        },
+        {
+          "t": "0:13",
+          "teks": "KLAIM SAMPAI 26 NOV",
+          "visual": "teks"
+        },
+        {
+          "t": "0:18",
+          "teks": "JADI MILIKMU SELAMANYA",
+          "visual": "teks"
+        },
+        {
+          "t": "0:22",
+          "teks": "TANPA BAYAR",
+          "visual": "teks"
+        },
+        {
+          "t": "0:26",
+          "teks": "TAG TEMAN MABAR",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Mark of the Deep",
+          "prompt": "A pirate ship silhouette sailing on a dark stormy sea under a purple sky, cinematic wide shot"
+        },
+        {
+          "kalimat": 1,
+          "game": "Mark of the Deep",
+          "trailer": true,
+          "prompt": "A gamer seen from behind at a glowing PC in a dark room, neon lights, cinematic"
+        },
+        {
+          "kalimat": 3,
+          "game": "Mark of the Deep",
+          "prompt": "A pirate sword and lantern on a wooden table in dim warm light, close-up"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "A hand clicking a claim button on a laptop with soft screen glow in a dark room"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "Two friends seen from behind on a sofa with snacks and a glowing gaming screen, weekend night"
+        }
+      ],
+      "caption": "Gratis itu paling enak, apalagi bajak laut 🏴‍☠️🔥\n\nMark of the Deep, game Metroidvania bergaya soulslike, lagi gratis di Epic Games Store sampai 26 November 2026. Klaim sebelum batas waktu dan game-nya jadi milikmu permanen.\n\nSiapa yang mau kamu tag buat klaim bareng? 👇",
+      "hashtags": [
+        "#EpicGames",
+        "#GameGratis",
+        "#BeritaGame"
+      ],
+      "sumber": [
+        {
+          "nama": "GameSpot",
+          "url": "https://www.gamespot.com/articles/free-games-epic-games-store/1100-6476419/"
+        },
+        {
+          "nama": "outnow.ch",
+          "url": "https://outnow.ch/en/News/2026/11/20/Mark-of-the-Deep-Epic-gives-away-pirate-Metroidvania"
+        },
+        {
+          "nama": "DLCompare",
+          "url": "https://dlcompare.com/gaming-news/claim-pirate-souls-like-mark-of-the-deep-for-free-on-the-epic-games-store-92068"
+        }
+      ]
+    }
+  ]
+}
