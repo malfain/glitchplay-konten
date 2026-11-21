@@ -47,12 +47,17 @@
       "t": "2026-11-21T06:08:36+07:00"
     },
     "studio": {
-      "status": "error",
-      "aktivitas": "0/1 video jadi, siap di Hasil",
-      "t": "2026-11-21T12:11:28+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 1 video untuk 2026-11-21",
+      "t": "2026-11-21T13:10:09+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-21T13:10:09+07:00",
+      "agen": "studio",
+      "pesan": "Render 1 video untuk 2026-11-21"
+    },
     {
       "t": "2026-11-21T12:11:28+07:00",
       "agen": "studio",
@@ -347,13 +352,8 @@
       "t": "2026-11-20T07:43:34+07:00",
       "agen": "studio",
       "pesan": "6/6 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-20T07:39:00+07:00",
-      "agen": "studio",
-      "pesan": "Render video 6/6: Game Pass: Arkheron, The Outlast T"
     }
   ],
-  "updated_at": "2026-11-21T12:11:28+07:00",
+  "updated_at": "2026-11-21T13:10:09+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
