@@ -47,12 +47,17 @@
       "t": "2026-11-21T06:08:36+07:00"
     },
     "studio": {
-      "status": "error",
-      "aktivitas": "0/1 video jadi, siap di Hasil",
-      "t": "2026-11-21T10:11:51+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 1 video untuk 2026-11-21",
+      "t": "2026-11-21T11:10:07+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-21T11:10:07+07:00",
+      "agen": "studio",
+      "pesan": "Render 1 video untuk 2026-11-21"
+    },
     {
       "t": "2026-11-21T10:11:51+07:00",
       "agen": "studio",
@@ -347,13 +352,8 @@
       "t": "2026-11-20T06:08:54+07:00",
       "agen": "bos",
       "pesan": "Shift selesai. Semua hasil sudah di menu Hasil."
-    },
-    {
-      "t": "2026-11-20T06:08:54+07:00",
-      "agen": "bos",
-      "pesan": "Shift selesai"
     }
   ],
-  "updated_at": "2026-11-21T10:11:51+07:00",
+  "updated_at": "2026-11-21T11:10:07+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
