@@ -107,6 +107,28 @@ Buat **minimal 5 konten reel** berita game untuk hari ini (tanggal WIB:
   The Reveal, The Deadline, Nobody Tells You, Head To Head, The Statistic,
   Numbered With A Favourite, If This Then Watch, Contrarian Flip.
 
+## Adegan foto (Narator)
+
+Video IG memakai **foto AI fotorealistik** yang bergerak pelan + teks per kata.
+Isi field `adegan` dengan **4–5 adegan** per item (kuota foto gratis dibagi
+dengan channel YouTube), urut:
+
+```json
+"adegan": [
+  {"kalimat": 0, "prompt": "A gamer in a dark room lit by neon RGB lights, playing on a glowing PC, cinematic close-up"},
+  {"kalimat": 3, "prompt": "A huge esports arena full of cheering fans, big screens, blue and pink stage lights"}
+]
+```
+
+- `kalimat` = indeks (mulai 0) kalimat di `naskah_vo` tempat foto mulai; adegan
+  pertama `0`, angkanya naik, sebar merata.
+- `prompt` bahasa **Inggris**, 1 kalimat, foto nyata yang **menggambarkan suasana
+  berita** (gamer, PC/HP/konsol generik, arena esports, piala, kerumunan fans,
+  kota Jakarta malam, ruang streamer, dll.).
+- **Dilarang**: logo/nama game/merek, karakter atau cuplikan game asli, wajah atau
+  nama orang terkenal (pemain pro, streamer, artis), teks/tulisan di gambar,
+  kekerasan berdarah. Orang boleh, tapi anonim (dari belakang/siluet/jauh).
+
 ## Aturan caption (Copywriter)
 
 - Baris pertama (sebelum "… more") harus bikin penasaran; isi 2–4 kalimat;
@@ -117,7 +139,7 @@ Buat **minimal 5 konten reel** berita game untuk hari ini (tanggal WIB:
 ## Cek QC
 
 Sebelum terbit, QC memastikan untuk tiap item: semua field ada;
-`subtitle` sama jumlahnya dengan `naskah_vo`; `naskah_vo`
+`subtitle` sama jumlahnya dengan `naskah_vo`; `adegan` 4–5 item sesuai aturan; `naskah_vo`
 tanpa emoji/simbol; tiap kalimat ≤ 12 kata; `teks_layar` ≤ 6 kata per kartu;
 tepat 3 hashtag; `sumber` ≥ 2 URL dari situs berbeda; tidak ada kata terlarang.
 Item yang gagal diperbaiki dulu, bukan diterbitkan apa adanya.
@@ -138,6 +160,7 @@ Item yang gagal diperbaiki dulu, bukan diterbitkan apa adanya.
       "naskah_vo": ["kalimat 1 ejaan TTS", "kalimat 2"],
       "subtitle": ["kalimat 1 ejaan normal", "kalimat 2"],
       "teks_layar": [{"t": "0:00", "teks": "TEKS KARTU", "visual": "saran visual/clip"}],
+      "adegan": [{"kalimat": 0, "prompt": "English photo prompt, generic gaming scene"}],
       "caption": "caption lengkap",
       "hashtags": ["#a", "#b", "#c"],
       "sumber": [{"nama": "Nama situs", "url": "https://..."}]

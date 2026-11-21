@@ -7,6 +7,7 @@ import { F, applyTheme } from "./theme";
 // voiceover. Scenes and caption words carry their own start/end seconds (computed by tools/render_video.py).
 
 export const photoReelSchema = z.object({
+  theme: z.enum(["kids", "glitch"]).optional(),
   handle: z.string(),
   audio: z.string().nullable().optional(),
   avatar: z.string().nullable().optional(),
@@ -20,8 +21,13 @@ export type PhotoReelProps = z.infer<typeof photoReelSchema>;
 const FADE = 0.45; // crossfade between photos (s)
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
-export const PhotoReel: React.FC<PhotoReelProps> = ({ handle, audio, avatar, scenes, words, label }) => {
-  applyTheme("kids");
+// active-word colour and badge ring per channel
+const ACCENT = { kids: "#ffd23f", glitch: "#c6f02c" } as const;
+
+export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, scenes, words, label }) => {
+  const th = theme ?? "kids";
+  applyTheme(th);
+  const accent = ACCENT[th];
   const { fps } = useVideoConfig();
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
@@ -37,8 +43,8 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ handle, audio, avatar, sce
       ))}
       {/* legibility: soft dark band behind the captions, vignette at the bottom */}
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 38%, rgba(0,0,0,0) 70%, rgba(0,0,0,.45) 100%)" }} />
-      <Captions words={words} />
-      <Badge handle={handle} avatar={avatar ?? null} />
+      <Captions words={words} accent={accent} />
+      <Badge handle={handle} avatar={avatar ?? null} accent={accent} />
       <div style={{ position: "absolute", left: 70, top: 1400, font: `600 26px ${F.sans}`, color: "rgba(255,255,255,.75)" }}>
         {label ?? "Gambar dibuat dengan AI"}
       </div>
@@ -68,7 +74,7 @@ const KenBurns: React.FC<{ src: string; index: number; dur: number; fadeIn: bool
 };
 
 // Shows one short chunk (2–3 words) at a time; the word being spoken is yellow and pops slightly.
-const Captions: React.FC<{ words: PhotoReelProps["words"] }> = ({ words }) => {
+const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string }> = ({ words, accent }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
@@ -87,7 +93,7 @@ const Captions: React.FC<{ words: PhotoReelProps["words"] }> = ({ words }) => {
             key={i}
             style={{
               display: "inline-block", margin: "0 12px", fontFamily: F.sans, fontWeight: 700, fontSize: 92, lineHeight: 1.1,
-              textTransform: "uppercase", letterSpacing: 1, color: active ? "#ffd23f" : "#ffffff",
+              textTransform: "uppercase", letterSpacing: 1, color: active ? accent : "#ffffff",
               WebkitTextStroke: "3px rgba(0,0,0,.85)", paintOrder: "stroke fill",
               textShadow: "0 6px 0 rgba(0,0,0,.55), 0 0 30px rgba(0,0,0,.5)",
               scale: active ? "1.06" : "1",
@@ -101,7 +107,7 @@ const Captions: React.FC<{ words: PhotoReelProps["words"] }> = ({ words }) => {
   );
 };
 
-const Badge: React.FC<{ handle: string; avatar: string | null }> = ({ handle, avatar }) => (
+const Badge: React.FC<{ handle: string; avatar: string | null; accent: string }> = ({ handle, avatar, accent }) => (
   <div
     style={{
       position: "absolute", left: 70, top: 240, display: "flex", alignItems: "center", gap: 12, padding: "6px 20px 6px 6px",
@@ -109,7 +115,7 @@ const Badge: React.FC<{ handle: string; avatar: string | null }> = ({ handle, av
       font: `700 28px ${F.sans}`,
     }}
   >
-    {avatar ? <Img src={staticFile(avatar)} style={{ width: 48, height: 48, borderRadius: "50%", border: "2px solid #ffd23f" }} /> : null}
+    {avatar ? <Img src={staticFile(avatar)} style={{ width: 48, height: 48, borderRadius: "50%", border: `2px solid ${accent}` }} /> : null}
     {handle}
   </div>
 );

@@ -41,6 +41,7 @@ CHANNELS = {
         "style": None,  # GEMINI_STYLE
         "pill": "berita game", "cta_head": "follow", "cta_tag": "biar nggak ketinggalan",
         "stickers": {"hook": "update!", "number": "gokil!", "cta": "follow!"},
+        "render": "photo",  # AI photos + word captions when the item has 'adegan'; otherwise the animated GlitchReel
     },
     "kids": {
         "data": "data/kids", "video": "video/kids", "theme": "kids", "handle": "GlitchPlayClips",
@@ -954,7 +955,7 @@ def render_item_photo(item, idx, date, outdir, tmp):
         scenes.append({"src": f"_render/{img.name}", "start": round(s0, 3), "end": round(max(s1, s0 + 1), 3)})
 
     shutil.copy(ROOT / "assets/profile.jpg", REMOTION / "public/profile.jpg")
-    props = {"handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
+    props = {"theme": CH["theme"], "handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
              "label": "Gambar dibuat dengan AI", "scenes": scenes, "words": words}
     pfile = tmp / "props.json"
     pfile.write_text(json.dumps(props, ensure_ascii=False), encoding="utf-8")
