@@ -47,12 +47,27 @@
       "t": "2026-11-21T06:08:36+07:00"
     },
     "studio": {
-      "status": "kerja",
-      "aktivitas": "Render 1 video untuk 2026-11-21",
-      "t": "2026-11-21T08:10:07+07:00"
+      "status": "error",
+      "aktivitas": "0/1 video jadi, siap di Hasil",
+      "t": "2026-11-21T08:13:24+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-21T08:13:24+07:00",
+      "agen": "studio",
+      "pesan": "0/1 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-21T08:13:24+07:00",
+      "agen": "studio",
+      "pesan": "Video 2 gagal: kuota gambar gratis Cloudflare hari ini "
+    },
+    {
+      "t": "2026-11-21T08:10:11+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/1: 6 fakta seru jerapah: lidah ungu, "
+    },
     {
       "t": "2026-11-21T08:10:07+07:00",
       "agen": "studio",
@@ -337,23 +352,8 @@
       "t": "2026-11-20T06:07:51+07:00",
       "agen": "detektif",
       "pesan": "Cek fakta tiap kandidat"
-    },
-    {
-      "t": "2026-11-20T06:07:02+07:00",
-      "agen": "radar",
-      "pesan": "6 kandidat ditemukan"
-    },
-    {
-      "t": "2026-11-20T06:05:58+07:00",
-      "agen": "radar",
-      "pesan": "Cari berita MLBB, esports, rilis game"
-    },
-    {
-      "t": "2026-11-20T06:05:53+07:00",
-      "agen": "bos",
-      "pesan": "Buka shift, bagi tugas ke tim"
     }
   ],
-  "updated_at": "2026-11-21T08:10:07+07:00",
+  "updated_at": "2026-11-21T08:13:24+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
