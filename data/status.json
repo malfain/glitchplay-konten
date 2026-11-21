@@ -47,12 +47,17 @@
       "t": "2026-11-21T06:08:36+07:00"
     },
     "studio": {
-      "status": "error",
-      "aktivitas": "0/1 video jadi, siap di Hasil",
-      "t": "2026-11-21T11:13:12+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 1 video untuk 2026-11-21",
+      "t": "2026-11-21T12:10:04+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-21T12:10:04+07:00",
+      "agen": "studio",
+      "pesan": "Render 1 video untuk 2026-11-21"
+    },
     {
       "t": "2026-11-21T11:13:12+07:00",
       "agen": "studio",
@@ -347,13 +352,8 @@
       "t": "2026-11-20T07:22:38+07:00",
       "agen": "studio",
       "pesan": "Render video 3/6: Peluncuran GTA VI pecahkan rekor p"
-    },
-    {
-      "t": "2026-11-20T07:15:42+07:00",
-      "agen": "studio",
-      "pesan": "Render video 2/6: Estimasi GTA VI terjual 19 juta ko"
     }
   ],
-  "updated_at": "2026-11-21T11:13:12+07:00",
+  "updated_at": "2026-11-21T12:10:04+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
