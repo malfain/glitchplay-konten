@@ -32,9 +32,9 @@
       "t": "2026-11-22T06:08:17+07:00"
     },
     "narator": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-22T06:06:37+07:00"
+      "status": "kerja",
+      "aktivitas": "Tulis naskah dan adegan 5 item",
+      "t": "2026-11-22T06:08:19+07:00"
     },
     "copywriter": {
       "status": "idle",
@@ -53,6 +53,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-22T06:08:19+07:00",
+      "agen": "narator",
+      "pesan": "Tulis naskah dan adegan 5 item"
+    },
     {
       "t": "2026-11-22T06:08:17+07:00",
       "agen": "detektif",
@@ -347,13 +352,8 @@
       "t": "2026-11-21T06:08:36+07:00",
       "agen": "narator",
       "pesan": "Naskah 5 item siap"
-    },
-    {
-      "t": "2026-11-21T06:08:36+07:00",
-      "agen": "detektif",
-      "pesan": "5 lolos, 4 dibuang"
     }
   ],
-  "updated_at": "2026-11-22T06:08:18+07:00",
+  "updated_at": "2026-11-22T06:08:19+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
