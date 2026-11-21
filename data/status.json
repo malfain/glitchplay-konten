@@ -47,12 +47,27 @@
       "t": "2026-11-21T06:08:36+07:00"
     },
     "studio": {
-      "status": "kerja",
-      "aktivitas": "Render 1 video untuk 2026-11-21",
-      "t": "2026-11-21T09:10:04+07:00"
+      "status": "error",
+      "aktivitas": "0/1 video jadi, siap di Hasil",
+      "t": "2026-11-21T09:11:33+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-21T09:11:33+07:00",
+      "agen": "studio",
+      "pesan": "0/1 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-21T09:11:33+07:00",
+      "agen": "studio",
+      "pesan": "Video 2 gagal: kuota gambar gratis Cloudflare hari ini "
+    },
+    {
+      "t": "2026-11-21T09:10:07+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/1: 6 fakta seru jerapah: lidah ungu, "
+    },
     {
       "t": "2026-11-21T09:10:04+07:00",
       "agen": "studio",
@@ -337,23 +352,8 @@
       "t": "2026-11-20T06:08:51+07:00",
       "agen": "copywriter",
       "pesan": "Tulis caption 6 item"
-    },
-    {
-      "t": "2026-11-20T06:08:51+07:00",
-      "agen": "narator",
-      "pesan": "6 naskah selesai"
-    },
-    {
-      "t": "2026-11-20T06:07:55+07:00",
-      "agen": "narator",
-      "pesan": "Tulis naskah 6 item"
-    },
-    {
-      "t": "2026-11-20T06:07:53+07:00",
-      "agen": "detektif",
-      "pesan": "6 lolos, 0 dibuang (OpTic, MPL, PUBG dibuang: >48 jam)"
     }
   ],
-  "updated_at": "2026-11-21T09:10:04+07:00",
+  "updated_at": "2026-11-21T09:11:33+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
