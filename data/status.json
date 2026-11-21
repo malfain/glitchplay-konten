@@ -1,14 +1,14 @@
 {
   "run": {
-    "date": "2026-11-21",
-    "status": "selesai",
-    "started_at": "2026-11-21T06:05:59+07:00",
-    "finished_at": "2026-11-21T06:08:36+07:00"
+    "date": "2026-11-22",
+    "status": "berjalan",
+    "started_at": "2026-11-22T06:06:37+07:00",
+    "finished_at": null
   },
   "tasks": {
     "antri": 0,
     "jalan": 0,
-    "kelar": 2
+    "kelar": 0
   },
   "kesimpulan_bos": [
     "5 konten: IESF WEC di Indonesia, MLBB menang Esports Awards, FFWS Phase 2, nominasi Game Awards, Protect Our Games Act",
@@ -17,42 +17,52 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "[Anak] Shift selesai",
-      "t": "2026-11-22T05:10:20+07:00"
+      "status": "kerja",
+      "aktivitas": "Buka shift, bagi tugas ke tim",
+      "t": "2026-11-22T06:06:37+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 tema: penguin, pelangi",
-      "t": "2026-11-22T05:10:01+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-22T06:06:37+07:00"
     },
     "detektif": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 tema lolos (2+ sumber)",
-      "t": "2026-11-22T05:10:03+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-22T06:06:37+07:00"
     },
     "narator": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 naskah + adegan selesai",
-      "t": "2026-11-22T05:10:18+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-22T06:06:37+07:00"
     },
     "copywriter": {
-      "status": "selesai",
-      "aktivitas": "[Anak] Metadata YouTube selesai",
-      "t": "2026-11-22T05:10:20+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-22T06:06:37+07:00"
     },
     "qc": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 konten anak terbit",
-      "t": "2026-11-22T05:10:20+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-22T06:06:37+07:00"
     },
     "studio": {
-      "status": "selesai",
-      "aktivitas": "Semua video sudah jadi, siap di Hasil",
-      "t": "2026-11-21T19:33:32+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-22T06:06:37+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-22T06:06:37+07:00",
+      "agen": "bos",
+      "pesan": "Buka shift, bagi tugas ke tim"
+    },
+    {
+      "t": "2026-11-22T06:06:37+07:00",
+      "agen": "bos",
+      "pesan": "Shift pagi dimulai. Tim dikumpulkan."
+    },
     {
       "t": "2026-11-22T05:10:20+07:00",
       "agen": "bos",
@@ -342,18 +352,8 @@
       "t": "2026-11-21T06:08:36+07:00",
       "agen": "narator",
       "pesan": "Naskah 5 item siap"
-    },
-    {
-      "t": "2026-11-21T06:08:36+07:00",
-      "agen": "narator",
-      "pesan": "Tulis naskah 5 item"
-    },
-    {
-      "t": "2026-11-21T06:08:36+07:00",
-      "agen": "detektif",
-      "pesan": "5 lolos, 4 dibuang"
     }
   ],
-  "updated_at": "2026-11-22T05:10:20+07:00",
+  "updated_at": "2026-11-22T06:06:37+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
