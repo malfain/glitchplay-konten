@@ -984,11 +984,12 @@ def channel_clip(title, n, out_mp4, dur=10):
     """Automatic B-roll from a listed gamer's recent uploads: pick a recent video about the game, download only a short
     section with yt-dlp, return it muted and vertical. Returns the credit name."""
     import hashlib
+    ytdlp = str(Path(sys.executable).with_name("yt-dlp"))
     entries = channel_entries(title)
     if not entries:
-        raise RuntimeError(f"tidak ada channel untuk {title} di channels.txt")
+        v, credit = cc_search(title, n, ytdlp)
+        return _cut_clip(v, n, out_mp4, dur, ytdlp) and credit
     url, credit, only_game = entries[n % len(entries)]
-    ytdlp = str(Path(sys.executable).with_name("yt-dlp"))
     lst = None
     for src in ([url.rstrip("/") + "/videos", url] if "/@" in url or "/channel/" in url or "/c/" in url else [url]):
         lst = subprocess.run([ytdlp, "--flat-playlist", "-I", "1:20", "-J", src], capture_output=True, text=True, timeout=120)
@@ -1004,6 +1005,46 @@ def channel_clip(title, n, out_mp4, dur=10):
     if not about:
         raise RuntimeError("tidak ada video yang cocok di channel")
     v = about[(n // len(entries)) % len(about)]
+    return _cut_clip(v, n, out_mp4, dur, ytdlp) and credit
+
+
+_CC_CACHE = {}
+
+
+def cc_search(title, n, ytdlp):
+    """No channel listed: search YouTube for gameplay published under Creative Commons (reuse allowed with credit) and
+    double-check each video's license. Credit = the uploader's channel name."""
+    from urllib.parse import quote
+    if title not in _CC_CACHE:
+        found = []
+        url = f"https://www.youtube.com/results?search_query={quote(title + ' gameplay')}&sp=EgIwAQ%253D%253D"
+        lst = subprocess.run([ytdlp, "--flat-playlist", "-I", "1:15", "-J", url], capture_output=True, text=True, timeout=120)
+        words = [w for w in _title_words(title) if len(w) > 2]
+        cands = [e for e in (json.loads(lst.stdout).get("entries") or []) if lst.returncode == 0] if lst.stdout else []
+        for e in cands:
+            if not e.get("id") or not (90 <= (e.get("duration") or 0) <= 3 * 3600):
+                continue
+            if words and not any(w in (e.get("title") or "").lower() for w in words):
+                continue
+            meta = subprocess.run([ytdlp, "-J", "--skip-download", "--no-warnings", f"https://www.youtube.com/watch?v={e['id']}"],
+                                  capture_output=True, text=True, timeout=90)
+            if meta.returncode != 0:
+                continue
+            info = json.loads(meta.stdout)
+            if "creative commons" not in (info.get("license") or "").lower():
+                continue
+            found.append(({"id": e["id"], "duration": info.get("duration")}, info.get("channel") or info.get("uploader") or "YouTube"))
+            if len(found) >= 3:
+                break
+        _CC_CACHE[title] = found
+    found = _CC_CACHE[title]
+    if not found:
+        raise RuntimeError(f"tidak ada klip Creative Commons untuk {title}")
+    return found[n % len(found)]
+
+
+def _cut_clip(v, n, out_mp4, dur, ytdlp):
+    import hashlib
     length = v.get("duration") or 600
     start = int(min(max(60, length * 0.25) + 37 * n, max(0, length - dur - 5)))
     IMG_CACHE.mkdir(parents=True, exist_ok=True)
@@ -1022,7 +1063,7 @@ def channel_clip(title, n, out_mp4, dur=10):
              "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(cached)])
         got.unlink(missing_ok=True)
     shutil.copy(cached, out_mp4)
-    return credit
+    return True
 
 
 def steam_app(title):
@@ -1173,9 +1214,9 @@ def render_item_photo(item, idx, date, outdir, tmp):
                 continue
             except Exception as e:
                 print(f"[klip] {game}: {e}", file=sys.stderr)
-        if game and channel_entries(game) and (sc.get("trailer") or not steam_app_cached(game)):
+        if game and (sc.get("trailer") or not steam_app_cached(game)):
             vid = pub / f"{key}-{n + 1:02d}.mp4"
-            try:  # automatic gameplay from a gamer the user listed in channels.txt
+            try:  # automatic gameplay: a gamer listed in channels.txt, else a Creative Commons video found by search
                 c = channel_clip(game, game_count.get(game, 0), vid)
                 game_count[game] = game_count.get(game, 0) + 1
                 if c and c not in credits:
