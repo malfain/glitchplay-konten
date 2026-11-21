@@ -6,9 +6,9 @@
     "finished_at": "2026-11-21T06:08:36+07:00"
   },
   "tasks": {
-    "antri": 2,
+    "antri": 0,
     "jalan": 0,
-    "kelar": 0
+    "kelar": 2
   },
   "kesimpulan_bos": [
     "5 konten: IESF WEC di Indonesia, MLBB menang Esports Awards, FFWS Phase 2, nominasi Game Awards, Protect Our Games Act",
@@ -17,9 +17,9 @@
   ],
   "agents": {
     "bos": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Buka shift, bagi tugas ke tim",
-      "t": "2026-11-22T05:08:34+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] Shift selesai",
+      "t": "2026-11-22T05:10:20+07:00"
     },
     "radar": {
       "status": "selesai",
@@ -37,14 +37,14 @@
       "t": "2026-11-22T05:10:18+07:00"
     },
     "copywriter": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Judul, deskripsi, tags YouTube",
-      "t": "2026-11-22T05:10:18+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] Metadata YouTube selesai",
+      "t": "2026-11-22T05:10:20+07:00"
     },
     "qc": {
       "status": "selesai",
-      "aktivitas": "5 konten terbit di Hasil",
-      "t": "2026-11-21T06:08:36+07:00"
+      "aktivitas": "[Anak] 2 konten anak terbit",
+      "t": "2026-11-22T05:10:20+07:00"
     },
     "studio": {
       "status": "selesai",
@@ -53,6 +53,26 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-22T05:10:20+07:00",
+      "agen": "bos",
+      "pesan": "[Anak] Shift selesai"
+    },
+    {
+      "t": "2026-11-22T05:10:20+07:00",
+      "agen": "qc",
+      "pesan": "[Anak] 2 konten anak terbit"
+    },
+    {
+      "t": "2026-11-22T05:10:20+07:00",
+      "agen": "qc",
+      "pesan": "[Anak] Cek aturan & validasi JSON"
+    },
+    {
+      "t": "2026-11-22T05:10:20+07:00",
+      "agen": "copywriter",
+      "pesan": "[Anak] Metadata YouTube selesai"
+    },
     {
       "t": "2026-11-22T05:10:18+07:00",
       "agen": "copywriter",
@@ -332,28 +352,8 @@
       "t": "2026-11-21T06:08:36+07:00",
       "agen": "detektif",
       "pesan": "5 lolos, 4 dibuang"
-    },
-    {
-      "t": "2026-11-21T06:07:10+07:00",
-      "agen": "detektif",
-      "pesan": "Cek fakta tiap kandidat, min 2 sumber"
-    },
-    {
-      "t": "2026-11-21T06:07:10+07:00",
-      "agen": "radar",
-      "pesan": "9 kandidat ditemukan"
-    },
-    {
-      "t": "2026-11-21T06:05:59+07:00",
-      "agen": "bos",
-      "pesan": "Buka shift, bagi tugas ke tim"
-    },
-    {
-      "t": "2026-11-21T06:05:59+07:00",
-      "agen": "bos",
-      "pesan": "Shift pagi dimulai. Tim dikumpulkan."
     }
   ],
-  "updated_at": "2026-11-22T05:10:18+07:00",
+  "updated_at": "2026-11-22T05:10:20+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
