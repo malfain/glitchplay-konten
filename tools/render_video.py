@@ -879,6 +879,132 @@ def cf_image(prompt, out_jpg):
     shutil.copy(cached, out_jpg)
 
 
+def _get_json(url, headers=None):
+    import ssl
+    import urllib.request
+    try:
+        import certifi
+        ctx = ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        ctx = ssl.create_default_context()
+    req = urllib.request.Request(url, headers={"User-Agent": "GlitchPlayHQ/1.0", **(headers or {})})
+    with urllib.request.urlopen(req, timeout=60, context=ctx) as r:
+        return json.load(r) if "json" in (r.headers.get("Content-Type") or "json") else r.read()
+
+
+def _download(url, path):
+    import ssl
+    import urllib.request
+    try:
+        import certifi
+        ctx = ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        ctx = ssl.create_default_context()
+    req = urllib.request.Request(url, headers={"User-Agent": "GlitchPlayHQ/1.0"})
+    with urllib.request.urlopen(req, timeout=120, context=ctx) as r:
+        Path(path).write_bytes(r.read())
+
+
+def _norm_title(t):
+    return re.sub(r"[^a-z0-9]", "", t.lower().replace("&", "and"))
+
+
+def _title_words(t):
+    return re.findall(r"[a-z0-9]+", t.lower().replace("&", "and"))
+
+
+def _same_game(name, title):
+    """Exact title, or the title as whole leading words ('Monster Hunter Wilds: Deluxe' ok, 'GTA VI' != 'GTA Vice City')."""
+    if _norm_title(name) == _norm_title(title):
+        return True
+    n, t = _title_words(name), _title_words(title)
+    bad = {"soundtrack", "dlc", "pack", "decoration", "costume", "skin", "bundle", "demo", "artbook"}
+    return len(n) >= len(t) and n[:len(t)] == t and not bad & set(n[len(t):])
+
+
+def steam_app(title):
+    """Steam store data for a game (exact / whole-word title match) or None."""
+    from urllib.parse import quote
+    want = _norm_title(title)
+    items = _get_json(f"https://store.steampowered.com/api/storesearch/?term={quote(title)}&l=english&cc=ID").get("items", [])
+    best = next((i for i in items if _norm_title(i["name"]) == want), None) or next((i for i in items if _same_game(i["name"], title)), None)
+    if not best:
+        return None
+    return _get_json(f"https://store.steampowered.com/api/appdetails?appids={best['id']}&l=english")[str(best["id"])].get("data")
+
+
+def game_trailer(title, n, out_mp4, dur=12):
+    """A muted, vertical 1080x1920 cut of an official Steam trailer (HLS). n picks a different trailer/moment each time.
+    Muted on purpose: trailer music is what triggers copyright claims; our narration carries the sound."""
+    import hashlib
+    IMG_CACHE.mkdir(parents=True, exist_ok=True)
+    cached = IMG_CACHE / ("t2" + hashlib.sha1(f"{title}|{n}|{dur}".encode()).hexdigest()[:14] + ".mp4")
+    if not cached.exists():
+        d = steam_app(title) or {}
+        movies = [m for m in d.get("movies", []) if m.get("hls_h264")]
+        if not movies:
+            raise RuntimeError(f"trailer '{title}' tidak ditemukan")
+        # gameplay trailers first (fewer title cards), then the rest
+        movies.sort(key=lambda m: 0 if "gameplay" in (m.get("name") or "").lower() else 1)
+        mv = movies[n % len(movies)]
+        start = 18 + 16 * (n // len(movies))  # past publisher logos / opening title cards
+        # whole 16:9 frame centred over a blurred, zoomed copy of itself, so on-screen text in the trailer is never cut
+        vf = ("split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=24:2,eq=brightness=-0.12[bg];"
+              "[b]scale=1080:-2:flags=lanczos[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,fps=30")
+        run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-ss", str(start), "-i", mv["hls_h264"], "-t", str(dur), "-an",
+             "-vf", vf,
+             "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(cached)])
+    shutil.copy(cached, out_mp4)
+
+
+def game_screens(title):
+    """Official screenshot URLs for a game: Steam store first (no key), then RAWG (free key in ~/.glitchplay/rawg_key)."""
+    from urllib.parse import quote
+    want = _norm_title(title)
+    try:
+        items = _get_json(f"https://store.steampowered.com/api/storesearch/?term={quote(title)}&l=english&cc=ID").get("items", [])
+        best = next((i for i in items if _norm_title(i["name"]) == want), None) or \
+            next((i for i in items if _same_game(i["name"], title)), None)
+        if best:
+            d = _get_json(f"https://store.steampowered.com/api/appdetails?appids={best['id']}&l=english")[str(best["id"])].get("data", {})
+            shots = [x["path_full"] for x in d.get("screenshots", [])]
+            if shots:
+                return shots, "Steam"
+    except Exception as e:  # network hiccup: try the next source
+        print(f"steam: {e}", file=sys.stderr)
+    keyf = CF_DIR / "rawg_key"
+    if keyf.exists():
+        key = keyf.read_text().strip()
+        try:
+            res = _get_json(f"https://api.rawg.io/api/games?search={quote(title)}&page_size=5&key={key}").get("results", [])
+            g = next((r for r in res if _norm_title(r["name"]) == want), None) or next((r for r in res if _same_game(r["name"], title)), None)
+            if g:
+                ss = _get_json(f"https://api.rawg.io/api/games/{g['id']}/screenshots?key={key}").get("results", [])
+                shots = [x["image"] for x in ss] or ([g["background_image"]] if g.get("background_image") else [])
+                if shots:
+                    return shots, "RAWG"
+        except Exception as e:
+            print(f"rawg: {e}", file=sys.stderr)
+    return [], None
+
+
+def game_image(title, n, out_jpg):
+    """n-th official screenshot of `title`, cropped to a 1080x1920 cover. Raises if the game has no screenshots."""
+    import hashlib
+    IMG_CACHE.mkdir(parents=True, exist_ok=True)
+    cached = IMG_CACHE / ("g" + hashlib.sha1(f"{title}|{n}".encode()).hexdigest()[:15] + ".jpg")
+    if not cached.exists():
+        shots, src = game_screens(title)
+        if not shots:
+            raise RuntimeError(f"screenshot '{title}' tidak ditemukan")
+        raw = cached.with_suffix(".raw")
+        _download(shots[n % len(shots)], raw)
+        run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(raw),
+             "-vf", "scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920", "-q:v", "3", str(cached)])
+        raw.unlink()
+    shutil.copy(cached, out_jpg)
+
+
 def word_timings(subs, spans):
     """Spread each sentence's words over its spoken span (weighted by length) and group them into 2-3 word chunks."""
     words, chunk = [], 0
@@ -915,9 +1041,33 @@ def render_item_photo(item, idx, date, outdir, tmp):
     key = f"photo-{date}-{idx + 1:02d}"
 
     # photos first: if the free image quota is gone we fail before spending a voice (TTS) request
-    imgs = []
+    imgs, games_used, game_count = [], [], {}
     for n, sc in enumerate(scenes_in):
         img = pub / f"{key}-{n + 1:02d}.jpg"
+        game = (sc.get("game") or "").strip()
+        if game and sc.get("trailer"):
+            vid = pub / f"{key}-{n + 1:02d}.mp4"
+            try:  # muted cut of the official Steam trailer
+                game_trailer(game, game_count.get(game, 0), vid)
+                game_count[game] = game_count.get(game, 0) + 1
+                if game not in games_used:
+                    games_used.append(game)
+                imgs.append(vid)
+                continue
+            except Exception as e:
+                print(f"[trailer] {game}: {e}; pakai screenshot/foto", file=sys.stderr)
+        if game:
+            try:  # official screenshot of the game in the news (different shot each time the game repeats)
+                game_image(game, game_count.get(game, 0), img)
+                game_count[game] = game_count.get(game, 0) + 1
+                if game not in games_used:
+                    games_used.append(game)
+                imgs.append(img)
+                continue
+            except Exception as e:
+                print(f"[gambar] {game}: {e}; pakai foto AI", file=sys.stderr)
+        if not sc.get("prompt"):
+            raise RuntimeError(f"adegan {n + 1} tidak punya game yang ketemu maupun prompt")
         cf_image(sc["prompt"], img)
         imgs.append(img)
 
@@ -952,11 +1102,14 @@ def render_item_photo(item, idx, date, outdir, tmp):
         s0 = 0.0 if n == 0 else starts[k]
         s1 = starts[nxt] if nxt is not None and nxt < len(starts) else total
         img = imgs[n]
-        scenes.append({"src": f"_render/{img.name}", "start": round(s0, 3), "end": round(max(s1, s0 + 1), 3)})
+        scenes.append({"src": f"_render/{img.name}", "start": round(s0, 3), "end": round(max(s1, s0 + 1), 3),
+                       "video": img.suffix == ".mp4"})
 
     shutil.copy(ROOT / "assets/profile.jpg", REMOTION / "public/profile.jpg")
     props = {"theme": CH["theme"], "handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
-             "label": "Gambar dibuat dengan AI", "scenes": scenes, "words": words}
+             "label": ("Gambar: " + ", ".join(games_used)) if games_used and len(games_used) == len({s.get("game") for s in scenes_in if s.get("game")}) and all(s.get("game") for s in scenes_in)
+             else ("Gambar: " + ", ".join(games_used) + " · sebagian AI") if games_used else "Gambar dibuat dengan AI",
+             "scenes": scenes, "words": words}
     pfile = tmp / "props.json"
     pfile.write_text(json.dumps(props, ensure_ascii=False), encoding="utf-8")
 
@@ -975,7 +1128,7 @@ def render_item_photo(item, idx, date, outdir, tmp):
              "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", str(mp4)])
     finally:
         audio.unlink(missing_ok=True)
-        for f in pub.glob(f"{key}-*.jpg"):
+        for f in list(pub.glob(f"{key}-*.jpg")) + list(pub.glob(f"{key}-*.mp4")):
             f.unlink()
     poster = outdir / f"{name}.jpg"
     run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-ss", "1.5", "-i", str(mp4), "-frames:v", "1", "-vf", "scale=540:-1", str(poster)])

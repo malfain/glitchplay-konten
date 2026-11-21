@@ -122,7 +122,13 @@ dengan channel YouTube), urut:
 
 - `kalimat` = indeks (mulai 0) kalimat di `naskah_vo` tempat foto mulai; adegan
   pertama `0`, angkanya naik, sebar merata.
-- `prompt` bahasa **Inggris**, 1 kalimat, foto nyata yang **menggambarkan suasana
+- Kalau beritanya tentang **game tertentu**, isi `"game"` dengan **judul resmi
+  bahasa Inggris persis seperti di Steam** (mis. `"Monster Hunter Wilds"`,
+  `"Hela: of Mice & Magic"`). Mac otomatis memakai **screenshot resmi**; tambah
+  `"trailer": true` di 1–2 adegan untuk **cuplikan trailer resmi** (tanpa suara).
+  Game yang tidak ada di Steam (mobile/konsol eksklusif) otomatis memakai `prompt`.
+  Hindari `"trailer": true` untuk game horor/berdarah (pakai screenshot saja).
+- `prompt` tetap **wajib diisi** di setiap adegan sebagai cadangan: bahasa **Inggris**, 1 kalimat, foto nyata yang **menggambarkan suasana
   berita** (gamer, PC/HP/konsol generik, arena esports, piala, kerumunan fans,
   kota Jakarta malam, ruang streamer, dll.).
 - **Dilarang**: logo/nama game/merek, karakter atau cuplikan game asli, wajah atau
@@ -160,7 +166,7 @@ Item yang gagal diperbaiki dulu, bukan diterbitkan apa adanya.
       "naskah_vo": ["kalimat 1 ejaan TTS", "kalimat 2"],
       "subtitle": ["kalimat 1 ejaan normal", "kalimat 2"],
       "teks_layar": [{"t": "0:00", "teks": "TEKS KARTU", "visual": "saran visual/clip"}],
-      "adegan": [{"kalimat": 0, "prompt": "English photo prompt, generic gaming scene"}],
+      "adegan": [{"kalimat": 0, "game": "Judul Resmi di Steam (opsional)", "trailer": true, "prompt": "English photo prompt, generic gaming scene"}],
       "caption": "caption lengkap",
       "hashtags": ["#a", "#b", "#c"],
       "sumber": [{"nama": "Nama situs", "url": "https://..."}]

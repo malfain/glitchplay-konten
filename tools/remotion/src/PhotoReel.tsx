@@ -1,4 +1,4 @@
-import { Audio } from "@remotion/media";
+import { Audio, Video } from "@remotion/media";
 import { AbsoluteFill, Easing, Img, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { z } from "zod";
 import { F, applyTheme } from "./theme";
@@ -12,7 +12,7 @@ export const photoReelSchema = z.object({
   audio: z.string().nullable().optional(),
   avatar: z.string().nullable().optional(),
   total: z.number(),
-  scenes: z.array(z.object({ src: z.string(), start: z.number(), end: z.number() })),
+  scenes: z.array(z.object({ src: z.string(), start: z.number(), end: z.number(), video: z.boolean().optional() })),
   words: z.array(z.object({ text: z.string(), start: z.number(), end: z.number(), chunk: z.number() })),
   label: z.string().optional(),
 });
@@ -38,7 +38,7 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
           from={Math.round(s.start * fps)}
           durationInFrames={Math.max(1, Math.round((s.end - s.start + (i < scenes.length - 1 ? FADE : 0)) * fps))}
         >
-          <KenBurns src={s.src} index={i} dur={s.end - s.start + FADE} fadeIn={i > 0} />
+          <KenBurns src={s.src} index={i} dur={s.end - s.start + FADE} fadeIn={i > 0} video={!!s.video} />
         </Sequence>
       ))}
       {/* legibility: soft dark band behind the captions, vignette at the bottom */}
@@ -53,7 +53,8 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
   );
 };
 
-const KenBurns: React.FC<{ src: string; index: number; dur: number; fadeIn: boolean }> = ({ src, index, dur, fadeIn }) => {
+// Photos get a slow Ken Burns move; trailer clips play muted (looped if the scene outlasts the clip) with a gentle push-in.
+const KenBurns: React.FC<{ src: string; index: number; dur: number; fadeIn: boolean; video: boolean }> = ({ src, index, dur, fadeIn, video }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const dirs = [[-40, -20], [40, -30], [-30, 30], [30, 20]];
@@ -61,6 +62,14 @@ const KenBurns: React.FC<{ src: string; index: number; dur: number; fadeIn: bool
   const zoomIn = index % 2 === 0;
   return (
     <AbsoluteFill style={{ opacity: fadeIn ? interpolate(frame, [0, FADE * fps], [0, 1], clamp) : 1 }}>
+      {video ? (
+        <Video
+          src={staticFile(src)}
+          muted
+          loop
+          style={{ width: "100%", height: "100%", objectFit: "cover", scale: String(interpolate(frame, [0, dur * fps], [1.0, 1.08], clamp)) }}
+        />
+      ) : (
       <Img
         src={staticFile(src)}
         style={{
@@ -69,6 +78,7 @@ const KenBurns: React.FC<{ src: string; index: number; dur: number; fadeIn: bool
           translate: `${interpolate(frame, [0, dur * fps], [0, dx], clamp)}px ${interpolate(frame, [0, dur * fps], [0, dy], clamp)}px`,
         }}
       />
+      )}
     </AbsoluteFill>
   );
 };

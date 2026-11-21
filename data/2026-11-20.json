@@ -552,10 +552,45 @@
         "Dompet aman, waktu tidur yang jadi korban!",
         "Follow biar nggak ketinggalan daftar Game Pass berikutnya."
       ],
-      "video": "video/2026-11-20/11-game-pass-arkheron-the-outlast-trials-da.mp4",
-      "poster": "video/2026-11-20/11-game-pass-arkheron-the-outlast-trials-da.jpg",
-      "video_durasi": 27.7,
-      "video_suara": "gemini-3.8-flash-lite-tts/Fenrir"
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Arkheron",
+          "trailer": true,
+          "prompt": "A gamer celebrating in front of a glowing gaming PC, neon lights"
+        },
+        {
+          "kalimat": 2,
+          "game": "Arkheron",
+          "prompt": "A mysterious dark tower in a fantasy world, cinematic"
+        },
+        {
+          "kalimat": 3,
+          "game": "The Outlast Trials",
+          "prompt": "A dim abandoned facility corridor, eerie lighting"
+        },
+        {
+          "kalimat": 4,
+          "game": "Hela: of Mice & Magic",
+          "trailer": true,
+          "prompt": "A tiny mouse adventurer in a magical forest, cinematic"
+        },
+        {
+          "kalimat": 6,
+          "game": "Hela: of Mice & Magic",
+          "prompt": "A cozy fantasy village at golden hour"
+        },
+        {
+          "kalimat": 7,
+          "game": "Arkheron",
+          "trailer": true,
+          "prompt": "A gamer yawning late at night in front of a bright monitor"
+        }
+      ],
+      "video": "video/2026-11-20/06-game-pass-arkheron-the-outlast-trials-da.mp4",
+      "poster": "video/2026-11-20/06-game-pass-arkheron-the-outlast-trials-da.jpg",
+      "video_durasi": 28.5,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     }
   ]
 }
