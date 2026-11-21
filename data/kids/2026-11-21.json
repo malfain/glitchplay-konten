@@ -613,7 +613,11 @@
           "kalimat": 28,
           "prompt": "Three giraffes walking together across the savanna at sunset, silhouettes, beautiful golden sky"
         }
-      ]
+      ],
+      "video": "video/kids/2026-11-21/02-6-fakta-seru-jerapah-lidah-ungu-7-tulang.mp4",
+      "poster": "video/kids/2026-11-21/02-6-fakta-seru-jerapah-lidah-ungu-7-tulang.jpg",
+      "video_durasi": 115.0,
+      "video_suara": "gemini-3.8-flash-tts/Leda"
     }
   ]
 }

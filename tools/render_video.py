@@ -913,6 +913,13 @@ def render_item_photo(item, idx, date, outdir, tmp):
     pub.mkdir(parents=True, exist_ok=True)
     key = f"photo-{date}-{idx + 1:02d}"
 
+    # photos first: if the free image quota is gone we fail before spending a voice (TTS) request
+    imgs = []
+    for n, sc in enumerate(scenes_in):
+        img = pub / f"{key}-{n + 1:02d}.jpg"
+        cf_image(sc["prompt"], img)
+        imgs.append(img)
+
     spans = None
     if TTS == "gemini" and gemini_tts(" ".join(sents), tmp / "gemini.wav"):
         run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(tmp / "gemini.wav"), "-b:a", "192k", str(tmp / "script.mp3")])
@@ -943,8 +950,7 @@ def render_item_photo(item, idx, date, outdir, tmp):
         nxt = int(scenes_in[n + 1].get("kalimat", len(spans))) if n + 1 < len(scenes_in) else None
         s0 = 0.0 if n == 0 else starts[k]
         s1 = starts[nxt] if nxt is not None and nxt < len(starts) else total
-        img = pub / f"{key}-{n + 1:02d}.jpg"
-        cf_image(sc["prompt"], img)
+        img = imgs[n]
         scenes.append({"src": f"_render/{img.name}", "start": round(s0, 3), "end": round(max(s1, s0 + 1), 3)})
 
     shutil.copy(ROOT / "assets/profile.jpg", REMOTION / "public/profile.jpg")
