@@ -47,12 +47,17 @@
       "t": "2026-11-21T06:08:36+07:00"
     },
     "studio": {
-      "status": "error",
-      "aktivitas": "0/1 video jadi, siap di Hasil",
-      "t": "2026-11-21T08:13:24+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 1 video untuk 2026-11-21",
+      "t": "2026-11-21T09:10:04+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-21T09:10:04+07:00",
+      "agen": "studio",
+      "pesan": "Render 1 video untuk 2026-11-21"
+    },
     {
       "t": "2026-11-21T08:13:24+07:00",
       "agen": "studio",
@@ -347,13 +352,8 @@
       "t": "2026-11-20T06:07:53+07:00",
       "agen": "detektif",
       "pesan": "6 lolos, 0 dibuang (OpTic, MPL, PUBG dibuang: >48 jam)"
-    },
-    {
-      "t": "2026-11-20T06:07:51+07:00",
-      "agen": "detektif",
-      "pesan": "Cek fakta tiap kandidat"
     }
   ],
-  "updated_at": "2026-11-21T08:13:24+07:00",
+  "updated_at": "2026-11-21T09:10:04+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
