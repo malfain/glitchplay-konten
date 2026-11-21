@@ -922,6 +922,45 @@ def _same_game(name, title):
     return len(n) >= len(t) and n[:len(t)] == t and not bad & set(n[len(t):])
 
 
+FOOTAGE = Path(os.environ.get("GP_FOOTAGE", str(Path.home() / "GlitchPlay-Footage")))
+VIDEO_EXT = (".mp4", ".mov", ".m4v", ".mkv", ".webm")
+
+
+def footage_dir(title):
+    """User-supplied gameplay clips: ~/GlitchPlay-Footage/<game>/ (folder name or a line in alias.txt matches the title)."""
+    if not FOOTAGE.is_dir():
+        return None
+    want = _norm_title(title)
+    for d in FOOTAGE.iterdir():
+        if not d.is_dir():
+            continue
+        names = [d.name] + ((d / "alias.txt").read_text(encoding="utf-8").splitlines() if (d / "alias.txt").exists() else [])
+        if any(_norm_title(x) == want or (_norm_title(x) and _same_game(title, x)) for x in names if x.strip()):
+            if any(f.suffix.lower() in VIDEO_EXT for f in d.iterdir()):
+                return d
+    return None
+
+
+def footage_clip(title, n, out_mp4, dur=10):
+    """Muted vertical cut from the user's own gameplay clips for this game. Returns the credit text (kredit.txt) or ''."""
+    d = footage_dir(title)
+    if not d:
+        raise RuntimeError(f"tidak ada klip di {FOOTAGE}/{title}")
+    clips = sorted(f for f in d.iterdir() if f.suffix.lower() in VIDEO_EXT)
+    clip = clips[n % len(clips)]
+    r = subprocess.run([FFMPEG, "-hide_banner", "-i", str(clip)], capture_output=True, text=True)
+    m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", r.stderr)
+    length = int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3)) if m else dur
+    span = max(0.0, length - dur)
+    start = (span * ((n * 0.37) % 1)) if span > 0 else 0.0  # spread picks across the clip
+    vf = ("split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=24:2,eq=brightness=-0.12[bg];"
+          "[b]scale=1080:1920:force_original_aspect_ratio=decrease:flags=lanczos[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,fps=30")
+    run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-ss", f"{start:.2f}", "-i", str(clip), "-t", str(dur), "-an", "-vf", vf,
+         "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(out_mp4)])
+    kf = d / "kredit.txt"
+    return kf.read_text(encoding="utf-8").strip() if kf.exists() else ""
+
+
 def steam_app(title):
     """Steam store data for a game (exact / whole-word title match) or None."""
     from urllib.parse import quote
@@ -1041,10 +1080,23 @@ def render_item_photo(item, idx, date, outdir, tmp):
     key = f"photo-{date}-{idx + 1:02d}"
 
     # photos first: if the free image quota is gone we fail before spending a voice (TTS) request
-    imgs, games_used, game_count = [], [], {}
+    imgs, games_used, game_count, credits = [], [], {}, []
     for n, sc in enumerate(scenes_in):
         img = pub / f"{key}-{n + 1:02d}.jpg"
         game = (sc.get("game") or "").strip()
+        if game and footage_dir(game):
+            vid = pub / f"{key}-{n + 1:02d}.mp4"
+            try:  # the user's own / permitted gameplay clips beat everything else
+                c = footage_clip(game, game_count.get(game, 0), vid)
+                game_count[game] = game_count.get(game, 0) + 1
+                if c and c not in credits:
+                    credits.append(c)
+                if game not in games_used:
+                    games_used.append(game)
+                imgs.append(vid)
+                continue
+            except Exception as e:
+                print(f"[klip] {game}: {e}", file=sys.stderr)
         if game and sc.get("trailer"):
             vid = pub / f"{key}-{n + 1:02d}.mp4"
             try:  # muted cut of the official Steam trailer
@@ -1106,9 +1158,11 @@ def render_item_photo(item, idx, date, outdir, tmp):
                        "video": img.suffix == ".mp4"})
 
     shutil.copy(ROOT / "assets/profile.jpg", REMOTION / "public/profile.jpg")
+    label = (("Gambar: " + ", ".join(games_used)) if games_used else "Gambar dibuat dengan AI")
+    if credits:
+        label = "Klip: " + ", ".join(credits) + " · " + label
     props = {"theme": CH["theme"], "handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
-             "label": ("Gambar: " + ", ".join(games_used)) if games_used and len(games_used) == len({s.get("game") for s in scenes_in if s.get("game")}) and all(s.get("game") for s in scenes_in)
-             else ("Gambar: " + ", ".join(games_used) + " · sebagian AI") if games_used else "Gambar dibuat dengan AI",
+             "label": label,
              "scenes": scenes, "words": words}
     pfile = tmp / "props.json"
     pfile.write_text(json.dumps(props, ensure_ascii=False), encoding="utf-8")

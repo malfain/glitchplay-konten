@@ -126,7 +126,10 @@ dengan channel YouTube), urut:
   bahasa Inggris persis seperti di Steam** (mis. `"Monster Hunter Wilds"`,
   `"Hela: of Mice & Magic"`). Mac otomatis memakai **screenshot resmi**; tambah
   `"trailer": true` di 1–2 adegan untuk **cuplikan trailer resmi** (tanpa suara).
-  Game yang tidak ada di Steam (mobile/konsol eksklusif) otomatis memakai `prompt`.
+  Game mobile/konsol tetap tulis `"game"` dengan nama baku (`"Mobile Legends: Bang
+  Bang"`, `"Free Fire"`, `"PUBG Mobile"`, `"Grand Theft Auto VI"`): kalau user
+  punya klip gameplay di Mac (`~/GlitchPlay-Footage/<game>/`), klip itu dipakai
+  otomatis dengan kredit; kalau tidak ada, otomatis memakai `prompt`.
   Hindari `"trailer": true` untuk game horor/berdarah (pakai screenshot saja).
 - `prompt` tetap **wajib diisi** di setiap adegan sebagai cadangan: bahasa **Inggris**, 1 kalimat, foto nyata yang **menggambarkan suasana
   berita** (gamer, PC/HP/konsol generik, arena esports, piala, kerumunan fans,
