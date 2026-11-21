@@ -849,7 +849,7 @@ def cf_image(prompt, out_jpg):
             ctx = ssl.create_default_context()
         req = urllib.request.Request(
             f"https://api.cloudflare.com/client/v4/accounts/{acct}/ai/run/@cf/black-forest-labs/flux-1-schnell",
-            data=json.dumps({"prompt": full[:2000], "steps": 8}).encode(),
+            data=json.dumps({"prompt": full[:2000], "steps": 4}).encode(),  # schnell is built for 4 steps; 8 doubles the neuron cost
             headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"})
         import time
         import urllib.error
@@ -1050,7 +1050,14 @@ def main():
             fn = {"remotion": render_item_remotion, "photo": render_item_photo, "anim": render_item_anim, "glitch": render_item}[a.style]
             if a.style == "photo" and not it.get("adegan"):
                 fn = render_item_remotion  # older kids items without photo prompts keep the animated style
-            mp4, poster, dur = fn(it, i, a.date, outdir, tmp_root / f"{a.date}-{i}")
+            try:
+                mp4, poster, dur = fn(it, i, a.date, outdir, tmp_root / f"{a.date}-{i}")
+            except RuntimeError as e:
+                if fn is not render_item_photo or "kuota gambar" not in str(e):
+                    raise
+                # free image quota used up: never leave the day without a video, fall back to the animated style
+                print(f"[{i + 1}] {e} → pakai gaya animasi", file=sys.stderr)
+                mp4, poster, dur = render_item_remotion(it, i, a.date, outdir, tmp_root / f"{a.date}-{i}-anim")
         except Exception as e:  # keep going with the other items
             print(f"[{i + 1}] gagal: {e}", file=sys.stderr)
             if not a.no_status:
