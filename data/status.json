@@ -17,14 +17,14 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "Shift selesai",
-      "t": "2026-11-21T06:08:36+07:00"
+      "status": "kerja",
+      "aktivitas": "[Anak] Buka shift, bagi tugas ke tim",
+      "t": "2026-11-22T05:08:34+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "9 kandidat ditemukan",
-      "t": "2026-11-21T06:07:10+07:00"
+      "status": "kerja",
+      "aktivitas": "[Anak] Cari tema: penguin & pelangi",
+      "t": "2026-11-22T05:08:34+07:00"
     },
     "detektif": {
       "status": "selesai",
@@ -53,6 +53,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-22T05:08:34+07:00",
+      "agen": "radar",
+      "pesan": "[Anak] Cari tema: penguin & pelangi"
+    },
+    {
+      "t": "2026-11-22T05:08:34+07:00",
+      "agen": "bos",
+      "pesan": "[Anak] Buka shift, bagi tugas ke tim"
+    },
     {
       "t": "2026-11-21T19:33:32+07:00",
       "agen": "studio",
@@ -342,18 +352,8 @@
       "t": "2026-11-21T05:10:25+07:00",
       "agen": "radar",
       "pesan": "[Anak] 2 tema: Bulan, jerapah"
-    },
-    {
-      "t": "2026-11-21T05:08:50+07:00",
-      "agen": "radar",
-      "pesan": "[Anak] Cari tema: Bulan & jerapah"
-    },
-    {
-      "t": "2026-11-21T05:08:50+07:00",
-      "agen": "bos",
-      "pesan": "[Anak] Buka shift anak, bagi tugas"
     }
   ],
-  "updated_at": "2026-11-21T19:33:32+07:00",
+  "updated_at": "2026-11-22T05:08:34+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
