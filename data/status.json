@@ -47,12 +47,27 @@
       "t": "2026-11-21T06:08:36+07:00"
     },
     "studio": {
-      "status": "kerja",
-      "aktivitas": "Render 1 video untuk 2026-11-21",
-      "t": "2026-11-21T10:10:05+07:00"
+      "status": "error",
+      "aktivitas": "0/1 video jadi, siap di Hasil",
+      "t": "2026-11-21T10:11:51+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-21T10:11:51+07:00",
+      "agen": "studio",
+      "pesan": "0/1 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-21T10:11:50+07:00",
+      "agen": "studio",
+      "pesan": "Video 2 gagal: kuota gambar gratis Cloudflare hari ini "
+    },
+    {
+      "t": "2026-11-21T10:10:08+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/1: 6 fakta seru jerapah: lidah ungu, "
+    },
     {
       "t": "2026-11-21T10:10:05+07:00",
       "agen": "studio",
@@ -337,23 +352,8 @@
       "t": "2026-11-20T06:08:54+07:00",
       "agen": "bos",
       "pesan": "Shift selesai"
-    },
-    {
-      "t": "2026-11-20T06:08:54+07:00",
-      "agen": "qc",
-      "pesan": "6 konten terbit di Hasil"
-    },
-    {
-      "t": "2026-11-20T06:08:52+07:00",
-      "agen": "qc",
-      "pesan": "Cek aturan, validasi JSON"
-    },
-    {
-      "t": "2026-11-20T06:08:52+07:00",
-      "agen": "copywriter",
-      "pesan": "6 caption selesai"
     }
   ],
-  "updated_at": "2026-11-21T10:10:05+07:00",
+  "updated_at": "2026-11-21T10:11:51+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
