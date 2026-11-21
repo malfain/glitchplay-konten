@@ -6,7 +6,7 @@
     "finished_at": null
   },
   "tasks": {
-    "antri": 0,
+    "antri": 7,
     "jalan": 0,
     "kelar": 0
   },
@@ -22,9 +22,9 @@
       "t": "2026-11-22T06:06:37+07:00"
     },
     "radar": {
-      "status": "kerja",
-      "aktivitas": "Cari berita MLBB, esports, rilis game",
-      "t": "2026-11-22T06:06:50+07:00"
+      "status": "selesai",
+      "aktivitas": "7 kandidat ditemukan",
+      "t": "2026-11-22T06:08:14+07:00"
     },
     "detektif": {
       "status": "idle",
@@ -53,6 +53,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-22T06:08:14+07:00",
+      "agen": "radar",
+      "pesan": "7 kandidat ditemukan"
+    },
     {
       "t": "2026-11-22T06:06:50+07:00",
       "agen": "radar",
@@ -347,13 +352,8 @@
       "t": "2026-11-21T06:08:36+07:00",
       "agen": "copywriter",
       "pesan": "Caption siap"
-    },
-    {
-      "t": "2026-11-21T06:08:36+07:00",
-      "agen": "copywriter",
-      "pesan": "Tulis caption"
     }
   ],
-  "updated_at": "2026-11-22T06:06:50+07:00",
+  "updated_at": "2026-11-22T06:08:14+07:00",
   "kesimpulan_t": "2026-11-21T06:08:36+07:00"
 }
