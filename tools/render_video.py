@@ -961,6 +961,70 @@ def footage_clip(title, n, out_mp4, dur=10):
     return kf.read_text(encoding="utf-8").strip() if kf.exists() else ""
 
 
+def channel_entries(title):
+    """Lines of ~/GlitchPlay-Footage/channels.txt for this game: 'Game | channel URL | credit name'.
+    Only channels the user listed (gamers who allow clipping) are ever used."""
+    f = FOOTAGE / "channels.txt"
+    if not f.exists():
+        return []
+    out = []
+    for line in f.read_text(encoding="utf-8").splitlines():
+        if not line.strip() or line.lstrip().startswith("#") or line.count("|") < 1:
+            continue
+        parts = [x.strip() for x in line.split("|")]
+        game, url = parts[0], parts[1]
+        credit = parts[2] if len(parts) > 2 and parts[2] else url.rstrip("/").split("/")[-1]
+        games = [g.strip() for g in game.split(",")]
+        if url.startswith("http") and any(_norm_title(g) == _norm_title(title) or _same_game(title, g) or _same_game(g, title) for g in games):
+            out.append((url, credit, len(games) == 1))
+    return out
+
+
+def channel_clip(title, n, out_mp4, dur=10):
+    """Automatic B-roll from a listed gamer's recent uploads: pick a recent video about the game, download only a short
+    section with yt-dlp, return it muted and vertical. Returns the credit name."""
+    import hashlib
+    entries = channel_entries(title)
+    if not entries:
+        raise RuntimeError(f"tidak ada channel untuk {title} di channels.txt")
+    url, credit, only_game = entries[n % len(entries)]
+    ytdlp = str(Path(sys.executable).with_name("yt-dlp"))
+    lst = None
+    for src in ([url.rstrip("/") + "/videos", url] if "/@" in url or "/channel/" in url or "/c/" in url else [url]):
+        lst = subprocess.run([ytdlp, "--flat-playlist", "-I", "1:20", "-J", src], capture_output=True, text=True, timeout=120)
+        if lst.returncode == 0:
+            break
+    if lst.returncode != 0:
+        raise RuntimeError("yt-dlp gagal membaca channel: " + lst.stderr[-200:])
+    vids = [e for e in (json.loads(lst.stdout).get("entries") or []) if e.get("id") and (e.get("duration") or 0) >= 120]
+    words = [w for w in _title_words(title) if len(w) > 2]
+    about = [e for e in vids if any(w in (e.get("title") or "").lower() for w in words)]
+    if not about and only_game:  # a channel listed for just this game: any recent upload is about it
+        about = vids
+    if not about:
+        raise RuntimeError("tidak ada video yang cocok di channel")
+    v = about[(n // len(entries)) % len(about)]
+    length = v.get("duration") or 600
+    start = int(min(max(60, length * 0.25) + 37 * n, max(0, length - dur - 5)))
+    IMG_CACHE.mkdir(parents=True, exist_ok=True)
+    cached = IMG_CACHE / ("c" + hashlib.sha1(f"{v['id']}|{start}|{dur}".encode()).hexdigest()[:15] + ".mp4")
+    if not cached.exists():
+        raw = IMG_CACHE / f"_dl_{v['id']}_{start}.mp4"
+        r = subprocess.run([ytdlp, "-q", "--no-warnings", "-f", "bv*[height<=720][ext=mp4]/bv*[height<=720]/b[height<=720]",
+                            "--download-sections", f"*{start}-{start + dur + 1}", "--ffmpeg-location", str(Path(FFMPEG).parent),
+                            "-o", str(raw), f"https://www.youtube.com/watch?v={v['id']}"], capture_output=True, text=True, timeout=300)
+        got = next(iter(IMG_CACHE.glob(f"_dl_{v['id']}_{start}*")), None)
+        if r.returncode != 0 or not got:
+            raise RuntimeError("yt-dlp gagal mengunduh potongan: " + r.stderr[-200:])
+        vf = ("split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=24:2,eq=brightness=-0.12[bg];"
+              "[b]scale=1080:1920:force_original_aspect_ratio=decrease:flags=lanczos[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,fps=30")
+        run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(got), "-t", str(dur), "-an", "-vf", vf,
+             "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(cached)])
+        got.unlink(missing_ok=True)
+    shutil.copy(cached, out_mp4)
+    return credit
+
+
 def steam_app(title):
     """Steam store data for a game (exact / whole-word title match) or None."""
     from urllib.parse import quote
@@ -994,6 +1058,18 @@ def game_trailer(title, n, out_mp4, dur=12):
              "-vf", vf,
              "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(cached)])
     shutil.copy(cached, out_mp4)
+
+
+_STEAM_CACHE = {}
+
+
+def steam_app_cached(title):
+    if title not in _STEAM_CACHE:
+        try:
+            _STEAM_CACHE[title] = steam_app(title)
+        except Exception:
+            _STEAM_CACHE[title] = None
+    return _STEAM_CACHE[title]
 
 
 def game_screens(title):
@@ -1097,6 +1173,19 @@ def render_item_photo(item, idx, date, outdir, tmp):
                 continue
             except Exception as e:
                 print(f"[klip] {game}: {e}", file=sys.stderr)
+        if game and channel_entries(game) and (sc.get("trailer") or not steam_app_cached(game)):
+            vid = pub / f"{key}-{n + 1:02d}.mp4"
+            try:  # automatic gameplay from a gamer the user listed in channels.txt
+                c = channel_clip(game, game_count.get(game, 0), vid)
+                game_count[game] = game_count.get(game, 0) + 1
+                if c and c not in credits:
+                    credits.append(c)
+                if game not in games_used:
+                    games_used.append(game)
+                imgs.append(vid)
+                continue
+            except Exception as e:
+                print(f"[channel] {game}: {e}", file=sys.stderr)
         if game and sc.get("trailer"):
             vid = pub / f"{key}-{n + 1:02d}.mp4"
             try:  # muted cut of the official Steam trailer
