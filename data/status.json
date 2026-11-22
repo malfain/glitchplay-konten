@@ -6,7 +6,7 @@
     "finished_at": null
   },
   "tasks": {
-    "antri": 9,
+    "antri": 6,
     "jalan": 0,
     "kelar": 0
   },
@@ -26,9 +26,9 @@
       "t": "2026-11-23T06:08:15+07:00"
     },
     "detektif": {
-      "status": "kerja",
-      "aktivitas": "Cek fakta tiap kandidat, 2 sumber",
-      "t": "2026-11-23T06:08:17+07:00"
+      "status": "selesai",
+      "aktivitas": "6 lolos, 3 dibuang",
+      "t": "2026-11-23T06:08:18+07:00"
     },
     "narator": {
       "status": "idle",
@@ -52,6 +52,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T06:08:18+07:00",
+      "agen": "detektif",
+      "pesan": "6 lolos, 3 dibuang"
+    },
     {
       "t": "2026-11-23T06:08:17+07:00",
       "agen": "detektif",
@@ -346,13 +351,8 @@
       "t": "2026-11-22T05:10:18+07:00",
       "agen": "copywriter",
       "pesan": "[Anak] Judul, deskripsi, tags YouTube"
-    },
-    {
-      "t": "2026-11-22T05:10:18+07:00",
-      "agen": "narator",
-      "pesan": "[Anak] 2 naskah + adegan selesai"
     }
   ],
-  "updated_at": "2026-11-23T06:08:17+07:00",
+  "updated_at": "2026-11-23T06:08:18+07:00",
   "kesimpulan_t": "2026-11-23T05:10:14+07:00"
 }
