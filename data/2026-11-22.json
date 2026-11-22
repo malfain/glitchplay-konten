@@ -112,7 +112,11 @@
           "nama": "Deadline",
           "url": "https://deadline.com/2026/11/gta6-first-day-sales-4-billion-1237230465/"
         }
-      ]
+      ],
+      "video": "video/2026-11-22/01-gta-vi-cetak-penjualan-hari-pertama-3-79.mp4",
+      "poster": "video/2026-11-22/01-gta-vi-cetak-penjualan-hari-pertama-3-79.jpg",
+      "video_durasi": 31.8,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Update",
@@ -230,7 +234,11 @@
           "nama": "Cybernews",
           "url": "https://cybernews.com/news/gta6-japan-censorship/"
         }
-      ]
+      ],
+      "video": "video/2026-11-22/02-gta-vi-versi-jepang-punya-perbedaan-rock.mp4",
+      "poster": "video/2026-11-22/02-gta-vi-versi-jepang-punya-perbedaan-rock.jpg",
+      "video_durasi": 28.8,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Update",
@@ -346,7 +354,11 @@
           "nama": "Digital Trends",
           "url": "https://www.digitaltrends.com/computing/valve-ends-waitlist-for-steam-machine-and-signals-imminent-price-hike-in-2027/"
         }
-      ]
+      ],
+      "video": "video/2026-11-22/03-valve-tutup-antrean-steam-machine-harga.mp4",
+      "poster": "video/2026-11-22/03-valve-tutup-antrean-steam-machine-harga.jpg",
+      "video_durasi": 28.8,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Promo/Diskon",
@@ -464,7 +476,11 @@
           "nama": "PlayingTux",
           "url": "https://playingtux.com/en/articles/2026/11/steam-black-friday-2026-dates-announced/"
         }
-      ]
+      ],
+      "video": "video/2026-11-22/04-steam-tidak-bikin-sale-black-friday-tapi.mp4",
+      "poster": "video/2026-11-22/04-steam-tidak-bikin-sale-black-friday-tapi.jpg",
+      "video_durasi": 29.8,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Promo/Diskon",
@@ -577,7 +593,11 @@
           "nama": "DLCompare",
           "url": "https://dlcompare.com/gaming-news/claim-pirate-souls-like-mark-of-the-deep-for-free-on-the-epic-games-store-92068"
         }
-      ]
+      ],
+      "video": "video/2026-11-22/05-mark-of-the-deep-gratis-di-epic-games-st.mp4",
+      "poster": "video/2026-11-22/05-mark-of-the-deep-gratis-di-epic-games-st.jpg",
+      "video_durasi": 24.7,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     }
   ]
 }

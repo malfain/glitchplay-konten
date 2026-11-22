@@ -48,11 +48,46 @@
     },
     "studio": {
       "status": "kerja",
-      "aktivitas": "Render 5 video untuk 2026-11-22",
-      "t": "2026-11-22T07:10:05+07:00"
+      "aktivitas": "Render 2 video untuk 2026-11-22",
+      "t": "2026-11-22T07:47:20+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-22T07:47:20+07:00",
+      "agen": "studio",
+      "pesan": "Render 2 video untuk 2026-11-22"
+    },
+    {
+      "t": "2026-11-22T07:47:18+07:00",
+      "agen": "studio",
+      "pesan": "5/5 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-22T07:37:42+07:00",
+      "agen": "studio",
+      "pesan": "Render video 5/5: Mark of the Deep gratis di Epic Ga"
+    },
+    {
+      "t": "2026-11-22T07:30:35+07:00",
+      "agen": "studio",
+      "pesan": "Render video 4/5: Steam tidak bikin sale Black Frida"
+    },
+    {
+      "t": "2026-11-22T07:23:43+07:00",
+      "agen": "studio",
+      "pesan": "Render video 3/5: Valve tutup antrean Steam Machine,"
+    },
+    {
+      "t": "2026-11-22T07:17:22+07:00",
+      "agen": "studio",
+      "pesan": "Render video 2/5: GTA VI versi Jepang punya perbedaa"
+    },
+    {
+      "t": "2026-11-22T07:10:08+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/5: GTA VI cetak penjualan hari pertam"
+    },
     {
       "t": "2026-11-22T07:10:05+07:00",
       "agen": "studio",
@@ -317,43 +352,8 @@
       "t": "2026-11-21T07:27:10+07:00",
       "agen": "studio",
       "pesan": "0/1 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-21T07:27:10+07:00",
-      "agen": "studio",
-      "pesan": "Video 2 gagal: kuota gambar gratis Cloudflare hari ini "
-    },
-    {
-      "t": "2026-11-21T07:25:54+07:00",
-      "agen": "studio",
-      "pesan": "Render video 1/1: 6 fakta seru jerapah: lidah ungu, "
-    },
-    {
-      "t": "2026-11-21T07:25:37+07:00",
-      "agen": "studio",
-      "pesan": "Render 1 video untuk 2026-11-21"
-    },
-    {
-      "t": "2026-11-21T07:25:36+07:00",
-      "agen": "studio",
-      "pesan": "5/5 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-21T07:23:36+07:00",
-      "agen": "studio",
-      "pesan": "Render video 5/5: Protect Our Games Act: usul aturan"
-    },
-    {
-      "t": "2026-11-21T07:21:06+07:00",
-      "agen": "studio",
-      "pesan": "Render video 4/5: GTA VI masuk nominasi Game of the "
-    },
-    {
-      "t": "2026-11-21T07:17:33+07:00",
-      "agen": "studio",
-      "pesan": "Render video 3/5: Tiga wakil Indonesia di FFWS Globa"
     }
   ],
-  "updated_at": "2026-11-22T07:10:05+07:00",
+  "updated_at": "2026-11-22T07:47:20+07:00",
   "kesimpulan_t": "2026-11-22T06:09:24+07:00"
 }
