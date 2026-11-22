@@ -36,9 +36,9 @@
       "t": "2026-11-23T06:09:16+07:00"
     },
     "copywriter": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-23T06:06:35+07:00"
+      "status": "selesai",
+      "aktivitas": "6 caption selesai",
+      "t": "2026-11-23T06:09:18+07:00"
     },
     "qc": {
       "status": "idle",
@@ -52,6 +52,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T06:09:18+07:00",
+      "agen": "copywriter",
+      "pesan": "6 caption selesai"
+    },
+    {
+      "t": "2026-11-23T06:09:18+07:00",
+      "agen": "copywriter",
+      "pesan": "Tulis caption + hashtag"
+    },
     {
       "t": "2026-11-23T06:09:16+07:00",
       "agen": "narator",
@@ -341,18 +351,8 @@
       "t": "2026-11-22T05:10:20+07:00",
       "agen": "bos",
       "pesan": "[Anak] Shift selesai"
-    },
-    {
-      "t": "2026-11-22T05:10:20+07:00",
-      "agen": "qc",
-      "pesan": "[Anak] 2 konten anak terbit"
-    },
-    {
-      "t": "2026-11-22T05:10:20+07:00",
-      "agen": "qc",
-      "pesan": "[Anak] Cek aturan & validasi JSON"
     }
   ],
-  "updated_at": "2026-11-23T06:09:16+07:00",
+  "updated_at": "2026-11-23T06:09:18+07:00",
   "kesimpulan_t": "2026-11-23T05:10:14+07:00"
 }
