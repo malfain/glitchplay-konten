@@ -1,0 +1,629 @@
+{
+  "date": "2026-11-23",
+  "items": [
+    {
+      "kategori": "Rilis Game",
+      "judul": "GTA VI versi PC masih rumor, belum resmi",
+      "ringkasan": "GamesBeat melaporkan lewat empat sumber anonim bahwa GTA VI untuk PC dijadwalkan Januari sampai Maret 2027. Rockstar belum mengonfirmasi tanggal atau versi PC.",
+      "status_fakta": "rumor",
+      "hook_formula": "Contrarian Flip",
+      "durasi_detik": 26,
+      "naskah_vo": [
+        "Pemain PC, jangan gembira dulu!",
+        "GTA enam sudah rilis di PS lima dan Xbox Series.",
+        "Versi PC belum diumumkan Rockstar.",
+        "Katanya PC rilis Januari sampai Maret dua ribu dua puluh tujuh.",
+        "Info itu dari GamesBeat, katanya dari empat sumber anonim.",
+        "Masih rumor, belum resmi ya.",
+        "Rockstar belum konfirmasi tanggal apa pun.",
+        "Sabar dulu, kipas PC kamu butuh istirahat!",
+        "Follow biar nggak ketinggalan kabar PC berikutnya!"
+      ],
+      "subtitle": [
+        "Pemain PC, jangan gembira dulu!",
+        "GTA VI sudah rilis di PS5 dan Xbox Series.",
+        "Versi PC belum diumumkan Rockstar.",
+        "Katanya PC rilis Januari sampai Maret 2027.",
+        "Info itu dari GamesBeat, katanya dari empat sumber anonim.",
+        "Masih rumor, belum resmi ya.",
+        "Rockstar belum konfirmasi tanggal apa pun.",
+        "Sabar dulu, kipas PC kamu butuh istirahat!",
+        "Follow biar nggak ketinggalan kabar PC berikutnya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "PEMAIN PC? SABAR DULU 🖥️",
+          "visual": "teks besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "GTA VI: PS5 & XBOX SERIES",
+          "visual": "teks"
+        },
+        {
+          "t": "0:09",
+          "teks": "VERSI PC BELUM DIUMUMKAN",
+          "visual": "teks"
+        },
+        {
+          "t": "0:13",
+          "teks": "KATANYA: JAN-MAR 2027",
+          "visual": "label RUMOR"
+        },
+        {
+          "t": "0:19",
+          "teks": "MASIH RUMOR, BELUM RESMI",
+          "visual": "teks"
+        },
+        {
+          "t": "0:24",
+          "teks": "FOLLOW BUAT UPDATE",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A gamer sitting in front of a powerful desktop PC with glowing RGB fans in a dark room, hopeful expression, cinematic"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A close-up of a game console and a gaming PC side by side on a desk, neon lights, shallow depth of field"
+        },
+        {
+          "kalimat": 3,
+          "game": "Grand Theft Auto VI",
+          "trailer": true,
+          "prompt": "A calendar on a wall with winter months highlighted, a gaming PC glowing in the background, moody lighting"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "A mysterious silhouette of a person holding a phone in a dark room with a question mark glow, cinematic"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "A computer fan spinning slowly with blue light, close-up, relaxing mood"
+        }
+      ],
+      "caption": "GTA VI sudah rilis, tapi pemain PC masih harus nunggu 👀 Katanya sih PC kebagian Januari sampai Maret 2027, tapi ini MASIH RUMOR dari GamesBeat dan Rockstar belum konfirmasi apa pun. Jadi simpan dulu uangnya, jangan beli apa pun yang ngaku 'GTA VI PC'. Kamu bakal main di konsol dulu atau nunggu PC?",
+      "hashtags": [
+        "#GTAVI",
+        "#GlitchPlay",
+        "#BeritaGame"
+      ],
+      "sumber": [
+        {
+          "nama": "GamesBeat",
+          "url": "https://gamesbeat.com/grand-theft-auto-vis-pc-release-is-slated-for-q1-2027/"
+        },
+        {
+          "nama": "Tom's Hardware",
+          "url": "https://www.tomshardware.com/video-games/pc-gaming/gta-6-could-come-to-pc-as-early-as-q1-2027-leak-claims-january-march-launch-window-a-huge-improvement-over-18-month-gta-v-wait"
+        },
+        {
+          "nama": "VICE",
+          "url": "https://www.vice.com/en/article/gta-6-pc-release-early-2027-report/"
+        }
+      ]
+    },
+    {
+      "kategori": "Promo/Diskon",
+      "judul": "Xbox Black Friday Sale: diskon sampai 80 persen",
+      "ringkasan": "Xbox Black Friday Sale dimulai 19 November dengan diskon sampai 80 persen untuk lebih dari 2.000 game plus potongan aksesori. Harga dan cakupan bisa berbeda per wilayah.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Statistic",
+      "durasi_detik": 25,
+      "naskah_vo": [
+        "Diskon sampai delapan puluh persen!",
+        "Xbox Black Friday Sale sudah jalan sejak sembilan belas November.",
+        "Lebih dari dua ribu game ikut diskon.",
+        "Aksesori seperti controller juga ikut turun harga.",
+        "Xbox menyebut ini sale terbesar tahun ini.",
+        "Tapi cek dulu harga di toko wilayah kamu.",
+        "Banyak game seru, tapi saldo tetap terbatas.",
+        "Dompet siap, backlog juga siap?",
+        "Follow biar tahu diskon terbaik berikutnya!"
+      ],
+      "subtitle": [
+        "Diskon sampai 80 persen!",
+        "Xbox Black Friday Sale sudah jalan sejak 19 November.",
+        "Lebih dari 2.000 game ikut diskon.",
+        "Aksesori seperti controller juga ikut turun harga.",
+        "Xbox menyebut ini sale terbesar tahun ini.",
+        "Tapi cek dulu harga di toko wilayah kamu.",
+        "Banyak game seru, tapi saldo tetap terbatas.",
+        "Dompet siap, backlog juga siap?",
+        "Follow biar tahu diskon terbaik berikutnya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "DISKON SAMPAI 80% 🔥",
+          "visual": "angka besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "XBOX BLACK FRIDAY SALE",
+          "visual": "teks"
+        },
+        {
+          "t": "0:08",
+          "teks": "2.000+ GAME DISKON",
+          "visual": "angka"
+        },
+        {
+          "t": "0:12",
+          "teks": "AKSESORI JUGA TURUN",
+          "visual": "teks"
+        },
+        {
+          "t": "0:17",
+          "teks": "CEK HARGA WILAYAHMU",
+          "visual": "catatan"
+        },
+        {
+          "t": "0:23",
+          "teks": "FOLLOW BUAT DISKON LAGI",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A gamer holding a game controller in front of a glowing screen with sale tags and confetti, vibrant green lighting, cinematic"
+        },
+        {
+          "kalimat": 1,
+          "prompt": "A busy online shopping scene on a laptop with discount tags floating, warm colors, close-up"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "A wireless game controller on a desk with neon green glow, close-up, shallow depth of field"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "A person checking a price on a smartphone at a desk with game consoles around, thoughtful expression"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "A huge pile of unplayed game cases stacked on a shelf in a bedroom, funny cozy mood"
+        }
+      ],
+      "caption": "Xbox lagi banting harga! 🎮 Black Friday Sale mulai 19 November, diskon sampai 80 persen buat lebih dari 2.000 game plus aksesori. Tapi harga dan cakupannya bisa beda per wilayah, jadi cek dulu di toko kamu. Backlog kamu udah sepanjang apa nih? Komen di bawah 👇",
+      "hashtags": [
+        "#XboxBlackFriday",
+        "#GlitchPlay",
+        "#DiskonGame"
+      ],
+      "sumber": [
+        {
+          "nama": "Xbox Wire",
+          "url": "https://news.xbox.com/en-us/2026/11/16/xbox-black-friday-sale-2026/"
+        },
+        {
+          "nama": "TrueAchievements",
+          "url": "https://www.trueachievements.com/news/xbox-black-friday-sale-2026-start-date"
+        },
+        {
+          "nama": "Pure Xbox",
+          "url": "https://www.purexbox.com/news/2026/11/xbox-announces-black-friday-sale-2026-reveals-nine-included-games"
+        }
+      ]
+    },
+    {
+      "kategori": "Promo/Diskon",
+      "judul": "PlayStation Black Friday: game digital diskon sampai 75 persen",
+      "ringkasan": "Sony menggelar Black Friday 2026 di PlayStation Store dengan potongan sampai 75 persen untuk ratusan game digital PS5 dan PS4, untuk waktu terbatas.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Callout",
+      "durasi_detik": 25,
+      "naskah_vo": [
+        "PS lima juga lagi banting harga!",
+        "PlayStation Black Friday sale lagi berjalan sekarang.",
+        "Diskon game digital sampai tujuh puluh lima persen.",
+        "Berlaku untuk ratusan game PS lima dan PS empat.",
+        "Sony menyebut penawaran ini untuk waktu terbatas.",
+        "Jadi jangan nunggu sampai ludes.",
+        "Cek harga di PS Store wilayah kamu.",
+        "Notifikasi diskon muncul, iman langsung goyah!",
+        "Follow biar nggak ketinggalan banting harga berikutnya!"
+      ],
+      "subtitle": [
+        "PS5 juga lagi banting harga!",
+        "PlayStation Black Friday sale lagi berjalan sekarang.",
+        "Diskon game digital sampai 75 persen.",
+        "Berlaku untuk ratusan game PS5 dan PS4.",
+        "Sony menyebut penawaran ini untuk waktu terbatas.",
+        "Jadi jangan nunggu sampai ludes.",
+        "Cek harga di PS Store wilayah kamu.",
+        "Notifikasi diskon muncul, iman langsung goyah!",
+        "Follow biar nggak ketinggalan banting harga berikutnya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "PS5 BANTING HARGA 🎮",
+          "visual": "teks besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "DISKON SAMPAI 75%",
+          "visual": "angka"
+        },
+        {
+          "t": "0:09",
+          "teks": "RATUSAN GAME PS5 & PS4",
+          "visual": "teks"
+        },
+        {
+          "t": "0:14",
+          "teks": "WAKTU TERBATAS",
+          "visual": "teks"
+        },
+        {
+          "t": "0:19",
+          "teks": "CEK PS STORE KAMU",
+          "visual": "catatan"
+        },
+        {
+          "t": "0:24",
+          "teks": "FOLLOW BUAT PROMO",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A gamer in a dark room holding a white game controller, blue glow from a big TV, excited expression, cinematic"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "Floating sale percentage tags over a blurred game console setup, blue and white lighting, cinematic"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "A shelf full of colorful game cases next to a game console, cozy room, warm light"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "A countdown clock glowing on a screen in a dim room with a game console, tense mood"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "A person staring at a phone notification with wide eyes in a living room lit by a TV"
+        }
+      ],
+      "caption": "PS5 kamu siap diisi? 🔥 PlayStation Black Friday lagi jalan dengan diskon sampai 75 persen untuk ratusan game digital PS5 dan PS4, katanya untuk waktu terbatas. Cek harganya di PS Store wilayah kamu ya. Game apa yang mau kamu borong duluan?",
+      "hashtags": [
+        "#PlayStation",
+        "#GlitchPlay",
+        "#DiskonGame"
+      ],
+      "sumber": [
+        {
+          "nama": "PlayStation Blog",
+          "url": "https://blog.playstation.com/2026/11/03/playstations-black-friday-deals-2026/"
+        },
+        {
+          "nama": "Kotaku",
+          "url": "https://kotaku.com/playstations-massive-black-friday-2026-sale-is-live-now-and-filled-with-big-deals-on-ps5-games-2000753373"
+        },
+        {
+          "nama": "9to5Toys",
+          "url": "https://9to5toys.com/2026/11/17/playstation-2026-black-friday-sale-ps5-games/"
+        }
+      ]
+    },
+    {
+      "kategori": "Esports",
+      "judul": "Kans terakhir tim Indonesia di FFWS Global Finals 2026",
+      "ringkasan": "Sampai Day 3 Phase 2, RRQ Kazu, ONIC, dan Bigetron belum mengamankan tiket Grand Finals. Last Chance digelar 27 November dan Grand Finals 28 November di Bangkok dengan 12 finalis.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Deadline",
+      "durasi_detik": 27,
+      "naskah_vo": [
+        "Kans terakhir tim Indonesia di FFWS!",
+        "Tiga wakil kita bertanding di Bangkok.",
+        "Mereka adalah RRQ Kazu, ONIC, dan Bigetron.",
+        "Sampai Day tiga Phase dua, belum ada yang dapat tiket final.",
+        "Dua tiket terakhir Phase dua diperebutkan di Day empat.",
+        "Sisanya lewat Last Chance dua puluh tujuh November.",
+        "Grand Finals digelar dua puluh delapan November.",
+        "Jantung kita ikut battle royale juga!",
+        "Follow biar tahu nasib kans terakhir ini!"
+      ],
+      "subtitle": [
+        "Kans terakhir tim Indonesia di FFWS!",
+        "Tiga wakil kita bertanding di Bangkok.",
+        "Mereka adalah RRQ Kazu, ONIC, dan Bigetron.",
+        "Sampai Day 3 Phase 2, belum ada yang dapat tiket final.",
+        "Dua tiket terakhir Phase 2 diperebutkan di Day 4.",
+        "Sisanya lewat Last Chance 27 November.",
+        "Grand Finals digelar 28 November.",
+        "Jantung kita ikut battle royale juga!",
+        "Follow biar tahu nasib kans terakhir ini!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "KANS TERAKHIR INDONESIA ⏳",
+          "visual": "teks besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "FFWS GLOBAL FINALS 2026",
+          "visual": "teks"
+        },
+        {
+          "t": "0:08",
+          "teks": "RRQ KAZU, ONIC, BIGETRON",
+          "visual": "teks"
+        },
+        {
+          "t": "0:13",
+          "teks": "BELUM ADA TIKET FINAL",
+          "visual": "teks"
+        },
+        {
+          "t": "0:19",
+          "teks": "LAST CHANCE: 27 NOV",
+          "visual": "tanggal"
+        },
+        {
+          "t": "0:23",
+          "teks": "GRAND FINALS: 28 NOV",
+          "visual": "tanggal"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Free Fire",
+          "prompt": "A tense esports stage with a crowd, bright red and gold lights, players seen from behind at gaming desks, cinematic"
+        },
+        {
+          "kalimat": 1,
+          "prompt": "Bangkok skyline at night with glowing city lights, wide cinematic shot"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "Five esports players from behind wearing headsets focused on glowing screens, dim arena, dramatic lighting"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "A large scoreboard screen glowing in a dark esports arena with blurred crowd, cinematic"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "Fans in the crowd holding up glow sticks cheering in an esports arena, blue and pink lights"
+        }
+      ],
+      "caption": "Indonesia lagi di ujung tanduk di FFWS Global Finals 2026 🔥 Sampai Day 3 Phase 2, RRQ Kazu, ONIC, dan Bigetron belum ada yang pegang tiket Grand Finals. Masih ada Last Chance 27 November dan Grand Finals 28 November di Bangkok. Menurut kamu siapa yang lolos duluan? Komen ya 👇",
+      "hashtags": [
+        "#FFWS2026",
+        "#FreeFire",
+        "#EsportsIndonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "Kontan",
+          "url": "https://lifestyle.kontan.co.id/news/kans-terakhir-3-tim-indonesia-raih-tiket-final-ffws-2026-cek-jadwalnya"
+        },
+        {
+          "nama": "Esports.id",
+          "url": "https://esports.id/read/peluang-indonesia-ke-grand-final-ffws-2026-kian-menipis-misi-juara-dunia-makin-berat-19998"
+        },
+        {
+          "nama": "Sportsdunia",
+          "url": "https://www.sportsdunia.com/esports/free-fire-world-series-global-finals-2026-teams-format-and-schedule"
+        }
+      ]
+    },
+    {
+      "kategori": "Esports",
+      "judul": "PMGC 2026 dimulai 26 November, final di Istanbul",
+      "ringkasan": "PUBG Mobile Global Championship 2026 berlangsung 26 November sampai 13 Desember 2026, dibuka dengan The Gauntlet 26 sampai 27 November, dengan final di Istanbul, Turki.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Reveal",
+      "durasi_detik": 23,
+      "naskah_vo": [
+        "PMGC dua ribu dua puluh enam mulai Kamis!",
+        "PUBG Mobile Global Championship dibuka dua puluh enam November.",
+        "Puncaknya jatuh pada tiga belas Desember.",
+        "Panggungnya di Istanbul, Turki.",
+        "Fase awalnya The Gauntlet, dua puluh enam sampai dua puluh tujuh November.",
+        "Lanjut Group Stage dan Last Chance.",
+        "Siapin cemilan, bakal begadang nih!",
+        "Follow biar nggak ketinggalan jadwal PMGC!"
+      ],
+      "subtitle": [
+        "PMGC 2026 mulai Kamis!",
+        "PUBG Mobile Global Championship dibuka 26 November.",
+        "Puncaknya jatuh pada 13 Desember.",
+        "Panggungnya di Istanbul, Turki.",
+        "Fase awalnya The Gauntlet, 26 sampai 27 November.",
+        "Lanjut Group Stage dan Last Chance.",
+        "Siapin cemilan, bakal begadang nih!",
+        "Follow biar nggak ketinggalan jadwal PMGC!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "PMGC 2026 MULAI KAMIS 🔥",
+          "visual": "teks besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "DIBUKA 26 NOVEMBER",
+          "visual": "tanggal"
+        },
+        {
+          "t": "0:08",
+          "teks": "FINAL: 13 DESEMBER",
+          "visual": "tanggal"
+        },
+        {
+          "t": "0:12",
+          "teks": "ISTANBUL, TURKI",
+          "visual": "lokasi"
+        },
+        {
+          "t": "0:17",
+          "teks": "THE GAUNTLET: 26-27 NOV",
+          "visual": "teks"
+        },
+        {
+          "t": "0:23",
+          "teks": "FOLLOW BUAT JADWAL",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "PUBG Mobile",
+          "prompt": "A mobile gamer holding a smartphone in landscape mode with intense focus, dark room with neon glow, cinematic"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "Istanbul skyline with the Bosphorus at sunset, wide cinematic shot"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "An esports arena stage with big screens and cheering fans, orange and blue lights, wide shot"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "Team of mobile esports players seen from behind on a stage with phones, spotlight, dramatic"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "Snacks and drinks on a table next to a glowing TV late at night, cozy mood"
+        }
+      ],
+      "caption": "Turnamen PUBG Mobile terbesar dunia mulai Kamis! 🎮 PMGC 2026 dibuka 26 November dan puncaknya 13 Desember, dengan final di Istanbul, Turki. Siapin cemilan dan jadwal begadang kamu. Kamu jagoin tim mana? Komen di bawah 👇",
+      "hashtags": [
+        "#PMGC2026",
+        "#PUBGMobile",
+        "#EsportsIndonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "Esports.id",
+          "url": "https://www.esports.id/read/pmgc-2026-jadwal-format-total-hadiah-dan-cara-nonton-19910"
+        },
+        {
+          "nama": "Liquipedia",
+          "url": "https://liquipedia.net/pubgmobile/PUBG_Mobile_Global_Championship/2026"
+        }
+      ]
+    },
+    {
+      "kategori": "Rilis Game",
+      "judul": "Gothic 3 Classic rilis 24 November di konsol",
+      "ringkasan": "Gothic 3 Classic dijadwalkan rilis 24 November 2026 di PS5 dan Xbox Series X|S. Game RPG aslinya rilis di PC pada 2006.",
+      "status_fakta": "resmi",
+      "hook_formula": "Numbered With A Favourite",
+      "durasi_detik": 23,
+      "naskah_vo": [
+        "Gothic tiga balik lagi!",
+        "Gothic tiga Classic rilis dua puluh empat November.",
+        "Mainnya di PS lima dan Xbox Series.",
+        "Game aslinya rilis di PC tahun dua ribu enam.",
+        "Umurnya sudah dua puluh tahun.",
+        "Lebih tua dari sebagian penonton, nih!",
+        "Pemain lama pasti langsung nostalgia.",
+        "Siapin kuda, eh, siapin controller!",
+        "Follow biar tahu rilis retro berikutnya, Gothic fans!"
+      ],
+      "subtitle": [
+        "Gothic 3 balik lagi!",
+        "Gothic 3 Classic rilis 24 November.",
+        "Mainnya di PS5 dan Xbox Series.",
+        "Game aslinya rilis di PC tahun 2006.",
+        "Umurnya sudah 20 tahun.",
+        "Lebih tua dari sebagian penonton, nih!",
+        "Pemain lama pasti langsung nostalgia.",
+        "Siapin kuda, eh, siapin controller!",
+        "Follow biar tahu rilis retro berikutnya, Gothic fans!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "GOTHIC 3 BALIK LAGI ⚔️",
+          "visual": "teks besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "GOTHIC 3 CLASSIC",
+          "visual": "judul"
+        },
+        {
+          "t": "0:08",
+          "teks": "RILIS 24 NOVEMBER",
+          "visual": "tanggal"
+        },
+        {
+          "t": "0:12",
+          "teks": "PS5 & XBOX SERIES",
+          "visual": "platform"
+        },
+        {
+          "t": "0:17",
+          "teks": "ASLINYA RILIS 2006",
+          "visual": "teks"
+        },
+        {
+          "t": "0:23",
+          "teks": "FOLLOW BUAT RILIS RETRO",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Gothic 3 Classic",
+          "prompt": "A gamer with a nostalgic smile holding a game controller in front of a fantasy RPG scene on a TV, warm lighting, cinematic"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A game console and a controller on a wooden desk with medieval fantasy decorations, warm candlelight"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "An old CRT monitor and an old PC tower on a desk, retro 2000s room, nostalgic mood"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "A crowd of young and older gamers laughing together in a living room, warm light"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "A medieval fantasy landscape with rolling hills and an old castle at sunset, cinematic wide shot"
+        }
+      ],
+      "caption": "RPG jadul ini balik lagi ⚔️ Gothic 3 Classic dijadwalkan rilis 24 November 2026 di PS5 dan Xbox Series X|S. Game aslinya rilis di PC tahun 2006, jadi umurnya udah 20 tahun. Kamu pernah main yang versi aslinya? Komen di bawah 👇",
+      "hashtags": [
+        "#Gothic3",
+        "#RPG",
+        "#BeritaGame"
+      ],
+      "sumber": [
+        {
+          "nama": "Steam",
+          "url": "https://store.steampowered.com/app/39500/Gothic_3_Classic/"
+        },
+        {
+          "nama": "DLCompare",
+          "url": "https://www.dlcompare.com/gaming-news/gothic-classic-trilogy-re-release-what-changed-in-each-entry-92099"
+        },
+        {
+          "nama": "Gamedrop Radar",
+          "url": "https://gamedropradar.com/games/gothic-3-classic"
+        }
+      ]
+    }
+  ]
+}
