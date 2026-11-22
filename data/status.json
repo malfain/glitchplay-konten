@@ -31,9 +31,9 @@
       "t": "2026-11-23T06:08:18+07:00"
     },
     "narator": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-23T06:06:35+07:00"
+      "status": "kerja",
+      "aktivitas": "Tulis naskah 6 konten",
+      "t": "2026-11-23T06:08:20+07:00"
     },
     "copywriter": {
       "status": "idle",
@@ -52,6 +52,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T06:08:20+07:00",
+      "agen": "narator",
+      "pesan": "Tulis naskah 6 konten"
+    },
     {
       "t": "2026-11-23T06:08:18+07:00",
       "agen": "detektif",
@@ -346,13 +351,8 @@
       "t": "2026-11-22T05:10:20+07:00",
       "agen": "copywriter",
       "pesan": "[Anak] Metadata YouTube selesai"
-    },
-    {
-      "t": "2026-11-22T05:10:18+07:00",
-      "agen": "copywriter",
-      "pesan": "[Anak] Judul, deskripsi, tags YouTube"
     }
   ],
-  "updated_at": "2026-11-23T06:08:18+07:00",
+  "updated_at": "2026-11-23T06:08:20+07:00",
   "kesimpulan_t": "2026-11-23T05:10:14+07:00"
 }
