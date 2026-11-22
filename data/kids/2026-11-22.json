@@ -308,7 +308,11 @@
           "kalimat": 24,
           "prompt": "An emperor penguin chick sitting on a parent's feet on ice, cute, soft light"
         }
-      ]
+      ],
+      "video": "video/kids/2026-11-22/01-7-fakta-seru-penguin-sirip-bulu-rapat-ay.mp4",
+      "poster": "video/kids/2026-11-22/01-7-fakta-seru-penguin-sirip-bulu-rapat-ay.jpg",
+      "video_durasi": 109.2,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     },
     {
       "kategori": "Bumi & Cuaca",
