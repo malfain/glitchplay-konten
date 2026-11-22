@@ -293,7 +293,11 @@
           "kalimat": 27,
           "prompt": "Children smiling and pointing at a rainbow in a sunny park, seen from behind"
         }
-      ]
+      ],
+      "video": "video/kids/2026-11-22/01-7-fakta-seru-pelangi-prisma-hujan-warna.mp4",
+      "poster": "video/kids/2026-11-22/01-7-fakta-seru-pelangi-prisma-hujan-warna.jpg",
+      "video_durasi": 118.4,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     }
   ]
 }
