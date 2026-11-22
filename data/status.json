@@ -6,7 +6,7 @@
     "finished_at": null
   },
   "tasks": {
-    "antri": 0,
+    "antri": 9,
     "jalan": 0,
     "kelar": 0
   },
@@ -21,9 +21,9 @@
       "t": "2026-11-23T06:06:35+07:00"
     },
     "radar": {
-      "status": "kerja",
-      "aktivitas": "Cari berita MLBB, esports, rilis game",
-      "t": "2026-11-23T06:06:41+07:00"
+      "status": "selesai",
+      "aktivitas": "9 kandidat ditemukan",
+      "t": "2026-11-23T06:08:15+07:00"
     },
     "detektif": {
       "status": "idle",
@@ -52,6 +52,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T06:08:15+07:00",
+      "agen": "radar",
+      "pesan": "9 kandidat ditemukan"
+    },
     {
       "t": "2026-11-23T06:06:41+07:00",
       "agen": "radar",
@@ -346,13 +351,8 @@
       "t": "2026-11-22T05:10:03+07:00",
       "agen": "narator",
       "pesan": "[Anak] Tulis naskah 2 video"
-    },
-    {
-      "t": "2026-11-22T05:10:03+07:00",
-      "agen": "detektif",
-      "pesan": "[Anak] 2 tema lolos (2+ sumber)"
     }
   ],
-  "updated_at": "2026-11-23T06:06:41+07:00",
+  "updated_at": "2026-11-23T06:08:15+07:00",
   "kesimpulan_t": "2026-11-23T05:10:14+07:00"
 }
