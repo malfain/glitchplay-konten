@@ -56,12 +56,17 @@
       "t": "2026-11-24T05:10:41+07:00"
     },
     "asisten": {
-      "status": "selesai",
-      "aktivitas": "2/2 video jadi, siap di Hasil",
-      "t": "2026-11-24T04:16:06+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 2 video untuk 2026-11-24",
+      "t": "2026-11-24T05:14:01+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-24T05:14:01+07:00",
+      "agen": "asisten",
+      "pesan": "Render 2 video untuk 2026-11-24"
+    },
     {
       "t": "2026-11-24T05:11:52+07:00",
       "agen": "qc",
@@ -356,13 +361,8 @@
       "t": "2026-11-23T16:16:34+07:00",
       "agen": "bos",
       "pesan": "[Sirah] Eps 1 terbit"
-    },
-    {
-      "t": "2026-11-23T16:16:34+07:00",
-      "agen": "qc",
-      "pesan": "[Sirah] Eps 1 terbit"
     }
   ],
-  "updated_at": "2026-11-24T05:11:52+07:00",
+  "updated_at": "2026-11-24T05:14:01+07:00",
   "kesimpulan_t": "2026-11-24T04:06:58+07:00"
 }
