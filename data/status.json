@@ -31,14 +31,14 @@
       "t": "2026-11-24T06:08:20+07:00"
     },
     "narator": {
-      "status": "kerja",
-      "aktivitas": "Tulis naskah dan adegan 10 item",
-      "t": "2026-11-24T06:08:22+07:00"
+      "status": "selesai",
+      "aktivitas": "10 naskah + adegan siap",
+      "t": "2026-11-24T06:10:20+07:00"
     },
     "copywriter": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-24T06:06:17+07:00"
+      "status": "kerja",
+      "aktivitas": "Caption & hashtag 10 item",
+      "t": "2026-11-24T06:10:20+07:00"
     },
     "qc": {
       "status": "idle",
@@ -62,6 +62,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-24T06:10:20+07:00",
+      "agen": "copywriter",
+      "pesan": "Caption & hashtag 10 item"
+    },
+    {
+      "t": "2026-11-24T06:10:20+07:00",
+      "agen": "narator",
+      "pesan": "10 naskah + adegan siap"
+    },
     {
       "t": "2026-11-24T06:08:22+07:00",
       "agen": "narator",
@@ -351,18 +361,8 @@
       "t": "2026-11-23T17:50:37+07:00",
       "agen": "radar",
       "pesan": "[Sirah] Riset Eps 2 selesai"
-    },
-    {
-      "t": "2026-11-23T17:50:37+07:00",
-      "agen": "bos",
-      "pesan": "[Sirah] Eps 2: Kelahiran Nabi, bagi tugas"
-    },
-    {
-      "t": "2026-11-23T17:27:27+07:00",
-      "agen": "studio",
-      "pesan": "1/1 video jadi, siap di Hasil"
     }
   ],
-  "updated_at": "2026-11-24T06:08:22+07:00",
+  "updated_at": "2026-11-24T06:10:20+07:00",
   "kesimpulan_t": "2026-11-24T04:06:58+07:00"
 }
