@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-01",
+  "items": [
+    {
+      "segmen": "game",
+      "kategori": "Uji Coba",
+      "judul": "TES HAPUS 1",
+      "ringkasan": "Konten palsu untuk mencoba tombol Hapus semua. Aman dihapus.",
+      "status_fakta": "resmi",
+      "naskah_vo": [
+        "Ini konten uji coba."
+      ],
+      "subtitle": [
+        "Ini konten uji coba."
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "TES HAPUS",
+          "visual": "-"
+        }
+      ],
+      "caption": "Konten uji coba.",
+      "hashtags": [
+        "#tes"
+      ],
+      "sumber": [],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-01/glitch-01-tes-hapus.mp4",
+      "poster": "video/2026-11-01/01-tes-hapus.jpg",
+      "video_durasi": 2
+    },
+    {
+      "segmen": "game",
+      "kategori": "Uji Coba",
+      "judul": "TES HAPUS 2",
+      "ringkasan": "Konten palsu untuk mencoba tombol Hapus semua. Aman dihapus.",
+      "status_fakta": "resmi",
+      "naskah_vo": [
+        "Ini konten uji coba."
+      ],
+      "subtitle": [
+        "Ini konten uji coba."
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "TES HAPUS",
+          "visual": "-"
+        }
+      ],
+      "caption": "Konten uji coba.",
+      "hashtags": [
+        "#tes"
+      ],
+      "sumber": [],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-01/glitch-02-tes-hapus.mp4",
+      "poster": "video/2026-11-01/02-tes-hapus.jpg",
+      "video_durasi": 2
+    },
+    {
+      "segmen": "game",
+      "kategori": "Uji Coba",
+      "judul": "TES HAPUS 3",
+      "ringkasan": "Konten palsu untuk mencoba tombol Hapus semua. Aman dihapus.",
+      "status_fakta": "resmi",
+      "naskah_vo": [
+        "Ini konten uji coba."
+      ],
+      "subtitle": [
+        "Ini konten uji coba."
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "TES HAPUS",
+          "visual": "-"
+        }
+      ],
+      "caption": "Konten uji coba.",
+      "hashtags": [
+        "#tes"
+      ],
+      "sumber": [],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-01/glitch-03-tes-hapus.mp4",
+      "poster": "video/2026-11-01/03-tes-hapus.jpg",
+      "video_durasi": 2
+    }
+  ]
+}
