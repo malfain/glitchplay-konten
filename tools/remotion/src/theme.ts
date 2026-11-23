@@ -6,7 +6,7 @@ const { fontFamily: JAKARTA } = loadJakarta("normal", { weights: ["600", "800"],
 const { fontFamily: SPACE_MONO } = loadMono("normal", { weights: ["400", "700"], subsets: ["latin"] });
 const { fontFamily: FREDOKA } = loadFredoka("normal", { weights: ["500", "700"], subsets: ["latin"] });
 
-export type ThemeName = "glitch" | "kids";
+export type ThemeName = "glitch" | "kids" | "sirah";
 
 type Palette = {
   bg: string; bgImage: string; bgSize: string; text: string; line: string; shadow: string; card: string; hl: string; hlText: string;
@@ -31,6 +31,15 @@ const PALETTES: Record<ThemeName, Palette> = {
     text: "#1d2b53", line: "#1d2b53", shadow: "#ff7a59", card: "#ffffff", hl: "#ff7a59", hlText: "#ffffff",
     lime: "#ffd23f", limeText: "#1d2b53", pink: "#ff6fb5", cyan: "#29b6f6", kicker: "#33427a", muted: "#4f6096",
     number: "#ff7a59", ink: "#1d2b53", cream: "#fffaf0",
+  },
+  // Glitchplay sirah channel: night-blue and desert gold
+  sirah: {
+    bg: "#0f1a2e",
+    bgImage: "radial-gradient(#1c2a45 2px, transparent 3px)",
+    bgSize: "48px 48px",
+    text: "#fbf3df", line: "#fbf3df", shadow: "#e9b949", card: "#16233b", hl: "#e9b949", hlText: "#0f1a2e",
+    lime: "#e9b949", limeText: "#0f1a2e", pink: "#d98b5f", cyan: "#7cc6c2", kicker: "#c9bfa5", muted: "#8a8470",
+    number: "#e9b949", ink: "#0f1a2e", cream: "#fbf3df",
   },
 };
 

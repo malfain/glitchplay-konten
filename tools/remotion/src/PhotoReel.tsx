@@ -7,15 +7,16 @@ import { F, applyTheme } from "./theme";
 // voiceover. Scenes and caption words carry their own start/end seconds (computed by tools/render_video.py).
 
 export const photoReelSchema = z.object({
-  theme: z.enum(["kids", "glitch"]).optional(),
+  theme: z.enum(["kids", "glitch", "sirah"]).optional(),
   handle: z.string(),
   audio: z.string().nullable().optional(),
   avatar: z.string().nullable().optional(),
   total: z.number(),
-  scenes: z.array(z.object({ src: z.string(), start: z.number(), end: z.number(), video: z.boolean().optional(), cut: z.boolean().optional() })),
+  scenes: z.array(z.object({ src: z.string(), start: z.number(), end: z.number(), video: z.boolean().optional(), cut: z.boolean().optional(), light: z.boolean().optional() })),
   words: z.array(z.object({ text: z.string(), start: z.number(), end: z.number(), chunk: z.number() })),
   label: z.string().optional(),
   hook: z.string().optional(),
+  episode: z.number().optional(),
 });
 export type PhotoReelProps = z.infer<typeof photoReelSchema>;
 
@@ -23,11 +24,11 @@ const FADE = 0.45; // crossfade between photos (s)
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 // active-word colour and badge ring per channel
-const ACCENT = { kids: "#ffd23f", glitch: "#c6f02c" } as const;
+const ACCENT = { kids: "#ffd23f", glitch: "#c6f02c", sirah: "#e9b949" } as const;
 
 const HOOK_END = 1.9; // the big hook card covers the first ~2 s (the scroll-stopping moment)
 
-export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, total, scenes, words, label, hook }) => {
+export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, total, scenes, words, label, hook, episode }) => {
   const th = theme ?? "kids";
   applyTheme(th);
   const accent = ACCENT[th];
@@ -42,6 +43,7 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
           durationInFrames={Math.max(1, Math.round((s.end - s.start + (i < scenes.length - 1 ? FADE : 0)) * fps))}
         >
           <KenBurns src={s.src} index={i} dur={s.end - s.start + FADE} fadeIn={i > 0 && !s.cut} video={!!s.video} />
+          {s.light ? <Nur /> : null}
         </Sequence>
       ))}
       {/* a soft whoosh on every picture change keeps the pace audible */}
@@ -54,14 +56,14 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 38%, rgba(0,0,0,0) 70%, rgba(0,0,0,.45) 100%)" }} />
       {hook ? (
         <Sequence name="hook" durationInFrames={Math.round(HOOK_END * fps)}>
-          <Hook text={hook} accent={accent} />
+          <Hook text={hook} accent={accent} episode={episode} />
         </Sequence>
       ) : null}
       <Sequence name="teks" from={hook ? Math.round(HOOK_END * fps) : 0}>
         <Captions words={words} accent={accent} offset={hook ? HOOK_END : 0} />
       </Sequence>
       <Progress total={total} accent={accent} />
-      <Badge handle={handle} avatar={avatar ?? null} accent={accent} />
+      <Badge handle={handle} avatar={avatar ?? null} accent={accent} episode={episode} />
       <div style={{ position: "absolute", left: 70, top: 1400, font: `600 26px ${F.sans}`, color: "rgba(255,255,255,.75)" }}>
         {label ?? "Gambar dibuat dengan AI"}
       </div>
@@ -134,7 +136,7 @@ const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string; offse
   );
 };
 
-const Badge: React.FC<{ handle: string; avatar: string | null; accent: string }> = ({ handle, avatar, accent }) => (
+const Badge: React.FC<{ handle: string; avatar: string | null; accent: string; episode?: number }> = ({ handle, avatar, accent, episode }) => (
   <div
     style={{
       position: "absolute", left: 70, top: 240, display: "flex", alignItems: "center", gap: 12, padding: "6px 20px 6px 6px",
@@ -144,11 +146,12 @@ const Badge: React.FC<{ handle: string; avatar: string | null; accent: string }>
   >
     {avatar ? <Img src={staticFile(avatar)} style={{ width: 48, height: 48, borderRadius: "50%", border: `2px solid ${accent}` }} /> : null}
     {handle}
+    {episode ? <span style={{ marginLeft: 4, padding: "2px 12px", borderRadius: 999, background: accent, color: "#111", fontSize: 24 }}>Eps {episode}</span> : null}
   </div>
 );
 
 // The opening card: huge words on a tilted accent band, slams in, then gets out of the way.
-const Hook: React.FC<{ text: string; accent: string }> = ({ text, accent }) => {
+const Hook: React.FC<{ text: string; accent: string; episode?: number }> = ({ text, accent, episode }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
@@ -156,7 +159,10 @@ const Hook: React.FC<{ text: string; accent: string }> = ({ text, accent }) => {
   const out = interpolate(t, [HOOK_END - 0.25, HOOK_END], [1, 0], clamp);
   const shake = t < 0.35 ? Math.sin(frame * 2.2) * 6 * (1 - t / 0.35) : 0;
   return (
-    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", opacity: out, background: "rgba(0,0,0,.35)" }}>
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 34, opacity: out, background: "rgba(0,0,0,.35)" }}>
+      {episode ? (
+        <div style={{ font: `800 46px ${F.sans}`, letterSpacing: 8, color: "#fff", textShadow: "0 4px 0 rgba(0,0,0,.6)" }}>EPISODE {episode}</div>
+      ) : null}
       <div
         style={{
           maxWidth: 940, padding: "26px 40px", background: accent, color: "#0b0b0f", rotate: "-3deg",
@@ -177,4 +183,32 @@ const Progress: React.FC<{ total: number; accent: string }> = ({ total, accent }
   const { fps } = useVideoConfig();
   const w = interpolate(frame / fps, [0, Math.max(1, total)], [0, 100], clamp);
   return <div style={{ position: "absolute", left: 0, top: 0, height: 10, width: `${w}%`, background: accent, opacity: 0.9 }} />;
+};
+
+// Scenes with the Prophet ﷺ: a bright white-gold light over the upper centre (where the prompt puts the figure's head),
+// opaque at the core so no face can ever show, softly breathing with a few rays.
+const Nur: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = frame / fps;
+  const breathe = 1 + Math.sin(t * 2.1) * 0.04;
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none" }}>
+      <div
+        style={{
+          position: "absolute", left: 540 - 520, top: 640 - 520, width: 1040, height: 1040, borderRadius: "50%",
+          rotate: `${t * 6}deg`, opacity: 0.55,
+          background: "repeating-conic-gradient(from 0deg, rgba(255,240,200,.55) 0deg 4deg, rgba(255,240,200,0) 4deg 18deg)",
+          maskImage: "radial-gradient(circle, #000 20%, transparent 68%)", WebkitMaskImage: "radial-gradient(circle, #000 20%, transparent 68%)",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute", left: 540 - 340, top: 640 - 340, width: 680, height: 680, borderRadius: "50%", scale: String(breathe),
+          background: "radial-gradient(circle, #ffffff 0%, #fffdf3 26%, rgba(255,246,214,.92) 40%, rgba(255,226,150,.55) 58%, rgba(255,214,120,0) 72%)",
+          filter: "blur(6px)",
+        }}
+      />
+    </AbsoluteFill>
+  );
 };

@@ -24,6 +24,11 @@ yday=$(TZ=Asia/Jakarta date -v-1d +%F)
     [ -f "data/kids/$d.json" ] || continue
     GP_PUBLISH=1 .venv/bin/python tools/render_video.py --channel kids --date "$d" --prune 14
   done
+  # YouTube Glitchplay (kisah Nabi) after the kids videos, same Asisten Studio
+  for d in "$yday" "$today"; do
+    [ -f "data/sirah/$d.json" ] || continue
+    GP_PUBLISH=1 .venv/bin/python tools/render_video.py --channel sirah --date "$d" --prune 30
+  done
 ) &
 wait
 tools/publish.sh "video: render $today"

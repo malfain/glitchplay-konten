@@ -54,6 +54,21 @@ CHANNELS = {
         "agent": "asisten",
         "render": "photo",  # AI photos + word-by-word captions (falls back to animated style without 'adegan')
     },
+    # YouTube "Glitchplay": sirah of the Prophet ﷺ as illustrated stories; the Prophet's face is always covered by light
+    "sirah": {
+        "data": "data/sirah", "video": "video/sirah", "theme": "sirah", "handle": "Glitchplay",
+        "voice": "Charon", "models": ["gemini-3.8-flash-lite-tts", "gemini-3.8-flash-tts"],
+        "style": "Pencerita sejarah Islam yang tenang, hangat dan khidmat, bahasa Indonesia yang jelas, tempo sedang, "
+                 "penuh hormat, jeda singkat antarkalimat",
+        "pill": "kisah nabi", "cta_head": "subscribe", "cta_tag": "untuk kisah berikutnya",
+        "stickers": {"hook": "kisah", "number": "masyaallah", "cta": "subscribe"},
+        "agent": "asisten",
+        "render": "photo",
+        "img_style": ("beautiful 2D animated film still, hand-painted storybook illustration, warm golden desert light, "
+                      "soft painterly textures, historical 7th century Arabia, peaceful and respectful mood, "
+                      "no text, no letters, no logos"),
+        "label": "Ilustrasi dibuat dengan AI",
+    },
 }
 CH = dict(CHANNELS["glitch"])
 GEMINI_KEY_FILE = Path(os.environ.get("GP_GEMINI_KEY_FILE", str(Path.home() / ".glitchplay/gemini_key")))
@@ -840,7 +855,7 @@ def cf_image(prompt, out_jpg):
     import ssl
     import urllib.request
     IMG_CACHE.mkdir(parents=True, exist_ok=True)
-    full = f"{prompt.strip().rstrip('.')}. {IMG_STYLE}"
+    full = f"{prompt.strip().rstrip('.')}. {CH.get('img_style') or IMG_STYLE}"
     cached = IMG_CACHE / (hashlib.sha1(full.encode()).hexdigest()[:16] + ".jpg")
     if not cached.exists():
         acct = (CF_DIR / "cf_account").read_text().strip()
@@ -1262,7 +1277,11 @@ def render_item_photo(item, idx, date, outdir, tmp):
                 print(f"[gambar] {game}: {e}; pakai foto AI", file=sys.stderr)
         if not sc.get("prompt"):
             raise RuntimeError(f"adegan {n + 1} tidak punya game yang ketemu maupun prompt")
-        cf_image(sc["prompt"], img)
+        prompt = sc["prompt"]
+        if sc.get("nabi"):  # the Prophet ﷺ: never a visible face (Remotion also lays a light over it)
+            prompt += (". The Prophet figure is seen from behind or from far away, standing in the center of the frame, "
+                       "his face completely hidden by a bright radiant white-golden light, no facial features visible")
+        cf_image(prompt, img)
         imgs.append(img)
 
     spans = None
@@ -1303,15 +1322,16 @@ def render_item_photo(item, idx, date, outdir, tmp):
         for p in range(parts):
             a0, a1 = s0 + (s1 - s0) * p / parts, s0 + (s1 - s0) * (p + 1) / parts
             scenes.append({"src": f"_render/{img.name}", "start": round(a0, 3), "end": round(a1, 3),
-                           "video": img.suffix == ".mp4", "cut": p > 0})
+                           "video": img.suffix == ".mp4", "cut": p > 0, "light": bool(sc.get("nabi"))})
 
     shutil.copy(ROOT / "assets/profile.jpg", REMOTION / "public/profile.jpg")
-    label = (("Gambar: " + ", ".join(games_used)) if games_used else "Gambar dibuat dengan AI")
+    label = (("Gambar: " + ", ".join(games_used)) if games_used else CH.get("label") or "Gambar dibuat dengan AI")
     if credits:
         label = "Klip: " + ", ".join(credits) + " · " + label
     props = {"theme": CH["theme"], "handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
-             "label": label, "hook": hook_text(item),
+             "label": label, "hook": hook_text(item), "episode": item.get("episode"),
              "scenes": scenes, "words": words}
+    props = {k: v for k, v in props.items() if v is not None}  # optional fields (hook, episode) must be absent, not null
     pfile = tmp / "props.json"
     pfile.write_text(json.dumps(props, ensure_ascii=False), encoding="utf-8")
 
@@ -1368,7 +1388,7 @@ def main():
     ap.add_argument("--force", action="store_true", help="render ulang walau video sudah ada")
     ap.add_argument("--prune", type=int, default=0, help="hapus video lebih tua dari N hari")
     ap.add_argument("--no-status", action="store_true")
-    ap.add_argument("--channel", default="glitch", choices=list(CHANNELS), help="glitch = IG GlitchPlay, kids = YouTube anak")
+    ap.add_argument("--channel", default="glitch", choices=list(CHANNELS), help="glitch = IG GlitchPlay, kids = YouTube anak, sirah = YouTube Glitchplay kisah Nabi")
     ap.add_argument("--style", default=None, choices=["remotion", "photo", "anim", "glitch"],
                     help="remotion = komposisi GlitchReel di tools/remotion (default); anim/glitch = renderer lama")
     a = ap.parse_args()

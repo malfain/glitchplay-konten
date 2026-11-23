@@ -164,13 +164,15 @@
   .steps { margin: 8px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); } .steps li { margin: 4px 0; }
   .toast { position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom)); translate: -50% 0; z-index: 50; background: var(--card-2); border: 1px solid var(--line-2);
            color: var(--text); padding: 10px 16px; border-radius: 12px; font-size: 13px; max-width: 90vw; box-shadow: 0 8px 30px rgba(0,0,0,.4); }
-  .chtabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 5px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); margin-bottom: 12px; }
-  .chtabs button { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 8px; border: 0; border-radius: 12px; background: none;
-                   color: var(--muted); font: 700 14px Inter; cursor: pointer; }
+  .chtabs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding: 5px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); margin-bottom: 12px; }
+  .chtabs button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 9px 4px; border: 0; border-radius: 12px; background: none;
+                   color: var(--muted); font: 700 13px Inter; cursor: pointer; line-height: 1.15; text-align: center; }
+  .chtabs button b { display: flex; align-items: center; gap: 6px; }
   .chtabs button svg { width: 18px; height: 18px; }
   .chtabs button.on[data-ch="glitch"] { background: linear-gradient(135deg, #f58529, #dd2a7b 50%, #8134af); color: #fff; }
   .chtabs button.on[data-ch="kids"] { background: #ff0033; color: #fff; }
-  .chtabs small { font-weight: 500; opacity: .85; }
+  .chtabs button.on[data-ch="sirah"] { background: linear-gradient(135deg, #b8862e, #e9b949); color: #1a1406; }
+  .chtabs small { font-weight: 500; font-size: 11px; opacity: .85; }
   .platform { font: 700 10px Inter; text-transform: uppercase; letter-spacing: .05em; padding: 3px 8px; border-radius: 999px; color: #fff; }
   .platform.ig { background: linear-gradient(135deg, #f58529, #dd2a7b 50%, #8134af); }
   .platform.yt { background: #ff0033; }
@@ -332,8 +334,9 @@
     <h2 class="title">Konten Siap Posting</h2>
     <p class="sub" id="hasilSub">Video siap download & posting, plus naskah, teks layar, dan caption untuk di-copy.</p>
     <div class="chtabs" role="tablist">
-      <button data-ch="glitch" role="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram <small>· berita game</small></button>
-      <button data-ch="kids" role="tab"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.6 3.1z"/></svg>YouTube <small>· fakta anak</small></button>
+      <button data-ch="glitch" role="tab"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</b><small>GlitchPlayClips · berita game</small></button>
+      <button data-ch="kids" role="tab"><b><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.6 3.1z"/></svg>YouTube</b><small>GlitchPlayClips · fakta anak</small></button>
+      <button data-ch="sirah" role="tab"><b><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.6 3.1z"/></svg>YouTube</b><small>Glitchplay · kisah Nabi ﷺ</small></button>
     </div>
     <div class="hasil-head"><select id="day" aria-label="Pilih tanggal"></select><button class="tokbtn" id="tokBtn" type="button">⚙️ Token</button></div>
     <div id="list"><div class="empty">Memuat…</div></div>
@@ -397,10 +400,10 @@ async function getJSON(path) {
   return r.json();
 }
 
-const CHDIR = { glitch: "data", kids: "data/kids" };
+const CHDIR = { glitch: "data", kids: "data/kids", sirah: "data/sirah" };
 let savedCh = "glitch";
 try { savedCh = localStorage.getItem("gp-ch") || "glitch"; } catch {}
-const state = { status: null, days: [], kidsDays: [], dayCache: {}, ch: CHDIR[savedCh] ? savedCh : "glitch" };
+const state = { status: null, days: [], kidsDays: [], sirahDays: [], dayCache: {}, ch: CHDIR[savedCh] ? savedCh : "glitch" };
 async function getDay(d, ch = "glitch") {
   const k = ch + ":" + d;
   if (!state.dayCache[k]) state.dayCache[k] = getJSON(`${CHDIR[ch]}/${d}.json`).catch(() => null);
@@ -408,11 +411,12 @@ async function getDay(d, ch = "glitch") {
 }
 
 async function load() {
-  const [status, idx, kidx] = await Promise.all([getJSON("data/status.json").catch(() => null), getJSON("data/index.json").catch(() => ({ days: [] })),
-    getJSON("data/kids/index.json").catch(() => ({ days: [] }))]);
+  const [status, idx, kidx, sidx] = await Promise.all([getJSON("data/status.json").catch(() => null), getJSON("data/index.json").catch(() => ({ days: [] })),
+    getJSON("data/kids/index.json").catch(() => ({ days: [] })), getJSON("data/sirah/index.json").catch(() => ({ days: [] }))]);
   state.status = status || { run: {}, tasks: {}, agents: {}, log: [], kesimpulan_bos: [] };
   state.days = (idx.days || []).slice().sort().reverse();
   state.kidsDays = (kidx.days || []).slice().sort().reverse();
+  state.sirahDays = (sidx.days || []).slice().sort().reverse();
   state.dayCache = {};
   render();
 }
@@ -537,7 +541,7 @@ function renderItem(it, n, ctx) {
   const el = document.createElement("article");
   el.className = "item";
   const rumor = it.status_fakta === "rumor";
-  el.innerHTML = `<div class="item-head"><div class="tags"><span class="platform ${it.youtube ? "yt" : "ig"}">${it.youtube ? "YouTube" : "Instagram"}</span><span class="t2">#${n}</span>${it.segmen ? `<span class="t2">${it.segmen === "esports" ? "🏆 Esports" : "🎮 Game"}</span>` : ""}<span class="t2 k">${esc(it.kategori)}</span><span class="t2 ${rumor ? "rumor" : "resmi"}">${rumor ? "Rumor / belum resmi" : "Resmi"}</span>${it.durasi_detik ? `<span class="t2">±${esc(it.durasi_detik)} dtk</span>` : ""}${ctx ? `<button class="del" type="button">🗑️ Hapus</button>` : ""}</div><h4>${esc(it.judul)}</h4><p>${esc(it.ringkasan)}</p></div>`;
+  el.innerHTML = `<div class="item-head"><div class="tags"><span class="platform ${it.youtube ? "yt" : "ig"}">${it.youtube ? (it.youtube.channel || "YouTube") : "Instagram"}</span>${it.episode ? `<span class="t2">Episode ${esc(it.episode)}</span>` : ""}<span class="t2">#${n}</span>${it.segmen ? `<span class="t2">${it.segmen === "esports" ? "🏆 Esports" : "🎮 Game"}</span>` : ""}<span class="t2 k">${esc(it.kategori)}</span><span class="t2 ${rumor ? "rumor" : "resmi"}">${rumor ? "Rumor / belum resmi" : "Resmi"}</span>${it.durasi_detik ? `<span class="t2">±${esc(it.durasi_detik)} dtk</span>` : ""}${ctx ? `<button class="del" type="button">🗑️ Hapus</button>` : ""}</div><h4>${esc(it.judul)}</h4><p>${esc(it.ringkasan)}</p></div>`;
   if (it.video) {
     const v = document.createElement("div");
     const name = it.video.split("/").pop();
@@ -568,6 +572,14 @@ function renderItem(it, n, ctx) {
     el.appendChild(section("📝 Deskripsi YouTube", "", `<pre>${esc(y.deskripsi)}</pre>`, y.deskripsi));
     const tags = (y.tags || []).join(", ");
     el.appendChild(section("🏷️ Tags YouTube", (y.tags || []).length + " tag", `<pre>${esc(tags)}</pre>`, tags));
+    if (it.komentar_pin) el.appendChild(section("📌 Komentar untuk dipin", "", `<pre>${esc(it.komentar_pin)}</pre>`, it.komentar_pin));
+    if (!y.made_for_kids && it.adegan) {
+      const m = document.createElement("div");
+      m.className = "mfk";
+      m.innerHTML = "👤 Saat upload di YouTube Studio, pilih <b>“Tidak, ini tidak dibuat untuk anak-anak”</b>.<br>🤖 Video ini pakai ilustrasi AI: di bagian <b>“Konten yang diubah”</b> pilih <b>Ya</b>." +
+        (it.episode ? "<br>📂 Masukkan ke playlist <b>“Kisah Nabi Muhammad ﷺ”</b> supaya penonton lanjut ke episode berikutnya." : "");
+      el.appendChild(m);
+    }
     if (y.made_for_kids) {
       const m = document.createElement("div");
       m.className = "mfk";
@@ -591,9 +603,11 @@ async function renderHasil(date) {
   const ch = state.ch;
   document.querySelectorAll(".chtabs button").forEach((b) => { b.classList.toggle("on", b.dataset.ch === ch); b.setAttribute("aria-selected", b.dataset.ch === ch); });
   $("#hasilSub").textContent = ch === "kids"
-    ? "Video Shorts fakta seru anak (6–10 th), plus judul, deskripsi, dan tags YouTube untuk di-copy."
-    : "Video reel berita game, plus naskah, teks layar, dan caption Instagram untuk di-copy.";
-  const days = ch === "kids" ? state.kidsDays : state.days;
+    ? "Channel GlitchPlayClips: Shorts fakta seru anak (6–10 th), plus judul, deskripsi, dan tags YouTube untuk di-copy."
+    : ch === "sirah"
+      ? "Channel Glitchplay: Shorts kisah Nabi Muhammad ﷺ berseri, plus judul, deskripsi, dan tags YouTube untuk di-copy."
+      : "Instagram @glitchplayclips: reel berita game & esports, plus naskah, teks layar, dan caption untuk di-copy.";
+  const days = ch === "kids" ? state.kidsDays : ch === "sirah" ? state.sirahDays : state.days;
   const sel = $("#day");
   const list = $("#list");
   if (!days.length) { sel.innerHTML = ""; $("#hasilChip").textContent = "0 konten"; list.innerHTML = '<div class="empty">Belum ada hasil.</div>'; return; }
