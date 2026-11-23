@@ -41,6 +41,7 @@ CHANNELS = {
         "style": None,  # GEMINI_STYLE
         "pill": "berita game", "cta_head": "follow", "cta_tag": "biar nggak ketinggalan",
         "stickers": {"hook": "update!", "number": "gokil!", "cta": "follow!"},
+        "agent": "studio",
         "render": "photo",  # AI photos + word captions when the item has 'adegan'; otherwise the animated GlitchReel
     },
     "kids": {
@@ -50,6 +51,7 @@ CHANNELS = {
                  "ceria, hangat, penuh rasa kagum, tempo sedang, artikulasi jelas, jeda singkat antarkalimat",
         "pill": "fakta seru", "cta_head": "subscribe", "cta_tag": "biar tambah pintar",
         "stickers": {"hook": "wow!", "number": "keren!", "cta": "subscribe!"},
+        "agent": "asisten",
         "render": "photo",  # AI photos + word-by-word captions (falls back to animated style without 'adegan')
     },
 }
@@ -1184,6 +1186,16 @@ def word_timings(subs, spans):
     return words
 
 
+def hook_text(item):
+    """Big opening card: the writer's `hook_layar`, else the first on-screen card (emoji stripped), max 6 words."""
+    t = (item.get("hook_layar") or "").strip()
+    if not t:
+        cards = item.get("teks_layar") or []
+        t = (cards[0].get("teks") if cards and isinstance(cards[0], dict) else "") or ""
+    t = re.sub(r"[^\w\s?!%,.:+'-]", "", t, flags=re.UNICODE).strip()
+    return " ".join(t.split()[:6]) or None
+
+
 def render_item_photo(item, idx, date, outdir, tmp):
     sents = [s.strip() for s in item.get("naskah_vo", []) if s.strip()]
     scenes_in = item.get("adegan") or []
@@ -1194,7 +1206,7 @@ def render_item_photo(item, idx, date, outdir, tmp):
     tmp.mkdir(parents=True, exist_ok=True)
     pub = REMOTION / "public" / "_render"
     pub.mkdir(parents=True, exist_ok=True)
-    key = f"photo-{date}-{idx + 1:02d}"
+    key = f"photo-{CH['theme']}-{date}-{idx + 1:02d}"
 
     # photos first: if the free image quota is gone we fail before spending a voice (TTS) request
     imgs, games_used, game_count, credits = [], [], {}, []
@@ -1284,15 +1296,21 @@ def render_item_photo(item, idx, date, outdir, tmp):
         s0 = 0.0 if n == 0 else starts[k]
         s1 = starts[nxt] if nxt is not None and nxt < len(starts) else total
         img = imgs[n]
-        scenes.append({"src": f"_render/{img.name}", "start": round(s0, 3), "end": round(max(s1, s0 + 1), 3),
-                       "video": img.suffix == ".mp4"})
+        s1 = max(s1, s0 + 1)
+        # fast pace: a still longer than ~3 s is re-framed every ~2.2 s (new Ken Burns move, hard cut) without spending
+        # another picture; clips keep playing
+        parts = 1 if img.suffix == ".mp4" else max(1, round((s1 - s0) / 2.2))
+        for p in range(parts):
+            a0, a1 = s0 + (s1 - s0) * p / parts, s0 + (s1 - s0) * (p + 1) / parts
+            scenes.append({"src": f"_render/{img.name}", "start": round(a0, 3), "end": round(a1, 3),
+                           "video": img.suffix == ".mp4", "cut": p > 0})
 
     shutil.copy(ROOT / "assets/profile.jpg", REMOTION / "public/profile.jpg")
     label = (("Gambar: " + ", ".join(games_used)) if games_used else "Gambar dibuat dengan AI")
     if credits:
         label = "Klip: " + ", ".join(credits) + " · " + label
     props = {"theme": CH["theme"], "handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
-             "label": label,
+             "label": label, "hook": hook_text(item),
              "scenes": scenes, "words": words}
     pfile = tmp / "props.json"
     pfile.write_text(json.dumps(props, ensure_ascii=False), encoding="utf-8")
@@ -1377,17 +1395,17 @@ def main():
         if not a.no_status:  # clear a stale "error" left by an earlier failed attempt that has since been fixed
             try:
                 st = json.loads((ROOT / "data/status.json").read_text(encoding="utf-8"))
-                if st.get("agents", {}).get("studio", {}).get("status") == "error":
-                    status("agent", "studio", "selesai", "Semua video sudah jadi, siap di Hasil")
+                if st.get("agents", {}).get(CH["agent"], {}).get("status") == "error":
+                    status("agent", CH["agent"], "selesai", "Semua video sudah jadi, siap di Hasil")
             except (OSError, ValueError):
                 pass
         return 0
 
     outdir = ROOT / CH["video"] / a.date
-    tmp_root = ROOT / ".render-tmp"
+    tmp_root = ROOT / f".render-tmp-{a.channel}"
     done = 0
     if not a.no_status:
-        status("agent", "studio", "kerja", f"Render {len(todo)} video untuk {a.date}")
+        status("agent", CH["agent"], "kerja", f"Render {len(todo)} video untuk {a.date}")
         if os.environ.get("GP_PUBLISH"):  # let the Kantor board show Studio at work
             subprocess.run([str(ROOT / "tools/publish.sh"), f"status: studio render {a.date}"], check=False)
     for n, i in enumerate(todo, 1):
@@ -1396,7 +1414,7 @@ def main():
             import time
             time.sleep(20)  # stay under the free tier's per-minute limit
         if not a.no_status:
-            status("agent", "studio", "kerja", f"Render video {n}/{len(todo)}: {it.get('judul', '')[:34]}")
+            status("agent", CH["agent"], "kerja", f"Render video {n}/{len(todo)}: {it.get('judul', '')[:34]}")
         try:
             fn = {"remotion": render_item_remotion, "photo": render_item_photo, "anim": render_item_anim, "glitch": render_item}[a.style]
             if a.style == "photo" and not it.get("adegan"):
@@ -1412,7 +1430,7 @@ def main():
         except Exception as e:  # keep going with the other items
             print(f"[{i + 1}] gagal: {e}", file=sys.stderr)
             if not a.no_status:
-                status("agent", "studio", "error", f"Video {i + 1} gagal: {str(e)[:40]}")
+                status("agent", CH["agent"], "error", f"Video {i + 1} gagal: {str(e)[:40]}")
             continue
         it["video"] = str(mp4.relative_to(ROOT))
         it["poster"] = str(poster.relative_to(ROOT))
@@ -1424,7 +1442,7 @@ def main():
         print(f"[{i + 1}] {mp4.name}  {dur}s  {mp4.stat().st_size // 1024} KB")
     shutil.rmtree(tmp_root, ignore_errors=True)
     if not a.no_status:
-        status("agent", "studio", "selesai" if done == len(todo) else "error", f"{done}/{len(todo)} video jadi, siap di Hasil")
+        status("agent", CH["agent"], "selesai" if done == len(todo) else "error", f"{done}/{len(todo)} video jadi, siap di Hasil")
     return 0 if done == len(todo) else 1
 
 

@@ -25,6 +25,8 @@ const DESKS = {
   copywriter: [-1.1, 0.3],
   qc: [1.35, 0.3],
   studio: [3.8, 0.3],
+  strategist: [6.25, -3.4],
+  asisten: [6.25, 0.3],
 };
 const LOUNGE = { minX: -6.8, maxX: -2.6, minZ: 1.6, maxZ: 4.8 };
 const LOUNGE_SPOTS = [[-5.6, 2.3], [-4.3, 3.9], [-6.2, 4.3], [-3.3, 2.6], [-2.9, 4.4], [5.4, 3.6], [4.2, 3.7], [6.2, 2.4], [0.2, 3.4], [2.6, 4.2], [-0.8, 4.6]];
@@ -115,7 +117,7 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
   add(makePlant(1.1, 0), -6.7, -4.8);
   add(makePlant(0.9, 1), -3.2, -4.8);
   add(makeShelf(colors.radar), 6.5, -4.9);
-  add(makePlant(1.2, 1), 6.7, -1.6);
+  add(makePlant(1.2, 1), 7.0, 2.9);
   add(makeFloorLamp(), -6.8, -1.9);
   // lounge / pantry
   const counter = makeCounter();
@@ -125,7 +127,6 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
   add(makeSofa('#c9b8f0'), -6.75, 3.0, Math.PI / 2);
   add(makeRoundTable(0.55, 3), -4.6, 2.6);
   add(makeDispenser(), 6.6, 4.6);
-  add(makePlant(1.0, 0), 6.6, 0.9);
   add(makePlant(0.8, 1), -2.3, 1.7);
   add(makeSofa('#bfe3cf'), 4.4, 4.7, Math.PI);
 

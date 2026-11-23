@@ -12,13 +12,18 @@ if [ ! -d tools/remotion/node_modules ]; then (cd tools/remotion && npm install 
 .venv/bin/python -c "import edge_tts, certifi, faster_whisper, yt_dlp" 2>/dev/null || .venv/bin/pip install -q -U edge-tts certifi pillow faster-whisper yt-dlp
 today=$(TZ=Asia/Jakarta date +%F)
 yday=$(TZ=Asia/Jakarta date -v-1d +%F)
-for d in "$yday" "$today"; do
-  [ -f "data/$d.json" ] || continue
-  GP_PUBLISH=1 .venv/bin/python tools/render_video.py --date "$d" --prune 14
-done
-# YouTube kids channel (after Instagram so the reels are ready first)
-for d in "$yday" "$today"; do
-  [ -f "data/kids/$d.json" ] || continue
-  GP_PUBLISH=1 .venv/bin/python tools/render_video.py --channel kids --date "$d" --prune 14
-done
+# Studio (Instagram) and Asisten Studio (YouTube kids) render at the same time
+(
+  for d in "$yday" "$today"; do
+    [ -f "data/$d.json" ] || continue
+    GP_PUBLISH=1 .venv/bin/python tools/render_video.py --date "$d" --prune 14
+  done
+) &
+(
+  for d in "$yday" "$today"; do
+    [ -f "data/kids/$d.json" ] || continue
+    GP_PUBLISH=1 .venv/bin/python tools/render_video.py --channel kids --date "$d" --prune 14
+  done
+) &
+wait
 tools/publish.sh "video: render $today"

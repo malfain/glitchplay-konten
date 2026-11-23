@@ -1,5 +1,6 @@
 .DS_Store
 .venv/
-.render-tmp/
+.render-tmp*/
+data/status.lock
 __pycache__/
 node_modules/

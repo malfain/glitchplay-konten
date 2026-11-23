@@ -8,8 +8,9 @@
   python3 tools/status.py bos "poin 1" "poin 2" ...   # Kesimpulan Bos
   python3 tools/status.py log <id> "pesan"
 
-Agent ids: bos, radar, detektif, narator, copywriter, qc, studio (render video di Mac)
+Agent ids: bos, radar, detektif, strategist, narator, copywriter, qc, studio (render video IG di Mac), asisten (render video YouTube di Mac)
 """
+import fcntl
 import json
 import sys
 from datetime import datetime, timedelta, timezone
@@ -17,7 +18,7 @@ from pathlib import Path
 
 WIB = timezone(timedelta(hours=7))
 PATH = Path(__file__).resolve().parent.parent / "data" / "status.json"
-AGENTS = ["bos", "radar", "detektif", "narator", "copywriter", "qc", "studio"]
+AGENTS = ["bos", "radar", "detektif", "strategist", "narator", "copywriter", "qc", "studio", "asisten"]
 STATES = {"idle", "kerja", "selesai", "error"}
 MAX_LOG = 60
 
@@ -87,4 +88,7 @@ def main(argv):
 
 
 if __name__ == "__main__":
-    main(sys.argv)
+    # Studio and Asisten Studio render in parallel on the Mac: one writer at a time
+    with open(PATH.with_suffix(".lock"), "w") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        main(sys.argv)

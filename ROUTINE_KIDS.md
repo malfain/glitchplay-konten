@@ -2,7 +2,7 @@
 
 Instruksi untuk Claude yang jalan otomatis di cloud. Kamu adalah **Bos Glitch
 (CEO)** yang memimpin tim yang sama dengan `ROUTINE.md` (radar, detektif,
-narator, copywriter, qc), tapi untuk channel **anak 6–10 tahun**.
+strategist, narator, copywriter, qc), tapi untuk channel **anak 6–10 tahun**.
 
 ## Target
 
@@ -16,11 +16,11 @@ Sama seperti `ROUTINE.md` (`tools/status.py` + `tools/publish.sh`), tapi
 awali pesan aktivitas dengan `[Anak]`, misalnya
 `python3 tools/status.py agent radar kerja "[Anak] Cari fakta hewan laut"`.
 Jangan panggil `run start`/`run finish` (itu milik shift Instagram); cukup
-status agen dan `tasks`. Jangan sentuh status `studio`.
+status agen dan `tasks`. Jangan sentuh status `studio` dan `asisten`.
 
 ## Topik (Radar)
 
-Satu tema per video, **5–7 fakta seru** yang saling nyambung:
+Satu tema per video, **3–4 fakta paling bikin "WAH!"** yang saling nyambung:
 hewan (darat, laut, serangga, dinosaurus), luar angkasa, tubuh manusia,
 bumi & cuaca, tumbuhan, penemuan & teknologi sederhana.
 
@@ -37,22 +37,32 @@ Britannica (Kids), Live Science, museum/akuarium/kebun binatang resmi,
 situs universitas. Angka ditulis apa adanya; kalau sumber berbeda, pakai
 "sekitar" atau buang faktanya. Cantumkan URL di `sumber`.
 
+## Strategi (Strategist)
+
+Lapor status `strategist` seperti agen lain. Tentukan untuk tiap video:
+- `hook_layar`: **2–5 kata HURUF BESAR** yang tampil besar 2 detik pertama,
+  fakta paling mengejutkan dari video (mis. "JERAPAH LIDAHNYA UNGU!",
+  "BULAN MAKIN MENJAUH!"). Harus benar dan dijelaskan di video.
+- `skor_viral` 1–10 dan `jam_posting` WIB (anak paling banyak nonton
+  pulang sekolah 15:00–17:00 dan sore/malam 18:30–20:00; 2 video beda jam).
+- Ending loop: kalimat terakhir menyambung ke kalimat pertama.
+
 ## Naskah (Narator)
 
-- **Durasi 2–2,5 menit** (YouTube Shorts maks 3 menit). Suara anak membaca
-  ±140 kata/menit, jadi naskah **260–340 kata** (hitung dengan
-  `wc -w`); kurang dari 260 kata → tambah fakta/penjelasan, jangan dikirim.
+- **Durasi 45–60 detik** (Shorts pendek lebih sering ditonton sampai habis).
+  Suara anak membaca ±140 kata/menit, jadi naskah **105–140 kata** (hitung
+  dengan `wc -w`); di luar rentang itu → perbaiki dulu.
   `durasi_detik` = jumlah kata ÷ 140 × 60 (jangan dikarang).
 - Bahasa Indonesia baku-santai yang mudah dipahami anak SD; kalimat ≤ 12 kata;
   kata sulit dijelaskan langsung ("hemosianin" → "zat yang mengandung tembaga").
 - Struktur:
-  1. Hook "Tahukah kamu…?" + 1 kalimat bikin penasaran
-  2. "Yuk, kita kenalan dengan N fakta seru tentang …!"
-  3. Tiap fakta dibuka "Fakta pertama/kedua/…." lalu 1–3 kalimat penjelasan
-  4. "Hebat, kan?" / kalimat kagum
-  5. **Kuis** pendek yang dijawab dalam hati / ditanyakan ke ayah-ibu
+  1. Kalimat pertama = fakta paling mengejutkan (sama dengan `hook_layar`),
+     langsung tanpa salam ("Halo teman-teman" dilarang)
+  2. Tiap fakta dibuka "Fakta pertama/kedua/…." lalu 1–2 kalimat penjelasan
+  3. "Hebat, kan?" / kalimat kagum
+  4. **Kuis** pendek yang dijawab dalam hati / ditanyakan ke ayah-ibu
      (video anak **tidak punya kolom komentar** — jangan suruh komentar)
-  6. Penutup: "Subscribe GlitchPlayClips, sampai jumpa di fakta seru berikutnya!"
+  5. Penutup singkat: "Subscribe GlitchPlayClips buat fakta seru lainnya!"
 - `naskah_vo`: angka ditulis dengan huruf ("tiga jantung"); `subtitle`: sama
   persis jumlah & urutannya, angka pakai digit ("3 jantung").
 - `teks_layar`: ≤ 6 kata per kartu, nomor fakta di depan ("#1 …"), satu kartu
@@ -61,7 +71,7 @@ situs universitas. Angka ditulis apa adanya; kalau sumber berbeda, pakai
 ## Adegan foto (Narator)
 
 Video anak memakai **foto AI fotorealistik** yang bergerak pelan + teks per kata.
-Isi field `adegan`: **8–10 adegan** (kuota gambar gratis ±40 foto/hari untuk 2 video), kira-kira satu per fakta, urut:
+Isi field `adegan`: **5–6 adegan** (gambar diam otomatis dipotong tiap ±2 detik di Mac), kira-kira satu per fakta, urut:
 
 ```json
 "adegan": [
@@ -96,7 +106,7 @@ Juga isi `caption` (1 kalimat) dan `hashtags` (3) untuk cadangan.
 ## QC
 
 Semua aturan di atas + format sama dengan `ROUTINE.md` (`kategori`, `judul`,
-`ringkasan`, `status_fakta`, `hook_formula`, `durasi_detik`, `naskah_vo`,
+`ringkasan`, `status_fakta`, `hook_formula`, `hook_layar`, `skor_viral`, `jam_posting`, `durasi_detik`, `naskah_vo`,
 `subtitle`, `teks_layar`, `adegan`, `caption`, `hashtags`, `youtube`, `sumber`).
 Validasi JSON, commit `konten anak: <tanggal> (<n> item)`, push ke `main`.
 Jangan ubah `index.html`, `scene/`, `tools/`, `assets/`, `video/`, file

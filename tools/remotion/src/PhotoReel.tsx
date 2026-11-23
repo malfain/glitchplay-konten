@@ -12,9 +12,10 @@ export const photoReelSchema = z.object({
   audio: z.string().nullable().optional(),
   avatar: z.string().nullable().optional(),
   total: z.number(),
-  scenes: z.array(z.object({ src: z.string(), start: z.number(), end: z.number(), video: z.boolean().optional() })),
+  scenes: z.array(z.object({ src: z.string(), start: z.number(), end: z.number(), video: z.boolean().optional(), cut: z.boolean().optional() })),
   words: z.array(z.object({ text: z.string(), start: z.number(), end: z.number(), chunk: z.number() })),
   label: z.string().optional(),
+  hook: z.string().optional(),
 });
 export type PhotoReelProps = z.infer<typeof photoReelSchema>;
 
@@ -24,7 +25,9 @@ const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 // active-word colour and badge ring per channel
 const ACCENT = { kids: "#ffd23f", glitch: "#c6f02c" } as const;
 
-export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, scenes, words, label }) => {
+const HOOK_END = 1.9; // the big hook card covers the first ~2 s (the scroll-stopping moment)
+
+export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, total, scenes, words, label, hook }) => {
   const th = theme ?? "kids";
   applyTheme(th);
   const accent = ACCENT[th];
@@ -38,12 +41,26 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
           from={Math.round(s.start * fps)}
           durationInFrames={Math.max(1, Math.round((s.end - s.start + (i < scenes.length - 1 ? FADE : 0)) * fps))}
         >
-          <KenBurns src={s.src} index={i} dur={s.end - s.start + FADE} fadeIn={i > 0} video={!!s.video} />
+          <KenBurns src={s.src} index={i} dur={s.end - s.start + FADE} fadeIn={i > 0 && !s.cut} video={!!s.video} />
+        </Sequence>
+      ))}
+      {/* a soft whoosh on every picture change keeps the pace audible */}
+      {scenes.slice(1).map((s, i) => (
+        <Sequence key={`w${i}`} name={`whoosh ${i + 2}`} from={Math.max(0, Math.round(s.start * fps) - 4)} durationInFrames={Math.round(fps)}>
+          <Audio src={staticFile("sfx/whoosh.wav")} volume={0.14} />
         </Sequence>
       ))}
       {/* legibility: soft dark band behind the captions, vignette at the bottom */}
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 38%, rgba(0,0,0,0) 70%, rgba(0,0,0,.45) 100%)" }} />
-      <Captions words={words} accent={accent} />
+      {hook ? (
+        <Sequence name="hook" durationInFrames={Math.round(HOOK_END * fps)}>
+          <Hook text={hook} accent={accent} />
+        </Sequence>
+      ) : null}
+      <Sequence name="teks" from={hook ? Math.round(HOOK_END * fps) : 0}>
+        <Captions words={words} accent={accent} offset={hook ? HOOK_END : 0} />
+      </Sequence>
+      <Progress total={total} accent={accent} />
       <Badge handle={handle} avatar={avatar ?? null} accent={accent} />
       <div style={{ position: "absolute", left: 70, top: 1400, font: `600 26px ${F.sans}`, color: "rgba(255,255,255,.75)" }}>
         {label ?? "Gambar dibuat dengan AI"}
@@ -84,10 +101,10 @@ const KenBurns: React.FC<{ src: string; index: number; dur: number; fadeIn: bool
 };
 
 // Shows one short chunk (2–3 words) at a time; the word being spoken is yellow and pops slightly.
-const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string }> = ({ words, accent }) => {
+const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string; offset: number }> = ({ words, accent, offset }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const t = frame / fps;
+  const t = frame / fps + offset;
   let cur: PhotoReelProps["words"][number] | undefined;
   for (const w of words) if (w.start <= t + 0.02) cur = w;
   if (!cur || t > cur.end + 0.6) return null;
@@ -129,3 +146,35 @@ const Badge: React.FC<{ handle: string; avatar: string | null; accent: string }>
     {handle}
   </div>
 );
+
+// The opening card: huge words on a tilted accent band, slams in, then gets out of the way.
+const Hook: React.FC<{ text: string; accent: string }> = ({ text, accent }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = frame / fps;
+  const slam = interpolate(t, [0, 0.22], [1.6, 1], { ...clamp, easing: Easing.out(Easing.back(1.6)) });
+  const out = interpolate(t, [HOOK_END - 0.25, HOOK_END], [1, 0], clamp);
+  const shake = t < 0.35 ? Math.sin(frame * 2.2) * 6 * (1 - t / 0.35) : 0;
+  return (
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", opacity: out, background: "rgba(0,0,0,.35)" }}>
+      <div
+        style={{
+          maxWidth: 940, padding: "26px 40px", background: accent, color: "#0b0b0f", rotate: "-3deg",
+          translate: `${shake}px 0`, scale: String(slam), textAlign: "center", borderRadius: 18,
+          font: `800 108px ${F.sans}`, lineHeight: 1.02, textTransform: "uppercase", letterSpacing: 1,
+          boxShadow: "0 18px 0 rgba(0,0,0,.45), 0 0 80px rgba(0,0,0,.5)",
+        }}
+      >
+        {text}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// Thin progress bar at the very top: viewers stay when they can see how little is left.
+const Progress: React.FC<{ total: number; accent: string }> = ({ total, accent }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const w = interpolate(frame / fps, [0, Math.max(1, total)], [0, 100], clamp);
+  return <div style={{ position: "absolute", left: 0, top: 0, height: 10, width: `${w}%`, background: accent, opacity: 0.9 }} />;
+};

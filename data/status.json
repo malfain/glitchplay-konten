@@ -50,9 +50,24 @@
       "status": "kerja",
       "aktivitas": "Render 2 video untuk 2026-11-23",
       "t": "2026-11-23T08:49:07+07:00"
+    },
+    "strategist": {
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-23T14:45:49+07:00"
+    },
+    "asisten": {
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-23T14:45:49+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T14:45:49+07:00",
+      "agen": "asisten",
+      "pesan": "Asisten Studio bergabung: render YouTube paralel"
+    },
     {
       "t": "2026-11-23T08:49:07+07:00",
       "agen": "studio",
@@ -347,13 +362,8 @@
       "t": "2026-11-22T07:10:08+07:00",
       "agen": "studio",
       "pesan": "Render video 1/5: GTA VI cetak penjualan hari pertam"
-    },
-    {
-      "t": "2026-11-22T07:10:05+07:00",
-      "agen": "studio",
-      "pesan": "Render 5 video untuk 2026-11-22"
     }
   ],
-  "updated_at": "2026-11-23T08:49:07+07:00",
+  "updated_at": "2026-11-23T14:45:49+07:00",
   "kesimpulan_t": "2026-11-23T06:09:21+07:00"
 }
