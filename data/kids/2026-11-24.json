@@ -1,0 +1,428 @@
+{
+  "date": "2026-11-24",
+  "items": [
+    {
+      "kategori": "Hewan",
+      "judul": "5 fakta seru penguin kaisar: menyelam 500 meter, tahan napas, ayah jaga telur",
+      "ringkasan": "Penguin kaisar tak bisa terbang (sayap jadi sirip), bisa menyelam lebih dari 500 m, menahan napas lebih dari 20 menit, berdesakan bergantian posisi untuk menghangatkan diri, dan penguin ayah mengerami telur di atas kaki sekitar dua bulan lebih sementara ibu mencari makan.",
+      "status_fakta": "resmi",
+      "hook_formula": "Fakta Mengejutkan + daftar 5 fakta",
+      "hook_layar": "PENGUIN MENYELAM 500 METER!",
+      "skor_viral": 8,
+      "jam_posting": "16:00",
+      "durasi_detik": 98,
+      "naskah_vo": [
+        "Penguin kaisar bisa menyelam sampai lebih dari lima ratus meter!",
+        "Itu jauh lebih dalam dari kolam renang mana pun!",
+        "Yuk, kenalan dengan lima fakta seru tentang penguin kaisar!",
+        "Fakta pertama. Penguin tidak bisa terbang.",
+        "Sayapnya berubah jadi sirip untuk berenang.",
+        "Penguin tetap burung, lho, walau lebih suka berada di air.",
+        "Penguin kaisar adalah penguin terbesar, tingginya sekitar satu meter lebih.",
+        "Fakta kedua. Penguin kaisar menyelam sangat dalam.",
+        "Para ilmuwan mencatat selaman lebih dari lima ratus meter.",
+        "Mereka menyelam untuk mencari ikan dan makanan laut lainnya.",
+        "Di sana gelap dan dingin sekali!",
+        "Fakta ketiga. Penguin bisa menahan napas lama sekali.",
+        "Sekali menyelam, bisa lebih dari dua puluh menit.",
+        "Kita biasanya hanya bisa menahan napas sebentar saja.",
+        "Tapi fakta keempat lebih menggemaskan lagi!",
+        "Fakta keempat. Penguin berdesakan untuk menghangatkan badan.",
+        "Mereka berkumpul rapat di Antartika yang sangat dingin.",
+        "Penguin di pinggir yang kedinginan bergantian pindah ke tengah.",
+        "Jadi, semuanya kebagian hangat!",
+        "Fakta kelima. Penguin ayah mengerami telur di atas kakinya.",
+        "Telurnya ditutup lipatan kulit berbulu yang hangat.",
+        "Sementara itu, penguin ibu pergi ke laut mencari makan.",
+        "Ayah menjaga telur sekitar dua bulan lebih.",
+        "Setelah itu, ibu pulang membawa makanan di dalam perutnya untuk si anak.",
+        "Hebat, kan?",
+        "Sekarang kuis! Penguin kaisar menyelam sampai berapa meter?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Ingat, penguin kaisar bisa menyelam lebih dari lima ratus meter!",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya!"
+      ],
+      "subtitle": [
+        "Penguin kaisar bisa menyelam sampai lebih dari 500 meter!",
+        "Itu jauh lebih dalam dari kolam renang mana pun!",
+        "Yuk, kenalan dengan 5 fakta seru tentang penguin kaisar!",
+        "Fakta pertama. Penguin tidak bisa terbang.",
+        "Sayapnya berubah jadi sirip untuk berenang.",
+        "Penguin tetap burung, lho, walau lebih suka berada di air.",
+        "Penguin kaisar adalah penguin terbesar, tingginya sekitar 1 meter lebih.",
+        "Fakta kedua. Penguin kaisar menyelam sangat dalam.",
+        "Para ilmuwan mencatat selaman lebih dari 500 meter.",
+        "Mereka menyelam untuk mencari ikan dan makanan laut lainnya.",
+        "Di sana gelap dan dingin sekali!",
+        "Fakta ketiga. Penguin bisa menahan napas lama sekali.",
+        "Sekali menyelam, bisa lebih dari 20 menit.",
+        "Kita biasanya hanya bisa menahan napas sebentar saja.",
+        "Tapi fakta keempat lebih menggemaskan lagi!",
+        "Fakta keempat. Penguin berdesakan untuk menghangatkan badan.",
+        "Mereka berkumpul rapat di Antartika yang sangat dingin.",
+        "Penguin di pinggir yang kedinginan bergantian pindah ke tengah.",
+        "Jadi, semuanya kebagian hangat!",
+        "Fakta kelima. Penguin ayah mengerami telur di atas kakinya.",
+        "Telurnya ditutup lipatan kulit berbulu yang hangat.",
+        "Sementara itu, penguin ibu pergi ke laut mencari makan.",
+        "Ayah menjaga telur sekitar 2 bulan lebih.",
+        "Setelah itu, ibu pulang membawa makanan di dalam perutnya untuk si anak.",
+        "Hebat, kan?",
+        "Sekarang kuis! Penguin kaisar menyelam sampai berapa meter?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Ingat, penguin kaisar bisa menyelam lebih dari 500 meter!",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "PENGUIN MENYELAM 500 METER!",
+          "visual": "penguin di bawah air"
+        },
+        {
+          "t": "0:09",
+          "teks": "5 FAKTA SERU PENGUIN KAISAR",
+          "visual": "angka 5"
+        },
+        {
+          "t": "0:15",
+          "teks": "#1 TIDAK BISA TERBANG",
+          "visual": "penguin berdiri di es"
+        },
+        {
+          "t": "0:27",
+          "teks": "#2 SELAMAN 500 METER+",
+          "visual": "penguin menyelam"
+        },
+        {
+          "t": "0:42",
+          "teks": "#3 NAHAN NAPAS 20 MENIT+",
+          "visual": "penguin di air gelap"
+        },
+        {
+          "t": "0:56",
+          "teks": "#4 BERDESAKAN BIAR HANGAT",
+          "visual": "kumpulan penguin"
+        },
+        {
+          "t": "1:12",
+          "teks": "#5 AYAH JAGA TELUR",
+          "visual": "penguin dengan telur"
+        },
+        {
+          "t": "1:35",
+          "teks": "HEBAT, KAN?",
+          "visual": "penguin lucu"
+        },
+        {
+          "t": "1:40",
+          "teks": "KUIS: SELAMAN BERAPA METER?",
+          "visual": "tanda tanya"
+        },
+        {
+          "t": "1:50",
+          "teks": "SUBSCRIBE GLITCHPLAYCLIPS!",
+          "visual": "tombol subscribe"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "An emperor penguin swimming underwater in clear blue Antarctic water, sunlight rays from above"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "An emperor penguin standing on white ice with flippers slightly out, soft daylight"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A tall emperor penguin standing beside smaller penguins on snow, wide shot"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "A penguin diving down into deep dark blue ocean water, cinematic underwater photo"
+        },
+        {
+          "kalimat": 11,
+          "prompt": "A penguin gliding underwater with bubbles trailing behind it, blue water"
+        },
+        {
+          "kalimat": 15,
+          "prompt": "A big group of emperor penguins huddled tightly together on snowy ice in a blizzard"
+        },
+        {
+          "kalimat": 19,
+          "prompt": "An emperor penguin father holding an egg on top of his feet under a feathered fold, close-up"
+        },
+        {
+          "kalimat": 23,
+          "prompt": "An adult emperor penguin feeding a fluffy grey penguin chick on the ice, warm soft light"
+        },
+        {
+          "kalimat": 25,
+          "prompt": "A curious young child looking at a picture book about penguins, cozy room, soft light"
+        }
+      ],
+      "caption": "Penguin bisa menyelam lebih dari 500 meter! 🐧",
+      "hashtags": [
+        "#faktaseru",
+        "#penguin",
+        "#hewan"
+      ],
+      "youtube": {
+        "judul": "Penguin Bisa Menyelam 500 Meter! 5 Fakta Seru Penguin Kaisar 🐧 #Shorts",
+        "deskripsi": "Tahukah kamu? Penguin kaisar bisa menyelam lebih dari 500 meter dan ayahnya menjaga telur di atas kaki! Yuk kenalan dengan 5 fakta seru penguin kaisar.\n\n🐧 Fakta di video:\n1. Penguin tidak bisa terbang, sayapnya jadi sirip\n2. Menyelam lebih dari 500 meter\n3. Menahan napas lebih dari 20 menit\n4. Berdesakan bergantian posisi biar hangat\n5. Ayah mengerami telur di atas kaki sekitar 2 bulan lebih\n\nSubscribe GlitchPlayClips untuk fakta seru lainnya!\n\nSumber: Britannica, National Geographic Kids, Aquarium of the Pacific, Physics World.",
+        "tags": [
+          "fakta seru",
+          "edukasi anak",
+          "shorts",
+          "penguin",
+          "penguin kaisar",
+          "fakta hewan",
+          "hewan untuk anak",
+          "belajar anak",
+          "Antartika",
+          "GlitchPlayClips"
+        ],
+        "made_for_kids": true
+      },
+      "sumber": [
+        {
+          "nama": "Britannica - Emperor penguin",
+          "url": "https://www.britannica.com/animal/emperor-penguin"
+        },
+        {
+          "nama": "National Geographic - Emperor penguin",
+          "url": "https://www.nationalgeographic.com/animals/birds/facts/emperor-penguin"
+        },
+        {
+          "nama": "Aquarium of the Pacific",
+          "url": "https://www.aquariumofpacific.org/onlinelearningcenter/species/emperor_penguin"
+        },
+        {
+          "nama": "Australian Antarctic Division",
+          "url": "https://www.antarctica.gov.au/about-antarctica/animals/penguins/emperor-penguin/"
+        },
+        {
+          "nama": "National Geographic Kids",
+          "url": "https://www.natgeokids.com/uk/discover/animals/birds/emperor-penguins/"
+        }
+      ]
+    },
+    {
+      "kategori": "Tubuh Manusia",
+      "judul": "6 fakta seru jantung: 100.000 detak sehari, 7.500 liter darah, seukuran kepalan",
+      "ringkasan": "Jantung berdetak sekitar 100.000 kali sehari, seukuran kepalan tangan, memompa sekitar 7.500 liter darah per hari lewat pembuluh darah sepanjang sekitar 97.000 km (60.000 mil), berdetak 60-100 kali semenit pada orang dewasa saat santai, dan merupakan organ pertama yang berfungsi.",
+      "status_fakta": "resmi",
+      "hook_formula": "Fakta Mengejutkan + daftar 6 fakta",
+      "hook_layar": "JANTUNGMU BERDETAK 100.000 KALI!",
+      "skor_viral": 7,
+      "jam_posting": "18:45",
+      "durasi_detik": 93,
+      "naskah_vo": [
+        "Jantungmu berdetak seratus ribu kali dalam satu hari!",
+        "Dia terus bekerja, bahkan saat kamu tidur!",
+        "Yuk, kenalan dengan enam fakta seru tentang jantung!",
+        "Fakta pertama. Jantung berdetak sekitar seratus ribu kali sehari.",
+        "Detak itu terus berjalan siang dan malam.",
+        "Detak itu bisa kamu rasakan di pergelangan tanganmu.",
+        "Fakta kedua. Jantung seukuran kepalan tanganmu.",
+        "Coba kepalkan tanganmu, lalu lihat!",
+        "Kecil, tapi kuat sekali!",
+        "Fakta ketiga. Jantung memompa darah ke seluruh tubuh.",
+        "Darah membawa makanan dan udara bersih ke seluruh tubuh.",
+        "Dalam sehari, jumlahnya sekitar tujuh ribu lima ratus liter.",
+        "Itu setara ratusan galon air minum!",
+        "Tapi fakta keempat lebih panjang lagi!",
+        "Fakta keempat. Pembuluh darahmu panjang sekali.",
+        "Pembuluh darah adalah saluran kecil tempat darah mengalir.",
+        "Kalau disambung, panjangnya sekitar sembilan puluh tujuh ribu kilometer.",
+        "Itu lebih dari dua kali keliling Bumi!",
+        "Fakta kelima. Jantung orang dewasa berdetak enam puluh sampai seratus kali semenit.",
+        "Kalau kamu berlari, detaknya jadi lebih cepat.",
+        "Itu tanda tubuhmu butuh lebih banyak tenaga.",
+        "Saat kamu tenang, detaknya melambat lagi.",
+        "Fakta keenam. Jantung adalah organ pertama yang bekerja saat tubuhmu mulai tumbuh.",
+        "Jantungmu sudah berdetak bahkan sebelum kamu lahir!",
+        "Sejak saat itu, dia bekerja tanpa berhenti.",
+        "Hebat, kan?",
+        "Sekarang kuis! Seberapa besar jantungmu?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Jawabannya sama dengan kepalan tanganmu.",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya!"
+      ],
+      "subtitle": [
+        "Jantungmu berdetak 100.000 kali dalam satu hari!",
+        "Dia terus bekerja, bahkan saat kamu tidur!",
+        "Yuk, kenalan dengan 6 fakta seru tentang jantung!",
+        "Fakta pertama. Jantung berdetak sekitar 100.000 kali sehari.",
+        "Detak itu terus berjalan siang dan malam.",
+        "Detak itu bisa kamu rasakan di pergelangan tanganmu.",
+        "Fakta kedua. Jantung seukuran kepalan tanganmu.",
+        "Coba kepalkan tanganmu, lalu lihat!",
+        "Kecil, tapi kuat sekali!",
+        "Fakta ketiga. Jantung memompa darah ke seluruh tubuh.",
+        "Darah membawa makanan dan udara bersih ke seluruh tubuh.",
+        "Dalam sehari, jumlahnya sekitar 7.500 liter.",
+        "Itu setara ratusan galon air minum!",
+        "Tapi fakta keempat lebih panjang lagi!",
+        "Fakta keempat. Pembuluh darahmu panjang sekali.",
+        "Pembuluh darah adalah saluran kecil tempat darah mengalir.",
+        "Kalau disambung, panjangnya sekitar 97.000 kilometer.",
+        "Itu lebih dari 2 kali keliling Bumi!",
+        "Fakta kelima. Jantung orang dewasa berdetak 60 sampai 100 kali semenit.",
+        "Kalau kamu berlari, detaknya jadi lebih cepat.",
+        "Itu tanda tubuhmu butuh lebih banyak tenaga.",
+        "Saat kamu tenang, detaknya melambat lagi.",
+        "Fakta keenam. Jantung adalah organ pertama yang bekerja saat tubuhmu mulai tumbuh.",
+        "Jantungmu sudah berdetak bahkan sebelum kamu lahir!",
+        "Sejak saat itu, dia bekerja tanpa berhenti.",
+        "Hebat, kan?",
+        "Sekarang kuis! Seberapa besar jantungmu?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Jawabannya sama dengan kepalan tanganmu.",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "JANTUNGMU BERDETAK 100.000 KALI!",
+          "visual": "jantung berdetak"
+        },
+        {
+          "t": "0:09",
+          "teks": "6 FAKTA SERU JANTUNG",
+          "visual": "angka 6"
+        },
+        {
+          "t": "0:15",
+          "teks": "#1 100.000 DETAK SEHARI",
+          "visual": "jam dan jantung"
+        },
+        {
+          "t": "0:28",
+          "teks": "#2 SEUKURAN KEPALAN TANGAN",
+          "visual": "tangan mengepal"
+        },
+        {
+          "t": "0:40",
+          "teks": "#3 7.500 LITER DARAH",
+          "visual": "air mengalir"
+        },
+        {
+          "t": "0:52",
+          "teks": "#4 PEMBULUH DARAH 97.000 KM",
+          "visual": "garis panjang"
+        },
+        {
+          "t": "1:08",
+          "teks": "#5 DETAK 60-100 SEMENIT",
+          "visual": "anak berlari"
+        },
+        {
+          "t": "1:22",
+          "teks": "#6 ORGAN PERTAMA BEKERJA",
+          "visual": "ilustrasi tubuh"
+        },
+        {
+          "t": "1:36",
+          "teks": "HEBAT, KAN?",
+          "visual": "anak kagum"
+        },
+        {
+          "t": "1:40",
+          "teks": "KUIS: SEBESAR APA JANTUNGMU?",
+          "visual": "tanda tanya"
+        },
+        {
+          "t": "1:50",
+          "teks": "SUBSCRIBE GLITCHPLAYCLIPS!",
+          "visual": "tombol subscribe"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A child sleeping peacefully in bed at night, warm lamp light, cozy bedroom"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "A close-up of a child's hand with two fingers resting on the wrist to feel the pulse, soft light"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A small child's clenched fist held up in front of a bright window, close-up"
+        },
+        {
+          "kalimat": 9,
+          "prompt": "Clear water pouring from a big glass jug into a large tank, bright studio light"
+        },
+        {
+          "kalimat": 14,
+          "prompt": "A long winding red ribbon stretched across a green field, aerial view"
+        },
+        {
+          "kalimat": 17,
+          "prompt": "The planet Earth seen from space, blue oceans and white clouds, cinematic"
+        },
+        {
+          "kalimat": 18,
+          "prompt": "A happy child running across a sunny park, bright daylight"
+        },
+        {
+          "kalimat": 22,
+          "prompt": "A smiling mother and young child on a sofa reading a children's science book, soft light"
+        },
+        {
+          "kalimat": 26,
+          "prompt": "A curious child looking at their own fist with a puzzled smile, cozy room"
+        }
+      ],
+      "caption": "Jantungmu berdetak 100.000 kali sehari! ❤️",
+      "hashtags": [
+        "#faktaseru",
+        "#jantung",
+        "#tubuhmanusia"
+      ],
+      "youtube": {
+        "judul": "Jantungmu Berdetak 100.000 Kali Sehari! 6 Fakta Seru Jantung ❤️ #Shorts",
+        "deskripsi": "Tahukah kamu? Jantungmu bekerja terus siang dan malam, sekitar 100.000 detak setiap hari! Yuk kenalan dengan 6 fakta seru jantung.\n\n❤️ Fakta di video:\n1. Berdetak sekitar 100.000 kali sehari\n2. Seukuran kepalan tangan\n3. Memompa sekitar 7.500 liter darah sehari\n4. Pembuluh darah sekitar 97.000 km\n5. Detak orang dewasa saat santai 60-100 kali semenit\n6. Organ pertama yang bekerja dan berdetak sebelum lahir\n\nSubscribe GlitchPlayClips untuk fakta seru lainnya!\n\nSumber: Cleveland Clinic, Live Science, Learning Mole, Vedantu.",
+        "tags": [
+          "fakta seru",
+          "edukasi anak",
+          "shorts",
+          "jantung",
+          "tubuh manusia",
+          "fakta tubuh",
+          "belajar anak",
+          "sains anak",
+          "detak jantung",
+          "GlitchPlayClips"
+        ],
+        "made_for_kids": true
+      },
+      "sumber": [
+        {
+          "nama": "Cleveland Clinic - Fun facts about your heart",
+          "url": "https://health.clevelandclinic.org/fun-facts-about-your-heart"
+        },
+        {
+          "nama": "Live Science - The human heart",
+          "url": "https://www.livescience.com/34655-human-heart.html"
+        },
+        {
+          "nama": "Learning Mole - Heart facts",
+          "url": "https://learningmole.com/10-astonishing-heart-facts-for-kids/"
+        },
+        {
+          "nama": "Vedantu - Heart facts for kids",
+          "url": "https://www.vedantu.com/evs/heart-facts-for-kids"
+        },
+        {
+          "nama": "PMC - When does the embryonic heart start beating",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9225347/"
+        }
+      ]
+    }
+  ]
+}
