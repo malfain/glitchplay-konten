@@ -48,9 +48,9 @@
       "t": "2026-11-24T06:10:24+07:00"
     },
     "studio": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-24T06:06:17+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 10 video untuk 2026-11-24",
+      "t": "2026-11-24T06:18:06+07:00"
     },
     "strategist": {
       "status": "selesai",
@@ -64,6 +64,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-24T06:18:06+07:00",
+      "agen": "studio",
+      "pesan": "Render 10 video untuk 2026-11-24"
+    },
     {
       "t": "2026-11-24T06:10:24+07:00",
       "agen": "bos",
@@ -358,13 +363,8 @@
       "t": "2026-11-23T17:51:05+07:00",
       "agen": "qc",
       "pesan": "[Sirah] Eps 2 terbit di Hasil"
-    },
-    {
-      "t": "2026-11-23T17:51:05+07:00",
-      "agen": "copywriter",
-      "pesan": "[Sirah] Caption Eps 2 selesai"
     }
   ],
-  "updated_at": "2026-11-24T06:10:24+07:00",
+  "updated_at": "2026-11-24T06:18:06+07:00",
   "kesimpulan_t": "2026-11-24T06:10:24+07:00"
 }
