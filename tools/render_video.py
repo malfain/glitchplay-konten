@@ -1526,8 +1526,8 @@ def main():
             try:
                 mp4, poster, dur = fn(it, i, a.date, outdir, tmp_root / f"{a.date}-{i}")
             except RuntimeError as e:
-                if fn is not render_item_photo or "kuota gambar" not in str(e):
-                    raise
+                if fn is not render_item_photo or "kuota gambar" not in str(e) or CH["theme"] == "sirah":
+                    raise  # the sirah channel waits for the quota (hourly retry) rather than using the cartoon mascot
                 # free image quota used up: never leave the day without a video, fall back to the animated style
                 print(f"[{i + 1}] {e} → pakai gaya animasi", file=sys.stderr)
                 mp4, poster, dur = render_item_remotion(it, i, a.date, outdir, tmp_root / f"{a.date}-{i}-anim")
