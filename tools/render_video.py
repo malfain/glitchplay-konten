@@ -270,13 +270,16 @@ def tts(text, out_aiff):
             mp3.unlink()
             return
         print(f"edge-tts gagal, pakai {VOICE}: {(r.stderr or '')[-200:]}", file=sys.stderr)
+    if not shutil.which("say"):  # Linux render server: no macOS voice to fall back to
+        raise RuntimeError("edge-tts gagal dan suara macOS tidak tersedia")
     run(["say", "-v", VOICE, "-r", RATE, "-o", str(out_aiff), text])
 
 
 def duration(path):
-    r = subprocess.run(["afinfo", str(path)], capture_output=True, text=True)
-    m = re.search(r"estimated duration: ([\d.]+)", r.stdout)
-    return float(m.group(1)) if m else 2.0
+    """Media length in seconds via ffmpeg (works on the Mac and on the Linux render server)."""
+    r = subprocess.run([FFMPEG, "-hide_banner", "-i", str(path)], capture_output=True, text=True)
+    m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", r.stderr)
+    return int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3)) if m else 2.0
 
 
 def pick_card(cards, frac):
