@@ -207,7 +207,11 @@
           "nama": "National Geographic Kids",
           "url": "https://www.natgeokids.com/uk/discover/animals/birds/emperor-penguins/"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-24/kids-01-5-fakta-seru-penguin-kaisar-menyelam-500.mp4",
+      "poster": "video/kids/2026-11-24/01-5-fakta-seru-penguin-kaisar-menyelam-500.jpg",
+      "video_durasi": 96.3,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     },
     {
       "kategori": "Tubuh Manusia",
@@ -422,7 +426,11 @@
           "nama": "PMC - When does the embryonic heart start beating",
           "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9225347/"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-24/kids-02-6-fakta-seru-jantung-100-000-detak-sehar.mp4",
+      "poster": "video/kids/2026-11-24/02-6-fakta-seru-jantung-100-000-detak-sehar.jpg",
+      "video_durasi": 94.7,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     }
   ]
 }
