@@ -20,7 +20,7 @@ status agen dan `tasks`. Jangan sentuh status `studio` dan `asisten`.
 
 ## Topik (Radar)
 
-Satu tema per video, **3–4 fakta paling bikin "WAH!"** yang saling nyambung:
+Satu tema per video, **5–7 fakta seru** yang saling nyambung, fakta paling bikin "WAH!" ditaruh pertama:
 hewan (darat, laut, serangga, dinosaurus), luar angkasa, tubuh manusia,
 bumi & cuaca, tumbuhan, penemuan & teknologi sederhana.
 
@@ -49,16 +49,18 @@ Lapor status `strategist` seperti agen lain. Tentukan untuk tiap video:
 
 ## Naskah (Narator)
 
-- **Durasi 45–60 detik** (Shorts pendek lebih sering ditonton sampai habis).
-  Suara anak membaca ±140 kata/menit, jadi naskah **105–140 kata** (hitung
-  dengan `wc -w`); di luar rentang itu → perbaiki dulu.
+- **Durasi 1,5–2,5 menit** (YouTube Shorts maks 3 menit). Suara anak membaca
+  ±140 kata/menit, jadi naskah **210–340 kata** (hitung dengan `wc -w`); di
+  luar rentang itu → perbaiki dulu. Supaya tetap ditonton sampai habis: tiap
+  fakta singkat dan padat, ada kalimat penasaran sebelum fakta berikutnya
+  ("Tapi fakta keempat lebih aneh lagi!").
   `durasi_detik` = jumlah kata ÷ 140 × 60 (jangan dikarang).
 - Bahasa Indonesia baku-santai yang mudah dipahami anak SD; kalimat ≤ 12 kata;
   kata sulit dijelaskan langsung ("hemosianin" → "zat yang mengandung tembaga").
 - Struktur:
   1. Kalimat pertama = fakta paling mengejutkan (sama dengan `hook_layar`),
      langsung tanpa salam ("Halo teman-teman" dilarang)
-  2. Tiap fakta dibuka "Fakta pertama/kedua/…." lalu 1–2 kalimat penjelasan
+  2. Tiap fakta dibuka "Fakta pertama/kedua/…." lalu 1–3 kalimat penjelasan
   3. "Hebat, kan?" / kalimat kagum
   4. **Kuis** pendek yang dijawab dalam hati / ditanyakan ke ayah-ibu
      (video anak **tidak punya kolom komentar** — jangan suruh komentar)
@@ -71,7 +73,7 @@ Lapor status `strategist` seperti agen lain. Tentukan untuk tiap video:
 ## Adegan foto (Narator)
 
 Video anak memakai **foto AI fotorealistik** yang bergerak pelan + teks per kata.
-Isi field `adegan`: **5–6 adegan** (gambar diam otomatis dipotong tiap ±2 detik di Mac), kira-kira satu per fakta, urut:
+Isi field `adegan`: **7–9 adegan** (gambar diam otomatis dipotong tiap ±2 detik di Mac), kira-kira satu per fakta, urut:
 
 ```json
 "adegan": [
