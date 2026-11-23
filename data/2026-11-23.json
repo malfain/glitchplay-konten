@@ -214,7 +214,11 @@
           "nama": "Pure Xbox",
           "url": "https://www.purexbox.com/news/2026/11/xbox-announces-black-friday-sale-2026-reveals-nine-included-games"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-23/glitch-02-xbox-black-friday-sale-diskon-sampai-80.mp4",
+      "poster": "video/2026-11-23/02-xbox-black-friday-sale-diskon-sampai-80.jpg",
+      "video_durasi": 24.4,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Promo/Diskon",
