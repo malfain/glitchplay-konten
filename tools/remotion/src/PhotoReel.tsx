@@ -2,6 +2,7 @@ import { Audio, Video } from "@remotion/media";
 import { AbsoluteFill, Easing, Img, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { z } from "zod";
 import { F, applyTheme } from "./theme";
+import { SirahBackdrop } from "./SirahBackdrop";
 
 // "Documentary" Shorts: full-bleed AI photos with a slow Ken Burns move, big word-by-word captions (active word yellow),
 // voiceover. Scenes and caption words carry their own start/end seconds (computed by tools/render_video.py).
@@ -12,7 +13,8 @@ export const photoReelSchema = z.object({
   audio: z.string().nullable().optional(),
   avatar: z.string().nullable().optional(),
   total: z.number(),
-  scenes: z.array(z.object({ src: z.string(), start: z.number(), end: z.number(), video: z.boolean().optional(), cut: z.boolean().optional(), light: z.boolean().optional() })),
+  scenes: z.array(z.object({ src: z.string(), start: z.number(), end: z.number(), video: z.boolean().optional(), cut: z.boolean().optional(), light: z.boolean().optional(),
+    vector: z.enum(["malam", "gurun", "kabah", "gua", "madinah"]).optional() })),
   words: z.array(z.object({ text: z.string(), start: z.number(), end: z.number(), chunk: z.number() })),
   label: z.string().optional(),
   hook: z.string().optional(),
@@ -42,7 +44,11 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
           from={Math.round(s.start * fps)}
           durationInFrames={Math.max(1, Math.round((s.end - s.start + (i < scenes.length - 1 ? FADE : 0)) * fps))}
         >
-          <KenBurns src={s.src} index={i} dur={s.end - s.start + FADE} fadeIn={i > 0 && !s.cut} video={!!s.video} />
+          {s.vector ? (
+            <SirahBackdrop kind={s.vector} index={i} dur={s.end - s.start + FADE} />
+          ) : (
+            <KenBurns src={s.src} index={i} dur={s.end - s.start + FADE} fadeIn={i > 0 && !s.cut} video={!!s.video} />
+          )}
           {s.light ? <Nur /> : null}
         </Sequence>
       ))}

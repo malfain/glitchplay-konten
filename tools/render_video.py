@@ -1219,6 +1219,17 @@ def hook_text(item):
     return " ".join(t.split()[:6]) or None
 
 
+def backdrop_for(prompt, n):
+    """Pick the SirahBackdrop scene that best matches an illustration prompt."""
+    p = prompt.lower()
+    for words, kind in ((("cave", "hira", "thawr", "tsur"), "gua"), (("kaaba", "ka'bah", "pilgrim"), "kabah"),
+                        (("madinah", "medina", "yathrib", "palm", "mosque"), "madinah"),
+                        (("night", "star", "moon", "lamp"), "malam"), (("camel", "caravan", "desert", "dune"), "gurun")):
+        if any(w in p for w in words):
+            return kind
+    return ("malam", "gurun", "kabah", "madinah")[n % 4]
+
+
 def render_item_photo(item, idx, date, outdir, tmp):
     sents = [s.strip() for s in item.get("naskah_vo", []) if s.strip()]
     scenes_in = item.get("adegan") or []
@@ -1292,6 +1303,10 @@ def render_item_photo(item, idx, date, outdir, tmp):
         try:
             cf_image(prompt, img)
         except RuntimeError as e:
+            if "kuota gambar" in str(e) and CH["theme"] == "sirah":
+                # no pictures left today: a moving hand-drawn history scene instead (never the cartoon mascot)
+                imgs.append("vector:" + backdrop_for(sc.get("prompt", ""), n))
+                continue
             if "ditolak" not in str(e):
                 raise
             # one rejected picture must not sink the video: neutral backup scene, else re-use the previous picture
@@ -1337,6 +1352,9 @@ def render_item_photo(item, idx, date, outdir, tmp):
         s1 = starts[nxt] if nxt is not None and nxt < len(starts) else total
         img = imgs[n]
         s1 = max(s1, s0 + 1)
+        if isinstance(img, str):  # vector backdrop: one continuous moving scene
+            scenes.append({"src": "", "start": round(s0, 3), "end": round(s1, 3), "vector": img.split(":", 1)[1]})
+            continue
         # fast pace: a still longer than ~3 s is re-framed every ~2.2 s (new Ken Burns move, hard cut) without spending
         # another picture; clips keep playing
         parts = 1 if img.suffix == ".mp4" else max(1, round((s1 - s0) / 2.2))
@@ -1347,6 +1365,8 @@ def render_item_photo(item, idx, date, outdir, tmp):
 
     shutil.copy(ROOT / "assets/profile.jpg", REMOTION / "public/profile.jpg")
     label = (("Gambar: " + ", ".join(games_used)) if games_used else CH.get("label") or "Gambar dibuat dengan AI")
+    if all(isinstance(x, str) for x in imgs):
+        label = "Animasi ilustrasi"
     if credits:
         label = "Klip: " + ", ".join(credits) + " · " + label
     props = {"theme": CH["theme"], "handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
