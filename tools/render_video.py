@@ -42,6 +42,7 @@ CHANNELS = {
         "pill": "berita game", "cta_head": "follow", "cta_tag": "biar nggak ketinggalan",
         "stickers": {"hook": "update!", "number": "gokil!", "cta": "follow!"},
         "agent": "studio",
+        "safe_prompt": "A cozy gaming setup with a glowing monitor and RGB keyboard on a desk at night, no people",
         "render": "photo",  # AI photos + word captions when the item has 'adegan'; otherwise the animated GlitchReel
     },
     "kids": {
@@ -52,6 +53,7 @@ CHANNELS = {
         "pill": "fakta seru", "cta_head": "subscribe", "cta_tag": "biar tambah pintar",
         "stickers": {"hook": "wow!", "number": "keren!", "cta": "subscribe!"},
         "agent": "asisten",
+        "safe_prompt": "A colorful open picture book on a wooden table in a sunny classroom, no people",
         "render": "photo",  # AI photos + word-by-word captions (falls back to animated style without 'adegan')
     },
     # YouTube "Glitchplay": sirah of the Prophet ﷺ as illustrated stories; the Prophet's face is always covered by light
@@ -68,6 +70,7 @@ CHANNELS = {
                       "soft painterly textures, historical 7th century Arabia, peaceful and respectful mood, "
                       "no text, no letters, no logos"),
         "label": "Ilustrasi dibuat dengan AI",
+        "safe_prompt": "Wide view of a quiet desert valley with palm trees under a golden sky",
     },
 }
 CH = dict(CHANNELS["glitch"])
@@ -883,6 +886,8 @@ def cf_image(prompt, out_jpg):
                 if e.code == 429 and attempt < 4:  # per-minute rate limit: back off and retry
                     time.sleep(20 * (attempt + 1))
                     continue
+                if e.code == 400:  # e.g. a harmless prompt wrongly flagged as NSFW by the safety filter
+                    raise RuntimeError("gambar ditolak Cloudflare: " + body[:160])
                 raise
         img = (d.get("result") or {}).get("image")
         if not img:
@@ -1281,7 +1286,20 @@ def render_item_photo(item, idx, date, outdir, tmp):
         if sc.get("nabi"):  # the Prophet ﷺ: never a visible face (Remotion also lays a light over it)
             prompt += (". The Prophet figure is seen from behind or from far away, standing in the center of the frame, "
                        "his face completely hidden by a bright radiant white-golden light, no facial features visible")
-        cf_image(prompt, img)
+        try:
+            cf_image(prompt, img)
+        except RuntimeError as e:
+            if "ditolak" not in str(e):
+                raise
+            # one rejected picture must not sink the video: neutral backup scene, else re-use the previous picture
+            print(f"[gambar] adegan {n + 1}: {e}", file=sys.stderr)
+            try:
+                cf_image(CH.get("safe_prompt") or "A calm wide establishing shot that fits the story, soft light", img)
+            except RuntimeError:
+                prev = next((x for x in reversed(imgs) if x.suffix == ".jpg"), None)
+                if not prev:
+                    raise
+                shutil.copy(prev, img)
         imgs.append(img)
 
     spans = None
