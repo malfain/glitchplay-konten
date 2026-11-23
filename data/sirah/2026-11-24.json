@@ -170,7 +170,11 @@
           "prompt": "A starry night sky over a peaceful desert village with palm trees, calm and glowing"
         }
       ],
-      "durasi_detik": 97
+      "durasi_detik": 97,
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-24/sirah-01-eps-3-disusui-halimah-as-sa-diyah-di-per.mp4",
+      "poster": "video/sirah/2026-11-24/01-eps-3-disusui-halimah-as-sa-diyah-di-per.jpg",
+      "video_durasi": 93.6,
+      "video_suara": "gemini-3.8-flash-lite-tts/Charon"
     },
     {
       "episode": 4,
@@ -347,7 +351,11 @@
           "prompt": "A peaceful ancient Makkah valley at sunrise with the Kaaba far in the distance, soft light"
         }
       ],
-      "durasi_detik": 101
+      "durasi_detik": 101,
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-24/sirah-02-eps-4-peristiwa-pembelahan-dada-di-masa.mp4",
+      "poster": "video/sirah/2026-11-24/02-eps-4-peristiwa-pembelahan-dada-di-masa.jpg",
+      "video_durasi": 100.6,
+      "video_suara": "gemini-3.8-flash-lite-tts/Charon"
     }
   ]
 }

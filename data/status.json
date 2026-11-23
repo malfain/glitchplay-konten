@@ -56,12 +56,27 @@
       "t": "2026-11-24T04:06:09+07:00"
     },
     "asisten": {
-      "status": "kerja",
-      "aktivitas": "Render 2 video untuk 2026-11-24",
-      "t": "2026-11-24T04:08:59+07:00"
+      "status": "selesai",
+      "aktivitas": "2/2 video jadi, siap di Hasil",
+      "t": "2026-11-24T04:16:06+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-24T04:16:06+07:00",
+      "agen": "asisten",
+      "pesan": "2/2 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-24T04:12:30+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 2/2: Eps 4: Peristiwa pembelahan dada d"
+    },
+    {
+      "t": "2026-11-24T04:09:01+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 1/2: Eps 3: Disusui Halimah As-Sa'diyah"
+    },
     {
       "t": "2026-11-24T04:08:59+07:00",
       "agen": "asisten",
@@ -346,23 +361,8 @@
       "t": "2026-11-23T08:49:04+07:00",
       "agen": "studio",
       "pesan": "5/6 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-23T08:42:34+07:00",
-      "agen": "studio",
-      "pesan": "Render video 6/6: Gothic 3 Classic rilis 24 November"
-    },
-    {
-      "t": "2026-11-23T08:32:34+07:00",
-      "agen": "studio",
-      "pesan": "Render video 5/6: PMGC 2026 dimulai 26 November, fin"
-    },
-    {
-      "t": "2026-11-23T08:23:46+07:00",
-      "agen": "studio",
-      "pesan": "Render video 4/6: Kans terakhir tim Indonesia di FFW"
     }
   ],
-  "updated_at": "2026-11-24T04:08:59+07:00",
+  "updated_at": "2026-11-24T04:16:06+07:00",
   "kesimpulan_t": "2026-11-24T04:06:58+07:00"
 }
