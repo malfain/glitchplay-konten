@@ -1,5 +1,5 @@
 // GlitchPlay HQ service worker: app shell works offline, data is always fetched fresh, videos stream from the network.
-const SHELL = "gphq-shell-v1";
+const SHELL = "gphq-shell-v2";
 const SHELL_FILES = ["./", "index.html", "manifest.webmanifest", "assets/icons/icon-192.png", "assets/icons/icon-512.png",
   "scene/hq.js", "scene/agents.js", "scene/furniture.js"];
 
@@ -16,7 +16,8 @@ self.addEventListener("fetch", (e) => {
   if (url.pathname.includes("/data/")) return; // content changes daily: never cache
   // app shell: network first so updates show up, cache as offline fallback
   e.respondWith(
-    fetch(e.request).then((r) => {
+    // no-cache: always ask GitHub Pages for the newest file (its HTTP cache would otherwise hide updates ~10 min)
+    fetch(e.request.url, { cache: "no-cache", credentials: "same-origin" }).then((r) => {
       if (r.ok) { const copy = r.clone(); caches.open(SHELL).then((c) => c.put(e.request, copy)); }
       return r;
     }).catch(() => caches.match(e.request, { ignoreSearch: true }).then((m) => m || caches.match("index.html")))
