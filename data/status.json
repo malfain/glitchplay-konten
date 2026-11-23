@@ -57,12 +57,17 @@
       "t": "2026-11-23T17:50:37+07:00"
     },
     "asisten": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-23T14:45:49+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 1 video untuk 2026-11-23",
+      "t": "2026-11-23T17:54:01+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T17:54:01+07:00",
+      "agen": "asisten",
+      "pesan": "Render 1 video untuk 2026-11-23"
+    },
     {
       "t": "2026-11-23T17:51:05+07:00",
       "agen": "bos",
@@ -357,13 +362,8 @@
       "t": "2026-11-23T05:10:14+07:00",
       "agen": "narator",
       "pesan": "[Anak] 2 naskah selesai"
-    },
-    {
-      "t": "2026-11-23T05:09:54+07:00",
-      "agen": "narator",
-      "pesan": "[Anak] Tulis naskah penguin & mata"
     }
   ],
-  "updated_at": "2026-11-23T17:51:05+07:00",
+  "updated_at": "2026-11-23T17:54:01+07:00",
   "kesimpulan_t": "2026-11-23T06:09:21+07:00"
 }
