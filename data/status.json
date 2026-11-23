@@ -57,12 +57,22 @@
       "t": "2026-11-23T17:50:37+07:00"
     },
     "asisten": {
-      "status": "error",
-      "aktivitas": "0/1 video jadi, siap di Hasil",
-      "t": "2026-11-23T17:54:03+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 1 video untuk 2026-11-23",
+      "t": "2026-11-23T17:55:58+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T17:55:58+07:00",
+      "agen": "asisten",
+      "pesan": "Render 1 video untuk 2026-11-23"
+    },
+    {
+      "t": "2026-11-23T17:55:58+07:00",
+      "agen": "asisten",
+      "pesan": "Semua video sudah jadi, siap di Hasil"
+    },
     {
       "t": "2026-11-23T17:54:03+07:00",
       "agen": "asisten",
@@ -352,18 +362,8 @@
       "t": "2026-11-23T06:06:35+07:00",
       "agen": "bos",
       "pesan": "Buka shift, bagi tugas ke tim"
-    },
-    {
-      "t": "2026-11-23T06:06:35+07:00",
-      "agen": "bos",
-      "pesan": "Shift pagi dimulai. Tim dikumpulkan."
-    },
-    {
-      "t": "2026-11-23T05:10:14+07:00",
-      "agen": "bos",
-      "pesan": "[Anak] Shift anak selesai"
     }
   ],
-  "updated_at": "2026-11-23T17:54:03+07:00",
+  "updated_at": "2026-11-23T17:55:58+07:00",
   "kesimpulan_t": "2026-11-23T06:09:21+07:00"
 }
