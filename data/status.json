@@ -17,24 +17,24 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "[Sirah] Eps 1 terbit",
-      "t": "2026-11-23T16:16:34+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Eps 2: Kelahiran Nabi, bagi tugas",
+      "t": "2026-11-23T17:50:37+07:00"
     },
     "radar": {
       "status": "selesai",
-      "aktivitas": "[Sirah] Eps 1 selesai",
-      "t": "2026-11-23T16:16:34+07:00"
+      "aktivitas": "[Sirah] Riset Eps 2 selesai",
+      "t": "2026-11-23T17:50:37+07:00"
     },
     "detektif": {
       "status": "selesai",
-      "aktivitas": "[Sirah] Eps 1 selesai",
-      "t": "2026-11-23T16:16:34+07:00"
+      "aktivitas": "[Sirah] Fakta Eps 2 terverifikasi",
+      "t": "2026-11-23T17:50:37+07:00"
     },
     "narator": {
-      "status": "selesai",
-      "aktivitas": "[Sirah] Eps 1 selesai",
-      "t": "2026-11-23T16:16:34+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Menulis naskah Eps 2",
+      "t": "2026-11-23T17:50:37+07:00"
     },
     "copywriter": {
       "status": "selesai",
@@ -53,8 +53,8 @@
     },
     "strategist": {
       "status": "selesai",
-      "aktivitas": "[Sirah] Eps 1 selesai",
-      "t": "2026-11-23T16:16:34+07:00"
+      "aktivitas": "[Sirah] Hook Eps 2 siap",
+      "t": "2026-11-23T17:50:37+07:00"
     },
     "asisten": {
       "status": "idle",
@@ -63,6 +63,31 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T17:50:37+07:00",
+      "agen": "narator",
+      "pesan": "[Sirah] Menulis naskah Eps 2"
+    },
+    {
+      "t": "2026-11-23T17:50:37+07:00",
+      "agen": "strategist",
+      "pesan": "[Sirah] Hook Eps 2 siap"
+    },
+    {
+      "t": "2026-11-23T17:50:37+07:00",
+      "agen": "detektif",
+      "pesan": "[Sirah] Fakta Eps 2 terverifikasi"
+    },
+    {
+      "t": "2026-11-23T17:50:37+07:00",
+      "agen": "radar",
+      "pesan": "[Sirah] Riset Eps 2 selesai"
+    },
+    {
+      "t": "2026-11-23T17:50:37+07:00",
+      "agen": "bos",
+      "pesan": "[Sirah] Eps 2: Kelahiran Nabi, bagi tugas"
+    },
     {
       "t": "2026-11-23T17:27:27+07:00",
       "agen": "studio",
@@ -337,33 +362,8 @@
       "t": "2026-11-23T05:08:45+07:00",
       "agen": "bos",
       "pesan": "[Anak] Buka shift anak, bagi tugas"
-    },
-    {
-      "t": "2026-11-22T16:38:01+07:00",
-      "agen": "studio",
-      "pesan": "1/1 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-22T16:11:24+07:00",
-      "agen": "studio",
-      "pesan": "Render video 1/1: 7 fakta seru pelangi: prisma hujan"
-    },
-    {
-      "t": "2026-11-22T16:11:15+07:00",
-      "agen": "studio",
-      "pesan": "Render 1 video untuk 2026-11-22"
-    },
-    {
-      "t": "2026-11-22T16:11:10+07:00",
-      "agen": "studio",
-      "pesan": "Semua video sudah jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-22T15:56:49+07:00",
-      "agen": "studio",
-      "pesan": "0/1 video jadi, siap di Hasil"
     }
   ],
-  "updated_at": "2026-11-23T17:27:27+07:00",
+  "updated_at": "2026-11-23T17:50:37+07:00",
   "kesimpulan_t": "2026-11-23T06:09:21+07:00"
 }
