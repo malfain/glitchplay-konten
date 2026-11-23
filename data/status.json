@@ -47,9 +47,9 @@
       "t": "2026-11-23T16:16:34+07:00"
     },
     "studio": {
-      "status": "error",
-      "aktivitas": "0/1 video jadi, siap di Hasil",
-      "t": "2026-11-23T17:22:22+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 1 video untuk 2026-11-23",
+      "t": "2026-11-23T17:26:32+07:00"
     },
     "strategist": {
       "status": "selesai",
@@ -63,6 +63,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T17:26:32+07:00",
+      "agen": "studio",
+      "pesan": "Render 1 video untuk 2026-11-23"
+    },
+    {
+      "t": "2026-11-23T17:26:32+07:00",
+      "agen": "studio",
+      "pesan": "Semua video sudah jadi, siap di Hasil"
+    },
     {
       "t": "2026-11-23T17:22:22+07:00",
       "agen": "studio",
@@ -352,18 +362,8 @@
       "t": "2026-11-22T15:12:17+07:00",
       "agen": "studio",
       "pesan": "Render video 1/1: 7 fakta seru pelangi: prisma hujan"
-    },
-    {
-      "t": "2026-11-22T15:12:07+07:00",
-      "agen": "studio",
-      "pesan": "Render 1 video untuk 2026-11-22"
-    },
-    {
-      "t": "2026-11-22T15:10:37+07:00",
-      "agen": "studio",
-      "pesan": "Semua video sudah jadi, siap di Hasil"
     }
   ],
-  "updated_at": "2026-11-23T17:22:22+07:00",
+  "updated_at": "2026-11-23T17:26:32+07:00",
   "kesimpulan_t": "2026-11-23T06:09:21+07:00"
 }
