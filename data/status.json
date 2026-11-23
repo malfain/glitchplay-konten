@@ -1,14 +1,14 @@
 {
   "run": {
-    "date": "2026-11-23",
-    "status": "selesai",
-    "started_at": "2026-11-23T06:06:35+07:00",
-    "finished_at": "2026-11-23T06:09:21+07:00"
+    "date": "2026-11-24",
+    "status": "berjalan",
+    "started_at": "2026-11-24T06:06:17+07:00",
+    "finished_at": null
   },
   "tasks": {
     "antri": 0,
     "jalan": 0,
-    "kelar": 2
+    "kelar": 0
   },
   "kesimpulan_bos": [
     "[Sirah] Eps 3 (Halimah) dan Eps 4 (pembelahan dada) terbit",
@@ -17,51 +17,66 @@
   "agents": {
     "bos": {
       "status": "kerja",
-      "aktivitas": "[Anak] Buka shift anak, bagi tugas",
-      "t": "2026-11-24T05:09:51+07:00"
+      "aktivitas": "Buka shift, bagi tugas ke tim",
+      "t": "2026-11-24T06:06:17+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 tema: penguin kaisar, jantung",
-      "t": "2026-11-24T05:10:39+07:00"
+      "status": "kerja",
+      "aktivitas": "Cari berita game, esports, streamer",
+      "t": "2026-11-24T06:06:17+07:00"
     },
     "detektif": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 tema lolos, fakta ragu dibuang",
-      "t": "2026-11-24T05:10:41+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-24T06:06:17+07:00"
     },
     "narator": {
-      "status": "selesai",
-      "aktivitas": "[Anak] Naskah 2 video siap",
-      "t": "2026-11-24T05:11:52+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-24T06:06:17+07:00"
     },
     "copywriter": {
-      "status": "selesai",
-      "aktivitas": "[Anak] Judul & deskripsi YouTube siap",
-      "t": "2026-11-24T05:11:52+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-24T06:06:17+07:00"
     },
     "qc": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 konten anak terbit",
-      "t": "2026-11-24T05:11:52+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-24T06:06:17+07:00"
     },
     "studio": {
-      "status": "selesai",
-      "aktivitas": "1/1 video jadi, siap di Hasil",
-      "t": "2026-11-23T17:27:27+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-24T06:06:17+07:00"
     },
     "strategist": {
-      "status": "selesai",
-      "aktivitas": "[Anak] Hook & jam posting siap",
-      "t": "2026-11-24T05:10:41+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-24T06:06:17+07:00"
     },
     "asisten": {
-      "status": "selesai",
-      "aktivitas": "2/2 video jadi, siap di Hasil",
-      "t": "2026-11-24T05:19:03+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-24T06:06:17+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-24T06:06:17+07:00",
+      "agen": "radar",
+      "pesan": "Cari berita game, esports, streamer"
+    },
+    {
+      "t": "2026-11-24T06:06:17+07:00",
+      "agen": "bos",
+      "pesan": "Buka shift, bagi tugas ke tim"
+    },
+    {
+      "t": "2026-11-24T06:06:17+07:00",
+      "agen": "bos",
+      "pesan": "Shift pagi dimulai. Tim dikumpulkan."
+    },
     {
       "t": "2026-11-24T05:19:03+07:00",
       "agen": "asisten",
@@ -346,23 +361,8 @@
       "t": "2026-11-23T17:22:13+07:00",
       "agen": "studio",
       "pesan": "Render 1 video untuk 2026-11-23"
-    },
-    {
-      "t": "2026-11-23T17:22:13+07:00",
-      "agen": "studio",
-      "pesan": "Semua video sudah jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-23T16:58:01+07:00",
-      "agen": "studio",
-      "pesan": "0/1 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-23T16:58:01+07:00",
-      "agen": "studio",
-      "pesan": "Video 2 gagal: HTTP Error 400: Bad Request"
     }
   ],
-  "updated_at": "2026-11-24T05:19:03+07:00",
+  "updated_at": "2026-11-24T06:06:17+07:00",
   "kesimpulan_t": "2026-11-24T04:06:58+07:00"
 }
