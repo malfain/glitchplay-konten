@@ -17,14 +17,14 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "[Sirah] Eps 2 selesai",
-      "t": "2026-11-23T17:51:05+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Buka shift, episode 3 dan 4",
+      "t": "2026-11-24T04:06:04+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "[Sirah] Riset Eps 2 selesai",
-      "t": "2026-11-23T17:50:37+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Cari sumber sirah Halimah, pembelahan dada",
+      "t": "2026-11-24T04:06:04+07:00"
     },
     "detektif": {
       "status": "selesai",
@@ -63,6 +63,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-24T04:06:04+07:00",
+      "agen": "radar",
+      "pesan": "[Sirah] Cari sumber sirah Halimah, pembelahan dada"
+    },
+    {
+      "t": "2026-11-24T04:06:04+07:00",
+      "agen": "bos",
+      "pesan": "[Sirah] Buka shift, episode 3 dan 4"
+    },
     {
       "t": "2026-11-23T18:02:44+07:00",
       "agen": "asisten",
@@ -352,18 +362,8 @@
       "t": "2026-11-23T06:09:20+07:00",
       "agen": "qc",
       "pesan": "Cek aturan, validasi JSON"
-    },
-    {
-      "t": "2026-11-23T06:09:18+07:00",
-      "agen": "copywriter",
-      "pesan": "6 caption selesai"
-    },
-    {
-      "t": "2026-11-23T06:09:18+07:00",
-      "agen": "copywriter",
-      "pesan": "Tulis caption + hashtag"
     }
   ],
-  "updated_at": "2026-11-23T18:02:44+07:00",
+  "updated_at": "2026-11-24T04:06:04+07:00",
   "kesimpulan_t": "2026-11-23T06:09:21+07:00"
 }
