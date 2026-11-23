@@ -136,8 +136,7 @@ lalu **share/save**. Untuk tiap item yang lolos Detektif:
 - Bentuk: HOOK (≤ 8 kata, ≤ 3 detik) → kenapa penting → isi (satu info per
   kalimat) → ajakan tunggal di akhir. Kalimat terakhir mengulang satu kata
   dari hook (loop).
-- Panjang **20–30 detik ≈ 55–85 kata** (TTS 170 kata/menit; video pendek lebih
-  sering ditonton sampai habis). Tiap kalimat ≤ 12 kata.
+- Panjang 20–40 detik ≈ 60–110 kata (TTS 170 kata/menit). Tiap kalimat ≤ 12 kata.
 - Kalimat pertama = hook dari Strategist (≤ 8 kata), langsung ke inti tanpa
   salam/pembukaan ("Halo guys" dilarang). Kalimat terakhir = ajakan + loop.
 - `naskah_vo`: untuk dibacakan TTS. Angka ditulis seperti diucapkan
@@ -220,7 +219,7 @@ Item yang gagal diperbaiki dulu, bukan diterbitkan apa adanya.
       "hook_layar": "GTA 6 DITUNDA LAGI?!",
       "skor_viral": 8,
       "jam_posting": "19:30",
-      "durasi_detik": 25,
+      "durasi_detik": 30,
       "naskah_vo": ["kalimat 1 ejaan TTS", "kalimat 2"],
       "subtitle": ["kalimat 1 ejaan normal", "kalimat 2"],
       "teks_layar": [{"t": "0:00", "teks": "TEKS KARTU", "visual": "saran visual/clip"}],
