@@ -757,16 +757,33 @@ function confirmDelete(it, ctx, el) {
 
 const CH_NAME = { glitch: "Instagram GlitchPlayClips", kids: "YouTube GlitchPlayClips (fakta anak)", sirah: "YouTube Glitchplay (kisah Nabi)" };
 
-// Delete a whole day of one channel: the same per-item delete that the single 🗑️ button uses (proven to work with
-// the user's token), one after another; the last one also drops the day from index.json.
-async function deleteDay(items, ctx, onProgress) {
-  for (let i = 0; i < items.length; i++) {
-    const k = itemKey(ctx.ch, ctx.date, items[i]);
-    onProgress?.(i + 1, items.length);
-    if (deletedSet().has(k)) continue; // already gone in an earlier (interrupted) attempt
-    try { await deleteItem(items[i], ctx); } catch (e) { if (e.status !== 404) throw e; }
-    markDeleted(k);
+// Delete a whole day of one channel fast: drop the day file and its index entry (2–3 requests), then remove every
+// release-hosted video in parallel. Posters/old in-repo videos left behind are swept by the daily prune (14 days).
+async function deleteDay(items, { ch, date }, onProgress) {
+  const dir = CHDIR[ch];
+  const msg = `hapus semua: ${CH_NAME[ch]} ${date} (${items.length} konten)`;
+  onProgress?.("konten");
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const f = await gh(`contents/${dir}/${date}.json?ref=main`);
+      const day = JSON.parse(b64ToText(f.content));
+      const drop = new Set(items.map((it) => `${it.judul}|${it.video || ""}`));
+      const keep = day.items.filter((x) => !drop.has(`${x.judul}|${x.video || ""}`));
+      if (keep.length) { day.items = keep; await putJSON(`${dir}/${date}.json`, day, f.sha, msg); break; }
+      await gh(`contents/${dir}/${date}.json`, { method: "DELETE", body: JSON.stringify({ message: msg, sha: f.sha, branch: "main" }) });
+      const ix = await gh(`contents/${dir}/index.json?ref=main`);
+      const idx = JSON.parse(b64ToText(ix.content));
+      idx.days = (idx.days || []).filter((d) => d !== date);
+      await putJSON(`${dir}/index.json`, idx, ix.sha, `${msg} (index)`);
+      break;
+    } catch (e) {
+      if (e.status === 404) break; // day already gone
+      if (e.status !== 409 || attempt === 2) throw e; // 409 = the render robot just wrote: re-read and retry
+    }
   }
+  onProgress?.("video");
+  await Promise.all(items.filter((it) => (it.video || "").includes("/releases/download/")).map((it) => deleteReleaseVideo(it.video)));
+  items.forEach((it) => markDeleted(itemKey(ch, date, it)));
 }
 
 function confirmDeleteAll(items, ctx) {
@@ -780,7 +797,7 @@ function confirmDeleteAll(items, ctx) {
   $("#doDelAll").onclick = async () => {
     const btn = $("#doDelAll"); btn.disabled = true; btn.textContent = "Menghapus…";
     try {
-      await deleteDay(items, ctx, (n, total) => { btn.textContent = `Menghapus ${n}/${total}…`; });
+      await deleteDay(items, ctx, (step) => { btn.textContent = step === "video" ? "Menghapus video…" : "Menghapus konten…"; });
       state.dayCache = {};
       closeSheet();
       toast(`${items.length} konten terhapus ✓ Website diperbarui dalam 1–2 menit.`);
