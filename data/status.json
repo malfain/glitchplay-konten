@@ -48,8 +48,8 @@
     },
     "studio": {
       "status": "kerja",
-      "aktivitas": "Render 2 video untuk 2026-11-23",
-      "t": "2026-11-23T08:49:07+07:00"
+      "aktivitas": "Render 1 video untuk 2026-11-23",
+      "t": "2026-11-23T16:57:52+07:00"
     },
     "strategist": {
       "status": "selesai",
@@ -63,6 +63,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T16:57:52+07:00",
+      "agen": "studio",
+      "pesan": "Render 1 video untuk 2026-11-23"
+    },
     {
       "t": "2026-11-23T16:16:34+07:00",
       "agen": "bos",
@@ -357,13 +362,8 @@
       "t": "2026-11-22T08:15:50+07:00",
       "agen": "studio",
       "pesan": "Render video 2/2: 7 fakta seru pelangi: prisma hujan"
-    },
-    {
-      "t": "2026-11-22T07:47:45+07:00",
-      "agen": "studio",
-      "pesan": "Render video 1/2: 7 fakta seru penguin: sirip, bulu "
     }
   ],
-  "updated_at": "2026-11-23T16:16:34+07:00",
+  "updated_at": "2026-11-23T16:57:52+07:00",
   "kesimpulan_t": "2026-11-23T06:09:21+07:00"
 }
