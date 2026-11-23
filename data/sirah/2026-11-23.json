@@ -202,7 +202,12 @@
           "nama": "Lampung NU: Kehancuran pasukan Abrahah",
           "url": "https://lampung.nu.or.id/pernik/kehancuran-pasukan-abrahah-maulid-nabi-dan-konteks-kekinian-ZdTVG"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-23/sirah-01-eps-1-makkah-sebelum-nabi-lahir-dan-peri.mp4",
+      "poster": "video/sirah/2026-11-23/01-eps-1-makkah-sebelum-nabi-lahir-dan-peri.jpg",
+      "video_durasi": 102.1,
+      "video_suara": "gemini-3.8-flash-lite-tts/Charon",
+      "judul": "Eps 1: Makkah sebelum Nabi lahir dan peristiwa Tahun Gajah"
     }
   ]
 }

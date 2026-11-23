@@ -131,7 +131,7 @@ Juga isi `caption` (1 kalimat) dan `hashtags` (3: mis. #kisahnabi
 ## QC
 
 Semua aturan di atas + format sama dengan `ROUTINE.md`, ditambah field
-`episode` (angka), `judul_episode`, dan `komentar_pin`. Cek: adab penyebutan nama, tidak ada
+`episode` (angka), `judul_episode`, `judul` (= "Eps <n>: <judul_episode>"), dan `komentar_pin`. Cek: adab penyebutan nama, tidak ada
 dialog karangan, tiap adegan yang menampilkan Nabi punya `"nabi": true`, tidak
 ada ciri wajah di prompt, `sumber` ≥ 2 URL. Validasi JSON, commit
 `konten sirah: <tanggal> (eps <n>)`, push ke `main`. Jangan ubah `index.html`,

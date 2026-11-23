@@ -680,6 +680,15 @@ async function deleteFile(path, msg) {
     await gh(`contents/${encodeURI(path)}`, { method: "DELETE", body: JSON.stringify({ message: msg, sha: f.sha, branch: "main" }) });
   } catch (e) { if (e.status !== 404) throw e; } // already gone is fine
 }
+// Videos rendered since the move to GitHub Actions live as release assets: .../releases/download/<tag>/<file>
+async function deleteReleaseVideo(url) {
+  const [tag, name] = decodeURIComponent(url.split("/releases/download/")[1]).split("/");
+  try {
+    const rel = await gh(`releases/tags/${encodeURIComponent(tag)}`);
+    const asset = (rel.assets || []).find((x) => x.name === name);
+    if (asset) await gh(`releases/assets/${asset.id}`, { method: "DELETE" });
+  } catch (e) { if (e.status !== 404) throw e; }
+}
 async function putJSON(path, obj, sha, msg) {
   return gh(`contents/${encodeURI(path)}`, { method: "PUT", body: JSON.stringify({ message: msg, sha, branch: "main", content: textToB64(JSON.stringify(obj, null, 2) + "\n") }) });
 }
@@ -709,7 +718,8 @@ async function deleteItem(it, { ch, date }) {
       if (e.status !== 409 || attempt === 2) throw e; // 409 = someone else just changed the file: re-read and retry
     }
   }
-  if (it.video) await deleteFile(it.video, `${msg} (video)`);
+  if (it.video && it.video.includes("/releases/download/")) await deleteReleaseVideo(it.video);
+  else if (it.video) await deleteFile(it.video, `${msg} (video)`);
   if (it.poster) await deleteFile(it.poster, `${msg} (poster)`);
 }
 

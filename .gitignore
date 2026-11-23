@@ -4,3 +4,5 @@
 data/status.lock
 __pycache__/
 node_modules/
+
+video/**/*.mp4

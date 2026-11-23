@@ -1,0 +1,96 @@
+# Studio & Asisten Studio in the cloud: renders every missing video (Instagram, YouTube anak, YouTube Glitchplay)
+# right after the Claude routines push new scripts, plus an hourly sweep. Videos go to GitHub Releases (GP_RELEASE).
+name: Render video
+
+on:
+  push:
+    branches: [main]
+    paths: ["data/**/2*.json"]
+  schedule:
+    - cron: "25 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    steps:
+      - name: Check keys
+        env:
+          CF_TOKEN: ${{ secrets.CF_TOKEN }}
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+        run: |
+          if [ -z "$CF_TOKEN" ] || [ -z "$GEMINI_KEY" ]; then
+            echo "::warning::Secrets GEMINI_KEY / CF_ACCOUNT / CF_TOKEN belum diisi; render dilewati."
+            echo "SKIP=1" >> "$GITHUB_ENV"
+          fi
+
+      - uses: actions/checkout@v4
+        if: env.SKIP != '1'
+
+      - uses: actions/setup-python@v5
+        if: env.SKIP != '1'
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        if: env.SKIP != '1'
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: tools/remotion/package-lock.json
+
+      - name: System packages (ffmpeg, Chrome libs, Arabic + emoji fonts)
+        if: env.SKIP != '1'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-core fonts-noto-color-emoji \
+            libnss3 libdbus-1-3 libatk1.0-0t64 libgbm-dev libasound2t64 libxrandr2 libxkbcommon-dev libxfixes3 \
+            libxcomposite1 libxdamage1 libatk-bridge2.0-0t64 libpango-1.0-0 libcairo2 libcups2t64 >/dev/null
+
+      - name: Caches (AI pictures, clips, Whisper model)
+        if: env.SKIP != '1'
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.glitchplay/imgcache
+            ~/.cache/huggingface
+          key: render-cache-${{ github.run_id }}
+          restore-keys: render-cache-
+
+      - name: Python & Remotion dependencies
+        if: env.SKIP != '1'
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -q edge-tts certifi pillow faster-whisper yt-dlp
+          (cd tools/remotion && npm ci --silent)
+
+      - name: Keys
+        if: env.SKIP != '1'
+        env:
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT }}
+          CF_TOKEN: ${{ secrets.CF_TOKEN }}
+        run: |
+          mkdir -p ~/.glitchplay
+          printf '%s' "$GEMINI_KEY" > ~/.glitchplay/gemini_key
+          printf '%s' "$CF_ACCOUNT" > ~/.glitchplay/cf_account
+          printf '%s' "$CF_TOKEN" > ~/.glitchplay/cf_token
+          chmod 600 ~/.glitchplay/*_key ~/.glitchplay/cf_*
+
+      - name: Render
+        if: env.SKIP != '1'
+        env:
+          GP_RELEASE: "1"
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "GlitchPlay Studio"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tools/render_daily.sh

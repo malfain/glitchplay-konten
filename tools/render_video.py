@@ -1362,6 +1362,65 @@ def status(*args):
     subprocess.run([sys.executable, str(ROOT / "tools/status.py"), *args], check=False)
 
 
+# ------------------------------------------------------------------ video storage (GitHub Releases)
+# Videos are too big for the Pages site (1 GB limit), so with GP_RELEASE=1 every MP4 goes to a GitHub Release
+# "video-<date>" (never marked latest: the APK download uses releases/latest) and the item stores its download URL.
+REPO = os.environ.get("GITHUB_REPOSITORY", "malfain/glitchplay-konten")
+
+
+def _gh(*args, check=True):
+    r = subprocess.run([shutil.which("gh") or "gh", *args], capture_output=True, text=True, cwd=ROOT)
+    if check and r.returncode != 0:
+        raise RuntimeError("gh " + " ".join(args[:2]) + ": " + (r.stderr or r.stdout)[-300:])
+    return r
+
+
+def release_upload(mp4, date):
+    tag = f"video-{date}"
+    if _gh("release", "view", tag, check=False).returncode != 0:
+        r = _gh("release", "create", tag, "--title", f"Video {date}", "--notes", "Video GlitchPlay HQ (otomatis).",
+                "--latest=false", check=False)
+        if r.returncode != 0 and _gh("release", "view", tag, check=False).returncode != 0:  # the other channel may have made it
+            raise RuntimeError("gh release create: " + r.stderr[-300:])
+    asset = mp4.with_name(f"{CH['theme']}-{mp4.name}")
+    mp4.rename(asset)
+    try:
+        _gh("release", "upload", tag, str(asset), "--clobber")
+    finally:
+        asset.unlink(missing_ok=True)
+    return f"https://github.com/{REPO}/releases/download/{tag}/{asset.name}"
+
+
+def release_prune(days):
+    """Delete this channel's release videos older than `days` and clear them from the day files."""
+    cutoff = (datetime.now(WIB) - timedelta(days=days)).strftime("%Y-%m-%d")
+    removed = 0
+    for f in sorted((ROOT / CH["data"]).glob("2*.json")):
+        if f.stem >= cutoff:
+            continue
+        data = json.loads(f.read_text(encoding="utf-8"))
+        changed = False
+        for it in data.get("items", []):
+            v = it.get("video") or ""
+            if v.startswith("https://") and "/releases/download/" in v:
+                tag, name = v.split("/releases/download/")[1].split("/", 1)
+                _gh("release", "delete-asset", tag, name, "--yes", check=False)
+                if not json.loads(_gh("release", "view", tag, "--json", "assets", check=False).stdout or '{"assets":[1]}').get("assets"):
+                    _gh("release", "delete", tag, "--yes", "--cleanup-tag", check=False)
+                for k in ("video", "poster", "video_durasi"):
+                    it.pop(k, None)
+                changed = True
+                removed += 1
+        if changed:
+            f.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return removed
+
+
+def video_ready(it):
+    v = it.get("video")
+    return bool(v) and (v.startswith("https://") or (ROOT / v).exists())
+
+
 def prune(days):
     cutoff = (datetime.now(WIB) - timedelta(days=days)).strftime("%Y-%m-%d")
     vdir = ROOT / CH["video"]
@@ -1396,6 +1455,10 @@ def main():
     CH.update(CHANNELS[a.channel])
     a.style = a.style or CH.get("render") or os.environ.get("GP_STYLE", "remotion")
 
+    if a.prune and os.environ.get("GP_RELEASE"):
+        n = release_prune(a.prune)
+        if n:
+            print(f"prune: {n} video lama di Releases dihapus")
     if a.prune:
         n = prune(a.prune)
         if n:
@@ -1409,7 +1472,7 @@ def main():
     items = data.get("items", [])
     todo = [i for i, it in enumerate(items)
             if (a.only is None or i == a.only - 1)
-            and (a.force or not (it.get("video") and (ROOT / it["video"]).exists()))]
+            and (a.force or not video_ready(it))]
     if not todo:
         print("semua video sudah ada")
         if not a.no_status:  # clear a stale "error" left by an earlier failed attempt that has since been fixed
@@ -1452,14 +1515,21 @@ def main():
             if not a.no_status:
                 status("agent", CH["agent"], "error", f"Video {i + 1} gagal: {str(e)[:40]}")
             continue
-        it["video"] = str(mp4.relative_to(ROOT))
+        size_kb = mp4.stat().st_size // 1024
+        try:
+            it["video"] = release_upload(mp4, a.date) if os.environ.get("GP_RELEASE") else str(mp4.relative_to(ROOT))
+        except Exception as e:
+            print(f"[{i + 1}] upload gagal: {e}", file=sys.stderr)
+            if not a.no_status:
+                status("agent", CH["agent"], "error", f"Upload video {i + 1} gagal")
+            continue
         it["poster"] = str(poster.relative_to(ROOT))
         it["video_durasi"] = dur
         if LAST_VOICE["engine"]:
             it["video_suara"] = LAST_VOICE["engine"]
         f.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         done += 1
-        print(f"[{i + 1}] {mp4.name}  {dur}s  {mp4.stat().st_size // 1024} KB")
+        print(f"[{i + 1}] {mp4.name}  {dur}s  {size_kb} KB")
     shutil.rmtree(tmp_root, ignore_errors=True)
     if not a.no_status:
         status("agent", CH["agent"], "selesai" if done == len(todo) else "error", f"{done}/{len(todo)} video jadi, siap di Hasil")

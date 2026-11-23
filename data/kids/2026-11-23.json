@@ -236,7 +236,11 @@
           "kalimat": 29,
           "prompt": "A cute penguin looking at the camera on a snowy hill, bright daylight"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-23/kids-01-7-fakta-seru-penguin-sirip-bulu-tahan-ai.mp4",
+      "poster": "video/kids/2026-11-23/01-7-fakta-seru-penguin-sirip-bulu-tahan-ai.jpg",
+      "video_durasi": 114.9,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     },
     {
       "kategori": "Tubuh Manusia",
@@ -462,7 +466,11 @@
           "kalimat": 29,
           "prompt": "A happy family of parent and child reading a book together on a sofa, warm light"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-23/kids-02-6-fakta-seru-mata-pupil-otot-air-mata-ko.mp4",
+      "poster": "video/kids/2026-11-23/02-6-fakta-seru-mata-pupil-otot-air-mata-ko.jpg",
+      "video_durasi": 113.2,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     }
   ]
 }

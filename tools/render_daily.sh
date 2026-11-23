@@ -1,5 +1,5 @@
 #!/bin/bash
-# Mac job (launchd, hourly 07:10-23:10 WIB): pull the cloud team's scripts, render missing videos, publish.
+# Render job (GitHub Actions, or the Mac via launchd): pull the cloud team's scripts, render missing videos, publish.
 set -uo pipefail
 export PATH="${GP_NODE_BIN:+$GP_NODE_BIN:}/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 cd "$(dirname "$0")/.."
@@ -11,7 +11,7 @@ if [ "$st" = "berjalan" ]; then echo "tim cloud masih kerja, coba lagi jam berik
 if [ ! -d tools/remotion/node_modules ]; then (cd tools/remotion && npm install --silent) || { echo "npm install gagal"; exit 1; }; fi
 .venv/bin/python -c "import edge_tts, certifi, faster_whisper, yt_dlp" 2>/dev/null || .venv/bin/pip install -q -U edge-tts certifi pillow faster-whisper yt-dlp
 today=$(TZ=Asia/Jakarta date +%F)
-yday=$(TZ=Asia/Jakarta date -v-1d +%F)
+yday=$(TZ=Asia/Jakarta date -d yesterday +%F 2>/dev/null || TZ=Asia/Jakarta date -v-1d +%F)  # GNU (Actions) or BSD (Mac)
 # Studio (Instagram) and Asisten Studio (YouTube kids) render at the same time
 (
   for d in "$yday" "$today"; do
