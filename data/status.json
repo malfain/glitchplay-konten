@@ -48,11 +48,61 @@
     },
     "studio": {
       "status": "kerja",
-      "aktivitas": "Render 6 video untuk 2026-11-23",
-      "t": "2026-11-23T08:10:05+07:00"
+      "aktivitas": "Render 2 video untuk 2026-11-23",
+      "t": "2026-11-23T08:49:07+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T08:49:07+07:00",
+      "agen": "studio",
+      "pesan": "Render 2 video untuk 2026-11-23"
+    },
+    {
+      "t": "2026-11-23T08:49:06+07:00",
+      "agen": "studio",
+      "pesan": "Semua video sudah jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-23T08:49:04+07:00",
+      "agen": "studio",
+      "pesan": "5/6 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-23T08:42:34+07:00",
+      "agen": "studio",
+      "pesan": "Render video 6/6: Gothic 3 Classic rilis 24 November"
+    },
+    {
+      "t": "2026-11-23T08:32:34+07:00",
+      "agen": "studio",
+      "pesan": "Render video 5/6: PMGC 2026 dimulai 26 November, fin"
+    },
+    {
+      "t": "2026-11-23T08:23:46+07:00",
+      "agen": "studio",
+      "pesan": "Render video 4/6: Kans terakhir tim Indonesia di FFW"
+    },
+    {
+      "t": "2026-11-23T08:16:31+07:00",
+      "agen": "studio",
+      "pesan": "Render video 3/6: PlayStation Black Friday: game dig"
+    },
+    {
+      "t": "2026-11-23T08:16:31+07:00",
+      "agen": "studio",
+      "pesan": "Video 2 gagal: HTTP Error 400: Bad Request"
+    },
+    {
+      "t": "2026-11-23T08:16:03+07:00",
+      "agen": "studio",
+      "pesan": "Render video 2/6: Xbox Black Friday Sale: diskon sam"
+    },
+    {
+      "t": "2026-11-23T08:10:09+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/6: GTA VI versi PC masih rumor, belum"
+    },
     {
       "t": "2026-11-23T08:10:05+07:00",
       "agen": "studio",
@@ -302,58 +352,8 @@
       "t": "2026-11-22T07:10:05+07:00",
       "agen": "studio",
       "pesan": "Render 5 video untuk 2026-11-22"
-    },
-    {
-      "t": "2026-11-22T06:09:24+07:00",
-      "agen": "bos",
-      "pesan": "Shift selesai. Semua hasil sudah di menu Hasil."
-    },
-    {
-      "t": "2026-11-22T06:09:24+07:00",
-      "agen": "bos",
-      "pesan": "Shift selesai"
-    },
-    {
-      "t": "2026-11-22T06:09:23+07:00",
-      "agen": "qc",
-      "pesan": "5 konten terbit di Hasil"
-    },
-    {
-      "t": "2026-11-22T06:09:23+07:00",
-      "agen": "qc",
-      "pesan": "Cek aturan, terbitkan ke Hasil"
-    },
-    {
-      "t": "2026-11-22T06:09:21+07:00",
-      "agen": "copywriter",
-      "pesan": "Caption 5 item selesai"
-    },
-    {
-      "t": "2026-11-22T06:09:21+07:00",
-      "agen": "copywriter",
-      "pesan": "Tulis caption dan hashtag"
-    },
-    {
-      "t": "2026-11-22T06:09:19+07:00",
-      "agen": "narator",
-      "pesan": "Naskah 5 item selesai"
-    },
-    {
-      "t": "2026-11-22T06:08:19+07:00",
-      "agen": "narator",
-      "pesan": "Tulis naskah dan adegan 5 item"
-    },
-    {
-      "t": "2026-11-22T06:08:17+07:00",
-      "agen": "detektif",
-      "pesan": "5 lolos, 2 dibuang"
-    },
-    {
-      "t": "2026-11-22T06:08:16+07:00",
-      "agen": "detektif",
-      "pesan": "Cek fakta tiap kandidat, min 2 situs"
     }
   ],
-  "updated_at": "2026-11-23T08:10:05+07:00",
+  "updated_at": "2026-11-23T08:49:07+07:00",
   "kesimpulan_t": "2026-11-23T06:09:21+07:00"
 }

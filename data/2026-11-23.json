@@ -106,7 +106,11 @@
           "nama": "VICE",
           "url": "https://www.vice.com/en/article/gta-6-pc-release-early-2027-report/"
         }
-      ]
+      ],
+      "video": "video/2026-11-23/01-gta-vi-versi-pc-masih-rumor-belum-resmi.mp4",
+      "poster": "video/2026-11-23/01-gta-vi-versi-pc-masih-rumor-belum-resmi.jpg",
+      "video_durasi": 25.8,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Promo/Diskon",
@@ -314,7 +318,11 @@
           "nama": "9to5Toys",
           "url": "https://9to5toys.com/2026/11/17/playstation-2026-black-friday-sale-ps5-games/"
         }
-      ]
+      ],
+      "video": "video/2026-11-23/03-playstation-black-friday-game-digital-di.mp4",
+      "poster": "video/2026-11-23/03-playstation-black-friday-game-digital-di.jpg",
+      "video_durasi": 24.4,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Esports",
@@ -419,7 +427,11 @@
           "nama": "Sportsdunia",
           "url": "https://www.sportsdunia.com/esports/free-fire-world-series-global-finals-2026-teams-format-and-schedule"
         }
-      ]
+      ],
+      "video": "video/2026-11-23/04-kans-terakhir-tim-indonesia-di-ffws-glob.mp4",
+      "poster": "video/2026-11-23/04-kans-terakhir-tim-indonesia-di-ffws-glob.jpg",
+      "video_durasi": 26.6,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Esports",
@@ -518,7 +530,11 @@
           "nama": "Liquipedia",
           "url": "https://liquipedia.net/pubgmobile/PUBG_Mobile_Global_Championship/2026"
         }
-      ]
+      ],
+      "video": "video/2026-11-23/05-pmgc-2026-dimulai-26-november-final-di-i.mp4",
+      "poster": "video/2026-11-23/05-pmgc-2026-dimulai-26-november-final-di-i.jpg",
+      "video_durasi": 22.3,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "kategori": "Rilis Game",
@@ -623,7 +639,11 @@
           "nama": "Gamedrop Radar",
           "url": "https://gamedropradar.com/games/gothic-3-classic"
         }
-      ]
+      ],
+      "video": "video/2026-11-23/06-gothic-3-classic-rilis-24-november-di-ko.mp4",
+      "poster": "video/2026-11-23/06-gothic-3-classic-rilis-24-november-di-ko.jpg",
+      "video_durasi": 23.4,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     }
   ]
 }
