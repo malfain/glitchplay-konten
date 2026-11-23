@@ -1,6 +1,6 @@
 {
   "judul_seri": "Kisah Nabi Muhammad ﷺ",
-  "episode_terakhir": 2,
+  "episode_terakhir": 4,
   "catatan": "episode_terakhir = nomor episode terakhir yang sudah dibuat. Tim membuat episode_terakhir + 1 (dan + 2), lalu menaikkan angka ini. Jangan dihitung dari jumlah file, karena konten bisa dihapus setelah diupload.",
   "episode": [
     "Makkah sebelum Nabi lahir dan peristiwa Tahun Gajah",
