@@ -18,33 +18,33 @@
   "agents": {
     "bos": {
       "status": "selesai",
-      "aktivitas": "Shift selesai",
-      "t": "2026-11-23T06:09:21+07:00"
+      "aktivitas": "[Sirah] Eps 1 terbit",
+      "t": "2026-11-23T16:16:34+07:00"
     },
     "radar": {
       "status": "selesai",
-      "aktivitas": "9 kandidat ditemukan",
-      "t": "2026-11-23T06:08:15+07:00"
+      "aktivitas": "[Sirah] Eps 1 selesai",
+      "t": "2026-11-23T16:16:34+07:00"
     },
     "detektif": {
       "status": "selesai",
-      "aktivitas": "6 lolos, 3 dibuang",
-      "t": "2026-11-23T06:08:18+07:00"
+      "aktivitas": "[Sirah] Eps 1 selesai",
+      "t": "2026-11-23T16:16:34+07:00"
     },
     "narator": {
       "status": "selesai",
-      "aktivitas": "6 naskah selesai",
-      "t": "2026-11-23T06:09:16+07:00"
+      "aktivitas": "[Sirah] Eps 1 selesai",
+      "t": "2026-11-23T16:16:34+07:00"
     },
     "copywriter": {
       "status": "selesai",
-      "aktivitas": "6 caption selesai",
-      "t": "2026-11-23T06:09:18+07:00"
+      "aktivitas": "[Sirah] Eps 1 selesai",
+      "t": "2026-11-23T16:16:34+07:00"
     },
     "qc": {
       "status": "selesai",
-      "aktivitas": "6 konten terbit di Hasil",
-      "t": "2026-11-23T06:09:20+07:00"
+      "aktivitas": "[Sirah] Eps 1 terbit",
+      "t": "2026-11-23T16:16:34+07:00"
     },
     "studio": {
       "status": "kerja",
@@ -52,9 +52,9 @@
       "t": "2026-11-23T08:49:07+07:00"
     },
     "strategist": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-23T14:45:49+07:00"
+      "status": "selesai",
+      "aktivitas": "[Sirah] Eps 1 selesai",
+      "t": "2026-11-23T16:16:34+07:00"
     },
     "asisten": {
       "status": "idle",
@@ -63,6 +63,41 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T16:16:34+07:00",
+      "agen": "bos",
+      "pesan": "[Sirah] Eps 1 terbit"
+    },
+    {
+      "t": "2026-11-23T16:16:34+07:00",
+      "agen": "qc",
+      "pesan": "[Sirah] Eps 1 terbit"
+    },
+    {
+      "t": "2026-11-23T16:16:34+07:00",
+      "agen": "copywriter",
+      "pesan": "[Sirah] Eps 1 selesai"
+    },
+    {
+      "t": "2026-11-23T16:16:34+07:00",
+      "agen": "narator",
+      "pesan": "[Sirah] Eps 1 selesai"
+    },
+    {
+      "t": "2026-11-23T16:16:34+07:00",
+      "agen": "strategist",
+      "pesan": "[Sirah] Eps 1 selesai"
+    },
+    {
+      "t": "2026-11-23T16:16:34+07:00",
+      "agen": "detektif",
+      "pesan": "[Sirah] Eps 1 selesai"
+    },
+    {
+      "t": "2026-11-23T16:16:34+07:00",
+      "agen": "radar",
+      "pesan": "[Sirah] Eps 1 selesai"
+    },
     {
       "t": "2026-11-23T14:45:49+07:00",
       "agen": "asisten",
@@ -327,43 +362,8 @@
       "t": "2026-11-22T07:47:45+07:00",
       "agen": "studio",
       "pesan": "Render video 1/2: 7 fakta seru penguin: sirip, bulu "
-    },
-    {
-      "t": "2026-11-22T07:47:20+07:00",
-      "agen": "studio",
-      "pesan": "Render 2 video untuk 2026-11-22"
-    },
-    {
-      "t": "2026-11-22T07:47:18+07:00",
-      "agen": "studio",
-      "pesan": "5/5 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-22T07:37:42+07:00",
-      "agen": "studio",
-      "pesan": "Render video 5/5: Mark of the Deep gratis di Epic Ga"
-    },
-    {
-      "t": "2026-11-22T07:30:35+07:00",
-      "agen": "studio",
-      "pesan": "Render video 4/5: Steam tidak bikin sale Black Frida"
-    },
-    {
-      "t": "2026-11-22T07:23:43+07:00",
-      "agen": "studio",
-      "pesan": "Render video 3/5: Valve tutup antrean Steam Machine,"
-    },
-    {
-      "t": "2026-11-22T07:17:22+07:00",
-      "agen": "studio",
-      "pesan": "Render video 2/5: GTA VI versi Jepang punya perbedaa"
-    },
-    {
-      "t": "2026-11-22T07:10:08+07:00",
-      "agen": "studio",
-      "pesan": "Render video 1/5: GTA VI cetak penjualan hari pertam"
     }
   ],
-  "updated_at": "2026-11-23T14:45:49+07:00",
+  "updated_at": "2026-11-23T16:16:34+07:00",
   "kesimpulan_t": "2026-11-23T06:09:21+07:00"
 }
