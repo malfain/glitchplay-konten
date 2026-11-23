@@ -208,6 +208,198 @@
       "video_durasi": 102.1,
       "video_suara": "gemini-3.8-flash-lite-tts/Charon",
       "judul": "Eps 1: Makkah sebelum Nabi lahir dan peristiwa Tahun Gajah"
+    },
+    {
+      "episode": 2,
+      "judul_episode": "Kelahiran Nabi Muhammad ﷺ",
+      "hook_layar": "BAYI YATIM LAHIR DI MAKKAH",
+      "hook_formula": "The Reveal",
+      "skor_viral": 8,
+      "jam_posting": "04:45",
+      "komentar_pin": "Menurut kamu, apa makna nama \"Muhammad\" bagi hidupmu?",
+      "durasi_detik": 102,
+      "naskah_vo": [
+        "Seorang bayi lahir di Makkah, dan dunia belum tahu siapa dia.",
+        "Ini kisah Nabi Muhammad shallallahu 'alaihi wa sallam, episode dua.",
+        "Di episode sebelumnya, Allah menjaga Ka'bah dari pasukan bergajah.",
+        "Pada tahun yang sama, lahirlah bayi yang kelak menjadi Nabi terakhir.",
+        "Menurut pendapat yang masyhur, beliau lahir pada hari Senin, tanggal dua belas Rabiul Awal.",
+        "Tahunnya dikenal sebagai Tahun Gajah, sekitar lima ratus tujuh puluh Masehi.",
+        "Ayah beliau bernama Abdullah bin Abdul Muththalib.",
+        "Menurut pendapat yang masyhur, Abdullah wafat sebelum putranya lahir.",
+        "Ibunda beliau bernama Aminah binti Wahab.",
+        "Bayangkan, bayi itu lahir tanpa pernah bertemu ayahnya.",
+        "Setelah melahirkan, Aminah mengabarkan kebahagiaan itu kepada sang kakek, Abdul Muththalib.",
+        "Kakeknya datang dengan penuh gembira.",
+        "Ia lalu menamai cucunya Muhammad, artinya yang terpuji.",
+        "Nama itu jarang dipakai oleh orang Arab saat itu.",
+        "Para pembesar Quraisy pun bertanya, mengapa ia tidak memakai nama leluhur?",
+        "Abdul Muththalib menjawab, ia berharap cucunya dipuji oleh Allah di langit dan oleh makhluk-Nya di bumi.",
+        "Tapi masih ada satu hal yang membuat hari kelahiran itu begitu istimewa.",
+        "Kelak Rasulullah ditanya tentang puasa hari Senin.",
+        "Beliau menjawab, itu hari aku dilahirkan.",
+        "Hadits ini diriwayatkan oleh Imam Muslim.",
+        "Karena itu, banyak kaum muslimin menghidupkan sunnah puasa Senin.",
+        "Hikmahnya: sebuah kelahiran yang sederhana bisa menjadi awal rahmat bagi seluruh alam.",
+        "Namun hidup bayi yatim ini baru dimulai.",
+        "Siapakah yang akan menyusui dan membesarkannya di padang pasir?",
+        "Subscribe Glitchplay dan nantikan episode berikutnya: Disusui Halimah As-Sa'diyah di perkampungan Bani Sa'd."
+      ],
+      "subtitle": [
+        "Seorang bayi lahir di Makkah, dan dunia belum tahu siapa dia.",
+        "Ini kisah Nabi Muhammad ﷺ, episode 2.",
+        "Di episode sebelumnya, Allah menjaga Ka'bah dari pasukan bergajah.",
+        "Pada tahun yang sama, lahirlah bayi yang kelak menjadi Nabi terakhir.",
+        "Menurut pendapat yang masyhur, beliau lahir pada hari Senin, tanggal 12 Rabiul Awal.",
+        "Tahunnya dikenal sebagai Tahun Gajah, sekitar 570 Masehi.",
+        "Ayah beliau bernama Abdullah bin Abdul Muththalib.",
+        "Menurut pendapat yang masyhur, Abdullah wafat sebelum putranya lahir.",
+        "Ibunda beliau bernama Aminah binti Wahab.",
+        "Bayangkan, bayi itu lahir tanpa pernah bertemu ayahnya.",
+        "Setelah melahirkan, Aminah mengabarkan kebahagiaan itu kepada sang kakek, Abdul Muththalib.",
+        "Kakeknya datang dengan penuh gembira.",
+        "Ia lalu menamai cucunya Muhammad, artinya yang terpuji.",
+        "Nama itu jarang dipakai oleh orang Arab saat itu.",
+        "Para pembesar Quraisy pun bertanya, mengapa ia tidak memakai nama leluhur?",
+        "Abdul Muththalib menjawab, ia berharap cucunya dipuji oleh Allah di langit dan oleh makhluk-Nya di bumi.",
+        "Tapi masih ada satu hal yang membuat hari kelahiran itu begitu istimewa.",
+        "Kelak Rasulullah ditanya tentang puasa hari Senin.",
+        "Beliau menjawab, \"Itu hari aku dilahirkan.\"",
+        "Hadits ini diriwayatkan oleh Imam Muslim.",
+        "Karena itu, banyak kaum muslimin menghidupkan sunnah puasa Senin.",
+        "Hikmahnya: sebuah kelahiran yang sederhana bisa menjadi awal rahmat bagi seluruh alam.",
+        "Namun hidup bayi yatim ini baru dimulai.",
+        "Siapakah yang akan menyusui dan membesarkannya di padang pasir?",
+        "Subscribe Glitchplay dan nantikan episode berikutnya: Disusui Halimah As-Sa'diyah di perkampungan Bani Sa'd."
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "BAYI YATIM LAHIR DI MAKKAH",
+          "visual": "ilustrasi"
+        },
+        {
+          "t": "0:12",
+          "teks": "Senin, 12 Rabiul Awal",
+          "visual": "ilustrasi"
+        },
+        {
+          "t": "0:22",
+          "teks": "Tahun Gajah, ±570 M",
+          "visual": "ilustrasi"
+        },
+        {
+          "t": "0:32",
+          "teks": "Ayah: Abdullah",
+          "visual": "ilustrasi"
+        },
+        {
+          "t": "0:40",
+          "teks": "Ibu: Aminah binti Wahab",
+          "visual": "ilustrasi"
+        },
+        {
+          "t": "0:52",
+          "teks": "Nama: Muhammad, yang terpuji",
+          "visual": "ilustrasi"
+        },
+        {
+          "t": "1:08",
+          "teks": "Hadits Muslim: puasa Senin",
+          "visual": "ilustrasi"
+        },
+        {
+          "t": "1:22",
+          "teks": "Hikmah: awal rahmat",
+          "visual": "ilustrasi"
+        },
+        {
+          "t": "1:32",
+          "teks": "Eps 3: Halimah As-Sa'diyah",
+          "visual": "ilustrasi"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "Ancient Makkah at night under a starry sky, a single small house with a warm glowing lamp, storybook painting style"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "Wide view of ancient Makkah at dawn, the Kaaba in a rocky valley, soft golden light"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A lone caravan of camels crossing a desert at dusk, silhouettes in the distance"
+        },
+        {
+          "kalimat": 9,
+          "prompt": "A quiet courtyard of a simple clay house at night, a woman's silhouette seen from behind sitting beside a small oil lamp"
+        },
+        {
+          "kalimat": 11,
+          "prompt": "An elderly Arab chieftain in a long cloak walking joyfully through a narrow ancient street toward a small house, seen from behind"
+        },
+        {
+          "kalimat": 15,
+          "prompt": "Silhouettes of noble Quraysh elders seated in a circle near the Kaaba, seen from far away, golden evening light"
+        },
+        {
+          "kalimat": 17,
+          "prompt": "A simple weekday morning in ancient Madinah, date palm trees and a humble mosque of palm fronds, soft sunrise"
+        },
+        {
+          "kalimat": 21,
+          "prompt": "Open skies over the desert with a gentle glowing light spreading over Makkah, hopeful mood"
+        },
+        {
+          "kalimat": 23,
+          "prompt": "A vast desert with a distant tent village and flocks of sheep at sunrise, a path leading toward it"
+        }
+      ],
+      "youtube": {
+        "channel": "Glitchplay",
+        "judul": "Bayi Yatim yang Diberi Nama Muhammad, Sang Terpuji | Kisah Nabi ﷺ Eps 2 #Shorts",
+        "deskripsi": "Kisah kelahiran Nabi Muhammad ﷺ di Makkah pada Tahun Gajah, nama Muhammad dari sang kakek, dan hari Senin yang beliau sebut sebagai hari kelahirannya. Pelajaran: kelahiran yang sederhana bisa menjadi awal rahmat bagi seluruh alam. Episode sebelumnya: Tahun Gajah. Episode berikutnya: Disusui Halimah As-Sa'diyah.\n\nSumber: Sirah Ibnu Hisyam (via NU Online & Detik Hikmah); HR. Muslim tentang puasa hari Senin; Liputan6.",
+        "tags": [
+          "kisah nabi",
+          "sirah nabawiyah",
+          "sejarah islam",
+          "nabi muhammad",
+          "kelahiran nabi",
+          "maulid nabi",
+          "12 rabiul awal",
+          "tahun gajah",
+          "abdul muthalib",
+          "kisah islami"
+        ],
+        "made_for_kids": false
+      },
+      "caption": "Bayi yatim lahir di Makkah dan diberi nama Muhammad, yang terpuji. Kisah Nabi Muhammad ﷺ episode 2.",
+      "hashtags": [
+        "#kisahnabi",
+        "#sejarahislam",
+        "#sirahnabawiyah"
+      ],
+      "sumber": [
+        {
+          "nama": "NU Online: Rahasia di balik hari, bulan, dan tahun kelahiran Nabi Muhammad",
+          "url": "https://islam.nu.or.id/sirah-nabawiyah/rahasia-di-balik-hari-bulan-dan-tahun-kelahiran-nabi-muhammad-JejKy"
+        },
+        {
+          "nama": "NU Online: Tanggal lahir Nabi Muhammad",
+          "url": "https://nu.or.id/sirah-nabawiyah/tanggal-lahir-nabi-muhammad-MLgNY"
+        },
+        {
+          "nama": "Detik Hikmah: Nabi Muhammad SAW lahir pada 12 Rabiul Awal",
+          "url": "https://www.detik.com/hikmah/kisah/d-7975829/nabi-muhammad-saw-lahir-pada-tanggal-12-rabiul-awal-ini-kisahnya"
+        },
+        {
+          "nama": "Liputan6: Nabi Muhammad lahir 12 Rabiul Awal Tahun Gajah",
+          "url": "https://www.liputan6.com/islami/read/6147482/nabi-muhammad-lahir-pada-tanggal-12-rabiul-awal-tahun-gajah-bertepatan-dengan-tanggal-ini"
+        }
+      ],
+      "judul": "Eps 2: Kelahiran Nabi Muhammad ﷺ"
     }
   ]
 }
