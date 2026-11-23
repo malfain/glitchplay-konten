@@ -757,32 +757,15 @@ function confirmDelete(it, ctx, el) {
 
 const CH_NAME = { glitch: "Instagram GlitchPlayClips", kids: "YouTube GlitchPlayClips (fakta anak)", sirah: "YouTube Glitchplay (kisah Nabi)" };
 
-// Delete a whole day of one channel in ONE commit (Git Data API): day file, posters and in-repo videos, plus the
-// index entry. Release-hosted videos are removed through the Releases API first.
-async function deleteDay(items, { ch, date }) {
-  const dir = CHDIR[ch];
-  for (const it of items) if ((it.video || "").includes("/releases/download/")) await deleteReleaseVideo(it.video);
-  for (let attempt = 0; attempt < 3; attempt++) {
-    const ref = await gh("git/ref/heads/main");
-    const head = await gh(`git/commits/${ref.object.sha}`);
-    const tree = await gh(`git/trees/${head.tree.sha}?recursive=1`);
-    const have = new Set(tree.tree.map((t) => t.path));
-    const gone = [`${dir}/${date}.json`];
-    for (const it of items) for (const p of [it.poster, it.video]) if (p && !p.startsWith("http")) gone.push(p);
-    const entries = gone.filter((p) => have.has(p)).map((path) => ({ path, mode: "100644", type: "blob", sha: null }));
-    const ix = await gh(`contents/${dir}/index.json?ref=${ref.object.sha}`);
-    const idx = JSON.parse(b64ToText(ix.content));
-    idx.days = (idx.days || []).filter((d) => d !== date);
-    entries.push({ path: `${dir}/index.json`, mode: "100644", type: "blob", content: JSON.stringify(idx, null, 2) + "\n" });
-    const newTree = await gh("git/trees", { method: "POST", body: JSON.stringify({ base_tree: head.tree.sha, tree: entries }) });
-    const commit = await gh("git/commits", { method: "POST", body: JSON.stringify({
-      message: `hapus semua: ${CH_NAME[ch]} ${date} (${items.length} konten)`, tree: newTree.sha, parents: [ref.object.sha] }) });
-    try {
-      await gh("git/refs/heads/main", { method: "PATCH", body: JSON.stringify({ sha: commit.sha }) });
-      return;
-    } catch (e) {
-      if (e.status !== 422 || attempt === 2) throw e; // someone pushed meanwhile (e.g. the render robot): rebuild on the new head
-    }
+// Delete a whole day of one channel: the same per-item delete that the single 🗑️ button uses (proven to work with
+// the user's token), one after another; the last one also drops the day from index.json.
+async function deleteDay(items, ctx, onProgress) {
+  for (let i = 0; i < items.length; i++) {
+    const k = itemKey(ctx.ch, ctx.date, items[i]);
+    onProgress?.(i + 1, items.length);
+    if (deletedSet().has(k)) continue; // already gone in an earlier (interrupted) attempt
+    try { await deleteItem(items[i], ctx); } catch (e) { if (e.status !== 404) throw e; }
+    markDeleted(k);
   }
 }
 
@@ -797,14 +780,14 @@ function confirmDeleteAll(items, ctx) {
   $("#doDelAll").onclick = async () => {
     const btn = $("#doDelAll"); btn.disabled = true; btn.textContent = "Menghapus…";
     try {
-      await deleteDay(items, ctx);
-      items.forEach((it) => markDeleted(itemKey(ctx.ch, ctx.date, it)));
+      await deleteDay(items, ctx, (n, total) => { btn.textContent = `Menghapus ${n}/${total}…`; });
       state.dayCache = {};
       closeSheet();
       toast(`${items.length} konten terhapus ✓ Website diperbarui dalam 1–2 menit.`);
       show("hasil", ctx.date);
     } catch (e) {
-      btn.disabled = false; btn.textContent = `🗑️ Hapus ${items.length} konten`;
+      btn.disabled = false; btn.textContent = `🗑️ Coba lagi`;
+      state.dayCache = {};
       const why = e.status === 401 || e.status === 403 ? "token salah atau tidak punya izin tulis" : e.status === 404 ? "file/token tidak ditemukan" : (e.detail || e.message);
       toast("Gagal menghapus: " + why, 6000);
     }
