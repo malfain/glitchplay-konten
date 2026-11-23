@@ -57,12 +57,22 @@
       "t": "2026-11-23T17:50:37+07:00"
     },
     "asisten": {
-      "status": "kerja",
-      "aktivitas": "Render 1 video untuk 2026-11-23",
-      "t": "2026-11-23T17:58:53+07:00"
+      "status": "selesai",
+      "aktivitas": "1/1 video jadi, siap di Hasil",
+      "t": "2026-11-23T18:02:44+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T18:02:44+07:00",
+      "agen": "asisten",
+      "pesan": "1/1 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-23T17:58:55+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 1/1: Eps 2: Kelahiran Nabi Muhammad ﷺ"
+    },
     {
       "t": "2026-11-23T17:58:53+07:00",
       "agen": "asisten",
@@ -352,18 +362,8 @@
       "t": "2026-11-23T06:09:18+07:00",
       "agen": "copywriter",
       "pesan": "Tulis caption + hashtag"
-    },
-    {
-      "t": "2026-11-23T06:09:16+07:00",
-      "agen": "narator",
-      "pesan": "6 naskah selesai"
-    },
-    {
-      "t": "2026-11-23T06:08:20+07:00",
-      "agen": "narator",
-      "pesan": "Tulis naskah 6 konten"
     }
   ],
-  "updated_at": "2026-11-23T17:58:53+07:00",
+  "updated_at": "2026-11-23T18:02:44+07:00",
   "kesimpulan_t": "2026-11-23T06:09:21+07:00"
 }

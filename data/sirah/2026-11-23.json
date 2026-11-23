@@ -399,7 +399,11 @@
           "url": "https://www.liputan6.com/islami/read/6147482/nabi-muhammad-lahir-pada-tanggal-12-rabiul-awal-tahun-gajah-bertepatan-dengan-tanggal-ini"
         }
       ],
-      "judul": "Eps 2: Kelahiran Nabi Muhammad ﷺ"
+      "judul": "Eps 2: Kelahiran Nabi Muhammad ﷺ",
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-23/sirah-02-eps-2-kelahiran-nabi-muhammad.mp4",
+      "poster": "video/sirah/2026-11-23/02-eps-2-kelahiran-nabi-muhammad.jpg",
+      "video_durasi": 93.1,
+      "video_suara": "gemini-3.8-flash-lite-tts/Charon"
     }
   ]
 }
