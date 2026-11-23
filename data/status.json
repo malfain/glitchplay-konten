@@ -57,12 +57,27 @@
       "t": "2026-11-23T17:50:37+07:00"
     },
     "asisten": {
-      "status": "kerja",
-      "aktivitas": "Render 1 video untuk 2026-11-23",
-      "t": "2026-11-23T17:54:01+07:00"
+      "status": "error",
+      "aktivitas": "0/1 video jadi, siap di Hasil",
+      "t": "2026-11-23T17:54:03+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-23T17:54:03+07:00",
+      "agen": "asisten",
+      "pesan": "0/1 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-23T17:54:03+07:00",
+      "agen": "asisten",
+      "pesan": "Video 2 gagal: kuota gambar gratis Cloudflare hari ini "
+    },
+    {
+      "t": "2026-11-23T17:54:02+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 1/1: Eps 2: Kelahiran Nabi Muhammad ﷺ"
+    },
     {
       "t": "2026-11-23T17:54:01+07:00",
       "agen": "asisten",
@@ -347,23 +362,8 @@
       "t": "2026-11-23T05:10:14+07:00",
       "agen": "bos",
       "pesan": "[Anak] Shift anak selesai"
-    },
-    {
-      "t": "2026-11-23T05:10:14+07:00",
-      "agen": "qc",
-      "pesan": "[Anak] 2 konten anak terbit"
-    },
-    {
-      "t": "2026-11-23T05:10:14+07:00",
-      "agen": "copywriter",
-      "pesan": "[Anak] Judul & deskripsi YouTube siap"
-    },
-    {
-      "t": "2026-11-23T05:10:14+07:00",
-      "agen": "narator",
-      "pesan": "[Anak] 2 naskah selesai"
     }
   ],
-  "updated_at": "2026-11-23T17:54:01+07:00",
+  "updated_at": "2026-11-23T17:54:03+07:00",
   "kesimpulan_t": "2026-11-23T06:09:21+07:00"
 }
