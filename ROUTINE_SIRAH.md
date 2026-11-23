@@ -17,8 +17,11 @@ duplikat). Jangan ubah `data/*.json` milik Instagram dan `data/kids/`.
 
 ## Episode berikutnya
 
-Nomor episode = jumlah item di semua `data/sirah/2*.json` + 1. Judul/tema
-episode diambil dari `data/sirah/seri.json` (`episode[nomor - 1]`). Kalau daftar
+Nomor episode berikutnya = `episode_terakhir` di `data/sirah/seri.json` + 1
+(**jangan** dihitung dari jumlah file: konten lama bisa dihapus setelah
+diupload). Judul/tema episode = `episode[nomor - 1]` di file yang sama. Setelah
+episode hari ini dibuat, **naikkan `episode_terakhir`** ke nomor episode
+terakhir yang dibuat (ikut di commit yang sama). Kalau daftar
 sudah habis, jangan membuat episode baru: lapor `bos selesai "Musim 1 tamat"`.
 Di awal tiap episode (setelah hook) ada kalimat sambung singkat dari episode
 sebelumnya ("Di episode sebelumnya, …"), kecuali Episode 1.
