@@ -6,7 +6,7 @@
     "finished_at": null
   },
   "tasks": {
-    "antri": 0,
+    "antri": 18,
     "jalan": 0,
     "kelar": 0
   },
@@ -22,8 +22,8 @@
     },
     "radar": {
       "status": "kerja",
-      "aktivitas": "Cari berita game, esports, streamer",
-      "t": "2026-11-24T06:06:17+07:00"
+      "aktivitas": "Riset lanjutan, cari berita 24-48 jam",
+      "t": "2026-11-24T06:07:00+07:00"
     },
     "detektif": {
       "status": "idle",
@@ -62,6 +62,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-24T06:07:00+07:00",
+      "agen": "radar",
+      "pesan": "Riset lanjutan, cari berita 24-48 jam"
+    },
     {
       "t": "2026-11-24T06:06:17+07:00",
       "agen": "radar",
@@ -356,13 +361,8 @@
       "t": "2026-11-23T17:22:14+07:00",
       "agen": "studio",
       "pesan": "Render video 1/1: Xbox Black Friday Sale: diskon sam"
-    },
-    {
-      "t": "2026-11-23T17:22:13+07:00",
-      "agen": "studio",
-      "pesan": "Render 1 video untuk 2026-11-23"
     }
   ],
-  "updated_at": "2026-11-24T06:06:17+07:00",
+  "updated_at": "2026-11-24T06:07:00+07:00",
   "kesimpulan_t": "2026-11-24T04:06:58+07:00"
 }
