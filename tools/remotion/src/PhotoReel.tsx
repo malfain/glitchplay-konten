@@ -3,6 +3,8 @@ import { AbsoluteFill, Easing, Img, interpolate, Sequence, staticFile, useCurren
 import { z } from "zod";
 import { F, applyTheme } from "./theme";
 import { SirahBackdrop } from "./SirahBackdrop";
+import { LogoBadge, LogoOutro } from "./BrandLogo";
+import { Buddy } from "./Buddy";
 
 // "Documentary" Shorts: full-bleed AI photos with a slow Ken Burns move, big word-by-word captions (active word yellow),
 // voiceover. Scenes and caption words carry their own start/end seconds (computed by tools/render_video.py).
@@ -72,14 +74,16 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
       <Sequence name="teks" from={hook ? Math.round(HOOK_END * fps) : 0}>
         <Captions words={words} accent={accent} offset={hook ? HOOK_END : 0} />
       </Sequence>
-      {maskot && maskot.frames.length ? <Maskot frames={maskot.frames} fps={maskot.fps} /> : null}
-      {logo && logo.frames.length ? (
-        <Sequence name="outro logo" from={Math.max(0, Math.round((total - OUTRO) * fps))}>
-          <Outro frames={logo.frames} fps={logo.fps} />
-        </Sequence>
+      {maskot && maskot.frames.length ? (
+        <Maskot frames={maskot.frames} fps={maskot.fps} />
+      ) : th !== "sirah" ? (
+        <Buddy theme={th} words={words} hookEnd={hook ? HOOK_END : 0} total={total} />
       ) : null}
+      <Sequence name="outro logo" from={Math.max(0, Math.round((total - OUTRO) * fps))}>
+        {logo && logo.frames.length ? <Outro frames={logo.frames} fps={logo.fps} /> : <LogoOutro variant={th === "sirah" ? "sirah" : "clips"} />}
+      </Sequence>
       <Progress total={total} accent={accent} />
-      <Badge handle={handle} avatar={avatar ?? null} accent={accent} episode={episode} logo={logo} />
+      <Badge handle={handle} avatar={avatar ?? null} accent={accent} episode={episode} logo={logo} variant={th === "sirah" ? "sirah" : "clips"} />
       <div style={{ position: "absolute", left: 70, top: 1400, font: `600 26px ${F.sans}`, color: "rgba(255,255,255,.75)" }}>
         {label ?? "Gambar dibuat dengan AI"}
       </div>
@@ -152,7 +156,7 @@ const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string; offse
   );
 };
 
-const Badge: React.FC<{ handle: string; avatar: string | null; accent: string; episode?: number; logo?: PhotoReelProps["logo"] }> = ({ handle, avatar, accent, episode, logo }) => (
+const Badge: React.FC<{ handle: string; avatar: string | null; accent: string; episode?: number; logo?: PhotoReelProps["logo"]; variant: "clips" | "sirah" }> = ({ handle, avatar, accent, episode, logo, variant }) => (
   <div
     style={{
       position: "absolute", left: 70, top: 240, display: "flex", alignItems: "center", gap: 12, padding: "6px 20px 6px 6px",
@@ -162,9 +166,9 @@ const Badge: React.FC<{ handle: string; avatar: string | null; accent: string; e
   >
     {logo && logo.frames.length ? (
       <LogoLoop frames={logo.frames} fps={logo.fps} size={64} />
-    ) : avatar ? (
-      <Img src={staticFile(avatar)} style={{ width: 48, height: 48, borderRadius: "50%", border: `2px solid ${accent}` }} />
-    ) : null}
+    ) : (
+      <LogoBadge variant={variant} size={60} />
+    )}
     {handle}
     {episode ? <span style={{ marginLeft: 4, padding: "2px 12px", borderRadius: 999, background: accent, color: "#111", fontSize: 24 }}>Eps {episode}</span> : null}
   </div>
