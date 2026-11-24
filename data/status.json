@@ -6,7 +6,7 @@
     "finished_at": null
   },
   "tasks": {
-    "antri": 24,
+    "antri": 10,
     "jalan": 0,
     "kelar": 0
   },
@@ -26,9 +26,9 @@
       "t": "2026-11-25T06:09:57+07:00"
     },
     "detektif": {
-      "status": "kerja",
-      "aktivitas": "Cek fakta tiap kandidat, min. 2 sumber",
-      "t": "2026-11-25T06:09:59+07:00"
+      "status": "selesai",
+      "aktivitas": "10 lolos, 14 dibuang",
+      "t": "2026-11-25T06:10:01+07:00"
     },
     "narator": {
       "status": "idle",
@@ -51,9 +51,9 @@
       "t": "2026-11-25T06:06:27+07:00"
     },
     "strategist": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-25T06:06:27+07:00"
+      "status": "kerja",
+      "aktivitas": "Ranking FYP, hook, jam posting",
+      "t": "2026-11-25T06:10:01+07:00"
     },
     "asisten": {
       "status": "idle",
@@ -62,6 +62,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-25T06:10:01+07:00",
+      "agen": "strategist",
+      "pesan": "Ranking FYP, hook, jam posting"
+    },
+    {
+      "t": "2026-11-25T06:10:01+07:00",
+      "agen": "detektif",
+      "pesan": "10 lolos, 14 dibuang"
+    },
     {
       "t": "2026-11-25T06:09:59+07:00",
       "agen": "detektif",
@@ -351,18 +361,8 @@
       "t": "2026-11-24T06:08:20+07:00",
       "agen": "strategist",
       "pesan": "Ranking FYP, hook, jam posting"
-    },
-    {
-      "t": "2026-11-24T06:08:20+07:00",
-      "agen": "detektif",
-      "pesan": "10 lolos, 8 dibuang"
-    },
-    {
-      "t": "2026-11-24T06:08:18+07:00",
-      "agen": "detektif",
-      "pesan": "Cek fakta tiap kandidat, min 2 situs"
     }
   ],
-  "updated_at": "2026-11-25T06:09:59+07:00",
+  "updated_at": "2026-11-25T06:10:01+07:00",
   "kesimpulan_t": "2026-11-25T05:11:31+07:00"
 }
