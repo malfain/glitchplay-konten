@@ -1254,14 +1254,17 @@ def hook_text(item):
     return " ".join(t.split()[:6]) or None
 
 
-KIDS3D = ("luarangkasa", "bumi", "laut", "alam", "sains")
+KIDS3D = ("luarangkasa", "bumi", "laut", "alam", "sains", "tatasurya", "gunungberapi", "dinosaurus")
 SIRAH_SCENES = ("malam", "gurun", "kabah", "gua", "madinah")
 
 
 def kids3d_for(prompt, n):
     """Pick the Three.js kids scene that best matches an illustration prompt."""
     p = prompt.lower()
-    for words, kind in ((("planet", "space", "moon", "star", "galaxy", "sun ", "astronaut", "rocket"), "luarangkasa"),
+    for words, kind in ((("dinosaur", "t-rex", "fossil", "prehistoric", "jurassic"), "dinosaurus"),
+                        (("volcano", "lava", "eruption", "magma"), "gunungberapi"),
+                        (("solar system", "planets", "orbit"), "tatasurya"),
+                        (("planet", "space", "moon", "star", "galaxy", "sun ", "astronaut", "rocket"), "luarangkasa"),
                         (("earth", "globe", "continent", "volcano", "weather", "cloud"), "bumi"),
                         (("ocean", "sea", "fish", "underwater", "coral", "whale", "shark", "octopus", "penguin"), "laut"),
                         (("atom", "cell", "body", "heart", "brain", "blood", "science", "microscope", "molecule"), "sains"),

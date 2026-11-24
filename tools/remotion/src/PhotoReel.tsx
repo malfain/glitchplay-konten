@@ -18,7 +18,7 @@ export const photoReelSchema = z.object({
   avatar: z.string().nullable().optional(),
   total: z.number(),
   scenes: z.array(z.object({ src: z.string(), start: z.number(), end: z.number(), video: z.boolean().optional(), cut: z.boolean().optional(), light: z.boolean().optional(),
-    vector: z.enum(["malam", "gurun", "kabah", "gua", "madinah", "luarangkasa", "bumi", "laut", "alam", "sains"]).optional() })),
+    vector: z.enum(["malam", "gurun", "kabah", "gua", "madinah", "luarangkasa", "bumi", "laut", "alam", "sains", "tatasurya", "gunungberapi", "dinosaurus"]).optional() })),
   words: z.array(z.object({ text: z.string(), start: z.number(), end: z.number(), chunk: z.number() })),
   label: z.string().optional(),
   hook: z.string().optional(),

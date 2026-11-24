@@ -84,11 +84,16 @@ Isi field `adegan`: **7–9 adegan** (gambar diam otomatis dipotong tiap ±2 det
 
 - `kalimat` = indeks (mulai 0) kalimat di `naskah_vo` tempat foto mulai tampil;
   adegan pertama selalu `0`, angkanya naik.
-- **Animasi 3D (Three.js):** di **2–3 adegan** yang cocok, tambahkan `"3d"` dengan
-  salah satu: `"luarangkasa"` (planet bercincin + bulan mengorbit), `"bumi"`
-  (bola bumi berputar), `"laut"` (bawah laut: ikan, gelembung, rumput laut),
-  `"alam"` (bukit, pohon, awan, matahari), `"sains"` (atom berputar: tubuh,
-  sel, ilmu pengetahuan). Adegan 3D tidak memakai foto AI (hemat kuota), tapi
+- **Animasi 3D (Three.js):** di **4–5 adegan** (dari 7–9), tambahkan `"3d"` dengan
+  salah satu: `"luarangkasa"` (planet bercincin + bulan mengorbit),
+  `"tatasurya"` (matahari + 8 planet mengorbit), `"bumi"` (bola bumi berputar),
+  `"laut"` (bawah laut: ikan, gelembung, rumput laut), `"alam"` (bukit, pohon,
+  awan, matahari), `"sains"` (atom berputar: tubuh, sel, ilmu pengetahuan),
+  `"gunungberapi"` (gunung meletus: lava & asap), `"dinosaurus"` (dinosaurus
+  leher panjang berjalan di hutan purba). Pilih yang paling nyambung dengan
+  kalimatnya; boleh dipakai lebih dari sekali, tapi variasikan. **Pilih tema
+  video yang cocok dengan adegan 3D ini lebih sering** (luar angkasa, bumi &
+  cuaca, laut, dinosaurus, gunung berapi, tubuh/sains). Adegan 3D tidak memakai foto AI (hemat kuota), tapi
   tetap isi `prompt` sebagai cadangan. Contoh:
   `{"kalimat": 6, "3d": "luarangkasa", "prompt": "Saturn with its rings in space"}`
 - `prompt` dalam **bahasa Inggris**, 1 kalimat, menggambarkan foto nyata yang
