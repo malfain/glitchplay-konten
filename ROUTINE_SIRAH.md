@@ -105,6 +105,9 @@ otomatis di Mac). Isi `adegan` **7–9 adegan**, urut:
 
 - `kalimat` = indeks kalimat di `naskah_vo` tempat gambar mulai; adegan
   pertama `0`, angkanya naik.
+- **Ka'bah 3D (Three.js):** adegan tentang Ka'bah/Masjidil Haram boleh diberi
+  `"3d": "kabah"` → Ka'bah 3D dengan kamera berputar (tanpa foto AI). Pakai
+  maksimal 1 per episode; tetap isi `prompt` sebagai cadangan.
 - **Nabi Muhammad ﷺ**: adegan yang menampilkan beliau wajib `"nabi": true`, dan
   prompt menggambarkan sosok berjubah putih **dari belakang atau dari jauh, di
   tengah gambar**. Mac otomatis menutup wajah beliau dengan cahaya; jangan

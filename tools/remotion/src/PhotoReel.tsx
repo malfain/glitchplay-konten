@@ -5,6 +5,7 @@ import { F, applyTheme } from "./theme";
 import { SirahBackdrop } from "./SirahBackdrop";
 import { LogoBadge, LogoOutro } from "./BrandLogo";
 import { Buddy } from "./Buddy";
+import { Kids3D, KIDS3D_KINDS, type Kids3DKind } from "./Kids3D";
 
 // "Documentary" Shorts: full-bleed AI photos with a slow Ken Burns move, big word-by-word captions (active word yellow),
 // voiceover. Scenes and caption words carry their own start/end seconds (computed by tools/render_video.py).
@@ -16,7 +17,7 @@ export const photoReelSchema = z.object({
   avatar: z.string().nullable().optional(),
   total: z.number(),
   scenes: z.array(z.object({ src: z.string(), start: z.number(), end: z.number(), video: z.boolean().optional(), cut: z.boolean().optional(), light: z.boolean().optional(),
-    vector: z.enum(["malam", "gurun", "kabah", "gua", "madinah"]).optional() })),
+    vector: z.enum(["malam", "gurun", "kabah", "gua", "madinah", "luarangkasa", "bumi", "laut", "alam", "sains"]).optional() })),
   words: z.array(z.object({ text: z.string(), start: z.number(), end: z.number(), chunk: z.number() })),
   label: z.string().optional(),
   hook: z.string().optional(),
@@ -50,8 +51,10 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
           from={Math.round(s.start * fps)}
           durationInFrames={Math.max(1, Math.round((s.end - s.start + (i < scenes.length - 1 ? FADE : 0)) * fps))}
         >
-          {s.vector ? (
-            <SirahBackdrop kind={s.vector} index={i} dur={s.end - s.start + FADE} />
+          {s.vector && KIDS3D_KINDS.includes(s.vector as Kids3DKind) ? (
+            <Kids3D kind={s.vector as Kids3DKind} dur={s.end - s.start + FADE} />
+          ) : s.vector ? (
+            <SirahBackdrop kind={s.vector as "malam" | "gurun" | "kabah" | "gua" | "madinah"} index={i} dur={s.end - s.start + FADE} />
           ) : (
             <KenBurns src={s.src} index={i} dur={s.end - s.start + FADE} fadeIn={i > 0 && !s.cut} video={!!s.video} />
           )}

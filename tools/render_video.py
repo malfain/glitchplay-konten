@@ -1254,6 +1254,23 @@ def hook_text(item):
     return " ".join(t.split()[:6]) or None
 
 
+KIDS3D = ("luarangkasa", "bumi", "laut", "alam", "sains")
+SIRAH_SCENES = ("malam", "gurun", "kabah", "gua", "madinah")
+
+
+def kids3d_for(prompt, n):
+    """Pick the Three.js kids scene that best matches an illustration prompt."""
+    p = prompt.lower()
+    for words, kind in ((("planet", "space", "moon", "star", "galaxy", "sun ", "astronaut", "rocket"), "luarangkasa"),
+                        (("earth", "globe", "continent", "volcano", "weather", "cloud"), "bumi"),
+                        (("ocean", "sea", "fish", "underwater", "coral", "whale", "shark", "octopus", "penguin"), "laut"),
+                        (("atom", "cell", "body", "heart", "brain", "blood", "science", "microscope", "molecule"), "sains"),
+                        (("forest", "tree", "animal", "jungle", "field", "flower", "bird", "giraffe", "elephant"), "alam")):
+        if any(w in p for w in words):
+            return kind
+    return KIDS3D[n % len(KIDS3D)]
+
+
 def backdrop_for(prompt, n):
     """Pick the SirahBackdrop scene that best matches an illustration prompt."""
     p = prompt.lower()
@@ -1282,6 +1299,10 @@ def render_item_photo(item, idx, date, outdir, tmp):
     for n, sc in enumerate(scenes_in):
         img = pub / f"{key}-{n + 1:02d}.jpg"
         game = (sc.get("game") or "").strip()
+        three = (sc.get("3d") or "").strip().lower()
+        if three and CH["theme"] in ("kids", "sirah") and three in (KIDS3D if CH["theme"] == "kids" else SIRAH_SCENES):
+            imgs.append("vector:" + three)  # Three.js / animated scene chosen by the writer: no picture needed
+            continue
         if game and footage_dir(game):
             vid = pub / f"{key}-{n + 1:02d}.mp4"
             try:  # the user's own / permitted gameplay clips beat everything else
@@ -1338,9 +1359,10 @@ def render_item_photo(item, idx, date, outdir, tmp):
         try:
             cf_image(prompt, img)
         except RuntimeError as e:
-            if "kuota gambar" in str(e) and CH["theme"] == "sirah":
-                # no pictures left today: a moving hand-drawn history scene instead (never the cartoon mascot)
-                imgs.append("vector:" + backdrop_for(sc.get("prompt", ""), n))
+            if "kuota gambar" in str(e) and CH["theme"] in ("sirah", "kids"):
+                # no pictures left today: a moving 3D / hand-drawn scene instead (never the cartoon mascot)
+                kind = backdrop_for(sc.get("prompt", ""), n) if CH["theme"] == "sirah" else kids3d_for(sc.get("prompt", ""), n)
+                imgs.append("vector:" + kind)
                 continue
             if "ditolak" not in str(e):
                 raise
@@ -1401,7 +1423,9 @@ def render_item_photo(item, idx, date, outdir, tmp):
     shutil.copy(ROOT / "assets/profile.jpg", REMOTION / "public/profile.jpg")
     label = (("Gambar: " + ", ".join(games_used)) if games_used else CH.get("label") or "Gambar dibuat dengan AI")
     if all(isinstance(x, str) for x in imgs):
-        label = "Animasi ilustrasi"
+        label = "Animasi 3D" if CH["theme"] == "kids" else "Animasi ilustrasi"
+    elif any(isinstance(x, str) for x in imgs) and CH["theme"] == "kids":
+        label = "Gambar AI & animasi 3D"
     if credits:
         label = "Klip: " + ", ".join(credits) + " · " + label
     props = {"theme": CH["theme"], "handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
