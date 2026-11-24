@@ -47,9 +47,9 @@
       "t": "2026-11-25T06:11:47+07:00"
     },
     "studio": {
-      "status": "kerja",
-      "aktivitas": "Render 10 video untuk 2026-11-25",
-      "t": "2026-11-25T06:13:26+07:00"
+      "status": "selesai",
+      "aktivitas": "10/10 video jadi, siap di Hasil",
+      "t": "2026-11-25T06:38:15+07:00"
     },
     "strategist": {
       "status": "selesai",
@@ -63,6 +63,61 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-25T06:38:15+07:00",
+      "agen": "studio",
+      "pesan": "10/10 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-25T06:36:46+07:00",
+      "agen": "studio",
+      "pesan": "Render video 10/10: Team Secret BOOM dan Yang Dae Pal "
+    },
+    {
+      "t": "2026-11-25T06:35:12+07:00",
+      "agen": "studio",
+      "pesan": "Render video 9/10: A Game About Digging A Hole Togeth"
+    },
+    {
+      "t": "2026-11-25T06:33:45+07:00",
+      "agen": "studio",
+      "pesan": "Render video 8/10: Subathon GTA VI Tara Arts x GGWP 7"
+    },
+    {
+      "t": "2026-11-25T06:30:54+07:00",
+      "agen": "studio",
+      "pesan": "Render video 7/10: RRQ izinkan Kushy menjajaki opsi l"
+    },
+    {
+      "t": "2026-11-25T06:29:35+07:00",
+      "agen": "studio",
+      "pesan": "Render video 6/10: Steam Winter Sale 2026 mulai 17 De"
+    },
+    {
+      "t": "2026-11-25T06:25:12+07:00",
+      "agen": "studio",
+      "pesan": "Render video 5/10: Genshin 7.2 fase 2: Zibai dan Linn"
+    },
+    {
+      "t": "2026-11-25T06:23:26+07:00",
+      "agen": "studio",
+      "pesan": "Render video 4/10: Bread & Fred gratis di Epic Games "
+    },
+    {
+      "t": "2026-11-25T06:21:37+07:00",
+      "agen": "studio",
+      "pesan": "Render video 3/10: ONIC jadi wakil tunggal Indonesia "
+    },
+    {
+      "t": "2026-11-25T06:15:45+07:00",
+      "agen": "studio",
+      "pesan": "Render video 2/10: AK Gold wajib lewat Gauntlet, Bige"
+    },
+    {
+      "t": "2026-11-25T06:13:27+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/10: Patch pertama GTA VI rilis, 7 bug "
+    },
     {
       "t": "2026-11-25T06:13:26+07:00",
       "agen": "studio",
@@ -307,63 +362,8 @@
       "t": "2026-11-24T06:34:01+07:00",
       "agen": "studio",
       "pesan": "10/10 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-24T06:33:14+07:00",
-      "agen": "studio",
-      "pesan": "Render video 10/10: Lucky Adnan libatkan 20 streamer B"
-    },
-    {
-      "t": "2026-11-24T06:30:30+07:00",
-      "agen": "studio",
-      "pesan": "Render video 9/10: Dave the Diver x Core Keeper cross"
-    },
-    {
-      "t": "2026-11-24T06:27:52+07:00",
-      "agen": "studio",
-      "pesan": "Render video 8/10: Bigetron dan NAVI jadi wakil Indon"
-    },
-    {
-      "t": "2026-11-24T06:27:06+07:00",
-      "agen": "studio",
-      "pesan": "Render video 7/10: Epic buang Blueprints dari Unreal "
-    },
-    {
-      "t": "2026-11-24T06:24:05+07:00",
-      "agen": "studio",
-      "pesan": "Render video 6/10: AK Gold dan Bigetron bawa nama Ind"
-    },
-    {
-      "t": "2026-11-24T06:23:18+07:00",
-      "agen": "studio",
-      "pesan": "Render video 5/10: Obral Black Friday: Xbox diskon sa"
-    },
-    {
-      "t": "2026-11-24T06:22:27+07:00",
-      "agen": "studio",
-      "pesan": "Render video 4/10: Hacker Cyberleek klaim bocorkan bu"
-    },
-    {
-      "t": "2026-11-24T06:21:31+07:00",
-      "agen": "studio",
-      "pesan": "Render video 3/10: Windah Basudara jadi streamer GTA "
-    },
-    {
-      "t": "2026-11-24T06:19:06+07:00",
-      "agen": "studio",
-      "pesan": "Render video 2/10: Tiga wakil Indonesia berebut tiket"
-    },
-    {
-      "t": "2026-11-24T06:18:07+07:00",
-      "agen": "studio",
-      "pesan": "Render video 1/10: Nintendo Switch 2 resmi dijual di "
-    },
-    {
-      "t": "2026-11-24T06:18:06+07:00",
-      "agen": "studio",
-      "pesan": "Render 10 video untuk 2026-11-24"
     }
   ],
-  "updated_at": "2026-11-25T06:13:26+07:00",
+  "updated_at": "2026-11-25T06:38:15+07:00",
   "kesimpulan_t": "2026-11-25T06:11:47+07:00"
 }
