@@ -26,9 +26,9 @@
       "t": "2026-11-25T05:10:01+07:00"
     },
     "detektif": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Cek fakta 2 sumber tiap fakta",
-      "t": "2026-11-25T05:10:01+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] 2 lolos, fakta ragu dibuang",
+      "t": "2026-11-25T05:10:03+07:00"
     },
     "narator": {
       "status": "selesai",
@@ -51,9 +51,9 @@
       "t": "2026-11-24T06:34:01+07:00"
     },
     "strategist": {
-      "status": "selesai",
-      "aktivitas": "[Sirah] Hook & jam posting siap",
-      "t": "2026-11-25T04:07:23+07:00"
+      "status": "kerja",
+      "aktivitas": "[Anak] Hook & jam posting",
+      "t": "2026-11-25T05:10:03+07:00"
     },
     "asisten": {
       "status": "selesai",
@@ -62,6 +62,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-25T05:10:03+07:00",
+      "agen": "strategist",
+      "pesan": "[Anak] Hook & jam posting"
+    },
+    {
+      "t": "2026-11-25T05:10:03+07:00",
+      "agen": "detektif",
+      "pesan": "[Anak] 2 lolos, fakta ragu dibuang"
+    },
     {
       "t": "2026-11-25T05:10:01+07:00",
       "agen": "detektif",
@@ -351,18 +361,8 @@
       "t": "2026-11-24T05:09:51+07:00",
       "agen": "radar",
       "pesan": "[Anak] Cari tema: penguin & tubuh manusia"
-    },
-    {
-      "t": "2026-11-24T05:09:51+07:00",
-      "agen": "bos",
-      "pesan": "[Anak] Buka shift anak, bagi tugas"
-    },
-    {
-      "t": "2026-11-24T04:16:06+07:00",
-      "agen": "asisten",
-      "pesan": "2/2 video jadi, siap di Hasil"
     }
   ],
-  "updated_at": "2026-11-25T05:10:01+07:00",
+  "updated_at": "2026-11-25T05:10:03+07:00",
   "kesimpulan_t": "2026-11-25T04:07:23+07:00"
 }
