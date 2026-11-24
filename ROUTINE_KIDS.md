@@ -27,7 +27,10 @@ bumi & cuaca, tumbuhan, penemuan & teknologi sederhana.
 - Fakta harus benar-benar mengagumkan tapi bisa dipahami anak SD.
 - **Jangan**: kekerasan, penyakit menakutkan, kematian/bencana yang detail,
   topik dewasa, politik, agama, merek/produk, tokoh yang kontroversial.
-- Jangan ulang tema dari 14 hari terakhir (`data/kids/2*.json`).
+- Jangan ulang tema yang ada di `data/riwayat_topik.json` → `kids` dalam **60 hari
+  terakhir** (file konten lama bisa sudah dihapus user, jadi riwayat ini
+  patokannya). Setelah membuat item, **tambahkan** `{"tanggal", "judul"}` ke
+  `kids` di file itu (jangan hapus isi lama).
 
 ## Cek fakta (Detektif)
 

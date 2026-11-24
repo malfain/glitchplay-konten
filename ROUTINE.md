@@ -79,8 +79,12 @@ lain; jangan pernah memaksakan berita lemah. Tiap item wajib punya field
      pribadi). Sumber: situs esports (esports.id, oneesports.id, dunia games,
      revival TV, liquipedia untuk jadwal/hasil) + media berita nasional
    - rilis game besar, update/patch/season baru, harga di Indonesia
-   - jangan ulang topik yang sudah ada di 3 file `data/2*.json` terakhir,
-     kecuali ada perkembangan baru
+   - **jangan ulang topik** yang ada di `data/riwayat_topik.json` → `ig` dalam
+     **14 hari terakhir** (file konten lama bisa sudah dihapus user setelah
+     diposting, jadi riwayat ini satu-satunya patokan). Topik = peristiwa/berita
+     yang sama (mis. "diskon Black Friday Xbox", "tim Indonesia di FFWS"), walau
+     judulnya beda. Boleh dibahas lagi **hanya** kalau ada perkembangan baru yang
+     jelas (hasil, tanggal, angka baru) dan judulnya menyebut perkembangan itu
    - **utamakan yang lagi ramai dibahas** (cek WebSearch "trending", "viral",
      "ramai", berita yang dimuat banyak situs sekaligus, game yang lagi hits di
      Indonesia: MLBB, Free Fire, PUBG Mobile, Roblox, Genshin, GTA 6, Valorant)
@@ -96,7 +100,9 @@ lain; jangan pernah memaksakan berita lemah. Tiap item wajib punya field
    drama yang menyerang pribadi streamer, SARA, politik.
 5. Kalau `data/<tanggal>.json` sudah ada, **tambahkan** item (jangan hapus
    item lama, jangan duplikat topik).
-6. Tambahkan tanggal ke `data/index.json` (`days`, tanpa duplikat).
+6. Tambahkan tanggal ke `data/index.json` (`days`, tanpa duplikat), dan **tambahkan
+   setiap item baru** ke `data/riwayat_topik.json` → `ig` sebagai
+   `{"tanggal": "<tanggal>", "judul": "<judul>"}` (jangan hapus isi lama).
 7. Jangan ubah `index.html`, `scene/`, `tools/`, `assets/`, `video/`, `ROUTINE.md`,
    atau `voice.md`. Jangan hapus/ubah field `video`, `poster`, `video_durasi`, `video_suara`
    pada item yang sudah ada (diisi oleh Studio di Mac yang merender video).
