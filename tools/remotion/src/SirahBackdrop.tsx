@@ -1,4 +1,5 @@
 import { AbsoluteFill, interpolate, random, useCurrentFrame, useVideoConfig } from "remotion";
+import { Kaaba3D } from "./Kaaba3D";
 
 // Hand-drawn (SVG) moving scenes for the Glitchplay sirah channel, used when no AI illustration is available.
 // No people at all: sky, desert, the Kaaba, mountains, palms and caravans only.
@@ -144,6 +145,11 @@ const Mosque: React.FC<{ y: number }> = ({ y }) => (
 );
 
 export const SirahBackdrop: React.FC<{ kind: BackdropKind; index: number; dur: number }> = ({ kind, index, dur }) => {
+  if (kind === "kabah") return <Kaaba3D dur={dur} index={index} />;
+  return <FlatBackdrop kind={kind} index={index} dur={dur} />;
+};
+
+const FlatBackdrop: React.FC<{ kind: BackdropKind; index: number; dur: number }> = ({ kind, index, dur }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = frame / (dur * fps);

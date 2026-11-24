@@ -11,3 +11,5 @@ Config.setRspack(true);
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
 Config.setDefaultPremountInSeconds(2);
+// 3D scenes (@remotion/three): software WebGL (SwiftShader) works everywhere, incl. the GPU-less Linux render server
+Config.setChromiumOpenGlRenderer("swangle");
