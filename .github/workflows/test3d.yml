@@ -1,0 +1,17 @@
+name: Test 3D (sementara)
+on: workflow_dispatch
+jobs:
+  t:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: "22", cache: npm, cache-dependency-path: tools/remotion/package-lock.json }
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core libnss3 libdbus-1-3 libatk1.0-0t64 libgbm-dev libasound2t64 libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0t64 libpango-1.0-0 libcairo2 libcups2t64 >/dev/null
+          cd tools/remotion && npm ci --silent
+          cp ../../assets/profile.jpg public/profile.jpg
+          for f in 60 150 240 330; do npx remotion still PhotoReel out_$f.png --frame=$f --props=test3d.json --scale=0.25 --log=error; done
+          for f in 60 150 240 330; do ls -la out_$f.png; done
+      - uses: actions/upload-artifact@v4
+        with: { name: stills, path: tools/remotion/out_*.png }
