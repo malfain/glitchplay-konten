@@ -464,6 +464,28 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
       fit.maxY = Math.max(fit.maxY, p.y);
     }
   }
+  // centre of the desk area in view space: the "zoom in" view looks at the team
+  const deskC = new THREE.Vector3();
+  {
+    const p = new THREE.Vector3();
+    const ds = Object.values(DESKS);
+    for (const [x, z] of ds) deskC.add(p.set(x, 1, z));
+    deskC.divideScalar(ds.length).applyMatrix4(camera.matrixWorldInverse);
+  }
+  let zoomed = false;
+  const zoomBtn = document.createElement('button');
+  zoomBtn.type = 'button';
+  zoomBtn.className = 'hq-zoom';
+  zoomBtn.setAttribute('aria-label', 'Perbesar / perkecil kantor');
+  zoomBtn.textContent = '🔍＋';
+  zoomBtn.onclick = (e) => {
+    e.stopPropagation();
+    zoomed = !zoomed;
+    zoomBtn.textContent = zoomed ? '🔍－' : '🔍＋';
+    resize();
+  };
+  host.appendChild(zoomBtn);
+
   let fitted = false;
   function resize() {
     const w = host.clientWidth;
@@ -482,8 +504,15 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
       vh = bh;
       vw = bh * aspect;
     }
-    const cx = (fit.minX + fit.maxX) / 2;
-    const cy = (fit.minY + fit.maxY) / 2;
+    let cx = (fit.minX + fit.maxX) / 2;
+    let cy = (fit.minY + fit.maxY) / 2;
+    if (zoomed) { // close-up on the team: ~1.8x, centred on the desks
+      vw /= 1.8;
+      vh /= 1.8;
+      cx = deskC.x;
+      cy = deskC.y;
+    }
+    labels.classList.toggle('compact', w < 480 && !zoomed);
     camera.left = cx - vw / 2;
     camera.right = cx + vw / 2;
     camera.top = cy + vh / 2;

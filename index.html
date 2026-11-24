@@ -123,6 +123,13 @@
   .hq-label[data-st="selesai"] i { background: var(--green); } .hq-label[data-st="error"] { border-color: var(--red); } .hq-label[data-st="error"] i { background: var(--red); }
   .hq-label.say span { color: var(--green); }
   .hq-hint { position: absolute; left: 10px; bottom: 8px; font-size: 10px; color: var(--muted); pointer-events: none; }
+  /* small screens, whole-office view: labels shrink to emoji + status dot so the room stays visible */
+  .hq-labels.compact .hq-label { padding: 2px 5px; gap: 3px; font-size: 9px; }
+  .hq-labels.compact .hq-label span { display: none; }
+  .hq-labels.compact .hq-label b { font-size: 0; }
+  .hq-labels.compact .hq-label b::first-letter { font-size: 12px; }
+  .hq-zoom { position: absolute; right: 10px; bottom: 8px; z-index: 3; border: 1px solid var(--line-2); background: rgba(10,15,30,.82);
+             color: var(--text); border-radius: 999px; padding: 6px 10px; font: 600 12px Inter; cursor: pointer; backdrop-filter: blur(6px); }
   @media (min-width: 440px) { .hq3d { height: 380px; } }
 
   .alist { margin-top: 2px; }
