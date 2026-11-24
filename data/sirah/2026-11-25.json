@@ -1,0 +1,349 @@
+{
+  "date": "2026-11-25",
+  "items": [
+    {
+      "episode": 5,
+      "judul_episode": "Wafatnya ibunda Aminah di Abwa",
+      "judul": "Eps 5: Wafatnya ibunda Aminah di Abwa",
+      "hook_layar": "IBUNDA WAFAT DI TENGAH JALAN",
+      "skor_viral": 8,
+      "jam_posting": "04:45",
+      "komentar_pin": "Pelajaran apa yang paling menyentuh dari kisah masa kecil Rasulullah ﷺ ini?",
+      "durasi_detik": 94,
+      "naskah_vo": [
+        "Seorang anak kecil berdiri sendirian di tepi sebuah kuburan di tengah padang pasir.",
+        "Ini kisah Nabi Muhammad shallallahu 'alaihi wa sallam, episode lima.",
+        "Di episode sebelumnya, dada beliau dibelah, lalu beliau dikembalikan kepada ibundanya, Aminah.",
+        "Sejak itu Rasulullah tinggal bersama sang ibu di Makkah.",
+        "Ayah beliau, Abdullah, telah wafat sebelum beliau lahir.",
+        "Maka ibunda adalah satu-satunya tempat beliau bersandar.",
+        "Ketika berusia enam tahun, beliau diajak ibunya berangkat ke Madinah.",
+        "Menurut riwayat Ibnu Ishaq, Aminah ingin mengunjungi kerabat dan makam suaminya.",
+        "Ummu Aiman radhiyallahu 'anha, pengasuh beliau, ikut menemani perjalanan itu.",
+        "Kafilah kecil itu menempuh gurun yang sangat panjang dan panas.",
+        "Setelah urusan di Madinah selesai, mereka bersiap pulang ke Makkah.",
+        "Tapi di tengah jalan, sesuatu terjadi pada sang ibu.",
+        "Aminah jatuh sakit, dan sakitnya makin berat.",
+        "Di sebuah tempat bernama Abwa, beliau wafat.",
+        "Abwa terletak di antara Madinah dan Makkah.",
+        "Bayangkan hati seorang anak enam tahun yang kini yatim piatu.",
+        "Tapi siapa yang akan menjaga beliau setelah ini?",
+        "Ummu Aiman menggandeng beliau, lalu membawanya pulang ke Makkah.",
+        "Kini beliau pulang tanpa ayah dan tanpa ibu.",
+        "Ujian seberat itu datang saat beliau masih sangat kecil.",
+        "Sejak dini, hati beliau telah akrab dengan kesedihan dan kesabaran.",
+        "Hikmahnya, sedalam apa pun kehilangan, Allah tidak pernah meninggalkan hamba pilihan-Nya.",
+        "Subscribe Glitchplay dan nantikan episode berikutnya: Diasuh kakek Abdul Muththalib, lalu paman Abu Thalib."
+      ],
+      "subtitle": [
+        "Seorang anak kecil berdiri sendirian di tepi sebuah kuburan di tengah padang pasir.",
+        "Ini kisah Nabi Muhammad ﷺ, episode 5.",
+        "Di episode sebelumnya, dada beliau dibelah, lalu beliau dikembalikan kepada ibundanya, Aminah.",
+        "Sejak itu Rasulullah ﷺ tinggal bersama sang ibu di Makkah.",
+        "Ayah beliau, Abdullah, telah wafat sebelum beliau lahir.",
+        "Maka ibunda adalah satu-satunya tempat beliau bersandar.",
+        "Ketika berusia 6 tahun, beliau diajak ibunya berangkat ke Madinah.",
+        "Menurut riwayat Ibnu Ishaq, Aminah ingin mengunjungi kerabat dan makam suaminya.",
+        "Ummu Aiman radhiyallahu 'anha, pengasuh beliau, ikut menemani perjalanan itu.",
+        "Kafilah kecil itu menempuh gurun yang sangat panjang dan panas.",
+        "Setelah urusan di Madinah selesai, mereka bersiap pulang ke Makkah.",
+        "Tapi di tengah jalan, sesuatu terjadi pada sang ibu.",
+        "Aminah jatuh sakit, dan sakitnya makin berat.",
+        "Di sebuah tempat bernama Abwa, beliau wafat.",
+        "Abwa terletak di antara Madinah dan Makkah.",
+        "Bayangkan hati seorang anak 6 tahun yang kini yatim piatu.",
+        "Tapi siapa yang akan menjaga beliau setelah ini?",
+        "Ummu Aiman menggandeng beliau, lalu membawanya pulang ke Makkah.",
+        "Kini beliau pulang tanpa ayah dan tanpa ibu.",
+        "Ujian seberat itu datang saat beliau masih sangat kecil.",
+        "Sejak dini, hati beliau telah akrab dengan kesedihan dan kesabaran.",
+        "Hikmahnya, sedalam apa pun kehilangan, Allah tidak pernah meninggalkan hamba pilihan-Nya.",
+        "Subscribe Glitchplay dan nantikan episode berikutnya: Diasuh kakek Abdul Muththalib, lalu paman Abu Thalib."
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "IBUNDA WAFAT DI TENGAH JALAN",
+          "visual": "padang pasir, kuburan"
+        },
+        {
+          "t": "0:08",
+          "teks": "Usia 6 tahun, ke Madinah",
+          "visual": "kafilah"
+        },
+        {
+          "t": "0:30",
+          "teks": "Ummu Aiman menemani",
+          "visual": "gurun"
+        },
+        {
+          "t": "0:55",
+          "teks": "Wafat di Abwa",
+          "visual": "gurun senja"
+        },
+        {
+          "t": "1:15",
+          "teks": "Yatim piatu di usia 6 tahun",
+          "visual": "anak sendirian"
+        },
+        {
+          "t": "1:35",
+          "teks": "Pulang ke Makkah",
+          "visual": "fajar Makkah"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A small child standing alone beside a simple grave in a vast desert at dusk, seen from far away, soft golden light"
+        },
+        {
+          "kalimat": 3,
+          "nabi": true,
+          "prompt": "A small boy in simple white clothes standing in the center of a quiet ancient Makkah street at dawn, seen from behind"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "Ancient Madinah date palm oasis seen from a distance at golden hour, mud-brick houses"
+        },
+        {
+          "kalimat": 9,
+          "prompt": "A small camel caravan crossing a wide rocky desert under a hot sun, seen from far away"
+        },
+        {
+          "kalimat": 12,
+          "prompt": "A lone tent in the desert at night under a sky full of stars, soft lantern glow"
+        },
+        {
+          "kalimat": 14,
+          "prompt": "A quiet desert village place with a few palm trees and low hills at twilight, atmospheric"
+        },
+        {
+          "kalimat": 15,
+          "nabi": true,
+          "prompt": "A small boy in white robes sitting alone on desert sand in the center of the frame, seen from behind, evening sky"
+        },
+        {
+          "kalimat": 17,
+          "prompt": "A woman in dark traveling cloak walking with a child's silhouette back toward the distant Makkah valley at sunrise, both seen from behind"
+        }
+      ],
+      "youtube": {
+        "channel": "Glitchplay",
+        "judul": "Ibunda Wafat di Tengah Perjalanan, Anak Enam Tahun Yatim Piatu | Kisah Nabi ﷺ Eps 5 #Shorts",
+        "deskripsi": "Kisah Nabi Muhammad ﷺ berusia enam tahun yang diajak ibundanya, Aminah, ke Madinah. Dalam perjalanan pulang, Aminah wafat di Abwa. Hikmah: Allah tidak pernah meninggalkan hamba pilihan-Nya. Episode sebelumnya: Peristiwa pembelahan dada. Episode berikutnya: Diasuh kakek Abdul Muththalib, lalu paman Abu Thalib. Sumber: Kumparan, Islami.co, Pusat Studi Islam, Bincang Syariah; riwayat Ibnu Ishaq.",
+        "tags": [
+          "kisah nabi",
+          "sirah nabawiyah",
+          "sejarah islam",
+          "nabi muhammad",
+          "kisah nabi muhammad",
+          "aminah",
+          "ibunda nabi",
+          "yatim",
+          "kisah islami",
+          "kisah nabi untuk anak"
+        ],
+        "made_for_kids": false
+      },
+      "caption": "Di usia enam tahun, Rasulullah ﷺ kehilangan ibundanya di Abwa.",
+      "hashtags": [
+        "#kisahnabi",
+        "#sejarahislam",
+        "#sirahnabawiyah"
+      ],
+      "sumber": [
+        {
+          "nama": "Kumparan: Kisah Wafatnya Siti Aminah",
+          "url": "https://kumparan.com/sejarah-dan-sosial/kisah-wafatnya-siti-aminah-ibunda-rasulullah-24dKpEBR1jF"
+        },
+        {
+          "nama": "Islami.co: Kisah Wafatnya Aminah",
+          "url": "https://islami.co/kisah-wafatnya-aminah-ibu-nabi-muhammad-saw/"
+        },
+        {
+          "nama": "Pusat Studi Islam: Aminah Wafat",
+          "url": "https://pusatstudiislam.com/aminah-wafat/"
+        },
+        {
+          "nama": "Bincang Syariah: Kehidupan Masa Kecil Sayyidah Aminah",
+          "url": "https://bincangsyariah.com/khazanah/kehidupan-masa-kecil-ibunda-rasulullah/"
+        }
+      ]
+    },
+    {
+      "episode": 6,
+      "judul_episode": "Diasuh kakek Abdul Muththalib, lalu paman Abu Thalib",
+      "judul": "Eps 6: Diasuh kakek Abdul Muththalib, lalu paman Abu Thalib",
+      "hook_layar": "KAKEK WAFAT, PAMAN MENJAGA",
+      "skor_viral": 8,
+      "jam_posting": "18:30",
+      "komentar_pin": "Siapa sosok yang paling berjasa menjagamu waktu kecil? Ceritakan dengan sopan di komentar.",
+      "durasi_detik": 91,
+      "naskah_vo": [
+        "Seorang kakek tua, tokoh paling dihormati di Makkah, menggandeng cucunya yang yatim.",
+        "Ini kisah Nabi Muhammad shallallahu 'alaihi wa sallam, episode enam.",
+        "Di episode sebelumnya, ibunda beliau, Aminah, wafat di Abwa.",
+        "Ummu Aiman membawa beliau pulang ke Makkah.",
+        "Di sana, beliau diasuh kakeknya, Abdul Muththalib.",
+        "Abdul Muththalib adalah pemuka Quraisy yang sangat disegani.",
+        "Namun kepada cucunya, ia sangat lembut dan penuh kasih.",
+        "Anak yatim itu kini punya tempat berlindung yang baru.",
+        "Tapi kebahagiaan itu ternyata tidak berlangsung lama.",
+        "Sekitar dua tahun kemudian, Abdul Muththalib wafat.",
+        "Saat itu Rasulullah berusia delapan tahun.",
+        "Sebelum wafat, sang kakek berwasiat kepada putranya, Abu Thalib.",
+        "Isinya, agar Abu Thalib melanjutkan pengasuhan cucunya.",
+        "Abu Thalib adalah saudara kandung Abdullah, ayah Rasulullah.",
+        "Jadi beliau diasuh oleh paman dari pihak ayah.",
+        "Keluarga ini berasal dari Bani Hasyim, kabilah terhormat Quraisy.",
+        "Abu Thalib bukan yang tertua dan bukan yang terkaya di antara saudaranya.",
+        "Tapi ia sangat dihormati oleh seluruh kaum Quraisy.",
+        "Ia menerima amanah itu dengan lapang dada.",
+        "Bahkan ia lebih mendahulukan keponakannya daripada anak-anaknya sendiri.",
+        "Sejak hari itu, rumah Abu Thalib menjadi rumah beliau.",
+        "Pengasuhan itu berlanjut selama bertahun-tahun.",
+        "Tapi ada satu perjalanan jauh yang kelak mengubah segalanya.",
+        "Hikmahnya, pertolongan Allah sering datang lewat orang-orang yang peduli.",
+        "Subscribe Glitchplay dan nantikan episode berikutnya: Perjalanan dagang ke Syam dan pendeta Bahira."
+      ],
+      "subtitle": [
+        "Seorang kakek tua, tokoh paling dihormati di Makkah, menggandeng cucunya yang yatim.",
+        "Ini kisah Nabi Muhammad ﷺ, episode 6.",
+        "Di episode sebelumnya, ibunda beliau, Aminah, wafat di Abwa.",
+        "Ummu Aiman membawa beliau pulang ke Makkah.",
+        "Di sana, beliau diasuh kakeknya, Abdul Muththalib.",
+        "Abdul Muththalib adalah pemuka Quraisy yang sangat disegani.",
+        "Namun kepada cucunya, ia sangat lembut dan penuh kasih.",
+        "Anak yatim itu kini punya tempat berlindung yang baru.",
+        "Tapi kebahagiaan itu ternyata tidak berlangsung lama.",
+        "Sekitar dua tahun kemudian, Abdul Muththalib wafat.",
+        "Saat itu Rasulullah ﷺ berusia 8 tahun.",
+        "Sebelum wafat, sang kakek berwasiat kepada putranya, Abu Thalib.",
+        "Isinya, agar Abu Thalib melanjutkan pengasuhan cucunya.",
+        "Abu Thalib adalah saudara kandung Abdullah, ayah Rasulullah ﷺ.",
+        "Jadi beliau diasuh oleh paman dari pihak ayah.",
+        "Keluarga ini berasal dari Bani Hasyim, kabilah terhormat Quraisy.",
+        "Abu Thalib bukan yang tertua dan bukan yang terkaya di antara saudaranya.",
+        "Tapi ia sangat dihormati oleh seluruh kaum Quraisy.",
+        "Ia menerima amanah itu dengan lapang dada.",
+        "Bahkan ia lebih mendahulukan keponakannya daripada anak-anaknya sendiri.",
+        "Sejak hari itu, rumah Abu Thalib menjadi rumah beliau.",
+        "Pengasuhan itu berlanjut selama bertahun-tahun.",
+        "Tapi ada satu perjalanan jauh yang kelak mengubah segalanya.",
+        "Hikmahnya, pertolongan Allah sering datang lewat orang-orang yang peduli.",
+        "Subscribe Glitchplay dan nantikan episode berikutnya: Perjalanan dagang ke Syam dan pendeta Bahira."
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "KAKEK WAFAT, PAMAN MENJAGA",
+          "visual": "kakek dan cucu"
+        },
+        {
+          "t": "0:10",
+          "teks": "Diasuh Abdul Muththalib",
+          "visual": "Ka'bah"
+        },
+        {
+          "t": "0:35",
+          "teks": "Wafat saat usia 8 tahun",
+          "visual": "lentera"
+        },
+        {
+          "t": "0:55",
+          "teks": "Wasiat untuk Abu Thalib",
+          "visual": "halaman rumah"
+        },
+        {
+          "t": "1:20",
+          "teks": "Amanah diterima",
+          "visual": "rumah sederhana"
+        },
+        {
+          "t": "1:40",
+          "teks": "Perjalanan yang mengubah segalanya",
+          "visual": "kafilah"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "An elderly man in a dignified robe walking beside a small child's silhouette near the Kaaba in ancient Makkah, seen from behind"
+        },
+        {
+          "kalimat": 3,
+          "3d": "kabah",
+          "prompt": "The Kaaba in the Haram of ancient Makkah at dawn, simple stone courtyard, mountains around"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "Noble Quraysh elders sitting in a shaded gathering place near the Kaaba, seen from far away, warm light"
+        },
+        {
+          "kalimat": 9,
+          "prompt": "A single oil lamp burning in a quiet stone house at dusk, calm and somber mood"
+        },
+        {
+          "kalimat": 11,
+          "prompt": "Two men talking quietly in an ancient Makkah courtyard at sunset, seen from behind, long shadows"
+        },
+        {
+          "kalimat": 20,
+          "nabi": true,
+          "prompt": "A boy in simple white robes walking beside a man toward a modest mud-brick house in the center of the frame, seen from behind, warm evening light"
+        },
+        {
+          "kalimat": 22,
+          "prompt": "A long camel caravan route stretching across the golden desert toward the horizon, wide view"
+        },
+        {
+          "kalimat": 23,
+          "prompt": "Starry desert night sky above a silent ancient Makkah valley"
+        }
+      ],
+      "youtube": {
+        "channel": "Glitchplay",
+        "judul": "Kakek Wafat, Paman Menjaga: Masa Kecil Yatim Rasulullah ﷺ | Kisah Nabi ﷺ Eps 6 #Shorts",
+        "deskripsi": "Setelah ibundanya wafat, Nabi Muhammad ﷺ diasuh kakeknya, Abdul Muththalib. Saat beliau berusia delapan tahun, sang kakek wafat dan berwasiat agar Abu Thalib melanjutkan pengasuhan. Hikmah: pertolongan Allah sering datang lewat orang-orang yang peduli. Episode sebelumnya: Wafatnya ibunda Aminah di Abwa. Episode berikutnya: Perjalanan dagang ke Syam dan pendeta Bahira. Sumber: Detik Hikmah, NU Online Jatim, FKAM, Pesantren MAQI.",
+        "tags": [
+          "kisah nabi",
+          "sirah nabawiyah",
+          "sejarah islam",
+          "nabi muhammad",
+          "kisah nabi muhammad",
+          "abdul muththalib",
+          "abu thalib",
+          "nabi yatim",
+          "kisah islami",
+          "serial kisah nabi"
+        ],
+        "made_for_kids": false
+      },
+      "caption": "Setelah kakek wafat, Abu Thalib menerima amanah mengasuh Rasulullah ﷺ.",
+      "hashtags": [
+        "#kisahnabi",
+        "#sejarahislam",
+        "#sirahnabawiyah"
+      ],
+      "sumber": [
+        {
+          "nama": "Detik Hikmah: 3 Pengasuh Nabi Muhammad",
+          "url": "https://www.detik.com/hikmah/khazanah/d-7533687/3-pengasuh-nabi-muhammad-saw-setelah-ibundanya-wafat"
+        },
+        {
+          "nama": "NU Online Jatim: Wafatnya Abu Thalib",
+          "url": "https://jatim.nu.or.id/rehat/rajab-cerita-pilu-wafatnya-abu-thalib-dan-status-keimanannya-jpK1D"
+        },
+        {
+          "nama": "FKAM: Dalam Pengasuhan Kakek dan Paman",
+          "url": "https://fkam.id/2024/12/26/dalam-pengasuhan-kakek-dan-paman/"
+        },
+        {
+          "nama": "Pesantren MAQI: Asuhan Kakek Abdul Muthalib dan Paman Abu Thalib",
+          "url": "https://pesantrenmaqi.net/sirah/asuhan-kakek-abdul-muthalib-dan-paman-abu-thalib/"
+        }
+      ]
+    }
+  ]
+}
