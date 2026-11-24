@@ -18,14 +18,14 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "Shift selesai",
-      "t": "2026-11-24T06:10:24+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Buka shift, eps 5 dan 6",
+      "t": "2026-11-25T04:05:58+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "18 kandidat ditemukan",
-      "t": "2026-11-24T06:08:18+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Riset wafat Aminah & asuhan kakek",
+      "t": "2026-11-25T04:05:58+07:00"
     },
     "detektif": {
       "status": "selesai",
@@ -64,6 +64,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-25T04:05:58+07:00",
+      "agen": "radar",
+      "pesan": "[Sirah] Riset wafat Aminah & asuhan kakek"
+    },
+    {
+      "t": "2026-11-25T04:05:58+07:00",
+      "agen": "bos",
+      "pesan": "[Sirah] Buka shift, eps 5 dan 6"
+    },
     {
       "t": "2026-11-24T06:34:01+07:00",
       "agen": "studio",
@@ -353,18 +363,8 @@
       "t": "2026-11-23T17:58:55+07:00",
       "agen": "asisten",
       "pesan": "Render video 1/1: Eps 2: Kelahiran Nabi Muhammad ﷺ"
-    },
-    {
-      "t": "2026-11-23T17:58:53+07:00",
-      "agen": "asisten",
-      "pesan": "Render 1 video untuk 2026-11-23"
-    },
-    {
-      "t": "2026-11-23T17:58:53+07:00",
-      "agen": "asisten",
-      "pesan": "Semua video sudah jadi, siap di Hasil"
     }
   ],
-  "updated_at": "2026-11-24T06:34:01+07:00",
+  "updated_at": "2026-11-25T04:05:58+07:00",
   "kesimpulan_t": "2026-11-24T06:10:24+07:00"
 }
