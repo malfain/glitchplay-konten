@@ -4,7 +4,8 @@ import { z } from "zod";
 import { F, applyTheme } from "./theme";
 import { SirahBackdrop } from "./SirahBackdrop";
 import { LogoBadge, LogoOutro } from "./BrandLogo";
-import { Buddy } from "./Buddy";
+import { Mascot } from "./Mascot";
+import type { Beat } from "./schema";
 import { Kids3D, KIDS3D_KINDS, type Kids3DKind } from "./Kids3D";
 
 // "Documentary" Shorts: full-bleed AI photos with a slow Ken Burns move, big word-by-word captions (active word yellow),
@@ -80,7 +81,7 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
       {maskot && maskot.frames.length ? (
         <Maskot frames={maskot.frames} fps={maskot.fps} />
       ) : th !== "sirah" ? (
-        <Buddy theme={th} words={words} hookEnd={hook ? HOOK_END : 0} total={total} />
+        <Mascot beats={beatsFromWords(words, total)} />
       ) : null}
       <Sequence name="outro logo" from={Math.max(0, Math.round((total - OUTRO) * fps))}>
         {logo && logo.frames.length ? <Outro frames={logo.frames} fps={logo.fps} /> : <LogoOutro variant={th === "sirah" ? "sirah" : "clips"} />}
@@ -281,4 +282,15 @@ const Outro: React.FC<{ frames: string[]; fps: number }> = ({ frames, fps }) => 
       <LogoLoop frames={frames} fps={fps} size={620} once />
     </AbsoluteFill>
   );
+};
+
+// The original "Gepeci" mascot (GlitchReel) expects beats: one per caption chunk; it hops on each and talks while spoken.
+const beatsFromWords = (words: PhotoReelProps["words"], total: number): Beat[] => {
+  const chunks = new Map<number, { start: number; end: number }>();
+  for (const w of words) {
+    const c = chunks.get(w.chunk);
+    chunks.set(w.chunk, c ? { start: Math.min(c.start, w.start), end: Math.max(c.end, w.end) } : { start: w.start, end: w.end });
+  }
+  const list = [...chunks.values()].sort((a, b) => a.start - b.start);
+  return list.map((c, i) => ({ start: c.start, end: i + 1 < list.length ? list[i + 1].start : total, speak: c.end - c.start }) as unknown as Beat);
 };
