@@ -56,12 +56,17 @@
       "t": "2026-11-25T04:07:23+07:00"
     },
     "asisten": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-24T06:06:17+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 2 video untuk 2026-11-25",
+      "t": "2026-11-25T04:08:52+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-25T04:08:52+07:00",
+      "agen": "asisten",
+      "pesan": "Render 2 video untuk 2026-11-25"
+    },
     {
       "t": "2026-11-25T04:07:23+07:00",
       "agen": "bos",
@@ -356,13 +361,8 @@
       "t": "2026-11-24T04:06:58+07:00",
       "agen": "narator",
       "pesan": "[Sirah] Naskah Eps 3 dan 4 siap"
-    },
-    {
-      "t": "2026-11-24T04:06:09+07:00",
-      "agen": "narator",
-      "pesan": "[Sirah] Tulis naskah Eps 3 dan 4"
     }
   ],
-  "updated_at": "2026-11-25T04:07:23+07:00",
+  "updated_at": "2026-11-25T04:08:52+07:00",
   "kesimpulan_t": "2026-11-25T04:07:23+07:00"
 }
