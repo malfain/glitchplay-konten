@@ -47,9 +47,9 @@
       "t": "2026-11-25T06:11:47+07:00"
     },
     "studio": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-25T06:06:27+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 10 video untuk 2026-11-25",
+      "t": "2026-11-25T06:13:26+07:00"
     },
     "strategist": {
       "status": "selesai",
@@ -63,6 +63,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-25T06:13:26+07:00",
+      "agen": "studio",
+      "pesan": "Render 10 video untuk 2026-11-25"
+    },
     {
       "t": "2026-11-25T06:11:47+07:00",
       "agen": "bos",
@@ -357,13 +362,8 @@
       "t": "2026-11-24T06:18:06+07:00",
       "agen": "studio",
       "pesan": "Render 10 video untuk 2026-11-24"
-    },
-    {
-      "t": "2026-11-24T06:10:24+07:00",
-      "agen": "bos",
-      "pesan": "Shift selesai. Semua hasil sudah di menu Hasil."
     }
   ],
-  "updated_at": "2026-11-25T06:11:47+07:00",
+  "updated_at": "2026-11-25T06:13:26+07:00",
   "kesimpulan_t": "2026-11-25T06:11:47+07:00"
 }
