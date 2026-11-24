@@ -1,0 +1,1180 @@
+{
+  "date": "2026-11-25",
+  "items": [
+    {
+      "segmen": "game",
+      "kategori": "Update",
+      "judul": "Patch pertama GTA VI rilis, 7 bug diperbaiki",
+      "ringkasan": "Rockstar merilis patch pertama GTA VI pada 23 November, empat hari setelah rilis. Isinya tujuh perbaikan bug (crash, autosave, telepon misi, cuaca). Di PS5 rilisnya bertahap.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Reveal",
+      "hook_layar": "PATCH PERTAMA GTA 6!",
+      "skor_viral": 9,
+      "jam_posting": "12:00",
+      "durasi_detik": 28,
+      "naskah_vo": [
+        "Patch pertama GTA enam akhirnya rilis!",
+        "Baru empat hari setelah game rilis, Rockstar langsung gerak.",
+        "Update ini bawa tujuh perbaikan bug.",
+        "Ada crash, bug autosave, dan telepon misi yang nggak bunyi.",
+        "Bug cuaca yang nggak berubah juga sudah diberesin.",
+        "Di PS lima, rilisnya bertahap, jadi belum semua kebagian.",
+        "Kalau belum muncul, sabar dulu ya.",
+        "Katanya biar server nggak kewalahan.",
+        "Tag temen yang udah nungguin patch ini!"
+      ],
+      "subtitle": [
+        "Patch pertama GTA VI akhirnya rilis!",
+        "Baru 4 hari setelah game rilis, Rockstar langsung gerak.",
+        "Update ini bawa 7 perbaikan bug.",
+        "Ada crash, bug autosave, dan telepon misi yang nggak bunyi.",
+        "Bug cuaca yang nggak berubah juga sudah diberesin.",
+        "Di PS5, rilisnya bertahap, jadi belum semua kebagian.",
+        "Kalau belum muncul, sabar dulu ya.",
+        "Katanya biar server nggak kewalahan.",
+        "Tag temen yang udah nungguin patch ini!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "PATCH PERTAMA GTA VI 🛠️",
+          "visual": "judul besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "4 HARI SETELAH RILIS",
+          "visual": "teks"
+        },
+        {
+          "t": "0:08",
+          "teks": "7 BUG DIPERBAIKI",
+          "visual": "angka besar"
+        },
+        {
+          "t": "0:13",
+          "teks": "CRASH • AUTOSAVE • CUACA",
+          "visual": "daftar"
+        },
+        {
+          "t": "0:19",
+          "teks": "PS5: ROLLOUT BERTAHAP",
+          "visual": "teks"
+        },
+        {
+          "t": "0:25",
+          "teks": "SABAR, BELUM TELAT",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A gamer in a dark room holding a controller, big TV glowing with a loading bar, cinematic close-up"
+        },
+        {
+          "kalimat": 2,
+          "game": "Grand Theft Auto VI",
+          "prompt": "Close-up of a laptop screen with lines of code and a green checkmark in a dim office"
+        },
+        {
+          "kalimat": 3,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A glitchy colorful TV screen flickering in a dark living room, controller on the couch"
+        },
+        {
+          "kalimat": 4,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A rainy city street at night with blurry neon lights, cinematic"
+        },
+        {
+          "kalimat": 5,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A console with a blue light on a shelf, a download progress bar glowing on a screen"
+        },
+        {
+          "kalimat": 7,
+          "game": "Grand Theft Auto VI",
+          "prompt": "Rows of server racks with blinking green lights in a data center"
+        }
+      ],
+      "caption": "Patch pertama GTA VI udah rilis, guys! 🛠️ Rockstar gerak cepat cuma empat hari setelah game rilis. Isinya tujuh perbaikan bug: crash, autosave, telepon misi yang nggak bunyi, sampai cuaca yang stuck. Di PS5 rilisnya bertahap, jadi kalau update belum muncul, sabar dulu. Kamu udah dapat patch GTA 6 belum? Komen di bawah dan tag temen mabar kamu!",
+      "hashtags": [
+        "#infogame",
+        "#gta6",
+        "#gtavi",
+        "#rockstargames",
+        "#gamingindonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "PUSH Square",
+          "url": "https://www.pushsquare.com/news/2026/11/first-gta-6-ps5-patch-live-now-get-all-the-details-here"
+        },
+        {
+          "nama": "VICE",
+          "url": "https://www.vice.com/en/article/gta-6-update-01-002-002-patch-notes/"
+        },
+        {
+          "nama": "GAMINGbible",
+          "url": "https://www.gamingbible.com/news/gta-6-first-update-patch-notes-ps5-xbox-seven-fixes-442192-20261123"
+        }
+      ]
+    },
+    {
+      "segmen": "esports",
+      "kategori": "Esports",
+      "judul": "AK Gold wajib lewat Gauntlet, Bigetron langsung Group Stage di PMGC 2026",
+      "ringkasan": "PMGC 2026 di Istanbul mulai 26 November dengan babak Gauntlet: 16 tim main 12 match, enam terbaik langsung ke Grand Finals (11 sampai 13 Desember). AK Gold mulai dari Gauntlet, Bigetron by Vitality langsung ke Group Stage.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Deadline",
+      "hook_layar": "GAUNTLET PMGC DIMULAI!",
+      "skor_viral": 8,
+      "jam_posting": "19:30",
+      "durasi_detik": 30,
+      "naskah_vo": [
+        "Gauntlet PMGC mulai besok!",
+        "Turnamen PUBG Mobile dunia ini digelar di Istanbul.",
+        "Indonesia bawa dua wakil, AK Gold dan Bigetron.",
+        "AK Gold harus mulai dari babak Gauntlet.",
+        "Di sana, enam belas tim main dua belas match.",
+        "Enam terbaik langsung lolos ke Grand Finals.",
+        "Bigetron lebih santai, langsung masuk Group Stage.",
+        "Grand Finals digelar sebelas sampai tiga belas Desember.",
+        "Total hadiahnya tiga juta dolar, siapin cemilan!",
+        "Tag squad PUBG kamu, nonton Gauntlet bareng!"
+      ],
+      "subtitle": [
+        "Gauntlet PMGC mulai besok!",
+        "Turnamen PUBG Mobile dunia ini digelar di Istanbul.",
+        "Indonesia bawa dua wakil, AK Gold dan Bigetron.",
+        "AK Gold harus mulai dari babak Gauntlet.",
+        "Di sana, 16 tim main 12 match.",
+        "Enam terbaik langsung lolos ke Grand Finals.",
+        "Bigetron lebih santai, langsung masuk Group Stage.",
+        "Grand Finals digelar 11 sampai 13 Desember.",
+        "Total hadiahnya 3 juta dolar, siapin cemilan!",
+        "Tag squad PUBG kamu, nonton Gauntlet bareng!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "GAUNTLET PMGC MULAI 26 NOV",
+          "visual": "judul besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "DI ISTANBUL 🇹🇷",
+          "visual": "teks"
+        },
+        {
+          "t": "0:08",
+          "teks": "AK GOLD vs BIGETRON",
+          "visual": "dua nama tim"
+        },
+        {
+          "t": "0:12",
+          "teks": "TOP 6 → GRAND FINALS",
+          "visual": "bagan"
+        },
+        {
+          "t": "0:19",
+          "teks": "BTR LANGSUNG GROUP STAGE",
+          "visual": "teks"
+        },
+        {
+          "t": "0:25",
+          "teks": "HADIAH $3 JUTA 💰",
+          "visual": "angka besar"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "PUBG Mobile",
+          "prompt": "A huge esports arena full of cheering fans, giant LED screens, blue and orange stage lights"
+        },
+        {
+          "kalimat": 1,
+          "game": "PUBG Mobile",
+          "prompt": "Aerial view of Istanbul skyline at dusk with a bridge over the water, cinematic"
+        },
+        {
+          "kalimat": 3,
+          "game": "PUBG Mobile",
+          "prompt": "Five gamers in matching jerseys seen from behind sitting at gaming PCs on a stage"
+        },
+        {
+          "kalimat": 5,
+          "game": "PUBG Mobile",
+          "prompt": "A golden trophy on a pedestal under spotlights in a dark arena"
+        },
+        {
+          "kalimat": 6,
+          "game": "PUBG Mobile",
+          "prompt": "A group of young players high-fiving seen from behind in an esports bootcamp"
+        },
+        {
+          "kalimat": 8,
+          "game": "PUBG Mobile",
+          "prompt": "Confetti falling over a roaring arena crowd, stage lights, cinematic"
+        }
+      ],
+      "caption": "PMGC 2026 dimulai besok, guys! 🔥 AK Gold harus lewat babak Gauntlet dulu: 16 tim, 12 match, dan cuma enam terbaik yang langsung ke Grand Finals. Bigetron by Vitality lebih santai karena langsung masuk Group Stage. Grand Finals digelar 11 sampai 13 Desember di Istanbul dengan hadiah 3 juta dolar. Kamu jagoin siapa, AK Gold atau Bigetron? Komen di bawah!",
+      "hashtags": [
+        "#infoesports",
+        "#pmgc2026",
+        "#pubgmobile",
+        "#bigetron",
+        "#akgold"
+      ],
+      "sumber": [
+        {
+          "nama": "Esports.id",
+          "url": "https://www.esports.id/amp/pmgc-2026-inilah-full-roster-dua-wakil-indonesia-20023"
+        },
+        {
+          "nama": "Sportskeeda",
+          "url": "https://www.sportskeeda.com/esports/news-pmgc-2026-full-format-explained"
+        },
+        {
+          "nama": "EEGaming",
+          "url": "https://eegaming.org/latest-news/2026/11/16/53675/pubg-mobile-reveals-2026-pmgc-format-ahead-of-istanbul-start/"
+        }
+      ]
+    },
+    {
+      "segmen": "esports",
+      "kategori": "Esports",
+      "judul": "ONIC jadi wakil tunggal Indonesia di Delta Force Invitational 2026",
+      "ringkasan": "ONIC satu-satunya tim Indonesia di Delta Force Invitational 2026 di DreamHack Stockholm, 27 sampai 29 November. Dua belas tim dari enam wilayah berebut hadiah 500 ribu dolar.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Callout",
+      "hook_layar": "ONIC SENDIRIAN DI SWEDIA",
+      "skor_viral": 8,
+      "jam_posting": "17:00",
+      "durasi_detik": 30,
+      "naskah_vo": [
+        "ONIC jadi satu-satunya wakil Indonesia di Swedia!",
+        "Ajangnya Delta Force Invitational dua ribu dua puluh enam.",
+        "Digelar di DreamHack Stockholm, dua puluh tujuh sampai dua puluh sembilan November.",
+        "Dua belas tim dari enam wilayah bersaing di sana.",
+        "Hadiahnya lima ratus ribu dolar.",
+        "ONIC lolos setelah finis ketiga di Pan Pacific Operations Cup.",
+        "Ini turnamen besar Delta Force pertama di luar Asia.",
+        "Siaran mulai dua puluh tujuh November, jam enam sore WIB.",
+        "Spam semangat buat ONIC, jangan biarin sendirian di Swedia!"
+      ],
+      "subtitle": [
+        "ONIC jadi satu-satunya wakil Indonesia di Swedia!",
+        "Ajangnya Delta Force Invitational 2026.",
+        "Digelar di DreamHack Stockholm, 27 sampai 29 November.",
+        "12 tim dari 6 wilayah bersaing di sana.",
+        "Hadiahnya 500 ribu dolar.",
+        "ONIC lolos setelah finis ketiga di Pan-Pacific Operations Cup.",
+        "Ini turnamen besar Delta Force pertama di luar Asia.",
+        "Siaran mulai 27 November, jam 18.00 WIB.",
+        "Spam semangat buat ONIC, jangan biarin sendirian di Swedia!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "ONIC SENDIRIAN DI SWEDIA 🇸🇪",
+          "visual": "judul besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "DELTA FORCE INVITATIONAL",
+          "visual": "teks"
+        },
+        {
+          "t": "0:11",
+          "teks": "27–29 NOVEMBER",
+          "visual": "tanggal"
+        },
+        {
+          "t": "0:15",
+          "teks": "12 TIM • HADIAH $500 RIBU",
+          "visual": "angka"
+        },
+        {
+          "t": "0:21",
+          "teks": "SIARAN 27 NOV • 18.00 WIB",
+          "visual": "jadwal"
+        },
+        {
+          "t": "0:26",
+          "teks": "DUKUNG ONIC! 💛",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Delta Force",
+          "prompt": "A lone esports team in jerseys seen from behind walking toward a big arena, northern lights style sky"
+        },
+        {
+          "kalimat": 2,
+          "game": "Delta Force",
+          "prompt": "A modern convention hall in Stockholm filled with gaming booths and crowds, cinematic"
+        },
+        {
+          "kalimat": 3,
+          "game": "Delta Force",
+          "prompt": "Twelve gaming stations in rows on a bright stage with colorful screens"
+        },
+        {
+          "kalimat": 5,
+          "game": "Delta Force",
+          "prompt": "Five players celebrating on stage with a bronze trophy, confetti, seen from far away"
+        },
+        {
+          "kalimat": 7,
+          "game": "Delta Force",
+          "prompt": "A person at home watching a livestream of an esports match on a big monitor at night"
+        },
+        {
+          "kalimat": 8,
+          "game": "Delta Force",
+          "prompt": "Fans waving yellow glow sticks in a dark arena, cinematic"
+        }
+      ],
+      "caption": "ONIC bakal sendirian bawa nama Indonesia di Delta Force Invitational 2026! 💛 Turnamen ini digelar di DreamHack Stockholm, 27 sampai 29 November, dengan hadiah 500 ribu dolar. ONIC lolos setelah finis ketiga di Pan-Pacific Operations Cup. Siaran mulai 27 November jam 18.00 WIB. Kamu bakal nonton? Tag temen satu tongkrongan kamu!",
+      "hashtags": [
+        "#infoesports",
+        "#onic",
+        "#deltaforce",
+        "#onicesports",
+        "#esportsindonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "RRI",
+          "url": "https://rri.co.id/olimpik/2921182/onic-jadi-wakil-indonesia-di-delta-force-invitational-2026"
+        },
+        {
+          "nama": "LigaGame TV",
+          "url": "https://www.ligagame.tv/turnamen/onic-jadi-wakil-tunggal-indonesia-di-delta-force-invitational-2026"
+        },
+        {
+          "nama": "Liquipedia",
+          "url": "https://liquipedia.net/deltaforce/Delta_Force_Invitational/2026"
+        }
+      ]
+    },
+    {
+      "segmen": "game",
+      "kategori": "Promo/Diskon",
+      "judul": "Bread & Fred gratis di Epic Games Store 26 November sampai 3 Desember",
+      "ringkasan": "Epic Games Store menggratiskan Bread & Fred, game platformer co-op dua penguin yang diikat tali, mulai 26 November sampai 3 Desember. Wajib akun Epic dengan 2FA.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Statistic",
+      "hook_layar": "GAME PENGUIN INI GRATIS!",
+      "skor_viral": 8,
+      "jam_posting": "11:00",
+      "durasi_detik": 28,
+      "naskah_vo": [
+        "Game penguin ini bakal gratis!",
+        "Namanya Bread and Fred, gratis di Epic Games Store.",
+        "Klaim mulai dua puluh enam November.",
+        "Berlaku sampai tiga Desember.",
+        "Dua penguin diikat tali, naik gunung salju bareng.",
+        "Bisa main sendiri atau co op.",
+        "Ada juga mode speedrun buat yang kompetitif.",
+        "Wajib punya akun Epic dengan verifikasi dua langkah.",
+        "Sekali klaim, game-nya jadi punya kamu selamanya.",
+        "Kirim ke temen mabar, biar klaim penguin gratis bareng!"
+      ],
+      "subtitle": [
+        "Game penguin ini bakal gratis!",
+        "Namanya Bread & Fred, gratis di Epic Games Store.",
+        "Klaim mulai 26 November.",
+        "Berlaku sampai 3 Desember.",
+        "Dua penguin diikat tali, naik gunung salju bareng.",
+        "Bisa main sendiri atau co-op.",
+        "Ada juga mode speedrun buat yang kompetitif.",
+        "Wajib punya akun Epic dengan verifikasi 2 langkah.",
+        "Sekali klaim, game-nya jadi punya kamu selamanya.",
+        "Kirim ke temen mabar, biar klaim penguin gratis bareng!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "GAME PENGUIN GRATIS! 🐧",
+          "visual": "judul besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "BREAD & FRED",
+          "visual": "judul game"
+        },
+        {
+          "t": "0:08",
+          "teks": "26 NOV – 3 DES",
+          "visual": "tanggal"
+        },
+        {
+          "t": "0:13",
+          "teks": "2 PENGUIN, 1 TALI",
+          "visual": "teks"
+        },
+        {
+          "t": "0:19",
+          "teks": "SOLO ATAU CO-OP",
+          "visual": "teks"
+        },
+        {
+          "t": "0:24",
+          "teks": "WAJIB 2FA EPIC",
+          "visual": "peringatan"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "Two penguins roped together climbing a snowy mountain, soft illustration-like photo, cinematic"
+        },
+        {
+          "kalimat": 1,
+          "prompt": "A laptop on a desk showing a game store page with a gift box icon, warm light"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "Two climbers tied with a rope on a snowy cliff at sunrise, wide shot"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "Two friends sitting on a couch playing co-op on a TV, laughing, seen from behind"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "A hand holding a smartphone with a security code screen next to a laptop"
+        },
+        {
+          "kalimat": 9,
+          "prompt": "A group of friends in a cozy room with pizza and controllers, cheering"
+        }
+      ],
+      "caption": "Game penguin ini bakal GRATIS! 🐧 Bread & Fred, platformer co-op dua penguin yang diikat tali, bisa diklaim di Epic Games Store mulai 26 November sampai 3 Desember. Bisa solo atau co-op, plus ada mode speedrun. Jangan lupa aktifkan 2FA di akun Epic kamu ya. Tag temen mabar yang suka gratisan!",
+      "hashtags": [
+        "#infogame",
+        "#epicgames",
+        "#gamegratis",
+        "#breadandfred",
+        "#gamingindonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "AllKeyShop",
+          "url": "https://www.allkeyshop.com/blog/epic-games-store-free-bread-fred-firestone-news-n/"
+        },
+        {
+          "nama": "GG.deals",
+          "url": "https://gg.deals/freebie/next-week-epic-games-store-will-offer-a-co-op-penguin-platformer-and-a-firestone-item-bundle-for-free/"
+        },
+        {
+          "nama": "GamerGuru",
+          "url": "https://gamerguru.net/pc-games/epic-games-store-free-games"
+        }
+      ]
+    },
+    {
+      "segmen": "game",
+      "kategori": "Update",
+      "judul": "Genshin 7.2 fase 2: Zibai dan Linnea rerun, 24 November sampai 15 Desember",
+      "ringkasan": "Genshin Impact versi 7.2 fase kedua berjalan 24 November sampai 15 Desember dengan banner rerun Zibai dan Linnea plus Natlan Chronicled Wish.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Reveal",
+      "hook_layar": "ZIBAI BALIK LAGI!",
+      "skor_viral": 7,
+      "jam_posting": "14:00",
+      "durasi_detik": 28,
+      "naskah_vo": [
+        "Zibai balik lagi di Genshin!",
+        "Genshin Impact versi tujuh koma dua masuk fase kedua.",
+        "Fasenya jalan dua puluh empat November sampai lima belas Desember.",
+        "Zibai hadir lagi lewat banner rerun.",
+        "Linnea juga ikut rerun di banner lain.",
+        "Karakter bintang empat: Illuga, Aino, dan Ningguang.",
+        "Ada juga Natlan Chronicled Wish di fase yang sama.",
+        "Nabung primogem dari kemarin? Saatnya dipakai!",
+        "Tag temen yang lagi ngincer Zibai!"
+      ],
+      "subtitle": [
+        "Zibai balik lagi di Genshin!",
+        "Genshin Impact versi 7.2 masuk fase kedua.",
+        "Fasenya jalan 24 November sampai 15 Desember.",
+        "Zibai hadir lagi lewat banner rerun.",
+        "Linnea juga ikut rerun di banner lain.",
+        "Karakter bintang 4: Illuga, Aino, dan Ningguang.",
+        "Ada juga Natlan Chronicled Wish di fase yang sama.",
+        "Nabung primogem dari kemarin? Saatnya dipakai!",
+        "Tag temen yang lagi ngincer Zibai!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "ZIBAI RERUN! ✨",
+          "visual": "judul besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "GENSHIN 7.2 FASE 2",
+          "visual": "teks"
+        },
+        {
+          "t": "0:08",
+          "teks": "24 NOV – 15 DES",
+          "visual": "tanggal"
+        },
+        {
+          "t": "0:13",
+          "teks": "ZIBAI + LINNEA",
+          "visual": "dua banner"
+        },
+        {
+          "t": "0:18",
+          "teks": "ILLUGA • AINO • NINGGUANG",
+          "visual": "daftar"
+        },
+        {
+          "t": "0:24",
+          "teks": "NATLAN CHRONICLED WISH",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Genshin Impact",
+          "prompt": "A gamer in a dark room glowing with golden light from a phone screen, sparkles, cinematic"
+        },
+        {
+          "kalimat": 2,
+          "game": "Genshin Impact",
+          "prompt": "A calendar on a wall with dates circled in red, warm desk lamp light"
+        },
+        {
+          "kalimat": 3,
+          "game": "Genshin Impact",
+          "prompt": "A fantasy-style golden banner of light beams over a night sky, magical, photo-realistic"
+        },
+        {
+          "kalimat": 5,
+          "game": "Genshin Impact",
+          "prompt": "Three friends comparing characters on phones at a cafe table, seen from behind"
+        },
+        {
+          "kalimat": 6,
+          "game": "Genshin Impact",
+          "prompt": "A treasure chest glowing with golden light in a dark cave, cinematic"
+        },
+        {
+          "kalimat": 7,
+          "game": "Genshin Impact",
+          "prompt": "A young person tapping a phone with a pile of shiny coins nearby, excited"
+        }
+      ],
+      "caption": "Zibai balik lagi di Genshin Impact! ✨ Versi 7.2 fase kedua jalan 24 November sampai 15 Desember dengan banner rerun Zibai dan Linnea. Karakter bintang 4-nya ada Illuga, Aino, dan Ningguang, plus Natlan Chronicled Wish di fase yang sama. Primogem kamu udah siap? Tag temen yang lagi ngincer Zibai!",
+      "hashtags": [
+        "#infogame",
+        "#genshinimpact",
+        "#zibai",
+        "#genshin72",
+        "#mihoyo"
+      ],
+      "sumber": [
+        {
+          "nama": "Game8",
+          "url": "https://game8.co/games/Genshin-Impact/archives/305012"
+        },
+        {
+          "nama": "GameSpace",
+          "url": "https://gamespace.com/all-articles/news/genshin-impact-detailed-version-7-2-phase-ii-banners/"
+        },
+        {
+          "nama": "Prydwen",
+          "url": "https://www.prydwen.gg/genshin-impact/banners"
+        }
+      ]
+    },
+    {
+      "segmen": "game",
+      "kategori": "Promo/Diskon",
+      "judul": "Steam Winter Sale 2026 mulai 17 Desember, tanpa sale Black Friday",
+      "ringkasan": "Steam Winter Sale 2026 berlangsung 17 Desember sampai 4 Januari. Tahun ini tidak ada sale Black Friday seluruh toko; yang ada diskon dari tiap publisher.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Deadline",
+      "hook_layar": "WINTER SALE STEAM JADWALNYA",
+      "skor_viral": 7,
+      "jam_posting": "09:30",
+      "durasi_detik": 27,
+      "naskah_vo": [
+        "Winter Sale Steam sudah ada tanggalnya!",
+        "Mulai tujuh belas Desember, sampai empat Januari.",
+        "Jadi nggak ada sale Black Friday ala Steam tahun ini.",
+        "Yang ada cuma diskon dari tiap publisher.",
+        "Steam cuma kasih tema Black Friday di halaman diskon.",
+        "Jadi wishlist kamu jangan dihapus dulu.",
+        "Siapa tahu game incaran kamu turun harga.",
+        "Sisihkan uang jajan dari sekarang!",
+        "Tag temen yang nungguin sale Steam ini!"
+      ],
+      "subtitle": [
+        "Winter Sale Steam sudah ada tanggalnya!",
+        "Mulai 17 Desember, sampai 4 Januari.",
+        "Jadi nggak ada sale Black Friday ala Steam tahun ini.",
+        "Yang ada cuma diskon dari tiap publisher.",
+        "Steam cuma kasih tema Black Friday di halaman diskon.",
+        "Jadi wishlist kamu jangan dihapus dulu.",
+        "Siapa tahu game incaran kamu turun harga.",
+        "Sisihkan uang jajan dari sekarang!",
+        "Tag temen yang nungguin sale Steam ini!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "WINTER SALE STEAM ❄️",
+          "visual": "judul besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "17 DES – 4 JAN",
+          "visual": "tanggal besar"
+        },
+        {
+          "t": "0:08",
+          "teks": "NO BLACK FRIDAY SALE",
+          "visual": "teks"
+        },
+        {
+          "t": "0:13",
+          "teks": "DISKON DARI PUBLISHER",
+          "visual": "teks"
+        },
+        {
+          "t": "0:18",
+          "teks": "JANGAN HAPUS WISHLIST",
+          "visual": "teks"
+        },
+        {
+          "t": "0:23",
+          "teks": "SIAPIN UANG JAJAN 💸",
+          "visual": "teks"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A snowy window with a glowing gaming PC setup inside a cozy room at night, cinematic"
+        },
+        {
+          "kalimat": 1,
+          "prompt": "A wall calendar with December dates circled, warm light"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "A laptop screen showing a long list of game thumbnails with price tags, blurred"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "A person scrolling a long wishlist on a monitor late at night, seen from behind"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "A small piggy bank and a few coins next to a keyboard, soft lighting"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "Two friends laughing together in a gaming room with snow outside the window"
+        }
+      ],
+      "caption": "Winter Sale Steam udah ada tanggalnya! ❄️ Mulai 17 Desember sampai 4 Januari. Tahun ini nggak ada sale Black Friday seluruh toko, yang ada cuma diskon dari tiap publisher. Jadi wishlist kamu jangan dihapus dulu, siapa tahu game incaran turun harga. Tag temen yang nungguin sale Steam ini!",
+      "hashtags": [
+        "#infogame",
+        "#steam",
+        "#steamwintersale",
+        "#diskongame",
+        "#gamingindonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "Gaming Route",
+          "url": "https://gamingroute.com/steam-winter-sale-2026/"
+        },
+        {
+          "nama": "OneSpot",
+          "url": "https://onespot.gg/guides/steam-winter-sale-2026-dates"
+        },
+        {
+          "nama": "GG.deals",
+          "url": "https://gg.deals/news/steam-black-friday-sale/"
+        }
+      ]
+    },
+    {
+      "segmen": "esports",
+      "kategori": "Esports",
+      "judul": "RRQ izinkan Kushy menjajaki opsi lain, belum final",
+      "ringkasan": "Pemain Valorant RRQ, Kushy, dipindah ke roster inaktif dan RRQ mengizinkannya menjajaki opsi lain. Dia mengaku masih berdiskusi dengan RRQ dan terbuka pada peluang lain.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Callout",
+      "hook_layar": "KUSHY BOLEH CARI TIM?",
+      "skor_viral": 6,
+      "jam_posting": "21:00",
+      "durasi_detik": 28,
+      "naskah_vo": [
+        "Kushy boleh cari tim baru?",
+        "Pemain Valorant RRQ ini pindah ke roster inaktif.",
+        "RRQ mengizinkan dia menjajaki opsi lain.",
+        "Tapi belum final, ya.",
+        "Kushy bilang masih berdiskusi dengan RRQ.",
+        "Dia juga terbuka buat peluang lain musim depan.",
+        "Posisi incarannya: initiator, duelist kedua, atau sentinel.",
+        "Musim ini memang berat buat dia.",
+        "Kushy balik ke RRQ atau pindah? Komen di bawah!"
+      ],
+      "subtitle": [
+        "Kushy boleh cari tim baru?",
+        "Pemain Valorant RRQ ini pindah ke roster inaktif.",
+        "RRQ mengizinkan dia menjajaki opsi lain.",
+        "Tapi belum final, ya.",
+        "Kushy bilang masih berdiskusi dengan RRQ.",
+        "Dia juga terbuka buat peluang lain musim depan.",
+        "Posisi incarannya: initiator, duelist kedua, atau sentinel.",
+        "Musim ini memang berat buat dia.",
+        "Kushy balik ke RRQ atau pindah? Komen di bawah!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "KUSHY BOLEH CARI TIM? 👀",
+          "visual": "judul besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "ROSTER INAKTIF RRQ",
+          "visual": "teks"
+        },
+        {
+          "t": "0:08",
+          "teks": "RRQ IZINKAN JAJAKI OPSI LAIN",
+          "visual": "teks"
+        },
+        {
+          "t": "0:13",
+          "teks": "BELUM FINAL ⚠️",
+          "visual": "peringatan"
+        },
+        {
+          "t": "0:18",
+          "teks": "INITIATOR / DUELIST / SENTINEL",
+          "visual": "daftar"
+        },
+        {
+          "t": "0:24",
+          "teks": "BALIK ATAU PINDAH?",
+          "visual": "poll"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Valorant",
+          "prompt": "A lone gamer sitting in a dim room with a glowing monitor, hoodie up, seen from behind, cinematic"
+        },
+        {
+          "kalimat": 1,
+          "game": "Valorant",
+          "prompt": "An empty gaming chair in a professional esports bootcamp room with a red neon light"
+        },
+        {
+          "kalimat": 3,
+          "game": "Valorant",
+          "prompt": "Two people talking at a meeting table in a modern office, seen from far away"
+        },
+        {
+          "kalimat": 5,
+          "game": "Valorant",
+          "prompt": "A man standing at a crossroads sign at sunset, back to the camera, cinematic"
+        },
+        {
+          "kalimat": 6,
+          "game": "Valorant",
+          "prompt": "A PC monitor showing a tactical shooter-style map with colorful abstract icons, no text"
+        },
+        {
+          "kalimat": 8,
+          "game": "Valorant",
+          "prompt": "A split image of two doors, one red and one white, in a dark hallway"
+        }
+      ],
+      "caption": "Kushy boleh cari tim baru? 👀 Pemain Valorant RRQ ini sudah dipindah ke roster inaktif dan RRQ mengizinkannya menjajaki opsi lain. Tapi belum final: Kushy sendiri bilang masih berdiskusi dengan RRQ dan terbuka buat peluang lain musim depan. Menurut kamu, Kushy balik ke RRQ atau pindah? Komen di bawah!",
+      "hashtags": [
+        "#infoesports",
+        "#valorant",
+        "#rrq",
+        "#kushy",
+        "#esportsindonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "VLR.gg",
+          "url": "https://www.vlr.gg/793823/rex-regum-qeon-allows-kushy-to-explore-options"
+        },
+        {
+          "nama": "Pley.gg",
+          "url": "https://pley.gg/valorant/rrq-let-kushy-test-the-market-after-stage-2-benching/"
+        }
+      ]
+    },
+    {
+      "segmen": "esports",
+      "kategori": "Streamer",
+      "judul": "Subathon GTA VI Tara Arts x GGWP 72 jam trending nomor satu YouTube",
+      "ringkasan": "Tara Arts menggelar subathon GTA VI 72 jam bersama GGWP sejak 18 November dan livestream-nya trending nomor satu di YouTube. Streamer lain seperti Windah Basudara, DeanKT, dan MiawAug juga ikut siaran.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Statistic",
+      "hook_layar": "SUBATHON GTA 6 NOMOR SATU",
+      "skor_viral": 6,
+      "jam_posting": "18:30",
+      "durasi_detik": 28,
+      "naskah_vo": [
+        "Subathon GTA enam trending nomor satu!",
+        "Pelakunya Tara Arts bareng GGWP.",
+        "Siarannya subathon tujuh puluh dua jam.",
+        "Mulai delapan belas November, sehari sebelum GTA enam rilis.",
+        "Livestream-nya sempat jadi trending nomor satu di YouTube.",
+        "Streamer lain juga ikut, ada Windah, DeanKT, dan MiawAug.",
+        "Kreator lokal kita ikut ramai di kancah GTA enam.",
+        "Kamu nonton siapa waktu GTA enam rilis? Komen di bawah!"
+      ],
+      "subtitle": [
+        "Subathon GTA VI trending nomor satu!",
+        "Pelakunya Tara Arts bareng GGWP.",
+        "Siarannya subathon 72 jam.",
+        "Mulai 18 November, sehari sebelum GTA VI rilis.",
+        "Livestream-nya sempat jadi trending nomor satu di YouTube.",
+        "Streamer lain juga ikut, ada Windah, DeanKT, dan MiawAug.",
+        "Kreator lokal kita ikut ramai di kancah GTA VI.",
+        "Kamu nonton siapa waktu GTA VI rilis? Komen di bawah!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "SUBATHON GTA VI #1 🔥",
+          "visual": "judul besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "TARA ARTS x GGWP",
+          "visual": "teks"
+        },
+        {
+          "t": "0:08",
+          "teks": "SUBATHON 72 JAM",
+          "visual": "angka besar"
+        },
+        {
+          "t": "0:13",
+          "teks": "TRENDING #1 YOUTUBE",
+          "visual": "teks"
+        },
+        {
+          "t": "0:18",
+          "teks": "WINDAH • DEANKT • MIAWAUG",
+          "visual": "daftar"
+        },
+        {
+          "t": "0:23",
+          "teks": "KAMU NONTON SIAPA?",
+          "visual": "poll"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A streamer at a desk with neon lights and a big monitor, seen from behind, cinematic"
+        },
+        {
+          "kalimat": 2,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A clock on a wall beside a glowing streaming setup at 3 AM, energy drink cans on the desk"
+        },
+        {
+          "kalimat": 3,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A calendar page and a TV showing a loading screen in a dark living room"
+        },
+        {
+          "kalimat": 4,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A smartphone showing a video app with a flame icon, held up in a dark room, blurred screen"
+        },
+        {
+          "kalimat": 5,
+          "game": "Grand Theft Auto VI",
+          "prompt": "Four silhouettes of streamers with headsets in front of glowing monitors"
+        },
+        {
+          "kalimat": 7,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A group of friends watching a livestream on a big TV, cheering, seen from behind"
+        }
+      ],
+      "caption": "Subathon GTA VI Tara Arts bareng GGWP sempat jadi trending nomor satu di YouTube! 🔥 Siarannya subathon 72 jam, mulai 18 November, sehari sebelum GTA VI rilis. Streamer lokal lain kayak Windah Basudara, DeanKT, dan MiawAug juga ikut siaran. Kamu nonton siapa waktu GTA 6 rilis? Komen di bawah!",
+      "hashtags": [
+        "#infogame",
+        "#gta6",
+        "#taraarts",
+        "#streamerindonesia",
+        "#gamingindonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "GGWP",
+          "url": "https://www.ggwp.id/streamer/indonesia/didukung-ggwp-livestream-gta-vi-tara-arts-jadi-trending-nomor-1-di-youtube-00-c57ll-8tkk6s"
+        },
+        {
+          "nama": "RRI",
+          "url": "https://rri.co.id/manokwari/hiburan/2916329/hype-gta-6-di-indonesia-streamer-mulai-bidik-peluang-konten"
+        },
+        {
+          "nama": "Liputan6",
+          "url": "https://www.liputan6.com/showbiz/read/8338402/4-streamer-indonesia-yang-live-streaming-gta-vi-windah-basudara-pecahkan-rekor-penonton"
+        }
+      ]
+    },
+    {
+      "segmen": "game",
+      "kategori": "Update",
+      "judul": "A Game About Digging A Hole Together masuk Game Pass 4 Desember",
+      "ringkasan": "A Game About Digging A Hole Together masuk Xbox Game Pass 4 Desember, kali ini bisa dimainkan bareng tiga teman. Dumpster Gang menyusul di PC Game Pass 3 Desember, dan Hela serta The Outlast Trials masuk 1 Desember.",
+      "status_fakta": "resmi",
+      "hook_formula": "Numbered With A Favourite",
+      "hook_layar": "GALI LUBANG BARENG TEMAN!",
+      "skor_viral": 6,
+      "jam_posting": "08:00",
+      "durasi_detik": 30,
+      "naskah_vo": [
+        "Gali lubang bareng tiga teman lewat Game Pass!",
+        "Namanya A Game About Digging A Hole Together.",
+        "Masuk Game Pass tanggal empat Desember.",
+        "Kali ini bisa co op bareng tiga teman.",
+        "Tugasnya cuma satu, gali sedalam mungkin.",
+        "Tanggal tiga Desember ada Dumpster Gang di PC Game Pass.",
+        "Itu game rakun yang chaos banget.",
+        "Tanggal satu Desember ada Hela dan The Outlast Trials.",
+        "Jadwal bisa berubah, jadi pantau terus ya.",
+        "Tag tiga teman buat gali lubang bareng!"
+      ],
+      "subtitle": [
+        "Gali lubang bareng tiga teman lewat Game Pass!",
+        "Namanya A Game About Digging A Hole Together.",
+        "Masuk Game Pass tanggal 4 Desember.",
+        "Kali ini bisa co-op bareng tiga teman.",
+        "Tugasnya cuma satu, gali sedalam mungkin.",
+        "Tanggal 3 Desember ada Dumpster Gang di PC Game Pass.",
+        "Itu game rakun yang chaos banget.",
+        "Tanggal 1 Desember ada Hela dan The Outlast Trials.",
+        "Jadwal bisa berubah, jadi pantau terus ya.",
+        "Tag tiga teman buat gali lubang bareng!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "GALI LUBANG BARENG! ⛏️",
+          "visual": "judul besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "4 DES • GAME PASS",
+          "visual": "tanggal"
+        },
+        {
+          "t": "0:09",
+          "teks": "CO-OP BARENG 3 TEMAN",
+          "visual": "teks"
+        },
+        {
+          "t": "0:14",
+          "teks": "3 DES: DUMPSTER GANG (PC)",
+          "visual": "teks"
+        },
+        {
+          "t": "0:20",
+          "teks": "1 DES: HELA + OUTLAST TRIALS",
+          "visual": "teks"
+        },
+        {
+          "t": "0:26",
+          "teks": "JADWAL BISA BERUBAH ⚠️",
+          "visual": "peringatan"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "Four friends on a couch laughing while playing a game on a TV, seen from behind, cinematic"
+        },
+        {
+          "kalimat": 1,
+          "prompt": "A big hole in the ground with a shovel next to it at sunset, cinematic photo"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "A shovel digging dirt close-up, dust flying in warm light"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "A raccoon rummaging in a trash can at night under a street lamp, photo-realistic"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "A dark haunted hallway with a flickering light, cinematic"
+        },
+        {
+          "kalimat": 9,
+          "prompt": "A group of friends holding controllers and cheering in a cozy room"
+        }
+      ],
+      "caption": "Gali lubang bareng tiga teman lewat Game Pass! ⛏️ A Game About Digging A Hole Together masuk Game Pass 4 Desember, plus ada Dumpster Gang di PC Game Pass 3 Desember dan Hela serta The Outlast Trials 1 Desember. Jadwal bisa berubah, jadi pantau terus. Tag tiga teman buat gali lubang bareng!",
+      "hashtags": [
+        "#infogame",
+        "#gamepass",
+        "#xbox",
+        "#gamingindonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "TrueAchievements",
+          "url": "https://www.trueachievements.com/news/dumpster-gang-release-date-game-pass"
+        },
+        {
+          "nama": "LevelUp",
+          "url": "https://www.levelup.com/en/news/xbox-game-pass-wants-to-end-2026-on-a-high-note-and-has-already-confirmed-these-5-exciting-games-for-december/"
+        },
+        {
+          "nama": "Techloy",
+          "url": "https://www.techloy.com/xbox-game-pass-december-2026-lineup/"
+        }
+      ]
+    },
+    {
+      "segmen": "esports",
+      "kategori": "Esports",
+      "judul": "Team Secret BOOM dan Yang Dae Pal juara Predator League 2027 Indonesia",
+      "ringkasan": "Final APAC Predator League 2027 Indonesian Series digelar 21 sampai 22 November di PIK Avenue. Team Secret BOOM Esports juara Valorant dan Yang Dae Pal juara League of Legends. Keduanya lanjut ke Grand Final Asia Pasifik di Vietnam, Januari 2027.",
+      "status_fakta": "resmi",
+      "hook_formula": "Numbered With A Favourite",
+      "hook_layar": "JUARA PREDATOR LEAGUE INDO",
+      "skor_viral": 5,
+      "jam_posting": "15:30",
+      "durasi_detik": 30,
+      "naskah_vo": [
+        "Dua juara Indonesia sudah ketahuan!",
+        "Final Predator League dua ribu dua puluh tujuh digelar di PIK Avenue.",
+        "Team Secret BOOM Esports juara Valorant.",
+        "Di League of Legends, Yang Dae Pal yang menang.",
+        "LoL baru pertama kali masuk Predator League Indonesia.",
+        "Dua juara ini lanjut ke Grand Final Asia Pasifik.",
+        "Lokasinya di Vietnam, Januari dua ribu dua puluh tujuh.",
+        "Total hadiahnya empat ratus ribu dolar.",
+        "Dukung juara Indonesia, kirim ke temen gamer kamu!"
+      ],
+      "subtitle": [
+        "Dua juara Indonesia sudah ketahuan!",
+        "Final Predator League 2027 digelar di PIK Avenue.",
+        "Team Secret BOOM Esports juara Valorant.",
+        "Di League of Legends, Yang Dae Pal yang menang.",
+        "LoL baru pertama kali masuk Predator League Indonesia.",
+        "Dua juara ini lanjut ke Grand Final Asia Pasifik.",
+        "Lokasinya di Vietnam, Januari 2027.",
+        "Total hadiahnya 400 ribu dolar.",
+        "Dukung juara Indonesia, kirim ke temen gamer kamu!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "2 JUARA INDONESIA 🏆",
+          "visual": "judul besar"
+        },
+        {
+          "t": "0:04",
+          "teks": "PREDATOR LEAGUE 2027",
+          "visual": "teks"
+        },
+        {
+          "t": "0:08",
+          "teks": "VALORANT: TEAM SECRET BOOM",
+          "visual": "teks"
+        },
+        {
+          "t": "0:13",
+          "teks": "LoL: YANG DAE PAL",
+          "visual": "teks"
+        },
+        {
+          "t": "0:19",
+          "teks": "GRAND FINAL: VIETNAM, JAN 2027",
+          "visual": "teks"
+        },
+        {
+          "t": "0:25",
+          "teks": "HADIAH $400 RIBU",
+          "visual": "angka"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "Two esports teams on a stage raising golden trophies, confetti falling, seen from far away"
+        },
+        {
+          "kalimat": 1,
+          "prompt": "A modern shopping mall esports stage with LED screens and a cheering crowd in Jakarta"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "Five players seated at gaming PCs on a stage under blue lights, seen from behind"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "A close-up of a gaming mouse and keyboard with RGB lights, shallow depth of field"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A skyline of a Vietnamese city at night with motorbike light trails, cinematic"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "Friends celebrating and pointing at a phone screen in a gaming cafe, cheering"
+        }
+      ],
+      "caption": "Dua juara Indonesia sudah ketahuan di Predator League 2027! 🏆 Team Secret BOOM Esports juara Valorant, dan Yang Dae Pal juara League of Legends. Keduanya lanjut ke Grand Final Asia Pasifik di Vietnam, Januari 2027. Kamu jagoin siapa di Vietnam nanti? Kirim ke temen gamer kamu!",
+      "hashtags": [
+        "#infoesports",
+        "#predatorleague",
+        "#valorant",
+        "#leagueoflegends",
+        "#esportsindonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "Jagat Play",
+          "url": "https://jagatplay.com/2026/11/news/predator-league-2027-indo-juara"
+        },
+        {
+          "nama": "Demokratis",
+          "url": "https://demokratis.co.id/juara-predator-league-indonesia-2027"
+        },
+        {
+          "nama": "Esports.id",
+          "url": "https://www.esports.id/read/apac-predator-league-2027-indonesian-series-masuki-grand-final-6-tim-berebut-tiket-ke-vietnam-20002"
+        }
+      ]
+    }
+  ]
+}
