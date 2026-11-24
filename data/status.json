@@ -56,12 +56,17 @@
       "t": "2026-11-25T05:11:15+07:00"
     },
     "asisten": {
-      "status": "selesai",
-      "aktivitas": "2/2 video jadi, siap di Hasil",
-      "t": "2026-11-25T04:22:15+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 2 video untuk 2026-11-25",
+      "t": "2026-11-25T05:12:35+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-25T05:12:35+07:00",
+      "agen": "asisten",
+      "pesan": "Render 2 video untuk 2026-11-25"
+    },
     {
       "t": "2026-11-25T05:11:31+07:00",
       "agen": "bos",
@@ -356,13 +361,8 @@
       "t": "2026-11-24T05:14:02+07:00",
       "agen": "asisten",
       "pesan": "Render video 1/2: 5 fakta seru penguin kaisar: menye"
-    },
-    {
-      "t": "2026-11-24T05:14:01+07:00",
-      "agen": "asisten",
-      "pesan": "Render 2 video untuk 2026-11-24"
     }
   ],
-  "updated_at": "2026-11-25T05:11:31+07:00",
+  "updated_at": "2026-11-25T05:12:35+07:00",
   "kesimpulan_t": "2026-11-25T05:11:31+07:00"
 }
