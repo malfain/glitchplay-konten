@@ -18,6 +18,7 @@ export const photoReelSchema = z.object({
   avatar: z.string().nullable().optional(),
   total: z.number(),
   scenes: z.array(z.object({ src: z.string(), start: z.number(), end: z.number(), video: z.boolean().optional(), cut: z.boolean().optional(), light: z.boolean().optional(),
+    heads: z.array(z.object({ x: z.number(), y: z.number(), r: z.number(), white: z.boolean().optional() })).optional(),
     vector: z.enum(["malam", "gurun", "kabah", "gua", "madinah", "luarangkasa", "bumi", "laut", "alam", "sains", "tatasurya", "gunungberapi", "dinosaurus"]).optional() })),
   words: z.array(z.object({ text: z.string(), start: z.number(), end: z.number(), chunk: z.number() })),
   label: z.string().optional(),
@@ -57,7 +58,7 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
           ) : s.vector ? (
             <SirahBackdrop kind={s.vector as "malam" | "gurun" | "kabah" | "gua" | "madinah"} index={i} dur={s.end - s.start + FADE} />
           ) : (
-            <KenBurns src={s.src} index={i} dur={s.end - s.start + FADE} fadeIn={i > 0 && !s.cut} video={!!s.video} />
+            <KenBurns src={s.src} index={i} dur={s.end - s.start + FADE} fadeIn={i > 0 && !s.cut} video={!!s.video} heads={s.heads} />
           )}
           {s.light ? <Nur /> : null}
         </Sequence>
@@ -97,7 +98,7 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
 };
 
 // Photos get a slow Ken Burns move; trailer clips play muted (looped if the scene outlasts the clip) with a gentle push-in.
-const KenBurns: React.FC<{ src: string; index: number; dur: number; fadeIn: boolean; video: boolean }> = ({ src, index, dur, fadeIn, video }) => {
+const KenBurns: React.FC<{ src: string; index: number; dur: number; fadeIn: boolean; video: boolean; heads?: { x: number; y: number; r: number }[] }> = ({ src, index, dur, fadeIn, video, heads }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const dirs = [[-40, -20], [40, -30], [-30, 30], [30, 20]];
@@ -113,14 +114,17 @@ const KenBurns: React.FC<{ src: string; index: number; dur: number; fadeIn: bool
           style={{ width: "100%", height: "100%", objectFit: "cover", scale: String(interpolate(frame, [0, dur * fps], [1.0, 1.08], clamp)) }}
         />
       ) : (
-      <Img
-        src={staticFile(src)}
+      <div
         style={{
-          width: "100%", height: "100%", objectFit: "cover",
+          position: "absolute", inset: 0,
           scale: String(interpolate(frame, [0, dur * fps], zoomIn ? [1.06, 1.2] : [1.2, 1.06], clamp)),
           translate: `${interpolate(frame, [0, dur * fps], [0, dx], clamp)}px ${interpolate(frame, [0, dur * fps], [0, dy], clamp)}px`,
         }}
-      />
+      >
+        <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        {/* lights sit inside the moving layer so they stay exactly on the heads while the picture pans */}
+        {(heads ?? []).map((h, k) => <HeadLight key={k} {...h} />)}
+      </div>
       )}
     </AbsoluteFill>
   );
@@ -293,4 +297,19 @@ const beatsFromWords = (words: PhotoReelProps["words"], total: number): Beat[] =
   }
   const list = [...chunks.values()].sort((a, b) => a.start - b.start);
   return list.map((c, i) => ({ start: c.start, end: i + 1 < list.length ? list[i + 1].start : total, speak: c.end - c.start }) as unknown as Beat);
+};
+
+// Opaque white-gold light over one head (sirah): solid core reaches ~1.25x the head radius, so no part of the head shows.
+const HeadLight: React.FC<{ x: number; y: number; r: number }> = ({ x, y, r }) => {
+  const frame = useCurrentFrame();
+  const R = Math.max(r, 36) * 2.4;
+  const breathe = 1 + Math.sin(frame / 9) * 0.03;
+  return (
+    <>
+      <div style={{ position: "absolute", left: x - R * 1.6, top: y - R * 1.6, width: R * 3.2, height: R * 3.2, borderRadius: "50%",
+        background: "radial-gradient(circle, rgba(255,236,180,.55) 0%, rgba(255,226,150,.25) 35%, rgba(255,214,120,0) 70%)" }} />
+      <div style={{ position: "absolute", left: x - R, top: y - R, width: R * 2, height: R * 2, borderRadius: "50%", scale: String(breathe),
+        background: "radial-gradient(circle, #ffffff 0%, #fffdf5 40%, #fff6dc 52%, rgba(255,240,200,.85) 62%, rgba(255,226,150,0) 100%)" }} />
+    </>
+  );
 };

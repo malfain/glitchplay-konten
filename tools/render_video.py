@@ -854,6 +854,101 @@ IMG_STYLE = ("photorealistic cinematic photograph, natural light, vivid but real
              "family friendly, vertical composition, no text, no letters, no watermark, no logo")
 
 
+POOL_FILE_NAME = "pool.json"
+
+
+def pool_add(cached, prompt):
+    """Remember every AI picture (per channel) so a later video can re-use the closest one when the free quota is gone."""
+    f = IMG_CACHE / POOL_FILE_NAME
+    try:
+        pool = json.loads(f.read_text()) if f.exists() else []
+    except ValueError:
+        pool = []
+    if not any(p["file"] == cached.name for p in pool):
+        pool.append({"file": cached.name, "prompt": prompt, "theme": CH["theme"]})
+        f.write_text(json.dumps(pool[-3000:]))
+
+
+def pool_image(prompt, out_jpg, used):
+    """Closest earlier picture of this channel (word overlap with the prompt), not yet used in this video."""
+    f = IMG_CACHE / POOL_FILE_NAME
+    if not f.exists():
+        return False
+    words = set(re.findall(r"[a-z]{4,}", prompt.lower()))
+    best, score = None, -1
+    for p in json.loads(f.read_text()):
+        if p["theme"] != CH["theme"] or p["file"] in used or not (IMG_CACHE / p["file"]).exists():
+            continue
+        sc = len(words & set(re.findall(r"[a-z]{4,}", p["prompt"].lower())))
+        if sc > score:
+            best, score = p, sc
+    if not best:
+        return False
+    used.add(best["file"])
+    shutil.copy(IMG_CACHE / best["file"], out_jpg)
+    return True
+
+
+VISION_MODELS = ["gemini-3.5-flash", "gemini-3.7-flash", "gemini-3.8-flash", "gemini-flash-latest"]
+HEAD_PROMPT = ('Detect the HEAD of every person or human figure in this illustration (including tiny distant figures, '
+               'children, babies, people seen from behind, silhouettes, figures inside light). Return a JSON list: '
+               '[{"box_2d":[ymin,xmin,ymax,xmax],"white_clothes":true|false}] with coordinates normalized 0-1000; '
+               'white_clothes = the person wears white/cream robes. Return [] if there are no people.')
+
+
+def detect_heads(jpg):
+    """Head boxes of every person in a 1080x1920 picture via Gemini vision (cached next to the image).
+    Returns [{'x','y','r','white'}] in pixels, [] for no people, or None when vision is unavailable."""
+    import base64
+    import hashlib
+    import ssl
+    import time
+    import urllib.error
+    import urllib.request
+    IMG_CACHE.mkdir(parents=True, exist_ok=True)
+    cache = IMG_CACHE / ("h" + hashlib.sha1(Path(jpg).read_bytes()).hexdigest()[:16] + ".json")
+    if cache.exists():
+        return json.loads(cache.read_text())
+    if not GEMINI_KEY_FILE.exists():
+        return None
+    key = GEMINI_KEY_FILE.read_text().strip()
+    try:
+        import certifi
+        ctx = ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        ctx = ssl.create_default_context()
+    body = json.dumps({"contents": [{"parts": [
+        {"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(Path(jpg).read_bytes()).decode()}},
+        {"text": HEAD_PROMPT}]}], "generationConfig": {"response_mime_type": "application/json", "temperature": 0}}).encode()
+    for attempt in range(2):
+        for model in VISION_MODELS:
+            req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                                         data=body, headers={"x-goog-api-key": key, "Content-Type": "application/json"})
+            try:
+                with urllib.request.urlopen(req, context=ctx, timeout=90) as r:
+                    txt = json.load(r)["candidates"][0]["content"]["parts"][0]["text"]
+                found = json.loads(txt)
+            except (urllib.error.URLError, TimeoutError, OSError, KeyError, IndexError, ValueError) as e:
+                print(f"[kepala] {model}: {str(e)[:80]}", file=sys.stderr)
+                continue
+            heads = []
+            for h in found if isinstance(found, list) else []:
+                b = h.get("box_2d") or h.get("box")
+                if not (isinstance(b, list) and len(b) == 4):
+                    continue
+                y0, x0, y1, x1 = [float(v) / 1000 for v in b]
+                w, hh = (x1 - x0) * 1080, (y1 - y0) * 1920
+                heads.append({"x": round((x0 + x1) / 2 * 1080), "y": round((y0 + y1) / 2 * 1920),
+                              "r": round(max(w, hh, 60) / 2), "white": bool(h.get("white_clothes"))})
+            cache.write_text(json.dumps(heads))
+            return heads
+        time.sleep(15)
+    return None
+
+
+NABI_HINT = re.compile(r"\b(boy|child|baby|infant|toddler|young man|man in white|white robe|white clothes)\b", re.I)
+
+
 def cf_image(prompt, out_jpg):
     """FLUX.1 schnell on Cloudflare Workers AI (free daily allocation). Cached by prompt so re-renders cost nothing."""
     import base64
@@ -901,6 +996,7 @@ def cf_image(prompt, out_jpg):
         run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(raw),
              "-vf", "scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920", "-q:v", "3", str(cached)])
         tmp_raw.unlink()
+    pool_add(cached, prompt)
     shutil.copy(cached, out_jpg)
 
 
@@ -1299,6 +1395,7 @@ def render_item_photo(item, idx, date, outdir, tmp):
 
     # photos first: if the free image quota is gone we fail before spending a voice (TTS) request
     imgs, games_used, game_count, credits = [], [], {}, []
+    pool_used = set()
     for n, sc in enumerate(scenes_in):
         img = pub / f"{key}-{n + 1:02d}.jpg"
         game = (sc.get("game") or "").strip()
@@ -1362,6 +1459,10 @@ def render_item_photo(item, idx, date, outdir, tmp):
         try:
             cf_image(prompt, img)
         except RuntimeError as e:
+            if "kuota gambar" in str(e) and pool_image(prompt, img, pool_used):
+                # free picture quota gone: the closest picture this channel made before keeps the video picture-based
+                imgs.append(img)
+                continue
             if "kuota gambar" in str(e) and CH["theme"] in ("sirah", "kids"):
                 # no pictures left today: a moving 3D / hand-drawn scene instead (never the cartoon mascot)
                 kind = backdrop_for(sc.get("prompt", ""), n) if CH["theme"] == "sirah" else kids3d_for(sc.get("prompt", ""), n)
@@ -1412,6 +1513,16 @@ def render_item_photo(item, idx, date, outdir, tmp):
         s1 = starts[nxt] if nxt is not None and nxt < len(starts) else total
         img = imgs[n]
         s1 = max(s1, s0 + 1)
+        # sirah: never show the Prophet's head. Every head in a scene with him (flagged, or a boy/man in white per the
+        # prompt) and every white-robed figure anywhere gets an opaque light placed exactly on it (Gemini vision boxes).
+        nabi_like = CH["theme"] == "sirah" and (bool(sc.get("nabi")) or bool(NABI_HINT.search(sc.get("prompt", ""))))
+        cover = None
+        if CH["theme"] == "sirah" and not isinstance(img, str) and img.suffix == ".jpg":
+            heads = detect_heads(img)
+            if heads is not None:
+                cover = [h for h in heads if nabi_like or h["white"]]
+                if not cover and not nabi_like:
+                    cover = None
         if isinstance(img, str):  # vector backdrop: one continuous moving scene
             scenes.append({"src": "", "start": round(s0, 3), "end": round(s1, 3), "vector": img.split(":", 1)[1]})
             continue
@@ -1421,7 +1532,8 @@ def render_item_photo(item, idx, date, outdir, tmp):
         for p in range(parts):
             a0, a1 = s0 + (s1 - s0) * p / parts, s0 + (s1 - s0) * (p + 1) / parts
             scenes.append({"src": f"_render/{img.name}", "start": round(a0, 3), "end": round(a1, 3),
-                           "video": img.suffix == ".mp4", "cut": p > 0, "light": bool(sc.get("nabi"))})
+                           "video": img.suffix == ".mp4", "cut": p > 0, "light": nabi_like and not cover,
+                           **({"heads": cover} if cover else {})})
 
     shutil.copy(ROOT / "assets/profile.jpg", REMOTION / "public/profile.jpg")
     label = (("Gambar: " + ", ".join(games_used)) if games_used else CH.get("label") or "Gambar dibuat dengan AI")

@@ -109,10 +109,13 @@ otomatis di Mac). Isi `adegan` **7–9 adegan**, urut:
 - **Ka'bah 3D (Three.js):** adegan tentang Ka'bah/Masjidil Haram boleh diberi
   `"3d": "kabah"` → Ka'bah 3D dengan kamera berputar (tanpa foto AI). Pakai
   maksimal 1 per episode; tetap isi `prompt` sebagai cadangan.
-- **Nabi Muhammad ﷺ**: adegan yang menampilkan beliau wajib `"nabi": true`, dan
-  prompt menggambarkan sosok berjubah putih **dari belakang atau dari jauh, di
-  tengah gambar**. Mac otomatis menutup wajah beliau dengan cahaya; jangan
-  pernah menulis ciri wajah beliau di prompt.
+- **Nabi Muhammad ﷺ** (di **usia berapa pun**: bayi, anak kecil, remaja,
+  dewasa): **setiap** adegan yang menampilkan beliau wajib `"nabi": true`, dan
+  prompt menggambarkan sosok berjubah putih **kecil, jauh, dari belakang**.
+  Sistem otomatis mendeteksi kepala lalu menutup **seluruh kepala** dengan
+  cahaya penuh; jangan pernah menulis ciri wajah/kepala beliau di prompt. Kalau
+  ragu apakah sebuah adegan menampilkan beliau, beri `"nabi": true`. Lebih baik
+  lagi: gambarkan suasananya saja tanpa sosok beliau.
 - Nabi-nabi lain, malaikat (Jibril digambarkan hanya sebagai cahaya terang di
   langit), istri Nabi, keluarga, dan sahabat utama: **tidak digambarkan
   wajahnya** (dari belakang, siluet jauh, atau cukup suasana/benda).
