@@ -1,521 +1,529 @@
 {
- "date": "2026-11-25",
- "items": [
-  {
-   "kategori": "Luar Angkasa",
-   "judul": "7 fakta seru Saturnus: lebih ringan dari air, cincin es, 274 bulan",
-   "ringkasan": "Saturnus lebih ringan daripada air (kepadatannya lebih kecil), cincinnya bongkahan es setebal sekitar 10 meter, sehari sekitar 10,7 jam, setahun sekitar 29 tahun Bumi, punya 274 bulan, bulan Enceladus menyemburkan air es (101 semburan), dan ada awan segi enam di kutub utara.",
-   "status_fakta": "resmi",
-   "hook_formula": "The Reveal + daftar 7 fakta",
-   "hook_layar": "SATURNUS BISA MENGAPUNG!",
-   "skor_viral": 9,
-   "jam_posting": "16:00",
-   "durasi_detik": 103,
-   "naskah_vo": [
-    "Ada planet yang lebih ringan daripada air!",
-    "Namanya Saturnus, planet bercincin yang terkenal itu.",
-    "Ia planet terbesar kedua di tata surya.",
-    "Planet ini tidak punya permukaan keras untuk diinjak.",
-    "Yuk, kenalan dengan tujuh fakta serunya!",
-    "Fakta pertama. Saturnus lebih ringan daripada air.",
-    "Kalau ada kolam raksasa, Saturnus bisa mengapung!",
-    "Soalnya, planet ini sebagian besar gas hidrogen dan helium.",
-    "Fakta kedua. Cincin Saturnus terbuat dari bongkahan es.",
-    "Jumlah bongkahannya miliaran, bahkan mungkin triliunan!",
-    "Lebarnya ratusan ribu kilometer, tapi tebalnya cuma sekitar sepuluh meter.",
-    "Tipis sekali kalau dibandingkan lebarnya!",
-    "Fakta ketiga. Sehari di Saturnus cuma sekitar sepuluh koma tujuh jam.",
-    "Planet ini berputar jauh lebih cepat daripada Bumi.",
-    "Fakta keempat. Setahun di Saturnus lamanya sekitar dua puluh sembilan tahun Bumi.",
-    "Jadi, ulang tahun di sana sangat jarang!",
-    "Fakta kelima. Saturnus punya dua ratus tujuh puluh empat bulan.",
-    "Itu terbanyak di antara semua planet di tata surya!",
-    "Fakta keenam. Salah satu bulannya, Enceladus, menyemburkan air es ke luar angkasa.",
-    "Pesawat Cassini menemukan seratus satu semburan di bulan itu.",
-    "Semburannya mungkin berasal dari lautan air di bawah kulit esnya.",
-    "Fakta ketujuh. Di kutub utara Saturnus ada awan berbentuk segi enam!",
-    "Di tengahnya ada pusaran badai yang besar.",
-    "Bentuk unik itu bertahan selama puluhan tahun.",
-    "Para ilmuwan masih mencari tahu penyebabnya.",
-    "Hebat, kan?",
-    "Sekarang kuis! Planet apa yang lebih ringan daripada air?",
-    "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
-    "Subscribe GlitchPlayClips buat fakta seru lainnya!",
-    "Siapa tahu, ada planet ajaib lain yang menunggu!"
-   ],
-   "subtitle": [
-    "Ada planet yang lebih ringan daripada air!",
-    "Namanya Saturnus, planet bercincin yang terkenal itu.",
-    "Ia planet terbesar kedua di tata surya.",
-    "Planet ini tidak punya permukaan keras untuk diinjak.",
-    "Yuk, kenalan dengan 7 fakta serunya!",
-    "Fakta pertama. Saturnus lebih ringan daripada air.",
-    "Kalau ada kolam raksasa, Saturnus bisa mengapung!",
-    "Soalnya, planet ini sebagian besar gas hidrogen dan helium.",
-    "Fakta kedua. Cincin Saturnus terbuat dari bongkahan es.",
-    "Jumlah bongkahannya miliaran, bahkan mungkin triliunan!",
-    "Lebarnya ratusan ribu kilometer, tapi tebalnya cuma sekitar 10 meter.",
-    "Tipis sekali kalau dibandingkan lebarnya!",
-    "Fakta ketiga. Sehari di Saturnus cuma sekitar 10,7 jam.",
-    "Planet ini berputar jauh lebih cepat daripada Bumi.",
-    "Fakta keempat. Setahun di Saturnus lamanya sekitar 29 tahun Bumi.",
-    "Jadi, ulang tahun di sana sangat jarang!",
-    "Fakta kelima. Saturnus punya 274 bulan.",
-    "Itu terbanyak di antara semua planet di tata surya!",
-    "Fakta keenam. Salah satu bulannya, Enceladus, menyemburkan air es ke luar angkasa.",
-    "Pesawat Cassini menemukan 101 semburan di bulan itu.",
-    "Semburannya mungkin berasal dari lautan air di bawah kulit esnya.",
-    "Fakta ketujuh. Di kutub utara Saturnus ada awan berbentuk segi enam!",
-    "Di tengahnya ada pusaran badai yang besar.",
-    "Bentuk unik itu bertahan selama puluhan tahun.",
-    "Para ilmuwan masih mencari tahu penyebabnya.",
-    "Hebat, kan?",
-    "Sekarang kuis! Planet apa yang lebih ringan daripada air?",
-    "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
-    "Subscribe GlitchPlayClips buat fakta seru lainnya!",
-    "Siapa tahu, ada planet ajaib lain yang menunggu!"
-   ],
-   "teks_layar": [
+  "date": "2026-11-25",
+  "items": [
     {
-     "t": "0:00",
-     "teks": "PLANET LEBIH RINGAN DARI AIR",
-     "visual": "Saturnus"
+      "kategori": "Luar Angkasa",
+      "judul": "7 fakta seru Saturnus: lebih ringan dari air, cincin es, 274 bulan",
+      "ringkasan": "Saturnus lebih ringan daripada air (kepadatannya lebih kecil), cincinnya bongkahan es setebal sekitar 10 meter, sehari sekitar 10,7 jam, setahun sekitar 29 tahun Bumi, punya 274 bulan, bulan Enceladus menyemburkan air es (101 semburan), dan ada awan segi enam di kutub utara.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Reveal + daftar 7 fakta",
+      "hook_layar": "SATURNUS BISA MENGAPUNG!",
+      "skor_viral": 9,
+      "jam_posting": "16:00",
+      "durasi_detik": 103,
+      "naskah_vo": [
+        "Ada planet yang lebih ringan daripada air!",
+        "Namanya Saturnus, planet bercincin yang terkenal itu.",
+        "Ia planet terbesar kedua di tata surya.",
+        "Planet ini tidak punya permukaan keras untuk diinjak.",
+        "Yuk, kenalan dengan tujuh fakta serunya!",
+        "Fakta pertama. Saturnus lebih ringan daripada air.",
+        "Kalau ada kolam raksasa, Saturnus bisa mengapung!",
+        "Soalnya, planet ini sebagian besar gas hidrogen dan helium.",
+        "Fakta kedua. Cincin Saturnus terbuat dari bongkahan es.",
+        "Jumlah bongkahannya miliaran, bahkan mungkin triliunan!",
+        "Lebarnya ratusan ribu kilometer, tapi tebalnya cuma sekitar sepuluh meter.",
+        "Tipis sekali kalau dibandingkan lebarnya!",
+        "Fakta ketiga. Sehari di Saturnus cuma sekitar sepuluh koma tujuh jam.",
+        "Planet ini berputar jauh lebih cepat daripada Bumi.",
+        "Fakta keempat. Setahun di Saturnus lamanya sekitar dua puluh sembilan tahun Bumi.",
+        "Jadi, ulang tahun di sana sangat jarang!",
+        "Fakta kelima. Saturnus punya dua ratus tujuh puluh empat bulan.",
+        "Itu terbanyak di antara semua planet di tata surya!",
+        "Fakta keenam. Salah satu bulannya, Enceladus, menyemburkan air es ke luar angkasa.",
+        "Pesawat Cassini menemukan seratus satu semburan di bulan itu.",
+        "Semburannya mungkin berasal dari lautan air di bawah kulit esnya.",
+        "Fakta ketujuh. Di kutub utara Saturnus ada awan berbentuk segi enam!",
+        "Di tengahnya ada pusaran badai yang besar.",
+        "Bentuk unik itu bertahan selama puluhan tahun.",
+        "Para ilmuwan masih mencari tahu penyebabnya.",
+        "Hebat, kan?",
+        "Sekarang kuis! Planet apa yang lebih ringan daripada air?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya!",
+        "Siapa tahu, ada planet ajaib lain yang menunggu!"
+      ],
+      "subtitle": [
+        "Ada planet yang lebih ringan daripada air!",
+        "Namanya Saturnus, planet bercincin yang terkenal itu.",
+        "Ia planet terbesar kedua di tata surya.",
+        "Planet ini tidak punya permukaan keras untuk diinjak.",
+        "Yuk, kenalan dengan 7 fakta serunya!",
+        "Fakta pertama. Saturnus lebih ringan daripada air.",
+        "Kalau ada kolam raksasa, Saturnus bisa mengapung!",
+        "Soalnya, planet ini sebagian besar gas hidrogen dan helium.",
+        "Fakta kedua. Cincin Saturnus terbuat dari bongkahan es.",
+        "Jumlah bongkahannya miliaran, bahkan mungkin triliunan!",
+        "Lebarnya ratusan ribu kilometer, tapi tebalnya cuma sekitar 10 meter.",
+        "Tipis sekali kalau dibandingkan lebarnya!",
+        "Fakta ketiga. Sehari di Saturnus cuma sekitar 10,7 jam.",
+        "Planet ini berputar jauh lebih cepat daripada Bumi.",
+        "Fakta keempat. Setahun di Saturnus lamanya sekitar 29 tahun Bumi.",
+        "Jadi, ulang tahun di sana sangat jarang!",
+        "Fakta kelima. Saturnus punya 274 bulan.",
+        "Itu terbanyak di antara semua planet di tata surya!",
+        "Fakta keenam. Salah satu bulannya, Enceladus, menyemburkan air es ke luar angkasa.",
+        "Pesawat Cassini menemukan 101 semburan di bulan itu.",
+        "Semburannya mungkin berasal dari lautan air di bawah kulit esnya.",
+        "Fakta ketujuh. Di kutub utara Saturnus ada awan berbentuk segi enam!",
+        "Di tengahnya ada pusaran badai yang besar.",
+        "Bentuk unik itu bertahan selama puluhan tahun.",
+        "Para ilmuwan masih mencari tahu penyebabnya.",
+        "Hebat, kan?",
+        "Sekarang kuis! Planet apa yang lebih ringan daripada air?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya!",
+        "Siapa tahu, ada planet ajaib lain yang menunggu!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "PLANET LEBIH RINGAN DARI AIR",
+          "visual": "Saturnus"
+        },
+        {
+          "t": "0:03",
+          "teks": "SATURNUS!",
+          "visual": "planet bercincin"
+        },
+        {
+          "t": "0:12",
+          "teks": "7 FAKTA SERU",
+          "visual": "angka 7"
+        },
+        {
+          "t": "0:15",
+          "teks": "#1 LEBIH RINGAN DARI AIR",
+          "visual": "Saturnus mengapung"
+        },
+        {
+          "t": "0:21",
+          "teks": "GAS HIDROGEN & HELIUM",
+          "visual": "awan gas"
+        },
+        {
+          "t": "0:25",
+          "teks": "#2 CINCIN DARI ES",
+          "visual": "cincin es"
+        },
+        {
+          "t": "0:31",
+          "teks": "TEBAL CUMA 10 METER",
+          "visual": "cincin tipis"
+        },
+        {
+          "t": "0:37",
+          "teks": "#3 SEHARI 10,7 JAM",
+          "visual": "planet berputar"
+        },
+        {
+          "t": "0:45",
+          "teks": "#4 SETAHUN 29 TAHUN",
+          "visual": "orbit"
+        },
+        {
+          "t": "0:53",
+          "teks": "#5 274 BULAN",
+          "visual": "bulan-bulan"
+        },
+        {
+          "t": "1:01",
+          "teks": "#6 BULAN SEMBUR AIR ES",
+          "visual": "Enceladus"
+        },
+        {
+          "t": "1:14",
+          "teks": "#7 AWAN SEGI ENAM",
+          "visual": "kutub utara"
+        },
+        {
+          "t": "1:28",
+          "teks": "HEBAT, KAN?",
+          "visual": "anak kagum"
+        },
+        {
+          "t": "1:29",
+          "teks": "KUIS: PLANET MANA?",
+          "visual": "tanda tanya"
+        },
+        {
+          "t": "1:33",
+          "teks": "JAWAB DALAM HATI",
+          "visual": "anak berpikir"
+        },
+        {
+          "t": "1:37",
+          "teks": "SUBSCRIBE!",
+          "visual": "tombol subscribe"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "Saturn with its bright rings floating in the black space, cinematic, soft golden light",
+          "3d": "luarangkasa"
+        },
+        {
+          "kalimat": 5,
+          "prompt": "A huge empty swimming pool with a small yellow rubber ball floating on blue water, bright daylight"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "Close-up of Saturn's icy rings made of countless shiny ice chunks, space photo style",
+          "3d": "luarangkasa"
+        },
+        {
+          "kalimat": 10,
+          "prompt": "A very thin sheet of paper seen from the side on a white table, macro photo, soft light"
+        },
+        {
+          "kalimat": 12,
+          "prompt": "Saturn spinning in space with a glowing planet, long exposure star trails"
+        },
+        {
+          "kalimat": 16,
+          "prompt": "Saturn surrounded by many small grey and white moons in orbit, cinematic space view",
+          "3d": "luarangkasa"
+        },
+        {
+          "kalimat": 18,
+          "prompt": "A small icy moon with white plumes of ice spraying from its south pole, black space background",
+          "3d": "luarangkasa"
+        },
+        {
+          "kalimat": 21,
+          "prompt": "Swirling clouds forming a hexagon shape at a planet's north pole seen from space, golden-brown colors",
+          "3d": "tatasurya"
+        },
+        {
+          "kalimat": 26,
+          "prompt": "A child looking up at a starry night sky with a small telescope, silhouette, warm and peaceful"
+        }
+      ],
+      "caption": "7 fakta seru Saturnus! Planet yang lebih ringan dari air 🪐",
+      "hashtags": [
+        "#faktaseru",
+        "#saturnus",
+        "#luarangkasa"
+      ],
+      "youtube": {
+        "judul": "Planet Ini Bisa Mengapung di Air! 7 Fakta Seru Saturnus 🪐 #Shorts",
+        "deskripsi": "Tahukah kamu? Saturnus lebih ringan daripada air, jadi bisa mengapung kalau ada kolam yang cukup besar! Yuk kenalan dengan 7 fakta seru Saturnus di video ini.\n\n🪐 Fakta di video:\n1. Saturnus lebih ringan daripada air\n2. Cincinnya dari bongkahan es, tebalnya sekitar 10 meter\n3. Satu hari sekitar 10,7 jam\n4. Satu tahun sekitar 29 tahun Bumi\n5. Punya 274 bulan, terbanyak di tata surya\n6. Bulan Enceladus menyemburkan air es\n7. Ada awan segi enam di kutub utara\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: NASA Science, NASA Space Place, Live Science, NASA Cassini, Museum of Science Boston",
+        "tags": [
+          "fakta seru",
+          "fakta unik anak",
+          "saturnus",
+          "planet saturnus",
+          "luar angkasa",
+          "tata surya",
+          "astronomi anak",
+          "edukasi anak",
+          "belajar sains",
+          "shorts"
+        ],
+        "made_for_kids": true
+      },
+      "sumber": [
+        {
+          "nama": "NASA Science - Saturn Facts",
+          "url": "https://science.nasa.gov/saturn/facts/"
+        },
+        {
+          "nama": "NASA Space Place - All About Saturn",
+          "url": "https://spaceplace.nasa.gov/all-about-saturn/en/"
+        },
+        {
+          "nama": "Live Science",
+          "url": "https://www.livescience.com/space/saturn/saturn-facts-about-the-ringed-planet"
+        },
+        {
+          "nama": "NASA Cassini - Saturn Rings",
+          "url": "https://science.nasa.gov/mission/cassini/science/rings/"
+        },
+        {
+          "nama": "NASA Saturnian Satellite Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturniansatfact.html"
+        },
+        {
+          "nama": "NASA Science - Enceladus",
+          "url": "https://science.nasa.gov/saturn/moons/enceladus/"
+        },
+        {
+          "nama": "NASA - 101 Geysers",
+          "url": "https://science.nasa.gov/science-research/planetary-science/27jul_101geysers/"
+        },
+        {
+          "nama": "Museum of Science Boston",
+          "url": "https://www.mos.org/article/planetary-profile-strange-saturn"
+        }
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-25/kids-01-7-fakta-seru-saturnus-lebih-ringan-dari.mp4",
+      "poster": "video/kids/2026-11-25/01-7-fakta-seru-saturnus-lebih-ringan-dari.jpg",
+      "video_durasi": 101.1,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     },
     {
-     "t": "0:03",
-     "teks": "SATURNUS!",
-     "visual": "planet bercincin"
-    },
-    {
-     "t": "0:12",
-     "teks": "7 FAKTA SERU",
-     "visual": "angka 7"
-    },
-    {
-     "t": "0:15",
-     "teks": "#1 LEBIH RINGAN DARI AIR",
-     "visual": "Saturnus mengapung"
-    },
-    {
-     "t": "0:21",
-     "teks": "GAS HIDROGEN & HELIUM",
-     "visual": "awan gas"
-    },
-    {
-     "t": "0:25",
-     "teks": "#2 CINCIN DARI ES",
-     "visual": "cincin es"
-    },
-    {
-     "t": "0:31",
-     "teks": "TEBAL CUMA 10 METER",
-     "visual": "cincin tipis"
-    },
-    {
-     "t": "0:37",
-     "teks": "#3 SEHARI 10,7 JAM",
-     "visual": "planet berputar"
-    },
-    {
-     "t": "0:45",
-     "teks": "#4 SETAHUN 29 TAHUN",
-     "visual": "orbit"
-    },
-    {
-     "t": "0:53",
-     "teks": "#5 274 BULAN",
-     "visual": "bulan-bulan"
-    },
-    {
-     "t": "1:01",
-     "teks": "#6 BULAN SEMBUR AIR ES",
-     "visual": "Enceladus"
-    },
-    {
-     "t": "1:14",
-     "teks": "#7 AWAN SEGI ENAM",
-     "visual": "kutub utara"
-    },
-    {
-     "t": "1:28",
-     "teks": "HEBAT, KAN?",
-     "visual": "anak kagum"
-    },
-    {
-     "t": "1:29",
-     "teks": "KUIS: PLANET MANA?",
-     "visual": "tanda tanya"
-    },
-    {
-     "t": "1:33",
-     "teks": "JAWAB DALAM HATI",
-     "visual": "anak berpikir"
-    },
-    {
-     "t": "1:37",
-     "teks": "SUBSCRIBE!",
-     "visual": "tombol subscribe"
+      "kategori": "Dinosaurus",
+      "judul": "6 fakta seru dinosaurus: burung keluarga dino, bulu, Argentinosaurus",
+      "ringkasan": "Burung adalah dinosaurus yang masih hidup, nama dinosaurus dibuat Richard Owen tahun 1842, Argentinosaurus sekitar 30 meter (perkiraan), banyak dinosaurus berbulu (lebih dari 20 jenis berfosil bulu), Yutyrannus kerabat T-Rex berbulu dari Tiongkok, dan dinosaurus selain burung hilang sekitar 66 juta tahun lalu.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Reveal + daftar 6 fakta",
+      "hook_layar": "BURUNG ITU DINOSAURUS!",
+      "skor_viral": 8,
+      "jam_posting": "19:00",
+      "durasi_detik": 93,
+      "naskah_vo": [
+        "Burung adalah dinosaurus yang masih hidup!",
+        "Ya, ayam dan burung gereja itu keluarga dinosaurus.",
+        "Yuk, kenalan dengan enam fakta seru dinosaurus!",
+        "Fakta pertama. Burung adalah keturunan dinosaurus pemakan daging.",
+        "Mereka berkaki dua, dan banyak yang berbulu.",
+        "Dinosaurus lainnya sudah punah, tapi burung tetap hidup sampai sekarang.",
+        "Fakta kedua. Richard Owen membuat nama dinosaurus tahun seribu delapan ratus empat puluh dua.",
+        "Richard Owen adalah ilmuwan dari Inggris.",
+        "Artinya kira-kira kadal yang sangat besar dan hebat.",
+        "Fakta ketiga. Argentinosaurus panjangnya sekitar tiga puluh meter.",
+        "Fosilnya ditemukan di negara Argentina.",
+        "Perkiraan lain bahkan bilang sampai tiga puluh lima meter.",
+        "Ia termasuk dinosaurus terbesar yang pernah ditemukan!",
+        "Tapi ukurannya masih perkiraan, karena tulangnya baru sedikit ditemukan.",
+        "Fakta keempat. Banyak dinosaurus punya bulu!",
+        "Fosil bulunya sudah ditemukan pada lebih dari dua puluh jenis dinosaurus.",
+        "Hampir semuanya dinosaurus pemakan daging.",
+        "Fakta kelima. Yutyrannus, kerabat T-Rex, punya bulu halus.",
+        "Bulunya panjang, sampai sekitar dua puluh sentimeter.",
+        "Fosilnya ditemukan di Tiongkok.",
+        "Bayangkan raksasa pemangsa berbulu!",
+        "Fakta keenam. Dinosaurus selain burung hilang sekitar enam puluh enam juta tahun lalu.",
+        "Manusia belum ada pada masa itu.",
+        "Kita hanya mengenal mereka lewat fosil.",
+        "Hebat, kan?",
+        "Sekarang kuis! Hewan apa di halaman rumahmu yang keluarga dinosaurus?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya!",
+        "Siapa tahu, kamu bertemu keluarga dinosaurus hari ini!"
+      ],
+      "subtitle": [
+        "Burung adalah dinosaurus yang masih hidup!",
+        "Ya, ayam dan burung gereja itu keluarga dinosaurus.",
+        "Yuk, kenalan dengan 6 fakta seru dinosaurus!",
+        "Fakta pertama. Burung adalah keturunan dinosaurus pemakan daging.",
+        "Mereka berkaki dua, dan banyak yang berbulu.",
+        "Dinosaurus lainnya sudah punah, tapi burung tetap hidup sampai sekarang.",
+        "Fakta kedua. Richard Owen membuat nama dinosaurus tahun 1842.",
+        "Richard Owen adalah ilmuwan dari Inggris.",
+        "Artinya kira-kira kadal yang sangat besar dan hebat.",
+        "Fakta ketiga. Argentinosaurus panjangnya sekitar 30 meter.",
+        "Fosilnya ditemukan di negara Argentina.",
+        "Perkiraan lain bahkan bilang sampai 35 meter.",
+        "Ia termasuk dinosaurus terbesar yang pernah ditemukan!",
+        "Tapi ukurannya masih perkiraan, karena tulangnya baru sedikit ditemukan.",
+        "Fakta keempat. Banyak dinosaurus punya bulu!",
+        "Fosil bulunya sudah ditemukan pada lebih dari 20 jenis dinosaurus.",
+        "Hampir semuanya dinosaurus pemakan daging.",
+        "Fakta kelima. Yutyrannus, kerabat T-Rex, punya bulu halus.",
+        "Bulunya panjang, sampai sekitar 20 sentimeter.",
+        "Fosilnya ditemukan di Tiongkok.",
+        "Bayangkan raksasa pemangsa berbulu!",
+        "Fakta keenam. Dinosaurus selain burung hilang sekitar 66 juta tahun lalu.",
+        "Manusia belum ada pada masa itu.",
+        "Kita hanya mengenal mereka lewat fosil.",
+        "Hebat, kan?",
+        "Sekarang kuis! Hewan apa di halaman rumahmu yang keluarga dinosaurus?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya!",
+        "Siapa tahu, kamu bertemu keluarga dinosaurus hari ini!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "BURUNG ITU DINOSAURUS!",
+          "visual": "burung"
+        },
+        {
+          "t": "0:03",
+          "teks": "KELUARGA DINOSAURUS",
+          "visual": "ayam"
+        },
+        {
+          "t": "0:06",
+          "teks": "6 FAKTA SERU",
+          "visual": "angka 6"
+        },
+        {
+          "t": "0:09",
+          "teks": "#1 BURUNG KETURUNAN DINO",
+          "visual": "burung"
+        },
+        {
+          "t": "0:19",
+          "teks": "#2 NAMA DARI RICHARD OWEN",
+          "visual": "nama"
+        },
+        {
+          "t": "0:28",
+          "teks": "KADAL SANGAT BESAR",
+          "visual": "kadal"
+        },
+        {
+          "t": "0:31",
+          "teks": "#3 SEKITAR 30 METER",
+          "visual": "Argentinosaurus"
+        },
+        {
+          "t": "0:43",
+          "teks": "MASIH PERKIRAAN",
+          "visual": "tulang"
+        },
+        {
+          "t": "0:47",
+          "teks": "#4 BANYAK DINO BERBULU",
+          "visual": "fosil bulu"
+        },
+        {
+          "t": "0:50",
+          "teks": "20+ JENIS BERBULU",
+          "visual": "fosil"
+        },
+        {
+          "t": "0:57",
+          "teks": "#5 YUTYRANNUS BERBULU",
+          "visual": "Yutyrannus"
+        },
+        {
+          "t": "1:03",
+          "teks": "DITEMUKAN DI TIONGKOK",
+          "visual": "peta"
+        },
+        {
+          "t": "1:07",
+          "teks": "#6 HILANG 66 JUTA TAHUN",
+          "visual": "fosil"
+        },
+        {
+          "t": "1:19",
+          "teks": "HEBAT, KAN?",
+          "visual": "anak kagum"
+        },
+        {
+          "t": "1:20",
+          "teks": "KUIS: HEWAN KELUARGA DINO",
+          "visual": "tanda tanya"
+        },
+        {
+          "t": "1:24",
+          "teks": "JAWAB DALAM HATI",
+          "visual": "anak berpikir"
+        },
+        {
+          "t": "1:28",
+          "teks": "SUBSCRIBE!",
+          "visual": "tombol subscribe"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A colorful rooster standing in a farmyard at sunrise, close-up, warm light"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "A small bird perched on a branch with detailed feathers, macro photo, soft light"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "Old museum display with a big dinosaur skeleton in a bright hall, wide angle, no text"
+        },
+        {
+          "kalimat": 9,
+          "prompt": "Huge long-necked dinosaur walking through a prehistoric forest, realistic, misty morning",
+          "3d": "dinosaurus"
+        },
+        {
+          "kalimat": 13,
+          "prompt": "Paleontologists brushing a big fossil bone at a dry dig site, sunny desert, anonymous people from far"
+        },
+        {
+          "kalimat": 14,
+          "prompt": "A fossil of a dinosaur with feather impressions in grey rock, museum photo, soft light"
+        },
+        {
+          "kalimat": 17,
+          "prompt": "A fluffy feathered dinosaur standing in a green forest, realistic nature photo style",
+          "3d": "alam"
+        },
+        {
+          "kalimat": 21,
+          "prompt": "A prehistoric landscape with dinosaurs silhouettes under a big orange sunset",
+          "3d": "dinosaurus"
+        },
+        {
+          "kalimat": 25,
+          "prompt": "A pigeon walking on a sunny garden path, close-up, soft background",
+          "3d": "alam"
+        }
+      ],
+      "caption": "6 fakta seru dinosaurus! Ternyata burung itu keluarga dinosaurus 🦖",
+      "hashtags": [
+        "#faktaseru",
+        "#dinosaurus",
+        "#belajarsains"
+      ],
+      "youtube": {
+        "judul": "Ternyata Burung Itu Dinosaurus! 6 Fakta Seru Dinosaurus 🦖 #Shorts",
+        "deskripsi": "Tahukah kamu? Burung adalah dinosaurus yang masih hidup sampai sekarang! Yuk kenalan dengan 6 fakta seru dinosaurus di video ini.\n\n🦖 Fakta di video:\n1. Burung adalah keturunan dinosaurus pemakan daging\n2. Richard Owen membuat nama dinosaurus tahun 1842\n3. Argentinosaurus panjangnya sekitar 30 meter (perkiraan)\n4. Banyak dinosaurus punya bulu\n5. Yutyrannus, kerabat T-Rex, berbulu\n6. Dinosaurus selain burung hilang sekitar 66 juta tahun lalu\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: Natural History Museum London, Britannica, Australian Museum, AMNH, National Geographic",
+        "tags": [
+          "fakta seru",
+          "fakta unik anak",
+          "dinosaurus",
+          "fakta dinosaurus",
+          "burung dinosaurus",
+          "fosil",
+          "sains anak",
+          "edukasi anak",
+          "belajar sains",
+          "shorts"
+        ],
+        "made_for_kids": true
+      },
+      "sumber": [
+        {
+          "nama": "Natural History Museum London",
+          "url": "https://www.nhm.ac.uk/discover/how-dinosaurs-got-their-name.html"
+        },
+        {
+          "nama": "Britannica Kids - Dinosaur",
+          "url": "https://kids.britannica.com/students/article/dinosaur/274008"
+        },
+        {
+          "nama": "Australian Museum",
+          "url": "https://australian.museum/learn/dinosaurs/"
+        },
+        {
+          "nama": "Britannica - Feathered dinosaur",
+          "url": "https://www.britannica.com/animal/feathered-dinosaur"
+        },
+        {
+          "nama": "National Geographic",
+          "url": "https://www.nationalgeographic.com/history/article/140724-feathered-siberia-dinosaur-scales-science"
+        },
+        {
+          "nama": "Wikipedia - Argentinosaurus",
+          "url": "https://en.wikipedia.org/wiki/Argentinosaurus"
+        },
+        {
+          "nama": "HowStuffWorks - Argentinosaurus",
+          "url": "https://animals.howstuffworks.com/dinosaurs/argentinosaurus.htm"
+        },
+        {
+          "nama": "American Museum of Natural History",
+          "url": "https://www.amnh.org/dinosaurs/dinosaur-facts"
+        }
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-25/kids-02-6-fakta-seru-dinosaurus-burung-keluarga.mp4",
+      "poster": "video/kids/2026-11-25/02-6-fakta-seru-dinosaurus-burung-keluarga.jpg",
+      "video_durasi": 100.1,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     }
-   ],
-   "adegan": [
-    {
-     "kalimat": 0,
-     "prompt": "Saturn with its bright rings floating in the black space, cinematic, soft golden light",
-     "3d": "luarangkasa"
-    },
-    {
-     "kalimat": 5,
-     "prompt": "A huge empty swimming pool with a small yellow rubber ball floating on blue water, bright daylight"
-    },
-    {
-     "kalimat": 8,
-     "prompt": "Close-up of Saturn's icy rings made of countless shiny ice chunks, space photo style",
-     "3d": "luarangkasa"
-    },
-    {
-     "kalimat": 10,
-     "prompt": "A very thin sheet of paper seen from the side on a white table, macro photo, soft light"
-    },
-    {
-     "kalimat": 12,
-     "prompt": "Saturn spinning in space with a glowing planet, long exposure star trails"
-    },
-    {
-     "kalimat": 16,
-     "prompt": "Saturn surrounded by many small grey and white moons in orbit, cinematic space view",
-     "3d": "luarangkasa"
-    },
-    {
-     "kalimat": 18,
-     "prompt": "A small icy moon with white plumes of ice spraying from its south pole, black space background",
-     "3d": "luarangkasa"
-    },
-    {
-     "kalimat": 21,
-     "prompt": "Swirling clouds forming a hexagon shape at a planet's north pole seen from space, golden-brown colors",
-     "3d": "tatasurya"
-    },
-    {
-     "kalimat": 26,
-     "prompt": "A child looking up at a starry night sky with a small telescope, silhouette, warm and peaceful"
-    }
-   ],
-   "caption": "7 fakta seru Saturnus! Planet yang lebih ringan dari air 🪐",
-   "hashtags": [
-    "#faktaseru",
-    "#saturnus",
-    "#luarangkasa"
-   ],
-   "youtube": {
-    "judul": "Planet Ini Bisa Mengapung di Air! 7 Fakta Seru Saturnus 🪐 #Shorts",
-    "deskripsi": "Tahukah kamu? Saturnus lebih ringan daripada air, jadi bisa mengapung kalau ada kolam yang cukup besar! Yuk kenalan dengan 7 fakta seru Saturnus di video ini.\n\n🪐 Fakta di video:\n1. Saturnus lebih ringan daripada air\n2. Cincinnya dari bongkahan es, tebalnya sekitar 10 meter\n3. Satu hari sekitar 10,7 jam\n4. Satu tahun sekitar 29 tahun Bumi\n5. Punya 274 bulan, terbanyak di tata surya\n6. Bulan Enceladus menyemburkan air es\n7. Ada awan segi enam di kutub utara\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: NASA Science, NASA Space Place, Live Science, NASA Cassini, Museum of Science Boston",
-    "tags": [
-     "fakta seru",
-     "fakta unik anak",
-     "saturnus",
-     "planet saturnus",
-     "luar angkasa",
-     "tata surya",
-     "astronomi anak",
-     "edukasi anak",
-     "belajar sains",
-     "shorts"
-    ],
-    "made_for_kids": true
-   },
-   "sumber": [
-    {
-     "nama": "NASA Science - Saturn Facts",
-     "url": "https://science.nasa.gov/saturn/facts/"
-    },
-    {
-     "nama": "NASA Space Place - All About Saturn",
-     "url": "https://spaceplace.nasa.gov/all-about-saturn/en/"
-    },
-    {
-     "nama": "Live Science",
-     "url": "https://www.livescience.com/space/saturn/saturn-facts-about-the-ringed-planet"
-    },
-    {
-     "nama": "NASA Cassini - Saturn Rings",
-     "url": "https://science.nasa.gov/mission/cassini/science/rings/"
-    },
-    {
-     "nama": "NASA Saturnian Satellite Fact Sheet",
-     "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturniansatfact.html"
-    },
-    {
-     "nama": "NASA Science - Enceladus",
-     "url": "https://science.nasa.gov/saturn/moons/enceladus/"
-    },
-    {
-     "nama": "NASA - 101 Geysers",
-     "url": "https://science.nasa.gov/science-research/planetary-science/27jul_101geysers/"
-    },
-    {
-     "nama": "Museum of Science Boston",
-     "url": "https://www.mos.org/article/planetary-profile-strange-saturn"
-    }
-   ]
-  },
-  {
-   "kategori": "Dinosaurus",
-   "judul": "6 fakta seru dinosaurus: burung keluarga dino, bulu, Argentinosaurus",
-   "ringkasan": "Burung adalah dinosaurus yang masih hidup, nama dinosaurus dibuat Richard Owen tahun 1842, Argentinosaurus sekitar 30 meter (perkiraan), banyak dinosaurus berbulu (lebih dari 20 jenis berfosil bulu), Yutyrannus kerabat T-Rex berbulu dari Tiongkok, dan dinosaurus selain burung hilang sekitar 66 juta tahun lalu.",
-   "status_fakta": "resmi",
-   "hook_formula": "The Reveal + daftar 6 fakta",
-   "hook_layar": "BURUNG ITU DINOSAURUS!",
-   "skor_viral": 8,
-   "jam_posting": "19:00",
-   "durasi_detik": 93,
-   "naskah_vo": [
-    "Burung adalah dinosaurus yang masih hidup!",
-    "Ya, ayam dan burung gereja itu keluarga dinosaurus.",
-    "Yuk, kenalan dengan enam fakta seru dinosaurus!",
-    "Fakta pertama. Burung adalah keturunan dinosaurus pemakan daging.",
-    "Mereka berkaki dua, dan banyak yang berbulu.",
-    "Dinosaurus lainnya sudah punah, tapi burung tetap hidup sampai sekarang.",
-    "Fakta kedua. Richard Owen membuat nama dinosaurus tahun seribu delapan ratus empat puluh dua.",
-    "Richard Owen adalah ilmuwan dari Inggris.",
-    "Artinya kira-kira kadal yang sangat besar dan hebat.",
-    "Fakta ketiga. Argentinosaurus panjangnya sekitar tiga puluh meter.",
-    "Fosilnya ditemukan di negara Argentina.",
-    "Perkiraan lain bahkan bilang sampai tiga puluh lima meter.",
-    "Ia termasuk dinosaurus terbesar yang pernah ditemukan!",
-    "Tapi ukurannya masih perkiraan, karena tulangnya baru sedikit ditemukan.",
-    "Fakta keempat. Banyak dinosaurus punya bulu!",
-    "Fosil bulunya sudah ditemukan pada lebih dari dua puluh jenis dinosaurus.",
-    "Hampir semuanya dinosaurus pemakan daging.",
-    "Fakta kelima. Yutyrannus, kerabat T-Rex, punya bulu halus.",
-    "Bulunya panjang, sampai sekitar dua puluh sentimeter.",
-    "Fosilnya ditemukan di Tiongkok.",
-    "Bayangkan raksasa pemangsa berbulu!",
-    "Fakta keenam. Dinosaurus selain burung hilang sekitar enam puluh enam juta tahun lalu.",
-    "Manusia belum ada pada masa itu.",
-    "Kita hanya mengenal mereka lewat fosil.",
-    "Hebat, kan?",
-    "Sekarang kuis! Hewan apa di halaman rumahmu yang keluarga dinosaurus?",
-    "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
-    "Subscribe GlitchPlayClips buat fakta seru lainnya!",
-    "Siapa tahu, kamu bertemu keluarga dinosaurus hari ini!"
-   ],
-   "subtitle": [
-    "Burung adalah dinosaurus yang masih hidup!",
-    "Ya, ayam dan burung gereja itu keluarga dinosaurus.",
-    "Yuk, kenalan dengan 6 fakta seru dinosaurus!",
-    "Fakta pertama. Burung adalah keturunan dinosaurus pemakan daging.",
-    "Mereka berkaki dua, dan banyak yang berbulu.",
-    "Dinosaurus lainnya sudah punah, tapi burung tetap hidup sampai sekarang.",
-    "Fakta kedua. Richard Owen membuat nama dinosaurus tahun 1842.",
-    "Richard Owen adalah ilmuwan dari Inggris.",
-    "Artinya kira-kira kadal yang sangat besar dan hebat.",
-    "Fakta ketiga. Argentinosaurus panjangnya sekitar 30 meter.",
-    "Fosilnya ditemukan di negara Argentina.",
-    "Perkiraan lain bahkan bilang sampai 35 meter.",
-    "Ia termasuk dinosaurus terbesar yang pernah ditemukan!",
-    "Tapi ukurannya masih perkiraan, karena tulangnya baru sedikit ditemukan.",
-    "Fakta keempat. Banyak dinosaurus punya bulu!",
-    "Fosil bulunya sudah ditemukan pada lebih dari 20 jenis dinosaurus.",
-    "Hampir semuanya dinosaurus pemakan daging.",
-    "Fakta kelima. Yutyrannus, kerabat T-Rex, punya bulu halus.",
-    "Bulunya panjang, sampai sekitar 20 sentimeter.",
-    "Fosilnya ditemukan di Tiongkok.",
-    "Bayangkan raksasa pemangsa berbulu!",
-    "Fakta keenam. Dinosaurus selain burung hilang sekitar 66 juta tahun lalu.",
-    "Manusia belum ada pada masa itu.",
-    "Kita hanya mengenal mereka lewat fosil.",
-    "Hebat, kan?",
-    "Sekarang kuis! Hewan apa di halaman rumahmu yang keluarga dinosaurus?",
-    "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
-    "Subscribe GlitchPlayClips buat fakta seru lainnya!",
-    "Siapa tahu, kamu bertemu keluarga dinosaurus hari ini!"
-   ],
-   "teks_layar": [
-    {
-     "t": "0:00",
-     "teks": "BURUNG ITU DINOSAURUS!",
-     "visual": "burung"
-    },
-    {
-     "t": "0:03",
-     "teks": "KELUARGA DINOSAURUS",
-     "visual": "ayam"
-    },
-    {
-     "t": "0:06",
-     "teks": "6 FAKTA SERU",
-     "visual": "angka 6"
-    },
-    {
-     "t": "0:09",
-     "teks": "#1 BURUNG KETURUNAN DINO",
-     "visual": "burung"
-    },
-    {
-     "t": "0:19",
-     "teks": "#2 NAMA DARI RICHARD OWEN",
-     "visual": "nama"
-    },
-    {
-     "t": "0:28",
-     "teks": "KADAL SANGAT BESAR",
-     "visual": "kadal"
-    },
-    {
-     "t": "0:31",
-     "teks": "#3 SEKITAR 30 METER",
-     "visual": "Argentinosaurus"
-    },
-    {
-     "t": "0:43",
-     "teks": "MASIH PERKIRAAN",
-     "visual": "tulang"
-    },
-    {
-     "t": "0:47",
-     "teks": "#4 BANYAK DINO BERBULU",
-     "visual": "fosil bulu"
-    },
-    {
-     "t": "0:50",
-     "teks": "20+ JENIS BERBULU",
-     "visual": "fosil"
-    },
-    {
-     "t": "0:57",
-     "teks": "#5 YUTYRANNUS BERBULU",
-     "visual": "Yutyrannus"
-    },
-    {
-     "t": "1:03",
-     "teks": "DITEMUKAN DI TIONGKOK",
-     "visual": "peta"
-    },
-    {
-     "t": "1:07",
-     "teks": "#6 HILANG 66 JUTA TAHUN",
-     "visual": "fosil"
-    },
-    {
-     "t": "1:19",
-     "teks": "HEBAT, KAN?",
-     "visual": "anak kagum"
-    },
-    {
-     "t": "1:20",
-     "teks": "KUIS: HEWAN KELUARGA DINO",
-     "visual": "tanda tanya"
-    },
-    {
-     "t": "1:24",
-     "teks": "JAWAB DALAM HATI",
-     "visual": "anak berpikir"
-    },
-    {
-     "t": "1:28",
-     "teks": "SUBSCRIBE!",
-     "visual": "tombol subscribe"
-    }
-   ],
-   "adegan": [
-    {
-     "kalimat": 0,
-     "prompt": "A colorful rooster standing in a farmyard at sunrise, close-up, warm light"
-    },
-    {
-     "kalimat": 3,
-     "prompt": "A small bird perched on a branch with detailed feathers, macro photo, soft light"
-    },
-    {
-     "kalimat": 6,
-     "prompt": "Old museum display with a big dinosaur skeleton in a bright hall, wide angle, no text"
-    },
-    {
-     "kalimat": 9,
-     "prompt": "Huge long-necked dinosaur walking through a prehistoric forest, realistic, misty morning",
-     "3d": "dinosaurus"
-    },
-    {
-     "kalimat": 13,
-     "prompt": "Paleontologists brushing a big fossil bone at a dry dig site, sunny desert, anonymous people from far"
-    },
-    {
-     "kalimat": 14,
-     "prompt": "A fossil of a dinosaur with feather impressions in grey rock, museum photo, soft light"
-    },
-    {
-     "kalimat": 17,
-     "prompt": "A fluffy feathered dinosaur standing in a green forest, realistic nature photo style",
-     "3d": "alam"
-    },
-    {
-     "kalimat": 21,
-     "prompt": "A prehistoric landscape with dinosaurs silhouettes under a big orange sunset",
-     "3d": "dinosaurus"
-    },
-    {
-     "kalimat": 25,
-     "prompt": "A pigeon walking on a sunny garden path, close-up, soft background",
-     "3d": "alam"
-    }
-   ],
-   "caption": "6 fakta seru dinosaurus! Ternyata burung itu keluarga dinosaurus 🦖",
-   "hashtags": [
-    "#faktaseru",
-    "#dinosaurus",
-    "#belajarsains"
-   ],
-   "youtube": {
-    "judul": "Ternyata Burung Itu Dinosaurus! 6 Fakta Seru Dinosaurus 🦖 #Shorts",
-    "deskripsi": "Tahukah kamu? Burung adalah dinosaurus yang masih hidup sampai sekarang! Yuk kenalan dengan 6 fakta seru dinosaurus di video ini.\n\n🦖 Fakta di video:\n1. Burung adalah keturunan dinosaurus pemakan daging\n2. Richard Owen membuat nama dinosaurus tahun 1842\n3. Argentinosaurus panjangnya sekitar 30 meter (perkiraan)\n4. Banyak dinosaurus punya bulu\n5. Yutyrannus, kerabat T-Rex, berbulu\n6. Dinosaurus selain burung hilang sekitar 66 juta tahun lalu\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: Natural History Museum London, Britannica, Australian Museum, AMNH, National Geographic",
-    "tags": [
-     "fakta seru",
-     "fakta unik anak",
-     "dinosaurus",
-     "fakta dinosaurus",
-     "burung dinosaurus",
-     "fosil",
-     "sains anak",
-     "edukasi anak",
-     "belajar sains",
-     "shorts"
-    ],
-    "made_for_kids": true
-   },
-   "sumber": [
-    {
-     "nama": "Natural History Museum London",
-     "url": "https://www.nhm.ac.uk/discover/how-dinosaurs-got-their-name.html"
-    },
-    {
-     "nama": "Britannica Kids - Dinosaur",
-     "url": "https://kids.britannica.com/students/article/dinosaur/274008"
-    },
-    {
-     "nama": "Australian Museum",
-     "url": "https://australian.museum/learn/dinosaurs/"
-    },
-    {
-     "nama": "Britannica - Feathered dinosaur",
-     "url": "https://www.britannica.com/animal/feathered-dinosaur"
-    },
-    {
-     "nama": "National Geographic",
-     "url": "https://www.nationalgeographic.com/history/article/140724-feathered-siberia-dinosaur-scales-science"
-    },
-    {
-     "nama": "Wikipedia - Argentinosaurus",
-     "url": "https://en.wikipedia.org/wiki/Argentinosaurus"
-    },
-    {
-     "nama": "HowStuffWorks - Argentinosaurus",
-     "url": "https://animals.howstuffworks.com/dinosaurs/argentinosaurus.htm"
-    },
-    {
-     "nama": "American Museum of Natural History",
-     "url": "https://www.amnh.org/dinosaurs/dinosaur-facts"
-    }
-   ]
-  }
- ]
+  ]
 }
