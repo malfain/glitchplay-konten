@@ -1209,6 +1209,41 @@ def word_timings(subs, spans):
     return words
 
 
+MASKOT_DIR = ROOT / "assets" / "maskot"
+
+
+LOGO_DIR = ROOT / "assets" / "logo"
+
+
+def png_sequence(src, dst_name):
+    """Copy an OpenToonz PNG sequence (sorted file names; optional fps.txt, default 24) into Remotion's public folder."""
+    pngs = sorted(src.glob("*.png")) if src.is_dir() else []
+    if not pngs:
+        return None
+    dst = REMOTION / "public" / dst_name
+    shutil.rmtree(dst, ignore_errors=True)
+    dst.mkdir(parents=True)
+    names = []
+    for n, f in enumerate(pngs):
+        shutil.copy(f, dst / f"{n:04d}.png")
+        names.append(f"{dst_name}/{n:04d}.png")
+    fps_file = src / "fps.txt"
+    return {"frames": names, "fps": float(fps_file.read_text().strip()) if fps_file.exists() else 24.0}
+
+
+def logo_frames():
+    """Animated channel logo: assets/logo/glitchplayclips/ (Instagram + YouTube anak) or assets/logo/glitchplay/ (sirah)."""
+    return png_sequence(LOGO_DIR / ("glitchplay" if CH["theme"] == "sirah" else "glitchplayclips"), f"_logo/{CH['theme']}")
+
+
+def maskot_frames():
+    """Character drawn in OpenToonz: assets/maskot/<theme>/ holds a PNG sequence with transparency (any names, sorted;
+    optional fps.txt, default 24). Copied into Remotion's public folder; none for the sirah channel or if empty."""
+    if CH["theme"] == "sirah":
+        return None
+    return png_sequence(MASKOT_DIR / CH["theme"], f"_maskot/{CH['theme']}")
+
+
 def hook_text(item):
     """Big opening card: the writer's `hook_layar`, else the first on-screen card (emoji stripped), max 6 words."""
     t = (item.get("hook_layar") or "").strip()
@@ -1372,6 +1407,8 @@ def render_item_photo(item, idx, date, outdir, tmp):
     props = {"theme": CH["theme"], "handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
              "label": label, "hook": hook_text(item), "episode": item.get("episode"),
              "scenes": scenes, "words": words}
+    props["maskot"] = maskot_frames()
+    props["logo"] = logo_frames()
     props = {k: v for k, v in props.items() if v is not None}  # optional fields (hook, episode) must be absent, not null
     pfile = tmp / "props.json"
     pfile.write_text(json.dumps(props, ensure_ascii=False), encoding="utf-8")

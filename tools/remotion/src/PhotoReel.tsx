@@ -19,6 +19,10 @@ export const photoReelSchema = z.object({
   label: z.string().optional(),
   hook: z.string().optional(),
   episode: z.number().optional(),
+  // character drawn in OpenToonz, exported as a PNG sequence with transparency (tools/render_video.py fills this)
+  maskot: z.object({ frames: z.array(z.string()), fps: z.number() }).optional(),
+  // animated channel logo from OpenToonz (PNG sequence): loops in the corner badge, plays big as a 2 s outro
+  logo: z.object({ frames: z.array(z.string()), fps: z.number() }).optional(),
 });
 export type PhotoReelProps = z.infer<typeof photoReelSchema>;
 
@@ -30,7 +34,7 @@ const ACCENT = { kids: "#ffd23f", glitch: "#c6f02c", sirah: "#e9b949" } as const
 
 const HOOK_END = 1.9; // the big hook card covers the first ~2 s (the scroll-stopping moment)
 
-export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, total, scenes, words, label, hook, episode }) => {
+export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, total, scenes, words, label, hook, episode, maskot, logo }) => {
   const th = theme ?? "kids";
   applyTheme(th);
   const accent = ACCENT[th];
@@ -68,8 +72,14 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
       <Sequence name="teks" from={hook ? Math.round(HOOK_END * fps) : 0}>
         <Captions words={words} accent={accent} offset={hook ? HOOK_END : 0} />
       </Sequence>
+      {maskot && maskot.frames.length ? <Maskot frames={maskot.frames} fps={maskot.fps} /> : null}
+      {logo && logo.frames.length ? (
+        <Sequence name="outro logo" from={Math.max(0, Math.round((total - OUTRO) * fps))}>
+          <Outro frames={logo.frames} fps={logo.fps} />
+        </Sequence>
+      ) : null}
       <Progress total={total} accent={accent} />
-      <Badge handle={handle} avatar={avatar ?? null} accent={accent} episode={episode} />
+      <Badge handle={handle} avatar={avatar ?? null} accent={accent} episode={episode} logo={logo} />
       <div style={{ position: "absolute", left: 70, top: 1400, font: `600 26px ${F.sans}`, color: "rgba(255,255,255,.75)" }}>
         {label ?? "Gambar dibuat dengan AI"}
       </div>
@@ -142,7 +152,7 @@ const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string; offse
   );
 };
 
-const Badge: React.FC<{ handle: string; avatar: string | null; accent: string; episode?: number }> = ({ handle, avatar, accent, episode }) => (
+const Badge: React.FC<{ handle: string; avatar: string | null; accent: string; episode?: number; logo?: PhotoReelProps["logo"] }> = ({ handle, avatar, accent, episode, logo }) => (
   <div
     style={{
       position: "absolute", left: 70, top: 240, display: "flex", alignItems: "center", gap: 12, padding: "6px 20px 6px 6px",
@@ -150,7 +160,11 @@ const Badge: React.FC<{ handle: string; avatar: string | null; accent: string; e
       font: `700 28px ${F.sans}`,
     }}
   >
-    {avatar ? <Img src={staticFile(avatar)} style={{ width: 48, height: 48, borderRadius: "50%", border: `2px solid ${accent}` }} /> : null}
+    {logo && logo.frames.length ? (
+      <LogoLoop frames={logo.frames} fps={logo.fps} size={64} />
+    ) : avatar ? (
+      <Img src={staticFile(avatar)} style={{ width: 48, height: 48, borderRadius: "50%", border: `2px solid ${accent}` }} />
+    ) : null}
     {handle}
     {episode ? <span style={{ marginLeft: 4, padding: "2px 12px", borderRadius: 999, background: accent, color: "#111", fontSize: 24 }}>Eps {episode}</span> : null}
   </div>
@@ -215,6 +229,49 @@ const Nur: React.FC = () => {
           filter: "blur(6px)",
         }}
       />
+    </AbsoluteFill>
+  );
+};
+
+// OpenToonz character: loops its own drawn frames at its own frame rate, pops in after the hook, bobs gently.
+const Maskot: React.FC<{ frames: string[]; fps: number }> = ({ frames, fps: animFps }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = frame / fps;
+  const i = Math.floor(t * animFps) % frames.length;
+  const pop = interpolate(t, [HOOK_END, HOOK_END + 0.35], [0, 1], { ...clamp, easing: Easing.out(Easing.back(1.8)) });
+  return (
+    <div
+      style={{
+        position: "absolute", right: 150, top: 1030, width: 360, height: 360, scale: String(pop),
+        translate: `0 ${Math.sin(t * 2.4) * 10}px`, transformOrigin: "bottom center",
+        filter: "drop-shadow(0 14px 18px rgba(0,0,0,.45))",
+      }}
+    >
+      <Img src={staticFile(frames[i])} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+    </div>
+  );
+};
+
+const OUTRO = 2; // seconds of big logo at the end
+
+const LogoLoop: React.FC<{ frames: string[]; fps: number; size: number; once?: boolean }> = ({ frames, fps: animFps, size, once }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const n = Math.floor((frame / fps) * animFps);
+  const i = once ? Math.min(n, frames.length - 1) : n % frames.length;
+  return <Img src={staticFile(frames[i])} style={{ width: size, height: size, objectFit: "contain" }} />;
+};
+
+// Outro: the channel logo animation plays once, big, over a darkened frame.
+const Outro: React.FC<{ frames: string[]; fps: number }> = ({ frames, fps }) => {
+  const frame = useCurrentFrame();
+  const { fps: vfps } = useVideoConfig();
+  const t = frame / vfps;
+  const fade = interpolate(t, [0, 0.3], [0, 1], clamp);
+  return (
+    <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", background: `rgba(0,0,0,${0.55 * fade})`, opacity: fade }}>
+      <LogoLoop frames={frames} fps={fps} size={620} once />
     </AbsoluteFill>
   );
 };
