@@ -56,12 +56,27 @@
       "t": "2026-11-25T04:07:23+07:00"
     },
     "asisten": {
-      "status": "kerja",
-      "aktivitas": "Render 2 video untuk 2026-11-25",
-      "t": "2026-11-25T04:08:52+07:00"
+      "status": "selesai",
+      "aktivitas": "2/2 video jadi, siap di Hasil",
+      "t": "2026-11-25T04:22:15+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-25T04:22:15+07:00",
+      "agen": "asisten",
+      "pesan": "2/2 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-25T04:15:43+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 2/2: Eps 6: Diasuh kakek Abdul Muththal"
+    },
+    {
+      "t": "2026-11-25T04:08:54+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 1/2: Eps 5: Wafatnya ibunda Aminah di A"
+    },
     {
       "t": "2026-11-25T04:08:52+07:00",
       "agen": "asisten",
@@ -346,23 +361,8 @@
       "t": "2026-11-24T04:06:58+07:00",
       "agen": "bos",
       "pesan": "[Sirah] Shift selesai"
-    },
-    {
-      "t": "2026-11-24T04:06:58+07:00",
-      "agen": "qc",
-      "pesan": "[Sirah] 2 episode terbit di Hasil"
-    },
-    {
-      "t": "2026-11-24T04:06:58+07:00",
-      "agen": "copywriter",
-      "pesan": "[Sirah] Caption dan tag siap"
-    },
-    {
-      "t": "2026-11-24T04:06:58+07:00",
-      "agen": "narator",
-      "pesan": "[Sirah] Naskah Eps 3 dan 4 siap"
     }
   ],
-  "updated_at": "2026-11-25T04:08:52+07:00",
+  "updated_at": "2026-11-25T04:22:15+07:00",
   "kesimpulan_t": "2026-11-25T04:07:23+07:00"
 }
