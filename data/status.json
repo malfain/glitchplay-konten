@@ -57,12 +57,17 @@
       "t": "2026-11-26T04:07:10+07:00"
     },
     "asisten": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-25T06:06:27+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 2 video untuk 2026-11-26",
+      "t": "2026-11-26T04:09:04+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-26T04:09:04+07:00",
+      "agen": "asisten",
+      "pesan": "Render 2 video untuk 2026-11-26"
+    },
     {
       "t": "2026-11-26T04:07:10+07:00",
       "agen": "bos",
@@ -357,13 +362,8 @@
       "t": "2026-11-25T04:08:52+07:00",
       "agen": "asisten",
       "pesan": "Render 2 video untuk 2026-11-25"
-    },
-    {
-      "t": "2026-11-25T04:07:23+07:00",
-      "agen": "bos",
-      "pesan": "[Sirah] Shift selesai"
     }
   ],
-  "updated_at": "2026-11-26T04:07:10+07:00",
+  "updated_at": "2026-11-26T04:09:04+07:00",
   "kesimpulan_t": "2026-11-25T06:11:47+07:00"
 }
