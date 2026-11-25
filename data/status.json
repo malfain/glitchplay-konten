@@ -1,25 +1,25 @@
 {
   "run": {
     "date": "2026-11-26",
-    "status": "berjalan",
+    "status": "selesai",
     "started_at": "2026-11-26T06:06:09+07:00",
-    "finished_at": null
+    "finished_at": "2026-11-26T06:11:38+07:00"
   },
   "tasks": {
-    "antri": 10,
+    "antri": 0,
     "jalan": 0,
-    "kelar": 0
+    "kelar": 10
   },
   "kesimpulan_bos": [
-    "10 konten: 5 game (patch GTA VI, Genshin 7.2 fase 2, Bread & Fred gratis, Steam Winter Sale, Game Pass Desember) + 5 esports/streamer (PMGC, ONIC di Delta Force, Kushy RRQ, Tara Arts, Predator League).",
-    "Urutan posting: GTA VI patch 12:00, PMGC 19:30 (Gauntlet mulai 26 Nov), ONIC 17:00; Bread & Fred pagi sebelum gratis 26 Nov.",
-    "Catatan: berita lagi sepi pasca-GTA VI; Tara Arts dan Predator League sudah >48 jam (skor rendah). Kushy cuma 2 sumber, status belum final."
+    "10 konten terbit: 8 game + 2 esports (berita esports/streamer Indonesia baru tipis, topik lain sudah dipakai 14 hari terakhir)",
+    "Urutan posting: portal GTA VI 12:00, Call of Duty vs GTA VI 19:30, MLBB x Avatar 21:00, lalu sisanya sesuai jam_posting",
+    "Catatan: klaim portal GTA VI dan angka CoD adalah temuan pemain/estimasi pihak ketiga, sudah dilabeli di naskah"
   ],
   "agents": {
     "bos": {
-      "status": "kerja",
-      "aktivitas": "Buka shift, bagi tugas ke tim",
-      "t": "2026-11-26T06:06:09+07:00"
+      "status": "selesai",
+      "aktivitas": "Shift selesai",
+      "t": "2026-11-26T06:11:38+07:00"
     },
     "radar": {
       "status": "selesai",
@@ -42,9 +42,9 @@
       "t": "2026-11-26T06:11:32+07:00"
     },
     "qc": {
-      "status": "kerja",
-      "aktivitas": "Cek aturan, terbitkan JSON",
-      "t": "2026-11-26T06:11:32+07:00"
+      "status": "selesai",
+      "aktivitas": "10 konten terbit di Hasil",
+      "t": "2026-11-26T06:11:38+07:00"
     },
     "studio": {
       "status": "idle",
@@ -63,6 +63,21 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-26T06:11:38+07:00",
+      "agen": "bos",
+      "pesan": "Shift selesai. Semua hasil sudah di menu Hasil."
+    },
+    {
+      "t": "2026-11-26T06:11:38+07:00",
+      "agen": "bos",
+      "pesan": "Shift selesai"
+    },
+    {
+      "t": "2026-11-26T06:11:38+07:00",
+      "agen": "qc",
+      "pesan": "10 konten terbit di Hasil"
+    },
     {
       "t": "2026-11-26T06:11:32+07:00",
       "agen": "qc",
@@ -347,23 +362,8 @@
       "t": "2026-11-25T06:11:40+07:00",
       "agen": "qc",
       "pesan": "Cek aturan & validasi JSON"
-    },
-    {
-      "t": "2026-11-25T06:11:40+07:00",
-      "agen": "copywriter",
-      "pesan": "10 caption siap"
-    },
-    {
-      "t": "2026-11-25T06:11:38+07:00",
-      "agen": "copywriter",
-      "pesan": "Menulis caption & hashtag"
-    },
-    {
-      "t": "2026-11-25T06:11:38+07:00",
-      "agen": "narator",
-      "pesan": "10 naskah & adegan siap"
     }
   ],
-  "updated_at": "2026-11-26T06:11:32+07:00",
-  "kesimpulan_t": "2026-11-25T06:11:47+07:00"
+  "updated_at": "2026-11-26T06:11:38+07:00",
+  "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
