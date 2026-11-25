@@ -127,6 +127,23 @@ const TEX = {
       }
     }
   }, { repeat: [4, 1] }),
+  // light terrazzo (bright office floor): pale base, fine grey/beige chips, faint tile seams every 1.2 m
+  terrazzo: canvasTex(512, 512, (x, w, h) => {
+    x.fillStyle = '#eeebe6';
+    x.fillRect(0, 0, w, h);
+    const R = rng(41);
+    const chips = ['#d9d4cc', '#c9c3ba', '#f7f5f1', '#bdb6ab', '#e2d7c6'];
+    for (let i = 0; i < 2600; i++) {
+      x.fillStyle = chips[Math.floor(R() * chips.length)];
+      const s = 1 + R() * 3.2;
+      x.beginPath();
+      x.ellipse(R() * w, R() * h, s, s * (0.5 + R() * 0.5), R() * 3, 0, Math.PI * 2);
+      x.fill();
+    }
+    x.fillStyle = 'rgba(120,110,98,0.16)';
+    x.fillRect(0, 0, w, 1.5);
+    x.fillRect(0, 0, 1.5, h);
+  }, { repeat: [1, 1] }),
 };
 
 // ---------------------------------------------------------------- materials
@@ -194,6 +211,14 @@ export const MAT = {
   leafSnake2: leafMat('#2f5229', 0.5),
   stem: std('#5d4a33', 0.8),
   pendant: std('#1d1e21', 0.45, 0.6, { side: THREE.DoubleSide }),
+  terrazzo: std('#ffffff', 0.62, 0, { map: TEX.terrazzo }),
+  leafTree: leafMat('#6a9a4c', 0.62),
+  leafTree2: leafMat('#4f8240', 0.62),
+  screenOff: std('#1b2230', 0.18, 0.2),
+  ledGreen: new THREE.MeshBasicMaterial({ color: '#3dff8a', toneMapped: false }),
+  ledAmber: new THREE.MeshBasicMaterial({ color: '#ffb020', toneMapped: false }),
+  ledBlue: new THREE.MeshBasicMaterial({ color: '#7dd3fc', toneMapped: false }),
+  tvScreen: new THREE.MeshBasicMaterial({ color: '#2b3a52', toneMapped: false }),
 };
 const BOOKS = ['#1f3a5f', '#e9e1cf', '#9c3d2e', '#2f5d4a', '#c9a227', '#3d3d3f', '#7a8a99', '#b9663f', '#5b4a6b'];
 // small coloured props share these two vertex-coloured materials (see paint) so they merge into one draw each
@@ -577,7 +602,7 @@ let _glowGeo = null;
  * Work desk: wooden top on a black steel sled frame, drawer pedestal, slim monitor on an aluminium stand (live canvas),
  * keyboard, mouse, mug, notebooks, desk lamp … and an ergonomic chair. Front (person side) is +z.
  */
-export function makeDesk({ accent, bos = false, deco = 0 }) {
+export function makeDesk({ accent, bos = false, deco = 0, live = true }) {
   const g = new THREE.Group();
   const W = bos ? 1.8 : 1.5;
   const D = bos ? 0.85 : 0.75;
@@ -606,17 +631,21 @@ export function makeDesk({ accent, bos = false, deco = 0 }) {
   mon.add(neck);
   mon.add(box(0.64, 0.385, 0.02, MAT.bezel, 0, 0.36, -0.018));
   mon.add(box(0.32, 0.2, 0.03, MAT.bezel, 0, 0.34, -0.04));
-  const screen = new MonitorScreen(accent);
-  const screenMesh = new THREE.Mesh((_screenGeo ||= new THREE.PlaneGeometry(0.61, 0.355)), screen.material);
+  // live desks get a canvas screen + glow; spare (hot) desks a dark static panel that merges with the room
+  const screen = live ? new MonitorScreen(accent) : null;
+  const screenMesh = new THREE.Mesh((_screenGeo ||= new THREE.PlaneGeometry(0.61, 0.355)), live ? screen.material : MAT.screenOff);
   screenMesh.position.set(0, 0.367, -0.0075);
-  screenMesh.userData.keep = true;
+  screenMesh.userData.keep = live;
   mon.add(screenMesh);
-  // soft screen-light spill on the desk top (shown while working)
-  const glow = new THREE.Mesh((_glowGeo ||= new THREE.PlaneGeometry(1.1, 0.55)), new THREE.MeshBasicMaterial({ color: accent, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending }));
-  glow.rotation.x = -Math.PI / 2;
-  glow.position.set(0, 0.002, 0.3);
-  glow.userData.keep = true;
-  mon.add(glow);
+  let glow = null;
+  if (live) {
+    // soft screen-light spill on the desk top (shown while working)
+    glow = new THREE.Mesh((_glowGeo ||= new THREE.PlaneGeometry(1.1, 0.55)), new THREE.MeshBasicMaterial({ color: accent, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending }));
+    glow.rotation.x = -Math.PI / 2;
+    glow.position.set(0, 0.002, 0.3);
+    glow.userData.keep = true;
+    mon.add(glow);
+  }
   g.add(mon);
 
   // keyboard, mouse + pad
@@ -1301,4 +1330,198 @@ export function makeHeadphones(accent = '#1d1e21') {
     g.add(cup);
   }
   return g;
+}
+
+// ---------------------------------------------------------------- floor-plan pieces (meeting rooms, core, booths, server, terrace)
+/** meeting table: oak top on a black steel frame with side chairs around (perSide per long side, optional end chairs) */
+export function makeMeetingTable(len, depth, perSide, { ends = true } = {}) {
+  const g = new THREE.Group();
+  g.add(rbox(len, 0.04, depth, 0.012, MAT.oak, 0, 0.74, 0));
+  for (const sx of [-1, 1]) {
+    g.add(box(0.06, 0.72, depth - 0.2, MAT.metal, sx * (len / 2 - 0.25), 0.36, 0));
+    g.add(box(0.12, 0.02, depth - 0.1, MAT.metal, sx * (len / 2 - 0.25), 0.01, 0));
+  }
+  g.add(box(len - 0.5, 0.05, 0.05, MAT.metal, 0, 0.68, 0));
+  // cable box + a few notebooks / laptop
+  g.add(box(0.3, 0.012, 0.12, MAT.alu, 0, 0.766, 0, false));
+  g.add(rbox(0.32, 0.016, 0.22, 0.006, MAT.alu, -len / 4, 0.768, 0.1, false));
+  g.add(pbox(0.21, 0.012, 0.29, BOOKS[0], len / 4, 0.766, -0.1, false));
+  const add = (x, z, ry) => {
+    const c = makeSideChair();
+    c.position.set(x, 0, z);
+    c.rotation.y = ry;
+    g.add(c);
+  };
+  const step = len / perSide;
+  for (let i = 0; i < perSide; i++) {
+    const x = -len / 2 + step * (i + 0.5);
+    add(x, -depth / 2 - 0.36, 0);
+    add(x, depth / 2 + 0.36, Math.PI);
+  }
+  if (ends) {
+    add(-len / 2 - 0.4, 0, Math.PI / 2);
+    add(len / 2 + 0.4, 0, -Math.PI / 2);
+  }
+  return g;
+}
+
+/** round café table (white top, steel pedestal) with `chairs` oak stools at radius r + 0.42 */
+export function makeRoundTable(r = 0.6, chairs = 4) {
+  const g = new THREE.Group();
+  g.add(cyl(r, r, 0.035, MAT.quartz, 0, 0.74, 0, 28));
+  g.add(cyl(0.04, 0.04, 0.72, MAT.metal, 0, 0.37, 0, 10));
+  g.add(cyl(0.26, 0.28, 0.025, MAT.metal, 0, 0.0125, 0, 20));
+  g.add(cyl(0.04, 0.036, 0.1, MAT.ceramic, 0.18, 0.81, -0.1, 12, false));
+  for (let i = 0; i < chairs; i++) {
+    const a = (i / chairs) * Math.PI * 2 + Math.PI / 4;
+    const d = r + 0.42;
+    const x = Math.cos(a) * d;
+    const z = Math.sin(a) * d;
+    g.add(cyl(0.19, 0.19, 0.045, MAT.oak, x, 0.46, z, 18));
+    g.add(cyl(0.022, 0.022, 0.44, MAT.metal, x, 0.22, z, 6));
+    g.add(cyl(0.16, 0.17, 0.015, MAT.metal, x, 0.008, z, 14, false));
+  }
+  return g;
+}
+
+/** backless terrace bench: oak slats on two concrete blocks (long side along x) */
+export function makeBench(len = 2.2) {
+  const g = new THREE.Group();
+  for (let i = 0; i < 4; i++) g.add(box(len, 0.045, 0.12, MAT.oak, 0, 0.45, -0.21 + i * 0.14));
+  for (const x of [-len / 2 + 0.25, len / 2 - 0.25]) g.add(box(0.16, 0.43, 0.5, MAT.concrete, x, 0.215, 0));
+  return g;
+}
+
+/** dark upholstered waiting bench by the lift core (long side along x, seat both sides) */
+export function makeLoungeBench(len = 2.4) {
+  const g = new THREE.Group();
+  g.add(rbox(len, 0.16, 0.62, 0.05, MAT.leather, 0, 0.38, 0));
+  g.add(box(len - 0.2, 0.3, 0.5, MAT.dark, 0, 0.15, 0));
+  return g;
+}
+
+/** glass phone booth (1.5 × 1.5 m) open on +z: frosted panes in thin black frames, oak shelf at the back + stool */
+export function makeBooth() {
+  const g = new THREE.Group();
+  const w = 1.5;
+  const h = 2.15;
+  g.add(box(w, 0.03, w, MAT.quartz, 0, 0.015, 0, false));
+  for (const [x, z, ry] of [[0, -w / 2, 0], [-w / 2, 0, Math.PI / 2], [w / 2, 0, Math.PI / 2]]) {
+    const p = box(w, h - 0.06, 0.012, MAT.glass, x, h / 2, z, false);
+    p.rotation.y = ry;
+    g.add(p);
+    const band = box(w, 0.09, 0.016, MAT.frost, x, 1.1, z, false);
+    band.rotation.y = ry;
+    g.add(band);
+  }
+  for (const [x, z] of [[-w / 2, -w / 2], [w / 2, -w / 2], [-w / 2, w / 2], [w / 2, w / 2]]) g.add(box(0.05, h, 0.05, MAT.metal, x, h / 2, z));
+  // open top (cut-away): just a slim frame so the person inside stays visible
+  for (const s of [-1, 1]) {
+    g.add(box(w + 0.05, 0.05, 0.05, MAT.metal, 0, h, s * w / 2));
+    g.add(box(0.05, 0.05, w + 0.05, MAT.metal, s * w / 2, h, 0));
+  }
+  g.add(box(0.95, 0.04, 0.34, MAT.oak, 0, 1.0, -w / 2 + 0.19));
+  g.add(cyl(0.19, 0.19, 0.05, MAT.chairFabric, 0, 0.5, -0.05, 16));
+  g.add(cyl(0.025, 0.025, 0.48, MAT.alu, 0, 0.25, -0.05, 6));
+  g.add(cyl(0.17, 0.18, 0.015, MAT.metal, 0, 0.008, -0.05, 14, false));
+  return g;
+}
+
+/** teak slat screen (long side along x) */
+export function makeSlatScreen(len, h = 2.0) {
+  const g = new THREE.Group();
+  g.add(box(len, 0.05, 0.12, MAT.walnut, 0, h, 0, false));
+  g.add(box(len, 0.05, 0.12, MAT.walnut, 0, 0.025, 0, false));
+  const n = Math.floor(len / 0.16);
+  for (let i = 0; i <= n; i++) g.add(box(0.05, h, 0.09, i % 2 ? MAT.oak : MAT.walnut, -len / 2 + (i * len) / n, h / 2, 0));
+  return g;
+}
+
+/** wall TV (origin at the wall, screen faces +z) */
+export function makeTV() {
+  const g = new THREE.Group();
+  g.add(box(1.6, 0.92, 0.05, MAT.bezel, 0, 1.45, 0.025, false));
+  const s = box(1.54, 0.86, 0.004, MAT.tvScreen, 0, 1.45, 0.052, false);
+  g.add(s);
+  return g;
+}
+
+/** brushed steel lift doors along local x (facing +z) with a little call-button light */
+export function makeLiftDoors(n, len) {
+  const g = new THREE.Group();
+  const step = len / n;
+  for (let i = 0; i < n; i++) {
+    const x = -len / 2 + step * (i + 0.5);
+    g.add(box(step * 0.72, 2.1, 0.05, MAT.dark, x, 1.05, 0, false));
+    g.add(box(step * 0.62, 2.0, 0.02, MAT.steel, x, 1.0, 0.03, false));
+    g.add(box(0.006, 2.0, 0.025, MAT.dark, x, 1.0, 0.032, false));
+    g.add(box(0.05, 0.08, 0.02, MAT.ledBlue, x + step * 0.42, 1.1, 0.03, false));
+  }
+  return g;
+}
+
+/** 42U server rack: dark cabinet, perforated front, rows of blinking-look LEDs (front +z) */
+export function makeRack() {
+  const g = new THREE.Group();
+  g.add(box(0.6, 2.0, 1.0, MAT.dark, 0, 1.0, 0));
+  const front = plane(0.52, 1.85, MAT.chairMesh);
+  front.position.set(0, 1.0, 0.502);
+  g.add(front);
+  for (let r = 0; r < 9; r++) {
+    const y = 0.25 + r * 0.19;
+    g.add(box(0.5, 0.012, 0.01, MAT.alu, 0, y + 0.07, 0.51, false));
+    g.add(box(0.03, 0.02, 0.01, r % 3 === 2 ? MAT.ledAmber : MAT.ledGreen, -0.2, y, 0.512, false));
+    g.add(box(0.03, 0.02, 0.01, MAT.ledGreen, -0.15, y, 0.512, false));
+  }
+  return g;
+}
+
+/** round tree in a concrete planter (terrace / open plan) */
+export function makeTree(scale = 1, seed = 1) {
+  const g = new THREE.Group();
+  const R = rng(seed * 31 + 7);
+  g.add(cyl(0.5, 0.44, 0.42, MAT.concrete, 0, 0.21, 0, 22));
+  g.add(cyl(0.46, 0.46, 0.02, MAT.soil, 0, 0.415, 0, 18, false));
+  const top = 1.5 + R() * 0.4;
+  g.add(rod(new THREE.Vector3(0, 0.42, 0), new THREE.Vector3(0.03, top, 0.02), 0.045, MAT.stem, 7));
+  const blob = cg('treeBlob', () => new THREE.IcosahedronGeometry(1, 2));
+  const n = 6;
+  for (let i = 0; i < n; i++) {
+    const a = i * 2.39996 + R();
+    const rr = i === 0 ? 0 : 0.28 + R() * 0.12;
+    const m = mk(blob, i % 2 ? MAT.leafTree : MAT.leafTree2, Math.cos(a) * rr, top + 0.15 + (i === 0 ? 0.35 : R() * 0.35), Math.sin(a) * rr);
+    m.scale.setScalar(i === 0 ? 0.62 : 0.4 + R() * 0.12);
+    g.add(m);
+  }
+  g.scale.setScalar(scale);
+  return g;
+}
+
+/** bean bag */
+export function makeBeanbag(color = '#e0892e') {
+  const g = new THREE.Group();
+  const m = mk(cg('bean', () => new THREE.SphereGeometry(0.5, 18, 12)), std(color, 0.95, 0, { map: TEX.fabric }), 0, 0.27, 0);
+  m.scale.set(1, 0.58, 1);
+  g.add(m);
+  return g;
+}
+
+/** standing whiteboard on a steel frame (board faces +z) */
+export function makeBoardStand(accent) {
+  const g = new THREE.Group();
+  const wb = makeWhiteboard(accent);
+  wb.position.y = 1.35;
+  g.add(wb);
+  for (const x of [-0.95, 0.95]) {
+    g.add(box(0.04, 1.9, 0.04, MAT.metal, x, 0.95, 0));
+    g.add(box(0.06, 0.03, 0.5, MAT.metal, x, 0.015, 0));
+  }
+  return g;
+}
+
+/** tinted flat floor (zone) material, cached per colour */
+const zoneCache = new Map();
+export function zoneMat(color, roughness = 0.8) {
+  if (!zoneCache.has(color)) zoneCache.set(color, std(color, roughness, 0, { polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1 }));
+  return zoneCache.get(color);
 }
