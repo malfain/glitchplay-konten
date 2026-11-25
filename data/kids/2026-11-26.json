@@ -248,7 +248,11 @@
           "3d": "laut",
           "prompt": "Blue whale underwater with bubbles"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-26/kids-01-6-fakta-seru-paus-biru-lidah-seberat-gaj.mp4",
+      "poster": "video/kids/2026-11-26/01-6-fakta-seru-paus-biru-lidah-seberat-gaj.jpg",
+      "video_durasi": 98.2,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     },
     {
       "kategori": "Luar Angkasa",
@@ -501,7 +505,11 @@
           "3d": "bumi",
           "prompt": "Planet Earth warmed by sunlight"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-26/kids-02-6-fakta-seru-matahari-muat-1-3-juta-bumi.mp4",
+      "poster": "video/kids/2026-11-26/02-6-fakta-seru-matahari-muat-1-3-juta-bumi.jpg",
+      "video_durasi": 99.8,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     }
   ]
 }
