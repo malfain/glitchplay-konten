@@ -17,14 +17,14 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "Shift selesai",
-      "t": "2026-11-25T06:11:47+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Buka shift, eps 7 & 8",
+      "t": "2026-11-26T04:05:33+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "24 kandidat ditemukan",
-      "t": "2026-11-25T06:09:57+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Riset eps 7: Syam & Bahira, eps 8: Al-Amin",
+      "t": "2026-11-26T04:05:34+07:00"
     },
     "detektif": {
       "status": "selesai",
@@ -63,6 +63,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-26T04:05:34+07:00",
+      "agen": "radar",
+      "pesan": "[Sirah] Riset eps 7: Syam & Bahira, eps 8: Al-Amin"
+    },
+    {
+      "t": "2026-11-26T04:05:33+07:00",
+      "agen": "bos",
+      "pesan": "[Sirah] Buka shift, eps 7 & 8"
+    },
     {
       "t": "2026-11-25T06:38:15+07:00",
       "agen": "studio",
@@ -352,18 +362,8 @@
       "t": "2026-11-25T04:05:58+07:00",
       "agen": "radar",
       "pesan": "[Sirah] Riset wafat Aminah & asuhan kakek"
-    },
-    {
-      "t": "2026-11-25T04:05:58+07:00",
-      "agen": "bos",
-      "pesan": "[Sirah] Buka shift, eps 5 dan 6"
-    },
-    {
-      "t": "2026-11-24T06:34:01+07:00",
-      "agen": "studio",
-      "pesan": "10/10 video jadi, siap di Hasil"
     }
   ],
-  "updated_at": "2026-11-25T06:38:15+07:00",
+  "updated_at": "2026-11-26T04:05:34+07:00",
   "kesimpulan_t": "2026-11-25T06:11:47+07:00"
 }
