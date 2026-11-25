@@ -47,9 +47,9 @@
       "t": "2026-11-26T06:11:38+07:00"
     },
     "studio": {
-      "status": "kerja",
-      "aktivitas": "Render 10 video untuk 2026-11-26",
-      "t": "2026-11-26T06:13:36+07:00"
+      "status": "selesai",
+      "aktivitas": "10/10 video jadi, siap di Hasil",
+      "t": "2026-11-26T06:31:22+07:00"
     },
     "strategist": {
       "status": "selesai",
@@ -63,6 +63,61 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-26T06:31:22+07:00",
+      "agen": "studio",
+      "pesan": "10/10 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-26T06:29:40+07:00",
+      "agen": "studio",
+      "pesan": "Render video 10/10: Timnas esports Indonesia pelatnas "
+    },
+    {
+      "t": "2026-11-26T06:28:07+07:00",
+      "agen": "studio",
+      "pesan": "Render video 9/10: Steam Black Friday 26 sampai 30 No"
+    },
+    {
+      "t": "2026-11-26T06:26:17+07:00",
+      "agen": "studio",
+      "pesan": "Render video 8/10: Cheat Roblox palsu Xeno Executor s"
+    },
+    {
+      "t": "2026-11-26T06:24:35+07:00",
+      "agen": "studio",
+      "pesan": "Render video 7/10: Switch 2 diskon di Amerika, di Ind"
+    },
+    {
+      "t": "2026-11-26T06:23:01+07:00",
+      "agen": "studio",
+      "pesan": "Render video 6/10: GTA VI nilai kritikus 99, skor pen"
+    },
+    {
+      "t": "2026-11-26T06:20:59+07:00",
+      "agen": "studio",
+      "pesan": "Render video 5/10: Zenless Zone Zero 3.4 rilis 2 Dese"
+    },
+    {
+      "t": "2026-11-26T06:19:07+07:00",
+      "agen": "studio",
+      "pesan": "Render video 4/10: 3 wakil Indonesia ke Last Chance Q"
+    },
+    {
+      "t": "2026-11-26T06:17:08+07:00",
+      "agen": "studio",
+      "pesan": "Render video 3/10: MLBB x Avatar: Friend Fest mulai 4"
+    },
+    {
+      "t": "2026-11-26T06:15:28+07:00",
+      "agen": "studio",
+      "pesan": "Render video 2/10: GTA VI bikin pemain Call of Duty t"
+    },
+    {
+      "t": "2026-11-26T06:13:38+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/10: GTA VI punya portal rahasia ke Vic"
+    },
     {
       "t": "2026-11-26T06:13:36+07:00",
       "agen": "studio",
@@ -307,63 +362,8 @@
       "t": "2026-11-25T06:33:45+07:00",
       "agen": "studio",
       "pesan": "Render video 8/10: Subathon GTA VI Tara Arts x GGWP 7"
-    },
-    {
-      "t": "2026-11-25T06:30:54+07:00",
-      "agen": "studio",
-      "pesan": "Render video 7/10: RRQ izinkan Kushy menjajaki opsi l"
-    },
-    {
-      "t": "2026-11-25T06:29:35+07:00",
-      "agen": "studio",
-      "pesan": "Render video 6/10: Steam Winter Sale 2026 mulai 17 De"
-    },
-    {
-      "t": "2026-11-25T06:25:12+07:00",
-      "agen": "studio",
-      "pesan": "Render video 5/10: Genshin 7.2 fase 2: Zibai dan Linn"
-    },
-    {
-      "t": "2026-11-25T06:23:26+07:00",
-      "agen": "studio",
-      "pesan": "Render video 4/10: Bread & Fred gratis di Epic Games "
-    },
-    {
-      "t": "2026-11-25T06:21:37+07:00",
-      "agen": "studio",
-      "pesan": "Render video 3/10: ONIC jadi wakil tunggal Indonesia "
-    },
-    {
-      "t": "2026-11-25T06:15:45+07:00",
-      "agen": "studio",
-      "pesan": "Render video 2/10: AK Gold wajib lewat Gauntlet, Bige"
-    },
-    {
-      "t": "2026-11-25T06:13:27+07:00",
-      "agen": "studio",
-      "pesan": "Render video 1/10: Patch pertama GTA VI rilis, 7 bug "
-    },
-    {
-      "t": "2026-11-25T06:13:26+07:00",
-      "agen": "studio",
-      "pesan": "Render 10 video untuk 2026-11-25"
-    },
-    {
-      "t": "2026-11-25T06:11:47+07:00",
-      "agen": "bos",
-      "pesan": "Shift selesai. Semua hasil sudah di menu Hasil."
-    },
-    {
-      "t": "2026-11-25T06:11:47+07:00",
-      "agen": "bos",
-      "pesan": "Shift selesai"
-    },
-    {
-      "t": "2026-11-25T06:11:47+07:00",
-      "agen": "qc",
-      "pesan": "10 konten terbit di Hasil"
     }
   ],
-  "updated_at": "2026-11-26T06:13:36+07:00",
+  "updated_at": "2026-11-26T06:31:22+07:00",
   "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
