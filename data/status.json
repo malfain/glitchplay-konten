@@ -17,9 +17,9 @@
   ],
   "agents": {
     "bos": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Buka shift anak, bagi tugas",
-      "t": "2026-11-26T05:08:52+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] Shift anak selesai",
+      "t": "2026-11-26T05:10:23+07:00"
     },
     "radar": {
       "status": "selesai",
@@ -32,19 +32,19 @@
       "t": "2026-11-26T05:09:42+07:00"
     },
     "narator": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Tulis naskah 2 video",
-      "t": "2026-11-26T05:09:42+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] 2 video siap",
+      "t": "2026-11-26T05:10:23+07:00"
     },
     "copywriter": {
       "status": "selesai",
-      "aktivitas": "[Sirah] Judul YT & caption siap",
-      "t": "2026-11-26T04:07:10+07:00"
+      "aktivitas": "[Anak] Judul & deskripsi YouTube siap",
+      "t": "2026-11-26T05:10:23+07:00"
     },
     "qc": {
       "status": "selesai",
-      "aktivitas": "[Sirah] 2 episode terbit (eps 7-8)",
-      "t": "2026-11-26T04:07:10+07:00"
+      "aktivitas": "[Anak] 2 konten anak terbit",
+      "t": "2026-11-26T05:10:23+07:00"
     },
     "studio": {
       "status": "selesai",
@@ -52,9 +52,9 @@
       "t": "2026-11-25T06:38:15+07:00"
     },
     "strategist": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Hook & jam posting",
-      "t": "2026-11-26T05:09:42+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] 2 video siap",
+      "t": "2026-11-26T05:10:23+07:00"
     },
     "asisten": {
       "status": "selesai",
@@ -63,6 +63,31 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-26T05:10:23+07:00",
+      "agen": "bos",
+      "pesan": "[Anak] Shift anak selesai"
+    },
+    {
+      "t": "2026-11-26T05:10:23+07:00",
+      "agen": "qc",
+      "pesan": "[Anak] 2 konten anak terbit"
+    },
+    {
+      "t": "2026-11-26T05:10:23+07:00",
+      "agen": "copywriter",
+      "pesan": "[Anak] Judul & deskripsi YouTube siap"
+    },
+    {
+      "t": "2026-11-26T05:10:23+07:00",
+      "agen": "narator",
+      "pesan": "[Anak] 2 video siap"
+    },
+    {
+      "t": "2026-11-26T05:10:23+07:00",
+      "agen": "strategist",
+      "pesan": "[Anak] 2 video siap"
+    },
     {
       "t": "2026-11-26T05:09:42+07:00",
       "agen": "narator",
@@ -337,33 +362,8 @@
       "t": "2026-11-25T05:11:30+07:00",
       "agen": "copywriter",
       "pesan": "[Anak] Metadata YouTube siap"
-    },
-    {
-      "t": "2026-11-25T05:11:30+07:00",
-      "agen": "copywriter",
-      "pesan": "[Anak] Judul & deskripsi YouTube"
-    },
-    {
-      "t": "2026-11-25T05:11:30+07:00",
-      "agen": "narator",
-      "pesan": "[Anak] 2 naskah selesai"
-    },
-    {
-      "t": "2026-11-25T05:11:15+07:00",
-      "agen": "narator",
-      "pesan": "[Anak] Tulis naskah & adegan"
-    },
-    {
-      "t": "2026-11-25T05:11:15+07:00",
-      "agen": "strategist",
-      "pesan": "[Anak] 2 topik, hook siap"
-    },
-    {
-      "t": "2026-11-25T05:10:03+07:00",
-      "agen": "strategist",
-      "pesan": "[Anak] Hook & jam posting"
     }
   ],
-  "updated_at": "2026-11-26T05:09:42+07:00",
+  "updated_at": "2026-11-26T05:10:23+07:00",
   "kesimpulan_t": "2026-11-25T06:11:47+07:00"
 }
