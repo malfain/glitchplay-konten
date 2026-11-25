@@ -404,6 +404,57 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
       { type: 'pose', name: pose, dur: 6 + Math.random() * 8, face },
     ], 'Santai di lounge');
   }
+  // ---------------------------------------------------------------- keep everyone where they were across page reloads
+  const SNAP_KEY = 'gp-hq-snap-v1';
+  let snap = null;
+  try {
+    const raw = JSON.parse(localStorage.getItem(SNAP_KEY) || 'null');
+    if (raw && Date.now() - raw.t < 30 * 60 * 1000) snap = raw.c; // older than 30 min: start fresh
+  } catch { snap = null; }
+  function saveSnap() {
+    try {
+      const c = {};
+      for (const [id, ch] of Object.entries(chars)) {
+        const p = ch.group.position;
+        c[id] = { x: p.x, z: p.z, h: ch.heading, sit: ch.sit, pose: ch.pose, key: ch.planKey || '', prop: ch.propNow || null,
+                  st: want[id]?.status || 'idle' };
+      }
+      localStorage.setItem(SNAP_KEY, JSON.stringify({ t: Date.now(), c }));
+    } catch { /* storage blocked: nothing to keep */ }
+  }
+  window.addEventListener('pagehide', saveSnap);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) saveSnap(); });
+  setInterval(saveSnap, 2000);
+
+  /** first apply after a reload: put the person back exactly where they were and carry on from there (no walk-in) */
+  function resume(id) {
+    const s0 = snap?.[id];
+    if (!s0) return false;
+    delete snap[id];
+    const ch = chars[id];
+    const st = want[id]?.status || 'idle';
+    if (s0.st !== st) return false; // status changed while away: let the normal plan move them
+    ch.group.position.set(s0.x, 0, s0.z);
+    ch.heading = s0.h;
+    ch.group.rotation.y = s0.h;
+    ch.sit = s0.sit;
+    const key = st === 'kerja' || st === 'error' ? 'desk' : st === 'selesai' ? 'desk-done' : 'wander';
+    if (key !== 'wander') {
+      ch.onPlanDone = null;
+      if (ch.group.position.distanceToSquared(ch.desk.seatWorld) > 0.05) return false; // not at the desk: walk there
+      ch.setPlan(key, [{ type: 'pose', name: st === 'kerja' ? 'type' : st === 'error' ? 'frustrated' : 'idleSeat' }], want[id]?.aktivitas || '');
+      return true;
+    }
+    // idle: re-claim the sofa seat / spot they were using, hold the pose a little longer, then wander as usual
+    for (const s of [...SEATS, ...SPOTS]) if (!s.by && Math.hypot(s.x - s0.x, s.z - s0.z) < 0.45) { s.by = id; break; }
+    ch.onPlanDone = (c) => { if ((want[id]?.status || 'idle') === 'idle') wander(c); };
+    ch.setPlan('wander', [
+      { type: 'do', fn: (c) => c.setProp(s0.prop) },
+      { type: 'pose', name: s0.pose && s0.pose !== 'walk' ? s0.pose : (s0.sit > 0.5 ? 'idleSeat' : 'stand'), dur: 4 + Math.random() * 6 },
+    ], s0.sit > 0.5 ? 'Santai di sofa' : 'Santai di lounge');
+    return true;
+  }
+
   function apply(id) {
     const ch = chars[id];
     const w = want[id] || { status: 'idle' };
@@ -412,6 +463,7 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
     ch.deskMode = st === 'kerja' ? 'working' : 'idle';
     const key = st === 'kerja' || st === 'error' ? 'desk' : st === 'selesai' ? 'desk-done' : 'wander';
     if (ch.planKey === key && ch.plan) return;
+    if (resume(id)) return;
     if (key === 'wander') {
       ch.onPlanDone = (c) => { if ((want[id]?.status || 'idle') === 'idle') wander(c); };
       wander(ch);
@@ -472,19 +524,78 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
     for (const [x, z] of ds) deskC.add(p.set(x, 1, z));
     deskC.divideScalar(ds.length).applyMatrix4(camera.matrixWorldInverse);
   }
-  let zoomed = false;
+  // zoom 1 = whole office; pinch / wheel / button zoom up to 3.5x, drag pans while zoomed (view-space offset)
+  let zoom = 1;
+  const pan = { x: 0, y: 0 };
+  const ZMAX = 3.5;
   const zoomBtn = document.createElement('button');
   zoomBtn.type = 'button';
   zoomBtn.className = 'hq-zoom';
   zoomBtn.setAttribute('aria-label', 'Perbesar / perkecil kantor');
-  zoomBtn.textContent = '🔍＋';
+  const syncBtn = () => { zoomBtn.textContent = zoom > 1.05 ? '🔍－' : '🔍＋'; };
+  syncBtn();
   zoomBtn.onclick = (e) => {
     e.stopPropagation();
-    zoomed = !zoomed;
-    zoomBtn.textContent = zoomed ? '🔍－' : '🔍＋';
+    if (zoom > 1.05) { zoom = 1; pan.x = pan.y = 0; } else { zoom = 1.8; pan.x = deskC.x - (fit.minX + fit.maxX) / 2; pan.y = deskC.y - (fit.minY + fit.maxY) / 2; }
+    syncBtn();
     resize();
   };
   host.appendChild(zoomBtn);
+  const view = { w: 1, h: 1 }; // current world-units per canvas (set in resize)
+  function setZoom(z, ax = 0.5, ay = 0.5) { // keep the point under the fingers/cursor still while zooming
+    const nz = Math.min(ZMAX, Math.max(1, z));
+    const fx = (ax - 0.5) * view.w;
+    const fy = (0.5 - ay) * view.h;
+    pan.x += fx - fx * (zoom / nz);
+    pan.y += fy - fy * (zoom / nz);
+    zoom = nz;
+    if (zoom <= 1.001) { pan.x = pan.y = 0; }
+    syncBtn();
+    resize();
+  }
+  const cv = renderer.domElement;
+  const ptrs = new Map();
+  let pinch = 0;
+  let dragged = 0;
+  cv.addEventListener('wheel', (e) => {
+    if (!e.ctrlKey && Math.abs(e.deltaY) < 1) return;
+    e.preventDefault();
+    const r = cv.getBoundingClientRect();
+    setZoom(zoom * Math.exp(-e.deltaY * 0.0022), (e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height);
+  }, { passive: false });
+  cv.addEventListener('pointerdown', (e) => {
+    ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    dragged = 0;
+    if (ptrs.size === 2) {
+      const [a, b] = [...ptrs.values()];
+      pinch = Math.hypot(a.x - b.x, a.y - b.y);
+    }
+  });
+  cv.addEventListener('pointermove', (e) => {
+    const prev = ptrs.get(e.pointerId);
+    if (!prev) return;
+    const cur = { x: e.clientX, y: e.clientY };
+    ptrs.set(e.pointerId, cur);
+    const r = cv.getBoundingClientRect();
+    if (ptrs.size === 2) {
+      const [a, b] = [...ptrs.values()];
+      const d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (pinch > 0) setZoom(zoom * (d / pinch), ((a.x + b.x) / 2 - r.left) / r.width, ((a.y + b.y) / 2 - r.top) / r.height);
+      pinch = d;
+      dragged = 99;
+    } else if (zoom > 1.001) {
+      const dx = cur.x - prev.x;
+      const dy = cur.y - prev.y;
+      dragged += Math.abs(dx) + Math.abs(dy);
+      pan.x -= (dx / r.width) * view.w;
+      pan.y += (dy / r.height) * view.h;
+      resize();
+    }
+  });
+  const up = (e) => { ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch = 0; };
+  cv.addEventListener('pointerup', up);
+  cv.addEventListener('pointercancel', up);
+  cv.addEventListener('click', (e) => { if (dragged > 6) e.stopImmediatePropagation(); }, true); // a drag is not a tap
 
   let fitted = false;
   function resize() {
@@ -504,15 +615,22 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
       vh = bh;
       vw = bh * aspect;
     }
-    let cx = (fit.minX + fit.maxX) / 2;
-    let cy = (fit.minY + fit.maxY) / 2;
-    if (zoomed) { // close-up on the team: ~1.8x, centred on the desks
-      vw /= 1.8;
-      vh /= 1.8;
-      cx = deskC.x;
-      cy = deskC.y;
-    }
-    labels.classList.toggle('compact', w < 480 && !zoomed);
+    const bx = (fit.minX + fit.maxX) / 2;
+    const by = (fit.minY + fit.maxY) / 2;
+    const fullW = vw;
+    const fullH = vh;
+    vw /= zoom;
+    vh /= zoom;
+    // keep the zoomed window inside the whole-office view
+    pan.x = Math.max(-(fullW - vw) / 2, Math.min((fullW - vw) / 2, pan.x));
+    pan.y = Math.max(-(fullH - vh) / 2, Math.min((fullH - vh) / 2, pan.y));
+    const cx = bx + pan.x;
+    const cy = by + pan.y;
+    view.w = vw;
+    view.h = vh;
+    // phones: let a one-finger swipe scroll the page until zoomed in; then it pans the office
+    cv.style.touchAction = zoom > 1.001 ? 'none' : 'pan-y';
+    labels.classList.toggle('compact', w < 480 && zoom < 1.4);
     camera.left = cx - vw / 2;
     camera.right = cx + vw / 2;
     camera.top = cy + vh / 2;
