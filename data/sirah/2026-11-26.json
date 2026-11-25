@@ -1,0 +1,341 @@
+{
+  "date": "2026-11-26",
+  "items": [
+    {
+      "episode": 7,
+      "judul_episode": "Perjalanan dagang ke Syam dan pendeta Bahira",
+      "judul": "Eps 7: Perjalanan dagang ke Syam dan pendeta Bahira",
+      "hook_layar": "PENDETA TUA MENYAMBUT KAFILAH",
+      "skor_viral": 9,
+      "jam_posting": "04:45",
+      "komentar_pin": "Pesan apa dari kisah ini yang paling terasa buatmu? Tulis dengan sopan di komentar.",
+      "durasi_detik": 91,
+      "naskah_vo": [
+        "Seorang pendeta tua keluar dari biaranya untuk menyambut kafilah Quraisy.",
+        "Ini kisah Nabi Muhammad shallallahu 'alaihi wa sallam, episode tujuh.",
+        "Di episode sebelumnya, beliau diasuh oleh pamannya, Abu Thalib.",
+        "Abu Thalib adalah seorang pedagang, dan kafilahnya sering berangkat ke negeri Syam.",
+        "Syam adalah wilayah di sebelah utara Jazirah Arab, yang jauh dari Makkah.",
+        "Ketika Rasulullah berusia sekitar dua belas tahun, beliau ikut dalam perjalanan itu.",
+        "Kafilah berjalan berhari-hari melintasi padang pasir yang luas.",
+        "Akhirnya rombongan singgah di Bushra, sebuah kota di Syam bagian selatan.",
+        "Di sana tinggal seorang pendeta bernama Bahira.",
+        "Menurut Sirah Ibnu Hisyam, ia biasanya tidak menyapa kafilah yang lewat.",
+        "Tapi kali ini, ia justru menyiapkan jamuan untuk rombongan Quraisy.",
+        "Mengapa ia begitu memperhatikan seorang anak kecil di antara mereka?",
+        "Bahira mempelajari kitab-kitab terdahulu, yaitu Taurat dan Injil.",
+        "Menurut riwayat, ia mengenali tanda-tanda kenabian pada anak itu.",
+        "Ia lalu menasihati Abu Thalib agar menjaga keponakannya baik-baik.",
+        "Ia khawatir sebagian orang Yahudi akan mengganggu anak itu.",
+        "Abu Thalib pun memulangkan beliau ke Makkah.",
+        "Kisah ini tercatat dalam kitab sirah, dengan sedikit perbedaan rincian di antara para penulis.",
+        "Hikmahnya, siapa yang dijaga Allah akan dilindungi lewat jalan yang tak disangka.",
+        "Beliau pun tumbuh menjadi pemuda yang dikenal dengan satu julukan yang indah.",
+        "Subscribe Glitchplay dan nantikan episode berikutnya: Pemuda jujur bergelar Al-Amin."
+      ],
+      "subtitle": [
+        "Seorang pendeta tua keluar dari biaranya untuk menyambut kafilah Quraisy.",
+        "Ini kisah Nabi Muhammad ﷺ, episode 7.",
+        "Di episode sebelumnya, beliau diasuh oleh pamannya, Abu Thalib.",
+        "Abu Thalib adalah seorang pedagang, dan kafilahnya sering berangkat ke negeri Syam.",
+        "Syam adalah wilayah di sebelah utara Jazirah Arab, yang jauh dari Makkah.",
+        "Ketika Rasulullah ﷺ berusia sekitar 12 tahun, beliau ikut dalam perjalanan itu.",
+        "Kafilah berjalan berhari-hari melintasi padang pasir yang luas.",
+        "Akhirnya rombongan singgah di Bushra, sebuah kota di Syam bagian selatan.",
+        "Di sana tinggal seorang pendeta bernama Bahira.",
+        "Menurut Sirah Ibnu Hisyam, ia biasanya tidak menyapa kafilah yang lewat.",
+        "Tapi kali ini, ia justru menyiapkan jamuan untuk rombongan Quraisy.",
+        "Mengapa ia begitu memperhatikan seorang anak kecil di antara mereka?",
+        "Bahira mempelajari kitab-kitab terdahulu, yaitu Taurat dan Injil.",
+        "Menurut riwayat, ia mengenali tanda-tanda kenabian pada anak itu.",
+        "Ia lalu menasihati Abu Thalib agar menjaga keponakannya baik-baik.",
+        "Ia khawatir sebagian orang Yahudi akan mengganggu anak itu.",
+        "Abu Thalib pun memulangkan beliau ke Makkah.",
+        "Kisah ini tercatat dalam kitab sirah, dengan sedikit perbedaan rincian di antara para penulis.",
+        "Hikmahnya, siapa yang dijaga Allah akan dilindungi lewat jalan yang tak disangka.",
+        "Beliau pun tumbuh menjadi pemuda yang dikenal dengan satu julukan yang indah.",
+        "Subscribe Glitchplay dan nantikan episode berikutnya: Pemuda jujur bergelar Al-Amin."
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "PENDETA TUA MENYAMBUT KAFILAH",
+          "visual": "biara"
+        },
+        {
+          "t": "0:12",
+          "teks": "Ikut berdagang ke Syam",
+          "visual": "kafilah"
+        },
+        {
+          "t": "0:30",
+          "teks": "Singgah di Bushra",
+          "visual": "kota"
+        },
+        {
+          "t": "0:45",
+          "teks": "Jamuan pendeta Bahira",
+          "visual": "jamuan"
+        },
+        {
+          "t": "1:05",
+          "teks": "Dipulangkan ke Makkah",
+          "visual": "jalan pulang"
+        },
+        {
+          "t": "1:25",
+          "teks": "Pemuda bergelar Al-Amin",
+          "visual": "Makkah"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "An old monk's stone monastery on a hill at golden hour in southern Syria, a dark-robed monk walking out toward a distant caravan, seen from far away"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "A long camel caravan leaving ancient Makkah at dawn, desert road stretching to the horizon, wide view"
+        },
+        {
+          "kalimat": 5,
+          "nabi": true,
+          "prompt": "A small boy in simple white robes riding on a camel beside an adult rider in a dark brown robe, seen from behind, caravan in the desert"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "Ancient stone town of Busra at sunset with flat-roofed houses and a caravan arriving, wide view"
+        },
+        {
+          "kalimat": 10,
+          "prompt": "A shaded courtyard with a tree where men in dark robes sit around a simple meal, seen from far away, warm light"
+        },
+        {
+          "kalimat": 12,
+          "prompt": "An old monk's candle-lit cell with ancient scrolls and books on a wooden table, no readable text, warm glow"
+        },
+        {
+          "kalimat": 16,
+          "nabi": true,
+          "prompt": "A boy in simple white robes walking away on a desert path with two young men in dark robes, seen from behind, small and far in the frame"
+        },
+        {
+          "kalimat": 19,
+          "prompt": "Starry night sky over the sleeping valley of ancient Makkah, the Kaaba silhouette in the distance"
+        }
+      ],
+      "youtube": {
+        "channel": "Glitchplay",
+        "judul": "Pendeta Bahira Menyambut Kafilah Quraisy di Bushra | Kisah Nabi ﷺ Eps 7 #Shorts",
+        "deskripsi": "Saat berusia sekitar 12 tahun, Nabi Muhammad ﷺ ikut kafilah dagang pamannya, Abu Thalib, ke Syam. Di Bushra, pendeta Bahira menjamu rombongan dan menasihati Abu Thalib untuk menjaga keponakannya. Hikmah: siapa yang dijaga Allah akan dilindungi lewat jalan yang tak disangka. Episode sebelumnya: Diasuh kakek Abdul Muththalib, lalu paman Abu Thalib. Episode berikutnya: Pemuda jujur bergelar Al-Amin. Sumber: Detik Hikmah, Republika Khazanah, NU Online, Suara Muhammadiyah.",
+        "tags": [
+          "kisah nabi",
+          "sirah nabawiyah",
+          "sejarah islam",
+          "nabi muhammad",
+          "kisah nabi muhammad",
+          "serial kisah nabi",
+          "kisah islami",
+          "abu thalib",
+          "pendeta bahira",
+          "perjalanan ke syam"
+        ],
+        "made_for_kids": false
+      },
+      "caption": "Di Bushra, pendeta Bahira menyambut kafilah Abu Thalib yang membawa Rasulullah ﷺ kecil.",
+      "hashtags": [
+        "#kisahnabi",
+        "#sejarahislam",
+        "#sirahnabawiyah"
+      ],
+      "sumber": [
+        {
+          "nama": "Detik Hikmah: Nabi Muhammad ikut dagang paman ke Syam dan bertemu pendeta Buhaira",
+          "url": "https://www.detik.com/hikmah/kisah/d-8624273/kisah-nabi-muhammad-ikut-dagang-paman-ke-syam-dan-bertemu-pendeta-buhaira"
+        },
+        {
+          "nama": "Republika Khazanah: Rahib selamatkan Nabi Muhammad usia 12 tahun",
+          "url": "https://khazanah.republika.co.id/berita/sjn1zf430/rahib-selamatkan-nabi-muhammad-ketika-berusia-12-tahun-dari-gangguan-yahudi"
+        },
+        {
+          "nama": "NU Online: Pendeta Buhaira dan tanda-tanda kenabian Muhammad",
+          "url": "https://islam.nu.or.id/sirah-nabawiyah/pendeta-buhaira-dan-tanda-tanda-kenabian-muhammad-pqpUQ"
+        },
+        {
+          "nama": "Suara Muhammadiyah: Perjalanan Pertama ke Syam",
+          "url": "https://web.suaramuhammadiyah.id/2020/12/08/nabi-muhammad-saw-5-perjalanan-pertama-ke-syam/"
+        }
+      ]
+    },
+    {
+      "episode": 8,
+      "judul_episode": "Pemuda jujur bergelar Al-Amin",
+      "judul": "Eps 8: Pemuda jujur bergelar Al-Amin",
+      "hook_layar": "GELAR AL-AMIN DARI QURAISY",
+      "skor_viral": 9,
+      "jam_posting": "18:30",
+      "komentar_pin": "Sifat jujur apa yang ingin kamu latih mulai hari ini? Tulis dengan sopan di komentar.",
+      "durasi_detik": 91,
+      "naskah_vo": [
+        "Seluruh Makkah memanggil seorang pemuda dengan satu nama: Al-Amin.",
+        "Ini kisah Nabi Muhammad shallallahu 'alaihi wa sallam, episode delapan.",
+        "Di episode sebelumnya, beliau ikut berdagang ke Syam bersama pamannya.",
+        "Setelah itu, beliau tumbuh menjadi pemuda di kota Makkah.",
+        "Beliau bekerja dan berdagang dengan cara yang halal.",
+        "Beliau dikenal tidak pernah menipu pembeli, ataupun orang yang mempekerjakannya.",
+        "Timbangannya jujur, dan janjinya selalu ditepati.",
+        "Lama-lama, seluruh orang Makkah memperhatikan akhlak beliau yang mulia.",
+        "Menurut riwayat, orang-orang menitipkan barang berharga mereka kepada beliau.",
+        "Beliau menjaga titipan itu, lalu mengembalikannya dengan utuh.",
+        "Amanah artinya sesuatu yang dipercayakan, dan wajib dijaga dengan baik.",
+        "Kaum Quraisy pun menjuluki beliau Al-Amin.",
+        "Al-Amin artinya orang yang sangat dipercaya.",
+        "Julukan itu bukan datang dari keluarga atau pengikut beliau.",
+        "Julukan itu datang dari masyarakat Quraisy sendiri.",
+        "Padahal saat itu, beliau belum menerima wahyu sebagai nabi.",
+        "Tapi ada satu peristiwa besar di Ka'bah yang meneguhkan nama itu.",
+        "Kisah Ka'bah itu akan kita ceritakan pada waktunya.",
+        "Kejujuran beliau sudah dikenal orang sejak beliau masih muda.",
+        "Hikmahnya, kejujuran membuat orang percaya, bahkan sebelum kita banyak berkata.",
+        "Kita bisa meneladani beliau lewat hal kecil, seperti menepati janji dan menjaga titipan.",
+        "Kabar tentang kejujuran beliau pun sampai ke telinga seorang saudagar wanita yang mulia.",
+        "Subscribe Glitchplay dan nantikan episode berikutnya: Berdagang untuk Khadijah dan pernikahan yang penuh berkah."
+      ],
+      "subtitle": [
+        "Seluruh Makkah memanggil seorang pemuda dengan satu nama: Al-Amin.",
+        "Ini kisah Nabi Muhammad ﷺ, episode 8.",
+        "Di episode sebelumnya, beliau ikut berdagang ke Syam bersama pamannya.",
+        "Setelah itu, beliau tumbuh menjadi pemuda di kota Makkah.",
+        "Beliau bekerja dan berdagang dengan cara yang halal.",
+        "Beliau dikenal tidak pernah menipu pembeli, ataupun orang yang mempekerjakannya.",
+        "Timbangannya jujur, dan janjinya selalu ditepati.",
+        "Lama-lama, seluruh orang Makkah memperhatikan akhlak beliau yang mulia.",
+        "Menurut riwayat, orang-orang menitipkan barang berharga mereka kepada beliau.",
+        "Beliau menjaga titipan itu, lalu mengembalikannya dengan utuh.",
+        "Amanah artinya sesuatu yang dipercayakan, dan wajib dijaga dengan baik.",
+        "Kaum Quraisy pun menjuluki beliau Al-Amin.",
+        "Al-Amin artinya orang yang sangat dipercaya.",
+        "Julukan itu bukan datang dari keluarga atau pengikut beliau.",
+        "Julukan itu datang dari masyarakat Quraisy sendiri.",
+        "Padahal saat itu, beliau belum menerima wahyu sebagai nabi.",
+        "Tapi ada satu peristiwa besar di Ka'bah yang meneguhkan nama itu.",
+        "Kisah Ka'bah itu akan kita ceritakan pada waktunya.",
+        "Kejujuran beliau sudah dikenal orang sejak beliau masih muda.",
+        "Hikmahnya, kejujuran membuat orang percaya, bahkan sebelum kita banyak berkata.",
+        "Kita bisa meneladani beliau lewat hal kecil, seperti menepati janji dan menjaga titipan.",
+        "Kabar tentang kejujuran beliau pun sampai ke telinga seorang saudagar wanita yang mulia.",
+        "Subscribe Glitchplay dan nantikan episode berikutnya: Berdagang untuk Khadijah dan pernikahan yang penuh berkah."
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "GELAR AL-AMIN DARI QURAISY",
+          "visual": "Makkah"
+        },
+        {
+          "t": "0:15",
+          "teks": "Jujur dalam berdagang",
+          "visual": "pasar"
+        },
+        {
+          "t": "0:35",
+          "teks": "Al-Amin: yang dipercaya",
+          "visual": "Ka'bah"
+        },
+        {
+          "t": "0:55",
+          "teks": "Sebelum wahyu turun",
+          "visual": "malam"
+        },
+        {
+          "t": "1:15",
+          "teks": "Kejujuran dikenal luas",
+          "visual": "kota"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "Wide view of ancient Makkah at dawn, the Kaaba in a valley surrounded by rocky mountains, people gathering in the courtyard"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "Ancient Makkah streets in the morning, mud-brick houses and merchants beginning their day"
+        },
+        {
+          "kalimat": 4,
+          "nabi": true,
+          "prompt": "A young man in simple white robes standing at a modest market stall with goods, seen from behind, small and far in the frame, merchants in brown robes around"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A traditional brass balance scale with dates and grain on a wooden counter in warm morning light, close-up, no text"
+        },
+        {
+          "kalimat": 8,
+          "nabi": true,
+          "prompt": "A man in a dark brown robe handing a wrapped bundle to a young man in white robes at a house doorway, both seen from behind, small in the frame, warm evening light"
+        },
+        {
+          "kalimat": 11,
+          "prompt": "A circle of Quraysh elders in dark robes talking together in a courtyard near the Kaaba, seen from far away, golden light"
+        },
+        {
+          "kalimat": 15,
+          "prompt": "Starry desert night sky above a quiet Makkah valley, a faint warm glow over a distant mountain"
+        },
+        {
+          "kalimat": 16,
+          "3d": "kabah",
+          "prompt": "The Kaaba of ancient Makkah with simple stone walls and a crowd of people in the distance, late afternoon light"
+        },
+        {
+          "kalimat": 21,
+          "prompt": "An elegant merchant's house with an open courtyard in ancient Makkah at sunset, a woman's silhouette far in the doorway, seen from behind"
+        }
+      ],
+      "youtube": {
+        "channel": "Glitchplay",
+        "judul": "Gelar Al-Amin dari Quraisy untuk Pemuda Jujur | Kisah Nabi ﷺ Eps 8 #Shorts",
+        "deskripsi": "Sebelum menerima wahyu, Nabi Muhammad ﷺ sudah dikenal jujur dan amanah; masyarakat Quraisy menjulukinya Al-Amin, artinya orang yang dipercaya. Hikmah: kejujuran membuat orang percaya bahkan sebelum kita banyak berkata. Episode sebelumnya: Perjalanan dagang ke Syam dan pendeta Bahira. Episode berikutnya: Berdagang untuk Khadijah dan pernikahan yang penuh berkah. Sumber: Kompas, Detik Hikmah, Republika Khazanah, STAI Al-Hikmah.",
+        "tags": [
+          "kisah nabi",
+          "sirah nabawiyah",
+          "sejarah islam",
+          "nabi muhammad",
+          "kisah nabi muhammad",
+          "serial kisah nabi",
+          "kisah islami",
+          "al amin",
+          "kejujuran",
+          "akhlak nabi"
+        ],
+        "made_for_kids": false
+      },
+      "caption": "Quraisy sendiri menjuluki Rasulullah ﷺ Al-Amin, orang yang dipercaya.",
+      "hashtags": [
+        "#kisahnabi",
+        "#sejarahislam",
+        "#sirahnabawiyah"
+      ],
+      "sumber": [
+        {
+          "nama": "Kompas: Kisah Nabi Muhammad mendapat gelar Al-Amin",
+          "url": "https://www.kompas.com/stori/read/2023/05/23/150000779/kisah-nabi-muhammad-mendapat-gelar-al-amin"
+        },
+        {
+          "nama": "Detik Hikmah: Mengapa Nabi Muhammad diberi gelar Al-Amin",
+          "url": "https://www.detik.com/hikmah/khazanah/d-7493085/mengapa-nabi-muhammad-saw-diberi-gelar-al-amin"
+        },
+        {
+          "nama": "Republika Khazanah: Muhammad Al-Amin",
+          "url": "https://khazanah.republika.co.id/berita/piq2us313/muhammad-alamin"
+        },
+        {
+          "nama": "STAI Al-Hikmah: Akhlak Nabi, Al-Amin",
+          "url": "https://iat.alhikmah.ac.id/abjadiyat-akhlak-nabi-muhammad-saw-1-huruf-alif-al-amin/"
+        }
+      ]
+    }
+  ]
+}
