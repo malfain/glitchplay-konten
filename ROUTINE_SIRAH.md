@@ -112,8 +112,11 @@ otomatis di Mac). Isi `adegan` **7–9 adegan**, urut:
 - **Nabi Muhammad ﷺ** (di **usia berapa pun**: bayi, anak kecil, remaja,
   dewasa): **setiap** adegan yang menampilkan beliau wajib `"nabi": true`, dan
   prompt menggambarkan sosok berjubah putih **kecil, jauh, dari belakang**.
-  Sistem otomatis mendeteksi kepala lalu menutup **seluruh kepala** dengan
-  cahaya penuh; jangan pernah menulis ciri wajah/kepala beliau di prompt. Kalau
+  **Hanya beliau yang berjubah putih**; tokoh lain di adegan yang sama tulis
+  berjubah gelap/berwarna (mis. "an elderly man in a dark brown robe"), supaya
+  sistem bisa mengenali beliau. Sistem otomatis mengenali sosok beliau lalu
+  menutup **seluruh kepala beliau saja** dengan cahaya penuh; jangan pernah
+  menulis ciri wajah/kepala beliau di prompt. Kalau
   ragu apakah sebuah adegan menampilkan beliau, beri `"nabi": true`. Lebih baik
   lagi: gambarkan suasananya saja tanpa sosok beliau.
 - Nabi-nabi lain, malaikat (Jibril digambarkan hanya sebagai cahaya terang di

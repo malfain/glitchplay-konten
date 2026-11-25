@@ -896,9 +896,16 @@ HEAD_PROMPT = ('Detect the HEAD of every person or human figure in this illustra
                'white_clothes = the person wears white/cream robes. Return [] if there are no people.')
 
 
-def detect_heads(jpg):
-    """Head boxes of every person in a 1080x1920 picture via Gemini vision (cached next to the image).
-    Returns [{'x','y','r','white'}] in pixels, [] for no people, or None when vision is unavailable."""
+NABI_PROMPT = ('This illustration shows: "{scene}". One figure in it is the Prophet Muhammad (peace be upon him): the {who} '
+               'wearing white/cream robes. Find HIM only (not his companions, family or other people) and return a JSON list '
+               'with his head: [{{"box_2d":[ymin,xmin,ymax,xmax]}}], coordinates normalized 0-1000. If several figures could '
+               'be him, include each candidate. Return [] if he is not visible in the picture.')
+
+
+def detect_heads(jpg, scene=None):
+    """Head boxes via Gemini vision (cached next to the image). With `scene` (the illustration prompt) only the Prophet's
+    head is returned; without it, every person's head. Returns [{'x','y','r','white'}] in pixels, [] when nobody matches,
+    or None when vision is unavailable."""
     import base64
     import hashlib
     import ssl
@@ -906,7 +913,8 @@ def detect_heads(jpg):
     import urllib.error
     import urllib.request
     IMG_CACHE.mkdir(parents=True, exist_ok=True)
-    cache = IMG_CACHE / ("h" + hashlib.sha1(Path(jpg).read_bytes()).hexdigest()[:16] + ".json")
+    tag = hashlib.sha1(Path(jpg).read_bytes() + (scene or "").encode()).hexdigest()[:16]
+    cache = IMG_CACHE / (("n" if scene else "h") + tag + ".json")
     if cache.exists():
         return json.loads(cache.read_text())
     if not GEMINI_KEY_FILE.exists():
@@ -919,7 +927,9 @@ def detect_heads(jpg):
         ctx = ssl.create_default_context()
     body = json.dumps({"contents": [{"parts": [
         {"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(Path(jpg).read_bytes()).decode()}},
-        {"text": HEAD_PROMPT}]}], "generationConfig": {"response_mime_type": "application/json", "temperature": 0}}).encode()
+        {"text": NABI_PROMPT.format(scene=scene.replace('"', "'")[:600],
+                                    who="child" if re.search(r"\b(boy|child|baby|infant|toddler)\b", scene, re.I) else "man")
+         if scene else HEAD_PROMPT}]}], "generationConfig": {"response_mime_type": "application/json", "temperature": 0}}).encode()
     for attempt in range(2):
         for model in VISION_MODELS:
             req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
@@ -1453,9 +1463,16 @@ def render_item_photo(item, idx, date, outdir, tmp):
         if not sc.get("prompt"):
             raise RuntimeError(f"adegan {n + 1} tidak punya game yang ketemu maupun prompt")
         prompt = sc["prompt"]
-        if sc.get("nabi"):  # the Prophet ﷺ: never a visible face (Remotion also lays a light over it)
+        if os.environ.get("GP_OLD_NABI_PROMPT") and sc.get("nabi"):  # re-render of an older episode: keep its pictures
             prompt += (". The Prophet figure is seen from behind or from far away, standing in the center of the frame, "
                        "his face completely hidden by a bright radiant white-golden light, no facial features visible")
+        elif os.environ.get("GP_OLD_NABI_PROMPT"):
+            pass
+        elif sc.get("nabi") or (CH["theme"] == "sirah" and NABI_HINT.search(prompt)):
+            # the Prophet ﷺ: the only figure in white robes (so vision can find him), seen from behind / far away
+            prompt += (". The Prophet figure wears plain white robes and is seen from behind or from far away, his face and "
+                       "head hidden by bright radiant white-golden light, no facial features visible. Every other person in "
+                       "the scene wears dark brown, grey or colored robes, never white")
         try:
             cf_image(prompt, img)
         except RuntimeError as e:
@@ -1517,12 +1534,9 @@ def render_item_photo(item, idx, date, outdir, tmp):
         # prompt) and every white-robed figure anywhere gets an opaque light placed exactly on it (Gemini vision boxes).
         nabi_like = CH["theme"] == "sirah" and (bool(sc.get("nabi")) or bool(NABI_HINT.search(sc.get("prompt", ""))))
         cover = None
-        if CH["theme"] == "sirah" and not isinstance(img, str) and img.suffix == ".jpg":
-            heads = detect_heads(img)
-            if heads is not None:
-                cover = [h for h in heads if nabi_like or h["white"]]
-                if not cover and not nabi_like:
-                    cover = None
+        if nabi_like and not isinstance(img, str) and img.suffix == ".jpg":
+            # only the Prophet ﷺ gets the light: Gemini is told who is in the scene and returns his head only
+            cover = detect_heads(img, scene=sc.get("prompt", ""))
         if isinstance(img, str):  # vector backdrop: one continuous moving scene
             scenes.append({"src": "", "start": round(s0, 3), "end": round(s1, 3), "vector": img.split(":", 1)[1]})
             continue
