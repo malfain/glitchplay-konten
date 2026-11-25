@@ -17,14 +17,14 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "[Sirah] Shift selesai: eps 7 & 8",
-      "t": "2026-11-26T04:07:10+07:00"
+      "status": "kerja",
+      "aktivitas": "[Anak] Buka shift anak, bagi tugas",
+      "t": "2026-11-26T05:08:52+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "[Sirah] 2 topik eps 7-8, sumber sirah",
-      "t": "2026-11-26T04:07:10+07:00"
+      "status": "kerja",
+      "aktivitas": "[Anak] Cari tema: paus biru & Matahari",
+      "t": "2026-11-26T05:08:52+07:00"
     },
     "detektif": {
       "status": "selesai",
@@ -63,6 +63,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-26T05:08:52+07:00",
+      "agen": "radar",
+      "pesan": "[Anak] Cari tema: paus biru & Matahari"
+    },
+    {
+      "t": "2026-11-26T05:08:52+07:00",
+      "agen": "bos",
+      "pesan": "[Anak] Buka shift anak, bagi tugas"
+    },
     {
       "t": "2026-11-26T04:25:57+07:00",
       "agen": "asisten",
@@ -352,18 +362,8 @@
       "t": "2026-11-25T05:08:39+07:00",
       "agen": "radar",
       "pesan": "[Anak] Cari tema: Saturnus & dinosaurus"
-    },
-    {
-      "t": "2026-11-25T05:08:39+07:00",
-      "agen": "bos",
-      "pesan": "[Anak] Buka shift anak, bagi tugas"
-    },
-    {
-      "t": "2026-11-25T04:22:15+07:00",
-      "agen": "asisten",
-      "pesan": "2/2 video jadi, siap di Hasil"
     }
   ],
-  "updated_at": "2026-11-26T04:25:57+07:00",
+  "updated_at": "2026-11-26T05:08:52+07:00",
   "kesimpulan_t": "2026-11-25T06:11:47+07:00"
 }
