@@ -57,12 +57,27 @@
       "t": "2026-11-26T04:07:10+07:00"
     },
     "asisten": {
-      "status": "kerja",
-      "aktivitas": "Render 2 video untuk 2026-11-26",
-      "t": "2026-11-26T04:09:04+07:00"
+      "status": "selesai",
+      "aktivitas": "2/2 video jadi, siap di Hasil",
+      "t": "2026-11-26T04:25:57+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-26T04:25:57+07:00",
+      "agen": "asisten",
+      "pesan": "2/2 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-26T04:16:52+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 2/2: Eps 8: Pemuda jujur bergelar Al-Am"
+    },
+    {
+      "t": "2026-11-26T04:09:05+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 1/2: Eps 7: Perjalanan dagang ke Syam d"
+    },
     {
       "t": "2026-11-26T04:09:04+07:00",
       "agen": "asisten",
@@ -347,23 +362,8 @@
       "t": "2026-11-25T04:22:15+07:00",
       "agen": "asisten",
       "pesan": "2/2 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-25T04:15:43+07:00",
-      "agen": "asisten",
-      "pesan": "Render video 2/2: Eps 6: Diasuh kakek Abdul Muththal"
-    },
-    {
-      "t": "2026-11-25T04:08:54+07:00",
-      "agen": "asisten",
-      "pesan": "Render video 1/2: Eps 5: Wafatnya ibunda Aminah di A"
-    },
-    {
-      "t": "2026-11-25T04:08:52+07:00",
-      "agen": "asisten",
-      "pesan": "Render 2 video untuk 2026-11-25"
     }
   ],
-  "updated_at": "2026-11-26T04:09:04+07:00",
+  "updated_at": "2026-11-26T04:25:57+07:00",
   "kesimpulan_t": "2026-11-25T06:11:47+07:00"
 }

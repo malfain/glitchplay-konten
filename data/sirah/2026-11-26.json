@@ -165,7 +165,11 @@
           "nama": "Suara Muhammadiyah: Perjalanan Pertama ke Syam",
           "url": "https://web.suaramuhammadiyah.id/2020/12/08/nabi-muhammad-saw-5-perjalanan-pertama-ke-syam/"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-26/sirah-01-eps-7-perjalanan-dagang-ke-syam-dan-pend.mp4",
+      "poster": "video/sirah/2026-11-26/01-eps-7-perjalanan-dagang-ke-syam-dan-pend.jpg",
+      "video_durasi": 89.9,
+      "video_suara": "gemini-3.8-flash-lite-tts/Charon"
     },
     {
       "episode": 8,
@@ -335,7 +339,11 @@
           "nama": "STAI Al-Hikmah: Akhlak Nabi, Al-Amin",
           "url": "https://iat.alhikmah.ac.id/abjadiyat-akhlak-nabi-muhammad-saw-1-huruf-alif-al-amin/"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-26/sirah-02-eps-8-pemuda-jujur-bergelar-al-amin.mp4",
+      "poster": "video/sirah/2026-11-26/02-eps-8-pemuda-jujur-bergelar-al-amin.jpg",
+      "video_durasi": 88.9,
+      "video_suara": "gemini-3.8-flash-lite-tts/Charon"
     }
   ]
 }
