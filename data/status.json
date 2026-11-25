@@ -57,12 +57,17 @@
       "t": "2026-11-26T05:10:23+07:00"
     },
     "asisten": {
-      "status": "selesai",
-      "aktivitas": "2/2 video jadi, siap di Hasil",
-      "t": "2026-11-26T04:25:57+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 2 video untuk 2026-11-26",
+      "t": "2026-11-26T05:12:03+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-26T05:12:03+07:00",
+      "agen": "asisten",
+      "pesan": "Render 2 video untuk 2026-11-26"
+    },
     {
       "t": "2026-11-26T05:10:23+07:00",
       "agen": "bos",
@@ -357,13 +362,8 @@
       "t": "2026-11-25T05:11:30+07:00",
       "agen": "qc",
       "pesan": "[Anak] Cek aturan & validasi"
-    },
-    {
-      "t": "2026-11-25T05:11:30+07:00",
-      "agen": "copywriter",
-      "pesan": "[Anak] Metadata YouTube siap"
     }
   ],
-  "updated_at": "2026-11-26T05:10:23+07:00",
+  "updated_at": "2026-11-26T05:12:03+07:00",
   "kesimpulan_t": "2026-11-25T06:11:47+07:00"
 }
