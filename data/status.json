@@ -27,9 +27,9 @@
       "t": "2026-11-27T06:08:19+07:00"
     },
     "detektif": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-27T06:06:12+07:00"
+      "status": "kerja",
+      "aktivitas": "Cek fakta tiap kandidat, min 2 sumber",
+      "t": "2026-11-27T06:08:21+07:00"
     },
     "narator": {
       "status": "idle",
@@ -63,6 +63,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-27T06:08:21+07:00",
+      "agen": "detektif",
+      "pesan": "Cek fakta tiap kandidat, min 2 sumber"
+    },
     {
       "t": "2026-11-27T06:08:19+07:00",
       "agen": "radar",
@@ -357,13 +362,8 @@
       "t": "2026-11-26T06:09:50+07:00",
       "agen": "detektif",
       "pesan": "Cek fakta 2 sumber per kandidat"
-    },
-    {
-      "t": "2026-11-26T06:09:48+07:00",
-      "agen": "radar",
-      "pesan": "16 kandidat ditemukan"
     }
   ],
-  "updated_at": "2026-11-27T06:08:19+07:00",
+  "updated_at": "2026-11-27T06:08:21+07:00",
   "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
