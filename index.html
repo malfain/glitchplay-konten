@@ -77,6 +77,8 @@
   .icon-btn { position: relative; width: 34px; height: 34px; border-radius: 50%; border: 0; background: var(--card); color: var(--tint);
               display: grid; place-items: center; cursor: pointer; padding: 0; }
   .icon-btn svg { width: 18px; height: 18px; stroke: currentColor; }
+  /* 34px circle, but a 44px touch target (Apple HIG minimum) */
+  .icon-btn::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; }
   #refresh { transition-property: scale, background-color, color, opacity; }
   .icon-btn svg *, nav.tabs svg *, .chtabs svg *, .ico * { vector-effect: non-scaling-stroke; }
   .badge { position: absolute; top: -4px; right: -6px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px;
@@ -1142,7 +1144,16 @@ document.addEventListener("click", (e) => {
   if (tab) return show(tab.dataset.p);
 });
 $("#scrim").onclick = closeSheet;
-$("#bell").onclick = () => show("hasil");
+// bell = today's new Instagram content (the badge counts it): jump there from anywhere, even when Hasil is already open
+$("#bell").onclick = () => {
+  const today = todayWIB();
+  const has = state.days[0] === today;
+  state.ch = "glitch";
+  try { localStorage.setItem("gp-ch", "glitch"); } catch {}
+  show("hasil", has ? today : undefined);
+  const n = Number($("#bellBadge").textContent) || 0;
+  toast(has && n ? `🔔 ${n} konten baru hari ini` : "Belum ada konten baru hari ini", 2500);
+};
 $("#refresh").onclick = async () => { $("#refresh").style.opacity = .5; await load(); $("#refresh").style.opacity = 1; };
 $("#day").onchange = () => show("hasil", $("#day").value);
 $("#tokBtn").onclick = () => openTokenSheet();
