@@ -5,6 +5,10 @@ import { F, applyTheme } from "./theme";
 import { SirahBackdrop } from "./SirahBackdrop";
 import { LogoBadge, LogoOutro } from "./BrandLogo";
 import { Mascot } from "./Mascot";
+import { loadFont as loadAnton } from "@remotion/google-fonts/Anton";
+
+const { fontFamily: ANTON } = loadAnton("normal", { weights: ["400"], subsets: ["latin"] });
+const NEWS_RED = "#e53935";
 import type { Beat } from "./schema";
 import { Kids3D, KIDS3D_KINDS, type Kids3DKind } from "./Kids3D";
 
@@ -24,6 +28,8 @@ export const photoReelSchema = z.object({
   label: z.string().optional(),
   hook: z.string().optional(),
   episode: z.number().optional(),
+  // Instagram news cover (2 s opening, also the grid thumbnail): headline with *highlighted* words + round inset picture
+  cover: z.object({ title: z.string(), inset: z.string().optional(), tag: z.string().optional(), brand: z.string().optional() }).optional(),
   // character drawn in OpenToonz, exported as a PNG sequence with transparency (tools/render_video.py fills this)
   maskot: z.object({ frames: z.array(z.string()), fps: z.number() }).optional(),
   // animated channel logo from OpenToonz (PNG sequence): loops in the corner badge, plays big as a 2 s outro
@@ -39,7 +45,7 @@ const ACCENT = { kids: "#ffd23f", glitch: "#c6f02c", sirah: "#e9b949" } as const
 
 const HOOK_END = 1.9; // the big hook card covers the first ~2 s (the scroll-stopping moment)
 
-export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, total, scenes, words, label, hook, episode, maskot, logo }) => {
+export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, total, scenes, words, label, hook, episode, maskot, logo, cover }) => {
   const th = theme ?? "kids";
   applyTheme(th);
   const accent = ACCENT[th];
@@ -71,27 +77,37 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
       ))}
       {/* legibility: soft dark band behind the captions, vignette at the bottom */}
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 38%, rgba(0,0,0,0) 70%, rgba(0,0,0,.45) 100%)" }} />
-      {hook ? (
+      {cover ? (
+        <Sequence name="cover berita" durationInFrames={Math.round(COVER_END * fps)}>
+          <NewsCover {...cover} />
+        </Sequence>
+      ) : hook ? (
         <Sequence name="hook" durationInFrames={Math.round(HOOK_END * fps)}>
           <Hook text={hook} accent={accent} episode={episode} />
         </Sequence>
       ) : null}
-      <Sequence name="teks" from={hook ? Math.round(HOOK_END * fps) : 0}>
-        <Captions words={words} accent={accent} offset={hook ? HOOK_END : 0} />
+      <Sequence name="teks" from={cover ? Math.round(COVER_END * fps) : hook ? Math.round(HOOK_END * fps) : 0}>
+        <Captions words={words} accent={accent} offset={cover ? COVER_END : hook ? HOOK_END : 0} news={!!cover} />
       </Sequence>
+      {cover ? <NewsFooter brand={cover.brand} /> : null}
       {maskot && maskot.frames.length ? (
         <Maskot frames={maskot.frames} fps={maskot.fps} />
       ) : th !== "sirah" ? (
-        <Mascot beats={beatsFromWords(words, total)} />
+        // with the news cover the mascot waits until the headline is gone
+        <Sequence name="maskot" from={cover ? Math.round(COVER_END * fps) : 0}>
+          <Mascot beats={beatsFromWords(words, total).map((b) => ({ ...b, start: b.start - (cover ? COVER_END : 0), end: b.end - (cover ? COVER_END : 0) }))} />
+        </Sequence>
       ) : null}
       <Sequence name="outro logo" from={Math.max(0, Math.round((total - OUTRO) * fps))}>
         {logo && logo.frames.length ? <Outro frames={logo.frames} fps={logo.fps} /> : <LogoOutro variant={th === "sirah" ? "sirah" : "clips"} />}
       </Sequence>
       <Progress total={total} accent={accent} />
       <Badge handle={handle} avatar={avatar ?? null} accent={accent} episode={episode} logo={logo} variant={th === "sirah" ? "sirah" : "clips"} />
-      <div style={{ position: "absolute", left: 70, top: 1400, font: `600 26px ${F.sans}`, color: "rgba(255,255,255,.75)" }}>
-        {label ?? "Gambar dibuat dengan AI"}
-      </div>
+      <Sequence name="label gambar" from={cover ? Math.round(COVER_END * fps) : 0}>
+        <div style={{ position: "absolute", left: 70, top: 1400, font: `600 26px ${F.sans}`, color: "rgba(255,255,255,.75)" }}>
+          {label ?? "Gambar dibuat dengan AI"}
+        </div>
+      </Sequence>
       {audio ? <Audio src={staticFile(audio)} /> : null}
     </AbsoluteFill>
   );
@@ -131,7 +147,7 @@ const KenBurns: React.FC<{ src: string; index: number; dur: number; fadeIn: bool
 };
 
 // Shows one short chunk (2–3 words) at a time; the word being spoken is yellow and pops slightly.
-const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string; offset: number }> = ({ words, accent, offset }) => {
+const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string; offset: number; news?: boolean }> = ({ words, accent, offset, news }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps + offset;
@@ -141,6 +157,22 @@ const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string; offse
   const chunk = words.filter((w) => w.chunk === cur.chunk);
   const chunkStart = chunk[0].start;
   const pop = interpolate(t - chunkStart, [0, 0.18], [0.85, 1], { ...clamp, easing: Easing.out(Easing.back(2)) });
+  if (news) { // news style: condensed uppercase, the spoken word sits in a red box
+    return (
+      <div style={{ position: "absolute", left: 60, right: 220, top: 330, textAlign: "center", scale: String(pop) }}>
+        {chunk.map((w, i) => {
+          const active = t >= w.start && t < w.end + 0.05;
+          return (
+            <span key={i} style={{ display: "inline-block", margin: "4px 8px", padding: active ? "0 14px" : "0 2px", fontFamily: ANTON, fontSize: 104,
+              lineHeight: 1.08, textTransform: "uppercase", color: "#fff", background: active ? NEWS_RED : "transparent",
+              textShadow: active ? "none" : "0 4px 0 rgba(0,0,0,.7), 0 0 24px rgba(0,0,0,.6)" }}>
+              {w.text}
+            </span>
+          );
+        })}
+      </div>
+    );
+  }
   return (
     <div style={{ position: "absolute", left: 70, right: 230, top: 330, textAlign: "center", scale: String(pop) }}>
       {chunk.map((w, i) => {
@@ -313,3 +345,51 @@ const HeadLight: React.FC<{ x: number; y: number; r: number }> = ({ x, y, r }) =
     </>
   );
 };
+
+const COVER_END = 2.2;
+
+/** "*kata*" → highlighted (white on red), like the reference news covers */
+const renderTitle = (title: string) =>
+  title.split(/(\*[^*]+\*)/g).filter(Boolean).map((part, i) =>
+    part.startsWith("*") ? (
+      <span key={i} style={{ background: NEWS_RED, padding: "0 12px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>{part.slice(1, -1)}</span>
+    ) : (
+      <span key={i}>{part}</span>
+    ));
+
+// Opening news cover (also what the Instagram grid shows): dark bottom, small red tag, big condensed headline with red
+// highlighted words, a round inset picture with a red ring.
+const NewsCover: React.FC<{ title: string; inset?: string; tag?: string }> = ({ title, inset, tag }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = frame / fps;
+  const rise = interpolate(t, [0, 0.35], [40, 0], { ...clamp, easing: Easing.out(Easing.cubic) });
+  const fade = interpolate(t, [COVER_END - 0.25, COVER_END], [1, 0], clamp);
+  const pop = interpolate(t, [0.1, 0.45], [0.6, 1], { ...clamp, easing: Easing.out(Easing.back(1.6)) });
+  return (
+    <AbsoluteFill style={{ opacity: fade }}>
+      <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.55) 55%, rgba(0,0,0,.92) 78%, #000 100%)" }} />
+      {inset ? (
+        <div style={{ position: "absolute", right: 70, top: 420, width: 330, height: 330, borderRadius: "50%", overflow: "hidden",
+          border: `10px solid ${NEWS_RED}`, boxShadow: "0 10px 40px rgba(0,0,0,.5)", scale: String(pop) }}>
+          <Img src={staticFile(inset)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </div>
+      ) : null}
+      <div style={{ position: "absolute", left: 50, right: 50, top: 1010, textAlign: "center", translate: `0 ${rise}px` }}>
+        <div style={{ display: "inline-block", background: NEWS_RED, color: "#fff", font: `800 26px ${F.sans}`, letterSpacing: 2,
+          padding: "6px 16px", borderRadius: 4, marginBottom: 18 }}>{(tag || "TODAY HIGHLIGHT").toUpperCase()}</div>
+        <div style={{ fontFamily: ANTON, fontSize: 112, lineHeight: 1.06, color: "#fff", textTransform: "uppercase",
+          textShadow: "0 4px 0 rgba(0,0,0,.6)" }}>{renderTitle(title)}</div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// Thin brand strip at the very bottom, like the reference ("community" left, "Swipe for More!" right)
+const NewsFooter: React.FC<{ brand?: string }> = ({ brand }) => (
+  <div style={{ position: "absolute", left: 50, right: 50, bottom: 150, display: "flex", justifyContent: "space-between", alignItems: "center",
+    font: `700 24px ${F.sans}`, color: "rgba(255,255,255,.85)", letterSpacing: 1 }}>
+    <span>{(brand || "GLITCHPLAYCLIPS · GAMER INDONESIA").toUpperCase()}</span>
+    <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}><i style={{ width: 18, height: 18, borderRadius: "50%", background: NEWS_RED, display: "inline-block" }} />Follow for More!</span>
+  </div>
+);

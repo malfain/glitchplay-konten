@@ -1350,6 +1350,23 @@ def maskot_frames():
     return png_sequence(MASKOT_DIR / CH["theme"], f"_maskot/{CH['theme']}")
 
 
+def news_cover(item, imgs):
+    """Instagram only: the opening news cover (headline with *highlighted* words + round inset of the 2nd picture)."""
+    if CH["theme"] != "glitch":
+        return None
+    title = (item.get("judul_cover") or "").strip()
+    if not title:  # older items: the title, with its middle third highlighted
+        w = (item.get("judul") or "").split()
+        if not w:
+            return None
+        a, b = len(w) // 3, max(len(w) // 3 + 1, 2 * len(w) // 3)
+        title = " ".join(w[:a] + ["*" + " ".join(w[a:b]) + "*"] + w[b:])
+    title = re.sub(r"[^\w\s*!?%,.:+'&-]", "", title, flags=re.UNICODE).strip()
+    inset = next((f"_render/{x.name}" for x in imgs[1:] if not isinstance(x, str) and x.suffix == ".jpg"), None)
+    tag = "ESPORTS UPDATE" if item.get("segmen") == "esports" else "TODAY HIGHLIGHT"
+    return {k: v for k, v in {"title": title, "inset": inset, "tag": tag}.items() if v}
+
+
 def hook_text(item):
     """Big opening card: the writer's `hook_layar`, else the first on-screen card (emoji stripped), max 6 words."""
     t = (item.get("hook_layar") or "").strip()
@@ -1558,7 +1575,7 @@ def render_item_photo(item, idx, date, outdir, tmp):
     if credits:
         label = "Klip: " + ", ".join(credits) + " · " + label
     props = {"theme": CH["theme"], "handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
-             "label": label, "hook": hook_text(item), "episode": item.get("episode"),
+             "label": label, "hook": hook_text(item), "episode": item.get("episode"), "cover": news_cover(item, imgs),
              "scenes": scenes, "words": words}
     props["maskot"] = maskot_frames()
     props["logo"] = logo_frames()

@@ -189,6 +189,18 @@ dengan channel YouTube), urut:
   nama orang terkenal (pemain pro, streamer, artis), teks/tulisan di gambar,
   kekerasan berdarah. Orang boleh, tapi anonim (dari belakang/siluet/jauh).
 
+## Judul cover (Copywriter)
+
+Setiap item wajib punya `judul_cover`: judul besar yang tampil di cover reel (2
+detik pertama & thumbnail grid IG), gaya akun berita game Indonesia:
+- **6–12 kata**, huruf besar semua, bahasa gamer Indonesia yang santai & seru
+  (boleh "LO", "GUE", "WAJIB", "GOKIL", "AUTO", "BOCIL", "GABOLEH"), tapi isinya
+  **tetap benar** (tidak boleh melebih-lebihkan fakta / clickbait bohong).
+- Tandai **2–4 kata kunci** yang berurutan dengan bintang supaya di-highlight
+  kotak merah, mis. `"GAME HOROR INI LO DAN *TIM GABOLEH BACOT!*"`,
+  `"*PORTINGAN GTA VI* DI PC SUDAH TEMBUS BERKAT LEAK"`. Maksimal 2 bagian bertanda.
+- Tanpa emoji.
+
 ## Aturan caption (Copywriter)
 
 - Baris pertama (sebelum "… more") harus bikin penasaran; isi 2–4 kalimat;
@@ -223,6 +235,7 @@ Item yang gagal diperbaiki dulu, bukan diterbitkan apa adanya.
       "status_fakta": "resmi | rumor",
       "hook_formula": "nama rumus hook",
       "hook_layar": "GTA 6 DITUNDA LAGI?!",
+      "judul_cover": "ROCKSTAR KONFIRMASI *GTA 6 MUNDUR LAGI*, FANS AUTO LEMES!",
       "skor_viral": 8,
       "jam_posting": "19:30",
       "durasi_detik": 30,
