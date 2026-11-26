@@ -37,14 +37,14 @@
       "t": "2026-11-27T06:11:21+07:00"
     },
     "copywriter": {
-      "status": "kerja",
-      "aktivitas": "Caption dan judul cover",
-      "t": "2026-11-27T06:11:21+07:00"
+      "status": "selesai",
+      "aktivitas": "10 caption siap",
+      "t": "2026-11-27T06:11:23+07:00"
     },
     "qc": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-27T06:06:12+07:00"
+      "status": "kerja",
+      "aktivitas": "Cek aturan, validasi JSON, terbit",
+      "t": "2026-11-27T06:11:23+07:00"
     },
     "studio": {
       "status": "idle",
@@ -63,6 +63,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-27T06:11:23+07:00",
+      "agen": "qc",
+      "pesan": "Cek aturan, validasi JSON, terbit"
+    },
+    {
+      "t": "2026-11-27T06:11:23+07:00",
+      "agen": "copywriter",
+      "pesan": "10 caption siap"
+    },
     {
       "t": "2026-11-27T06:11:21+07:00",
       "agen": "copywriter",
@@ -352,18 +362,8 @@
       "t": "2026-11-26T06:11:32+07:00",
       "agen": "qc",
       "pesan": "Cek aturan, terbitkan JSON"
-    },
-    {
-      "t": "2026-11-26T06:11:32+07:00",
-      "agen": "copywriter",
-      "pesan": "10 caption siap"
-    },
-    {
-      "t": "2026-11-26T06:11:32+07:00",
-      "agen": "copywriter",
-      "pesan": "Caption & hashtag"
     }
   ],
-  "updated_at": "2026-11-27T06:11:21+07:00",
+  "updated_at": "2026-11-27T06:11:23+07:00",
   "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
