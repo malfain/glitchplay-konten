@@ -32,9 +32,9 @@
       "t": "2026-11-27T06:08:23+07:00"
     },
     "narator": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-27T06:06:12+07:00"
+      "status": "kerja",
+      "aktivitas": "Tulis naskah 10 item",
+      "t": "2026-11-27T06:08:26+07:00"
     },
     "copywriter": {
       "status": "idle",
@@ -52,9 +52,9 @@
       "t": "2026-11-27T06:06:12+07:00"
     },
     "strategist": {
-      "status": "kerja",
-      "aktivitas": "Ranking FYP dan hook",
-      "t": "2026-11-27T06:08:25+07:00"
+      "status": "selesai",
+      "aktivitas": "10 topik diurutkan, hook siap",
+      "t": "2026-11-27T06:08:26+07:00"
     },
     "asisten": {
       "status": "idle",
@@ -63,6 +63,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-27T06:08:26+07:00",
+      "agen": "narator",
+      "pesan": "Tulis naskah 10 item"
+    },
+    {
+      "t": "2026-11-27T06:08:26+07:00",
+      "agen": "strategist",
+      "pesan": "10 topik diurutkan, hook siap"
+    },
     {
       "t": "2026-11-27T06:08:25+07:00",
       "agen": "strategist",
@@ -352,18 +362,8 @@
       "t": "2026-11-26T06:11:30+07:00",
       "agen": "narator",
       "pesan": "Tulis naskah 10 item"
-    },
-    {
-      "t": "2026-11-26T06:11:30+07:00",
-      "agen": "strategist",
-      "pesan": "10 topik diurutkan, hook siap"
-    },
-    {
-      "t": "2026-11-26T06:09:54+07:00",
-      "agen": "strategist",
-      "pesan": "Ranking FYP, hook, jam posting"
     }
   ],
-  "updated_at": "2026-11-27T06:08:25+07:00",
+  "updated_at": "2026-11-27T06:08:26+07:00",
   "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
