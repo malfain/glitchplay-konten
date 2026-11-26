@@ -535,6 +535,7 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
   put(F.makePlant('fiddle', 1.0, 21), 9.6, 12.0, 0, [0.5, 0.5]);
   put(F.makePlant('snake', 1, 22), 15.5, 6.6, 0, [0.4, 0.4]);
 
+  const traffic = []; // cars driving on the road (animated in frame(), not merged)
   // ---------------------------------------------------------------- outside: garden (taman) + parking lot (parkiran)
   // Pure scenery around the building (merged with the room, no nav/obstacles: nobody walks outside).
   {
@@ -559,7 +560,7 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
     flat(2.2, 150, PATH, RX - 5.2, 0, -0.04); // pavement beside the road
     const CAR_COLS = ['#e53935', '#1e88e5', '#fafafa', '#212121', '#9e9e9e', '#fbc02d', '#43a047', '#5e35b1', '#ff7043', '#90a4ae'];
     const glass = m('#1c2733', 0.15), tyre = m('#141414', 0.9), lamp = m('#fff3c4', 0.4), tail = m('#c62828', 0.5);
-    function car(x, z, ry, col) {
+    function car(x, z, ry, col, parent = ext) {
       const g = new THREE.Group();
       const body = m(col, 0.35);
       g.add(F.rbox(1.8, 0.62, 4.2, 0.18, body, 0, 0.55, 0));
@@ -574,7 +575,19 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
       g.add(F.box(1.5, 0.12, 0.04, tail, 0, 0.66, -2.1, false));
       g.position.set(x, -0.03, z);
       g.rotation.y = ry;
-      ext.add(g);
+      parent.add(g);
+      return g;
+    }
+    // moving traffic: two lanes, opposite directions, spaced out, different speeds
+    const lanes = [{ x: RX + 1.9, dir: 1 }, { x: RX - 1.9, dir: -1 }];
+    let n = 0;
+    for (const ln of lanes) {
+      for (let i = 0; i < 3; i++) {
+        const g = car(ln.x, -60 + i * 40 + R() * 12, ln.dir > 0 ? 0 : Math.PI, CAR_COLS[(n * 3 + 1) % CAR_COLS.length], scene);
+        g.traverse((o) => { if (o.isMesh) o.castShadow = false; });
+        traffic.push({ g, dir: ln.dir, speed: 7 + R() * 5 });
+        n++;
+      }
     }
     // two rows of stalls facing a central aisle, white lines, some parked cars
     const STALL = 2.7;
@@ -1115,7 +1128,15 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
     const dt = Math.min(0.05, (now - last) / 1000);
     last = now;
     const t = now / 1000;
-    if (!REDUCED_MOTION.matches) F.SWAY_U.value = t;
+    if (!REDUCED_MOTION.matches) {
+      F.SWAY_U.value = t;
+      for (const c of traffic) { // cars loop along the road
+        let z = c.g.position.z + c.dir * c.speed * dt;
+        if (z > 75) z -= 150;
+        if (z < -75) z += 150;
+        c.g.position.z = z;
+      }
+    }
     if (anim) {
       const k0 = Math.min(1, (now - anim.t0) / anim.dur);
       const k = k0 < 0.5 ? 4 * k0 ** 3 : 1 - (-2 * k0 + 2) ** 3 / 2;
