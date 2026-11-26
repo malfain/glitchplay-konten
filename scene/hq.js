@@ -535,6 +535,114 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
   put(F.makePlant('fiddle', 1.0, 21), 9.6, 12.0, 0, [0.5, 0.5]);
   put(F.makePlant('snake', 1, 22), 15.5, 6.6, 0, [0.4, 0.4]);
 
+  // ---------------------------------------------------------------- outside: garden (taman) + parking lot (parkiran)
+  // Pure scenery around the building (merged with the room, no nav/obstacles: nobody walks outside).
+  {
+    const ext = new THREE.Group();
+    const m = (c, r = 0.9) => F.accentMat(c, r);
+    const flat = (w, d, mt, x, z, y = -0.03) => { const b = F.box(w, 0.02, d, mt, x, y, z, false); b.receiveShadow = true; ext.add(b); return b; };
+    const R = (() => { let t = 1234567; return () => ((t = (t * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff); })();
+    const GRASS = m('#9ccc65', 1), GRASS2 = m('#8bc34a', 1), PATH = m('#e7dfd0', 0.95), CURB = m('#c9c4ba', 0.9);
+    const ASPH = m('#4b5058', 0.95), LINE = m('#f5f5f0', 0.7), YEL = m('#f2c14e', 0.7);
+    // big lawn + sidewalk ring around the building
+    flat(150, 150, GRASS, 0, 0, -0.06);
+    flat(X1 - X0 + 5, Z1 - Z0 + 5, PATH, (X0 + X1) / 2, (Z0 + Z1) / 2, -0.045);
+    // ---- parking lot in front (south, +z) and the road along the east (+x)
+    const PZ0 = Z1 + 4.5, PZ1 = Z1 + 22, PX0 = X0 - 2, PX1 = X1 + 4;
+    flat(PX1 - PX0 + 0.6, PZ1 - PZ0 + 0.6, CURB, (PX0 + PX1) / 2, (PZ0 + PZ1) / 2, -0.04);
+    flat(PX1 - PX0, PZ1 - PZ0, ASPH, (PX0 + PX1) / 2, (PZ0 + PZ1) / 2, -0.035);
+    flat(5, 4.6, PATH, 0, Z1 + 2.3, -0.04); // walkway from the entrance to the lot
+    const RX = X1 + 9; // road
+    flat(8, 150, ASPH, RX, 0, -0.035);
+    for (let z = -70; z < 70; z += 5) flat(0.18, 2.4, LINE, RX, z, -0.024);
+    flat(PX1 - RX + 4, 6, ASPH, (PX1 + RX) / 2, (PZ0 + PZ1) / 2, -0.034); // driveway lot → road
+    flat(2.2, 150, PATH, RX - 5.2, 0, -0.04); // pavement beside the road
+    const CAR_COLS = ['#e53935', '#1e88e5', '#fafafa', '#212121', '#9e9e9e', '#fbc02d', '#43a047', '#5e35b1', '#ff7043', '#90a4ae'];
+    const glass = m('#1c2733', 0.15), tyre = m('#141414', 0.9), lamp = m('#fff3c4', 0.4), tail = m('#c62828', 0.5);
+    function car(x, z, ry, col) {
+      const g = new THREE.Group();
+      const body = m(col, 0.35);
+      g.add(F.rbox(1.8, 0.62, 4.2, 0.18, body, 0, 0.55, 0));
+      g.add(F.rbox(1.6, 0.55, 2.3, 0.2, body, 0, 1.08, -0.2));
+      g.add(F.box(1.62, 0.42, 2.0, glass, 0, 1.1, -0.2, false));
+      for (const [wx, wz] of [[-0.86, 1.3], [0.86, 1.3], [-0.86, -1.3], [0.86, -1.3]]) {
+        const w = F.cyl(0.36, 0.36, 0.26, tyre, wx, 0.36, wz, 14);
+        w.rotation.z = Math.PI / 2;
+        g.add(w);
+      }
+      g.add(F.box(1.5, 0.12, 0.04, lamp, 0, 0.66, 2.1, false));
+      g.add(F.box(1.5, 0.12, 0.04, tail, 0, 0.66, -2.1, false));
+      g.position.set(x, -0.03, z);
+      g.rotation.y = ry;
+      ext.add(g);
+    }
+    // two rows of stalls facing a central aisle, white lines, some parked cars
+    const STALL = 2.7;
+    const rows = [{ z0: PZ0 + 0.4, face: 0 }, { z0: PZ1 - 5.6, face: Math.PI }];
+    let k = 0;
+    for (const row of rows) {
+      for (let x = PX0 + 1.2; x + STALL <= PX1 - 0.4; x += STALL) {
+        flat(0.12, 5.2, LINE, x, row.z0 + 2.6, -0.024);
+        const cx = x + STALL / 2;
+        if (R() < 0.68) car(cx + (R() - 0.5) * 0.2, row.z0 + 2.6, row.face + (R() - 0.5) * 0.06, CAR_COLS[k++ % CAR_COLS.length]);
+      }
+    }
+    for (let x = PX0 + 1; x < PX1 - 1; x += 3) flat(1.2, 0.16, YEL, x, (PZ0 + PZ1) / 2, -0.024); // aisle arrows/markings
+    // hedges + lamp posts around the lot
+    const hedge = m('#558b2f', 1);
+    for (let x = PX0; x <= PX1; x += 2.4) { const h = F.rbox(2.2, 0.7, 0.8, 0.3, hedge, x, 0.32, PZ1 + 0.9); ext.add(h); }
+    const post = m('#3a3d42', 0.5), bulb = m('#fff7d6', 0.3);
+    function lampPost(x, z) { ext.add(F.cyl(0.07, 0.09, 3.6, post, x, 1.8, z, 8)); ext.add(F.box(0.9, 0.08, 0.22, post, x + 0.35, 3.6, z)); ext.add(F.box(0.5, 0.05, 0.16, bulb, x + 0.55, 3.55, z, false)); }
+    for (let x = PX0 + 2; x < PX1; x += 9) lampPost(x, (PZ0 + PZ1) / 2);
+    // ---- garden (taman): behind (north) and beside (west) the building
+    const trunk = m('#6d4c41', 0.9), leafA = m('#4caf50', 1), leafB = m('#66bb6a', 1), leafC = m('#2e7d32', 1);
+    const blob = new THREE.IcosahedronGeometry(1, 1);
+    function tree(x, z, s = 1) {
+      const g = new THREE.Group();
+      g.add(F.cyl(0.14 * s, 0.2 * s, 1.6 * s, trunk, 0, 0.8 * s, 0, 8));
+      const n = 3 + Math.floor(R() * 2);
+      for (let i = 0; i < n; i++) {
+        const mm = new THREE.Mesh(blob, [leafA, leafB, leafC][i % 3]);
+        mm.position.set((R() - 0.5) * 0.9 * s, (1.9 + R() * 0.8) * s, (R() - 0.5) * 0.9 * s);
+        mm.scale.setScalar((0.7 + R() * 0.45) * s);
+        mm.castShadow = true;
+        g.add(mm);
+      }
+      g.position.set(x, -0.03, z);
+      ext.add(g);
+    }
+    const inFree = (x, z) => !(x > X0 - 3.5 && x < X1 + 3.5 && z > Z0 - 3.5 && z < Z1 + 3.5) && !(x > PX0 - 2 && x < PX1 + 2 && z > PZ0 - 2 && z < PZ1 + 2.5) && Math.abs(x - RX) > 6.5;
+    // lush garden north + west, scattered trees elsewhere
+    for (let i = 0; i < 240; i++) {
+      const x = -60 + R() * 120, z = -60 + R() * 120;
+      if (!inFree(x, z)) continue;
+      const garden = z < Z0 || x < X0;
+      if (!garden && R() < 0.6) continue;
+      tree(x, z, 0.8 + R() * 0.7);
+    }
+    // winding garden path with a pond, benches and flower beds behind the building
+    const GZ = Z0 - 9;
+    flat(40, 2.2, PATH, -2, GZ, -0.04);
+    flat(2.2, 9, PATH, -2, Z0 - 4.5, -0.04);
+    const pond = new THREE.Mesh(new THREE.CircleGeometry(4.2, 40), m('#4fc3f7', 0.1));
+    pond.rotation.x = -Math.PI / 2; pond.position.set(-12, -0.02, GZ - 6); ext.add(pond);
+    const rim = new THREE.Mesh(new THREE.RingGeometry(4.2, 4.8, 40), CURB);
+    rim.rotation.x = -Math.PI / 2; rim.position.set(-12, -0.025, GZ - 6); ext.add(rim);
+    for (const bx of [-16, 6, 12]) { const b = F.makeBench(2.2); b.position.set(bx, -0.03, GZ - 1.6); ext.add(b); }
+    const flowers = ['#e91e63', '#ffca28', '#ab47bc', '#ff7043', '#ffffff'];
+    for (let f = 0; f < 6; f++) {
+      const fx = -18 + f * 7, fz = GZ + 2.6;
+      flat(4.4, 1.6, m('#795548', 1), fx, fz, -0.035);
+      for (let j = 0; j < 14; j++) {
+        const fl = F.box(0.22, 0.22, 0.22, m(flowers[(f + j) % flowers.length], 0.8), fx - 2 + R() * 4, 0.12, fz - 0.6 + R() * 1.2, false);
+        ext.add(fl);
+      }
+    }
+    for (let x = -18; x <= 14; x += 8) lampPost(x, GZ + 1.6);
+    flat(18, 14, GRASS2, -40, 0, -0.05); // a lighter lawn patch west
+    room.add(ext);
+  }
+
   const baked = F.mergeStatic(room);
   scene.add(baked);
 
