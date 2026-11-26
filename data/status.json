@@ -52,9 +52,9 @@
       "t": "2026-11-27T06:06:12+07:00"
     },
     "strategist": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-27T06:06:12+07:00"
+      "status": "kerja",
+      "aktivitas": "Ranking FYP dan hook",
+      "t": "2026-11-27T06:08:25+07:00"
     },
     "asisten": {
       "status": "idle",
@@ -63,6 +63,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-27T06:08:25+07:00",
+      "agen": "strategist",
+      "pesan": "Ranking FYP dan hook"
+    },
     {
       "t": "2026-11-27T06:08:23+07:00",
       "agen": "detektif",
@@ -357,13 +362,8 @@
       "t": "2026-11-26T06:09:54+07:00",
       "agen": "strategist",
       "pesan": "Ranking FYP, hook, jam posting"
-    },
-    {
-      "t": "2026-11-26T06:09:54+07:00",
-      "agen": "detektif",
-      "pesan": "10 lolos, 6 dibuang"
     }
   ],
-  "updated_at": "2026-11-27T06:08:23+07:00",
+  "updated_at": "2026-11-27T06:08:25+07:00",
   "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
