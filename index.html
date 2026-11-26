@@ -232,6 +232,19 @@
   .hq-zoomctl button:active { background: #f1f3f6; }
   @media (hover: hover) { .hq-zoomctl button:hover:not(:active) { background: #f6f7f9; } }
   /* full-screen office */
+  /* the 3D office only exists as a full-screen pop-up; the Kantor page shows a launcher row instead */
+  .hq3d:not(.full) { display: none; }
+  .hq-open { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 14px; margin: 0 0 12px; border: 0; border-radius: 14px;
+             background: #1c1c1e; color: #fff; text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent;
+             transition-property: scale, background-color; transition-duration: 150ms; transition-timing-function: ease-out; }
+  .hq-open:active { scale: 0.96; background-color: #2c2c2e; }
+  .hq-open-ico { flex: none; width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; font-size: 24px;
+                 background: linear-gradient(160deg, #0a84ff, #5e5ce6); }
+  .hq-open-txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .hq-open-txt b { font: 600 17px/1.25 -apple-system, "SF Pro Text", system-ui, Inter, sans-serif; letter-spacing: -0.01em; }
+  .hq-open-txt small { font: 400 13px/1.3 -apple-system, "SF Pro Text", system-ui, Inter, sans-serif; color: rgba(235, 235, 245, 0.6); }
+  .hq-open-chev { flex: none; width: 8px; height: 14px; color: #8e8e93; }
+  @media (hover: hover) { .hq-open:hover { background-color: #2c2c2e; } }
   .hq3d.full { position: fixed; inset: 0; z-index: 60; margin: 0; height: 100vh; height: 100dvh; border-radius: 0; }
   body.hq-full { overflow: hidden; }
   .hq-fs { position: absolute; right: 10px; top: 10px; z-index: 3; border: 1px solid #e4e7ec; background: rgba(255,255,255,.95);
@@ -294,7 +307,7 @@
   .steps { margin: 12px 0 0; padding-left: 20px; font-size: 15px; line-height: 20px; color: var(--muted); } .steps li { margin: 6px 0; }
   .steps b { color: var(--text); font-weight: 600; }
   /* toast: a solid HUD capsule */
-  .toast { position: fixed; left: 50%; bottom: calc(83px + 16px + env(safe-area-inset-bottom)); translate: -50% 0; z-index: 50; background: var(--fill-3);
+  .toast { position: fixed; left: 50%; bottom: calc(83px + 16px + env(safe-area-inset-bottom)); translate: -50% 0; z-index: 72; background: var(--fill-3);
            color: var(--text); padding: 12px 18px; border-radius: 999px; font: 500 15px/20px var(--font); letter-spacing: -0.016em; max-width: calc(100vw - 32px); width: max-content;
            text-align: center; box-shadow: var(--shadow-float); animation: fade-in 300ms ease-out backwards; transition-property: opacity, transform; transition-duration: 150ms; transition-timing-function: ease-out; }
   .toast.out { opacity: 0; }
@@ -397,13 +410,13 @@
   .empty { text-align: center; color: var(--muted); padding: 48px 16px; font-size: 15px; }
 
   /* sheet: solid iOS sheet over a dim scrim; slides up critically damped, cross-fades under reduced motion */
-  .scrim { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 40; display: none; }
+  .scrim { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 70; display: none; }
   @supports selector(:has(a)) {
     .scrim { opacity: 0; transition: opacity 250ms ease-out; }
     body:has(#sheet.open) .scrim { opacity: 1; transition-duration: 300ms; }
     @starting-style { body:has(#sheet.open) .scrim { opacity: 0; } }
   }
-  .sheet { position: fixed; left: 50%; bottom: 0; transform: translate(-50%, 0); width: 100%; max-width: 480px; z-index: 41;
+  .sheet { position: fixed; left: 50%; bottom: 0; transform: translate(-50%, 0); width: 100%; max-width: 480px; z-index: 71;
            background: var(--card); border: 0; border-radius: 14px 14px 0 0; box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.5);
            padding: 6px 16px calc(24px + env(safe-area-inset-bottom)); max-height: 85vh; overflow: auto; overscroll-behavior: contain;
            opacity: 0; visibility: hidden; transition: opacity 200ms ease-out, visibility 0s linear 250ms; }
@@ -523,7 +536,12 @@
     <div class="stats" id="taskStats"></div>
     <div class="office">
       <div class="ceo-bar" id="ceoBar"></div>
-      <div class="hq3d" id="hq3d"><div class="loading">Menyiapkan kantor 3D…</div><div class="hq-hint">Tap agen untuk detail</div><button class="hq-fs" id="hqFull" type="button" aria-label="Layar penuh">⛶ Layar penuh</button></div>
+      <button class="hq-open" id="hqOpen" type="button">
+        <span class="hq-open-ico" aria-hidden="true">🏢</span>
+        <span class="hq-open-txt"><b>Buka Kantor 3D</b><small id="hqOpenSub">Lihat tim bekerja secara langsung</small></span>
+        <svg class="hq-open-chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="hq3d" id="hq3d"><div class="loading">Menyiapkan kantor 3D…</div><div class="hq-hint">Tap agen untuk detail</div><button class="hq-fs" id="hqFull" type="button" aria-label="Tutup kantor">✕ Tutup</button></div>
       <div class="alist" id="rooms"></div>
       <div class="legend">
         <span><i class="dot"></i>siaga</span><span><i class="dot work"></i>kerja</span><span><i class="dot on"></i>selesai</span><span><i class="dot err"></i>error</span>
@@ -692,6 +710,7 @@ function renderKantor() {
   const working = Object.values(state.status.agents || {}).filter((a) => a.status === "kerja").length;
   const all = 1 + ORDER.length;
   $("#siagaChip").innerHTML = `<i class="dot ${working ? "work" : "on"}"></i>${working ? working + " Agen Kerja" : all + " Agen Siaga"}`;
+  $("#hqOpenSub").textContent = (working ? `${working} agen sedang kerja` : `${all} agen siaga`) + " · ketuk untuk membuka";
   $("#taskStats").innerHTML = `<span class="s"><i class="dot" style="background:var(--amber)"></i><b>${t.antri ?? 0}</b> antri</span><span class="s"><i class="dot work"></i><b>${t.jalan ?? 0}</b> jalan</span><span class="s"><i class="dot on"></i><b>${t.kelar ?? 0}</b> kelar</span>`;
   const bos = agentState("bos");
   $("#ceoBar").innerHTML = `<b>👑 Bos Glitch (CEO):</b><span>${esc(bos.aktivitas)}</span>`;
@@ -713,7 +732,7 @@ async function ensureHQ() {
     host.querySelector(".loading")?.remove();
     hq = createHQ(host, { agents: AGENTS, colors, onAgentClick: openAgent });
     hq.setAgents(state.status.agents || {});
-    if (current === "kantor") hq.start();
+    if ($("#hq3d").classList.contains("full")) hq.start();
   }).catch((e) => {
     console.error(e);
     host.innerHTML = '<div class="loading">Kantor 3D tidak bisa dimuat di perangkat ini.</div>';
@@ -1091,7 +1110,7 @@ function setHQFull(on) {
   if (host.classList.contains("full") === on) return;
   host.classList.toggle("full", on);
   document.body.classList.toggle("hq-full", on);
-  $("#hqFull").textContent = on ? "✕ Tutup" : "⛶ Layar penuh";
+  if (on) { ensureHQ(); hq?.start(); } else hq?.stop(); // render only while the pop-up is open
   try {
     if (on && host.requestFullscreen) host.requestFullscreen({ navigationUI: "hide" }).catch(() => {});
     else if (!on && document.fullscreenElement) document.exitFullscreen().catch(() => {});
@@ -1127,7 +1146,7 @@ function show(page, arg) {
   history.replaceState(null, "", "#" + page + (arg ? "/" + arg : ""));
   window.scrollTo(0, 0);
   if (page === "hasil") renderHasil(arg);
-  if (page === "kantor") { ensureHQ(); hq?.start(); } else hq?.stop();
+  if (page !== "kantor") hq?.stop();
 }
 function render() {
   renderBeranda(); renderKantor(); renderJadwal(); renderLog();
@@ -1157,7 +1176,8 @@ $("#bell").onclick = () => {
 $("#refresh").onclick = async () => { $("#refresh").style.opacity = .5; await load(); $("#refresh").style.opacity = 1; };
 $("#day").onchange = () => show("hasil", $("#day").value);
 $("#tokBtn").onclick = () => openTokenSheet();
-$("#hqFull").onclick = (e) => { e.stopPropagation(); setHQFull(!$("#hq3d").classList.contains("full")); };
+$("#hqFull").onclick = (e) => { e.stopPropagation(); setHQFull(false); };
+$("#hqOpen").onclick = () => setHQFull(true);
 refreshTokBtn();
 document.querySelectorAll(".chtabs button").forEach((b) => (b.onclick = () => {
   state.ch = b.dataset.ch;
