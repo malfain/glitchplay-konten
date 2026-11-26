@@ -17,14 +17,14 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "Shift selesai",
-      "t": "2026-11-26T06:11:38+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Buka shift, eps 9-10",
+      "t": "2026-11-27T04:06:09+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "16 kandidat ditemukan",
-      "t": "2026-11-26T06:09:48+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Riset eps 9 & 10",
+      "t": "2026-11-27T04:06:09+07:00"
     },
     "detektif": {
       "status": "selesai",
@@ -63,6 +63,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-27T04:06:09+07:00",
+      "agen": "radar",
+      "pesan": "[Sirah] Riset eps 9 & 10"
+    },
+    {
+      "t": "2026-11-27T04:06:09+07:00",
+      "agen": "bos",
+      "pesan": "[Sirah] Buka shift, eps 9-10"
+    },
     {
       "t": "2026-11-26T06:31:22+07:00",
       "agen": "studio",
@@ -352,18 +362,8 @@
       "t": "2026-11-25T06:36:46+07:00",
       "agen": "studio",
       "pesan": "Render video 10/10: Team Secret BOOM dan Yang Dae Pal "
-    },
-    {
-      "t": "2026-11-25T06:35:12+07:00",
-      "agen": "studio",
-      "pesan": "Render video 9/10: A Game About Digging A Hole Togeth"
-    },
-    {
-      "t": "2026-11-25T06:33:45+07:00",
-      "agen": "studio",
-      "pesan": "Render video 8/10: Subathon GTA VI Tara Arts x GGWP 7"
     }
   ],
-  "updated_at": "2026-11-26T06:31:22+07:00",
+  "updated_at": "2026-11-27T04:06:09+07:00",
   "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
