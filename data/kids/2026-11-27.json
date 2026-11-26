@@ -221,7 +221,11 @@
           "nama": "Astronomy.com - Olympus Mons",
           "url": "https://www.astronomy.com/science/olympus-mons-mars-mega-volcano-height-formation/"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-27/kids-01-6-fakta-seru-mars-gunung-2-kali-everest.mp4",
+      "poster": "video/kids/2026-11-27/01-6-fakta-seru-mars-gunung-2-kali-everest.jpg",
+      "video_durasi": 93.7,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     },
     {
       "kategori": "Bumi & Cuaca",
@@ -446,7 +450,11 @@
           "nama": "Oregon State Volcano - Floating Pumice",
           "url": "https://volcano.oregonstate.edu/news/floating-pumice-oceanic-hazard"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-27/kids-02-5-fakta-seru-gunung-berapi-batu-mengapun.mp4",
+      "poster": "video/kids/2026-11-27/02-5-fakta-seru-gunung-berapi-batu-mengapun.jpg",
+      "video_durasi": 86.7,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     }
   ]
 }

@@ -57,12 +57,27 @@
       "t": "2026-11-27T05:10:06+07:00"
     },
     "asisten": {
-      "status": "kerja",
-      "aktivitas": "Render 2 video untuk 2026-11-27",
-      "t": "2026-11-27T05:12:29+07:00"
+      "status": "selesai",
+      "aktivitas": "2/2 video jadi, siap di Hasil",
+      "t": "2026-11-27T05:24:03+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-27T05:24:03+07:00",
+      "agen": "asisten",
+      "pesan": "2/2 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-27T05:18:16+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 2/2: 5 fakta seru gunung berapi: batu m"
+    },
+    {
+      "t": "2026-11-27T05:12:31+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 1/2: 6 fakta seru Mars: gunung 2 kali E"
+    },
     {
       "t": "2026-11-27T05:12:29+07:00",
       "agen": "asisten",
@@ -347,23 +362,8 @@
       "t": "2026-11-26T05:30:56+07:00",
       "agen": "asisten",
       "pesan": "2/2 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-26T05:21:07+07:00",
-      "agen": "asisten",
-      "pesan": "Render video 2/2: 6 fakta seru Matahari: muat 1,3 ju"
-    },
-    {
-      "t": "2026-11-26T05:12:06+07:00",
-      "agen": "asisten",
-      "pesan": "Render video 1/2: 6 fakta seru paus biru: lidah sebe"
-    },
-    {
-      "t": "2026-11-26T05:12:03+07:00",
-      "agen": "asisten",
-      "pesan": "Render 2 video untuk 2026-11-26"
     }
   ],
-  "updated_at": "2026-11-27T05:12:29+07:00",
+  "updated_at": "2026-11-27T05:24:03+07:00",
   "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
