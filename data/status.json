@@ -22,19 +22,19 @@
       "t": "2026-11-27T04:06:09+07:00"
     },
     "radar": {
-      "status": "kerja",
-      "aktivitas": "[Sirah] Riset eps 9 & 10",
-      "t": "2026-11-27T04:06:09+07:00"
+      "status": "selesai",
+      "aktivitas": "[Sirah] 2 tema, sumber ditemukan",
+      "t": "2026-11-27T04:06:11+07:00"
     },
     "detektif": {
       "status": "selesai",
-      "aktivitas": "10 lolos, 6 dibuang",
-      "t": "2026-11-26T06:09:54+07:00"
+      "aktivitas": "[Sirah] Detail sahih lolos",
+      "t": "2026-11-27T04:06:11+07:00"
     },
     "narator": {
-      "status": "selesai",
-      "aktivitas": "10 naskah siap",
-      "t": "2026-11-26T06:11:32+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Tulis naskah eps 9-10",
+      "t": "2026-11-27T04:06:11+07:00"
     },
     "copywriter": {
       "status": "selesai",
@@ -53,8 +53,8 @@
     },
     "strategist": {
       "status": "selesai",
-      "aktivitas": "10 topik diurutkan, hook siap",
-      "t": "2026-11-26T06:11:30+07:00"
+      "aktivitas": "[Sirah] 2 episode direncanakan",
+      "t": "2026-11-27T04:06:11+07:00"
     },
     "asisten": {
       "status": "idle",
@@ -63,6 +63,36 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-27T04:06:11+07:00",
+      "agen": "narator",
+      "pesan": "[Sirah] Tulis naskah eps 9-10"
+    },
+    {
+      "t": "2026-11-27T04:06:11+07:00",
+      "agen": "strategist",
+      "pesan": "[Sirah] 2 episode direncanakan"
+    },
+    {
+      "t": "2026-11-27T04:06:11+07:00",
+      "agen": "strategist",
+      "pesan": "[Sirah] Hook & jam posting"
+    },
+    {
+      "t": "2026-11-27T04:06:11+07:00",
+      "agen": "detektif",
+      "pesan": "[Sirah] Detail sahih lolos"
+    },
+    {
+      "t": "2026-11-27T04:06:11+07:00",
+      "agen": "detektif",
+      "pesan": "[Sirah] Cek fakta 2 sumber"
+    },
+    {
+      "t": "2026-11-27T04:06:11+07:00",
+      "agen": "radar",
+      "pesan": "[Sirah] 2 tema, sumber ditemukan"
+    },
     {
       "t": "2026-11-27T04:06:09+07:00",
       "agen": "radar",
@@ -332,38 +362,8 @@
       "t": "2026-11-26T04:07:10+07:00",
       "agen": "strategist",
       "pesan": "[Sirah] Hook & jam posting siap"
-    },
-    {
-      "t": "2026-11-26T04:07:10+07:00",
-      "agen": "detektif",
-      "pesan": "[Sirah] Detail terverifikasi >=2 sumber"
-    },
-    {
-      "t": "2026-11-26T04:07:10+07:00",
-      "agen": "radar",
-      "pesan": "[Sirah] 2 topik eps 7-8, sumber sirah"
-    },
-    {
-      "t": "2026-11-26T04:05:34+07:00",
-      "agen": "radar",
-      "pesan": "[Sirah] Riset eps 7: Syam & Bahira, eps 8: Al-Amin"
-    },
-    {
-      "t": "2026-11-26T04:05:33+07:00",
-      "agen": "bos",
-      "pesan": "[Sirah] Buka shift, eps 7 & 8"
-    },
-    {
-      "t": "2026-11-25T06:38:15+07:00",
-      "agen": "studio",
-      "pesan": "10/10 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-25T06:36:46+07:00",
-      "agen": "studio",
-      "pesan": "Render video 10/10: Team Secret BOOM dan Yang Dae Pal "
     }
   ],
-  "updated_at": "2026-11-27T04:06:09+07:00",
+  "updated_at": "2026-11-27T04:06:11+07:00",
   "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
