@@ -22,24 +22,24 @@
       "t": "2026-11-27T05:08:32+07:00"
     },
     "radar": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Cari tema: gunung berapi & Mars",
-      "t": "2026-11-27T05:08:34+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] 2 tema: gunung berapi, Mars",
+      "t": "2026-11-27T05:10:06+07:00"
     },
     "detektif": {
       "status": "selesai",
-      "aktivitas": "[Sirah] Detail sahih lolos",
-      "t": "2026-11-27T04:06:11+07:00"
+      "aktivitas": "[Anak] Fakta lolos 2 sumber, 2 tema",
+      "t": "2026-11-27T05:10:06+07:00"
     },
     "narator": {
       "status": "selesai",
-      "aktivitas": "[Sirah] Naskah eps 9-10 siap",
-      "t": "2026-11-27T04:07:12+07:00"
+      "aktivitas": "[Anak] 2 naskah selesai",
+      "t": "2026-11-27T05:10:06+07:00"
     },
     "copywriter": {
       "status": "selesai",
-      "aktivitas": "[Sirah] Caption eps 9-10 siap",
-      "t": "2026-11-27T04:07:12+07:00"
+      "aktivitas": "[Anak] Judul & deskripsi siap",
+      "t": "2026-11-27T05:10:06+07:00"
     },
     "qc": {
       "status": "selesai",
@@ -53,8 +53,8 @@
     },
     "strategist": {
       "status": "selesai",
-      "aktivitas": "[Sirah] 2 episode direncanakan",
-      "t": "2026-11-27T04:06:11+07:00"
+      "aktivitas": "[Anak] Hook & jam posting siap",
+      "t": "2026-11-27T05:10:06+07:00"
     },
     "asisten": {
       "status": "selesai",
@@ -63,6 +63,31 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-27T05:10:06+07:00",
+      "agen": "copywriter",
+      "pesan": "[Anak] Judul & deskripsi siap"
+    },
+    {
+      "t": "2026-11-27T05:10:06+07:00",
+      "agen": "narator",
+      "pesan": "[Anak] 2 naskah selesai"
+    },
+    {
+      "t": "2026-11-27T05:10:06+07:00",
+      "agen": "strategist",
+      "pesan": "[Anak] Hook & jam posting siap"
+    },
+    {
+      "t": "2026-11-27T05:10:06+07:00",
+      "agen": "detektif",
+      "pesan": "[Anak] Fakta lolos 2 sumber, 2 tema"
+    },
+    {
+      "t": "2026-11-27T05:10:06+07:00",
+      "agen": "radar",
+      "pesan": "[Anak] 2 tema: gunung berapi, Mars"
+    },
     {
       "t": "2026-11-27T05:08:34+07:00",
       "agen": "radar",
@@ -337,33 +362,8 @@
       "t": "2026-11-26T05:10:23+07:00",
       "agen": "copywriter",
       "pesan": "[Anak] Judul & deskripsi YouTube siap"
-    },
-    {
-      "t": "2026-11-26T05:10:23+07:00",
-      "agen": "narator",
-      "pesan": "[Anak] 2 video siap"
-    },
-    {
-      "t": "2026-11-26T05:10:23+07:00",
-      "agen": "strategist",
-      "pesan": "[Anak] 2 video siap"
-    },
-    {
-      "t": "2026-11-26T05:09:42+07:00",
-      "agen": "narator",
-      "pesan": "[Anak] Tulis naskah 2 video"
-    },
-    {
-      "t": "2026-11-26T05:09:42+07:00",
-      "agen": "strategist",
-      "pesan": "[Anak] Hook & jam posting"
-    },
-    {
-      "t": "2026-11-26T05:09:42+07:00",
-      "agen": "detektif",
-      "pesan": "[Anak] 2 tema lolos, fakta ragu dibuang"
     }
   ],
-  "updated_at": "2026-11-27T05:08:34+07:00",
+  "updated_at": "2026-11-27T05:10:06+07:00",
   "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
