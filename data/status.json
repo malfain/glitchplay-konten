@@ -1,14 +1,14 @@
 {
   "run": {
-    "date": "2026-11-26",
-    "status": "selesai",
-    "started_at": "2026-11-26T06:06:09+07:00",
-    "finished_at": "2026-11-26T06:11:38+07:00"
+    "date": "2026-11-27",
+    "status": "berjalan",
+    "started_at": "2026-11-27T06:06:12+07:00",
+    "finished_at": null
   },
   "tasks": {
     "antri": 0,
     "jalan": 0,
-    "kelar": 2
+    "kelar": 0
   },
   "kesimpulan_bos": [
     "10 konten terbit: 8 game + 2 esports (berita esports/streamer Indonesia baru tipis, topik lain sudah dipakai 14 hari terakhir)",
@@ -17,52 +17,62 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "[Anak] Shift anak selesai",
-      "t": "2026-11-27T05:10:11+07:00"
+      "status": "kerja",
+      "aktivitas": "Buka shift, bagi tugas ke tim",
+      "t": "2026-11-27T06:06:12+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 tema: gunung berapi, Mars",
-      "t": "2026-11-27T05:10:06+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-27T06:06:12+07:00"
     },
     "detektif": {
-      "status": "selesai",
-      "aktivitas": "[Anak] Fakta lolos 2 sumber, 2 tema",
-      "t": "2026-11-27T05:10:06+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-27T06:06:12+07:00"
     },
     "narator": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 naskah selesai",
-      "t": "2026-11-27T05:10:06+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-27T06:06:12+07:00"
     },
     "copywriter": {
-      "status": "selesai",
-      "aktivitas": "[Anak] Judul & deskripsi siap",
-      "t": "2026-11-27T05:10:06+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-27T06:06:12+07:00"
     },
     "qc": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 konten anak terbit di Hasil",
-      "t": "2026-11-27T05:10:11+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-27T06:06:12+07:00"
     },
     "studio": {
-      "status": "selesai",
-      "aktivitas": "10/10 video jadi, siap di Hasil",
-      "t": "2026-11-26T06:31:22+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-27T06:06:12+07:00"
     },
     "strategist": {
-      "status": "selesai",
-      "aktivitas": "[Anak] Hook & jam posting siap",
-      "t": "2026-11-27T05:10:06+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-27T06:06:12+07:00"
     },
     "asisten": {
-      "status": "selesai",
-      "aktivitas": "2/2 video jadi, siap di Hasil",
-      "t": "2026-11-27T05:24:03+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-27T06:06:12+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-27T06:06:12+07:00",
+      "agen": "bos",
+      "pesan": "Buka shift, bagi tugas ke tim"
+    },
+    {
+      "t": "2026-11-27T06:06:12+07:00",
+      "agen": "bos",
+      "pesan": "Shift pagi dimulai. Tim dikumpulkan."
+    },
     {
       "t": "2026-11-27T05:24:03+07:00",
       "agen": "asisten",
@@ -352,18 +362,8 @@
       "t": "2026-11-26T06:06:09+07:00",
       "agen": "bos",
       "pesan": "Buka shift, bagi tugas ke tim"
-    },
-    {
-      "t": "2026-11-26T06:06:09+07:00",
-      "agen": "bos",
-      "pesan": "Shift pagi dimulai. Tim dikumpulkan."
-    },
-    {
-      "t": "2026-11-26T05:30:56+07:00",
-      "agen": "asisten",
-      "pesan": "2/2 video jadi, siap di Hasil"
     }
   ],
-  "updated_at": "2026-11-27T05:24:03+07:00",
+  "updated_at": "2026-11-27T06:06:12+07:00",
   "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
