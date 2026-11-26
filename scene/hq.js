@@ -536,12 +536,20 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
   put(F.makePlant('snake', 1, 22), 15.5, 6.6, 0, [0.4, 0.4]);
 
   const traffic = []; // cars driving on the road (animated in frame(), not merged)
+  const walkers = []; // people strolling in the garden / around the building (animated in frame())
+  function placeWalker(w) {
+    const sg = w.segs.find((q) => w.d >= q.at && w.d < q.at + q.l) || w.segs[0];
+    const k = (w.d - sg.at) / sg.l;
+    w.g.position.set(sg.a[0] + (sg.b[0] - sg.a[0]) * k, -0.03, sg.a[1] + (sg.b[1] - sg.a[1]) * k);
+    w.g.rotation.y = Math.atan2(sg.b[0] - sg.a[0], sg.b[1] - sg.a[1]);
+  }
   // ---------------------------------------------------------------- outside: garden (taman) + parking lot (parkiran)
   // Pure scenery around the building (merged with the room, no nav/obstacles: nobody walks outside).
   {
     const ext = new THREE.Group();
     const m = (c, r = 0.9) => F.accentMat(c, r);
     const flat = (w, d, mt, x, z, y = -0.03) => { const b = F.box(w, 0.02, d, mt, x, y, z, false); b.receiveShadow = true; ext.add(b); return b; };
+    const GZ = Z0 - 9; // garden path behind the building
     const R = (() => { let t = 1234567; return () => ((t = (t * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff); })();
     const GRASS = m('#9ccc65', 1), GRASS2 = m('#8bc34a', 1), PATH = m('#e7dfd0', 0.95), CURB = m('#c9c4ba', 0.9);
     const ASPH = m('#4b5058', 0.95), LINE = m('#f5f5f0', 0.7), YEL = m('#f2c14e', 0.7);
@@ -589,6 +597,57 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
         n++;
       }
     }
+    // ---- pedestrians: light, human-proportioned figures that walk closed routes (legs/arms swing)
+    const SKINS = ['#f1c9a5', '#e0ac85', '#c68863', '#a0694a', '#7b4b32'];
+    const TOPS = ['#e53935', '#1e88e5', '#43a047', '#fdd835', '#8e24aa', '#fb8c00', '#ffffff', '#263238', '#00897b', '#f06292'];
+    const BOTTOMS = ['#263238', '#37474f', '#5d4037', '#1a237e', '#795548', '#9e9e9e'];
+    const HAIRS = ['#1b1b1b', '#3e2723', '#5d4037', '#8d6e63', '#212121'];
+    const limb = (w, h, d, mt) => { const g = new THREE.Group(); const b = F.box(w, h, d, mt, 0, -h / 2, 0); b.castShadow = false; g.add(b); return g; };
+    function person(seed) {
+      const g = new THREE.Group();
+      const skin = m(SKINS[seed % SKINS.length], 0.8), top = m(TOPS[(seed * 3) % TOPS.length], 0.85);
+      const bottom = m(BOTTOMS[(seed * 5) % BOTTOMS.length], 0.9), hair = m(HAIRS[(seed * 7) % HAIRS.length], 0.9), shoe = m('#222', 0.8);
+      const hijab = seed % 4 === 1;
+      const legL = limb(0.15, 0.82, 0.17, bottom), legR = limb(0.15, 0.82, 0.17, bottom);
+      legL.position.set(-0.1, 0.86, 0); legR.position.set(0.1, 0.86, 0);
+      for (const l of [legL, legR]) { const sh = F.box(0.16, 0.08, 0.26, shoe, 0, -0.84, 0.04); sh.castShadow = false; l.add(sh); }
+      const torso = F.rbox(0.44, 0.62, 0.26, 0.08, top, 0, 1.17, 0); torso.castShadow = false;
+      const armL = limb(0.11, 0.62, 0.12, top), armR = limb(0.11, 0.62, 0.12, top);
+      armL.position.set(-0.28, 1.45, 0); armR.position.set(0.28, 1.45, 0);
+      for (const a of [armL, armR]) { const hnd = F.box(0.1, 0.1, 0.1, skin, 0, -0.66, 0); hnd.castShadow = false; a.add(hnd); }
+      const head = new THREE.Mesh(new THREE.SphereGeometry(0.13, 14, 10), hijab ? m(TOPS[(seed + 4) % TOPS.length], 0.9) : skin);
+      head.position.y = 1.64;
+      g.add(legL, legR, torso, armL, armR, head);
+      if (hijab) { const veil = F.rbox(0.34, 0.24, 0.3, 0.1, head.material, 0, 1.5, -0.01); veil.castShadow = false; g.add(veil); const face = F.box(0.16, 0.14, 0.02, skin, 0, 1.63, 0.12, false); g.add(face); }
+      else { const cap = new THREE.Mesh(new THREE.SphereGeometry(0.135, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), hair); cap.position.y = 1.65; g.add(cap); }
+      scene.add(g);
+      return { g, legL, legR, armL, armR };
+    }
+    // routes: closed polylines on paths (world x,z)
+    const ring = (cx, cz, r, n = 24) => Array.from({ length: n }, (_, i) => [cx + Math.cos((i / n) * Math.PI * 2) * r, cz + Math.sin((i / n) * Math.PI * 2) * r]);
+    const SW = 1.25; // sidewalk ring around the building
+    const routes = [
+      [[-22, GZ], [18, GZ]], // along the garden path (there and back)
+      [[18, GZ + 0.5], [-22, GZ + 0.5]],
+      ring(-12, GZ - 6, 5.6), // around the pond
+      [[X0 - SW, Z0 - SW], [X1 + SW, Z0 - SW], [X1 + SW, Z1 + SW], [X0 - SW, Z1 + SW]], // around the building
+      [[-2, GZ], [-2, Z0 - SW], [X1 + SW, Z0 - SW], [X1 + SW, GZ + 3], [-2, GZ + 0.6]],
+      ring(-12, GZ - 6, 6.2).reverse(),
+    ];
+    routes.forEach((pts, i) => {
+      const segs = [];
+      let len = 0;
+      for (let j = 0; j < pts.length; j++) {
+        const a = pts[j], b = pts[(j + 1) % pts.length];
+        const l = Math.hypot(b[0] - a[0], b[1] - a[1]);
+        segs.push({ a, b, l, at: len });
+        len += l;
+      }
+      const jog = i === 3;
+      walkers.push({ ...person(i * 2 + 3), segs, len, d: R() * len, speed: jog ? 2.6 : 1.0 + R() * 0.35, jog, phase: R() * 6 });
+      if (i < 3) walkers.push({ ...person(i * 2 + 4), segs, len, d: R() * len, speed: 1.05 + R() * 0.3, jog: false, phase: R() * 6 });
+    });
+    for (const w of walkers) placeWalker(w);
     // two rows of stalls facing a central aisle, white lines, some parked cars
     const STALL = 2.7;
     const rows = [{ z0: PZ0 + 0.4, face: 0 }, { z0: PZ1 - 5.6, face: Math.PI }];
@@ -634,7 +693,6 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
       tree(x, z, 0.8 + R() * 0.7);
     }
     // winding garden path with a pond, benches and flower beds behind the building
-    const GZ = Z0 - 9;
     flat(40, 2.2, PATH, -2, GZ, -0.04);
     flat(2.2, 9, PATH, -2, Z0 - 4.5, -0.04);
     const pond = new THREE.Mesh(new THREE.CircleGeometry(4.2, 40), m('#4fc3f7', 0.1));
@@ -1130,6 +1188,14 @@ export function createHQ(host, { agents, colors, onAgentClick }) {
     const t = now / 1000;
     if (!REDUCED_MOTION.matches) {
       F.SWAY_U.value = t;
+      for (const w of walkers) { // people stroll their routes; legs and arms swing with the step
+        w.d = (w.d + w.speed * dt) % w.len;
+        placeWalker(w);
+        const sw = Math.sin(t * (w.jog ? 9 : 6) + w.phase) * (w.jog ? 0.7 : 0.45);
+        w.legL.rotation.x = sw; w.legR.rotation.x = -sw;
+        w.armL.rotation.x = -sw * 0.8; w.armR.rotation.x = sw * 0.8;
+        w.g.position.y = -0.03 + Math.abs(Math.cos(t * (w.jog ? 9 : 6) + w.phase)) * (w.jog ? 0.06 : 0.025);
+      }
       for (const c of traffic) { // cars loop along the road
         let z = c.g.position.z + c.dir * c.speed * dt;
         if (z > 75) z -= 150;
