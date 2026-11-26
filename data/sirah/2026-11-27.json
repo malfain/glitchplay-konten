@@ -170,7 +170,11 @@
           "nama": "Detik Sulsel: Kisah Pernikahan Nabi Muhammad dan Khadijah, Mahar 20 Unta (mengutip Sirah Ibnu Hisyam)",
           "url": "https://www.detik.com/sulsel/berita/d-6779217/kisah-pernikahan-nabi-muhammad-dan-khadijah-dengan-mahar-20-unta-betina"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-27/sirah-01-eps-9-berdagang-untuk-khadijah-dan-perni.mp4",
+      "poster": "video/sirah/2026-11-27/01-eps-9-berdagang-untuk-khadijah-dan-perni.jpg",
+      "video_durasi": 103.7,
+      "video_suara": "gemini-3.8-flash-lite-tts/Charon"
     },
     {
       "episode": 10,
@@ -347,7 +351,11 @@
           "nama": "Kompas: Kisah Nabi Mendapat Gelar Al-Amin",
           "url": "https://www.kompas.com/stori/read/2023/05/23/150000779/kisah-nabi-muhammad-mendapat-gelar-al-amin"
         }
-      ]
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-27/sirah-02-eps-10-peletakan-hajar-aswad-saat-ka-bah.mp4",
+      "poster": "video/sirah/2026-11-27/02-eps-10-peletakan-hajar-aswad-saat-ka-bah.jpg",
+      "video_durasi": 98.1,
+      "video_suara": "gemini-3.8-flash-lite-tts/Charon"
     }
   ]
 }
