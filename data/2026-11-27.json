@@ -1,0 +1,1139 @@
+{
+  "date": "2026-11-27",
+  "items": [
+    {
+      "segmen": "game",
+      "kategori": "Rilis Game",
+      "judul": "Staf Rockstar tolak pengakuan serikat pekerja, sekitar 75 persen bilang tidak",
+      "ringkasan": "Hasil voting diumumkan 26 November: sekitar 75 persen dari 1.544 staf Rockstar menolak kesepakatan pengakuan serikat IWGB. Serikat bilang tetap lanjut mengorganisir.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Callout",
+      "hook_layar": "PEKERJA ROCKSTAR TOLAK SERIKAT",
+      "judul_cover": "STAF PENCIPTA *GTA VI* VOTING TOLAK *SERIKAT PEKERJA*",
+      "skor_viral": 9,
+      "jam_posting": "12:00",
+      "durasi_detik": 33,
+      "naskah_vo": [
+        "Pekerja Rockstar menolak serikat, dan skornya telak!",
+        "Studio pembuat GTA enam baru menggelar voting pengakuan serikat.",
+        "Hasilnya diumumkan dua puluh enam November.",
+        "Sekitar seribu lima ratus empat puluh empat staf ikut memilih.",
+        "Sekitar tujuh puluh lima persen bilang tidak.",
+        "Jadi Rockstar tidak wajib rutin bertemu perwakilan serikat.",
+        "Serikat ai dabel yu ji bi bilang bakal lanjut mengorganisir pekerja.",
+        "Mereka baru bisa ajukan pengakuan lagi tiga tahun kemudian.",
+        "Gamenya lagi di puncak penjualan, urusan serikat belum kelar!",
+        "Menurut kamu, serikat pekerja perlu nggak di studio game? Komen ya!"
+      ],
+      "subtitle": [
+        "Pekerja Rockstar menolak serikat, dan skornya telak!",
+        "Studio pembuat GTA VI baru menggelar voting pengakuan serikat.",
+        "Hasilnya diumumkan 26 November.",
+        "Sekitar 1.544 staf ikut memilih.",
+        "Sekitar 75 persen bilang tidak.",
+        "Jadi Rockstar tidak wajib rutin bertemu perwakilan serikat.",
+        "Serikat IWGB bilang bakal lanjut mengorganisir pekerja.",
+        "Mereka baru bisa ajukan pengakuan lagi 3 tahun kemudian.",
+        "Gamenya lagi di puncak penjualan, urusan serikat belum kelar!",
+        "Menurut kamu, serikat pekerja perlu nggak di studio game? Komen ya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "ROCKSTAR VS SERIKAT",
+          "visual": "kantor studio"
+        },
+        {
+          "t": "0:06",
+          "teks": "VOTING 26 NOV",
+          "visual": "teks"
+        },
+        {
+          "t": "0:11",
+          "teks": "1.544 STAF IKUT",
+          "visual": "angka"
+        },
+        {
+          "t": "0:16",
+          "teks": "~75% BILANG TIDAK",
+          "visual": "angka besar"
+        },
+        {
+          "t": "0:22",
+          "teks": "SERIKAT LANJUT ORGANISIR",
+          "visual": "teks"
+        },
+        {
+          "t": "0:28",
+          "teks": "KAMU SETUJU? 👀",
+          "visual": "ajakan komen"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Grand Theft Auto VI",
+          "prompt": "A large modern office building at night with lit windows seen from the street, cinematic"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A group of office workers seen from behind standing in a hall, warm light"
+        },
+        {
+          "kalimat": 4,
+          "game": "Grand Theft Auto VI",
+          "prompt": "Close-up of a hand dropping a paper ballot into a ballot box on a table"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A silhouette of a crowd of workers gathered outside an office building at dusk"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "A gamer seen from behind in a dark room looking at a glowing screen with neon city lights"
+        }
+      ],
+      "caption": "Studio GTA VI baru saja voting soal serikat pekerja, dan hasilnya telak. 👀\nSekitar 75 persen dari 1.544 staf Rockstar yang ikut memilih menolak pengakuan serikat IWGB. Serikat bilang tetap lanjut mengorganisir, dan baru bisa ajukan pengakuan lagi tiga tahun ke depan.\nMenurut kamu, serikat pekerja di industri game itu perlu atau nggak? Komen di bawah!",
+      "hashtags": [
+        "#gamingindonesia",
+        "#gta6",
+        "#rockstargames",
+        "#infogame"
+      ],
+      "sumber": [
+        {
+          "nama": "PC Gamer",
+          "url": "https://www.pcgamer.com/gaming-industry/rockstar-workers-vote-overwhelmingly-against-union-recognition/"
+        },
+        {
+          "nama": "Wccftech",
+          "url": "https://wccftech.com/grand-theft-auto-vi-rockstar-workers-reject-union-recognition/"
+        },
+        {
+          "nama": "GameDev.net",
+          "url": "https://gamedev.net/news/staff-at-grand-theft-auto-maker-rockstar-vote-against-union-recognition-deal-r7359/"
+        }
+      ]
+    },
+    {
+      "segmen": "game",
+      "kategori": "Rilis Game",
+      "judul": "Team Cherry gelar Cherry Time malam ini, bahas DLC Hollow Knight: Silksong Sea of Sorrow",
+      "ringkasan": "Team Cherry menggelar presentasi Cherry Time Jumat 27 November pukul 7 pagi PT (22.00 WIB) di YouTube, termasuk update DLC gratis Sea of Sorrow. Tanggal rilis DLC belum diumumkan.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Deadline",
+      "hook_layar": "KABAR SILKSONG MALAM INI",
+      "judul_cover": "TEAM CHERRY BAKAL UMUMKAN *KABAR DLC SILKSONG* MALAM INI!",
+      "skor_viral": 9,
+      "jam_posting": "19:30",
+      "durasi_detik": 29,
+      "naskah_vo": [
+        "Silksong bakal umumin sesuatu malam ini!",
+        "Team Cherry gelar presentasi bernama Cherry Time.",
+        "Jadwalnya Jumat dua puluh tujuh November, jam sepuluh malam WIB.",
+        "Tayang di kanal YouTube Team Cherry.",
+        "Mereka janji ada update soal DLC Sea of Sorrow.",
+        "Plus beberapa pengumuman seru lainnya.",
+        "Tanggal rilis DLC itu sampai sekarang belum diumumin.",
+        "Kabar baiknya, DLC ini gratis buat pemilik game dasarnya.",
+        "Isinya apa? Siapin cemilan dan tebakan kamu!",
+        "Tag temen yang nungguin Silksong, malam ini kita nonton bareng!"
+      ],
+      "subtitle": [
+        "Silksong bakal umumin sesuatu malam ini!",
+        "Team Cherry gelar presentasi bernama Cherry Time.",
+        "Jadwalnya Jumat 27 November, jam 10 malam WIB.",
+        "Tayang di kanal YouTube Team Cherry.",
+        "Mereka janji ada update soal DLC Sea of Sorrow.",
+        "Plus beberapa pengumuman seru lainnya.",
+        "Tanggal rilis DLC itu sampai sekarang belum diumumin.",
+        "Kabar baiknya, DLC ini gratis buat pemilik game dasarnya.",
+        "Isinya apa? Siapin cemilan dan tebakan kamu!",
+        "Tag temen yang nungguin Silksong, malam ini kita nonton bareng!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "SILKSONG MALAM INI 👀",
+          "visual": "logo game"
+        },
+        {
+          "t": "0:05",
+          "teks": "CHERRY TIME",
+          "visual": "teks"
+        },
+        {
+          "t": "0:10",
+          "teks": "JUMAT 27 NOV, 22.00 WIB",
+          "visual": "jadwal"
+        },
+        {
+          "t": "0:14",
+          "teks": "UPDATE DLC SEA OF SORROW",
+          "visual": "teks"
+        },
+        {
+          "t": "0:19",
+          "teks": "DLC GRATIS",
+          "visual": "teks"
+        },
+        {
+          "t": "0:24",
+          "teks": "TAG TEMEN NONTON",
+          "visual": "ajakan"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Hollow Knight: Silksong",
+          "prompt": "A gamer seen from behind in a dark room waiting in front of a glowing monitor, blue neon light"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A laptop on a desk showing a blurry live stream, a cup of tea next to it, night"
+        },
+        {
+          "kalimat": 4,
+          "game": "Hollow Knight: Silksong",
+          "prompt": "A wall clock reading ten at night in a dim room, cinematic close-up"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A small group of friends seen from behind sitting on a sofa watching a big screen with snacks"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "A calendar on a desk with a circled date and a glowing gaming console beside it"
+        }
+      ],
+      "caption": "Malam ini Team Cherry mau ngumumin sesuatu soal Silksong! 👀\nPresentasi Cherry Time tayang Jumat 27 November jam 22.00 WIB di YouTube, dengan update DLC Sea of Sorrow dan pengumuman lainnya. Tanggal rilis DLC masih belum diumumkan, dan DLC-nya gratis buat pemilik game dasarnya.\nKamu nebak apa nih? Tag temen yang nungguin Hollow Knight Silksong!",
+      "hashtags": [
+        "#gamingindonesia",
+        "#silksong",
+        "#hollowknight",
+        "#infogame"
+      ],
+      "sumber": [
+        {
+          "nama": "GamesRadar",
+          "url": "https://www.gamesradar.com/games/action/hollow-knight-silksong-sea-of-sorrow-update-coming-this-week-as-team-cherry-teases-exciting-announcements-in-its-own-nintendo-direct-style-showcase/"
+        },
+        {
+          "nama": "GGRecon",
+          "url": "https://www.ggrecon.com/articles/silksong-sea-of-sorrow-cherry-time/"
+        },
+        {
+          "nama": "Push Square",
+          "url": "https://www.pushsquare.com/news/2026/11/hollow-knight-silksong-dlc-news-and-exciting-reveals-from-dev-team-cherry-coming-this-week"
+        }
+      ]
+    },
+    {
+      "segmen": "esports",
+      "kategori": "Esports",
+      "judul": "AK Gold finis kedua di hari pertama PMGC 2026 Gauntlet dengan 53 poin",
+      "ringkasan": "Di hari pertama Gauntlet PMGC 2026 (26 November), AK Gold finis kedua dengan 53 poin di bawah S2G Esports (62 poin). Enam tim teratas setelah 12 match masuk Grand Finals, hari kedua 27 November.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Statistic",
+      "hook_layar": "AK GOLD NEMPEL PUNCAK PMGC",
+      "judul_cover": "WAKIL INDONESIA *AK GOLD* NEMPEL ATAS *PMGC 2026* HARI PERTAMA",
+      "skor_viral": 8,
+      "jam_posting": "08:00",
+      "durasi_detik": 31,
+      "naskah_vo": [
+        "AK Gold nempel ketat di puncak PMGC!",
+        "Wakil Indonesia ini finis kedua di hari pertama Gauntlet.",
+        "Mereka kumpulin lima puluh tiga poin.",
+        "S2G Esports masih di atas dengan enam puluh dua poin.",
+        "All Gamers ngintil di belakang dengan lima puluh dua poin.",
+        "Selisihnya tipis banget, napas pun harus diatur!",
+        "Hari kedua digelar dua puluh tujuh November.",
+        "Enam tim teratas setelah dua belas match langsung ke Grand Finals.",
+        "Tapi klasemen masih bisa berubah drastis.",
+        "Kirim ke squad PUBG kamu, kita dukung AK Gold!"
+      ],
+      "subtitle": [
+        "AK Gold nempel ketat di puncak PMGC!",
+        "Wakil Indonesia ini finis kedua di hari pertama Gauntlet.",
+        "Mereka kumpulin 53 poin.",
+        "S2G Esports masih di atas dengan 62 poin.",
+        "All Gamers ngintil di belakang dengan 52 poin.",
+        "Selisihnya tipis banget, napas pun harus diatur!",
+        "Hari kedua digelar 27 November.",
+        "Enam tim teratas setelah 12 match langsung ke Grand Finals.",
+        "Tapi klasemen masih bisa berubah drastis.",
+        "Kirim ke squad PUBG kamu, kita dukung AK Gold!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "AK GOLD PERINGKAT 2 🔥",
+          "visual": "klasemen"
+        },
+        {
+          "t": "0:05",
+          "teks": "53 POIN",
+          "visual": "angka"
+        },
+        {
+          "t": "0:10",
+          "teks": "S2G 62 | ALL GAMERS 52",
+          "visual": "klasemen"
+        },
+        {
+          "t": "0:16",
+          "teks": "HARI KE-2: 27 NOV",
+          "visual": "jadwal"
+        },
+        {
+          "t": "0:21",
+          "teks": "TOP 6 KE GRAND FINALS",
+          "visual": "teks"
+        },
+        {
+          "t": "0:26",
+          "teks": "KIRIM KE SQUAD",
+          "visual": "ajakan"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "PUBG Mobile",
+          "prompt": "A packed esports arena with blue and pink stage lights and cheering fans, wide shot"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A mobile gamer seen from behind holding a phone in a dark room with neon light"
+        },
+        {
+          "kalimat": 4,
+          "game": "PUBG Mobile",
+          "prompt": "A big scoreboard screen in an arena showing glowing numbers, cinematic"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A team of esports players seen from behind on stage under spotlights"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "A golden trophy on a pedestal lit by dramatic spotlights"
+        }
+      ],
+      "caption": "AK Gold lagi nempel ketat di puncak PMGC 2026! 🔥\nDi hari pertama Gauntlet, wakil Indonesia ini finis kedua dengan 53 poin, di bawah S2G Esports dengan 62 poin. Hari kedua digelar 27 November, dan enam tim teratas setelah 12 match langsung ke Grand Finals PUBG Mobile Global Championship.\nKamu optimis AK Gold lolos? Tag temen yang main PUBG Mobile!",
+      "hashtags": [
+        "#infoesports",
+        "#pmgc2026",
+        "#pubgmobile",
+        "#akgold"
+      ],
+      "sumber": [
+        {
+          "nama": "Sportskeeda",
+          "url": "https://www.sportskeeda.com/esports/news-pmgc-2026-gauntlet-day-1-overall-points-table-highlights"
+        },
+        {
+          "nama": "Wisevoter",
+          "url": "https://wisevoter.com/world/2026/11/26/s2g-esports-tops-pmgc-2026-gauntlet-day-1"
+        },
+        {
+          "nama": "TalkEsport",
+          "url": "https://www.talkesport.com/mobile-gaming/bgmi/live-pmgc-2026-points-table-for-gauntlet-day-1-check-pmgc-standings/"
+        }
+      ]
+    },
+    {
+      "segmen": "esports",
+      "kategori": "Esports",
+      "judul": "ONIC turun di Delta Force Invitational 2026 di Stockholm, mulai hari ini",
+      "ringkasan": "ONIC jadi satu-satunya wakil Indonesia di Delta Force Invitational 2026 (Stockholm, 27 sampai 29 November, 12 tim, hadiah 500 ribu dolar). Siaran Indonesia mulai 27 November pukul 18.00 WIB.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Reveal",
+      "hook_layar": "ONIC MAIN DI SWEDIA!",
+      "judul_cover": "*ONIC* TURUN KE *STOCKHOLM*, WAKIL TUNGGAL INDONESIA!",
+      "skor_viral": 8,
+      "jam_posting": "17:30",
+      "durasi_detik": 29,
+      "naskah_vo": [
+        "ONIC turun ke Swedia hari ini!",
+        "Mereka wakil tunggal Indonesia di Delta Force Invitational.",
+        "Digelar di Stockholm, dua puluh tujuh sampai dua puluh sembilan November.",
+        "Ada dua belas tim dari enam region.",
+        "Total hadiahnya lima ratus ribu dolar Amerika.",
+        "Puncaknya Grand Finals dua puluh sembilan November.",
+        "Siaran Indonesia mulai jam enam sore WIB.",
+        "Nontonnya lewat YouTube Garena Delta Force Indonesia.",
+        "Semoga ONIC pulang bawa piala, bukan cuma cerita!",
+        "Kirim ke temen yang ngefans ONIC, ayo kita ramein!"
+      ],
+      "subtitle": [
+        "ONIC turun ke Swedia hari ini!",
+        "Mereka wakil tunggal Indonesia di Delta Force Invitational.",
+        "Digelar di Stockholm, 27 sampai 29 November.",
+        "Ada 12 tim dari 6 region.",
+        "Total hadiahnya 500 ribu dolar AS.",
+        "Puncaknya Grand Finals 29 November.",
+        "Siaran Indonesia mulai jam 6 sore WIB.",
+        "Nontonnya lewat YouTube Garena Delta Force Indonesia.",
+        "Semoga ONIC pulang bawa piala, bukan cuma cerita!",
+        "Kirim ke temen yang ngefans ONIC, ayo kita ramein!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "ONIC KE STOCKHOLM 🇸🇪",
+          "visual": "teks"
+        },
+        {
+          "t": "0:05",
+          "teks": "WAKIL TUNGGAL INDONESIA",
+          "visual": "teks"
+        },
+        {
+          "t": "0:10",
+          "teks": "12 TIM | $500 RIBU",
+          "visual": "angka"
+        },
+        {
+          "t": "0:14",
+          "teks": "27-29 NOV",
+          "visual": "jadwal"
+        },
+        {
+          "t": "0:19",
+          "teks": "LIVE 18.00 WIB",
+          "visual": "jadwal"
+        },
+        {
+          "t": "0:24",
+          "teks": "SEMANGAT ONIC!",
+          "visual": "ajakan"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Delta Force",
+          "prompt": "A big esports stage in a northern European arena with bright stage lights and a crowd"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A team of players seen from behind wearing matching jerseys walking toward a stage"
+        },
+        {
+          "kalimat": 4,
+          "game": "Delta Force",
+          "prompt": "A tactical shooter match shown on a giant screen in an arena, blue and orange lights"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A golden trophy and a stack of prize cash under spotlights, cinematic"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "Fans seen from behind waving flags in an arena during a tournament"
+        }
+      ],
+      "caption": "ONIC lagi berangkat ke Swedia, wakil tunggal Indonesia! 🇮🇩\nDelta Force Invitational 2026 digelar di Stockholm 27 sampai 29 November, diikuti 12 tim dengan total hadiah 500 ribu dolar. Siaran Indonesia mulai hari ini jam 18.00 WIB lewat YouTube Garena Delta Force Indonesia.\nKamu jagoin ONIC sampai juara? Komen dan tag temen kamu!",
+      "hashtags": [
+        "#infoesports",
+        "#onic",
+        "#deltaforce",
+        "#esportsindonesia"
+      ],
+      "sumber": [
+        {
+          "nama": "RRI",
+          "url": "https://rri.co.id/olimpik/2921182/onic-jadi-wakil-indonesia-di-delta-force-invitational-2026"
+        },
+        {
+          "nama": "IndoTelko",
+          "url": "https://www.indotelko.com/read/1795530586/onic-siap-bersaing-di-turnamen-dunia-delta-force"
+        },
+        {
+          "nama": "Bantenraya",
+          "url": "https://bantenraya.co/olah-raga/onic-wakili-indonesia-delta-force/"
+        }
+      ]
+    },
+    {
+      "segmen": "game",
+      "kategori": "Rilis Game",
+      "judul": "The Witcher 4 tetap rilis di Xbox hari pertama meski ada kerja sama dengan Sony",
+      "ringkasan": "CD Projekt Red menyatakan The Witcher 4 rilis bersamaan di PS5, Xbox, dan PC. Kerja sama dengan Sony hanya soal marketing, bukan eksklusivitas. Tanggal rilis pasti belum ada, perkiraan 2028.",
+      "status_fakta": "resmi",
+      "hook_formula": "If This Then Watch",
+      "hook_layar": "WITCHER 4 TETAP KE XBOX",
+      "judul_cover": "*THE WITCHER 4* TETAP RILIS DI *XBOX* HARI PERTAMA!",
+      "skor_viral": 8,
+      "jam_posting": "21:00",
+      "durasi_detik": 29,
+      "naskah_vo": [
+        "Witcher empat tetap rilis di Xbox!",
+        "Padahal CD Projekt Red baru teken kerja sama dengan Sony.",
+        "Banyak yang takut game ini jadi eksklusif PlayStation.",
+        "Tenang, kata CD Projekt, kerja samanya cuma soal marketing.",
+        "Nggak ada urusan eksklusivitas.",
+        "Rilisnya barengan di PS lima, Xbox, dan PC.",
+        "Mereka bilang, nggak ada yang ditinggal.",
+        "Tapi tanggal rilis pastinya belum ada.",
+        "Perkiraannya masih sekitar tahun dua ribu dua puluh delapan.",
+        "Tag temen Xbox kamu, Witcher empat aman buat kalian!"
+      ],
+      "subtitle": [
+        "Witcher 4 tetap rilis di Xbox!",
+        "Padahal CD Projekt Red baru teken kerja sama dengan Sony.",
+        "Banyak yang takut game ini jadi eksklusif PlayStation.",
+        "Tenang, kata CD Projekt, kerja samanya cuma soal marketing.",
+        "Nggak ada urusan eksklusivitas.",
+        "Rilisnya barengan di PS5, Xbox, dan PC.",
+        "Mereka bilang, nggak ada yang ditinggal.",
+        "Tapi tanggal rilis pastinya belum ada.",
+        "Perkiraannya masih sekitar tahun 2028.",
+        "Tag temen Xbox kamu, Witcher 4 aman buat kalian!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "WITCHER 4 DI XBOX ✅",
+          "visual": "logo game"
+        },
+        {
+          "t": "0:05",
+          "teks": "DEAL SONY = MARKETING",
+          "visual": "teks"
+        },
+        {
+          "t": "0:10",
+          "teks": "PS5 + XBOX + PC",
+          "visual": "platform"
+        },
+        {
+          "t": "0:14",
+          "teks": "RILIS BARENGAN",
+          "visual": "teks"
+        },
+        {
+          "t": "0:19",
+          "teks": "TANGGAL: BELUM ADA",
+          "visual": "teks"
+        },
+        {
+          "t": "0:24",
+          "teks": "TAG TEMEN XBOX",
+          "visual": "ajakan"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A gamer seen from behind in a dark room with a game console and controller, blue neon light"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A medieval castle silhouette against a stormy sky at dusk, cinematic"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "Three different game consoles and a gaming PC lined up on a shelf, moody lighting"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A businessman and another businessman shaking hands in an office, seen from behind"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "A calendar page turning slowly under warm lamp light, close-up"
+        }
+      ],
+      "caption": "Kabar buat anak Xbox: Witcher 4 tetap rilis hari pertama! ✅\nCD Projekt Red bilang kerja sama dengan Sony cuma soal marketing, bukan eksklusivitas, jadi rilisnya barengan di PS5, Xbox, dan PC. Tanggal rilis pastinya belum ada, perkiraannya sekitar 2028.\nKamu main The Witcher 4 di platform apa nanti? Komen di bawah!",
+      "hashtags": [
+        "#gamingindonesia",
+        "#witcher4",
+        "#xbox",
+        "#infogame"
+      ],
+      "sumber": [
+        {
+          "nama": "VGTimes",
+          "url": "https://vgtimes.com/gaming-news/175811-the-witcher-4-will-launch-on-ps5-xbox-and-pc-at-the-same-time.html"
+        },
+        {
+          "nama": "Insert Future",
+          "url": "https://insertfuture.com/en/article/the-witcher-4-sony-deal-multiplatform"
+        },
+        {
+          "nama": "GameLoop",
+          "url": "https://gameloop.gg/articles/witcher-4-xbox-day-one-launch-confirmed-despite-sony-deal-cd-projekt/"
+        }
+      ]
+    },
+    {
+      "segmen": "game",
+      "kategori": "Update",
+      "judul": "EA Sports FC 27 pakai AI untuk menghidupkan suara komentator John Motson",
+      "ringkasan": "Update EA Sports FC 27 yang rilis 26 November menambah komentar suara John Motson (wafat 2023) yang dibuat dari rekaman lama plus AI. Fitur opsional, keluarga Motson sudah setuju, reaksi fans terbelah.",
+      "status_fakta": "resmi",
+      "hook_formula": "Contrarian Flip",
+      "hook_layar": "SUARA MOTSON BALIK LAGI",
+      "judul_cover": "EA FC 27 HIDUPKAN LAGI *SUARA KOMENTATOR LEGENDARIS* PAKAI AI",
+      "skor_viral": 7,
+      "jam_posting": "13:30",
+      "durasi_detik": 33,
+      "naskah_vo": [
+        "Komentator yang sudah wafat bisa ngomong lagi!",
+        "EA Sports FC dua puluh tujuh pakai AI untuk suara John Motson.",
+        "Motson meninggal tahun dua ribu dua puluh tiga.",
+        "Suaranya dibuat dari rekaman hampir sepuluh tahun di game.",
+        "Lalu dicampur teknologi AI untuk kalimat baru.",
+        "EA bilang sudah dapat restu dari keluarganya.",
+        "Fitur ini opsional, jadi pemain bebas pilih.",
+        "EA juga bilang tidak mau ganti tim komentator pakai AI.",
+        "Reaksi fans campur aduk, ada yang haru, ada yang merinding.",
+        "Menurut kamu, komentator AI itu keren atau serem? Komen ya!"
+      ],
+      "subtitle": [
+        "Komentator yang sudah wafat bisa ngomong lagi!",
+        "EA Sports FC 27 pakai AI untuk suara John Motson.",
+        "Motson meninggal tahun 2023.",
+        "Suaranya dibuat dari rekaman hampir 10 tahun di game.",
+        "Lalu dicampur teknologi AI untuk kalimat baru.",
+        "EA bilang sudah dapat restu dari keluarganya.",
+        "Fitur ini opsional, jadi pemain bebas pilih.",
+        "EA juga bilang tidak mau ganti tim komentator pakai AI.",
+        "Reaksi fans campur aduk, ada yang haru, ada yang merinding.",
+        "Menurut kamu, komentator AI itu keren atau serem? Komen ya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "SUARA MOTSON BALIK 🎙️",
+          "visual": "teks"
+        },
+        {
+          "t": "0:06",
+          "teks": "EA FC 27 + AI",
+          "visual": "logo game"
+        },
+        {
+          "t": "0:11",
+          "teks": "REKAMAN ~10 TAHUN",
+          "visual": "angka"
+        },
+        {
+          "t": "0:16",
+          "teks": "KELUARGA SUDAH SETUJU",
+          "visual": "teks"
+        },
+        {
+          "t": "0:22",
+          "teks": "OPSIONAL",
+          "visual": "teks"
+        },
+        {
+          "t": "0:28",
+          "teks": "KEREN ATAU SEREM?",
+          "visual": "ajakan komen"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A football stadium at night with floodlights and an empty commentary booth glass window, cinematic"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A vintage broadcast microphone on a desk with warm light, close-up"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "A gamer seen from behind playing a football game on a big TV, green pitch glowing"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "Sound waveform glowing on a dark computer screen in a studio, blue light"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "A crowd of football fans seen from behind cheering in a stadium at night"
+        }
+      ],
+      "caption": "Suara komentator yang sudah wafat bisa terdengar lagi di game bola! 🎙️\nEA Sports FC 27 menambah komentar John Motson lewat campuran rekaman lama dan AI, dan EA bilang keluarganya sudah setuju. Fitur ini opsional dan EA nggak berniat mengganti tim komentator asli.\nMenurut kamu, komentator AI itu keren atau serem? Komen jujur!",
+      "hashtags": [
+        "#gamingindonesia",
+        "#eafc27",
+        "#fifaindonesia",
+        "#infogame"
+      ],
+      "sumber": [
+        {
+          "nama": "Gamereactor",
+          "url": "https://www.gamereactor.eu/ea-sports-fc-27-john-motson-ai-commentary/"
+        },
+        {
+          "nama": "Dexerto",
+          "url": "https://www.dexerto.com/ea-sports-fc/ea-fc-27-adds-ai-generated-commentary-from-iconic-commentator-3431237/"
+        },
+        {
+          "nama": "Gameluster",
+          "url": "https://gameluster.com/ea-sports-fc-27-john-motson-ai-commentator/"
+        }
+      ]
+    },
+    {
+      "segmen": "game",
+      "kategori": "Promo/Diskon",
+      "judul": "PS Plus Essential Desember 2026: Tony Hawk's Pro Skater 3+4, Dragon Ball Xenoverse 2, Amnesia: The Bunker",
+      "ringkasan": "Sony mengumumkan 25 November: PS Plus Essential Desember berisi Tony Hawk's Pro Skater 3+4, Dragon Ball Xenoverse 2, dan Amnesia: The Bunker. Bisa diklaim 1 Desember 2026 sampai 4 Januari 2027.",
+      "status_fakta": "resmi",
+      "hook_formula": "Numbered With A Favourite",
+      "hook_layar": "PS PLUS DESEMBER GRATIS",
+      "judul_cover": "*3 GAME GRATIS PS PLUS* DESEMBER, *HORROR* SAMPAI SKATE!",
+      "skor_viral": 7,
+      "jam_posting": "15:00",
+      "durasi_detik": 29,
+      "naskah_vo": [
+        "PS Plus Desember bagi tiga game gratis!",
+        "Sony baru umumin lineup Essential bulan Desember.",
+        "Ada Tony Hawk's Pro Skater tiga plus empat.",
+        "Ada juga Dragon Ball Xenoverse dua.",
+        "Dan satu lagi buat penggemar horor, Amnesia The Bunker.",
+        "Bisa diklaim mulai satu Desember.",
+        "Batas klaimnya sampai empat Januari dua ribu dua puluh tujuh.",
+        "Berlaku di semua tingkatan PS Plus.",
+        "Yang suka skate, horor, atau bela diri, semua kebagian!",
+        "Tag temen PS Plus kamu biar nggak telat klaim!"
+      ],
+      "subtitle": [
+        "PS Plus Desember bagi tiga game gratis!",
+        "Sony baru umumin lineup Essential bulan Desember.",
+        "Ada Tony Hawk's Pro Skater 3+4.",
+        "Ada juga Dragon Ball Xenoverse 2.",
+        "Dan satu lagi buat penggemar horor, Amnesia: The Bunker.",
+        "Bisa diklaim mulai 1 Desember.",
+        "Batas klaimnya sampai 4 Januari 2027.",
+        "Berlaku di semua tingkatan PS Plus.",
+        "Yang suka skate, horor, atau bela diri, semua kebagian!",
+        "Tag temen PS Plus kamu biar nggak telat klaim!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "PS PLUS DESEMBER 🎮",
+          "visual": "teks"
+        },
+        {
+          "t": "0:05",
+          "teks": "TONY HAWK'S PRO SKATER 3+4",
+          "visual": "game"
+        },
+        {
+          "t": "0:10",
+          "teks": "DRAGON BALL XENOVERSE 2",
+          "visual": "game"
+        },
+        {
+          "t": "0:14",
+          "teks": "AMNESIA: THE BUNKER",
+          "visual": "game"
+        },
+        {
+          "t": "0:19",
+          "teks": "KLAIM 1 DES - 4 JAN",
+          "visual": "jadwal"
+        },
+        {
+          "t": "0:24",
+          "teks": "TAG TEMEN PS",
+          "visual": "ajakan"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Tony Hawk's Pro Skater 3 + 4",
+          "prompt": "A gamer seen from behind holding a console controller in a dark room lit by blue light"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A skateboarder silhouette performing a trick in an empty skate park at sunset"
+        },
+        {
+          "kalimat": 4,
+          "game": "Tony Hawk's Pro Skater 3 + 4",
+          "prompt": "Colorful energy burst lights in a dark arena, cinematic martial arts mood without people"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A dark underground concrete corridor with a flickering lamp, horror mood"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "A calendar with a glowing date circled next to a game console on a desk"
+        }
+      ],
+      "caption": "PS Plus Desember bagi tiga game gratis! 🎮\nSony umumin lineup Essential: Tony Hawk's Pro Skater 3+4, Dragon Ball Xenoverse 2, dan Amnesia: The Bunker. Bisa diklaim mulai 1 Desember sampai 4 Januari 2027.\nGame mana yang paling kamu tunggu? Tag temen PS Plus kamu biar nggak telat klaim!",
+      "hashtags": [
+        "#gamingindonesia",
+        "#psplus",
+        "#playstation",
+        "#infogame"
+      ],
+      "sumber": [
+        {
+          "nama": "GameSpot",
+          "url": "https://www.gamespot.com/articles/playstation-plus-essential-free-games-for-december-2026/"
+        },
+        {
+          "nama": "Gameluster",
+          "url": "https://gameluster.com/ps-plus-december-2026-free-games-tony-hawks-pro-skater-34-headlines-the-lineup/"
+        },
+        {
+          "nama": "GameRant",
+          "url": "https://gamerant.com/ps-plus-free-games-december-2026-list/"
+        }
+      ]
+    },
+    {
+      "segmen": "game",
+      "kategori": "Rilis Game",
+      "judul": "Laporan: Ubisoft dorong tim pakai AI generatif, Ubisoft bantah ada kewajiban",
+      "ringkasan": "Laporan Vertical Slice menyebut pitch game Ubisoft harus punya alur kerja AI atau alasan tidak memakainya. Ubisoft membantah ada kewajiban dan bilang tiap tim yang memutuskan.",
+      "status_fakta": "rumor",
+      "hook_formula": "Nobody Tells You",
+      "hook_layar": "UBISOFT DORONG AI GENERATIF?",
+      "judul_cover": "KATANYA *UBISOFT* DORONG SEMUA TIM PAKAI *AI*, BENERAN?",
+      "skor_viral": 7,
+      "jam_posting": "09:30",
+      "durasi_detik": 29,
+      "naskah_vo": [
+        "Ubisoft katanya dorong semua tim pakai AI generatif!",
+        "Ini laporan dari Vertical Slice, belum resmi dari Ubisoft.",
+        "Katanya, pitch game baru harus punya alur kerja AI.",
+        "Kalau nggak pakai AI, developer harus jelasin alasannya.",
+        "Seorang developer anonim bilang begitu.",
+        "Ubisoft sendiri membantah ada kewajiban.",
+        "Mereka bilang AI didorong di tempat yang berguna.",
+        "Dan tiap tim yang memutuskan sendiri.",
+        "Jadi masih rumor, ya, jangan langsung panik!",
+        "Menurut kamu, AI di game itu membantu atau bikin ribet? Komen ya!"
+      ],
+      "subtitle": [
+        "Ubisoft katanya dorong semua tim pakai AI generatif!",
+        "Ini laporan dari Vertical Slice, belum resmi dari Ubisoft.",
+        "Katanya, pitch game baru harus punya alur kerja AI.",
+        "Kalau nggak pakai AI, developer harus jelasin alasannya.",
+        "Seorang developer anonim bilang begitu.",
+        "Ubisoft sendiri membantah ada kewajiban.",
+        "Mereka bilang AI didorong di tempat yang berguna.",
+        "Dan tiap tim yang memutuskan sendiri.",
+        "Jadi masih rumor, ya, jangan langsung panik!",
+        "Menurut kamu, AI di game itu membantu atau bikin ribet? Komen ya!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "UBISOFT + AI? 🤖",
+          "visual": "teks"
+        },
+        {
+          "t": "0:05",
+          "teks": "MASIH RUMOR",
+          "visual": "catatan"
+        },
+        {
+          "t": "0:10",
+          "teks": "PITCH: ALUR KERJA AI",
+          "visual": "teks"
+        },
+        {
+          "t": "0:14",
+          "teks": "ATAU JELASIN ALASANNYA",
+          "visual": "teks"
+        },
+        {
+          "t": "0:19",
+          "teks": "UBISOFT: TIDAK ADA KEWAJIBAN",
+          "visual": "teks"
+        },
+        {
+          "t": "0:24",
+          "teks": "AI DI GAME: SETUJU?",
+          "visual": "ajakan komen"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "A modern game studio office with developers seen from behind at computers, soft light"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A glowing artificial intelligence brain graphic floating above a keyboard, blue light"
+        },
+        {
+          "kalimat": 4,
+          "prompt": "A meeting table with a pitch deck on a screen and silhouettes of people"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A close-up of a stamped paper document with a red question mark on a desk"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "A gamer seen from behind in a dark room reading news on a monitor with neon light"
+        }
+      ],
+      "caption": "Ubisoft katanya dorong semua tim pakai AI generatif, tapi ini masih rumor. 🤖\nMenurut laporan Vertical Slice, pitch game baru harus punya alur kerja AI atau alasan kenapa nggak pakai. Ubisoft membantah ada kewajiban dan bilang tiap tim yang memutuskan sendiri.\nMenurut kamu, AI di game itu membantu atau bikin ribet? Komen ya!",
+      "hashtags": [
+        "#gamingindonesia",
+        "#ubisoft",
+        "#ai",
+        "#infogame"
+      ],
+      "sumber": [
+        {
+          "nama": "GamingBolt",
+          "url": "https://gamingbolt.com/ubisoft-encourages-the-use-of-generative-ai-asks-devs-to-justify-not-using-it-rumor"
+        },
+        {
+          "nama": "BozokMedia",
+          "url": "https://www.bozokmedia.com/en/technology/2026/11/26/ubisoft-requires-developers-to-justify-not-using-generative-ai-in-game-pitches-433755/"
+        },
+        {
+          "nama": "Shane the Gamer",
+          "url": "https://www.shanethegamer.com/news/ubisoft-generative-ai-game-development-response/"
+        }
+      ]
+    },
+    {
+      "segmen": "game",
+      "kategori": "Promo/Diskon",
+      "judul": "Point Blank Indonesia gelar Black Friday Limited Sale, 10 item diskon 50 persen sampai 30 November",
+      "ringkasan": "Point Blank Indonesia menggelar Black Friday Limited Sale 24 sampai 30 November 2026: 10 item pilihan diskon 50 persen, maksimal beli satu kali per item, masa pakai 30 hari, pakai PB Cash.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Deadline",
+      "hook_layar": "SETENGAH HARGA DI POINT BLANK",
+      "judul_cover": "*POINT BLANK* BAGI *DISKON 50 PERSEN* BUAT 10 ITEM PILIHAN!",
+      "skor_viral": 6,
+      "jam_posting": "11:00",
+      "durasi_detik": 26,
+      "naskah_vo": [
+        "Setengah harga di Point Blank, buruan!",
+        "Point Blank Indonesia gelar Black Friday Limited Sale.",
+        "Ada sepuluh item pilihan dengan diskon lima puluh persen.",
+        "Berlakunya dari dua puluh empat sampai tiga puluh November.",
+        "Jadi tinggal beberapa hari lagi.",
+        "Tiap item cuma bisa dibeli satu kali.",
+        "Masa pakainya tiga puluh hari.",
+        "Belinya tetap pakai PB Cash.",
+        "Cek dompet dulu, jangan sampai kalap!",
+        "Kirim ke squad Point Blank kamu sebelum promonya habis!"
+      ],
+      "subtitle": [
+        "Setengah harga di Point Blank, buruan!",
+        "Point Blank Indonesia gelar Black Friday Limited Sale.",
+        "Ada 10 item pilihan dengan diskon 50 persen.",
+        "Berlakunya dari 24 sampai 30 November.",
+        "Jadi tinggal beberapa hari lagi.",
+        "Tiap item cuma bisa dibeli satu kali.",
+        "Masa pakainya 30 hari.",
+        "Belinya tetap pakai PB Cash.",
+        "Cek dompet dulu, jangan sampai kalap!",
+        "Kirim ke squad Point Blank kamu sebelum promonya habis!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "POINT BLANK DISKON 50% 🔥",
+          "visual": "teks"
+        },
+        {
+          "t": "0:04",
+          "teks": "BLACK FRIDAY SALE",
+          "visual": "teks"
+        },
+        {
+          "t": "0:09",
+          "teks": "10 ITEM PILIHAN",
+          "visual": "angka"
+        },
+        {
+          "t": "0:13",
+          "teks": "24-30 NOV",
+          "visual": "jadwal"
+        },
+        {
+          "t": "0:17",
+          "teks": "1X BELI | PAKAI 30 HARI",
+          "visual": "teks"
+        },
+        {
+          "t": "0:22",
+          "teks": "KIRIM KE SQUAD",
+          "visual": "ajakan"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Point Blank",
+          "prompt": "A gamer seen from behind in a dim room with a PC lit by red neon, first person shooter mood"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A shop window with big red discount signs at night, city lights"
+        },
+        {
+          "kalimat": 4,
+          "game": "Point Blank",
+          "prompt": "A tactical rifle silhouette on a table under a dramatic spotlight, no logos"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A phone screen showing a shopping cart with a glowing sale tag, close-up"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "A group of friends seen from behind in a gaming cafe playing on PCs"
+        }
+      ],
+      "caption": "Setengah harga di Point Blank, jangan sampai kelewatan! 🔥\nPoint Blank Indonesia gelar Black Friday Limited Sale 24 sampai 30 November 2026 dengan diskon 50 persen untuk 10 item pilihan. Tiap item cuma bisa dibeli satu kali dengan masa pakai 30 hari.\nKamu mau borong item yang mana? Kirim ke squad Point Blank kamu!",
+      "hashtags": [
+        "#infogame",
+        "#pointblank",
+        "#pointblankindonesia",
+        "#diskongame"
+      ],
+      "sumber": [
+        {
+          "nama": "GGWP",
+          "url": "https://www.ggwp.id/esports/shooter/10-item-point-blank-diskon-setengah-harga-di-black-friday-limited-sale-00-c57ll-fn8452"
+        },
+        {
+          "nama": "Gwigwi",
+          "url": "https://www.gwigwi.com/point-blank-indonesia-gelar-black-friday-limited-sale-diskon-50-386144/"
+        },
+        {
+          "nama": "Gameholic",
+          "url": "https://www.gameholic.id/point-blank-hadirkan-black-friday-limited-sale-2026-dengan-diskon-hingga-50/"
+        }
+      ]
+    },
+    {
+      "segmen": "game",
+      "kategori": "Rilis Game",
+      "judul": "Digimon Alysion, game kartu digital Bandai, sudah rilis di Android dan iOS",
+      "ringkasan": "Bandai merilis Digimon Alysion, game kartu digital gratis dengan pembelian dalam game, di Android dan iOS pada 25 November di 183 negara dan wilayah.",
+      "status_fakta": "resmi",
+      "hook_formula": "The Reveal",
+      "hook_layar": "DIGIMON ALYSION SUDAH RILIS",
+      "judul_cover": "*GAME KARTU DIGIMON* BARU RESMI RILIS DI *ANDROID & iOS*!",
+      "skor_viral": 6,
+      "jam_posting": "22:00",
+      "durasi_detik": 26,
+      "naskah_vo": [
+        "Game kartu Digimon baru sudah rilis!",
+        "Namanya Digimon Alysion, dari Bandai.",
+        "Sudah tersedia di Android dan iOS.",
+        "Dirilis di seratus delapan puluh tiga negara dan wilayah.",
+        "Mainnya gratis, ada pembelian di dalam game.",
+        "Rilisnya dua puluh lima November.",
+        "Ini game kartu digital berbasis Digimon.",
+        "Cocok buat yang masih nyimpen kenangan Digimon dari kecil!",
+        "Coba cek toko aplikasi kamu sekarang.",
+        "Tag temen yang dulu nonton Digimon bareng kamu!"
+      ],
+      "subtitle": [
+        "Game kartu Digimon baru sudah rilis!",
+        "Namanya Digimon Alysion, dari Bandai.",
+        "Sudah tersedia di Android dan iOS.",
+        "Dirilis di 183 negara dan wilayah.",
+        "Mainnya gratis, ada pembelian di dalam game.",
+        "Rilisnya 25 November.",
+        "Ini game kartu digital berbasis Digimon.",
+        "Cocok buat yang masih nyimpen kenangan Digimon dari kecil!",
+        "Coba cek toko aplikasi kamu sekarang.",
+        "Tag temen yang dulu nonton Digimon bareng kamu!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "DIGIMON ALYSION RILIS 🃏",
+          "visual": "logo game"
+        },
+        {
+          "t": "0:04",
+          "teks": "ANDROID + iOS",
+          "visual": "platform"
+        },
+        {
+          "t": "0:09",
+          "teks": "183 NEGARA & WILAYAH",
+          "visual": "angka"
+        },
+        {
+          "t": "0:13",
+          "teks": "GRATIS MAIN",
+          "visual": "teks"
+        },
+        {
+          "t": "0:17",
+          "teks": "RILIS 25 NOV",
+          "visual": "jadwal"
+        },
+        {
+          "t": "0:22",
+          "teks": "TAG TEMEN NOSTALGIA",
+          "visual": "ajakan"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "game": "Digimon Alysion",
+          "prompt": "A hand holding a smartphone showing colorful trading cards on screen, warm light, close-up"
+        },
+        {
+          "kalimat": 2,
+          "prompt": "A table with colorful trading cards fanned out under soft light"
+        },
+        {
+          "kalimat": 4,
+          "game": "Digimon Alysion",
+          "prompt": "A kid in the 2000s era watching a cartoon on an old TV, nostalgic warm glow, seen from behind"
+        },
+        {
+          "kalimat": 6,
+          "prompt": "A mobile gamer seen from behind on a sofa playing on a phone at night"
+        },
+        {
+          "kalimat": 8,
+          "prompt": "An app store screen on a phone with a download button highlighted, close-up"
+        }
+      ],
+      "caption": "Game kartu Digimon baru udah rilis di HP! 🃏\nDigimon Alysion dari Bandai tersedia di Android dan iOS sejak 25 November di 183 negara dan wilayah. Mainnya gratis dengan pembelian di dalam game. Gamerwk melaporkan Indonesia termasuk, jadi cek toko aplikasi kamu.\nKamu tim Digimon yang mana? Tag temen nostalgia kamu!",
+      "hashtags": [
+        "#gamingindonesia",
+        "#digimon",
+        "#digimonalysion",
+        "#gamemobile"
+      ],
+      "sumber": [
+        {
+          "nama": "Gamerwk",
+          "url": "https://gamerwk.com/digimon-alysion-kini-sudah-rilis-di-indonesia-untuk-android-dan-ios/"
+        },
+        {
+          "nama": "Pocketgamer",
+          "url": "https://www.pocketgamer.com/digimon-alysion/official-launch-ios-android/"
+        },
+        {
+          "nama": "Mobi.gg",
+          "url": "https://mobi.gg/en/news/release-of-digimon-alysion/"
+        }
+      ]
+    }
+  ]
+}
