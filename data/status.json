@@ -1,9 +1,9 @@
 {
   "run": {
     "date": "2026-11-27",
-    "status": "berjalan",
+    "status": "selesai",
     "started_at": "2026-11-27T06:06:12+07:00",
-    "finished_at": null
+    "finished_at": "2026-11-27T06:11:31+07:00"
   },
   "tasks": {
     "antri": 0,
@@ -11,15 +11,15 @@
     "kelar": 10
   },
   "kesimpulan_bos": [
-    "10 konten terbit: 8 game + 2 esports (berita esports/streamer Indonesia baru tipis, topik lain sudah dipakai 14 hari terakhir)",
-    "Urutan posting: portal GTA VI 12:00, Call of Duty vs GTA VI 19:30, MLBB x Avatar 21:00, lalu sisanya sesuai jam_posting",
-    "Catatan: klaim portal GTA VI dan angka CoD adalah temuan pemain/estimasi pihak ketiga, sudah dilabeli di naskah"
+    "10 konten baru: 8 game + 2 esports (kandidat esports segar terbatas, topik FFWS/M8 sudah dipakai kemarin)",
+    "Urutan posting: Rockstar serikat 12:00, Silksong 19:30 (sebelum Cherry Time 22:00 WIB), PMGC 08:00, ONIC DFI 17:30",
+    "Catatan: Ubisoft AI berstatus rumor (dibantah Ubisoft); Digimon Alysion Indonesia baru terkonfirmasi satu situs"
   ],
   "agents": {
     "bos": {
-      "status": "kerja",
-      "aktivitas": "Buka shift, bagi tugas ke tim",
-      "t": "2026-11-27T06:06:12+07:00"
+      "status": "selesai",
+      "aktivitas": "Shift selesai",
+      "t": "2026-11-27T06:11:31+07:00"
     },
     "radar": {
       "status": "selesai",
@@ -63,6 +63,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-27T06:11:31+07:00",
+      "agen": "bos",
+      "pesan": "Shift selesai. Semua hasil sudah di menu Hasil."
+    },
+    {
+      "t": "2026-11-27T06:11:31+07:00",
+      "agen": "bos",
+      "pesan": "Shift selesai"
+    },
     {
       "t": "2026-11-27T06:11:29+07:00",
       "agen": "qc",
@@ -352,18 +362,8 @@
       "t": "2026-11-26T06:11:38+07:00",
       "agen": "bos",
       "pesan": "Shift selesai. Semua hasil sudah di menu Hasil."
-    },
-    {
-      "t": "2026-11-26T06:11:38+07:00",
-      "agen": "bos",
-      "pesan": "Shift selesai"
-    },
-    {
-      "t": "2026-11-26T06:11:38+07:00",
-      "agen": "qc",
-      "pesan": "10 konten terbit di Hasil"
     }
   ],
-  "updated_at": "2026-11-27T06:11:29+07:00",
-  "kesimpulan_t": "2026-11-26T06:11:38+07:00"
+  "updated_at": "2026-11-27T06:11:31+07:00",
+  "kesimpulan_t": "2026-11-27T06:11:31+07:00"
 }
