@@ -63,6 +63,8 @@
   .brand span { color: var(--cyan); }
   .brand-wrap { display: flex; align-items: center; gap: 12px; }
   .brand-logo { width: 52px; height: 52px; border-radius: 12px; display: block; flex: none; }
+  .top-right .pill { white-space: nowrap; }
+  @media (max-width: 400px) { .brand-logo { width: 44px; height: 44px; border-radius: 10px; } .brand-wrap { gap: 10px; } }
   .top-right { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
   .icons { display: flex; gap: 6px; }
   .icon-btn { position: relative; width: 38px; height: 38px; border-radius: var(--r-md); border: 1px solid transparent; background: var(--card);
