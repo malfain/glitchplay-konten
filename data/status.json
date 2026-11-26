@@ -8,7 +8,7 @@
   "tasks": {
     "antri": 0,
     "jalan": 0,
-    "kelar": 10
+    "kelar": 2
   },
   "kesimpulan_bos": [
     "10 konten terbit: 8 game + 2 esports (berita esports/streamer Indonesia baru tipis, topik lain sudah dipakai 14 hari terakhir)",
@@ -17,9 +17,9 @@
   ],
   "agents": {
     "bos": {
-      "status": "kerja",
-      "aktivitas": "[Sirah] Buka shift, eps 9-10",
-      "t": "2026-11-27T04:06:09+07:00"
+      "status": "selesai",
+      "aktivitas": "[Sirah] Eps 9-10 selesai",
+      "t": "2026-11-27T04:07:12+07:00"
     },
     "radar": {
       "status": "selesai",
@@ -32,19 +32,19 @@
       "t": "2026-11-27T04:06:11+07:00"
     },
     "narator": {
-      "status": "kerja",
-      "aktivitas": "[Sirah] Tulis naskah eps 9-10",
-      "t": "2026-11-27T04:06:11+07:00"
+      "status": "selesai",
+      "aktivitas": "[Sirah] Naskah eps 9-10 siap",
+      "t": "2026-11-27T04:07:12+07:00"
     },
     "copywriter": {
       "status": "selesai",
-      "aktivitas": "10 caption siap",
-      "t": "2026-11-26T06:11:32+07:00"
+      "aktivitas": "[Sirah] Caption eps 9-10 siap",
+      "t": "2026-11-27T04:07:12+07:00"
     },
     "qc": {
       "status": "selesai",
-      "aktivitas": "10 konten terbit di Hasil",
-      "t": "2026-11-26T06:11:38+07:00"
+      "aktivitas": "[Sirah] 2 episode terbit",
+      "t": "2026-11-27T04:07:12+07:00"
     },
     "studio": {
       "status": "selesai",
@@ -63,6 +63,36 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-27T04:07:12+07:00",
+      "agen": "bos",
+      "pesan": "[Sirah] Eps 9-10 selesai"
+    },
+    {
+      "t": "2026-11-27T04:07:12+07:00",
+      "agen": "qc",
+      "pesan": "[Sirah] 2 episode terbit"
+    },
+    {
+      "t": "2026-11-27T04:07:12+07:00",
+      "agen": "qc",
+      "pesan": "[Sirah] Cek aturan & validasi"
+    },
+    {
+      "t": "2026-11-27T04:07:12+07:00",
+      "agen": "copywriter",
+      "pesan": "[Sirah] Caption eps 9-10 siap"
+    },
+    {
+      "t": "2026-11-27T04:07:12+07:00",
+      "agen": "copywriter",
+      "pesan": "[Sirah] Caption & judul YouTube"
+    },
+    {
+      "t": "2026-11-27T04:07:12+07:00",
+      "agen": "narator",
+      "pesan": "[Sirah] Naskah eps 9-10 siap"
+    },
     {
       "t": "2026-11-27T04:06:11+07:00",
       "agen": "narator",
@@ -332,38 +362,8 @@
       "t": "2026-11-26T04:09:05+07:00",
       "agen": "asisten",
       "pesan": "Render video 1/2: Eps 7: Perjalanan dagang ke Syam d"
-    },
-    {
-      "t": "2026-11-26T04:09:04+07:00",
-      "agen": "asisten",
-      "pesan": "Render 2 video untuk 2026-11-26"
-    },
-    {
-      "t": "2026-11-26T04:07:10+07:00",
-      "agen": "bos",
-      "pesan": "[Sirah] Shift selesai: eps 7 & 8"
-    },
-    {
-      "t": "2026-11-26T04:07:10+07:00",
-      "agen": "qc",
-      "pesan": "[Sirah] 2 episode terbit (eps 7-8)"
-    },
-    {
-      "t": "2026-11-26T04:07:10+07:00",
-      "agen": "copywriter",
-      "pesan": "[Sirah] Judul YT & caption siap"
-    },
-    {
-      "t": "2026-11-26T04:07:10+07:00",
-      "agen": "narator",
-      "pesan": "[Sirah] 2 naskah ~212 kata"
-    },
-    {
-      "t": "2026-11-26T04:07:10+07:00",
-      "agen": "strategist",
-      "pesan": "[Sirah] Hook & jam posting siap"
     }
   ],
-  "updated_at": "2026-11-27T04:06:11+07:00",
+  "updated_at": "2026-11-27T04:07:12+07:00",
   "kesimpulan_t": "2026-11-26T06:11:38+07:00"
 }
