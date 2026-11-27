@@ -17,14 +17,14 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "Shift selesai",
-      "t": "2026-11-27T06:11:31+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Buka shift eps 11-13",
+      "t": "2026-11-28T04:05:46+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "18 kandidat ditemukan",
-      "t": "2026-11-27T06:08:19+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Riset eps 11-13: Hira, Iqra', dakwah sembunyi",
+      "t": "2026-11-28T04:05:46+07:00"
     },
     "detektif": {
       "status": "selesai",
@@ -63,6 +63,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T04:05:46+07:00",
+      "agen": "radar",
+      "pesan": "[Sirah] Riset eps 11-13: Hira, Iqra', dakwah sembunyi"
+    },
+    {
+      "t": "2026-11-28T04:05:46+07:00",
+      "agen": "bos",
+      "pesan": "[Sirah] Buka shift eps 11-13"
+    },
     {
       "t": "2026-11-27T06:35:25+07:00",
       "agen": "studio",
@@ -352,18 +362,8 @@
       "t": "2026-11-27T04:06:09+07:00",
       "agen": "radar",
       "pesan": "[Sirah] Riset eps 9 & 10"
-    },
-    {
-      "t": "2026-11-27T04:06:09+07:00",
-      "agen": "bos",
-      "pesan": "[Sirah] Buka shift, eps 9-10"
-    },
-    {
-      "t": "2026-11-26T06:31:22+07:00",
-      "agen": "studio",
-      "pesan": "10/10 video jadi, siap di Hasil"
     }
   ],
-  "updated_at": "2026-11-27T06:35:25+07:00",
+  "updated_at": "2026-11-28T04:05:46+07:00",
   "kesimpulan_t": "2026-11-27T06:11:31+07:00"
 }
