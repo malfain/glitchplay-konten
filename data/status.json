@@ -1,24 +1,25 @@
 {
   "run": {
     "date": "2026-11-28",
-    "status": "berjalan",
+    "status": "selesai",
     "started_at": "2026-11-28T06:06:16+07:00",
-    "finished_at": null
+    "finished_at": "2026-11-28T06:08:49+07:00"
   },
   "tasks": {
-    "antri": 5,
+    "antri": 0,
     "jalan": 0,
-    "kelar": 0
+    "kelar": 5
   },
   "kesimpulan_bos": [
-    "[Anak] 2 konten: semut 16:00, Bumi 19:00",
-    "[Anak] Fakta 2+ sumber, aman untuk anak"
+    "5 konten: 2 esports (FFWS, PMGC) + 3 game (Silksong, Arkheron, Witcher 3)",
+    "Urutan posting: 12:00 AK Gold, 16:00 Arkheron, 19:30 FFWS & Silksong, 21:00 Witcher 3",
+    "Catatan: hasil ONIC di Delta Force belum terverifikasi, dilewati"
   ],
   "agents": {
     "bos": {
-      "status": "kerja",
-      "aktivitas": "Buka shift, bagi tugas ke tim",
-      "t": "2026-11-28T06:06:16+07:00"
+      "status": "selesai",
+      "aktivitas": "Shift selesai",
+      "t": "2026-11-28T06:08:49+07:00"
     },
     "radar": {
       "status": "selesai",
@@ -41,9 +42,9 @@
       "t": "2026-11-28T06:08:45+07:00"
     },
     "qc": {
-      "status": "kerja",
-      "aktivitas": "Cek aturan & terbitkan",
-      "t": "2026-11-28T06:08:47+07:00"
+      "status": "selesai",
+      "aktivitas": "5 konten terbit di Hasil",
+      "t": "2026-11-28T06:08:48+07:00"
     },
     "studio": {
       "status": "idle",
@@ -62,6 +63,21 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T06:08:49+07:00",
+      "agen": "bos",
+      "pesan": "Shift selesai. Semua hasil sudah di menu Hasil."
+    },
+    {
+      "t": "2026-11-28T06:08:49+07:00",
+      "agen": "bos",
+      "pesan": "Shift selesai"
+    },
+    {
+      "t": "2026-11-28T06:08:48+07:00",
+      "agen": "qc",
+      "pesan": "5 konten terbit di Hasil"
+    },
     {
       "t": "2026-11-28T06:08:47+07:00",
       "agen": "qc",
@@ -346,23 +362,8 @@
       "t": "2026-11-27T06:22:37+07:00",
       "agen": "studio",
       "pesan": "Render video 5/10: The Witcher 4 tetap rilis di Xbox "
-    },
-    {
-      "t": "2026-11-27T06:20:22+07:00",
-      "agen": "studio",
-      "pesan": "Render video 4/10: ONIC turun di Delta Force Invitati"
-    },
-    {
-      "t": "2026-11-27T06:17:57+07:00",
-      "agen": "studio",
-      "pesan": "Render video 3/10: AK Gold finis kedua di hari pertam"
-    },
-    {
-      "t": "2026-11-27T06:15:51+07:00",
-      "agen": "studio",
-      "pesan": "Render video 2/10: Team Cherry gelar Cherry Time mala"
     }
   ],
-  "updated_at": "2026-11-28T06:08:47+07:00",
-  "kesimpulan_t": "2026-11-28T05:10:00+07:00"
+  "updated_at": "2026-11-28T06:08:49+07:00",
+  "kesimpulan_t": "2026-11-28T06:08:48+07:00"
 }
