@@ -1,14 +1,14 @@
 {
   "run": {
-    "date": "2026-11-27",
-    "status": "selesai",
-    "started_at": "2026-11-27T06:06:12+07:00",
-    "finished_at": "2026-11-27T06:11:31+07:00"
+    "date": "2026-11-28",
+    "status": "berjalan",
+    "started_at": "2026-11-28T06:06:16+07:00",
+    "finished_at": null
   },
   "tasks": {
     "antri": 0,
     "jalan": 0,
-    "kelar": 2
+    "kelar": 0
   },
   "kesimpulan_bos": [
     "[Anak] 2 konten: semut 16:00, Bumi 19:00",
@@ -16,52 +16,62 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "[Anak] Shift anak selesai",
-      "t": "2026-11-28T05:10:00+07:00"
+      "status": "kerja",
+      "aktivitas": "Buka shift, bagi tugas ke tim",
+      "t": "2026-11-28T06:06:16+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 kandidat: semut, Bumi",
-      "t": "2026-11-28T05:09:14+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-28T06:06:16+07:00"
     },
     "detektif": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 lolos, 0 dibuang",
-      "t": "2026-11-28T05:09:16+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-28T06:06:16+07:00"
     },
     "narator": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 naskah selesai",
-      "t": "2026-11-28T05:09:57+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-28T06:06:16+07:00"
     },
     "copywriter": {
-      "status": "selesai",
-      "aktivitas": "[Anak] Metadata YouTube siap",
-      "t": "2026-11-28T05:09:57+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-28T06:06:16+07:00"
     },
     "qc": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 item lolos QC",
-      "t": "2026-11-28T05:09:57+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-28T06:06:16+07:00"
     },
     "studio": {
-      "status": "selesai",
-      "aktivitas": "10/10 video jadi, siap di Hasil",
-      "t": "2026-11-27T06:35:25+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-28T06:06:16+07:00"
     },
     "strategist": {
-      "status": "selesai",
-      "aktivitas": "[Anak] 2 topik diurutkan, hook siap",
-      "t": "2026-11-28T05:09:16+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-28T06:06:16+07:00"
     },
     "asisten": {
-      "status": "selesai",
-      "aktivitas": "2/2 video jadi, siap di Hasil",
-      "t": "2026-11-28T05:25:23+07:00"
+      "status": "idle",
+      "aktivitas": "Menunggu tugas",
+      "t": "2026-11-28T06:06:16+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T06:06:16+07:00",
+      "agen": "bos",
+      "pesan": "Buka shift, bagi tugas ke tim"
+    },
+    {
+      "t": "2026-11-28T06:06:16+07:00",
+      "agen": "bos",
+      "pesan": "Shift pagi dimulai. Tim dikumpulkan."
+    },
     {
       "t": "2026-11-28T05:25:23+07:00",
       "agen": "asisten",
@@ -351,18 +361,8 @@
       "t": "2026-11-27T06:08:26+07:00",
       "agen": "strategist",
       "pesan": "10 topik diurutkan, hook siap"
-    },
-    {
-      "t": "2026-11-27T06:08:25+07:00",
-      "agen": "strategist",
-      "pesan": "Ranking FYP dan hook"
-    },
-    {
-      "t": "2026-11-27T06:08:23+07:00",
-      "agen": "detektif",
-      "pesan": "10 lolos, 8 dibuang"
     }
   ],
-  "updated_at": "2026-11-28T05:25:23+07:00",
+  "updated_at": "2026-11-28T06:06:16+07:00",
   "kesimpulan_t": "2026-11-28T05:10:00+07:00"
 }
