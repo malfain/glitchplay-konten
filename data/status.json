@@ -47,9 +47,9 @@
       "t": "2026-11-28T06:08:48+07:00"
     },
     "studio": {
-      "status": "kerja",
-      "aktivitas": "Render 1 video untuk 2026-11-28",
-      "t": "2026-11-28T06:28:50+07:00"
+      "status": "error",
+      "aktivitas": "0/1 video jadi, siap di Hasil",
+      "t": "2026-11-28T06:29:25+07:00"
     },
     "strategist": {
       "status": "selesai",
@@ -63,6 +63,21 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T06:29:25+07:00",
+      "agen": "studio",
+      "pesan": "0/1 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-28T06:29:25+07:00",
+      "agen": "studio",
+      "pesan": "Video 3 gagal: remotion render gagal: \u001b[31m\u001b[41m\u001b[37m E"
+    },
+    {
+      "t": "2026-11-28T06:28:51+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/1: Sea of Sorrow, DLC gratis Silksong"
+    },
     {
       "t": "2026-11-28T06:28:50+07:00",
       "agen": "studio",
@@ -347,23 +362,8 @@
       "t": "2026-11-28T04:06:54+07:00",
       "agen": "strategist",
       "pesan": "[Sirah] Hook & jam posting eps 11-13"
-    },
-    {
-      "t": "2026-11-28T04:06:54+07:00",
-      "agen": "detektif",
-      "pesan": "[Sirah] 3 lolos, 0 dibuang"
-    },
-    {
-      "t": "2026-11-28T04:06:54+07:00",
-      "agen": "detektif",
-      "pesan": "[Sirah] Verifikasi 2 sumber per detail"
-    },
-    {
-      "t": "2026-11-28T04:06:52+07:00",
-      "agen": "radar",
-      "pesan": "[Sirah] 3 kandidat (eps 11-13) ditemukan"
     }
   ],
-  "updated_at": "2026-11-28T06:28:50+07:00",
+  "updated_at": "2026-11-28T06:29:25+07:00",
   "kesimpulan_t": "2026-11-28T06:08:54+07:00"
 }
