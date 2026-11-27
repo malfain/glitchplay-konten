@@ -31,9 +31,9 @@
       "t": "2026-11-28T06:07:39+07:00"
     },
     "narator": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-28T06:06:16+07:00"
+      "status": "kerja",
+      "aktivitas": "Tulis naskah & adegan 5 item",
+      "t": "2026-11-28T06:07:44+07:00"
     },
     "copywriter": {
       "status": "idle",
@@ -62,6 +62,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T06:07:44+07:00",
+      "agen": "narator",
+      "pesan": "Tulis naskah & adegan 5 item"
+    },
     {
       "t": "2026-11-28T06:07:42+07:00",
       "agen": "strategist",
@@ -356,13 +361,8 @@
       "t": "2026-11-27T06:11:31+07:00",
       "agen": "bos",
       "pesan": "Shift selesai"
-    },
-    {
-      "t": "2026-11-27T06:11:29+07:00",
-      "agen": "qc",
-      "pesan": "10 konten terbit di Hasil"
     }
   ],
-  "updated_at": "2026-11-28T06:07:42+07:00",
+  "updated_at": "2026-11-28T06:07:44+07:00",
   "kesimpulan_t": "2026-11-28T05:10:00+07:00"
 }
