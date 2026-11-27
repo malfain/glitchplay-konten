@@ -1354,7 +1354,7 @@ def news_cover(item, imgs):
     """Instagram only: the opening news cover (headline with *highlighted* words + round inset of the 2nd picture)."""
     if CH["theme"] != "glitch":
         return None
-    title = (item.get("judul_cover") or "").strip()
+    title = (item.get("judul_cover") or (item.get("hook") or {}).get("judul") or "").strip()
     if not title:  # older items: the title, with its middle third highlighted
         w = (item.get("judul") or "").split()
         if not w:
@@ -1369,7 +1369,7 @@ def news_cover(item, imgs):
 
 def hook_text(item):
     """Big opening card: the writer's `hook_layar`, else the first on-screen card (emoji stripped), max 6 words."""
-    t = (item.get("hook_layar") or "").strip()
+    t = ((item.get("hook") or {}).get("layar") or item.get("hook_layar") or "").strip()
     if not t:
         cards = item.get("teks_layar") or []
         t = (cards[0].get("teks") if cards and isinstance(cards[0], dict) else "") or ""

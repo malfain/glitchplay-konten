@@ -43,7 +43,7 @@ const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 // active-word colour and badge ring per channel
 const ACCENT = { kids: "#ffd23f", glitch: "#c6f02c", sirah: "#e9b949" } as const;
 
-const HOOK_END = 1.9; // the big hook card covers the first ~2 s (the scroll-stopping moment)
+const HOOK_END = 3.0; // the big hook card covers the first 3 s (the scroll-stopping moment)
 
 export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, total, scenes, words, label, hook, episode, maskot, logo, cover }) => {
   const th = theme ?? "kids";
@@ -346,7 +346,7 @@ const HeadLight: React.FC<{ x: number; y: number; r: number }> = ({ x, y, r }) =
   );
 };
 
-const COVER_END = 2.2;
+const COVER_END = 3.0;
 
 /** "*kata*" → highlighted (white on red), like the reference news covers */
 const renderTitle = (title: string) =>

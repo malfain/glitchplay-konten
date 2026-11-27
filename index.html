@@ -804,6 +804,12 @@ function renderItem(it, n, ctx) {
       (!it.youtube ? "<br>🎵 Waktu upload di IG, tambahkan <b>musik yang lagi trending</b> dengan volume kecil (±10%) supaya suara narator tetap jelas." : "");
     el.appendChild(t);
   }
+  if (it.hook && (it.hook.judul || it.hook.tiga_detik || it.hook.layar)) {
+    const h = it.hook;
+    const rows = [["🏷️ Judul", h.judul], ["⏱️ 3 detik pertama", h.tiga_detik], ["🔤 Teks layar", h.layar]].filter((r) => r[1]);
+    const txt = rows.map((r) => `${r[0]}: ${r[1]}`).join("\n");
+    el.appendChild(section("🎣 Hook 3 lapis", "judul · 3 detik · layar", `<table>${rows.map((r) => `<tr><td class="t">${esc(r[0])}</td><td class="s">${esc(r[1])}</td></tr>`).join("")}</table>`, txt, true));
+  }
   const vo = (it.naskah_vo || []).join("\n");
   el.appendChild(section("🎙️ Naskah VO (TTS)", it.hook_formula ? "hook: " + it.hook_formula : "", `<pre>${esc(vo)}</pre>`, vo, !it.video));
   const rows = (it.teks_layar || []).map((r) => `<tr><td class="t">${esc(r.t)}</td><td class="s">${esc(r.teks)}</td><td class="v">${esc(r.visual)}</td></tr>`).join("");

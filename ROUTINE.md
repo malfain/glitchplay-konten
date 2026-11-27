@@ -130,6 +130,36 @@ lalu **share/save**. Untuk tiap item yang lolos Detektif:
    sebelum/sesudah match). Sebar 10 item ke jam berbeda dari 08:00 sampai 22:00
    (selang ±1,5 jam), item skor tertinggi di 12:00 dan 19:30.
 
+## Hook 3 lapis (wajib, semua konten)
+
+Setiap item wajib punya field `hook` berisi **tiga hook yang berbeda tapi satu
+cerita** (saling melengkapi, tidak mengulang kata yang sama):
+
+```json
+"hook": {
+  "judul": "hook di JUDUL video",
+  "tiga_detik": "kalimat yang diucapkan di 3 DETIK PERTAMA (= naskah_vo[0])",
+  "layar": "TEKS BESAR DI LAYAR 3 detik pertama (= hook_layar)",
+  "visual": "apa yang terlihat di 3 detik pertama (adegan pertama)"
+}
+```
+
+1. **Judul** — membuat orang berhenti scroll di feed/hasil pencarian. Pakai salah
+   satu rumus: angka spesifik ("3,79 miliar dolar"), rasa penasaran yang belum
+   dijawab ("…tapi ada satu masalah"), konflik/kontras ("…padahal…"),
+   pertanyaan ("Kenapa…?"), atau kata langsung ke penonton ("Lo wajib tahu…").
+   Maksimal ±60 karakter supaya tidak terpotong. Harus benar & dijawab di video.
+2. **3 detik pertama** (`tiga_detik`, kalimat pertama `naskah_vo`) — **≤ 9 kata**
+   (±3 detik), langsung ke momen paling mengejutkan, tanpa salam/pembukaan
+   ("Halo guys", "Assalamualaikum teman-teman" dilarang di detik pertama).
+   Sudut berbeda dari judul (mis. judul = angka, 3 detik = akibatnya).
+3. **Teks layar** (`layar` = `hook_layar`) — **2–6 kata HURUF BESAR**, terbaca
+   dalam 1 detik, menambah informasi atau emosi (angka, "RESMI!", "GRATIS?!"),
+   bukan salinan judul.
+
+Contoh satu item: judul "GTA VI cetak 3,79 miliar dolar di hari pertama" ·
+3 detik "Rekor dunia hiburan baru saja pecah!" · layar "REKOR DUNIA PECAH!".
+
 ## Aturan naskah reel (Narator)
 
 - **Gaya: cepat, lucu, semangat.** Kalimat pendek yang nendang, tanda seru,
@@ -216,7 +246,7 @@ detik pertama & thumbnail grid IG), gaya akun berita game Indonesia:
 
 Sebelum terbit, QC memastikan untuk tiap item: semua field ada;
 `subtitle` sama jumlahnya dengan `naskah_vo`; `adegan` 5–6 item sesuai aturan;
-`hook_layar` 2–5 kata dan dijawab isi video; `segmen` ada dan seimbang (5/5 bila bisa); `skor_viral` & `jam_posting` ada; item urut skor; `naskah_vo`
+`hook` lengkap 3 lapis (judul/tiga_detik/layar berbeda satu sama lain, `naskah_vo[0]` = `hook.tiga_detik`, `hook_layar` = `hook.layar`, `judul_cover` & baris pertama caption memakai `hook.judul`); `hook_layar` 2–6 kata dan dijawab isi video; `segmen` ada dan seimbang (5/5 bila bisa); `skor_viral` & `jam_posting` ada; item urut skor; `naskah_vo`
 tanpa emoji/simbol; tiap kalimat ≤ 12 kata; `teks_layar` ≤ 6 kata per kartu;
 3–5 hashtag; `sumber` ≥ 2 URL dari situs berbeda; tidak ada kata terlarang.
 Item yang gagal diperbaiki dulu, bukan diterbitkan apa adanya.
@@ -234,7 +264,8 @@ Item yang gagal diperbaiki dulu, bukan diterbitkan apa adanya.
       "ringkasan": "1-2 kalimat fakta inti",
       "status_fakta": "resmi | rumor",
       "hook_formula": "nama rumus hook",
-      "hook_layar": "GTA 6 DITUNDA LAGI?!",
+      "hook": {"judul": "GTA 6 mundur lagi, ini alasan Rockstar", "tiga_detik": "GTA 6 resmi ditunda lagi!", "layar": "MUNDUR LAGI?!", "visual": "trailer GTA 6"},
+      "hook_layar": "MUNDUR LAGI?!",
       "judul_cover": "ROCKSTAR KONFIRMASI *GTA 6 MUNDUR LAGI*, FANS AUTO LEMES!",
       "skor_viral": 8,
       "jam_posting": "19:30",

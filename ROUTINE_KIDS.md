@@ -50,6 +50,39 @@ Lapor status `strategist` seperti agen lain. Tentukan untuk tiap video:
   pulang sekolah 15:00–17:00 dan sore/malam 18:30–20:00; 2 video beda jam).
 - Ending loop: kalimat terakhir menyambung ke kalimat pertama.
 
+## Hook 3 lapis (wajib, semua konten)
+
+Setiap item wajib punya field `hook` berisi **tiga hook yang berbeda tapi satu
+cerita** (saling melengkapi, tidak mengulang kata yang sama):
+
+```json
+"hook": {
+  "judul": "hook di JUDUL video",
+  "tiga_detik": "kalimat yang diucapkan di 3 DETIK PERTAMA (= naskah_vo[0])",
+  "layar": "TEKS BESAR DI LAYAR 3 detik pertama (= hook_layar)",
+  "visual": "apa yang terlihat di 3 detik pertama (adegan pertama)"
+}
+```
+
+1. **Judul** — membuat orang berhenti scroll di feed/hasil pencarian. Pakai salah
+   satu rumus: angka spesifik ("3,79 miliar dolar"), rasa penasaran yang belum
+   dijawab ("…tapi ada satu masalah"), konflik/kontras ("…padahal…"),
+   pertanyaan ("Kenapa…?"), atau kata langsung ke penonton ("Lo wajib tahu…").
+   Maksimal ±60 karakter supaya tidak terpotong. Harus benar & dijawab di video.
+2. **3 detik pertama** (`tiga_detik`, kalimat pertama `naskah_vo`) — **≤ 9 kata**
+   (±3 detik), langsung ke momen paling mengejutkan, tanpa salam/pembukaan
+   ("Halo guys", "Assalamualaikum teman-teman" dilarang di detik pertama).
+   Sudut berbeda dari judul (mis. judul = angka, 3 detik = akibatnya).
+3. **Teks layar** (`layar` = `hook_layar`) — **2–6 kata HURUF BESAR**, terbaca
+   dalam 1 detik, menambah informasi atau emosi (angka, "RESMI!", "GRATIS?!"),
+   bukan salinan judul.
+
+Contoh satu item: judul "GTA VI cetak 3,79 miliar dolar di hari pertama" ·
+3 detik "Rekor dunia hiburan baru saja pecah!" · layar "REKOR DUNIA PECAH!".
+
+Untuk anak: hook berupa rasa kagum & penasaran yang ramah ("Tahukah kamu jerapah
+lidahnya ungu?"), **tanpa** menakut-nakuti atau clickbait.
+
 ## Naskah (Narator)
 
 - **Durasi 1,5–2,5 menit** (YouTube Shorts maks 3 menit). Suara anak membaca
@@ -107,6 +140,8 @@ Isi field `adegan`: **7–9 adegan** (gambar diam otomatis dipotong tiap ±2 det
 
 ## YouTube (Copywriter)
 
+`youtube.judul` dibangun dari `hook.judul` (boleh tambah 1 emoji dan #Shorts).
+
 Isi field `youtube`:
 
 ```json
@@ -123,7 +158,7 @@ Juga isi `caption` (1 kalimat) dan `hashtags` (3) untuk cadangan.
 ## QC
 
 Semua aturan di atas + format sama dengan `ROUTINE.md` (`kategori`, `judul`,
-`ringkasan`, `status_fakta`, `hook_formula`, `hook_layar`, `skor_viral`, `jam_posting`, `durasi_detik`, `naskah_vo`,
+`ringkasan`, `status_fakta`, `hook_formula`, `hook` (3 lapis: judul/tiga_detik/layar), `hook_layar`, `skor_viral`, `jam_posting`, `durasi_detik`, `naskah_vo`,
 `subtitle`, `teks_layar`, `adegan`, `caption`, `hashtags`, `youtube`, `sumber`).
 Validasi JSON, commit `konten anak: <tanggal> (<n> item)`, push ke `main`.
 Jangan ubah `index.html`, `scene/`, `tools/`, `assets/`, `video/`, file
