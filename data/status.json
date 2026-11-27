@@ -26,14 +26,14 @@
       "t": "2026-11-28T05:09:14+07:00"
     },
     "detektif": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Cek fakta semut dan Bumi",
-      "t": "2026-11-28T05:09:14+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] 2 lolos, 0 dibuang",
+      "t": "2026-11-28T05:09:16+07:00"
     },
     "narator": {
-      "status": "selesai",
-      "aktivitas": "[Sirah] Naskah eps 11-13 selesai",
-      "t": "2026-11-28T04:08:25+07:00"
+      "status": "kerja",
+      "aktivitas": "[Anak] Tulis naskah 2 video",
+      "t": "2026-11-28T05:09:16+07:00"
     },
     "copywriter": {
       "status": "selesai",
@@ -52,8 +52,8 @@
     },
     "strategist": {
       "status": "selesai",
-      "aktivitas": "[Sirah] 3 episode, hook & jam siap",
-      "t": "2026-11-28T04:08:25+07:00"
+      "aktivitas": "[Anak] 2 topik diurutkan, hook siap",
+      "t": "2026-11-28T05:09:16+07:00"
     },
     "asisten": {
       "status": "selesai",
@@ -62,6 +62,26 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T05:09:16+07:00",
+      "agen": "narator",
+      "pesan": "[Anak] Tulis naskah 2 video"
+    },
+    {
+      "t": "2026-11-28T05:09:16+07:00",
+      "agen": "strategist",
+      "pesan": "[Anak] 2 topik diurutkan, hook siap"
+    },
+    {
+      "t": "2026-11-28T05:09:16+07:00",
+      "agen": "strategist",
+      "pesan": "[Anak] Susun hook dan jam posting"
+    },
+    {
+      "t": "2026-11-28T05:09:16+07:00",
+      "agen": "detektif",
+      "pesan": "[Anak] 2 lolos, 0 dibuang"
+    },
     {
       "t": "2026-11-28T05:09:14+07:00",
       "agen": "detektif",
@@ -341,28 +361,8 @@
       "t": "2026-11-27T05:10:11+07:00",
       "agen": "bos",
       "pesan": "[Anak] Shift anak selesai"
-    },
-    {
-      "t": "2026-11-27T05:10:11+07:00",
-      "agen": "qc",
-      "pesan": "[Anak] 2 konten anak terbit di Hasil"
-    },
-    {
-      "t": "2026-11-27T05:10:06+07:00",
-      "agen": "copywriter",
-      "pesan": "[Anak] Judul & deskripsi siap"
-    },
-    {
-      "t": "2026-11-27T05:10:06+07:00",
-      "agen": "narator",
-      "pesan": "[Anak] 2 naskah selesai"
-    },
-    {
-      "t": "2026-11-27T05:10:06+07:00",
-      "agen": "strategist",
-      "pesan": "[Anak] Hook & jam posting siap"
     }
   ],
-  "updated_at": "2026-11-28T05:09:14+07:00",
+  "updated_at": "2026-11-28T05:09:16+07:00",
   "kesimpulan_t": "2026-11-28T04:08:25+07:00"
 }
