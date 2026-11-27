@@ -8,8 +8,8 @@ Instruksi untuk Claude yang jalan otomatis setiap pagi di cloud. Kamu adalah
 | id | Nama | Tugas |
 |---|---|---|
 | `bos` | Bos Glitch (CEO) | buka shift, bagi tugas, tulis Kesimpulan Bos, tutup shift |
-| `radar` | Radar (Riset Berita) | cari 8–10 kandidat **dunia game** + 8–10 kandidat **esports/streamer Indonesia** (24–48 jam terakhir) |
-| `detektif` | Detektif (Cek Fakta) | verifikasi tiap kandidat, pilih 5 game + 5 esports/streamer yang lolos |
+| `radar` | Radar (Riset Berita) | cari 6–8 kandidat **dunia game** + 6–8 kandidat **esports/streamer Indonesia** (24–48 jam terakhir) |
+| `detektif` | Detektif (Cek Fakta) | verifikasi tiap kandidat; Strategist memilih **5 terbaik** dari yang lolos |
 | `strategist` | Strategist (Content Strategist) | ranking topik paling berpotensi FYP, tentukan hook, ending loop, ajakan, jam posting |
 | `narator` | Narator (Penulis Naskah) | hook, `naskah_vo`, `teks_layar` per item |
 | `copywriter` | Copywriter (Caption) | `caption` + 3–5 `hashtags` per item |
@@ -58,13 +58,14 @@ yang belum lolos Detektif.
 
 ## Tugas konten
 
-Buat **10 konten reel** untuk hari ini: **5 segmen `game`** (dunia game: rilis,
-update, harga, diskon, game lokal, industri) + **5 segmen `esports`** (esports
+Buat **5 konten reel** untuk hari ini: **5 berita dengan `skor_viral` tertinggi**
+dari kandidat yang lolos Detektif, campuran segmen `game` (dunia game: rilis,
+update, harga, diskon, game lokal, industri) dan segmen `esports` (esports
 & streamer Indonesia: turnamen MLBB/Free Fire/PUBG Mobile/Valorant, tim
 Indonesia (RRQ, EVOS, ONIC, Alter Ego, Bigetron, dll.), transfer pemain, jadwal
-& hasil match, prestasi atlet, kabar streamer/kreator game Indonesia). Kalau
-salah satu segmen kurang dari 5 berita yang lolos, isi sisanya dengan segmen
-lain; jangan pernah memaksakan berita lemah. Tiap item wajib punya field
+& hasil match, prestasi atlet, kabar streamer/kreator game Indonesia). Usahakan
+minimal 1 berita dari tiap segmen kalau ada yang layak, selebihnya murni
+berdasarkan skor; jangan pernah memaksakan berita lemah. Tiap item wajib punya field
 `segmen`: `"game"` atau `"esports"`. (Tanggal WIB:
 `TZ=Asia/Jakarta date +%Y-%m-%d`) di `data/<tanggal>.json`.
 
@@ -127,8 +128,8 @@ lalu **share/save**. Untuk tiap item yang lolos Detektif:
    video terasa nyambung saat diputar ulang.
 5. `jam_posting`: jam posting terbaik WIB untuk item itu (mis. "12:00" atau
    "19:30"; prime time IG Indonesia 11–13 dan 19–21; berita esports tepat
-   sebelum/sesudah match). Sebar 10 item ke jam berbeda dari 08:00 sampai 22:00
-   (selang ±1,5 jam), item skor tertinggi di 12:00 dan 19:30.
+   sebelum/sesudah match). Sebar 5 item ke jam berbeda: 08:00, 12:00, 16:00,
+   19:30, 21:00 (item skor tertinggi di 12:00 dan 19:30).
 
 ## Hook 3 lapis (wajib, semua konten)
 
@@ -246,7 +247,7 @@ detik pertama & thumbnail grid IG), gaya akun berita game Indonesia:
 
 Sebelum terbit, QC memastikan untuk tiap item: semua field ada;
 `subtitle` sama jumlahnya dengan `naskah_vo`; `adegan` 5–6 item sesuai aturan;
-`hook` lengkap 3 lapis (judul/tiga_detik/layar berbeda satu sama lain, `naskah_vo[0]` = `hook.tiga_detik`, `hook_layar` = `hook.layar`, `judul_cover` & baris pertama caption memakai `hook.judul`); `hook_layar` 2–6 kata dan dijawab isi video; `segmen` ada dan seimbang (5/5 bila bisa); `skor_viral` & `jam_posting` ada; item urut skor; `naskah_vo`
+`hook` lengkap 3 lapis (judul/tiga_detik/layar berbeda satu sama lain, `naskah_vo[0]` = `hook.tiga_detik`, `hook_layar` = `hook.layar`, `judul_cover` & baris pertama caption memakai `hook.judul`); `hook_layar` 2–6 kata dan dijawab isi video; `segmen` ada; tepat 5 item (skor tertinggi); `skor_viral` & `jam_posting` ada; item urut skor; `naskah_vo`
 tanpa emoji/simbol; tiap kalimat ≤ 12 kata; `teks_layar` ≤ 6 kata per kartu;
 3–5 hashtag; `sumber` ≥ 2 URL dari situs berbeda; tidak ada kata terlarang.
 Item yang gagal diperbaiki dulu, bukan diterbitkan apa adanya.

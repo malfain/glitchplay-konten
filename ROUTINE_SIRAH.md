@@ -8,11 +8,11 @@ keluarga.
 
 ## Target
 
-**2 episode per hari** (dua episode berurutan) di `data/sirah/<tanggal>.json`
+**3 episode per hari** (tiga episode berurutan) di `data/sirah/<tanggal>.json`
 (tanggal WIB: `TZ=Asia/Jakarta date +%Y-%m-%d`). Kalau file hari ini sudah
-berisi item, tambah sampai total 2 saja. `jam_posting` kedua episode berbeda
-(mis. 04:45 setelah Subuh dan 18:30 setelah Maghrib; episode lebih awal
-diposting lebih dulu). Tambahkan tanggal ke `data/sirah/index.json` (`days`, tanpa
+berisi item, tambah sampai total 3 saja. `jam_posting` ketiga episode berbeda
+(mis. 04:45 setelah Subuh, 12:30 setelah Zuhur, 18:30 setelah Maghrib; episode
+lebih awal diposting lebih dulu). Tambahkan tanggal ke `data/sirah/index.json` (`days`, tanpa
 duplikat). Jangan ubah `data/*.json` milik Instagram dan `data/kids/`.
 
 ## Episode berikutnya
