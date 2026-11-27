@@ -1,0 +1,853 @@
+{
+ "date": "2026-11-28",
+ "items": [
+  {
+   "episode": 11,
+   "judul_episode": "Menyendiri dan beribadah di Gua Hira",
+   "judul": "Eps 11: Menyendiri dan beribadah di Gua Hira",
+   "hook": {
+    "judul": "Rahasia Gua Hira: Apa yang Dilakukan Rasulullah ﷺ Sendirian?",
+    "tiga_detik": "Seorang lelaki mendaki gunung sendirian, malam demi malam.",
+    "layar": "SEORANG LELAKI MENDAKI GUA SETIAP MALAM",
+    "visual": "Siluet kecil berjubah putih mendaki bukit batu menuju gua saat senja, dari belakang"
+   },
+   "judul_alternatif": [
+    "Kenapa Rasulullah ﷺ Memilih Menyendiri di Gua Hira?",
+    "Malam-Malam Sunyi Sebelum Wahyu Turun",
+    "Mimpi Seterang Cahaya Subuh: Awal Kenabian",
+    "Gua Kecil yang Mengubah Sejarah Dunia"
+   ],
+   "hook_alternatif": [
+    "Sebelum wahyu turun, ada malam-malam yang sunyi di sebuah gua.",
+    "Mimpinya selalu datang sejelas cahaya subuh.",
+    "Mengapa lelaki terpercaya Makkah memilih pergi sendirian?",
+    "Bekalnya habis, dan beliau pulang menemui Khadijah."
+   ],
+   "hook_layar": "SEORANG LELAKI MENDAKI GUA SETIAP MALAM",
+   "storyboard": [
+    {
+     "waktu": "0:00-0:03",
+     "narasi": "Seorang lelaki mendaki gunung sendirian, malam demi malam.",
+     "visual": "Siluet berjubah putih mendaki bukit batu",
+     "ganti_scene": "fade-in dari gelap",
+     "subtitle_besar": [
+      "SENDIRIAN"
+     ],
+     "sfx": "angin pelan",
+     "musik": "musik syahdu pelan",
+     "efek": "slow zoom in"
+    },
+    {
+     "waktu": "0:03-0:15",
+     "narasi": "Ini kisah Nabi Muhammad ﷺ... hati makin gelisah.",
+     "visual": "Makkah senja, berhala dari kejauhan",
+     "ganti_scene": "cross-dissolve",
+     "subtitle_besar": [
+      "GELISAH"
+     ],
+     "sfx": "-",
+     "musik": "musik syahdu",
+     "efek": "pan lembut"
+    },
+    {
+     "waktu": "0:15-0:50",
+     "narasi": "Gua Hira, tahannuts, bekal, Khadijah.",
+     "visual": "Gua kecil, rumah sederhana",
+     "ganti_scene": "ganti tiap 2 kalimat",
+     "subtitle_besar": [
+      "GUA HIRA",
+      "KHADIJAH"
+     ],
+     "sfx": "gema lembut",
+     "musik": "musik naik pelan",
+     "efek": "slow zoom"
+    },
+    {
+     "waktu": "0:50-1:20",
+     "narasi": "Mimpi yang benar sejelas cahaya subuh.",
+     "visual": "Fajar merah muda di pegunungan",
+     "ganti_scene": "dissolve",
+     "subtitle_besar": [
+      "MIMPI",
+      "SUBUH"
+     ],
+     "sfx": "-",
+     "musik": "musik hangat",
+     "efek": "light glow"
+    },
+    {
+     "waktu": "1:20-1:50",
+     "narasi": "Open loop, hikmah merenung.",
+     "visual": "Langit berbintang di atas gua",
+     "ganti_scene": "fade",
+     "subtitle_besar": [
+      "HIKMAH"
+     ],
+     "sfx": "-",
+     "musik": "musik tenang",
+     "efek": "zoom out"
+    },
+    {
+     "waktu": "1:50-2:00",
+     "narasi": "Teaser: Wahyu pertama: Iqra'.",
+     "visual": "Cahaya terang dalam gua",
+     "ganti_scene": "fade-out putih",
+     "subtitle_besar": [
+      "IQRA'"
+     ],
+     "sfx": "gema halus",
+     "musik": "musik menggantung",
+     "efek": "glow"
+    }
+   ],
+   "kata_penting": [
+    "SENDIRIAN",
+    "GELISAH",
+    "GUA HIRA",
+    "KHADIJAH",
+    "MIMPI",
+    "SUBUH",
+    "HIKMAH",
+    "IQRA'"
+   ],
+   "alasan_menarik": "Penonton penasaran apa yang dilakukan beliau sendirian di gua sebelum momen terbesar dalam sejarah. Open loop menuju wahyu pertama menjaga retensi.",
+   "catatan_verifikasi": "Tahun tepat usia dan lamanya khalwat tidak disebut karena ada perbedaan riwayat; disebut 'menjelang usia empat puluh tahun' (pendapat masyhur).",
+   "skor_viral": 8,
+   "jam_posting": "04:45",
+   "komentar_pin": "Pernahkah kamu merasa tenang setelah menyendiri untuk merenung? Ceritakan dengan sopan di kolom komentar.",
+   "durasi_detik": 92,
+   "naskah_vo": [
+    "Seorang lelaki mendaki gunung sendirian, malam demi malam.",
+    "Ini kisah Nabi Muhammad shallallahu 'alaihi wa sallam, episode sebelas.",
+    "Di episode sebelumnya, beliau meletakkan Hajar Aswad dan mendamaikan Makkah.",
+    "Menjelang usia empat puluh tahun, hati beliau makin gelisah melihat keadaan kaumnya.",
+    "Makkah ramai, tapi banyak orang menyembah berhala yang tak bisa memberi manfaat.",
+    "Sejak muda, Allah menjaga beliau dari kebiasaan buruk kaumnya.",
+    "Kini beliau semakin suka menyendiri.",
+    "Tempatnya Gua Hira, di sebuah bukit batu tak jauh dari Makkah.",
+    "Gua itu kecil, hanya cukup untuk beribadah dan merenung.",
+    "Di sana beliau beribadah beberapa malam berturut-turut, yang disebut tahannuts.",
+    "Beliau membawa bekal secukupnya.",
+    "Ketika bekal habis, beliau pulang menemui istrinya, Khadijah radhiyallahu 'anha.",
+    "Khadijah menyiapkan bekal baru, lalu beliau kembali ke gua.",
+    "Menurut riwayat Aisyah radhiyallahu 'anha, awal wahyu datang lewat mimpi yang benar.",
+    "Setiap mimpi itu terjadi jelas, sejelas terbitnya cahaya subuh.",
+    "Itulah tanda awal bahwa sesuatu yang sangat besar akan segera terjadi.",
+    "Tapi apa yang menanti di gua itu, tak ada yang menduga.",
+    "Bahkan beliau sendiri belum tahu apa yang akan datang.",
+    "Hari-hari berlalu dalam sunyi, doa, dan kesabaran, sementara hati beliau makin tenang.",
+    "Hikmahnya: ketenangan hati sering lahir saat kita berani menyendiri untuk merenung.",
+    "Lalu suatu malam di Gua Hira, sesuatu yang luar biasa terjadi.",
+    "Subscribe Glitchplay dan nantikan episode berikutnya: Wahyu pertama: Iqra'."
+   ],
+   "subtitle": [
+    "Seorang lelaki mendaki gunung sendirian, malam demi malam.",
+    "Ini kisah Nabi Muhammad ﷺ, episode 11.",
+    "Di episode sebelumnya, beliau meletakkan Hajar Aswad dan mendamaikan Makkah.",
+    "Menjelang usia 40 tahun, hati beliau makin gelisah melihat keadaan kaumnya.",
+    "Makkah ramai, tapi banyak orang menyembah berhala yang tak bisa memberi manfaat.",
+    "Sejak muda, Allah menjaga beliau dari kebiasaan buruk kaumnya.",
+    "Kini beliau semakin suka menyendiri.",
+    "Tempatnya Gua Hira, di sebuah bukit batu tak jauh dari Makkah.",
+    "Gua itu kecil, hanya cukup untuk beribadah dan merenung.",
+    "Di sana beliau beribadah beberapa malam berturut-turut, yang disebut tahannuts.",
+    "Beliau membawa bekal secukupnya.",
+    "Ketika bekal habis, beliau pulang menemui istrinya, Khadijah radhiyallahu 'anha.",
+    "Khadijah menyiapkan bekal baru, lalu beliau kembali ke gua.",
+    "Menurut riwayat Aisyah radhiyallahu 'anha, awal wahyu datang lewat mimpi yang benar.",
+    "Setiap mimpi itu terjadi jelas, sejelas terbitnya cahaya subuh.",
+    "Itulah tanda awal bahwa sesuatu yang sangat besar akan segera terjadi.",
+    "Tapi apa yang menanti di gua itu, tak ada yang menduga.",
+    "Bahkan beliau sendiri belum tahu apa yang akan datang.",
+    "Hari-hari berlalu dalam sunyi, doa, dan kesabaran, sementara hati beliau makin tenang.",
+    "Hikmahnya: ketenangan hati sering lahir saat kita berani menyendiri untuk merenung.",
+    "Lalu suatu malam di Gua Hira, sesuatu yang luar biasa terjadi.",
+    "Subscribe Glitchplay dan nantikan episode berikutnya: Wahyu pertama: Iqra'."
+   ],
+   "teks_layar": [
+    {
+     "t": "0:00",
+     "teks": "SEORANG LELAKI MENDAKI GUA SETIAP MALAM",
+     "visual": "bukit batu senja"
+    },
+    {
+     "t": "0:15",
+     "teks": "Hati yang gelisah melihat berhala",
+     "visual": "Makkah kuno"
+    },
+    {
+     "t": "0:30",
+     "teks": "Gua Hira: tempat tahannuts",
+     "visual": "gua di bukit"
+    },
+    {
+     "t": "0:55",
+     "teks": "Bekal habis, pulang ke Khadijah",
+     "visual": "rumah sederhana"
+    },
+    {
+     "t": "1:15",
+     "teks": "Mimpi sejelas cahaya subuh",
+     "visual": "fajar di langit"
+    },
+    {
+     "t": "1:40",
+     "teks": "Hikmah: tenangkan hati dengan merenung",
+     "visual": "langit berbintang"
+    }
+   ],
+   "adegan": [
+    {
+     "kalimat": 0,
+     "prompt": "A tiny lone figure in a white robe climbing a rocky mountain path at dusk, seen from far behind, storybook painting, warm orange sky"
+    },
+    {
+     "kalimat": 3,
+     "prompt": "Wide view of ancient Makkah at dusk, stone houses in a valley, soft lamplight, calm and thoughtful mood"
+    },
+    {
+     "kalimat": 6,
+     "prompt": "A tiny man in a white robe walking alone toward a mountain at sunset, seen from far behind, rocky hills",
+     "nabi": true
+    },
+    {
+     "kalimat": 7,
+     "prompt": "A small dark cave entrance on a rocky mountainside at golden hour, no people, quiet atmosphere"
+    },
+    {
+     "kalimat": 9,
+     "prompt": "Inside a small cave looking out at a starry night sky over desert hills, soft glow, peaceful"
+    },
+    {
+     "kalimat": 11,
+     "prompt": "A simple ancient stone house with warm lamp light in a doorway at evening, a woman's silhouette in a dark robe far away, no face"
+    },
+    {
+     "kalimat": 14,
+     "prompt": "Pale pink and golden dawn light spreading across desert mountains, symbolic of a true dream"
+    },
+    {
+     "kalimat": 18,
+     "prompt": "Starry night over a rocky mountain with a small cave glowing softly, calm storybook painting"
+    },
+    {
+     "kalimat": 20,
+     "prompt": "A bright beam of soft light glowing inside a dark mountain cave at night, mysterious and sacred mood, no people"
+    }
+   ],
+   "youtube": {
+    "channel": "Glitchplay",
+    "judul": "Rahasia Gua Hira: Apa yang Dilakukan Rasulullah ﷺ Sendirian? | Kisah Nabi ﷺ Eps 11 #Shorts",
+    "deskripsi": "Sebelum wahyu pertama turun, Nabi Muhammad ﷺ gemar menyendiri dan beribadah di Gua Hira, membawa bekal dan kembali pada Khadijah radhiyallahu 'anha. Pelajaran: ketenangan hati lahir dari merenung dan beribadah.\n\nEpisode sebelumnya: Peletakan Hajar Aswad saat Ka'bah dibangun ulang. Episode berikutnya: Wahyu pertama: Iqra'.\n\nSumber: Rumaysho; Hadits.id; Bincang Syariah; Detik Hikmah.",
+    "tags": [
+     "kisah nabi",
+     "sirah nabawiyah",
+     "sejarah islam",
+     "nabi muhammad",
+     "kisah nabi muhammad",
+     "gua hira",
+     "kisah islami",
+     "shorts",
+     "cerita islami",
+     "glitchplay"
+    ],
+    "made_for_kids": false
+   },
+   "caption": "Sebelum wahyu turun, Nabi Muhammad ﷺ menyendiri beribadah di Gua Hira. Kisah Nabi episode 11.",
+   "hashtags": [
+    "#kisahnabi",
+    "#sejarahislam",
+    "#sirahnabawiyah",
+    "#glitchplay"
+   ],
+   "sumber": [
+    {
+     "nama": "Rumaysho: Faedah Sirah Nabi, Menerima Wahyu Pertama di Gua Hira",
+     "url": "https://rumaysho.com/17464-faedah-sirah-nabi-menerima-wahyu-pertama-di-gua-hira.html"
+    },
+    {
+     "nama": "Hadits.id: Permulaan Wahyu (HR. Bukhari no. 3, dari Aisyah)",
+     "url": "https://www.hadits.id/kumpulan/al-bukhari-muhammad-bin-ismail-shahih-al-bukhari-kitab-bad-al-wahy-hadis-no-1"
+    },
+    {
+     "nama": "Bincang Syariah: Shahih Bukhari No. 3, Kondisi Nabi Saat Menerima Wahyu",
+     "url": "https://bincangsyariah.com/khazanah/kondisi-nabi-terima-wahyu-di-gua-hira/"
+    },
+    {
+     "nama": "Detik Hikmah: Gua Hira",
+     "url": "https://www.detik.com/hikmah/khazanah/d-6642839/gua-hira-tempat-rasulullah-menerima-wahyu-pertama-kali"
+    }
+   ]
+  },
+  {
+   "episode": 12,
+   "judul_episode": "Wahyu pertama: Iqra'",
+   "judul": "Eps 12: Wahyu pertama: Iqra'",
+   "hook": {
+    "judul": "Kata Pertama dari Langit: \"Bacalah!\" Apa yang Terjadi di Gua Hira?",
+    "tiga_detik": "Di gua yang sunyi, terdengar satu kata: Bacalah!",
+    "layar": "SATU KATA YANG MENGUBAH DUNIA: IQRA'",
+    "visual": "Cahaya terang memenuhi gua gelap di malam hari, tanpa sosok malaikat"
+   },
+   "judul_alternatif": [
+    "Malam Wahyu Pertama: Apa Jawaban Khadijah?",
+    "Saat Jibril Berkata \"Iqra'\" di Gua Hira",
+    "Gemetar di Gua Hira, Ini yang Dilakukan Khadijah",
+    "Lima Ayat Pertama yang Mengubah Dunia"
+   ],
+   "hook_alternatif": [
+    "Di gua yang sunyi, satu kata mengubah segalanya: Bacalah!",
+    "Beliau pulang gemetar dan berkata: selimuti aku!",
+    "Ini jawaban Khadijah yang menenangkan beliau.",
+    "Lima ayat pertama turun, dan dunia tak lagi sama."
+   ],
+   "hook_layar": "SATU KATA YANG MENGUBAH DUNIA: IQRA'",
+   "storyboard": [
+    {
+     "waktu": "0:00-0:03",
+     "narasi": "Di gua yang sunyi, terdengar satu kata: Bacalah!",
+     "visual": "Cahaya terang dalam gua gelap",
+     "ganti_scene": "hard cut ke cahaya",
+     "subtitle_besar": [
+      "BACALAH"
+     ],
+     "sfx": "dengung halus",
+     "musik": "musik dramatis pelan",
+     "efek": "zoom in cepat"
+    },
+    {
+     "waktu": "0:03-0:20",
+     "narasi": "Jibril menemui beliau; aku tidak bisa membaca.",
+     "visual": "Cahaya di langit gua",
+     "ganti_scene": "dissolve",
+     "subtitle_besar": [
+      "JIBRIL"
+     ],
+     "sfx": "-",
+     "musik": "musik menegang",
+     "efek": "slow push"
+    },
+    {
+     "waktu": "0:20-0:50",
+     "narasi": "Tiga kali, lalu Al-'Alaq ayat 1-5.",
+     "visual": "Garis cahaya emas naik ke langit",
+     "ganti_scene": "cross-dissolve",
+     "subtitle_besar": [
+      "IQRA'",
+      "PENA"
+     ],
+     "sfx": "gema lembut",
+     "musik": "musik khidmat",
+     "efek": "glow"
+    },
+    {
+     "waktu": "0:50-1:15",
+     "narasi": "Pulang gemetar, selimuti aku.",
+     "visual": "Jalan batu malam, rumah hangat",
+     "ganti_scene": "ganti scene",
+     "subtitle_besar": [
+      "SELIMUTI AKU"
+     ],
+     "sfx": "langkah pelan",
+     "musik": "musik lirih",
+     "efek": "pan"
+    },
+    {
+     "waktu": "1:15-1:50",
+     "narasi": "Jawaban Khadijah dan Waraqah.",
+     "visual": "Lampu hangat, Makkah malam",
+     "ganti_scene": "dissolve",
+     "subtitle_besar": [
+      "KHADIJAH",
+      "WARAQAH"
+     ],
+     "sfx": "-",
+     "musik": "musik menenangkan",
+     "efek": "slow zoom"
+    },
+    {
+     "waktu": "1:50-2:10",
+     "narasi": "Hikmah dan teaser dakwah sembunyi-sembunyi.",
+     "visual": "Fajar Makkah",
+     "ganti_scene": "fade-out",
+     "subtitle_besar": [
+      "HIKMAH"
+     ],
+     "sfx": "-",
+     "musik": "musik harapan",
+     "efek": "zoom out"
+    }
+   ],
+   "kata_penting": [
+    "BACALAH",
+    "JIBRIL",
+    "IQRA'",
+    "PENA",
+    "SELIMUTI AKU",
+    "KHADIJAH",
+    "WARAQAH",
+    "HIKMAH"
+   ],
+   "alasan_menarik": "Momen paling bersejarah dikisahkan lewat ketegangan 'Bacalah!' lalu kehangatan jawaban Khadijah; ada open loop sebelum jawaban Khadijah.",
+   "catatan_verifikasi": "Tanggal turunnya wahyu (mis. 17 Ramadhan) berbeda pendapat sehingga tidak disebut. Isi ucapan Khadijah dan jawaban Nabi dari hadits Aisyah (Bukhari no. 3); ayat 1-5 Al-'Alaq menurut jumhur ulama adalah wahyu pertama.",
+   "skor_viral": 10,
+   "jam_posting": "12:30",
+   "komentar_pin": "Menurut kamu, apa arti perintah pertama \"Bacalah\" bagi kehidupan kita hari ini?",
+   "durasi_detik": 92,
+   "naskah_vo": [
+    "Di gua yang sunyi, terdengar satu kata: Bacalah!",
+    "Ini kisah Nabi Muhammad shallallahu 'alaihi wa sallam, episode dua belas.",
+    "Di episode sebelumnya, beliau rutin beribadah menyendiri di Gua Hira.",
+    "Suatu malam, kebenaran datang tiba-tiba.",
+    "Malaikat Jibril 'alaihissalam menemui beliau dan berkata, bacalah!",
+    "Beliau menjawab, aku tidak bisa membaca.",
+    "Malaikat itu memeluk beliau erat sampai beliau kepayahan, lalu melepaskannya.",
+    "Ia kembali berkata, bacalah! Jawaban beliau tetap sama.",
+    "Hal itu terulang sampai tiga kali, dan beliau tetap menjawab dengan jujur.",
+    "Lalu Jibril membacakan wahyu pertama, Surah Al-'Alaq ayat satu sampai lima.",
+    "Artinya: bacalah dengan nama Tuhanmu yang menciptakan.",
+    "Dia mengajar manusia dengan pena, dan mengajarkan apa yang tidak mereka ketahui.",
+    "Dengan hati bergetar, beliau bergegas pulang menemui Khadijah radhiyallahu 'anha.",
+    "Beliau berkata, selimuti aku, selimuti aku!",
+    "Setelah tenang, beliau menceritakan semuanya dan berkata, aku mengkhawatirkan diriku.",
+    "Tapi jawaban Khadijah benar-benar di luar dugaan.",
+    "Demi Allah, Allah tidak akan pernah menghinakanmu.",
+    "Engkau menyambung silaturahmi, memikul beban orang lemah, memuliakan tamu, dan menolong korban musibah.",
+    "Khadijah lalu membawa beliau menemui sepupunya, Waraqah bin Naufal.",
+    "Waraqah, ahli kitab terdahulu, membenarkan: itulah malaikat yang pernah turun kepada Nabi Musa.",
+    "Hikmahnya: dukungan orang tersayang menguatkan hati saat kita merasa takut.",
+    "Sejak malam itu, tugas besar kenabian pun dimulai.",
+    "Subscribe Glitchplay dan nantikan episode berikutnya: Dakwah sembunyi-sembunyi dan orang-orang pertama yang masuk Islam."
+   ],
+   "subtitle": [
+    "Di gua yang sunyi, terdengar satu kata: Bacalah!",
+    "Ini kisah Nabi Muhammad ﷺ, episode 12.",
+    "Di episode sebelumnya, beliau rutin beribadah menyendiri di Gua Hira.",
+    "Suatu malam, kebenaran datang tiba-tiba.",
+    "Malaikat Jibril 'alaihissalam menemui beliau dan berkata, bacalah!",
+    "Beliau menjawab, aku tidak bisa membaca.",
+    "Malaikat itu memeluk beliau erat sampai beliau kepayahan, lalu melepaskannya.",
+    "Ia kembali berkata, bacalah! Jawaban beliau tetap sama.",
+    "Hal itu terulang sampai 3 kali, dan beliau tetap menjawab dengan jujur.",
+    "Lalu Jibril membacakan wahyu pertama, Surah Al-'Alaq ayat 1 sampai 5.",
+    "Artinya: bacalah dengan nama Tuhanmu yang menciptakan.",
+    "Dia mengajar manusia dengan pena, dan mengajarkan apa yang tidak mereka ketahui.",
+    "Dengan hati bergetar, beliau bergegas pulang menemui Khadijah radhiyallahu 'anha.",
+    "Beliau berkata, selimuti aku, selimuti aku!",
+    "Setelah tenang, beliau menceritakan semuanya dan berkata, aku mengkhawatirkan diriku.",
+    "Tapi jawaban Khadijah benar-benar di luar dugaan.",
+    "Demi Allah, Allah tidak akan pernah menghinakanmu.",
+    "Engkau menyambung silaturahmi, memikul beban orang lemah, memuliakan tamu, dan menolong korban musibah.",
+    "Khadijah lalu membawa beliau menemui sepupunya, Waraqah bin Naufal.",
+    "Waraqah, ahli kitab terdahulu, membenarkan: itulah malaikat yang pernah turun kepada Nabi Musa.",
+    "Hikmahnya: dukungan orang tersayang menguatkan hati saat kita merasa takut.",
+    "Sejak malam itu, tugas besar kenabian pun dimulai.",
+    "Subscribe Glitchplay dan nantikan episode berikutnya: Dakwah sembunyi-sembunyi dan orang-orang pertama yang masuk Islam."
+   ],
+   "teks_layar": [
+    {
+     "t": "0:00",
+     "teks": "SATU KATA YANG MENGUBAH DUNIA",
+     "visual": "cahaya di gua"
+    },
+    {
+     "t": "0:15",
+     "teks": "Jibril: Iqra'! Bacalah!",
+     "visual": "cahaya terang"
+    },
+    {
+     "t": "0:40",
+     "teks": "Al-'Alaq ayat 1-5",
+     "visual": "langit malam"
+    },
+    {
+     "t": "1:00",
+     "teks": "Selimuti aku!",
+     "visual": "rumah Makkah"
+    },
+    {
+     "t": "1:20",
+     "teks": "Khadijah: Allah tak akan menghinakanmu",
+     "visual": "lampu hangat"
+    },
+    {
+     "t": "1:45",
+     "teks": "Waraqah membenarkan",
+     "visual": "kota Makkah fajar"
+    }
+   ],
+   "adegan": [
+    {
+     "kalimat": 0,
+     "prompt": "Soft bright light glowing inside a dark mountain cave at night, mysterious sacred mood, no people, storybook painting"
+    },
+    {
+     "kalimat": 2,
+     "prompt": "Rocky mountain with a small cave under a starry night sky, quiet and solemn"
+    },
+    {
+     "kalimat": 4,
+     "prompt": "A radiant beam of white-gold light in the sky above a mountain cave, symbolizing the angel Jibril, only light, no figure"
+    },
+    {
+     "kalimat": 6,
+     "prompt": "A tiny figure in a white robe standing in the glowing light inside a cave, seen from far behind, no face",
+     "nabi": true
+    },
+    {
+     "kalimat": 9,
+     "prompt": "Floating glowing golden lines of light rising from a cave toward a starry sky, abstract, no text"
+    },
+    {
+     "kalimat": 12,
+     "prompt": "A tiny figure in a white robe hurrying down a rocky mountain path at night, seen from far behind, moonlight",
+     "nabi": true
+    },
+    {
+     "kalimat": 13,
+     "prompt": "A warm lamp-lit room in an ancient stone house with a soft blanket on a mat, a woman in a dark robe seen only as a distant silhouette from behind"
+    },
+    {
+     "kalimat": 18,
+     "prompt": "Ancient Makkah street at night, two figures in dark robes walking together seen from far behind, soft moonlight"
+    },
+    {
+     "kalimat": 21,
+     "prompt": "Sunrise over the valley of Makkah and the Kaaba, golden light, hopeful mood, storybook painting"
+    }
+   ],
+   "youtube": {
+    "channel": "Glitchplay",
+    "judul": "Kata Pertama dari Langit: \"Bacalah!\" Apa yang Terjadi di Gua Hira? | Kisah Nabi ﷺ Eps 12 #Shorts",
+    "deskripsi": "Di Gua Hira, malaikat Jibril membawa wahyu pertama, Surah Al-'Alaq ayat 1-5, kepada Nabi Muhammad ﷺ. Khadijah radhiyallahu 'anha menenangkan beliau dan membawanya kepada Waraqah bin Naufal. Pelajaran: dukungan orang tersayang menguatkan hati.\n\nEpisode sebelumnya: Menyendiri dan beribadah di Gua Hira. Episode berikutnya: Dakwah sembunyi-sembunyi dan orang-orang pertama yang masuk Islam.\n\nSumber: Muslim.or.id; Hadits.id; Rumaysho; Hadits.id; Al-Qur'an Surah Al-'Alaq 1-5.",
+    "tags": [
+     "kisah nabi",
+     "sirah nabawiyah",
+     "sejarah islam",
+     "nabi muhammad",
+     "kisah nabi muhammad",
+     "wahyu pertama",
+     "iqra",
+     "gua hira",
+     "shorts",
+     "glitchplay"
+    ],
+    "made_for_kids": false
+   },
+   "caption": "Wahyu pertama turun di Gua Hira dan Khadijah menenangkan Nabi Muhammad ﷺ. Kisah Nabi episode 12.",
+   "hashtags": [
+    "#kisahnabi",
+    "#sejarahislam",
+    "#sirahnabawiyah",
+    "#glitchplay"
+   ],
+   "sumber": [
+    {
+     "nama": "Muslim.or.id: Turunnya Wahyu Pertama Kepada Rasulullah ﷺ",
+     "url": "https://muslim.or.id/43060-turunnya-wahyu-pertama-kepada-rasulullah-shallallahualaihi-wasallam.html"
+    },
+    {
+     "nama": "Hadits.id: Permulaan Wahyu (HR. Bukhari)",
+     "url": "https://www.hadits.id/kumpulan/al-bukhari-muhammad-bin-ismail-shahih-al-bukhari-kitab-bad-al-wahy-hadis-no-1"
+    },
+    {
+     "nama": "Rumaysho: Menerima Wahyu Pertama di Gua Hira",
+     "url": "https://rumaysho.com/17464-faedah-sirah-nabi-menerima-wahyu-pertama-di-gua-hira.html"
+    },
+    {
+     "nama": "Hadits.id: Penjelasan Bukhari 4956, Mimpi benar dan perintah membaca",
+     "url": "https://www.hadits.id/hadits/bukhari/4956/penjelasan"
+    },
+    {
+     "nama": "Al-Qur'an Surah Al-'Alaq 1-5",
+     "url": "https://quran.com/96/1-5"
+    }
+   ]
+  },
+  {
+   "episode": 13,
+   "judul_episode": "Dakwah sembunyi-sembunyi dan orang-orang pertama yang masuk Islam",
+   "judul": "Eps 13: Dakwah sembunyi-sembunyi dan orang-orang pertama yang masuk Islam",
+   "hook": {
+    "judul": "Dakwah Rahasia 3 Tahun: Siapa Orang Pertama yang Beriman?",
+    "tiga_detik": "Selama tiga tahun, dakwah ini harus dirahasiakan.",
+    "layar": "DAKWAH RAHASIA SELAMA TIGA TAHUN",
+    "visual": "Lorong sempit Makkah malam hari, sebuah pintu rumah dengan cahaya lampu hangat"
+   },
+   "judul_alternatif": [
+    "Siapa Saja Orang Pertama yang Masuk Islam?",
+    "Rahasia Rumah Al-Arqam di Dekat Bukit Shafa",
+    "Dakwah Diam-Diam di Tengah Makkah yang Menentang",
+    "Abu Bakar dan Lima Sahabat yang Ia Ajak"
+   ],
+   "hook_alternatif": [
+    "Ada rumah rahasia di Makkah tempat iman pertama tumbuh.",
+    "Siapa yang pertama menjawab seruan Rasulullah ﷺ?",
+    "Dakwah ini harus dirahasiakan, karena Makkah belum siap.",
+    "Lima tokoh besar masuk Islam lewat satu ajakan sahabat."
+   ],
+   "hook_layar": "DAKWAH RAHASIA SELAMA TIGA TAHUN",
+   "storyboard": [
+    {
+     "waktu": "0:00-0:03",
+     "narasi": "Selama tiga tahun, dakwah ini harus dirahasiakan.",
+     "visual": "Lorong Makkah malam, pintu bercahaya",
+     "ganti_scene": "hard cut",
+     "subtitle_besar": [
+      "RAHASIA"
+     ],
+     "sfx": "langkah pelan",
+     "musik": "musik misterius pelan",
+     "efek": "zoom in"
+    },
+    {
+     "waktu": "0:03-0:20",
+     "narasi": "Wahyu pertama; perintah mengajak; Makkah penuh berhala.",
+     "visual": "Makkah fajar, berhala dari jauh",
+     "ganti_scene": "dissolve",
+     "subtitle_besar": [
+      "BERHALA"
+     ],
+     "sfx": "-",
+     "musik": "musik menegang halus",
+     "efek": "pan"
+    },
+    {
+     "waktu": "0:20-0:55",
+     "narasi": "Khadijah, Ali, Zaid, Abu Bakar beriman.",
+     "visual": "Rumah hangat, ruangan lampu",
+     "ganti_scene": "ganti per sahabat",
+     "subtitle_besar": [
+      "KHADIJAH",
+      "ABU BAKAR"
+     ],
+     "sfx": "-",
+     "musik": "musik hangat",
+     "efek": "slow zoom"
+    },
+    {
+     "waktu": "0:55-1:25",
+     "narasi": "Abu Bakar mengajak lima sahabat.",
+     "visual": "Lorong senja, rumah tersembunyi",
+     "ganti_scene": "cross-dissolve",
+     "subtitle_besar": [
+      "UTSMAN",
+      "THALHAH"
+     ],
+     "sfx": "langkah",
+     "musik": "musik naik pelan",
+     "efek": "pan"
+    },
+    {
+     "waktu": "1:25-1:55",
+     "narasi": "Rumah Al-Arqam dekat Shafa.",
+     "visual": "Bukit Shafa emas",
+     "ganti_scene": "dissolve",
+     "subtitle_besar": [
+      "AL-ARQAM",
+      "SHAFA"
+     ],
+     "sfx": "-",
+     "musik": "musik tenang",
+     "efek": "slow zoom"
+    },
+    {
+     "waktu": "1:55-2:10",
+     "narasi": "Hikmah dan teaser perintah baru.",
+     "visual": "Matahari terbit atas Makkah",
+     "ganti_scene": "fade-out",
+     "subtitle_besar": [
+      "HIKMAH"
+     ],
+     "sfx": "-",
+     "musik": "musik harapan menggantung",
+     "efek": "zoom out"
+    }
+   ],
+   "kata_penting": [
+    "RAHASIA",
+    "BERHALA",
+    "KHADIJAH",
+    "ABU BAKAR",
+    "UTSMAN",
+    "THALHAH",
+    "AL-ARQAM",
+    "SHAFA",
+    "HIKMAH"
+   ],
+   "alasan_menarik": "Pertanyaan 'siapa yang pertama beriman' dan misteri rumah rahasia membuat penonton ingin tahu; ending menuju dakwah terang-terangan.",
+   "catatan_verifikasi": "Lama dakwah rahasia umumnya disebut tiga tahun, sebagian menyebut empat tahun. Urutan masuk Islam Ali dan Zaid berbeda riwayat sehingga tidak disebutkan urutan pastinya; Khadijah disebut yang pertama beriman, Abu Bakar dari kalangan lelaki dewasa.",
+   "skor_viral": 8,
+   "jam_posting": "18:30",
+   "komentar_pin": "Menurut kamu, kenapa dakwah dimulai dari orang-orang terdekat? Bagikan pendapatmu dengan sopan.",
+   "durasi_detik": 96,
+   "naskah_vo": [
+    "Selama tiga tahun, dakwah ini harus dirahasiakan.",
+    "Ini kisah Nabi Muhammad shallallahu 'alaihi wa sallam, episode tiga belas.",
+    "Di episode sebelumnya, beliau menerima wahyu pertama di Gua Hira.",
+    "Kini beliau diperintahkan mengajak manusia kepada Allah.",
+    "Tapi Makkah penuh pemuja berhala, dan menentang mereka bisa berbahaya.",
+    "Maka dakwah dimulai diam-diam, kepada orang yang paling dipercaya.",
+    "Yang pertama beriman adalah istri beliau, Khadijah radhiyallahu 'anha.",
+    "Lalu Ali bin Abi Thalib radhiyallahu 'anhu, sepupu beliau yang masih belia.",
+    "Juga Zaid bin Haritsah radhiyallahu 'anhu, yang dekat seperti keluarga sendiri.",
+    "Dari kalangan lelaki dewasa, sahabat karib beliau, Abu Bakar radhiyallahu 'anhu, langsung menyambutnya.",
+    "Abu Bakar tidak hanya beriman, ia juga mengajak orang lain dengan lembut.",
+    "Atas ajakannya, masuk Islamlah Utsman bin Affan dan Zubair bin Awwam.",
+    "Lalu Abdurrahman bin Auf, Sa'd bin Abi Waqqash, dan Thalhah bin Ubaidillah, radhiyallahu 'anhum.",
+    "Mereka beribadah dan belajar sembunyi-sembunyi, jauh dari mata kaum Quraisy.",
+    "Pertemuan sering diadakan di rumah seorang sahabat muda, Al-Arqam bin Abi Al-Arqam.",
+    "Rumahnya dekat Bukit Shafa, tempat belajar Al-Qur'an dan menguatkan iman.",
+    "Tapi sampai kapan rahasia ini bisa bertahan?",
+    "Menurut banyak riwayat, masa itu berlangsung sekitar tiga tahun.",
+    "Jumlah mereka perlahan bertambah, dan iman mereka makin kuat.",
+    "Hikmahnya: perubahan besar sering dimulai dari kelompok kecil yang sabar dan setia.",
+    "Lalu datanglah perintah baru yang mengubah segalanya.",
+    "Subscribe Glitchplay dan nantikan episode berikutnya: Dakwah terang-terangan di Bukit Shafa."
+   ],
+   "subtitle": [
+    "Selama 3 tahun, dakwah ini harus dirahasiakan.",
+    "Ini kisah Nabi Muhammad ﷺ, episode 13.",
+    "Di episode sebelumnya, beliau menerima wahyu pertama di Gua Hira.",
+    "Kini beliau diperintahkan mengajak manusia kepada Allah.",
+    "Tapi Makkah penuh pemuja berhala, dan menentang mereka bisa berbahaya.",
+    "Maka dakwah dimulai diam-diam, kepada orang yang paling dipercaya.",
+    "Yang pertama beriman adalah istri beliau, Khadijah radhiyallahu 'anha.",
+    "Lalu Ali bin Abi Thalib radhiyallahu 'anhu, sepupu beliau yang masih belia.",
+    "Juga Zaid bin Haritsah radhiyallahu 'anhu, yang dekat seperti keluarga sendiri.",
+    "Dari kalangan lelaki dewasa, sahabat karib beliau, Abu Bakar radhiyallahu 'anhu, langsung menyambutnya.",
+    "Abu Bakar tidak hanya beriman, ia juga mengajak orang lain dengan lembut.",
+    "Atas ajakannya, masuk Islamlah Utsman bin Affan dan Zubair bin Awwam.",
+    "Lalu Abdurrahman bin Auf, Sa'd bin Abi Waqqash, dan Thalhah bin Ubaidillah, radhiyallahu 'anhum.",
+    "Mereka beribadah dan belajar sembunyi-sembunyi, jauh dari mata kaum Quraisy.",
+    "Pertemuan sering diadakan di rumah seorang sahabat muda, Al-Arqam bin Abi Al-Arqam.",
+    "Rumahnya dekat Bukit Shafa, tempat belajar Al-Qur'an dan menguatkan iman.",
+    "Tapi sampai kapan rahasia ini bisa bertahan?",
+    "Menurut banyak riwayat, masa itu berlangsung sekitar 3 tahun.",
+    "Jumlah mereka perlahan bertambah, dan iman mereka makin kuat.",
+    "Hikmahnya: perubahan besar sering dimulai dari kelompok kecil yang sabar dan setia.",
+    "Lalu datanglah perintah baru yang mengubah segalanya.",
+    "Subscribe Glitchplay dan nantikan episode berikutnya: Dakwah terang-terangan di Bukit Shafa."
+   ],
+   "teks_layar": [
+    {
+     "t": "0:00",
+     "teks": "DAKWAH RAHASIA SELAMA TIGA TAHUN",
+     "visual": "lorong Makkah malam"
+    },
+    {
+     "t": "0:15",
+     "teks": "Makkah penuh berhala",
+     "visual": "kota kuno"
+    },
+    {
+     "t": "0:30",
+     "teks": "Pertama beriman: Khadijah",
+     "visual": "rumah hangat"
+    },
+    {
+     "t": "0:50",
+     "teks": "Ali, Zaid, dan Abu Bakar",
+     "visual": "pintu rumah"
+    },
+    {
+     "t": "1:20",
+     "teks": "Rumah Al-Arqam dekat Shafa",
+     "visual": "bukit batu"
+    },
+    {
+     "t": "1:45",
+     "teks": "Hikmah: kelompok kecil yang sabar",
+     "visual": "fajar Makkah"
+    }
+   ],
+   "adegan": [
+    {
+     "kalimat": 0,
+     "prompt": "A narrow ancient Makkah alley at night with a closed wooden door glowing with warm lamplight, stone houses, storybook painting"
+    },
+    {
+     "kalimat": 3,
+     "prompt": "Wide view of ancient Makkah at dawn, the Kaaba in the valley and rocky mountains, calm mood"
+    },
+    {
+     "kalimat": 4,
+     "prompt": "A crowd of men in dark robes gathered around stone idols near the Kaaba, seen from far behind, tense mood, no faces"
+    },
+    {
+     "kalimat": 5,
+     "prompt": "A tiny figure in a white robe walking quietly down a dim alley at dusk, seen from far behind, a man in a dark brown robe beside him",
+     "nabi": true
+    },
+    {
+     "kalimat": 6,
+     "prompt": "A warm lamp-lit doorway of an ancient house in the evening, a silhouette in a dark robe seen only from behind"
+    },
+    {
+     "kalimat": 9,
+     "prompt": "A tiny figure in a white robe sitting with two men in dark robes inside a simple lamp-lit room, seen from behind, no faces",
+     "nabi": true
+    },
+    {
+     "kalimat": 11,
+     "prompt": "Several men in dark and brown robes walking toward a hidden house at dusk in a narrow lane, seen from far behind"
+    },
+    {
+     "kalimat": 14,
+     "prompt": "Rocky Mount Safa near the Kaaba in ancient Makkah at golden hour, a modest house at its foot, calm"
+    },
+    {
+     "kalimat": 20,
+     "prompt": "Sunrise over the valley of Makkah, golden light and long shadows, a sense of something new beginning, storybook painting"
+    }
+   ],
+   "youtube": {
+    "channel": "Glitchplay",
+    "judul": "Dakwah Rahasia 3 Tahun: Siapa Orang Pertama yang Beriman? | Kisah Nabi ﷺ Eps 13 #Shorts",
+    "deskripsi": "Selama sekitar tiga tahun, Nabi Muhammad ﷺ berdakwah sembunyi-sembunyi. Khadijah, Ali, Zaid, dan Abu Bakar termasuk yang pertama beriman, lalu rumah Al-Arqam dekat Shafa menjadi tempat belajar. Pelajaran: perubahan besar dimulai dari kelompok kecil yang sabar.\n\nEpisode sebelumnya: Wahyu pertama: Iqra'. Episode berikutnya: Dakwah terang-terangan di Bukit Shafa.\n\nSumber: Muslim.or.id; NU Online; Republika; Detik Hikmah; Almanhaj.",
+    "tags": [
+     "kisah nabi",
+     "sirah nabawiyah",
+     "sejarah islam",
+     "nabi muhammad",
+     "dakwah sembunyi-sembunyi",
+     "abu bakar",
+     "rumah al-arqam",
+     "shorts",
+     "cerita islami",
+     "glitchplay"
+    ],
+    "made_for_kids": false
+   },
+   "caption": "Dakwah sembunyi-sembunyi Nabi Muhammad ﷺ dimulai dari orang-orang terdekat. Kisah Nabi episode 13.",
+   "hashtags": [
+    "#kisahnabi",
+    "#sejarahislam",
+    "#sirahnabawiyah",
+    "#glitchplay"
+   ],
+   "sumber": [
+    {
+     "nama": "Muslim.or.id: Keteguhan Para Sahabat Pada Masa Awal Dakwah Sembunyi-Sembunyi",
+     "url": "https://muslim.or.id/114397-keteguhan-para-sahabat-pada-masa-awal-dakwah-secara-sembunyi-sembunyi-bag-1.html"
+    },
+    {
+     "nama": "NU Online: Mengenal As-Sabiqunal Awwalun",
+     "url": "https://islam.nu.or.id/sirah-nabawiyah/mengenal-as-sabiqunal-awwalun-golongan-pertama-yang-masuk-islam-gy3NM"
+    },
+    {
+     "nama": "Republika: Sahabat yang Masuk Islam Berkat Ajakan Abu Bakar",
+     "url": "https://islamdigest.republika.co.id/berita/qpg83b320/sahabat-yang-masuk-islam-berkat-ajakan-abu-bakar"
+    },
+    {
+     "nama": "Detik Hikmah: Pintu Al-Arqam",
+     "url": "https://www.detik.com/hikmah/haji-dan-umrah/d-8556258/pintu-al-arqam-simpan-jejak-dakwah-rasulullah-sembunyi-sembunyi"
+    },
+    {
+     "nama": "Almanhaj: Peran Para Pendahulu Islam",
+     "url": "https://almanhaj.or.id/1008-peran-para-pendahulu-islam.html"
+    }
+   ]
+  }
+ ]
+}

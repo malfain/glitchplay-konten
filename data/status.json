@@ -32,19 +32,19 @@
       "t": "2026-11-28T04:06:54+07:00"
     },
     "narator": {
-      "status": "kerja",
-      "aktivitas": "[Sirah] Tulis naskah eps 11-13",
-      "t": "2026-11-28T04:06:54+07:00"
+      "status": "selesai",
+      "aktivitas": "[Sirah] Naskah eps 11-13 selesai",
+      "t": "2026-11-28T04:08:25+07:00"
     },
     "copywriter": {
       "status": "selesai",
-      "aktivitas": "10 caption siap",
-      "t": "2026-11-27T06:11:23+07:00"
+      "aktivitas": "[Sirah] Caption selesai",
+      "t": "2026-11-28T04:08:25+07:00"
     },
     "qc": {
-      "status": "selesai",
-      "aktivitas": "10 konten terbit di Hasil",
-      "t": "2026-11-27T06:11:29+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Cek adab, sumber, format",
+      "t": "2026-11-28T04:08:25+07:00"
     },
     "studio": {
       "status": "selesai",
@@ -52,9 +52,9 @@
       "t": "2026-11-27T06:35:25+07:00"
     },
     "strategist": {
-      "status": "kerja",
-      "aktivitas": "[Sirah] Hook & jam posting eps 11-13",
-      "t": "2026-11-28T04:06:54+07:00"
+      "status": "selesai",
+      "aktivitas": "[Sirah] 3 episode, hook & jam siap",
+      "t": "2026-11-28T04:08:25+07:00"
     },
     "asisten": {
       "status": "idle",
@@ -63,6 +63,31 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T04:08:25+07:00",
+      "agen": "qc",
+      "pesan": "[Sirah] Cek adab, sumber, format"
+    },
+    {
+      "t": "2026-11-28T04:08:25+07:00",
+      "agen": "copywriter",
+      "pesan": "[Sirah] Caption selesai"
+    },
+    {
+      "t": "2026-11-28T04:08:25+07:00",
+      "agen": "copywriter",
+      "pesan": "[Sirah] Caption & YouTube eps 11-13"
+    },
+    {
+      "t": "2026-11-28T04:08:25+07:00",
+      "agen": "narator",
+      "pesan": "[Sirah] Naskah eps 11-13 selesai"
+    },
+    {
+      "t": "2026-11-28T04:08:25+07:00",
+      "agen": "strategist",
+      "pesan": "[Sirah] 3 episode, hook & jam siap"
+    },
     {
       "t": "2026-11-28T04:06:54+07:00",
       "agen": "narator",
@@ -337,33 +362,8 @@
       "t": "2026-11-27T04:07:12+07:00",
       "agen": "qc",
       "pesan": "[Sirah] Cek aturan & validasi"
-    },
-    {
-      "t": "2026-11-27T04:07:12+07:00",
-      "agen": "copywriter",
-      "pesan": "[Sirah] Caption eps 9-10 siap"
-    },
-    {
-      "t": "2026-11-27T04:07:12+07:00",
-      "agen": "copywriter",
-      "pesan": "[Sirah] Caption & judul YouTube"
-    },
-    {
-      "t": "2026-11-27T04:07:12+07:00",
-      "agen": "narator",
-      "pesan": "[Sirah] Naskah eps 9-10 siap"
-    },
-    {
-      "t": "2026-11-27T04:06:11+07:00",
-      "agen": "narator",
-      "pesan": "[Sirah] Tulis naskah eps 9-10"
-    },
-    {
-      "t": "2026-11-27T04:06:11+07:00",
-      "agen": "strategist",
-      "pesan": "[Sirah] 2 episode direncanakan"
     }
   ],
-  "updated_at": "2026-11-28T04:06:54+07:00",
+  "updated_at": "2026-11-28T04:08:25+07:00",
   "kesimpulan_t": "2026-11-27T06:11:31+07:00"
 }
