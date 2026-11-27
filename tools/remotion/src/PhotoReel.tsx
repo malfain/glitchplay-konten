@@ -29,6 +29,7 @@ export const photoReelSchema = z.object({
   hook: z.string().optional(),
   episode: z.number().optional(),
   // Instagram news cover (2 s opening, also the grid thumbnail): headline with *highlighted* words + round inset picture
+  emphasis: z.array(z.string()).optional(), // words to show bigger + accent colour (storyboard "subtitle besar")
   cover: z.object({ title: z.string(), inset: z.string().optional(), tag: z.string().optional(), brand: z.string().optional() }).optional(),
   // character drawn in OpenToonz, exported as a PNG sequence with transparency (tools/render_video.py fills this)
   maskot: z.object({ frames: z.array(z.string()), fps: z.number() }).optional(),
@@ -45,7 +46,7 @@ const ACCENT = { kids: "#ffd23f", glitch: "#c6f02c", sirah: "#e9b949" } as const
 
 const HOOK_END = 3.0; // the big hook card covers the first 3 s (the scroll-stopping moment)
 
-export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, total, scenes, words, label, hook, episode, maskot, logo, cover }) => {
+export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avatar, total, scenes, words, label, hook, episode, maskot, logo, cover, emphasis }) => {
   const th = theme ?? "kids";
   applyTheme(th);
   const accent = ACCENT[th];
@@ -87,7 +88,7 @@ export const PhotoReel: React.FC<PhotoReelProps> = ({ theme, handle, audio, avat
         </Sequence>
       ) : null}
       <Sequence name="teks" from={cover ? Math.round(COVER_END * fps) : hook ? Math.round(HOOK_END * fps) : 0}>
-        <Captions words={words} accent={accent} offset={cover ? COVER_END : hook ? HOOK_END : 0} news={!!cover} />
+        <Captions words={words} accent={accent} offset={cover ? COVER_END : hook ? HOOK_END : 0} news={!!cover} emphasis={emphasis} />
       </Sequence>
       {cover ? <NewsFooter brand={cover.brand} /> : null}
       {maskot && maskot.frames.length ? (
@@ -147,7 +148,9 @@ const KenBurns: React.FC<{ src: string; index: number; dur: number; fadeIn: bool
 };
 
 // Shows one short chunk (2–3 words) at a time; the word being spoken is yellow and pops slightly.
-const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string; offset: number; news?: boolean }> = ({ words, accent, offset, news }) => {
+const norm = (w: string) => w.toLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
+const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string; offset: number; news?: boolean; emphasis?: string[] }> = ({ words, accent, offset, news, emphasis }) => {
+  const strong = new Set((emphasis ?? []).flatMap((e) => e.split(/\s+/)).map(norm).filter(Boolean));
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps + offset;
@@ -177,12 +180,13 @@ const Captions: React.FC<{ words: PhotoReelProps["words"]; accent: string; offse
     <div style={{ position: "absolute", left: 70, right: 230, top: 330, textAlign: "center", scale: String(pop) }}>
       {chunk.map((w, i) => {
         const active = t >= w.start && t < w.end + 0.05;
+        const big = strong.has(norm(w.text));
         return (
           <span
             key={i}
             style={{
-              display: "inline-block", margin: "0 12px", fontFamily: F.sans, fontWeight: 700, fontSize: 92, lineHeight: 1.1,
-              textTransform: "uppercase", letterSpacing: 1, color: active ? accent : "#ffffff",
+              display: "inline-block", margin: "0 12px", fontFamily: F.sans, fontWeight: 700, fontSize: big ? 112 : 92, lineHeight: 1.1,
+              textTransform: "uppercase", letterSpacing: 1, color: active || big ? accent : "#ffffff",
               WebkitTextStroke: "3px rgba(0,0,0,.85)", paintOrder: "stroke fill",
               textShadow: "0 6px 0 rgba(0,0,0,.55), 0 0 30px rgba(0,0,0,.5)",
               scale: active ? "1.06" : "1",

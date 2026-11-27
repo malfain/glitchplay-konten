@@ -78,6 +78,45 @@ kutipan sabda/ucapan hanya kalau ada di hadits/sirah, dan sebutkan sumbernya di
 - Judul YouTube memakai rumus: momen kunci + rasa penasaran + "Eps <n>"
   (mis. "Pasukan Gajah yang Hancur oleh Burung Kecil | Kisah Nabi ﷺ Eps 1").
 
+## Optimasi Shorts Glitchplay (Strategist + Narator + Copywriter)
+
+Peran: YouTube Shorts Content Strategist, viral scriptwriter & audience
+retention specialist untuk sejarah Islam. Tujuan: penonton memilih menonton
+(bukan swipe), bertahan sampai akhir, subscribe, dan kembali ke Glitchplay.
+Jangan menjanjikan viral, jangan clickbait yang tidak sesuai isi, jangan
+mengarang fakta/hadis.
+
+1. **5 judul** → terbaik di `hook.judul` (dipakai di `youtube.judul`), 4 lainnya
+   di `judul_alternatif` (array). Rasa penasaran + hook kuat, relevan, bahasa
+   Indonesia natural, tidak clickbait berlebihan.
+2. **5 hook pembuka 0–3 detik** → terbaik di `hook.tiga_detik` (= `naskah_vo[0]`),
+   4 lainnya di `hook_alternatif`. Jenis: fakta mengejutkan, pertanyaan
+   penasaran, konflik/peristiwa menegangkan, misteri sejarah, pernyataan yang
+   membuat ingin tahu kelanjutannya. **Dilarang** membuka dengan "Pada zaman
+   dahulu…", "Assalamualaikum teman-teman…", "Di video kali ini kita akan
+   membahas…" — langsung ke inti.
+3. **Teks hook di layar** `hook.layar` (= `hook_layar`): **3–8 kata HURUF BESAR**,
+   mis. "HAMPIR TERJADI PERANG BESAR!", "RAHASIA DI BALIK GELAR AL-AMIN",
+   "KEPUTUSAN YANG MENGUBAH SEJARAH".
+4. **Naskah** (durasi tetap 1,5–2,5 menit, jangan bertele-tele): kalimat
+   menarik, fakta & makna asli dijaga, **transisi penasaran** antar bagian
+   ("Tapi tak ada yang menyangka…", "Lalu sesuatu terjadi malam itu…").
+5. **Struktur waktu** (untuk 90–150 detik):
+   0–3 dtk hook → 3–15 dtk konteks → 15–60 dtk konflik/fakta utama →
+   60–120 dtk klimaks & jawaban → akhir: penutup memuaskan + hikmah + teaser
+   episode berikutnya. Jangan memaksakan durasi kalau cerita butuh lebih.
+6. **Storyboard & arahan editing** → field `storyboard`: array per bagian
+   `{"waktu": "0:00-0:03", "narasi": "…", "visual": "…", "ganti_scene": "…",
+   "subtitle_besar": ["kata"], "sfx": "…", "musik": "…", "efek": "zoom/cinematic …"}`.
+   Editing secukupnya, jangan mengganggu cerita. Kumpulkan semua kata
+   `subtitle_besar` ke `kata_penting` (array) — kata-kata itu otomatis tampil
+   lebih besar & berwarna emas di video.
+7. **Deskripsi** singkat & relevan di `youtube.deskripsi`, **3–5 hashtag** di
+   `hashtags` (mis. #kisahnabi #sejarahislam #sirahnabawiyah #glitchplay).
+8. `alasan_menarik`: 1–3 kalimat kenapa konsep ini berpotensi menarik penonton.
+9. `catatan_verifikasi`: kalau ada detail yang belum jelas/ada perbedaan
+   pendapat ulama, tulis catatannya (kosongkan kalau tidak ada).
+
 ## Hook 3 lapis (wajib, semua konten)
 
 Setiap item wajib punya field `hook` berisi **tiga hook yang berbeda tapi satu
@@ -101,7 +140,7 @@ cerita** (saling melengkapi, tidak mengulang kata yang sama):
    (±3 detik), langsung ke momen paling mengejutkan, tanpa salam/pembukaan
    ("Halo guys", "Assalamualaikum teman-teman" dilarang di detik pertama).
    Sudut berbeda dari judul (mis. judul = angka, 3 detik = akibatnya).
-3. **Teks layar** (`layar` = `hook_layar`) — **2–6 kata HURUF BESAR**, terbaca
+3. **Teks layar** (`layar` = `hook_layar`) — **2–6 kata HURUF BESAR** (Glitchplay: 3–8 kata), terbaca
    dalam 1 detik, menambah informasi atau emosi (angka, "RESMI!", "GRATIS?!"),
    bukan salinan judul.
 
@@ -180,7 +219,7 @@ Juga isi `caption` (1 kalimat) dan `hashtags` (3: mis. #kisahnabi
 ## QC
 
 Semua aturan di atas + format sama dengan `ROUTINE.md`, ditambah field
-`episode` (angka), `judul_episode`, `judul` (= "Eps <n>: <judul_episode>"), `komentar_pin`, dan `hook` 3 lapis (judul YouTube memakai `hook.judul`, `naskah_vo[0]` = `hook.tiga_detik`, `hook_layar` = `hook.layar`). Cek: adab penyebutan nama, tidak ada
+`episode` (angka), `judul_episode`, `judul` (= "Eps <n>: <judul_episode>"), `komentar_pin`, `judul_alternatif` (4), `hook_alternatif` (4), `storyboard`, `kata_penting`, `alasan_menarik`, `catatan_verifikasi`, dan `hook` 3 lapis (judul YouTube memakai `hook.judul`, `naskah_vo[0]` = `hook.tiga_detik`, `hook_layar` = `hook.layar`). Cek: adab penyebutan nama, tidak ada
 dialog karangan, tiap adegan yang menampilkan Nabi punya `"nabi": true`, tidak
 ada ciri wajah di prompt, `sumber` ≥ 2 URL. Validasi JSON, commit
 `konten sirah: <tanggal> (eps <n>)`, push ke `main`. Jangan ubah `index.html`,

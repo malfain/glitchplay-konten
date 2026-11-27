@@ -1374,7 +1374,7 @@ def hook_text(item):
         cards = item.get("teks_layar") or []
         t = (cards[0].get("teks") if cards and isinstance(cards[0], dict) else "") or ""
     t = re.sub(r"[^\w\s?!%,.:+'-]", "", t, flags=re.UNICODE).strip()
-    return " ".join(t.split()[:6]) or None
+    return " ".join(t.split()[:8 if CH["theme"] == "sirah" else 6]) or None
 
 
 KIDS3D = ("luarangkasa", "bumi", "laut", "alam", "sains", "tatasurya", "gunungberapi", "dinosaurus")
@@ -1576,6 +1576,7 @@ def render_item_photo(item, idx, date, outdir, tmp):
         label = "Klip: " + ", ".join(credits) + " · " + label
     props = {"theme": CH["theme"], "handle": CH["handle"], "audio": f"_render/{audio.name}", "avatar": "profile.jpg", "total": round(total, 3),
              "label": label, "hook": hook_text(item), "episode": item.get("episode"), "cover": news_cover(item, imgs),
+             "emphasis": [w.lower() for w in (item.get("kata_penting") or []) if isinstance(w, str)][:40] or None,
              "scenes": scenes, "words": words}
     props["maskot"] = maskot_frames()
     props["logo"] = logo_frames()

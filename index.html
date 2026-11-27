@@ -810,6 +810,20 @@ function renderItem(it, n, ctx) {
     const txt = rows.map((r) => `${r[0]}: ${r[1]}`).join("\n");
     el.appendChild(section("🎣 Hook 3 lapis", "judul · 3 detik · layar", `<table>${rows.map((r) => `<tr><td class="t">${esc(r[0])}</td><td class="s">${esc(r[1])}</td></tr>`).join("")}</table>`, txt, true));
   }
+  const list = (arr) => (arr || []).filter(Boolean);
+  if (list(it.judul_alternatif).length) el.appendChild(section("🏷️ Judul alternatif", list(it.judul_alternatif).length + " pilihan", `<pre>${esc(list(it.judul_alternatif).join("\n"))}</pre>`, list(it.judul_alternatif).join("\n")));
+  if (list(it.hook_alternatif).length) el.appendChild(section("⏱️ Hook alternatif (0–3 detik)", list(it.hook_alternatif).length + " pilihan", `<pre>${esc(list(it.hook_alternatif).join("\n"))}</pre>`, list(it.hook_alternatif).join("\n")));
+  if (list(it.storyboard).length) {
+    const sb = list(it.storyboard);
+    const rowsSb = sb.map((b) => `<tr><td class="t">${esc(b.waktu || "")}</td><td class="s">${esc(b.narasi || "")}<br><span class="muted small">🎬 ${esc(b.visual || "")}${b.sfx ? " · 🔊 " + esc(b.sfx) : ""}${b.musik ? " · 🎵 " + esc(b.musik) : ""}${b.efek ? " · ✨ " + esc(b.efek) : ""}${(b.subtitle_besar || []).length ? " · 🔠 " + esc(b.subtitle_besar.join(", ")) : ""}</span></td></tr>`).join("");
+    el.appendChild(section("🎞️ Storyboard & arahan editing", sb.length + " bagian", `<table>${rowsSb}</table>`, sb.map((b) => `${b.waktu || ""} | ${b.narasi || ""} | visual: ${b.visual || ""} | sfx: ${b.sfx || ""} | musik: ${b.musik || ""} | efek: ${b.efek || ""}`).join("\n")));
+  }
+  if (it.alasan_menarik || it.catatan_verifikasi) {
+    const n = document.createElement("div");
+    n.className = "mfk";
+    n.innerHTML = (it.alasan_menarik ? `💡 <b>Kenapa menarik:</b> ${esc(it.alasan_menarik)}` : "") + (it.catatan_verifikasi ? `${it.alasan_menarik ? "<br>" : ""}⚠️ <b>Perlu dicek:</b> ${esc(it.catatan_verifikasi)}` : "");
+    el.appendChild(n);
+  }
   const vo = (it.naskah_vo || []).join("\n");
   el.appendChild(section("🎙️ Naskah VO (TTS)", it.hook_formula ? "hook: " + it.hook_formula : "", `<pre>${esc(vo)}</pre>`, vo, !it.video));
   const rows = (it.teks_layar || []).map((r) => `<tr><td class="t">${esc(r.t)}</td><td class="s">${esc(r.teks)}</td><td class="v">${esc(r.visual)}</td></tr>`).join("");
