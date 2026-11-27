@@ -56,12 +56,17 @@
       "t": "2026-11-28T04:08:25+07:00"
     },
     "asisten": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-27T06:06:12+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 3 video untuk 2026-11-28",
+      "t": "2026-11-28T04:09:40+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T04:09:40+07:00",
+      "agen": "asisten",
+      "pesan": "Render 3 video untuk 2026-11-28"
+    },
     {
       "t": "2026-11-28T04:08:25+07:00",
       "agen": "bos",
@@ -356,13 +361,8 @@
       "t": "2026-11-27T04:09:10+07:00",
       "agen": "asisten",
       "pesan": "Render 2 video untuk 2026-11-27"
-    },
-    {
-      "t": "2026-11-27T04:07:12+07:00",
-      "agen": "bos",
-      "pesan": "[Sirah] Eps 9-10 selesai"
     }
   ],
-  "updated_at": "2026-11-28T04:08:25+07:00",
+  "updated_at": "2026-11-28T04:09:40+07:00",
   "kesimpulan_t": "2026-11-28T04:08:25+07:00"
 }
