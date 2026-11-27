@@ -26,9 +26,9 @@
       "t": "2026-11-28T06:07:35+07:00"
     },
     "detektif": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-28T06:06:16+07:00"
+      "status": "kerja",
+      "aktivitas": "Cek fakta kandidat, min 2 sumber",
+      "t": "2026-11-28T06:07:37+07:00"
     },
     "narator": {
       "status": "idle",
@@ -62,6 +62,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T06:07:37+07:00",
+      "agen": "detektif",
+      "pesan": "Cek fakta kandidat, min 2 sumber"
+    },
     {
       "t": "2026-11-28T06:07:35+07:00",
       "agen": "radar",
@@ -356,13 +361,8 @@
       "t": "2026-11-27T06:11:21+07:00",
       "agen": "copywriter",
       "pesan": "Caption dan judul cover"
-    },
-    {
-      "t": "2026-11-27T06:11:21+07:00",
-      "agen": "narator",
-      "pesan": "10 naskah siap"
     }
   ],
-  "updated_at": "2026-11-28T06:07:35+07:00",
+  "updated_at": "2026-11-28T06:07:37+07:00",
   "kesimpulan_t": "2026-11-28T05:10:00+07:00"
 }
