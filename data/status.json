@@ -47,9 +47,9 @@
       "t": "2026-11-28T06:08:48+07:00"
     },
     "studio": {
-      "status": "idle",
-      "aktivitas": "Menunggu tugas",
-      "t": "2026-11-28T06:06:16+07:00"
+      "status": "kerja",
+      "aktivitas": "Render 5 video untuk 2026-11-28",
+      "t": "2026-11-28T06:10:35+07:00"
     },
     "strategist": {
       "status": "selesai",
@@ -63,6 +63,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T06:10:35+07:00",
+      "agen": "studio",
+      "pesan": "Render 5 video untuk 2026-11-28"
+    },
     {
       "t": "2026-11-28T06:08:49+07:00",
       "agen": "bos",
@@ -357,13 +362,8 @@
       "t": "2026-11-27T06:24:39+07:00",
       "agen": "studio",
       "pesan": "Render video 6/10: EA Sports FC 27 pakai AI untuk men"
-    },
-    {
-      "t": "2026-11-27T06:22:37+07:00",
-      "agen": "studio",
-      "pesan": "Render video 5/10: The Witcher 4 tetap rilis di Xbox "
     }
   ],
-  "updated_at": "2026-11-28T06:08:54+07:00",
+  "updated_at": "2026-11-28T06:10:35+07:00",
   "kesimpulan_t": "2026-11-28T06:08:54+07:00"
 }
