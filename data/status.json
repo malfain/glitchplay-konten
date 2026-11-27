@@ -6,20 +6,19 @@
     "finished_at": "2026-11-27T06:11:31+07:00"
   },
   "tasks": {
-    "antri": 3,
+    "antri": 0,
     "jalan": 0,
-    "kelar": 0
+    "kelar": 3
   },
   "kesimpulan_bos": [
-    "10 konten baru: 8 game + 2 esports (kandidat esports segar terbatas, topik FFWS/M8 sudah dipakai kemarin)",
-    "Urutan posting: Rockstar serikat 12:00, Silksong 19:30 (sebelum Cherry Time 22:00 WIB), PMGC 08:00, ONIC DFI 17:30",
-    "Catatan: Ubisoft AI berstatus rumor (dibantah Ubisoft); Digimon Alysion Indonesia baru terkonfirmasi satu situs"
+    "[Sirah] Eps 11-13 siap: Gua Hira, Iqra', dakwah sembunyi",
+    "[Sirah] Posting 04:45, 12:30, 18:30 WIB berurutan"
   ],
   "agents": {
     "bos": {
-      "status": "kerja",
-      "aktivitas": "[Sirah] Buka shift eps 11-13",
-      "t": "2026-11-28T04:05:46+07:00"
+      "status": "selesai",
+      "aktivitas": "[Sirah] Shift selesai",
+      "t": "2026-11-28T04:08:25+07:00"
     },
     "radar": {
       "status": "selesai",
@@ -42,8 +41,8 @@
       "t": "2026-11-28T04:08:25+07:00"
     },
     "qc": {
-      "status": "kerja",
-      "aktivitas": "[Sirah] Cek adab, sumber, format",
+      "status": "selesai",
+      "aktivitas": "[Sirah] 3 episode lolos QC",
       "t": "2026-11-28T04:08:25+07:00"
     },
     "studio": {
@@ -63,6 +62,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T04:08:25+07:00",
+      "agen": "bos",
+      "pesan": "[Sirah] Shift selesai"
+    },
+    {
+      "t": "2026-11-28T04:08:25+07:00",
+      "agen": "qc",
+      "pesan": "[Sirah] 3 episode lolos QC"
+    },
     {
       "t": "2026-11-28T04:08:25+07:00",
       "agen": "qc",
@@ -352,18 +361,8 @@
       "t": "2026-11-27T04:07:12+07:00",
       "agen": "bos",
       "pesan": "[Sirah] Eps 9-10 selesai"
-    },
-    {
-      "t": "2026-11-27T04:07:12+07:00",
-      "agen": "qc",
-      "pesan": "[Sirah] 2 episode terbit"
-    },
-    {
-      "t": "2026-11-27T04:07:12+07:00",
-      "agen": "qc",
-      "pesan": "[Sirah] Cek aturan & validasi"
     }
   ],
   "updated_at": "2026-11-28T04:08:25+07:00",
-  "kesimpulan_t": "2026-11-27T06:11:31+07:00"
+  "kesimpulan_t": "2026-11-28T04:08:25+07:00"
 }
