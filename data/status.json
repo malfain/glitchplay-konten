@@ -16,14 +16,14 @@
   ],
   "agents": {
     "bos": {
-      "status": "selesai",
-      "aktivitas": "[Sirah] Shift selesai",
-      "t": "2026-11-28T04:08:25+07:00"
+      "status": "kerja",
+      "aktivitas": "[Anak] Buka shift anak, bagi tugas",
+      "t": "2026-11-28T05:08:36+07:00"
     },
     "radar": {
-      "status": "selesai",
-      "aktivitas": "[Sirah] 3 kandidat (eps 11-13) ditemukan",
-      "t": "2026-11-28T04:06:52+07:00"
+      "status": "kerja",
+      "aktivitas": "[Anak] Cari fakta semut dan Bumi",
+      "t": "2026-11-28T05:08:36+07:00"
     },
     "detektif": {
       "status": "selesai",
@@ -62,6 +62,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T05:08:36+07:00",
+      "agen": "radar",
+      "pesan": "[Anak] Cari fakta semut dan Bumi"
+    },
+    {
+      "t": "2026-11-28T05:08:36+07:00",
+      "agen": "bos",
+      "pesan": "[Anak] Buka shift anak, bagi tugas"
+    },
     {
       "t": "2026-11-28T04:23:10+07:00",
       "agen": "asisten",
@@ -351,18 +361,8 @@
       "t": "2026-11-27T05:10:06+07:00",
       "agen": "radar",
       "pesan": "[Anak] 2 tema: gunung berapi, Mars"
-    },
-    {
-      "t": "2026-11-27T05:08:34+07:00",
-      "agen": "radar",
-      "pesan": "[Anak] Cari tema: gunung berapi & Mars"
-    },
-    {
-      "t": "2026-11-27T05:08:32+07:00",
-      "agen": "bos",
-      "pesan": "[Anak] Buka shift anak, bagi tugas"
     }
   ],
-  "updated_at": "2026-11-28T04:23:10+07:00",
+  "updated_at": "2026-11-28T05:08:36+07:00",
   "kesimpulan_t": "2026-11-28T04:08:25+07:00"
 }
