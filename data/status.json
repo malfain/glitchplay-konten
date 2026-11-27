@@ -56,12 +56,27 @@
       "t": "2026-11-28T05:09:16+07:00"
     },
     "asisten": {
-      "status": "kerja",
-      "aktivitas": "Render 2 video untuk 2026-11-28",
-      "t": "2026-11-28T05:12:13+07:00"
+      "status": "selesai",
+      "aktivitas": "2/2 video jadi, siap di Hasil",
+      "t": "2026-11-28T05:25:23+07:00"
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T05:25:23+07:00",
+      "agen": "asisten",
+      "pesan": "2/2 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-28T05:18:47+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 2/2: Air di Bumi banyak banget, tapi ha"
+    },
+    {
+      "t": "2026-11-28T05:12:16+07:00",
+      "agen": "asisten",
+      "pesan": "Render video 1/2: Kenapa semut punya 2 perut? Ini ja"
+    },
     {
       "t": "2026-11-28T05:12:13+07:00",
       "agen": "asisten",
@@ -346,23 +361,8 @@
       "t": "2026-11-27T06:08:23+07:00",
       "agen": "detektif",
       "pesan": "10 lolos, 8 dibuang"
-    },
-    {
-      "t": "2026-11-27T06:08:21+07:00",
-      "agen": "detektif",
-      "pesan": "Cek fakta tiap kandidat, min 2 sumber"
-    },
-    {
-      "t": "2026-11-27T06:08:19+07:00",
-      "agen": "radar",
-      "pesan": "18 kandidat ditemukan"
-    },
-    {
-      "t": "2026-11-27T06:06:18+07:00",
-      "agen": "radar",
-      "pesan": "Cari berita game, esports, streamer ID"
     }
   ],
-  "updated_at": "2026-11-28T05:12:13+07:00",
+  "updated_at": "2026-11-28T05:25:23+07:00",
   "kesimpulan_t": "2026-11-28T05:10:00+07:00"
 }

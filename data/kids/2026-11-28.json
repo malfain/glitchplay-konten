@@ -1,426 +1,434 @@
 {
- "date": "2026-11-28",
- "items": [
-  {
-   "kategori": "Hewan & Serangga",
-   "judul": "Kenapa semut punya 2 perut? Ini jawabannya!",
-   "ringkasan": "Semut punya dua perut (satu untuk berbagi makanan), kuat membawa beban besar, berkomunikasi lewat feromon, hidup dalam koloni (koloni semut Argentina membentang lebih dari 6.000 km), punya pembagian tugas, dan ratunya bisa hidup belasan sampai sekitar 30 tahun.",
-   "status_fakta": "resmi",
-   "hook_formula": "Pertanyaan + rasa penasaran + daftar 6 fakta + kuis",
-   "hook": {
-    "judul": "Kenapa semut punya 2 perut? Ini jawabannya!",
-    "tiga_detik": "Semut punya dua perut, dan satu bukan untuk dirinya!",
-    "layar": "SEMUT PUNYA 2 PERUT!",
-    "visual": "Foto makro semut hitam di atas daun hijau"
-   },
-   "hook_layar": "SEMUT PUNYA 2 PERUT!",
-   "skor_viral": 8,
-   "jam_posting": "16:00",
-   "durasi_detik": 95,
-   "naskah_vo": [
-    "Semut punya dua perut, dan satu bukan untuk dirinya!",
-    "Ya, kamu tidak salah dengar!",
-    "Yuk, kenalan dengan enam fakta seru semut!",
-    "Fakta pertama. Semut punya dua perut.",
-    "Perut pertama untuk mencerna makanannya sendiri.",
-    "Perut kedua khusus menyimpan makanan untuk dibagi.",
-    "Jadi, semut membawa bekal untuk teman-temannya!",
-    "Fakta kedua. Semut itu kuat sekali.",
-    "Semut daun bisa membawa potongan daun yang lebih besar dari badannya.",
-    "Bayangkan kamu menggotong kasur sendirian!",
-    "Itu baru kuat!",
-    "Tapi fakta ketiga lebih pintar lagi!",
-    "Semut berbicara lewat bau.",
-    "Bau khusus itu bernama feromon.",
-    "Semut meninggalkan jejak bau, supaya teman tahu jalan menuju makanan.",
-    "Fakta keempat. Semut hidup dalam koloni.",
-    "Satu koloni bisa berisi ribuan, bahkan jutaan semut.",
-    "Semut Argentina punya koloni terbesar yang pernah tercatat.",
-    "Panjangnya lebih dari enam ribu kilometer di pesisir Eropa selatan!",
-    "Fakta kelima. Setiap semut punya tugas.",
-    "Ada ratu, ada semut pekerja, dan ada yang bertugas menjaga.",
-    "Semut pekerja mencari makan dan merawat telur.",
-    "Fakta keenam. Ratu semut bisa hidup sangat lama.",
-    "Ratu bisa hidup belasan tahun, bahkan ada yang sampai sekitar tiga puluh tahun.",
-    "Semut pekerja hidup lebih singkat, dari beberapa minggu sampai sekitar satu tahun.",
-    "Hebat, kan?",
-    "Sekarang kuis! Perut kedua semut gunanya untuk apa?",
-    "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
-    "Petunjuknya ada di fakta pertama tadi.",
-    "Subscribe GlitchPlayClips buat fakta seru lainnya, termasuk soal perut kedua semut!"
-   ],
-   "subtitle": [
-    "Semut punya dua perut, dan satu bukan untuk dirinya!",
-    "Ya, kamu tidak salah dengar!",
-    "Yuk, kenalan dengan 6 fakta seru semut!",
-    "Fakta pertama. Semut punya dua perut.",
-    "Perut pertama untuk mencerna makanannya sendiri.",
-    "Perut kedua khusus menyimpan makanan untuk dibagi.",
-    "Jadi, semut membawa bekal untuk teman-temannya!",
-    "Fakta kedua. Semut itu kuat sekali.",
-    "Semut daun bisa membawa potongan daun yang lebih besar dari badannya.",
-    "Bayangkan kamu menggotong kasur sendirian!",
-    "Itu baru kuat!",
-    "Tapi fakta ketiga lebih pintar lagi!",
-    "Semut berbicara lewat bau.",
-    "Bau khusus itu bernama feromon.",
-    "Semut meninggalkan jejak bau, supaya teman tahu jalan menuju makanan.",
-    "Fakta keempat. Semut hidup dalam koloni.",
-    "Satu koloni bisa berisi ribuan, bahkan jutaan semut.",
-    "Semut Argentina punya koloni terbesar yang pernah tercatat.",
-    "Panjangnya lebih dari 6.000 kilometer di pesisir Eropa selatan!",
-    "Fakta kelima. Setiap semut punya tugas.",
-    "Ada ratu, ada semut pekerja, dan ada yang bertugas menjaga.",
-    "Semut pekerja mencari makan dan merawat telur.",
-    "Fakta keenam. Ratu semut bisa hidup sangat lama.",
-    "Ratu bisa hidup belasan tahun, bahkan ada yang sampai sekitar 30 tahun.",
-    "Semut pekerja hidup lebih singkat, dari beberapa minggu sampai sekitar 1 tahun.",
-    "Hebat, kan?",
-    "Sekarang kuis! Perut kedua semut gunanya untuk apa?",
-    "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
-    "Petunjuknya ada di fakta pertama tadi.",
-    "Subscribe GlitchPlayClips buat fakta seru lainnya, termasuk soal perut kedua semut!"
-   ],
-   "teks_layar": [
+  "date": "2026-11-28",
+  "items": [
     {
-     "t": "0:00",
-     "teks": "SEMUT PUNYA 2 PERUT!",
-     "visual": "semut"
+      "kategori": "Hewan & Serangga",
+      "judul": "Kenapa semut punya 2 perut? Ini jawabannya!",
+      "ringkasan": "Semut punya dua perut (satu untuk berbagi makanan), kuat membawa beban besar, berkomunikasi lewat feromon, hidup dalam koloni (koloni semut Argentina membentang lebih dari 6.000 km), punya pembagian tugas, dan ratunya bisa hidup belasan sampai sekitar 30 tahun.",
+      "status_fakta": "resmi",
+      "hook_formula": "Pertanyaan + rasa penasaran + daftar 6 fakta + kuis",
+      "hook": {
+        "judul": "Kenapa semut punya 2 perut? Ini jawabannya!",
+        "tiga_detik": "Semut punya dua perut, dan satu bukan untuk dirinya!",
+        "layar": "SEMUT PUNYA 2 PERUT!",
+        "visual": "Foto makro semut hitam di atas daun hijau"
+      },
+      "hook_layar": "SEMUT PUNYA 2 PERUT!",
+      "skor_viral": 8,
+      "jam_posting": "16:00",
+      "durasi_detik": 95,
+      "naskah_vo": [
+        "Semut punya dua perut, dan satu bukan untuk dirinya!",
+        "Ya, kamu tidak salah dengar!",
+        "Yuk, kenalan dengan enam fakta seru semut!",
+        "Fakta pertama. Semut punya dua perut.",
+        "Perut pertama untuk mencerna makanannya sendiri.",
+        "Perut kedua khusus menyimpan makanan untuk dibagi.",
+        "Jadi, semut membawa bekal untuk teman-temannya!",
+        "Fakta kedua. Semut itu kuat sekali.",
+        "Semut daun bisa membawa potongan daun yang lebih besar dari badannya.",
+        "Bayangkan kamu menggotong kasur sendirian!",
+        "Itu baru kuat!",
+        "Tapi fakta ketiga lebih pintar lagi!",
+        "Semut berbicara lewat bau.",
+        "Bau khusus itu bernama feromon.",
+        "Semut meninggalkan jejak bau, supaya teman tahu jalan menuju makanan.",
+        "Fakta keempat. Semut hidup dalam koloni.",
+        "Satu koloni bisa berisi ribuan, bahkan jutaan semut.",
+        "Semut Argentina punya koloni terbesar yang pernah tercatat.",
+        "Panjangnya lebih dari enam ribu kilometer di pesisir Eropa selatan!",
+        "Fakta kelima. Setiap semut punya tugas.",
+        "Ada ratu, ada semut pekerja, dan ada yang bertugas menjaga.",
+        "Semut pekerja mencari makan dan merawat telur.",
+        "Fakta keenam. Ratu semut bisa hidup sangat lama.",
+        "Ratu bisa hidup belasan tahun, bahkan ada yang sampai sekitar tiga puluh tahun.",
+        "Semut pekerja hidup lebih singkat, dari beberapa minggu sampai sekitar satu tahun.",
+        "Hebat, kan?",
+        "Sekarang kuis! Perut kedua semut gunanya untuk apa?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Petunjuknya ada di fakta pertama tadi.",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya, termasuk soal perut kedua semut!"
+      ],
+      "subtitle": [
+        "Semut punya dua perut, dan satu bukan untuk dirinya!",
+        "Ya, kamu tidak salah dengar!",
+        "Yuk, kenalan dengan 6 fakta seru semut!",
+        "Fakta pertama. Semut punya dua perut.",
+        "Perut pertama untuk mencerna makanannya sendiri.",
+        "Perut kedua khusus menyimpan makanan untuk dibagi.",
+        "Jadi, semut membawa bekal untuk teman-temannya!",
+        "Fakta kedua. Semut itu kuat sekali.",
+        "Semut daun bisa membawa potongan daun yang lebih besar dari badannya.",
+        "Bayangkan kamu menggotong kasur sendirian!",
+        "Itu baru kuat!",
+        "Tapi fakta ketiga lebih pintar lagi!",
+        "Semut berbicara lewat bau.",
+        "Bau khusus itu bernama feromon.",
+        "Semut meninggalkan jejak bau, supaya teman tahu jalan menuju makanan.",
+        "Fakta keempat. Semut hidup dalam koloni.",
+        "Satu koloni bisa berisi ribuan, bahkan jutaan semut.",
+        "Semut Argentina punya koloni terbesar yang pernah tercatat.",
+        "Panjangnya lebih dari 6.000 kilometer di pesisir Eropa selatan!",
+        "Fakta kelima. Setiap semut punya tugas.",
+        "Ada ratu, ada semut pekerja, dan ada yang bertugas menjaga.",
+        "Semut pekerja mencari makan dan merawat telur.",
+        "Fakta keenam. Ratu semut bisa hidup sangat lama.",
+        "Ratu bisa hidup belasan tahun, bahkan ada yang sampai sekitar 30 tahun.",
+        "Semut pekerja hidup lebih singkat, dari beberapa minggu sampai sekitar 1 tahun.",
+        "Hebat, kan?",
+        "Sekarang kuis! Perut kedua semut gunanya untuk apa?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Petunjuknya ada di fakta pertama tadi.",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya, termasuk soal perut kedua semut!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "SEMUT PUNYA 2 PERUT!",
+          "visual": "semut"
+        },
+        {
+          "t": "0:06",
+          "teks": "6 FAKTA SERU SEMUT",
+          "visual": "angka 6"
+        },
+        {
+          "t": "0:09",
+          "teks": "#1 DUA PERUT",
+          "visual": "semut"
+        },
+        {
+          "t": "0:20",
+          "teks": "#2 KUAT SEKALI",
+          "visual": "semut bawa daun"
+        },
+        {
+          "t": "0:30",
+          "teks": "#3 BICARA LEWAT BAU",
+          "visual": "jejak semut"
+        },
+        {
+          "t": "0:41",
+          "teks": "#4 KOLONI RAKSASA",
+          "visual": "koloni"
+        },
+        {
+          "t": "0:55",
+          "teks": "#5 SETIAP SEMUT BERTUGAS",
+          "visual": "ratu dan pekerja"
+        },
+        {
+          "t": "1:05",
+          "teks": "#6 RATU HIDUP LAMA",
+          "visual": "ratu semut"
+        },
+        {
+          "t": "1:19",
+          "teks": "HEBAT, KAN?",
+          "visual": "bintang"
+        },
+        {
+          "t": "1:20",
+          "teks": "KUIS: PERUT KEDUA?",
+          "visual": "tanda tanya"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "prompt": "Macro photo of a black ant on a green leaf, sharp focus, soft morning light"
+        },
+        {
+          "kalimat": 3,
+          "prompt": "Close-up macro of an ant's body showing its segments, natural light"
+        },
+        {
+          "kalimat": 7,
+          "3d": "alam",
+          "prompt": "A leafcutter ant carrying a large green leaf piece along a branch, macro photo"
+        },
+        {
+          "kalimat": 11,
+          "3d": "sains",
+          "prompt": "Several ants walking in a line along a trail on the ground, macro photo"
+        },
+        {
+          "kalimat": 15,
+          "3d": "alam",
+          "prompt": "An ant colony nest mound in a grassy field, soft sunlight"
+        },
+        {
+          "kalimat": 19,
+          "prompt": "Worker ants tending white ant eggs inside a nest, macro photo"
+        },
+        {
+          "kalimat": 22,
+          "3d": "sains",
+          "prompt": "A larger queen ant surrounded by small worker ants, macro photo"
+        },
+        {
+          "kalimat": 25,
+          "prompt": "A child and parent looking at ants on a sidewalk with a magnifying glass, sunny day"
+        }
+      ],
+      "caption": "6 fakta seru semut, si kecil yang luar biasa! 🐜",
+      "hashtags": [
+        "#faktaseru",
+        "#semut",
+        "#hewan"
+      ],
+      "youtube": {
+        "judul": "Kenapa Semut Punya 2 Perut? 6 Fakta Seru 🐜 #Shorts",
+        "deskripsi": "Tahukah kamu? Semut punya dua perut, dan satu khusus untuk berbagi makanan dengan teman! Yuk kenalan dengan 6 fakta seru semut.\n\n🐜 Fakta di video:\n1. Semut punya dua perut\n2. Semut daun membawa potongan daun lebih besar dari badannya\n3. Semut berbicara lewat bau (feromon)\n4. Koloni semut Argentina membentang lebih dari 6.000 km\n5. Setiap semut punya tugas\n6. Ratu semut bisa hidup belasan sampai sekitar 30 tahun\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: A-Z Animals, EarthSky, Easy Science for Kids, Welcome Wildlife",
+        "tags": [
+          "fakta seru",
+          "fakta unik anak",
+          "semut",
+          "serangga",
+          "koloni semut",
+          "belajar sains",
+          "sains anak",
+          "tahukah kamu",
+          "edukasi anak",
+          "shorts"
+        ],
+        "made_for_kids": true
+      },
+      "sumber": [
+        {
+          "nama": "A-Z Animals",
+          "url": "https://a-z-animals.com/animals/ant/"
+        },
+        {
+          "nama": "EarthSky",
+          "url": "https://earthsky.org/earth/ants-insect-lifeform-of-the-week/"
+        },
+        {
+          "nama": "Easy Science for Kids",
+          "url": "https://easyscienceforkids.com/all-about-ants/"
+        },
+        {
+          "nama": "Welcome Wildlife",
+          "url": "https://www.welcomewildlife.com/all-about-ants/"
+        }
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-28/kids-01-kenapa-semut-punya-2-perut-ini-jawabanny.mp4",
+      "poster": "video/kids/2026-11-28/01-kenapa-semut-punya-2-perut-ini-jawabanny.jpg",
+      "video_durasi": 91.2,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     },
     {
-     "t": "0:06",
-     "teks": "6 FAKTA SERU SEMUT",
-     "visual": "angka 6"
-    },
-    {
-     "t": "0:09",
-     "teks": "#1 DUA PERUT",
-     "visual": "semut"
-    },
-    {
-     "t": "0:20",
-     "teks": "#2 KUAT SEKALI",
-     "visual": "semut bawa daun"
-    },
-    {
-     "t": "0:30",
-     "teks": "#3 BICARA LEWAT BAU",
-     "visual": "jejak semut"
-    },
-    {
-     "t": "0:41",
-     "teks": "#4 KOLONI RAKSASA",
-     "visual": "koloni"
-    },
-    {
-     "t": "0:55",
-     "teks": "#5 SETIAP SEMUT BERTUGAS",
-     "visual": "ratu dan pekerja"
-    },
-    {
-     "t": "1:05",
-     "teks": "#6 RATU HIDUP LAMA",
-     "visual": "ratu semut"
-    },
-    {
-     "t": "1:19",
-     "teks": "HEBAT, KAN?",
-     "visual": "bintang"
-    },
-    {
-     "t": "1:20",
-     "teks": "KUIS: PERUT KEDUA?",
-     "visual": "tanda tanya"
+      "kategori": "Bumi & Cuaca",
+      "judul": "Air di Bumi banyak banget, tapi hampir semuanya asin?",
+      "ringkasan": "Sekitar 71% permukaan Bumi tertutup air dan sekitar 97% air Bumi ada di lautan; Bumi berputar sekitar 24 jam, miring sekitar 23,5 derajat, berumur sekitar 4,5 miliar tahun, punya inti dalam padat dari besi dan nikel yang sangat panas, dan atmosfernya kebanyakan nitrogen dan oksigen.",
+      "status_fakta": "resmi",
+      "hook_formula": "Kontras + pertanyaan + daftar 6 fakta + kuis",
+      "hook": {
+        "judul": "Air di Bumi banyak banget, tapi hampir semuanya asin?",
+        "tiga_detik": "Bumi punya air sangat banyak, tapi hampir semuanya asin!",
+        "layar": "AIR BUMI HAMPIR SEMUA ASIN!",
+        "visual": "Bumi dilihat dari luar angkasa, lautan biru dan awan putih"
+      },
+      "hook_layar": "AIR BUMI HAMPIR SEMUA ASIN!",
+      "skor_viral": 8,
+      "jam_posting": "19:00",
+      "durasi_detik": 91,
+      "naskah_vo": [
+        "Bumi punya air sangat banyak, tapi hampir semuanya asin!",
+        "Kok bisa?",
+        "Yuk, kenalan dengan enam fakta seru planet Bumi!",
+        "Fakta pertama. Sekitar tujuh puluh satu persen permukaan Bumi tertutup air.",
+        "Dan sekitar sembilan puluh tujuh persen air itu ada di lautan.",
+        "Artinya, air laut yang asin jumlahnya sangat banyak!",
+        "Karena itu, Bumi dijuluki planet biru.",
+        "Fakta kedua. Bumi berputar seperti gasing.",
+        "Satu putaran penuh memakan waktu sekitar dua puluh empat jam.",
+        "Itulah yang membuat ada siang dan malam!",
+        "Tapi fakta ketiga lebih seru lagi!",
+        "Bumi miring sekitar dua puluh tiga setengah derajat.",
+        "Kemiringan itu membuat sinar Matahari jatuh berbeda-beda.",
+        "Hasilnya, ada musim panas dan musim dingin di banyak tempat.",
+        "Fakta keempat. Bumi sudah sangat tua.",
+        "Umurnya sekitar empat setengah miliar tahun.",
+        "Para ilmuwan mengetahuinya dari batu dan meteorit.",
+        "Fakta kelima. Di pusat Bumi ada bola logam padat.",
+        "Namanya inti dalam, terbuat dari besi dan nikel.",
+        "Suhunya lebih dari lima ribu derajat Celsius!",
+        "Fakta keenam. Bumi punya selimut udara.",
+        "Selimut itu bernama atmosfer, kebanyakan berisi nitrogen dan oksigen.",
+        "Oksigen itulah yang kita hirup setiap hari!",
+        "Hebat, kan?",
+        "Sekarang kuis! Kenapa di Bumi ada siang dan malam?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Petunjuknya ada di fakta kedua tadi.",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya, termasuk soal air asin Bumi!"
+      ],
+      "subtitle": [
+        "Bumi punya air sangat banyak, tapi hampir semuanya asin!",
+        "Kok bisa?",
+        "Yuk, kenalan dengan 6 fakta seru planet Bumi!",
+        "Fakta pertama. Sekitar 71 persen permukaan Bumi tertutup air.",
+        "Dan sekitar 97 persen air itu ada di lautan.",
+        "Artinya, air laut yang asin jumlahnya sangat banyak!",
+        "Karena itu, Bumi dijuluki planet biru.",
+        "Fakta kedua. Bumi berputar seperti gasing.",
+        "Satu putaran penuh memakan waktu sekitar 24 jam.",
+        "Itulah yang membuat ada siang dan malam!",
+        "Tapi fakta ketiga lebih seru lagi!",
+        "Bumi miring sekitar 23,5 derajat.",
+        "Kemiringan itu membuat sinar Matahari jatuh berbeda-beda.",
+        "Hasilnya, ada musim panas dan musim dingin di banyak tempat.",
+        "Fakta keempat. Bumi sudah sangat tua.",
+        "Umurnya sekitar 4,5 miliar tahun.",
+        "Para ilmuwan mengetahuinya dari batu dan meteorit.",
+        "Fakta kelima. Di pusat Bumi ada bola logam padat.",
+        "Namanya inti dalam, terbuat dari besi dan nikel.",
+        "Suhunya lebih dari 5.000 derajat Celsius!",
+        "Fakta keenam. Bumi punya selimut udara.",
+        "Selimut itu bernama atmosfer, kebanyakan berisi nitrogen dan oksigen.",
+        "Oksigen itulah yang kita hirup setiap hari!",
+        "Hebat, kan?",
+        "Sekarang kuis! Kenapa di Bumi ada siang dan malam?",
+        "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
+        "Petunjuknya ada di fakta kedua tadi.",
+        "Subscribe GlitchPlayClips buat fakta seru lainnya, termasuk soal air asin Bumi!"
+      ],
+      "teks_layar": [
+        {
+          "t": "0:00",
+          "teks": "AIR BUMI HAMPIR SEMUA ASIN!",
+          "visual": "lautan"
+        },
+        {
+          "t": "0:05",
+          "teks": "6 FAKTA SERU BUMI",
+          "visual": "angka 6"
+        },
+        {
+          "t": "0:08",
+          "teks": "#1 71% TERTUTUP AIR",
+          "visual": "bumi biru"
+        },
+        {
+          "t": "0:24",
+          "teks": "#2 BERPUTAR 24 JAM",
+          "visual": "bumi berputar"
+        },
+        {
+          "t": "0:36",
+          "teks": "#3 MIRING 23,5°",
+          "visual": "bumi miring"
+        },
+        {
+          "t": "0:47",
+          "teks": "#4 UMUR 4,5 MILIAR TAHUN",
+          "visual": "batu tua"
+        },
+        {
+          "t": "0:55",
+          "teks": "#5 INTI DALAM PANAS",
+          "visual": "inti bumi"
+        },
+        {
+          "t": "1:05",
+          "teks": "#6 SELIMUT UDARA",
+          "visual": "atmosfer"
+        },
+        {
+          "t": "1:15",
+          "teks": "HEBAT, KAN?",
+          "visual": "bintang"
+        },
+        {
+          "t": "1:15",
+          "teks": "KUIS: SIANG DAN MALAM?",
+          "visual": "tanda tanya"
+        }
+      ],
+      "adegan": [
+        {
+          "kalimat": 0,
+          "3d": "laut",
+          "prompt": "Planet Earth seen from space showing blue oceans and white clouds"
+        },
+        {
+          "kalimat": 3,
+          "3d": "bumi",
+          "prompt": "Earth globe from space with oceans covering most of the surface"
+        },
+        {
+          "kalimat": 7,
+          "prompt": "Time-lapse style photo of sunrise over a calm ocean horizon"
+        },
+        {
+          "kalimat": 11,
+          "3d": "tatasurya",
+          "prompt": "Earth and the Sun in space illustration-like realistic render, Earth tilted"
+        },
+        {
+          "kalimat": 14,
+          "prompt": "Ancient rocky canyon with layered red rock, golden light"
+        },
+        {
+          "kalimat": 17,
+          "3d": "sains",
+          "prompt": "Cutaway model of the Earth showing layers and a glowing core, science classroom"
+        },
+        {
+          "kalimat": 20,
+          "3d": "alam",
+          "prompt": "Blue sky with white clouds seen from a mountain meadow"
+        },
+        {
+          "kalimat": 24,
+          "prompt": "Children in a classroom learning with a globe, bright natural light"
+        }
+      ],
+      "caption": "6 fakta seru planet Bumi, rumah kita! 🌍",
+      "hashtags": [
+        "#faktaseru",
+        "#bumi",
+        "#sains"
+      ],
+      "youtube": {
+        "judul": "Air di Bumi Banyak, Tapi Hampir Semuanya Asin? 🌍 #Shorts",
+        "deskripsi": "Tahukah kamu? Sekitar 97% air di Bumi ada di lautan dan rasanya asin! Yuk kenalan dengan 6 fakta seru planet Bumi.\n\n🌍 Fakta di video:\n1. Sekitar 71% permukaan Bumi tertutup air\n2. Bumi berputar sekali tiap sekitar 24 jam\n3. Bumi miring sekitar 23,5 derajat\n4. Umur Bumi sekitar 4,5 miliar tahun\n5. Inti dalam Bumi padat dari besi dan nikel\n6. Atmosfer kebanyakan nitrogen dan oksigen\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: What I Have Learned Teaching, Science News Today, Space Osmosis, Wikipedia",
+        "tags": [
+          "fakta seru",
+          "fakta unik anak",
+          "planet bumi",
+          "bumi",
+          "luar angkasa",
+          "belajar sains",
+          "sains anak",
+          "tahukah kamu",
+          "edukasi anak",
+          "shorts"
+        ],
+        "made_for_kids": true
+      },
+      "sumber": [
+        {
+          "nama": "What I Have Learned Teaching",
+          "url": "https://whatihavelearnedteaching.com/interesting-facts-about-earth/"
+        },
+        {
+          "nama": "Science News Today",
+          "url": "https://www.sciencenewstoday.org/earth-facts-structure-atmosphere-and-place-in-the-solar-system"
+        },
+        {
+          "nama": "Space Osmosis",
+          "url": "https://spaceosmosis.com/solar-system/earth/"
+        },
+        {
+          "nama": "Wikipedia: Earth's inner core",
+          "url": "https://en.wikipedia.org/wiki/Earth's_inner_core"
+        }
+      ],
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-28/kids-02-air-di-bumi-banyak-banget-tapi-hampir-se.mp4",
+      "poster": "video/kids/2026-11-28/02-air-di-bumi-banyak-banget-tapi-hampir-se.jpg",
+      "video_durasi": 88.3,
+      "video_suara": "gemini-3.8-flash-lite-tts/Leda"
     }
-   ],
-   "adegan": [
-    {
-     "kalimat": 0,
-     "prompt": "Macro photo of a black ant on a green leaf, sharp focus, soft morning light"
-    },
-    {
-     "kalimat": 3,
-     "prompt": "Close-up macro of an ant's body showing its segments, natural light"
-    },
-    {
-     "kalimat": 7,
-     "3d": "alam",
-     "prompt": "A leafcutter ant carrying a large green leaf piece along a branch, macro photo"
-    },
-    {
-     "kalimat": 11,
-     "3d": "sains",
-     "prompt": "Several ants walking in a line along a trail on the ground, macro photo"
-    },
-    {
-     "kalimat": 15,
-     "3d": "alam",
-     "prompt": "An ant colony nest mound in a grassy field, soft sunlight"
-    },
-    {
-     "kalimat": 19,
-     "prompt": "Worker ants tending white ant eggs inside a nest, macro photo"
-    },
-    {
-     "kalimat": 22,
-     "3d": "sains",
-     "prompt": "A larger queen ant surrounded by small worker ants, macro photo"
-    },
-    {
-     "kalimat": 25,
-     "prompt": "A child and parent looking at ants on a sidewalk with a magnifying glass, sunny day"
-    }
-   ],
-   "caption": "6 fakta seru semut, si kecil yang luar biasa! 🐜",
-   "hashtags": [
-    "#faktaseru",
-    "#semut",
-    "#hewan"
-   ],
-   "youtube": {
-    "judul": "Kenapa Semut Punya 2 Perut? 6 Fakta Seru 🐜 #Shorts",
-    "deskripsi": "Tahukah kamu? Semut punya dua perut, dan satu khusus untuk berbagi makanan dengan teman! Yuk kenalan dengan 6 fakta seru semut.\n\n🐜 Fakta di video:\n1. Semut punya dua perut\n2. Semut daun membawa potongan daun lebih besar dari badannya\n3. Semut berbicara lewat bau (feromon)\n4. Koloni semut Argentina membentang lebih dari 6.000 km\n5. Setiap semut punya tugas\n6. Ratu semut bisa hidup belasan sampai sekitar 30 tahun\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: A-Z Animals, EarthSky, Easy Science for Kids, Welcome Wildlife",
-    "tags": [
-     "fakta seru",
-     "fakta unik anak",
-     "semut",
-     "serangga",
-     "koloni semut",
-     "belajar sains",
-     "sains anak",
-     "tahukah kamu",
-     "edukasi anak",
-     "shorts"
-    ],
-    "made_for_kids": true
-   },
-   "sumber": [
-    {
-     "nama": "A-Z Animals",
-     "url": "https://a-z-animals.com/animals/ant/"
-    },
-    {
-     "nama": "EarthSky",
-     "url": "https://earthsky.org/earth/ants-insect-lifeform-of-the-week/"
-    },
-    {
-     "nama": "Easy Science for Kids",
-     "url": "https://easyscienceforkids.com/all-about-ants/"
-    },
-    {
-     "nama": "Welcome Wildlife",
-     "url": "https://www.welcomewildlife.com/all-about-ants/"
-    }
-   ]
-  },
-  {
-   "kategori": "Bumi & Cuaca",
-   "judul": "Air di Bumi banyak banget, tapi hampir semuanya asin?",
-   "ringkasan": "Sekitar 71% permukaan Bumi tertutup air dan sekitar 97% air Bumi ada di lautan; Bumi berputar sekitar 24 jam, miring sekitar 23,5 derajat, berumur sekitar 4,5 miliar tahun, punya inti dalam padat dari besi dan nikel yang sangat panas, dan atmosfernya kebanyakan nitrogen dan oksigen.",
-   "status_fakta": "resmi",
-   "hook_formula": "Kontras + pertanyaan + daftar 6 fakta + kuis",
-   "hook": {
-    "judul": "Air di Bumi banyak banget, tapi hampir semuanya asin?",
-    "tiga_detik": "Bumi punya air sangat banyak, tapi hampir semuanya asin!",
-    "layar": "AIR BUMI HAMPIR SEMUA ASIN!",
-    "visual": "Bumi dilihat dari luar angkasa, lautan biru dan awan putih"
-   },
-   "hook_layar": "AIR BUMI HAMPIR SEMUA ASIN!",
-   "skor_viral": 8,
-   "jam_posting": "19:00",
-   "durasi_detik": 91,
-   "naskah_vo": [
-    "Bumi punya air sangat banyak, tapi hampir semuanya asin!",
-    "Kok bisa?",
-    "Yuk, kenalan dengan enam fakta seru planet Bumi!",
-    "Fakta pertama. Sekitar tujuh puluh satu persen permukaan Bumi tertutup air.",
-    "Dan sekitar sembilan puluh tujuh persen air itu ada di lautan.",
-    "Artinya, air laut yang asin jumlahnya sangat banyak!",
-    "Karena itu, Bumi dijuluki planet biru.",
-    "Fakta kedua. Bumi berputar seperti gasing.",
-    "Satu putaran penuh memakan waktu sekitar dua puluh empat jam.",
-    "Itulah yang membuat ada siang dan malam!",
-    "Tapi fakta ketiga lebih seru lagi!",
-    "Bumi miring sekitar dua puluh tiga setengah derajat.",
-    "Kemiringan itu membuat sinar Matahari jatuh berbeda-beda.",
-    "Hasilnya, ada musim panas dan musim dingin di banyak tempat.",
-    "Fakta keempat. Bumi sudah sangat tua.",
-    "Umurnya sekitar empat setengah miliar tahun.",
-    "Para ilmuwan mengetahuinya dari batu dan meteorit.",
-    "Fakta kelima. Di pusat Bumi ada bola logam padat.",
-    "Namanya inti dalam, terbuat dari besi dan nikel.",
-    "Suhunya lebih dari lima ribu derajat Celsius!",
-    "Fakta keenam. Bumi punya selimut udara.",
-    "Selimut itu bernama atmosfer, kebanyakan berisi nitrogen dan oksigen.",
-    "Oksigen itulah yang kita hirup setiap hari!",
-    "Hebat, kan?",
-    "Sekarang kuis! Kenapa di Bumi ada siang dan malam?",
-    "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
-    "Petunjuknya ada di fakta kedua tadi.",
-    "Subscribe GlitchPlayClips buat fakta seru lainnya, termasuk soal air asin Bumi!"
-   ],
-   "subtitle": [
-    "Bumi punya air sangat banyak, tapi hampir semuanya asin!",
-    "Kok bisa?",
-    "Yuk, kenalan dengan 6 fakta seru planet Bumi!",
-    "Fakta pertama. Sekitar 71 persen permukaan Bumi tertutup air.",
-    "Dan sekitar 97 persen air itu ada di lautan.",
-    "Artinya, air laut yang asin jumlahnya sangat banyak!",
-    "Karena itu, Bumi dijuluki planet biru.",
-    "Fakta kedua. Bumi berputar seperti gasing.",
-    "Satu putaran penuh memakan waktu sekitar 24 jam.",
-    "Itulah yang membuat ada siang dan malam!",
-    "Tapi fakta ketiga lebih seru lagi!",
-    "Bumi miring sekitar 23,5 derajat.",
-    "Kemiringan itu membuat sinar Matahari jatuh berbeda-beda.",
-    "Hasilnya, ada musim panas dan musim dingin di banyak tempat.",
-    "Fakta keempat. Bumi sudah sangat tua.",
-    "Umurnya sekitar 4,5 miliar tahun.",
-    "Para ilmuwan mengetahuinya dari batu dan meteorit.",
-    "Fakta kelima. Di pusat Bumi ada bola logam padat.",
-    "Namanya inti dalam, terbuat dari besi dan nikel.",
-    "Suhunya lebih dari 5.000 derajat Celsius!",
-    "Fakta keenam. Bumi punya selimut udara.",
-    "Selimut itu bernama atmosfer, kebanyakan berisi nitrogen dan oksigen.",
-    "Oksigen itulah yang kita hirup setiap hari!",
-    "Hebat, kan?",
-    "Sekarang kuis! Kenapa di Bumi ada siang dan malam?",
-    "Jawab dalam hati, atau tanya ke ayah dan ibu ya!",
-    "Petunjuknya ada di fakta kedua tadi.",
-    "Subscribe GlitchPlayClips buat fakta seru lainnya, termasuk soal air asin Bumi!"
-   ],
-   "teks_layar": [
-    {
-     "t": "0:00",
-     "teks": "AIR BUMI HAMPIR SEMUA ASIN!",
-     "visual": "lautan"
-    },
-    {
-     "t": "0:05",
-     "teks": "6 FAKTA SERU BUMI",
-     "visual": "angka 6"
-    },
-    {
-     "t": "0:08",
-     "teks": "#1 71% TERTUTUP AIR",
-     "visual": "bumi biru"
-    },
-    {
-     "t": "0:24",
-     "teks": "#2 BERPUTAR 24 JAM",
-     "visual": "bumi berputar"
-    },
-    {
-     "t": "0:36",
-     "teks": "#3 MIRING 23,5°",
-     "visual": "bumi miring"
-    },
-    {
-     "t": "0:47",
-     "teks": "#4 UMUR 4,5 MILIAR TAHUN",
-     "visual": "batu tua"
-    },
-    {
-     "t": "0:55",
-     "teks": "#5 INTI DALAM PANAS",
-     "visual": "inti bumi"
-    },
-    {
-     "t": "1:05",
-     "teks": "#6 SELIMUT UDARA",
-     "visual": "atmosfer"
-    },
-    {
-     "t": "1:15",
-     "teks": "HEBAT, KAN?",
-     "visual": "bintang"
-    },
-    {
-     "t": "1:15",
-     "teks": "KUIS: SIANG DAN MALAM?",
-     "visual": "tanda tanya"
-    }
-   ],
-   "adegan": [
-    {
-     "kalimat": 0,
-     "3d": "laut",
-     "prompt": "Planet Earth seen from space showing blue oceans and white clouds"
-    },
-    {
-     "kalimat": 3,
-     "3d": "bumi",
-     "prompt": "Earth globe from space with oceans covering most of the surface"
-    },
-    {
-     "kalimat": 7,
-     "prompt": "Time-lapse style photo of sunrise over a calm ocean horizon"
-    },
-    {
-     "kalimat": 11,
-     "3d": "tatasurya",
-     "prompt": "Earth and the Sun in space illustration-like realistic render, Earth tilted"
-    },
-    {
-     "kalimat": 14,
-     "prompt": "Ancient rocky canyon with layered red rock, golden light"
-    },
-    {
-     "kalimat": 17,
-     "3d": "sains",
-     "prompt": "Cutaway model of the Earth showing layers and a glowing core, science classroom"
-    },
-    {
-     "kalimat": 20,
-     "3d": "alam",
-     "prompt": "Blue sky with white clouds seen from a mountain meadow"
-    },
-    {
-     "kalimat": 24,
-     "prompt": "Children in a classroom learning with a globe, bright natural light"
-    }
-   ],
-   "caption": "6 fakta seru planet Bumi, rumah kita! 🌍",
-   "hashtags": [
-    "#faktaseru",
-    "#bumi",
-    "#sains"
-   ],
-   "youtube": {
-    "judul": "Air di Bumi Banyak, Tapi Hampir Semuanya Asin? 🌍 #Shorts",
-    "deskripsi": "Tahukah kamu? Sekitar 97% air di Bumi ada di lautan dan rasanya asin! Yuk kenalan dengan 6 fakta seru planet Bumi.\n\n🌍 Fakta di video:\n1. Sekitar 71% permukaan Bumi tertutup air\n2. Bumi berputar sekali tiap sekitar 24 jam\n3. Bumi miring sekitar 23,5 derajat\n4. Umur Bumi sekitar 4,5 miliar tahun\n5. Inti dalam Bumi padat dari besi dan nikel\n6. Atmosfer kebanyakan nitrogen dan oksigen\n\nSubscribe GlitchPlayClips untuk fakta seru setiap hari!\n\nSumber: What I Have Learned Teaching, Science News Today, Space Osmosis, Wikipedia",
-    "tags": [
-     "fakta seru",
-     "fakta unik anak",
-     "planet bumi",
-     "bumi",
-     "luar angkasa",
-     "belajar sains",
-     "sains anak",
-     "tahukah kamu",
-     "edukasi anak",
-     "shorts"
-    ],
-    "made_for_kids": true
-   },
-   "sumber": [
-    {
-     "nama": "What I Have Learned Teaching",
-     "url": "https://whatihavelearnedteaching.com/interesting-facts-about-earth/"
-    },
-    {
-     "nama": "Science News Today",
-     "url": "https://www.sciencenewstoday.org/earth-facts-structure-atmosphere-and-place-in-the-solar-system"
-    },
-    {
-     "nama": "Space Osmosis",
-     "url": "https://spaceosmosis.com/solar-system/earth/"
-    },
-    {
-     "nama": "Wikipedia: Earth's inner core",
-     "url": "https://en.wikipedia.org/wiki/Earth's_inner_core"
-    }
-   ]
-  }
- ]
+  ]
 }
