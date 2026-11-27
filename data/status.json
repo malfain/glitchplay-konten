@@ -28,13 +28,13 @@
     },
     "detektif": {
       "status": "selesai",
-      "aktivitas": "10 lolos, 8 dibuang",
-      "t": "2026-11-27T06:08:23+07:00"
+      "aktivitas": "[Sirah] 3 lolos, 0 dibuang",
+      "t": "2026-11-28T04:06:54+07:00"
     },
     "narator": {
-      "status": "selesai",
-      "aktivitas": "10 naskah siap",
-      "t": "2026-11-27T06:11:21+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Tulis naskah eps 11-13",
+      "t": "2026-11-28T04:06:54+07:00"
     },
     "copywriter": {
       "status": "selesai",
@@ -52,9 +52,9 @@
       "t": "2026-11-27T06:35:25+07:00"
     },
     "strategist": {
-      "status": "selesai",
-      "aktivitas": "10 topik diurutkan, hook siap",
-      "t": "2026-11-27T06:08:26+07:00"
+      "status": "kerja",
+      "aktivitas": "[Sirah] Hook & jam posting eps 11-13",
+      "t": "2026-11-28T04:06:54+07:00"
     },
     "asisten": {
       "status": "idle",
@@ -63,6 +63,26 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T04:06:54+07:00",
+      "agen": "narator",
+      "pesan": "[Sirah] Tulis naskah eps 11-13"
+    },
+    {
+      "t": "2026-11-28T04:06:54+07:00",
+      "agen": "strategist",
+      "pesan": "[Sirah] Hook & jam posting eps 11-13"
+    },
+    {
+      "t": "2026-11-28T04:06:54+07:00",
+      "agen": "detektif",
+      "pesan": "[Sirah] 3 lolos, 0 dibuang"
+    },
+    {
+      "t": "2026-11-28T04:06:54+07:00",
+      "agen": "detektif",
+      "pesan": "[Sirah] Verifikasi 2 sumber per detail"
+    },
     {
       "t": "2026-11-28T04:06:52+07:00",
       "agen": "radar",
@@ -342,28 +362,8 @@
       "t": "2026-11-27T04:06:11+07:00",
       "agen": "strategist",
       "pesan": "[Sirah] 2 episode direncanakan"
-    },
-    {
-      "t": "2026-11-27T04:06:11+07:00",
-      "agen": "strategist",
-      "pesan": "[Sirah] Hook & jam posting"
-    },
-    {
-      "t": "2026-11-27T04:06:11+07:00",
-      "agen": "detektif",
-      "pesan": "[Sirah] Detail sahih lolos"
-    },
-    {
-      "t": "2026-11-27T04:06:11+07:00",
-      "agen": "detektif",
-      "pesan": "[Sirah] Cek fakta 2 sumber"
-    },
-    {
-      "t": "2026-11-27T04:06:11+07:00",
-      "agen": "radar",
-      "pesan": "[Sirah] 2 tema, sumber ditemukan"
     }
   ],
-  "updated_at": "2026-11-28T04:06:52+07:00",
+  "updated_at": "2026-11-28T04:06:54+07:00",
   "kesimpulan_t": "2026-11-27T06:11:31+07:00"
 }
