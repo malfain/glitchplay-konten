@@ -6,7 +6,7 @@
     "finished_at": null
   },
   "tasks": {
-    "antri": 0,
+    "antri": 14,
     "jalan": 0,
     "kelar": 0
   },
@@ -21,9 +21,9 @@
       "t": "2026-11-28T06:06:16+07:00"
     },
     "radar": {
-      "status": "kerja",
-      "aktivitas": "Cari berita game & esports Indonesia",
-      "t": "2026-11-28T06:06:21+07:00"
+      "status": "selesai",
+      "aktivitas": "14 kandidat ditemukan",
+      "t": "2026-11-28T06:07:35+07:00"
     },
     "detektif": {
       "status": "idle",
@@ -62,6 +62,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T06:07:35+07:00",
+      "agen": "radar",
+      "pesan": "14 kandidat ditemukan"
+    },
     {
       "t": "2026-11-28T06:06:21+07:00",
       "agen": "radar",
@@ -356,13 +361,8 @@
       "t": "2026-11-27T06:11:21+07:00",
       "agen": "narator",
       "pesan": "10 naskah siap"
-    },
-    {
-      "t": "2026-11-27T06:08:26+07:00",
-      "agen": "narator",
-      "pesan": "Tulis naskah 10 item"
     }
   ],
-  "updated_at": "2026-11-28T06:06:21+07:00",
+  "updated_at": "2026-11-28T06:07:35+07:00",
   "kesimpulan_t": "2026-11-28T05:10:00+07:00"
 }
