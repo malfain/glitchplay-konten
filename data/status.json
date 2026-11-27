@@ -36,9 +36,9 @@
       "t": "2026-11-28T06:08:42+07:00"
     },
     "copywriter": {
-      "status": "kerja",
-      "aktivitas": "Tulis caption & judul cover",
-      "t": "2026-11-28T06:08:44+07:00"
+      "status": "selesai",
+      "aktivitas": "5 caption siap",
+      "t": "2026-11-28T06:08:45+07:00"
     },
     "qc": {
       "status": "idle",
@@ -62,6 +62,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T06:08:45+07:00",
+      "agen": "copywriter",
+      "pesan": "5 caption siap"
+    },
     {
       "t": "2026-11-28T06:08:44+07:00",
       "agen": "copywriter",
@@ -356,13 +361,8 @@
       "t": "2026-11-27T06:13:10+07:00",
       "agen": "studio",
       "pesan": "Render video 1/10: Staf Rockstar tolak pengakuan seri"
-    },
-    {
-      "t": "2026-11-27T06:13:08+07:00",
-      "agen": "studio",
-      "pesan": "Render 10 video untuk 2026-11-27"
     }
   ],
-  "updated_at": "2026-11-28T06:08:44+07:00",
+  "updated_at": "2026-11-28T06:08:45+07:00",
   "kesimpulan_t": "2026-11-28T05:10:00+07:00"
 }
