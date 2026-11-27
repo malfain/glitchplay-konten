@@ -6,9 +6,9 @@
     "finished_at": "2026-11-27T06:11:31+07:00"
   },
   "tasks": {
-    "antri": 0,
+    "antri": 2,
     "jalan": 0,
-    "kelar": 3
+    "kelar": 0
   },
   "kesimpulan_bos": [
     "[Sirah] Eps 11-13 siap: Gua Hira, Iqra', dakwah sembunyi",
@@ -21,14 +21,14 @@
       "t": "2026-11-28T05:08:36+07:00"
     },
     "radar": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Cari fakta semut dan Bumi",
-      "t": "2026-11-28T05:08:36+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] 2 kandidat: semut, Bumi",
+      "t": "2026-11-28T05:09:14+07:00"
     },
     "detektif": {
-      "status": "selesai",
-      "aktivitas": "[Sirah] 3 lolos, 0 dibuang",
-      "t": "2026-11-28T04:06:54+07:00"
+      "status": "kerja",
+      "aktivitas": "[Anak] Cek fakta semut dan Bumi",
+      "t": "2026-11-28T05:09:14+07:00"
     },
     "narator": {
       "status": "selesai",
@@ -62,6 +62,16 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T05:09:14+07:00",
+      "agen": "detektif",
+      "pesan": "[Anak] Cek fakta semut dan Bumi"
+    },
+    {
+      "t": "2026-11-28T05:09:14+07:00",
+      "agen": "radar",
+      "pesan": "[Anak] 2 kandidat: semut, Bumi"
+    },
     {
       "t": "2026-11-28T05:08:36+07:00",
       "agen": "radar",
@@ -351,18 +361,8 @@
       "t": "2026-11-27T05:10:06+07:00",
       "agen": "strategist",
       "pesan": "[Anak] Hook & jam posting siap"
-    },
-    {
-      "t": "2026-11-27T05:10:06+07:00",
-      "agen": "detektif",
-      "pesan": "[Anak] Fakta lolos 2 sumber, 2 tema"
-    },
-    {
-      "t": "2026-11-27T05:10:06+07:00",
-      "agen": "radar",
-      "pesan": "[Anak] 2 tema: gunung berapi, Mars"
     }
   ],
-  "updated_at": "2026-11-28T05:08:36+07:00",
+  "updated_at": "2026-11-28T05:09:14+07:00",
   "kesimpulan_t": "2026-11-28T04:08:25+07:00"
 }
