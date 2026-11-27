@@ -6,7 +6,7 @@
     "finished_at": null
   },
   "tasks": {
-    "antri": 14,
+    "antri": 5,
     "jalan": 0,
     "kelar": 0
   },
@@ -26,9 +26,9 @@
       "t": "2026-11-28T06:07:35+07:00"
     },
     "detektif": {
-      "status": "kerja",
-      "aktivitas": "Cek fakta kandidat, min 2 sumber",
-      "t": "2026-11-28T06:07:37+07:00"
+      "status": "selesai",
+      "aktivitas": "5 lolos, 9 dibuang",
+      "t": "2026-11-28T06:07:39+07:00"
     },
     "narator": {
       "status": "idle",
@@ -62,6 +62,11 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T06:07:39+07:00",
+      "agen": "detektif",
+      "pesan": "5 lolos, 9 dibuang"
+    },
     {
       "t": "2026-11-28T06:07:37+07:00",
       "agen": "detektif",
@@ -356,13 +361,8 @@
       "t": "2026-11-27T06:11:23+07:00",
       "agen": "copywriter",
       "pesan": "10 caption siap"
-    },
-    {
-      "t": "2026-11-27T06:11:21+07:00",
-      "agen": "copywriter",
-      "pesan": "Caption dan judul cover"
     }
   ],
-  "updated_at": "2026-11-28T06:07:37+07:00",
+  "updated_at": "2026-11-28T06:07:39+07:00",
   "kesimpulan_t": "2026-11-28T05:10:00+07:00"
 }
