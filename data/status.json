@@ -6,19 +6,19 @@
     "finished_at": "2026-11-27T06:11:31+07:00"
   },
   "tasks": {
-    "antri": 2,
+    "antri": 0,
     "jalan": 0,
-    "kelar": 0
+    "kelar": 2
   },
   "kesimpulan_bos": [
-    "[Sirah] Eps 11-13 siap: Gua Hira, Iqra', dakwah sembunyi",
-    "[Sirah] Posting 04:45, 12:30, 18:30 WIB berurutan"
+    "[Anak] 2 konten: semut 16:00, Bumi 19:00",
+    "[Anak] Fakta 2+ sumber, aman untuk anak"
   ],
   "agents": {
     "bos": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Buka shift anak, bagi tugas",
-      "t": "2026-11-28T05:08:36+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] Shift anak selesai",
+      "t": "2026-11-28T05:10:00+07:00"
     },
     "radar": {
       "status": "selesai",
@@ -31,19 +31,19 @@
       "t": "2026-11-28T05:09:16+07:00"
     },
     "narator": {
-      "status": "kerja",
-      "aktivitas": "[Anak] Tulis naskah 2 video",
-      "t": "2026-11-28T05:09:16+07:00"
+      "status": "selesai",
+      "aktivitas": "[Anak] 2 naskah selesai",
+      "t": "2026-11-28T05:09:57+07:00"
     },
     "copywriter": {
       "status": "selesai",
-      "aktivitas": "[Sirah] Caption selesai",
-      "t": "2026-11-28T04:08:25+07:00"
+      "aktivitas": "[Anak] Metadata YouTube siap",
+      "t": "2026-11-28T05:09:57+07:00"
     },
     "qc": {
       "status": "selesai",
-      "aktivitas": "[Sirah] 3 episode lolos QC",
-      "t": "2026-11-28T04:08:25+07:00"
+      "aktivitas": "[Anak] 2 item lolos QC",
+      "t": "2026-11-28T05:09:57+07:00"
     },
     "studio": {
       "status": "selesai",
@@ -62,6 +62,36 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T05:10:00+07:00",
+      "agen": "bos",
+      "pesan": "[Anak] Shift anak selesai"
+    },
+    {
+      "t": "2026-11-28T05:09:57+07:00",
+      "agen": "qc",
+      "pesan": "[Anak] 2 item lolos QC"
+    },
+    {
+      "t": "2026-11-28T05:09:57+07:00",
+      "agen": "qc",
+      "pesan": "[Anak] Cek aturan dan tulis data"
+    },
+    {
+      "t": "2026-11-28T05:09:57+07:00",
+      "agen": "copywriter",
+      "pesan": "[Anak] Metadata YouTube siap"
+    },
+    {
+      "t": "2026-11-28T05:09:57+07:00",
+      "agen": "copywriter",
+      "pesan": "[Anak] Judul, deskripsi, tags YouTube"
+    },
+    {
+      "t": "2026-11-28T05:09:57+07:00",
+      "agen": "narator",
+      "pesan": "[Anak] 2 naskah selesai"
+    },
     {
       "t": "2026-11-28T05:09:16+07:00",
       "agen": "narator",
@@ -331,38 +361,8 @@
       "t": "2026-11-27T06:06:12+07:00",
       "agen": "bos",
       "pesan": "Buka shift, bagi tugas ke tim"
-    },
-    {
-      "t": "2026-11-27T06:06:12+07:00",
-      "agen": "bos",
-      "pesan": "Shift pagi dimulai. Tim dikumpulkan."
-    },
-    {
-      "t": "2026-11-27T05:24:03+07:00",
-      "agen": "asisten",
-      "pesan": "2/2 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-27T05:18:16+07:00",
-      "agen": "asisten",
-      "pesan": "Render video 2/2: 5 fakta seru gunung berapi: batu m"
-    },
-    {
-      "t": "2026-11-27T05:12:31+07:00",
-      "agen": "asisten",
-      "pesan": "Render video 1/2: 6 fakta seru Mars: gunung 2 kali E"
-    },
-    {
-      "t": "2026-11-27T05:12:29+07:00",
-      "agen": "asisten",
-      "pesan": "Render 2 video untuk 2026-11-27"
-    },
-    {
-      "t": "2026-11-27T05:10:11+07:00",
-      "agen": "bos",
-      "pesan": "[Anak] Shift anak selesai"
     }
   ],
-  "updated_at": "2026-11-28T05:09:16+07:00",
-  "kesimpulan_t": "2026-11-28T04:08:25+07:00"
+  "updated_at": "2026-11-28T05:10:00+07:00",
+  "kesimpulan_t": "2026-11-28T05:10:00+07:00"
 }
