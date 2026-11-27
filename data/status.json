@@ -47,9 +47,9 @@
       "t": "2026-11-28T06:08:48+07:00"
     },
     "studio": {
-      "status": "kerja",
-      "aktivitas": "Render 5 video untuk 2026-11-28",
-      "t": "2026-11-28T06:10:35+07:00"
+      "status": "error",
+      "aktivitas": "4/5 video jadi, siap di Hasil",
+      "t": "2026-11-28T06:27:04+07:00"
     },
     "strategist": {
       "status": "selesai",
@@ -63,6 +63,41 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T06:27:04+07:00",
+      "agen": "studio",
+      "pesan": "4/5 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-28T06:25:35+07:00",
+      "agen": "studio",
+      "pesan": "Render video 5/5: Witcher 3 Remastered Patch 5.02 ba"
+    },
+    {
+      "t": "2026-11-28T06:24:15+07:00",
+      "agen": "studio",
+      "pesan": "Render video 4/5: Arkheron Early Access, gratis dima"
+    },
+    {
+      "t": "2026-11-28T06:24:15+07:00",
+      "agen": "studio",
+      "pesan": "Video 3 gagal: remotion render gagal: \u001b[31m\u001b[41m\u001b[37m E"
+    },
+    {
+      "t": "2026-11-28T06:20:13+07:00",
+      "agen": "studio",
+      "pesan": "Render video 3/5: Sea of Sorrow, DLC gratis Silksong"
+    },
+    {
+      "t": "2026-11-28T06:15:34+07:00",
+      "agen": "studio",
+      "pesan": "Render video 2/5: AK Gold jadi tim Indonesia pertama"
+    },
+    {
+      "t": "2026-11-28T06:10:36+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/5: RRQ Kazu dan Bigetron lolos ke Gra"
+    },
     {
       "t": "2026-11-28T06:10:35+07:00",
       "agen": "studio",
@@ -327,43 +362,8 @@
       "t": "2026-11-28T04:05:46+07:00",
       "agen": "radar",
       "pesan": "[Sirah] Riset eps 11-13: Hira, Iqra', dakwah sembunyi"
-    },
-    {
-      "t": "2026-11-28T04:05:46+07:00",
-      "agen": "bos",
-      "pesan": "[Sirah] Buka shift eps 11-13"
-    },
-    {
-      "t": "2026-11-27T06:35:25+07:00",
-      "agen": "studio",
-      "pesan": "10/10 video jadi, siap di Hasil"
-    },
-    {
-      "t": "2026-11-27T06:33:19+07:00",
-      "agen": "studio",
-      "pesan": "Render video 10/10: Digimon Alysion, game kartu digita"
-    },
-    {
-      "t": "2026-11-27T06:31:14+07:00",
-      "agen": "studio",
-      "pesan": "Render video 9/10: Point Blank Indonesia gelar Black "
-    },
-    {
-      "t": "2026-11-27T06:29:01+07:00",
-      "agen": "studio",
-      "pesan": "Render video 8/10: Laporan: Ubisoft dorong tim pakai "
-    },
-    {
-      "t": "2026-11-27T06:26:56+07:00",
-      "agen": "studio",
-      "pesan": "Render video 7/10: PS Plus Essential Desember 2026: T"
-    },
-    {
-      "t": "2026-11-27T06:24:39+07:00",
-      "agen": "studio",
-      "pesan": "Render video 6/10: EA Sports FC 27 pakai AI untuk men"
     }
   ],
-  "updated_at": "2026-11-28T06:10:35+07:00",
+  "updated_at": "2026-11-28T06:27:04+07:00",
   "kesimpulan_t": "2026-11-28T06:08:54+07:00"
 }

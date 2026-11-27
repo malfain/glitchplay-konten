@@ -117,7 +117,11 @@
           "visual": "ajakan"
         }
       ],
-      "hook_layar": "RRQ & BTR LOLOS!"
+      "hook_layar": "RRQ & BTR LOLOS!",
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-28/glitch-01-rrq-kazu-dan-bigetron-lolos-ke-grand-fin.mp4",
+      "poster": "video/2026-11-28/01-rrq-kazu-dan-bigetron-lolos-ke-grand-fin.jpg",
+      "video_durasi": 30.6,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "segmen": "esports",
@@ -235,7 +239,11 @@
           "visual": "ajakan"
         }
       ],
-      "hook_layar": "AK GOLD LOLOS!"
+      "hook_layar": "AK GOLD LOLOS!",
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-28/glitch-02-ak-gold-jadi-tim-indonesia-pertama-ke-gr.mp4",
+      "poster": "video/2026-11-28/02-ak-gold-jadi-tim-indonesia-pertama-ke-gr.jpg",
+      "video_durasi": 26.0,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "segmen": "game",
@@ -474,7 +482,11 @@
           "visual": "ajakan"
         }
       ],
-      "hook_layar": "GRATIS SAMPAI 29 NOV"
+      "hook_layar": "GRATIS SAMPAI 29 NOV",
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-28/glitch-04-arkheron-early-access-gratis-dimainkan-s.mp4",
+      "poster": "video/2026-11-28/04-arkheron-early-access-gratis-dimainkan-s.jpg",
+      "video_durasi": 25.1,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "segmen": "game",
@@ -592,7 +604,11 @@
           "visual": "ajakan"
         }
       ],
-      "hook_layar": "40 MOD BARU!"
+      "hook_layar": "40 MOD BARU!",
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-28/glitch-05-witcher-3-remastered-patch-5-02-bawa-40.mp4",
+      "poster": "video/2026-11-28/05-witcher-3-remastered-patch-5-02-bawa-40.jpg",
+      "video_durasi": 28.2,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     }
   ]
 }
