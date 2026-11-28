@@ -356,7 +356,8 @@ const COVER_END = 3.0;
 const renderTitle = (title: string) =>
   title.split(/(\*[^*]+\*)/g).filter(Boolean).map((part, i) =>
     part.startsWith("*") ? (
-      <span key={i} style={{ background: NEWS_RED, padding: "0 12px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>{part.slice(1, -1)}</span>
+      // Anton's line box is much taller than its capitals: paint the red only behind the letters so stacked lines never touch
+      <span key={i} style={{ background: `linear-gradient(transparent 21%, ${NEWS_RED} 21%, ${NEWS_RED} 85%, transparent 85%)`, padding: "0 12px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>{part.slice(1, -1)}</span>
     ) : (
       <span key={i}>{part}</span>
     ));
