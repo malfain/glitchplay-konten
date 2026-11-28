@@ -30,7 +30,7 @@ export const photoReelSchema = z.object({
   episode: z.number().optional(),
   // Instagram news cover (2 s opening, also the grid thumbnail): headline with *highlighted* words + round inset picture
   emphasis: z.array(z.string()).optional(), // words to show bigger + accent colour (storyboard "subtitle besar")
-  cover: z.object({ title: z.string(), inset: z.string().optional(), tag: z.string().optional(), brand: z.string().optional() }).optional(),
+  cover: z.object({ title: z.string(), inset: z.string().optional(), tag: z.string().optional(), brand: z.string().optional(), hook: z.string().optional() }).optional(),
   // character drawn in OpenToonz, exported as a PNG sequence with transparency (tools/render_video.py fills this)
   maskot: z.object({ frames: z.array(z.string()), fps: z.number() }).optional(),
   // animated channel logo from OpenToonz (PNG sequence): loops in the corner badge, plays big as a 2 s outro
@@ -363,7 +363,7 @@ const renderTitle = (title: string) =>
 
 // Opening news cover (also what the Instagram grid shows): dark bottom, small red tag, big condensed headline with red
 // highlighted words, a round inset picture with a red ring.
-const NewsCover: React.FC<{ title: string; inset?: string; tag?: string }> = ({ title, inset, tag }) => {
+const NewsCover: React.FC<{ title: string; inset?: string; tag?: string; hook?: string }> = ({ title, inset, tag, hook }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
@@ -373,8 +373,15 @@ const NewsCover: React.FC<{ title: string; inset?: string; tag?: string }> = ({ 
   return (
     <AbsoluteFill style={{ opacity: fade }}>
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.55) 55%, rgba(0,0,0,.92) 78%, #000 100%)" }} />
+      {hook ? (
+        // hook 3 lapis, layer 3 (on-screen text): a yellow punch sticker at the top that stops the scroll
+        <div style={{ position: "absolute", left: 60, right: 60, top: 330, textAlign: "center", scale: String(pop), rotate: "-3deg" }}>
+          <span style={{ display: "inline-block", background: "#ffd400", color: "#111", fontFamily: ANTON, fontSize: 96, lineHeight: 1.1,
+            textTransform: "uppercase", padding: "10px 30px", borderRadius: 10, boxShadow: "0 10px 30px rgba(0,0,0,.45)" }}>{hook}</span>
+        </div>
+      ) : null}
       {inset ? (
-        <div style={{ position: "absolute", right: 70, top: 420, width: 330, height: 330, borderRadius: "50%", overflow: "hidden",
+        <div style={{ position: "absolute", right: 70, top: hook ? 540 : 420, width: 330, height: 330, borderRadius: "50%", overflow: "hidden",
           border: `10px solid ${NEWS_RED}`, boxShadow: "0 10px 40px rgba(0,0,0,.5)", scale: String(pop) }}>
           <Img src={staticFile(inset)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </div>

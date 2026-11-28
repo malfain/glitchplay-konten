@@ -107,6 +107,11 @@ def ffmpeg_bin():
 
 FFMPEG = ffmpeg_bin()
 
+# Prefer IPv4: on some networks (e.g. the Mac behind Tailscale) IPv6 routes to Google hang in SYN_SENT forever.
+import socket as _socket
+_orig_getaddrinfo = _socket.getaddrinfo
+_socket.getaddrinfo = lambda *a, **k: sorted(_orig_getaddrinfo(*a, **k), key=lambda r: r[0] != _socket.AF_INET)
+
 
 def run(cmd):
     r = subprocess.run(cmd, capture_output=True, text=True)
@@ -1193,8 +1198,22 @@ def _cut_clip(v, n, out_mp4, dur, ytdlp):
         run([FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-i", str(got), "-t", str(dur), "-an", "-vf", vf,
              "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(cached)])
         got.unlink(missing_ok=True)
+    if not _has_video(cached):  # an empty cut (no video frames) breaks the Remotion render: drop it, use pictures instead
+        cached.unlink(missing_ok=True)
+        raise RuntimeError("potongan klip kosong (tanpa video)")
     shutil.copy(cached, out_mp4)
     return True
+
+
+def _has_video(mp4):
+    """True when the file has a real video track at least ~1 s long."""
+    try:
+        err = subprocess.run([FFMPEG, "-hide_banner", "-i", str(mp4)], capture_output=True, text=True, timeout=30).stderr
+    except Exception:
+        return False
+    m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", err)
+    secs = int(m[1]) * 3600 + int(m[2]) * 60 + float(m[3]) if m else 0
+    return "Video:" in err and secs >= 1
 
 
 def steam_app(title):
@@ -1364,7 +1383,7 @@ def news_cover(item, imgs):
     title = re.sub(r"[^\w\s*!?%,.:+'&-]", "", title, flags=re.UNICODE).strip()
     inset = next((f"_render/{x.name}" for x in imgs[1:] if not isinstance(x, str) and x.suffix == ".jpg"), None)
     tag = "ESPORTS UPDATE" if item.get("segmen") == "esports" else "TODAY HIGHLIGHT"
-    return {k: v for k, v in {"title": title, "inset": inset, "tag": tag}.items() if v}
+    return {k: v for k, v in {"title": title, "inset": inset, "tag": tag, "hook": hook_text(item)}.items() if v}
 
 
 def hook_text(item):
@@ -1373,7 +1392,7 @@ def hook_text(item):
     if not t:
         cards = item.get("teks_layar") or []
         t = (cards[0].get("teks") if cards and isinstance(cards[0], dict) else "") or ""
-    t = re.sub(r"[^\w\s?!%,.:+'-]", "", t, flags=re.UNICODE).strip()
+    t = re.sub(r"[^\w\s?!%,.:+'&-]", "", t, flags=re.UNICODE).strip()
     return " ".join(t.split()[:8 if CH["theme"] == "sirah" else 6]) or None
 
 
@@ -1439,6 +1458,8 @@ def render_item_photo(item, idx, date, outdir, tmp):
                     credits.append(c)
                 if game not in games_used:
                     games_used.append(game)
+                if not _has_video(vid):
+                    raise RuntimeError("klip tanpa video")
                 imgs.append(vid)
                 continue
             except Exception as e:
@@ -1452,6 +1473,8 @@ def render_item_photo(item, idx, date, outdir, tmp):
                     credits.append(c)
                 if game not in games_used:
                     games_used.append(game)
+                if not _has_video(vid):
+                    raise RuntimeError("klip tanpa video")
                 imgs.append(vid)
                 continue
             except Exception as e:
@@ -1463,6 +1486,8 @@ def render_item_photo(item, idx, date, outdir, tmp):
                 game_count[game] = game_count.get(game, 0) + 1
                 if game not in games_used:
                     games_used.append(game)
+                if not _has_video(vid):
+                    raise RuntimeError("klip tanpa video")
                 imgs.append(vid)
                 continue
             except Exception as e:
