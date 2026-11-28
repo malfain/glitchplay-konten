@@ -386,10 +386,10 @@ const NewsCover: React.FC<{ title: string; inset?: string; tag?: string; hook?: 
           <Img src={staticFile(inset)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </div>
       ) : null}
-      <div style={{ position: "absolute", left: 50, right: 50, top: 1010, textAlign: "center", translate: `0 ${rise}px` }}>
+      <div style={{ position: "absolute", left: 50, right: 50, bottom: 240, textAlign: "center", translate: `0 ${rise}px` }}>
         <div style={{ display: "inline-block", background: NEWS_RED, color: "#fff", font: `800 26px ${F.sans}`, letterSpacing: 2,
           padding: "6px 16px", borderRadius: 4, marginBottom: 18 }}>{(tag || "TODAY HIGHLIGHT").toUpperCase()}</div>
-        <div style={{ fontFamily: ANTON, fontSize: 112, lineHeight: 1.06, color: "#fff", textTransform: "uppercase",
+        <div style={{ fontFamily: ANTON, fontSize: 108, lineHeight: 1.24, color: "#fff", textTransform: "uppercase",
           textShadow: "0 4px 0 rgba(0,0,0,.6)" }}>{renderTitle(title)}</div>
       </div>
     </AbsoluteFill>
