@@ -47,9 +47,9 @@
       "t": "2026-11-28T06:08:48+07:00"
     },
     "studio": {
-      "status": "kerja",
-      "aktivitas": "Render 1 video untuk 2026-11-28",
-      "t": "2026-11-28T09:50:05+07:00"
+      "status": "error",
+      "aktivitas": "0/1 video jadi, siap di Hasil",
+      "t": "2026-11-28T09:50:56+07:00"
     },
     "strategist": {
       "status": "selesai",
@@ -63,6 +63,21 @@
     }
   },
   "log": [
+    {
+      "t": "2026-11-28T09:50:56+07:00",
+      "agen": "studio",
+      "pesan": "0/1 video jadi, siap di Hasil"
+    },
+    {
+      "t": "2026-11-28T09:50:56+07:00",
+      "agen": "studio",
+      "pesan": "Video 3 gagal: remotion render gagal: \u001b[31m\u001b[41m\u001b[37m E"
+    },
+    {
+      "t": "2026-11-28T09:50:07+07:00",
+      "agen": "studio",
+      "pesan": "Render video 1/1: Sea of Sorrow, DLC gratis Silksong"
+    },
     {
       "t": "2026-11-28T09:50:05+07:00",
       "agen": "studio",
@@ -347,23 +362,8 @@
       "t": "2026-11-28T04:08:25+07:00",
       "agen": "copywriter",
       "pesan": "[Sirah] Caption & YouTube eps 11-13"
-    },
-    {
-      "t": "2026-11-28T04:08:25+07:00",
-      "agen": "narator",
-      "pesan": "[Sirah] Naskah eps 11-13 selesai"
-    },
-    {
-      "t": "2026-11-28T04:08:25+07:00",
-      "agen": "strategist",
-      "pesan": "[Sirah] 3 episode, hook & jam siap"
-    },
-    {
-      "t": "2026-11-28T04:06:54+07:00",
-      "agen": "narator",
-      "pesan": "[Sirah] Tulis naskah eps 11-13"
     }
   ],
-  "updated_at": "2026-11-28T09:50:05+07:00",
+  "updated_at": "2026-11-28T09:50:56+07:00",
   "kesimpulan_t": "2026-11-28T06:08:54+07:00"
 }
