@@ -127,7 +127,11 @@ Isi field `adegan`: **7–9 adegan** (gambar diam otomatis dipotong tiap ±2 det
   awan, matahari), `"sains"` (atom berputar: tubuh, sel, ilmu pengetahuan),
   `"gunungberapi"` (gunung meletus: lava & asap), `"dinosaurus"` (dinosaurus
   leher panjang berjalan di hutan purba). Pilih yang paling nyambung dengan
-  kalimatnya; boleh dipakai lebih dari sekali, tapi variasikan. **Pilih tema
+  kalimatnya; boleh dipakai lebih dari sekali, tapi variasikan. **3D hanya kalau
+  isinya benar-benar sama dengan kalimat & prompt** (atom = tubuh manusia/sel/sains,
+  bukan semut/hewan; `alam` = hutan/padang/pohon). Topik hewan kecil (semut, lebah,
+  kupu-kupu, dll.) yang tidak cocok dengan adegan 3D mana pun boleh 0–2 adegan 3D saja,
+  sisanya foto. Studio menolak 3D yang tidak nyambung dengan `prompt`-nya. **Pilih tema
   video yang cocok dengan adegan 3D ini lebih sering** (luar angkasa, bumi &
   cuaca, laut, dinosaurus, gunung berapi, tubuh/sains). Adegan 3D tidak memakai foto AI (hemat kuota), tapi
   tetap isi `prompt` sebagai cadangan. Contoh:

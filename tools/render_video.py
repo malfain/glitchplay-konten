@@ -874,17 +874,40 @@ def pool_add(cached, prompt):
         f.write_text(json.dumps(pool[-3000:]))
 
 
-def pool_image(prompt, out_jpg, used):
-    """Closest earlier picture of this channel (word overlap with the prompt), not yet used in this video."""
+# words that say nothing about the subject (camera / light / style): they must not make a rooster "match" an ant
+POOL_STOP = set("""photo photograph macro close closeup shot view light lighting soft natural sharp focus style detailed
+realistic bright warm golden morning sunny evening night background with from their that this into over under along
+inside large small little several many some showing looking walking standing sitting carrying scene image picture
+colorful cinematic wide angle very green blue white black brown""".split())
+
+
+def _words(text):
+    return {w[:-1] if w.endswith("s") and len(w) > 3 else w for w in re.findall(r"[a-z]{3,}", text.lower())} - POOL_STOP
+
+
+def topic_words(prompts):
+    """The video's subject: meaningful words that show up in at least a third of its picture prompts (e.g. "ant")."""
+    from collections import Counter
+    c = Counter(w for p in prompts for w in _words(p))
+    need = max(2, len(prompts) // 3)
+    return {w for w, k in c.items() if k >= need}
+
+
+def pool_image(prompt, out_jpg, used, topic=()):
+    """Closest earlier picture of this channel, not yet used in this video. It must show the same subject as this
+    scene / video (shared meaningful word, and a topic word when the video has one), else nothing."""
     f = IMG_CACHE / POOL_FILE_NAME
     if not f.exists():
         return False
-    words = set(re.findall(r"[a-z]{4,}", prompt.lower()))
-    best, score = None, -1
+    words = _words(prompt)
+    best, score = None, 0
     for p in json.loads(f.read_text()):
         if p["theme"] != CH["theme"] or p["file"] in used or not (IMG_CACHE / p["file"]).exists():
             continue
-        sc = len(words & set(re.findall(r"[a-z]{4,}", p["prompt"].lower())))
+        pw = _words(p["prompt"])
+        if topic and not (pw & set(topic)):
+            continue
+        sc = len(words & pw)
         if sc > score:
             best, score = p, sc
     if not best:
@@ -1409,11 +1432,11 @@ def kids3d_for(prompt, n):
                         (("planet", "space", "moon", "star", "galaxy", "sun ", "astronaut", "rocket"), "luarangkasa"),
                         (("earth", "globe", "continent", "volcano", "weather", "cloud"), "bumi"),
                         (("ocean", "sea", "fish", "underwater", "coral", "whale", "shark", "octopus", "penguin"), "laut"),
-                        (("atom", "cell", "body", "heart", "brain", "blood", "science", "microscope", "molecule"), "sains"),
+                        (("atom", "cell", "human body", "heart", "brain", "blood", "science", "microscope", "molecule"), "sains"),
                         (("forest", "tree", "animal", "jungle", "field", "flower", "bird", "giraffe", "elephant"), "alam")):
-        if any(w in p for w in words):
+        if any(re.search(r"\b" + re.escape(w.strip()) + r"s?\b", p) for w in words):
             return kind
-    return KIDS3D[n % len(KIDS3D)]
+    return None  # nothing fits: better a picture of the topic than an unrelated 3D scene
 
 
 def backdrop_for(prompt, n):
@@ -1442,10 +1465,14 @@ def render_item_photo(item, idx, date, outdir, tmp):
     # photos first: if the free image quota is gone we fail before spending a voice (TTS) request
     imgs, games_used, game_count, credits = [], [], {}, []
     pool_used = set()
+    topic = topic_words([sc.get("prompt", "") for sc in scenes_in])
     for n, sc in enumerate(scenes_in):
         img = pub / f"{key}-{n + 1:02d}.jpg"
         game = (sc.get("game") or "").strip()
         three = (sc.get("3d") or "").strip().lower()
+        if three and CH["theme"] == "kids" and three in KIDS3D and kids3d_for(sc.get("prompt", ""), n) != three:
+            print(f"[3d] adegan {n + 1}: '{three}' tidak cocok dengan '{sc.get('prompt', '')[:60]}', pakai gambar", file=sys.stderr)
+            three = ""
         if three and CH["theme"] in ("kids", "sirah") and three in (KIDS3D if CH["theme"] == "kids" else SIRAH_SCENES):
             imgs.append("vector:" + three)  # Three.js / animated scene chosen by the writer: no picture needed
             continue
@@ -1518,14 +1545,22 @@ def render_item_photo(item, idx, date, outdir, tmp):
         try:
             cf_image(prompt, img)
         except RuntimeError as e:
-            if "kuota gambar" in str(e) and pool_image(prompt, img, pool_used):
+            if "kuota gambar" in str(e) and pool_image(prompt, img, pool_used, topic):
                 # free picture quota gone: the closest picture this channel made before keeps the video picture-based
                 imgs.append(img)
                 continue
             if "kuota gambar" in str(e) and CH["theme"] in ("sirah", "kids"):
-                # no pictures left today: a moving 3D / hand-drawn scene instead (never the cartoon mascot)
+                # no pictures left today: a matching moving 3D / hand-drawn scene (never the cartoon mascot), else one
+                # of this video's own pictures again (on-topic, the Ken Burns move differs), else any kids 3D scene
                 kind = backdrop_for(sc.get("prompt", ""), n) if CH["theme"] == "sirah" else kids3d_for(sc.get("prompt", ""), n)
-                imgs.append("vector:" + kind)
+                own = [x for x in imgs if not isinstance(x, str) and x.suffix == ".jpg"]
+                if kind:
+                    imgs.append("vector:" + kind)
+                elif own:
+                    shutil.copy(own[n % len(own)], img)
+                    imgs.append(img)
+                else:
+                    imgs.append("vector:" + KIDS3D[n % len(KIDS3D)])
                 continue
             if "ditolak" not in str(e):
                 raise
