@@ -364,7 +364,11 @@
           "visual": "ajakan"
         }
       ],
-      "hook_layar": "DLC GRATIS 11 DESEMBER"
+      "hook_layar": "DLC GRATIS 11 DESEMBER",
+      "video": "https://github.com/malfain/glitchplay-konten/releases/download/video-2026-11-28/glitch-03-sea-of-sorrow-dlc-gratis-silksong-rilis.mp4",
+      "poster": "video/2026-11-28/03-sea-of-sorrow-dlc-gratis-silksong-rilis.jpg",
+      "video_durasi": 25.2,
+      "video_suara": "gemini-3.8-flash-tts/Fenrir"
     },
     {
       "segmen": "game",
